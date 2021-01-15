@@ -1,13 +1,13 @@
-# awk
+## awk
 
-## NAME
+### NAME
 awk - pattern-directed scanning and processing language
 
-## SYNOPSIS
+### SYNOPSIS
 > awk [ -F fs ] [ -v var=value ] [ 'prog' | -f progfile ] [ file ...  ]
 
 
-## EXAMPLES
+### EXAMPLES
 
 1. Print only columns one and three using stdin
 
