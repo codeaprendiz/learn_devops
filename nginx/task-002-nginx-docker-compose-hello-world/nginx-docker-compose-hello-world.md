@@ -1,6 +1,6 @@
 ### Ngnix docker-compose hello world
 
-[link-to-task-resources](../)
+[link-to-task-resources](./.)
 
 - Start the server using
 ```bash
