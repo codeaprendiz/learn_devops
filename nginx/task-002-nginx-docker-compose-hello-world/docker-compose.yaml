@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  client:
+    image: nginx
+    ports:
+      - 8000:80
+    volumes:
+      - ./src:/usr/share/nginx/html
