@@ -4,3 +4,4 @@
 - [chage](chage/chage.md)
 - [chmod](chmod/chmod.md)
 - [chown](chown/chown.md)
+- [cksum](cksum/cksum.md)
