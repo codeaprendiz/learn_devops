@@ -6,7 +6,7 @@ In this section, we will take a look at TLS Basics
 - A certificate is used to guarantee trust between 2 parties during a transaction.
 - Example: when a user tries to access web server, tls certificates ensure that the communication between them is encrypted.
 
-  ![cert1](../.images/.tls/cert1.PNG)
+  ![cert1](../images/tls/cert1.PNG)
   
   
 ## Symmetric Encryption
@@ -14,7 +14,7 @@ In this section, we will take a look at TLS Basics
 - This key has to be exchanged between the sender and the receiver.
 - There is a risk of a hacker gaining access to the key and decrypting the data.
 
-  ![cert2](../.images/.tls/cert2.PNG)
+  ![cert2](../images/tls/cert2.PNG)
   
 ## Asymmetric Encryption
 - Asymmetric encryption uses a pair of keys a private key and a public key.
@@ -48,7 +48,7 @@ In this section, we will take a look at TLS Basics
 - When you try to SSH you specify the location of your private key in your SSH command.
 
 
-  ![cert3](../.images/.tls/cert3.PNG)
+  ![cert3](../images/tls/cert3.PNG)
 
 - What if you have other servers in your environment. How do you secure 
   more than one server with your key pair? 
@@ -62,7 +62,7 @@ In this section, we will take a look at TLS Basics
   locks/keys to all the servers. And now other users can access the servers 
   using their private keys.
   
-  ![cert4](../.images/.tls/cert4.PNG)
+  ![cert4](../images/tls/cert4.PNG)
   
 **Let's go back to our Web server example.**
 - You see the problem we had earlier with symmetric encryption was that the key used to encrypt 
@@ -83,7 +83,7 @@ In this section, we will take a look at TLS Basics
   So the format is a bit different. Here we use the openssl command to 
   generate a private and public key pair. And that’s how they look.
   
-  ![cert5](../.images/.tls/cert5.PNG)
+  ![cert5](../images/tls/cert5.PNG)
 
 - When the user first accesses the web server using https, he gets the public key 
   from the server. 
@@ -129,7 +129,7 @@ In this section, we will take a look at TLS Basics
   your credentials, you see a dashboard that doesn’t look very much like 
   your bank's dashboard. You have been hacked!
   
-  ![cert6](../.images/.tls/cert6.PNG)
+  ![cert6](../images/tls/cert6.PNG)
   
   
 **So what do we do?**
@@ -145,7 +145,7 @@ In this section, we will take a look at TLS Basics
 - who signed and issued the certificate.
 - If you generate the certificate then you will have it sign it by yourself; that is known as self-signed certificate.
 
-  ![cert7](../.images/.tls/cert7.PNG)  
+  ![cert7](../images/tls/cert7.PNG)  
   
 - on the right you see the output of an actual certificate every certificate 
   has a name on it the person or subject to whom the certificate is issued to. 
@@ -184,11 +184,11 @@ In this section, we will take a look at TLS Basics
 **How do you generate legitimate certificate? How do you get your certificates singed by someone with authority?**
 - That's where **`Certificate Authority (CA)`** comes in for you. Some of the popular ones are Symantec, DigiCert, Comodo, GlobalSign etc.
 
-  ![cert8](../.images/.tls/cert8.PNG)
+  ![cert8](../images/tls/cert8.PNG)
   
-  ![cert9](../.images/.tls/cert9.PNG)
+  ![cert9](../images/tls/cert9.PNG)
   
-  ![cert10](../.images/.tls/cert10.PNG)
+  ![cert10](../images/tls/cert10.PNG)
   
 - The way this works is you generate a certificate signing a 
   request or CSR using the key you generated earlier and the domain name of 
@@ -280,7 +280,7 @@ In this section, we will take a look at TLS Basics
 This whole infrastructure including the CA the servers the people and the process of generating distributing and maintaining digital certificates is known as public key infrastructure or PKI.
 **Public Key Infrastructure**
 
-![pki](../.images/.tls/pki.PNG)
+![pki](../images/tls/pki.PNG)
    
    
    
@@ -312,7 +312,7 @@ Finally, a quick note on naming convention.
   certificate and one that doesn't have the word key in them is usually a public key or certificate.
 
 
-  ![cert11](../.images/.tls/cert11.PNG)
+  ![cert11](../images/tls/cert11.PNG)
   
   
 Credits
