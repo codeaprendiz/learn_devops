@@ -1,6 +1,7 @@
 ### Objective : Create a CDN using cloudposse module and ensure that sensitive variables are hidden
 
 #### Pre-requisite
+
 - Update values of in `secret.tfvars` as per your configuration (take reference from secret.tfvars.example)
 - [Hosted Zone (default hosted zone would do)](../task-011-route53)
 - You should own a domain (like in this case I own `ankitrathi.info`)
@@ -10,6 +11,7 @@
 #### Let's Begin
 
 - Terraform and Terragrunt versions
+
 ```bash
 $ terraform --version
 Terraform v0.14.4
@@ -22,11 +24,13 @@ terragrunt version v0.27.1
 ```
 
 - Initialize
+
 ```bash
 $ ./run.sh init
 ```
 
 - Plan
+
 ```bash
 $ ./run.sh plan -var-file="secret.tfvars" 
 .
@@ -43,6 +47,7 @@ Changes to Outputs:
 ```
 
 - Apply the changes
+
 ```bash
 $ ./run.sh apply -var-file="secret.tfvars"
 .
@@ -70,6 +75,7 @@ s3-user-test-username = "backend-dev-test"
 ![](../../../images/terraform/task-027-terragrunt-cdn/cdn_its_working.png)
 
 - You can also validate using the curl command
+
 ```bash
 $ curl https://d3a656hcndx1gu.cloudfront.net/                                        
 <!DOCTYPE html>
@@ -85,6 +91,7 @@ $ curl https://d3a656hcndx1gu.cloudfront.net/
 ```
 
 - Also checkout the nslookup output
+
 ```bash
 $ nslookup d3a656hcndx1gu.cloudfront.net                              
 Server:         213.42.20.20
@@ -103,6 +110,7 @@ Address: 13.33.93.35
 
 
 - Now to destroy the resources
+
 ```bash
 $ ./run.sh destroy -var-file="secret.tfvars"
 .
