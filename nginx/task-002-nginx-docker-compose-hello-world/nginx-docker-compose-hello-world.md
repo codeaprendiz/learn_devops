@@ -1,6 +1,6 @@
 ### Ngnix docker-compose hello world
 
-[link-to-task-resources](./.)
+
 
 #### Directory structure
 
