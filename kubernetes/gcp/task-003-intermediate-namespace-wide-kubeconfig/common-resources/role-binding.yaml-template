@@ -1,0 +1,14 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: rolebinding-monitoring-ns
+  namespace: SUBSTITUTE_NAMESPACE
+subjects:
+  - kind: Group
+    name: SUBSTITUTE_GROUPNAME
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: role-SUBSTITUTE_NAMESPACE
+  apiGroup: rbac.authorization.k8s.io
+

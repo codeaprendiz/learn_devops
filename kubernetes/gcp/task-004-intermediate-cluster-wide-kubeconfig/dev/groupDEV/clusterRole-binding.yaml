@@ -1,0 +1,13 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: rolebinding-dev-groupDEV-RW
+subjects:
+  - kind: Group
+    name: groupDEV
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: role-dev-groupDEV-RW
+  apiGroup: rbac.authorization.k8s.io
+

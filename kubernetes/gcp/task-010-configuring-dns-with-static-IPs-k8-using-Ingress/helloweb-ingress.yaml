@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: helloweb
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: helloweb-ip
+  labels:
+    app: hello
+spec:
+  backend:
+    serviceName: helloweb-backend
+    servicePort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloweb-backend
+  labels:
+    app: hello
+spec:
+  type: NodePort
+  selector:
+    app: hello
+    tier: web
+  ports:
+    - port: 8080
+      targetPort: 8080

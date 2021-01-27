@@ -1,0 +1,106 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: datadog-agent
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - services
+      - events
+      - endpoints
+      - pods
+      - nodes
+      - componentstatuses
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups: ["quota.openshift.io"]
+    resources:
+      - clusterresourcequotas
+    verbs:
+      - get
+      - list
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+    resourceNames:
+      - datadogtoken             # Kubernetes event collection state
+      - datadog-leader-election  # Leader election token
+    verbs:
+      - get
+      - update
+  - apiGroups:  # To create the leader election token
+      - ""
+    resources:
+      - configmaps
+    verbs:
+      - create
+  - nonResourceURLs:
+      - "/version"
+      - "/healthz"
+      - "/metrics"
+    verbs:
+      - get
+  - apiGroups:  # Kubelet connectivity
+      - ""
+    resources:
+      - nodes/metrics
+      - nodes/spec
+      - nodes/proxy
+      - nodes/stats
+    verbs:
+      - get
+
+---
+
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: dca
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - services
+      - events
+      - endpoints
+      - pods
+      - nodes
+      - componentstatuses
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - "autoscaling"
+    resources:
+      - horizontalpodautoscalers
+    verbs:
+      - list
+      - watch
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+    resourceNames:
+      - datadogtoken             # Kubernetes event collection state
+      - datadog-leader-election  # Leader election token
+    verbs:
+      - get
+      - update
+  - apiGroups:  # To create the leader election token
+      - ""
+    resources:
+      - configmaps
+    verbs:
+      - create
+      - get
+      - update
+  - nonResourceURLs:
+      - "/version"
+      - "/healthz"
+    verbs:
+      - get

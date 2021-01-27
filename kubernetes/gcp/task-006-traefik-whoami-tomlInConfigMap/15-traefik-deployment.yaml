@@ -1,0 +1,45 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: traefik
+  labels:
+    app: traefik
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traefik
+  template:
+    metadata:
+      labels:
+        app: traefik
+    spec:
+      serviceAccountName: traefik-ingress-controller
+      volumes:
+        - name: config
+          configMap:
+            name: traefik-config-map
+      containers:
+        - name: traefik
+          image: traefik:v2.1
+          args:
+            - --accesslog=true
+            - --api
+            - --api.insecure
+            - --entrypoints.web.address=:80
+            - --entrypoints.websecure.address=:443
+            - --providers.kubernetescrd
+            - --configfile=/config/traefik.toml
+          ports:
+            - name: web
+              containerPort: 80
+            - name: admin
+              containerPort: 8080
+            - name: websecure
+              containerPort: 443
+          volumeMounts:
+            - mountPath: /etc/traefik/traefik.toml
+              name: config
+              subPath: traefik.toml

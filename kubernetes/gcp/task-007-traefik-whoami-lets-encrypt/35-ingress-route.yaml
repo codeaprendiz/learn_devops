@@ -1,0 +1,33 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: simpleingressroute
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`k8straefiktlstest.gotdns.ch`) && PathPrefix(`/notls`)
+      kind: Rule
+      services:
+        - name: whoami
+          port: 80
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ingressroutetls
+  namespace: default
+spec:
+  entryPoints:
+    - websecure
+    - web
+  routes:
+    - match: Host(`k8straefiktlstest.gotdns.ch`) && PathPrefix(`/tls`)
+      kind: Rule
+      services:
+        - name: whoami
+          port: 80
+  tls:
+    certResolver: default

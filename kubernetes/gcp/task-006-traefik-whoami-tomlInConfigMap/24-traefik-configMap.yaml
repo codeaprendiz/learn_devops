@@ -1,0 +1,29 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: traefik-config-map
+data:
+  traefik.toml: |-
+    [global]
+      checkNewVersion = false
+      sendAnonymousUsage = false
+    [retry]
+      attempts = 3
+      maxMem = 3
+    [entryPoints]
+      [entryPoints.web]
+        address = ":80"
+      [entryPoints.websecure]
+        address = ":443"
+    [log]
+      level = "DEBUG"
+    [accessLog]
+    [api]
+      insecure = true
+      dashboard = true
+      debug = true
+    [providers]
+      [providers.file]
+        directory = "/var/tf"
+        watch = true
+      [providers.kubernetesCRD]

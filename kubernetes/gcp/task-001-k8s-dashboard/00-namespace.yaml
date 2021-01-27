@@ -1,0 +1,6 @@
+#Docs Referred : https://docs.aws.amazon.com/eks/latest/userguide/dashboard-tutorial.html
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kubernetes-dashboard

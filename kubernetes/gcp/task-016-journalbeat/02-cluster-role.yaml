@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: journalbeat
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - namespaces
+      - pods
+    verbs:
+      - get
+      - watch
+      - list
+  - apiGroups:
+      - extensions
+    resourceNames:
+      - journalbeat
+    resources:
+      - podsecuritypolicies
+    verbs:
+      - use
+---

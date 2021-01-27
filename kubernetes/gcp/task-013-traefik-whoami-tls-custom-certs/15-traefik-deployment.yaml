@@ -1,0 +1,43 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: traefik
+  labels:
+    app: traefik
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traefik
+  template:
+    metadata:
+      labels:
+        app: traefik
+    spec:
+      serviceAccountName: traefik-ingress-controller
+      volumes:
+        - name: config
+          configMap:
+            name: traefik-config-map
+        - name: start-domain-com-ssl
+          secret:
+            secretName: start-domain-com-ssl
+      containers:
+        - name: traefik
+          image: traefik:v2.2.1
+          ports:
+            - name: web
+              containerPort: 80
+            - name: admin
+              containerPort: 8080
+            - name: websecure
+              containerPort: 443
+          volumeMounts:
+            - mountPath: /etc/traefik/traefik.toml
+              name: config
+              subPath: traefik.toml
+            - mountPath: "/var/ssl/start-domain-com-ssl"
+              name: start-domain-com-ssl
+              readOnly: true

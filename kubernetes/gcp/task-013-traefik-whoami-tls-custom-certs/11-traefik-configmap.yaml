@@ -1,0 +1,65 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: traefik-config-map
+data:
+  traefik.toml: |-
+    [global]
+      checkNewVersion = false
+      sendAnonymousUsage = false
+    [retry]
+      attempts = 3
+      maxMem = 3
+    [entryPoints]
+      [entryPoints.web]
+        address = ":80"
+        [entryPoints.web.http]
+          [entryPoints.web.http.redirections]
+            [entryPoints.web.http.redirections.entryPoint]
+              to = "websecure"
+              scheme = "https"
+              permanent = true
+      [entryPoints.websecure]
+        address = ":443"
+    [log]
+      level = "DEBUG"
+    [accessLog]
+    [api]
+      insecure = true
+      dashboard = true
+      debug = true
+    [providers]
+      [providers.file]
+        directory = "/etc/traefik"
+        watch = true
+      [providers.kubernetesCRD]
+
+
+    [[tls.certificates]]
+       keyFile = "/var/ssl/start-domain-com-ssl/star_domain.com.key"
+       certFile = "/var/ssl/start-domain-com-ssl/star_domain_com.chained.crt"
+
+    [tls.options]
+        [tls.options.default]
+          minVersion = "VersionTLS12"
+          preferServerCipherSuites = true
+          cipherSuites = [
+            "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+            "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+            "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305",
+            "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+            "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+            "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+            "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+            "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+            "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+          ]
+
+        [tls.options.mintls13]
+          minVersion = "VersionTLS13"
+
+    [tls.stores]
+      [tls.stores.default]
+        [tls.stores.default.defaultCertificate]
+          keyFile = "/var/ssl/start-domain-com-ssl/star_domain.com.key"
+          certFile = "/var/ssl/start-domain-com-ssl/star_domain_com.chained.crt"

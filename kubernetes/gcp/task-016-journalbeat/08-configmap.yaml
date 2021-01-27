@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: journalbeat-config
+  namespace: kube-system
+  labels:
+    k8s-app: journalbeat-logging
+    version: v1
+data:
+  journalbeat.yml: |
+    name: "${NODENAME}"
+    journalbeat.inputs:
+    - paths: []
+      seek: cursor
+      cursor_seek_fallback: tail
+
+    processors:
+    - add_kubernetes_metadata:
+        host: "${NODENAME}"
+        in_cluster: true
+        default_indexers.enabled: false
+        default_matchers.enabled: false
+        indexers:
+          - container:
+        matchers:
+          - fields:
+              lookup_fields: ["container.id"]
+    - decode_json_fields:
+        fields: ["message"]
+        process_array: false
+        max_depth: 1
+        target: ""
+        overwrite_keys: true
+    - drop_event.when:
+        or:
+        - regexp.kubernetes.pod.name: "filebeat-.*"
+        - regexp.kubernetes.pod.name: "journalbeat-.*"
+        - regexp.kubernetes.pod.name: "metrics-server-.*"
+        - equals.syslog.identifier: "audit"
+        - equals.message: "NetworkManager-dispatcher.service: Succeeded."
+        - equals.message: "Started Network Manager Script Dispatcher Service."
+        - regexp.message: '^.*?\bHTTP\/1.1" 202 \b.*?\bkube-probe\b.*?$'
+
+    # Updated to ignore conflict of indices between environments
+    setup.ilm.enabled: false
+    setup.template.enabled: false
+
+    # output.logstash:
+    #  hosts: '${LOGSTASH_HOSTS}'
+    #  compression_level: 7
+
+    output.elasticsearch:
+      hosts: ["http://34.68.27.112:9200"]
+
+
