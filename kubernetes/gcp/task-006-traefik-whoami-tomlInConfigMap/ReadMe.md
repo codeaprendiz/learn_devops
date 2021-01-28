@@ -21,9 +21,9 @@ whoami       ClusterIP      10.109.12.195   <none>         80/TCP               
 
 - Features enabled
 
-![](.ReadMe_images/features-enabled-in-toml-inside-configMap.png)
+![](./../../../images/kubernetes/gcp/task-006-traefik-whoami-tomlInConfigMap/features-enabled-in-toml-inside-configMap.png)
 
 
 - whoami
     
-![](.ReadMe_images/whoami-service.png)
+![](./../../../images/kubernetes/gcp/task-006-traefik-whoami-tomlInConfigMap/whoami-service.png)

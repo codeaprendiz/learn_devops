@@ -39,9 +39,9 @@ token:      COPY_THIS_VALUE
 
 > https://34.67.212.219:30566
 
-![](.README_images/Login_screen.png)
+![](../../../images/kubernetes/gcp/task-001-k8s-dashboard/Login_screen.png)
 
 - Post login screen
 
-![](.README_images/Post_login_screen.png)
+![](../../../images/kubernetes/gcp/task-001-k8s-dashboard/Post_login_screen.png)
 
