@@ -36,3 +36,4 @@
 - [nc](nc/nc.md)
 - [netstat](netstat/netstat.md)
 - [nmap](nmap/nmap.md)
+- [nohup](nohup/nohup.md)
