@@ -61,4 +61,5 @@
 - [umask](umask/umask.md)
 - [uname](uname/uname.md)
 - [uniq](uniq/uniq.md)
+- [unzip](unzip/unzip.md)
 
