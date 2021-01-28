@@ -51,3 +51,4 @@
 - [sudo](sudo/sudo.md)
 - [system](system/system.md)
 - [tail](tail/tail.md)
+- [tar](tar/tar.md)
