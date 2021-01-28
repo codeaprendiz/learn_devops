@@ -44,3 +44,5 @@
 - [ps](ps/ps.md)
 - [rm](rm/rm.md)
 - [rsync](rsync/rsync.md)
+- [scp](scp/scp.md)
+
