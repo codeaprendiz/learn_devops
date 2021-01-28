@@ -50,3 +50,4 @@
 - [ssh](ssh/ssh.md)
 - [sudo](sudo/sudo.md)
 - [system](system/system.md)
+- [tail](tail/tail.md)
