@@ -56,3 +56,4 @@
 - [telnet](telnet/telnet.md)
 - [top](top/top.md)
 - [traceroute](traceroute/traceroute.md)
+- [tty](tty/tty.md)
