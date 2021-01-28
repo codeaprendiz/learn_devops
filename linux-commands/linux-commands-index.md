@@ -71,4 +71,5 @@
 - [whatis](whatis/whatis.md)
 - [whereis](whereis/whereis.md)
 - [which](which/which.md)
+- [xargs](xargs/xargs.md)
 
