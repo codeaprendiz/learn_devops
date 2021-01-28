@@ -47,3 +47,4 @@
 - [scp](scp/scp.md)
 - [sed](sed/sed.md)
 - [sh](sh/sh.md)
+- [sort](sort/sort.md)
