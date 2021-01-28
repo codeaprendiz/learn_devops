@@ -41,8 +41,8 @@ $ kubectl apply -f .
 
 - Now create one `index-patters` in kibana console
 
-![](.ReadMe_images/creating-index-pattern.png)
+![](../../../images/kubernetes/gcp/task-016-journalbeat/creating-index-pattern.png)
 
 - Now navigate to `Discover` on the console and you will be able to see the logs
 
-![](.ReadMe_images/logs-dashboard.png)
+![](../../../images/kubernetes/gcp/task-016-journalbeat/logs-dashboard.png)
