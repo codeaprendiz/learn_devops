@@ -58,3 +58,7 @@
 - [traceroute](traceroute/traceroute.md)
 - [tty](tty/tty.md)
 - [ulimit](ulimit/ulimit.md)
+- [umask](umask/umask.md)
+- [uname](uname/uname.md)
+- []
+
