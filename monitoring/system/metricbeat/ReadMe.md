@@ -3,15 +3,15 @@
 
 |               Stats                                                |           Visualization                                                                                                                                     | 
 |--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------ | 
-|[Number of hosts](#Number-of-hosts)                                 | ![](https://github.com/codeaprendiz/_assets/blob/master/monitoring-kitchen/system/metricbeat/number-of-hosts.png)                                           | 
-|[CPU Usage Guage](#CPU-Usage-Gauge)                                 | ![](https://github.com/codeaprendiz/_assets/blob/master/monitoring-kitchen/system/metricbeat/cpu-usage-guage.png)                                           | 
-|[Memory Usage Gauge](#Memory-Usage-Gauge)                           | ![](https://github.com/codeaprendiz/_assets/blob/master/monitoring-kitchen/system/metricbeat/memory-usage-guage.png)                                        | 
-|[Disk used](#Disk-used)                                             | ![](https://github.com/codeaprendiz/_assets/blob/master/monitoring-kitchen/system/metricbeat/disk-used.png)                                                 | 
-|[Inbound Traffic](#Inbound-Traffic)                                 | ![](https://github.com/codeaprendiz/_assets/blob/master/monitoring-kitchen/system/metricbeat/inbound-traffic.png)                                           | 
-|[Outbound Traffic](#Outbound-Traffic)                               | ![](https://github.com/codeaprendiz/_assets/blob/master/monitoring-kitchen/system/metricbeat/outbound-traffic.png)                                          | 
-|[Top Hosts By CPU Realtime](#Top-Hosts-By-CPU-Realtime)             | ![](https://github.com/codeaprendiz/_assets/blob/master/monitoring-kitchen/system/metricbeat/top-hosts-by-cpu-realtime.png)                                 | 
-|[Top Hosts By Memory Realtime](#Top-Hosts-By-Memory-Realtime)       | ![](https://github.com/codeaprendiz/_assets/blob/master/monitoring-kitchen/system/metricbeat/top-hosts-by-memory-realtime.png)                              | 
-|[Host histogram by CPU usage](#Hosts-histogram-by-CPU-usage)        | ![](https://github.com/codeaprendiz/_assets/blob/master/monitoring-kitchen/system/metricbeat/host-histogram-by-cpu-usage.png)                                |
+|[Number of hosts](#Number-of-hosts)                                 | ![](../../../images/monitoring/system/metricbeat/number-of-hosts.png)                                           | 
+|[CPU Usage Guage](#CPU-Usage-Gauge)                                 | ![](../../../images/monitoring/system/metricbeat/cpu-usage-guage.png)                                           | 
+|[Memory Usage Gauge](#Memory-Usage-Gauge)                           | ![](../../../images/monitoring/system/metricbeat/memory-usage-guage.png)                                        | 
+|[Disk used](#Disk-used)                                             | ![](../../../images/monitoring/system/metricbeat/disk-used.png)                                                 | 
+|[Inbound Traffic](#Inbound-Traffic)                                 | ![](../../../images/monitoring/system/metricbeat/inbound-traffic.png)                                           | 
+|[Outbound Traffic](#Outbound-Traffic)                               | ![](../../../images/monitoring/system/metricbeat/outbound-traffic.png)                                          | 
+|[Top Hosts By CPU Realtime](#Top-Hosts-By-CPU-Realtime)             | ![](../../../images/monitoring/system/metricbeat/top-hosts-by-cpu-realtime.png)                                 | 
+|[Top Hosts By Memory Realtime](#Top-Hosts-By-Memory-Realtime)       | ![](../../../images/monitoring/system/metricbeat/top-hosts-by-memory-realtime.png)                              | 
+|[Host histogram by CPU usage](#Hosts-histogram-by-CPU-usage)        | ![](../../../images/monitoring/system/metricbeat/host-histogram-by-cpu-usage.png)                                |
 
 
 
