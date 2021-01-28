@@ -69,4 +69,5 @@
 - [wc](wc/wc.md)
 - [wget](wget/wget.md)
 - [whatis](whatis/whatis.md)
+- [whereis](whereis/whereis.md)
 
