@@ -1,11 +1,11 @@
 
-#### truncating files
+### truncating files
 
 ```bash
 >/catalina.out
 ```
 
-#### du
+### du
 
 To get all the large files with size greater than 1000MB
 
@@ -35,7 +35,7 @@ $ rm -rf tmp
 ```
 
 
-#### egrep
+### egrep
 
 To change all occurrences of 'AdminServer' with 'prdAdminServer'
 
@@ -58,7 +58,7 @@ $ egrep "ns-exports-interfaces*" `find . -type f -print` | egrep -v ".svn|^Binar
 ```
 
 
-#### find
+### find
 
 To find specific pom files and zip them into a file
 
@@ -97,7 +97,7 @@ $ find . -name "*xml" -exec egrep -n -A 2 "*insert into gen_mst_rpt *" -v "*inse
 ```
 
 
-#### for
+### for
 
 Example of customized case when we can check the SVN URLs
 
@@ -114,7 +114,7 @@ You can also remove all those files but BE VERY CAREFUL when you execute rm -rf 
 for j in `find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \)`;do echo $j; ls -ltrh $j; done;
 ```
 
-#### nohup
+### nohup
 
 To run the sql queries in background 
 
@@ -122,7 +122,7 @@ To run the sql queries in background
 nohup sqlplus USERNAME/PASSWORD@DBNAME @/apps/home/dbfile.sql &
 ```
 
-#### ps
+### ps
 
 ```bash
 ps -p <pid> -o %cpu,%mem,cmd

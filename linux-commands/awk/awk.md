@@ -22,6 +22,7 @@ $
 ```
 
 2. Print only elements from column 2 that match pattern using stdin 
+
 ```bash
 $ awk ' /'pattern'/ {print $2} '
 this is first line
@@ -35,6 +36,7 @@ $
 ```
 
 3. Classic "Hello, world" in awk 
+
 ```bash
 $ awk "BEGIN { print \"Hello, world\" }"
 Hello, world
@@ -56,6 +58,7 @@ $
 ```
 
 5. Extract first and last column of a text file
+
 ```bash
 awk '{print $1, $NF}' filename
 ```
