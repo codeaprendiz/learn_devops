@@ -34,43 +34,43 @@ The following options are available:
 
 ### EXAMPLES
 
-1. Check the file system disk usage of current file system of logged in user
+- Check the file system disk usage of current file system of logged in user
 
 ```bash
 df -kh .
 ```
 
-2. Display information of all file system disk space usage
+- Display information of all file system disk space usage
 
 ```bash
 df -a
 ```
 
-3. Show disk space usage in human readable format
+- Show disk space usage in human readable format
 
 ```bash
 df -h
 ```
 
-4. Display information of /home file system
+- Display information of /home file system
 
 ```bash
 df -hT /home
 ```
 
-5. Display information of file system in bytes
+- Display information of file system in bytes
 
 ```bash
 df -k
 ```
 
-6. Display information of file system in mb
+- Display information of file system in mb
 
 ```bash
 df -m
 ```
 
-7. Display information of file system in gb
+- Display information of file system in gb
 
 ```bash
 df -h

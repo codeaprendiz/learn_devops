@@ -32,7 +32,7 @@ The following options are available:
 
 ### EXAMPLES
 
-1. Run the following command on the terminal
+- Run the following command on the terminal
 
 > cp -R {source-path} {destination-path}
 

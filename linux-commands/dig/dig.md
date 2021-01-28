@@ -128,7 +128,7 @@ You can also see the exact moment in time that I requested this information, and
 
 ### EXAMPLE
 
-1. 
+- dig +trace 
 
 ```bash
 $ dig +trace www.example.com
@@ -175,7 +175,7 @@ example.com. 86400 IN NS b.iana-servers.net.
 ;; Received 97 bytes from 199.43.135.53#53(199.43.135.53) in 221 ms
 ```
 
-2. Similar to above example we can get an authoritative answer if we pass the dns server also
+- Similar to above example we can get an authoritative answer if we pass the dns server also
    Here in response note that the AUTHORITY=1 and we specifically have an AUTHORITY section.
    
 ```bash

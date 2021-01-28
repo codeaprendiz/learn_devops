@@ -9,7 +9,7 @@ awk - pattern-directed scanning and processing language
 
 ### EXAMPLES
 
-1. Print only columns one and three using stdin
+- Print only columns one and three using stdin
 
 ```bash
 $ awk ' {print $1,$3} '
@@ -21,7 +21,7 @@ this one
 $ 
 ```
 
-2. Print only elements from column 2 that match pattern using stdin 
+- Print only elements from column 2 that match pattern using stdin 
 
 ```bash
 $ awk ' /'pattern'/ {print $2} '
@@ -35,7 +35,7 @@ at
 $
 ```
 
-3. Classic "Hello, world" in awk 
+- Classic "Hello, world" in awk 
 
 ```bash
 $ awk "BEGIN { print \"Hello, world\" }"

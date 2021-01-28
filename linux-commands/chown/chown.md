@@ -21,7 +21,9 @@ The options are as follows:
   * Change the user ID and/or the group ID for the file hierarchies rooted in the files instead of just the files themselves.
   
 ### EXAMPLES
-1. To change the ownership recursively.
+
+- To change the ownership recursively.
+
 ```bash
 chown -R username:username /home/looker/.ssh/id_rsa.pub && chmod 644 /home/looker/.ssh/id_rsa.pub
 ```  

@@ -14,7 +14,8 @@ chage - change user password expiry information
   
 ### EXAMPLE
 
-1. To get the password expiry information of the current user using the system, you can use
+- To get the password expiry information of the current user using the system, you can use
+
 ```bash
 chage -l $USER
 ```

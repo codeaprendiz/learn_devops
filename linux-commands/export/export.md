@@ -27,13 +27,13 @@ In general, the export command marks an environment variable to be exported with
 
 ### EXAMPLES
 
-1. To export and add new executable in PATH
+- To export and add new executable in PATH
 
 ```bash
 unzip /app/apache-maven-3.5.3.zip -d /app; chown -R app:app /app; export PATH=$PATH:/app/apache-maven-3.5.3/bin 
 ```
 
-2. Think over the following example:
+- Think over the following example:
 
 ```bash
 $ a=domain.com
@@ -55,7 +55,7 @@ From the above we can see that any new child process forked from a parent proces
 
 This is where the export command comes handy. 
 
-3. What follows is a new version of the above example using the export command:
+- What follows is a new version of the above example using the export command:
 
 ```bash
 $ a=domain.com
@@ -68,5 +68,7 @@ domain.com
 ```
 
 On the line 3 we have now used the export command to make the variable "a" to be exported when a new child process is created. 
+
 As a result the variable "a" still contains the string "domain.com" even after a new bash shell was created. 
+
 It is important to note that, in order to export the variable "a" to be available in the new process, the process must be forked from the parent process where the actual variable was exported.

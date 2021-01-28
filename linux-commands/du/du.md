@@ -30,13 +30,13 @@ If no file is specified, the block usage of the hierarchy rooted in the current 
 
 ### EXAMPLE
 
-1. To get filesize of all contents of current dir
+- To get filesize of all contents of current dir
 
 ```bash
 -bash-3.2$ ls | xargs du -sh
 ```
 
-2. Human readable
+- Human readable
 
 ```bash
 [username@hostname ~]$ du -h
@@ -48,7 +48,7 @@ If no file is specified, the block usage of the hierarchy rooted in the current 
 2.1M    JMSFilestore-mis
 ```
 
-3. With -a option
+- With -a option
 
 ```bash
 du -a Certificates/
