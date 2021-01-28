@@ -135,3 +135,9 @@ To check which all Oracle Databases are running in the DB server
 oracle   23274     1  0 Aug19 ?        00:11:08 ora_pmon_db1
 oracle   23689     1  0 Aug19 ?        00:12:12 ora_pmon_db2
 ```
+
+To login using the bastion server
+
+```bash
+$ ssh -o ProxyCommand="ssh -i private_key_to_login.pem -W %h:%p ubuntu@bastion.host.link" -i private_key_to_login.pem ubuntu@172.126.146.224 -vvvvv
+```
