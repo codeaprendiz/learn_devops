@@ -34,3 +34,4 @@
 - [mkdir](mkdir/mkdir.md)
 - [mount](mount/mount.md)
 - [nc](nc/nc.md)
+- [netstat](netstat/netstat.md)
