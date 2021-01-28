@@ -56,7 +56,9 @@ The system maintains a list of currently mounted file systems.  If no arguments 
 **Seeing a list of mounted filesystems**
 
   * In order to determine what filesystems are currently being used type the command:
-    * $ mount
+    ```bash
+     $ mount
+    ``` 
   * When you type this at a command prompt, this command will display all the mounted devices, the filesystem type it is mounted as, and the mount point. The mount point being local directory that is assigned to a filesystem during the process of mounting
 
 **How to mount filesystems**
@@ -67,8 +69,9 @@ The system maintains a list of currently mounted file systems.  If no arguments 
 
   * As our first example, lets use a real world example of accessing your Windows files from a floppy in Linux.
   * In order to mount a device to a particular folder, that folder must exist. Many Linux distributions will contain a /mnt folder, or even a /mnt/floppy folder, that is used to mount various devices. If the folder that you would like to mount the device to exists, then you are all set. If not you need to create it like this:
- 
-  > $ mkdir /mnt/floppy
+    ```bash
+    $ mkdir /mnt/floppy
+    ```
 
 
   * This command will have now created a directory called /mnt/floppy. The next step would be to mount the filesystem to that folder or mount point.
