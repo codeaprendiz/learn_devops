@@ -70,4 +70,5 @@
 - [wget](wget/wget.md)
 - [whatis](whatis/whatis.md)
 - [whereis](whereis/whereis.md)
+- [which](which/which.md)
 
