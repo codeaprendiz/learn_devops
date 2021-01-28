@@ -99,6 +99,39 @@ $ find . -name "*xml" -exec egrep -n -A 2 "*insert into gen_mst_rpt *" -v "*inse
 
 #### for
 
-```bash
+Example of customized case when we can check the SVN URLs
 
+```bash
+for i in `cat  ~/.BUILD_SCRIPTS_AREA/modules.full`; do svn info $i | grep URL; done | awk {'print $2'} 
+```
+
+
+To check and print all the log files in path /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ which have not been modified since last 3 days and can be of type *.log OR *.txt
+
+You can also remove all those files but BE VERY CAREFUL when you execute rm -rf instead of ls -ltrh
+
+```bash
+for j in `find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \)`;do echo $j; ls -ltrh $j; done;
+```
+
+#### nohup
+
+To run the sql queries in background 
+
+```bash
+nohup sqlplus USERNAME/PASSWORD@DBNAME @/apps/home/dbfile.sql &
+```
+
+#### ps
+
+```bash
+ps -p <pid> -o %cpu,%mem,cmd
+```
+
+To check which all Oracle Databases are running in the DB server
+
+```bash
+[username@hostname ~]$ ps -ef | grep pmon | grep oracle
+oracle   23274     1  0 Aug19 ?        00:11:08 ora_pmon_db1
+oracle   23689     1  0 Aug19 ?        00:12:12 ora_pmon_db2
 ```
