@@ -60,5 +60,5 @@
 - [ulimit](ulimit/ulimit.md)
 - [umask](umask/umask.md)
 - [uname](uname/uname.md)
-- []
+- [uniq](uniq/uniq.md)
 
