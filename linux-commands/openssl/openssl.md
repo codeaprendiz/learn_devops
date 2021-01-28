@@ -338,5 +338,5 @@ notAfter=Nov  9 23:47:37 2019 GMT
 To get detailed information
 
 ```bash
-$ openssl x509 -in georgebackend.oms.prod.company.com.pem -text -noout                                                                                                             
+$ openssl x509 -in georgebackend.oms.prod.company.com.pem -text -noout                                                                                                             ``
 ```
