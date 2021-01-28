@@ -48,3 +48,4 @@
 - [sh](sh/sh.md)
 - [sort](sort/sort.md)
 - [ssh](ssh/ssh.md)
+- [sudo](sudo/sudo.md)
