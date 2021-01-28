@@ -45,4 +45,4 @@
 - [rm](rm/rm.md)
 - [rsync](rsync/rsync.md)
 - [scp](scp/scp.md)
-
+- [sed](sed/sed.md)
