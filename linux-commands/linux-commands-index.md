@@ -66,4 +66,5 @@
 - [vi](vi/vi.md)
 - [vmstat](vmstat/vmstat.md)
 - [wall](wall/wall.md)
+- [wc](wc/wc.md)
 
