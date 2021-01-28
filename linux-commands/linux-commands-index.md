@@ -65,4 +65,5 @@
 - [uptime](uptime/uptime.md)
 - [vi](vi/vi.md)
 - [vmstat](vmstat/vmstat.md)
+- [wall](wall/wall.md)
 
