@@ -5,4 +5,4 @@
 - [tls](tls/tls-basics.md)
 - [kubernetes](kubernetes/README.md)
 - [terraform](terraform/README.md)
-
+- [monitoring](monitoring/README.md)
