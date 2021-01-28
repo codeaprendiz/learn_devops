@@ -41,3 +41,4 @@
 - [openssl](openssl/openssl.md)
 - [passwd](passwd/passwd.md)
 - [ping](ping/ping.md)
+- [ps](ps/ps.md)
