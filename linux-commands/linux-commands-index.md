@@ -55,3 +55,4 @@
 - [tee](tee/tee.md)
 - [telnet](telnet/telnet.md)
 - [top](top/top.md)
+- [traceroute](traceroute/traceroute.md)
