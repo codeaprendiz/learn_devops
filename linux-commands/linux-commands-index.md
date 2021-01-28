@@ -67,4 +67,5 @@
 - [vmstat](vmstat/vmstat.md)
 - [wall](wall/wall.md)
 - [wc](wc/wc.md)
+- [wget](wget/wget.md)
 
