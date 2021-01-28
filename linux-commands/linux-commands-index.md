@@ -68,4 +68,5 @@
 - [wall](wall/wall.md)
 - [wc](wc/wc.md)
 - [wget](wget/wget.md)
+- [whatis](whatis/whatis.md)
 
