@@ -52,3 +52,4 @@
 - [system](system/system.md)
 - [tail](tail/tail.md)
 - [tar](tar/tar.md)
+- [tee](tee/tee.md)
