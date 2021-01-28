@@ -62,4 +62,5 @@
 - [uname](uname/uname.md)
 - [uniq](uniq/uniq.md)
 - [unzip](unzip/unzip.md)
+- [uptime](uptime/uptime.md)
 
