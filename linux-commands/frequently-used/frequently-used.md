@@ -136,8 +136,23 @@ oracle   23274     1  0 Aug19 ?        00:11:08 ora_pmon_db1
 oracle   23689     1  0 Aug19 ?        00:12:12 ora_pmon_db2
 ```
 
+### ssh
+
 To login using the bastion server
 
 ```bash
 $ ssh -o ProxyCommand="ssh -i private_key_to_login.pem -W %h:%p ubuntu@bastion.host.link" -i private_key_to_login.pem ubuntu@172.126.146.224 -vvvvv
+```
+
+#### To be documented
+### diff
+
+When you want to check the difference in two files in linux system
+
+```bash
+$ diff /etc/kubernetes/manifests/kube-apiserver.yaml /var/answers/kube-apiserver.yaml
+22c22
+<     - --etcd-cafile=/etc/kubernetes/pki/ca.crt
+---
+>     - --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
 ```
