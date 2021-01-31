@@ -1,8 +1,6 @@
 # kubernetes-kitchen
 
-- [commands](task-000-commands/commands.md)
-- [basics](task-000-commands/basics.md)
-- [docs links](task-000-commands/doclinks.md)
+
 
 ## gcp
 
