@@ -1,14 +1,10 @@
 # kubectl
 
-Command | Examples | 
----    | --- | 
-[apply](#apply) | [To apply the yaml resources.yaml](#apply) |
-
-
-Command | Examples | 
----    | --- | 
-[config](#config) |  [current-context &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To display the current context](#current-context) <br> [current-context &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To display the current context](#current-context) <br> [view &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To display merged kubeconfig settings or a specified kubeconfig file.](#view) <br> [set-credentials &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To set a user 'dave' entry in kubeconfig](#set-credentials) |
-
+- [apply-----------------------------------------To apply the yaml resources.yaml](#apply)
+- [config](#config)
+    - [current-context---------------------------To display the current context](#current-context)
+    - [view--------------------------------------To display merged kubeconfig settings or a specified kubeconfig file.](#view)
+    - [set-credentials---------------------------To set a user 'dave' entry in kubeconfig](#set-credentials)
 - [cordon----------------------------------------Mark node as unschedulable.](#cordon)
 - [create----------------------------------------To create a namespace dev-ns](#create)
     - [--dry-run---------------------------------Generate Deployment YAML file (-o yaml). Don't create it(--dry-run) with 4 Replicas (--replicas=4)](#--dry-run)
