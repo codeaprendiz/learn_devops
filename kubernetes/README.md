@@ -8,13 +8,11 @@
 
 ### Learning Tasks
 
-- [commands](task-000-commands/commands.md)
-- [basics](task-000-commands/basics.md)
-- [docs links](task-000-commands/doclinks.md)
 
 
 Domain | Tasks | 
 ---    | --- | 
+Baby Steps | [commands](task-000-commands/commands.md) <br> [basics](task-000-commands/basics.md) <br> [docs links](task-000-commands/doclinks.md) |
 External IP | [external IP to access Application In Cluster](gcp/task-008-external-IP-to-access-Application-In-Cluster) |
 DNS and Static IPs | [configuring dns with static IPs k8 using-Service](gcp/task-009-configuring-dns-with-static-IPs-k8-using-Service) <br> [configuring dns with static IPs k8 using Ingress](gcp/task-010-configuring-dns-with-static-IPs-k8-using-Ingress) |
 
