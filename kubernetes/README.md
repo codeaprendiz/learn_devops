@@ -11,7 +11,7 @@
 
 Domain | Tasks | 
 ---    | --- | 
-External IP | [task-008-external IP to access Application In Cluster](gcp/task-008-external-IP-to-access-Application-In-Cluster) |
+External IP | [external IP to access Application In Cluster](gcp/task-008-external-IP-to-access-Application-In-Cluster) |
 DNS and Static IPs | [configuring dns with static IPs k8 using-Service](gcp/task-009-configuring-dns-with-static-IPs-k8-using-Service) <br> [configuring dns with static IPs k8 using Ingress](gcp/task-010-configuring-dns-with-static-IPs-k8-using-Ingress) |
 
 
