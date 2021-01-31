@@ -1,6 +1,6 @@
 # kubectl
 
-Domain | Tasks | 
+Command | Examples | 
 ---    | --- | 
 [apply](#apply) | [To apply the yaml resources.yaml](#apply)
 
