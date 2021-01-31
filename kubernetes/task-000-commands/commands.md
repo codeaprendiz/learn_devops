@@ -1,6 +1,7 @@
 # kubectl
 
-- [apply-----------------------------------------To apply the yaml resources.yaml](#apply)
+- [apply    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To apply the yaml resources.yaml](#apply)
+
 - [config](#config)
     - [current-context---------------------------To display the current context](#current-context)
     - [view--------------------------------------To display merged kubeconfig settings or a specified kubeconfig file.](#view)
