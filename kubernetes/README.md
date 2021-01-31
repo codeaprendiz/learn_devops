@@ -6,6 +6,13 @@
 
 ## gcp
 
+Domain | Tasks | 
+---    | --- | 
+Dashboard | [k8s-dashboard](gcp/task-001-k8s-dashboard/)|
+RBAC |  [basic namespace wide kubeconfig](gcp/task-002-basic-namespace-wide-kubeconfig) <br> [intermediate namespace wide kubeconfig](gcp/task-003-intermediate-namespace-wide-kubeconfig)  <br>  [intermediate cluster wide kubeconfig](gcp/task-004-intermediate-cluster-wide-kubeconfig) |
+Traefik | [whoami](gcp/task-005-traefik-whoami) <br>  [whoami toml In ConfigMap](gcp/task-006-traefik-whoami-tomlInConfigMap) <br> [whoami lets encrypt](gcp/task-007-traefik-whoami-lets-encrypt) <br> [whoami tls custom-certs](gcp/task-013-traefik-whoami-tls-custom-certs)| 
+
+
 ### Dashboard
 - [task-001-k8s-dashboard](gcp/task-001-k8s-dashboard/)
 
