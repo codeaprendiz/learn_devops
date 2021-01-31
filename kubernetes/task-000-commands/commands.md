@@ -1,6 +1,5 @@
 # kubectl
 
-<pre>
 - [apply-----------------------------------------To apply the yaml resources.yaml](#apply)
 - [config](#config)
     - [current-context---------------------------To display the current context](#current-context)
@@ -61,8 +60,6 @@
 - [set-------------------------------------------Set a deployment's nginx container image to nginx:1.9.1](#set)
 - [taint-----------------------------------------Update node 'node1' with a taint with key 'app' and value 'blue' and effect 'NoSchedule'.](#taint)
 - [uncordon--------------------------------------Mark node as schedulable.](#uncordon)
-
-</pre>
 
 ```bash         
 
