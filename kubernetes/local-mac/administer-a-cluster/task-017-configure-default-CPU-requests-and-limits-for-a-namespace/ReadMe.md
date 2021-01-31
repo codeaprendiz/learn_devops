@@ -87,3 +87,65 @@ limitrange/cpu-limit-range configured
 pod/default-cpu-demo-2 created
 pod/default-cpu-demo unchanged
 ```
+
+- Check the changes
+
+```bash
+$ kubectl get pod default-cpu-demo-2 --output=yaml --namespace=default-cpu-example | egrep -i "resources:" -A 4 | egrep -v "f:|{|-"
+    resources:
+      limits:
+        cpu: "1"
+      requests:
+        cpu: "1"
+```
+
+The output shows that the Container's CPU request is set to match its CPU limit. Notice that the Container was not assigned the default CPU request value of 0.5 cpu.
+
+
+**What if you specify a Container's request, but not its limit?**
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: default-cpu-demo-3
+spec:
+  containers:
+  - name: default-cpu-demo-3-ctr
+    image: nginx
+    resources:
+      requests:
+        cpu: "0.75"
+```
+
+- Apply the changes
+
+```bash
+$ kubectl apply -f . --namespace=default-cpu-example                                                                               
+limitrange/cpu-limit-range configured
+pod/default-cpu-demo-2 unchanged
+pod/default-cpu-demo unchanged
+pod/default-cpu-demo-3 created
+```
+
+- Check the changes
+
+```bash
+$ kubectl get pod default-cpu-demo-3 --output=yaml --namespace=default-cpu-example | egrep -i "resources:" -A 4 | egrep -v "f:|{|-"
+    resources:
+      limits:
+        cpu: "1"
+      requests:
+        cpu: 750m
+```
+
+
+- Delete the resources
+
+```bash
+$ kubectl delete -f . --namespace=default-cpu-example                                                                              
+limitrange "cpu-limit-range" deleted
+pod "default-cpu-demo-2" deleted
+pod "default-cpu-demo" deleted
+pod "default-cpu-demo-3" deleted
+```
