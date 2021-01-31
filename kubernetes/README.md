@@ -7,6 +7,8 @@
 ## gcp
 
 ### Learning Tasks
+
+
 Domain | Tasks | 
 ---    | --- | 
 External IP | [task-008-external IP to access Application In Cluster](gcp/task-008-external-IP-to-access-Application-In-Cluster) |
