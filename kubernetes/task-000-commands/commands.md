@@ -2,9 +2,12 @@
 
 Command | Examples | 
 ---    | --- | 
-[apply](#apply) | [To apply the yaml resources.yaml](#apply)
+[apply](#apply) | [To apply the yaml resources.yaml](#apply) |
 
 
+Command | Examples | 
+---    | --- | 
+[config](#config) |  [current-context &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To display the current context](#current-context) <br>  |
 - [config](#config)
     - [current-context---------------------------To display the current context](#current-context)
     - [view--------------------------------------To display merged kubeconfig settings or a specified kubeconfig file.](#view)
