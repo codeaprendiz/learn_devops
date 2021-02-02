@@ -1,5 +1,7 @@
 ## dig
 
+[dig](https://linux.die.net/man/1/dig)
+
 ### NAME
 
 dig - DNS lookup utility
@@ -40,6 +42,10 @@ If no type argument is supplied, dig will perform a lookup for an A record.
       Tracing is disabled by default. 
       When tracing is enabled, dig makes iterative queries to resolve the name being looked up. 
       It will follow referrals from the root servers, showing the answer from each server that was used to resolve the lookup.
+      
+- -t
+
+  - The -t option sets the query type to type      
 
 **OUTPUT EXPLANATION**
 
@@ -201,3 +207,24 @@ example.com. 3600 IN SOA dns1.p08.nsone.net. hostmaster.nsone.net. 1528386225 43
 ;; MSG SIZE  rcvd: 94
 ```
 
+- To validate TXT DNS record type
+
+```bash
+$ dig -t txt company.com
+; <<>> DiG 9.10.6 <<>> -t txt company.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35904
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4000
+;; QUESTION SECTION:
+;company.com.                 IN      TXT
+;; ANSWER SECTION:
+company.com.          99      IN      TXT     "sitebook-domain-verification=5tasdfawer23lksdfjasof2349238qs177h9h"
+company.com.          99      IN      TXT     "lopgle-site-verification=22nceW2432fdsf41GDnKzLhZasdf3410N1gGv9DC__VPaMocsdfdsf342344MuphZsrU"
+;; Query time: 134 msec
+;; SERVER: 192.168.0.100#53(192.168.0.100)
+;; WHEN: Tue Feb 02 16:53:43 +04 2021
+;; MSG SIZE  rcvd: 268
+```

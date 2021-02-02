@@ -1,3 +1,4 @@
+## linux commands
 - [frequently-used](frequently-used/frequently-used.md)
 - [awk](awk/awk.md)
 - [chage](chage/chage.md)
@@ -9,6 +10,7 @@
 - [curl](curl/curl.md)
 - [cut](cut/cut.md)
 - [df](df/df.md)
+- [diff](diff/diff.md)
 - [dig](dig/dig.md)
 - [dir](dir/dir.md)
 - [dos2unix](dos2unix/dos2unix.md)
@@ -46,6 +48,7 @@
 - [scp](scp/scp.md)
 - [sed](sed/sed.md)
 - [sh](sh/sh.md)
+- [setenforce](setenforce/setenforce.md)
 - [sort](sort/sort.md)
 - [ssh](ssh/ssh.md)
 - [sudo](sudo/sudo.md)
@@ -74,3 +77,7 @@
 - [xargs](xargs/xargs.md)
 - [zcat](zcat/zcat.md)
 - [zip](zip/zip.md)
+
+
+
+
