@@ -4,6 +4,7 @@
 - [3>&1 1>&2 2>&3, >/dev/null 2>&1, ](#dev-null-and-others-usually-used-in-redirection)
 - [Sepcial Variables](#special-variables)
 - [Special Files](#special-files)
+- [CORE DNS](#core-dns)
 
 ## output-redirection 
 
@@ -378,4 +379,39 @@ $ cat /etc/sysctl.conf
 
 # Uncomment the line
 net.ipv4.ip_forward=1
+```
+
+
+### core-dns
+
+We are given a server dedicated as the DNS server, and a set of Ips to configure as entries in the server. There are many DNS server solutions out there.
+We will focus on a particular one – CoreDNS.
+
+So how do you get core dns? CoreDNS binaries can be downloaded from their Github releases page or as a docker image. Let’s go the traditional route. Download the binary using curl or wget. And extract it. You get the coredns executable.
+
+```bash
+$ wget LINK
+
+$ tar -xzvf coredns_version_amd64.tgz
+
+$ ./coredns
+```
+
+Run the executable to start a DNS server. It by default listens on port 53, which is the default port for a DNS server.
+
+Now we haven’t specified the IP to hostname mappings. For that you need to provide some configurations. There are multiple ways to do that. We will look at one. First we put all of the entries into the DNS servers /etc/hosts file.
+
+And then we configure CoreDNS to use that file. CoreDNS loads it’s configuration from a file named Corefile. Here is a simple configuration that instructs CoreDNS to fetch the IP to hostname mappings from the file /etc/hosts. When the DNS server is run, it now picks the Ips and names from the /etc/hosts file on the server.
+
+```bash
+$ cat /etc/hosts
+192.168.1.9 web
+192.168.1.10 db
+
+$ cat Corefile
+{
+  hosts /etc/hosts
+}
+
+./coredns
 ```
