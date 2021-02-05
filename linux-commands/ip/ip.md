@@ -280,12 +280,13 @@ $ ip netns exec red arp
     2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1460 qdisc mq state UP mode DEFAULT group default qlen 1000
         link/ether 42:01:0a:80:00:26 brd ff:ff:ff:ff:ff:ff
   ```
+  
   - we will use the Linux Bridge option to create an internal bridge network.
     We add a new interface to the host using the IP link. 
     
-    ```bash
-    $ ip link add v-net-0 type bridge
-    ```
+  ```bash
+  $ ip link add v-net-0 type bridge
+  ```
     
   - Interfaces after we have created v-net-0
   
@@ -316,6 +317,7 @@ $ ip netns exec red arp
     Now we will be connecting all namespaces to the bridge network, so we need new cables for that purpose.
     This cable doesn't make sense anymore, so we will get rid of it.  
     When you delete one end (veth-red) the other end gets deleted automatically.
+    
   ```bash
   $ ip -n red link del veth-red
   ```
@@ -350,4 +352,51 @@ $ ip netns exec red arp
 
 
   - Now the host has the IP address 192.168.1.2, if it tries to ping on of these interfaces it would fail as they
-    are on different networks.
+    are on different networks. The bridge switch is actually a network interface for the host and we can assign an 
+    IP address to it. Once assigned, we can now ping the red namespace `ping 192.168.15.1` from the host
+    
+  ```bash
+  $ ip addr add 192.168.15.5/24 dev v-net-0
+  ```
+
+- Say there is another host attached to our network with the address 190.168.1.3
+  How can I reach this host from within my name spaces?
+
+![](../../images/linux-commands/ip/how-to-reach-other-host-from-namespace-network.png)  
+
+  - So we need to add an entry into the routing table to provide a gateway or door to the outside world.
+    So how do we find that gateway?
+    A door or a gateway, as we discussed before, is a system on the local network that connects to the
+    other network.
+    
+  - What is a system that has one interface on the network local to the blue namespace, which is the 192.168.1.15 
+    network and is also connected to the outside LAN network
+    
+  - Remember, our local host has an interface to attach to the private network so you can ping the namespaces.
+    So our localhost is the gateway that connects the two networks together. So we can add the following route entry
+    in the bluenamespace
+    
+    ```bash
+    $ ip netns exec blue ip route add 192.168.1.0/24 via 192.168.15.5
+    ```
+    
+  - We need NAT enabled on our host acting as the gateway here so that it can send the messages to the LAN
+    in its own name with its own address.
+    
+    - You should do that using IP tables, add a new rule in the net IP table, in the post routing chain to
+      masquerade or replace the from address on all packets coming from the source network 
+      192.168.15.0 with its own IP address.
+      That way, anyone receiving these packets outside the network will think that they're coming from the
+      host and not from within. When we try to ping now `ping 192.168.1.3` we will see that we are able to receive a response
+    
+  ```bash
+  $ iptables -t nat -A POSTROUTING -s 192.168.15.0/24 -j MASQUERADE
+  ```
+
+  - Now how do we reaach the internet from the blue namespace
+    We can simply say that to reach any external network, talk to our host so we add a default gateway
+    specifying our host.
+  
+  ```bash
+  $ ip netns exec blue ip route add default via 192.168.15.5
+  ```
