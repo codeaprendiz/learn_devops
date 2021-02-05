@@ -400,3 +400,13 @@ $ ip netns exec red arp
   ```bash
   $ ip netns exec blue ip route add default via 192.168.15.5
   ```
+
+  - Now how does the host 192.168.1.3 reach the blue namespace. We can add a port-forwarding rule 
+    on 192.168.1.2 saying that any traffic coming to port 80 on the localhost is to be forwared to the 
+    port 80 on the IP assigned to the blue namespace.
+
+  ```bash
+  $ iptables -t nat -A PREROUTING --dport 80 --to-destination 192.168.15.2:80 -j DNAT  
+  ```
+
+![](../../images/linux-commands/ip/reaching-blue-namespace-from-outside-network.png)
