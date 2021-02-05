@@ -33,6 +33,10 @@ add new protocol address.
 
 network device
 
+##### link add
+
+
+
 #### netns
 
 network namespace
@@ -162,7 +166,10 @@ $ ip netns add blue
 ```bash
 # ip netns
 red
+blue
 ```
+
+![](../../images/linux-commands/ip/list-network-namespaces-on-host.png)
 
 - List the network interfaces on the host
 
@@ -199,5 +206,148 @@ _gateway                 ether   42:01:0a:80:00:01   C                     ens4
 
 ## inside the namespace
 $ ip netns exec red arp
-
 ```
+
+- To create a virtual cable with two interfaces on either end
+
+```bash
+$ ip link add veth-red type veth peer name veth-blue
+```
+
+- The next step is to attach each interface to the appropriate namespace
+
+```bash
+$ ip link set veth-red netns red
+```
+
+- Similarly, attach the blue interface to the blue namespace.
+
+```bash
+$ ip link set veth-blue netns blue
+```
+
+- We can then assign IP addresses to each of these names faces.
+  We will use the usual IP ADR command to assign the IP address, 
+  
+```bash
+$ ip -n red addr add 192.168.15.1 dev veth-red
+```
+
+- Similarly assign the IP address to the blue namespace
+
+```bash
+$ ip -n blue addr add 192.168.15.2 dev veth-blue
+```
+
+- We then bring up the interface using the IP link, set up command for each device within the respective
+  namespace 
+
+```bash
+$ ip -n red link set veth-red up
+$ ip -n blue link set veth-blue up
+```
+
+![](../../images/linux-commands/ip/connecting-veth-red-and-veth-blue-in-red-and-blue-namespaces.png)
+
+- Now try to ping blue namespace from red
+
+```bash
+$ ip netns exec red ping 192.168.15.2
+```
+
+- You can check the ARP table of the red namespace
+
+```bash
+$ ip netns exec red arp
+```
+
+![](../../images/linux-commands/ip/arp-table-of-namespaces-and-host.png)
+
+
+- What do you do when you have more of them?
+  How do you enable all of them to communicate with each other?
+  Just like in the physical world, you create a virtual network inside your host, create a network,
+  you need a switch. So to create a virtual network.
+  You need a virtual switch.
+  So you create a virtual switch within our host and connect the namespace us to it.
+
+  - interfaces on host before we create anything new
+  
+  ```bash
+  $ ip link
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1460 qdisc mq state UP mode DEFAULT group default qlen 1000
+        link/ether 42:01:0a:80:00:26 brd ff:ff:ff:ff:ff:ff
+  ```
+  - we will use the Linux Bridge option to create an internal bridge network.
+    We add a new interface to the host using the IP link. 
+    
+    ```bash
+    $ ip link add v-net-0 type bridge
+    ```
+    
+  - Interfaces after we have created v-net-0
+  
+  ```bash
+  $ ip link
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1460 qdisc mq state UP mode DEFAULT group default qlen 1000
+        link/ether 42:01:0a:80:00:26 brd ff:ff:ff:ff:ff:ff
+    5: v-net-0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+        link/ether ea:dd:c0:38:b0:fc brd ff:ff:ff:ff:ff:ff
+  ```
+  
+  - It's currently down. So you need to turn it up
+  
+  ```bash
+  $ ip link set dev v-net-0 up
+  ```
+
+![](../../images/linux-commands/ip/v-net-0-created-on-the-host.png)    
+    
+  - Now for the namespace.  
+    This interface is like a switch that it can connect to.
+    So think of it as an interface for the host and a switch for the namespace.
+    
+  - Earlier we created the cable or `veth peer`  with the veth-red interface on one end and veth blue interface on
+    another because we wanted to connect the two namespaces directly.
+    Now we will be connecting all namespaces to the bridge network, so we need new cables for that purpose.
+    This cable doesn't make sense anymore, so we will get rid of it.  
+    When you delete one end (veth-red) the other end gets deleted automatically.
+  ```bash
+  $ ip -n red link del veth-red
+  ```
+
+  - Let's crete a new cable with one end as veth-red and other end as veth-red-br as it connects to the
+    bridge network. Similarly create one for the blue namespace
+  
+  ```bash
+  $ ip link add veth-red type veth peer name veth-red-br
+  $ $ ip link add veth-blue type veth peer name veth-blue-br
+  ```
+
+  - Now attach one end of the cable to the red namespace and other end to v-eth-0 where v-eth-0 is the master
+  - Repeate the for the blue namespace
+  ```bash
+  $ ip link set veth-red netns red
+  $ ip link set veth-red-br master v-eth-0
+  $ ip link set veth-blue netns blue
+  $ ip link set veth-blue-br master v-eth-0    
+  ```
+
+  - Let us assin the IP addresses for these links and turn them up
+  
+  ```bash
+  $ ip -n red addr add 192.168.15.1 dev veth-red
+  $ ip -n blue addr add 192.168.15.2 dev veth-blue
+  $ ip -n red link set veth-red up
+  $ ip -n blue link set veth-blue up
+  ```
+    
+![](../../images/linux-commands/ip/connecting-namespaces-using-linux-bridge.png)
+
+
+  - Now the host has the IP address 192.168.1.2, if it tries to ping on of these interfaces it would fail as they
+    are on different networks.
