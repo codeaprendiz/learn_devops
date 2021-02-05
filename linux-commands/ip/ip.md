@@ -50,20 +50,27 @@ Manipulate route entries in the kernel routing tables keep information about pat
     
   - To see the interfaces on the host we use the following command
     ```bash
-    $ ip link
-    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP mode DEFAULT group default qlen 1000
+    $ $ ip link
+      1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+          link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+      2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1460 qdisc mq state UP mode DEFAULT group default qlen 1000
+          link/ether 42:01:0a:80:00:26 brd ff:ff:ff:ff:ff:ff
     ```
 
   - To see the IP Address interfaces.
     ```bash
-    $ ip addr 
+    $ ip address
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
         inet 127.0.0.1/8 scope host lo
            valid_lft forever preferred_lft forever
         inet6 ::1/128 scope host 
+           valid_lft forever preferred_lft forever
+    2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1460 qdisc mq state UP group default qlen 1000
+        link/ether 42:01:0a:80:00:26 brd ff:ff:ff:ff:ff:ff
+        inet 10.128.0.38/32 scope global dynamic ens4
+           valid_lft 3020sec preferred_lft 3020sec
+        inet6 fe80::4001:aff:fe80:26/64 scope link 
            valid_lft forever preferred_lft forever
     ```
 
@@ -133,7 +140,8 @@ Manipulate route entries in the kernel routing tables keep information about pat
 
 ```bash
 $ ip route
-
+default via 10.128.0.1 dev ens4 proto dhcp src 10.128.0.38 metric 100 
+10.128.0.1 dev ens4 proto dhcp scope link src 10.128.0.38 metric 100 
 ```
 
 - Command to check if IP forwarding is enabled on a host
