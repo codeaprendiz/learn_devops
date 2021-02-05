@@ -33,6 +33,10 @@ add new protocol address.
 
 network device
 
+#### netns
+
+network namespace
+
 #### route 
 
 Manipulate route entries in the kernel routing tables keep information about paths to other networked nodes.
@@ -144,3 +148,56 @@ default via 10.128.0.1 dev ens4 proto dhcp src 10.128.0.38 metric 100
 10.128.0.1 dev ens4 proto dhcp scope link src 10.128.0.38 metric 100 
 ```
 
+
+- Create a network namespace
+
+```bash
+$ ip netns add red
+
+$ ip netns add blue
+```
+
+- List the network namespace
+
+```bash
+# ip netns
+red
+```
+
+- List the network interfaces on the host
+
+```bash
+$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1460 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 42:01:0a:80:00:26 brd ff:ff:ff:ff:ff:ff
+```
+
+- Exec inside the network namespace. Note that you cannot see the
+  `ens4` interface inside the network namepace.
+```bash
+$ ip netns exec red ip link
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+
+### OR
+
+$ ip -n red  link
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+```
+
+- Similarly you can run the arp command on the host and inside the network namespace
+
+
+```bash
+### On the host
+$ arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+_gateway                 ether   42:01:0a:80:00:01   C                     ens4
+
+## inside the namespace
+$ ip netns exec red arp
+
+```

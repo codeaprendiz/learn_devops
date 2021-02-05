@@ -1,5 +1,6 @@
 ## linux commands
 - [frequently-used](frequently-used/frequently-used.md)
+- [arp](arp/arp.md)
 - [awk](awk/awk.md)
 - [chage](chage/chage.md)
 - [chmod](chmod/chmod.md)
