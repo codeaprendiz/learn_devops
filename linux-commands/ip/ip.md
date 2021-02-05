@@ -143,10 +143,3 @@ $ ip route
 default via 10.128.0.1 dev ens4 proto dhcp src 10.128.0.38 metric 100 
 10.128.0.1 dev ens4 proto dhcp scope link src 10.128.0.38 metric 100 
 ```
-
-- Command to check if IP forwarding is enabled on a host
-
-```bash
-$ cat /proc/sys/net/ipv4/ip_forward
-1
-```
