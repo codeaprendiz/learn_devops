@@ -325,6 +325,14 @@ nameserver 172.16.1.254
 nameserver 172.16.2.254
 ```
 
+Here `search` says if I try to run the following command
+
+```bash
+ping web
+```
+
+- Then it would try to looks for `web.example.com` first and then `web.local.lan` and so forth
+
 resolv.conf is usually located in the /etc directory of the file system. The file is either maintained manually, or when DHCP is used, it is usually updated with the utility resolvconf.
 
 ### /proc/sys/fs/file-max vs ulimit
@@ -341,3 +349,15 @@ me@superme:~$ lsof | grep $USER | wc -l
 ```
 
 How do I know if I’m getting close to hitting this limit on my server? Run the command: cat /proc/sys/fs/file-nr. This will return three values, denote the number of allocated file handles, the number of allocated but unused file handles, and the maximum number of file handles. Note that file-nr IS NOT a tunable parameter. It is informational only. On my server, this returns: 3488 0 793759. This means that currently, my server has only allocated 3488 of the 793,759 allocation limit and is in no danger of hitting this limit at this time.
+
+
+###  /proc/sys/net/ipv4/ip_forward
+
+- if IP forwarding is enabled on a host
+  - 1 indicates Yes
+  - 0 indicates No
+
+```bash
+$ cat /proc/sys/net/ipv4/ip_forward
+1
+```
