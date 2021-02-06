@@ -105,3 +105,18 @@ To login using the bastion server
 ```bash
 $ ssh -o ProxyCommand="ssh -i private_key_to_login.pem -W %h:%p ubuntu@bastion.host.link" -i private_key_to_login.pem ubuntu@172.126.146.224 -vvvvv
 ```
+
+To run a command on another machine (like node01) from local (say controlplane)
+
+```bash
+controlplane $ ssh node01 ifconfig ens3
+Warning: Permanently added 'node01,172.17.0.25' (ECDSA) to the list of known hosts.
+ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.25  netmask 255.255.0.0  broadcast 172.17.255.255
+        inet6 fe80::42:acff:fe11:19  prefixlen 64  scopeid 0x20<link>
+        ether 02:42:ac:11:00:19  txqueuelen 1000  (Ethernet)
+        RX packets 136298  bytes 155301021 (155.3 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 50435  bytes 5498608 (5.4 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
