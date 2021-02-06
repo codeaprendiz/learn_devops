@@ -93,7 +93,6 @@ Manipulate route entries in the kernel routing tables keep information about pat
    $ ip addr add 192.168.1.10/24 dev eth0
    ```
  
-![](../../images/linux-commands/ip/net14.PNG)   
    
    Once the links are up, and the IP addresses are assigned,
    The computers can now communicate with each other through the switch. 
@@ -112,7 +111,6 @@ Manipulate route entries in the kernel routing tables keep information about pat
   IP 192.168.2.1. Now we have a router connected to the two networks that can enable communication 
   between them.
   
-![](../../images/linux-commands/ip/net15.PNG)  
 
 - Now, when system B tries to send a packet to system C, how does it know where the router is on the network
   to send the packet through the router is just another device on the network.
@@ -169,7 +167,6 @@ red
 blue
 ```
 
-![](../../images/linux-commands/ip/list-network-namespaces-on-host.png)
 
 - List the network interfaces on the host
 
@@ -247,7 +244,6 @@ $ ip -n red link set veth-red up
 $ ip -n blue link set veth-blue up
 ```
 
-![](../../images/linux-commands/ip/connecting-veth-red-and-veth-blue-in-red-and-blue-namespaces.png)
 
 - Now try to ping blue namespace from red
 
@@ -261,7 +257,6 @@ $ ip netns exec red ping 192.168.15.2
 $ ip netns exec red arp
 ```
 
-![](../../images/linux-commands/ip/arp-table-of-namespaces-and-host.png)
 
 
 - What do you do when you have more of them?
@@ -306,7 +301,6 @@ $ ip netns exec red arp
   $ ip link set dev v-net-0 up
   ```
 
-![](../../images/linux-commands/ip/v-net-0-created-on-the-host.png)    
     
   - Now for the namespace.  
     This interface is like a switch that it can connect to.
@@ -348,7 +342,6 @@ $ ip netns exec red arp
   $ ip -n blue link set veth-blue up
   ```
     
-![](../../images/linux-commands/ip/connecting-namespaces-using-linux-bridge.png)
 
 
   - Now the host has the IP address 192.168.1.2, if it tries to ping on of these interfaces it would fail as they
@@ -362,7 +355,6 @@ $ ip netns exec red arp
 - Say there is another host attached to our network with the address 190.168.1.3
   How can I reach this host from within my name spaces?
 
-![](../../images/linux-commands/ip/how-to-reach-other-host-from-namespace-network.png)  
 
   - So we need to add an entry into the routing table to provide a gateway or door to the outside world.
     So how do we find that gateway?
@@ -409,4 +401,3 @@ $ ip netns exec red arp
   $ iptables -t nat -A PREROUTING --dport 80 --to-destination 192.168.15.2:80 -j DNAT  
   ```
 
-![](../../images/linux-commands/ip/reaching-blue-namespace-from-outside-network.png)
