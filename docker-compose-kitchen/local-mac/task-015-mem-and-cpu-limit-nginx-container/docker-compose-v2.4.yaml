@@ -1,0 +1,9 @@
+version: "2.4"
+services:
+  nginx-service:
+    image: nginx
+    mem_limit: 512m
+    mem_reservation: 128M
+    cpus: 0.5
+    ports:
+      - "80:80"

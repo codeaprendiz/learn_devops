@@ -1,0 +1,13 @@
+groups:
+  - name: alert.rules
+    rules:
+      - alert: service_down
+        expr: probe_success == 0
+        for: 1m
+        labels:
+          severity: 3
+          threshold: critical
+        annotations:
+          summary: "Instance *{{ $labels.instance }}* down"
+          description: "*{{ $labels.instance }}* of job *{{ $labels.job }}* is down"
+

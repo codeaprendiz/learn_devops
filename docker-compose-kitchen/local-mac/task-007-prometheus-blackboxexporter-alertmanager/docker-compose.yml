@@ -1,0 +1,56 @@
+version: '3.7'
+
+networks:
+  host:
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.18.1
+    container_name: prometheus-sandbox
+    volumes:
+      - ${PWD}/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ${PWD}/prometheus/alert.rules.yml:/etc/prometheus/alert.rules.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - '--web.external-url=http://localhost:9090'
+    ports:
+      - 9090:9090
+    networks:
+      - host
+    restart: always
+
+  alertmanager:
+    image: prom/alertmanager:v0.20.0
+    container_name: alertmanager-sandbox
+    links:
+      - prometheus
+    ports:
+      - 9093:9093
+    volumes:
+      - ${PWD}/alertmanager/configuration.yml:/etc/alertmanager/config.yml
+    networks:
+      - host
+    restart: always
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
+
+
+  blackboxexporter:
+    restart: unless-stopped
+
+    image: prom/blackbox-exporter:v0.17.0
+    container_name: blackboxexporter
+    environment:
+      deployment: 'ec2'
+    command:
+      - '--config.file=/etc/blackboxexporter/config.yml'
+    volumes:
+      - ${PWD}/blackboxexporter/config.yml:/etc/blackboxexporter/config.yml
+    networks:
+      - host
+    ports:
+      - 9115:9115

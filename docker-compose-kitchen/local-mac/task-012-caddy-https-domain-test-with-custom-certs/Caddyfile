@@ -1,0 +1,8 @@
+cert-validation-srv.domain.com:443 {
+    tls /etc/ssl/certs/star_domain_com.chained.crt /etc/ssl/certs/star_domain.com.key
+    root * /usr/share/caddy
+    file_server
+    basicauth * {
+            username JDJiJDEyJGIuMEhnMU9IRkhCLlB4cUZPMVpJcWU0azVvdDcxQUdISHFOdE40eDVkdThRODlqRDFJRHJX
+    }
+}

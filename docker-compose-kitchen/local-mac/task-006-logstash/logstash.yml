@@ -1,0 +1,11 @@
+http.host: 0.0.0.0
+xpack.monitoring.enabled: false
+xpack.management.enabled: false
+
+config.reload.automatic: true
+config.reload.interval: 6s
+
+log.level: info
+log.format: json
+
+path.config: /var/logstash/configuration/*.conf

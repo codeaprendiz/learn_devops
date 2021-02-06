@@ -1,0 +1,96 @@
+version: '3.7'
+services:
+  elasticsearch_service:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+    container_name: es01
+    environment:
+      node.name: 'es01'
+      discovery.type: 'single-node'
+      bootstrap.memory_lock: 'true'
+      ES_JAVA_OPTS: '-Xms512m -Xmx512m'
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+#    volumes:
+#      - ./.data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - host
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.8.0
+    container_name: kibana-sandbox
+    links:
+      - elasticsearch_service
+    environment:
+      SERVER_NAME: elasticsearch_service
+      ELASTICSEARCH_HOSTS: http://elasticsearch_service:9200
+    ports:
+      - 5601:5601
+    networks:
+      - host
+
+  # Container to monitor services running inside other containers
+  metricbeat:
+    build: ./docker/metricbeat
+    container_name: metricbeat-metricbeat-services
+    command: -e
+    environment:
+      - "WAIT_FOR_HOSTS=elasticsearch_service:9200 kibana:5601"
+      - "HOST_ELASTICSEARCH=elasticsearch_service:9200"
+      - "HOST_KIBANA=kibana:5601"
+    depends_on:
+      - elasticsearch_service
+    networks:
+      - host
+
+
+  nats-streaming-1:
+    restart: always
+    command:
+      - "--cluster"
+      - "nats://0.0.0.0:6222"
+      - "--cluster_id"
+      - nats-streaming
+      - "--clustered"
+      - "--cluster_bootstrap"
+      - "--cluster_log_path"
+      - /data/log
+      - "--cluster_node_id"
+      - nats-streaming-1
+      - "--cluster_raft_logging"
+      - "--debug"
+      - "--dir"
+      - /data/msg
+      - "--http_port"
+      - "8222"
+      - "--port"
+      - "4222"
+      - "--store"
+      - file
+      - "--stan_debug"
+      - "--hb_interval"
+      - 2s
+      - "--hb_fail_count"
+      - "1"
+      - "--hb_timeout"
+      - 5s
+    image: "nats-streaming:0.18.0"
+    networks:
+      - host
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+#    volumes:
+#      - "./nats-streaming-1:/data"
+
+
+
+volumes:
+  data:
+    driver: local
+
+networks:
+  host:

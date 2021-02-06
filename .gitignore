@@ -9,4 +9,8 @@ credentials.txt
 .terraform.lock.hcl
 *.tfvars
 
+### docker-compose kitchen
+.data
+hsperfdata_root
+
 

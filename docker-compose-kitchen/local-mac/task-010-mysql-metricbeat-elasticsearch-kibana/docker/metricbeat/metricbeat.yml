@@ -1,0 +1,34 @@
+metricbeat.modules:
+
+#------------------------------- MySQL Module -------------------------------
+- module: mysql
+  enabled: true
+  metricsets: ["status"]
+  period: 5s
+  hosts: ["tcp(mysql:3306)/"]
+  username: root
+  password: root
+
+
+#-------------------------- Elasticsearch output ------------------------------
+output.elasticsearch:
+  #password: ""
+  hosts: ["${HOST_ELASTICSEARCH}"]
+
+setup.kibana:
+  host: "${HOST_KIBANA}"
+
+#============================== Dashboards =====================================
+# These settings control loading the sample dashboards to the Kibana index. Loading
+# the dashboards is disabled by default and can be enabled either by setting the
+# options here, or by using the `-setup` CLI flag.
+setup.dashboards.enabled: true
+
+logging.level: warning
+logging.to_files: true
+logging.to_syslog: false
+logging.files:
+  path: /var/log/metricbeat
+  name: metricbeat.log
+  keepfiles: 2
+  permissions: 0644

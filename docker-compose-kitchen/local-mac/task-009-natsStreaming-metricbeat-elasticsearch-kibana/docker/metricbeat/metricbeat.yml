@@ -1,0 +1,69 @@
+metricbeat.modules:
+
+#------------------------------- NATS Module -------------------------------
+- module: nats
+  metricsets: ["connections", "routes", "stats", "subscriptions"]
+  period: 10s
+  hosts: ["nats-streaming-1:8222"]
+
+#------------------------------- MySQL Module -------------------------------
+#- module: mysql
+#  enabled: true
+#  metricsets: ["status"]
+#  period: 5s
+#  hosts: ["tcp(mysql:3306)/"]
+#  username: root
+#  password: root
+
+#------------------------------- MongoDB Module -------------------------------
+
+#- module: mongodb
+#  enabled: true
+#  metricsets: ["status", "dbstats"]
+#  period: 5s
+#  hosts: ["mongodb:27017"]
+
+#------------------------------- MongoDB Module -------------------------------
+#- module: apache
+#  enabled: true
+#  metricsets: ["status"]
+#  period: 5s
+#  hosts: ["http://apache"]
+
+#------------------------------- Redis Module -------------------------------
+#- module: redis
+#  enabled: true
+#  metricsets: ["info", "keyspace"]
+#  period: 5s
+#  hosts: ["redis:6379"]
+
+#------------------------------- Nginx Module -------------------------------
+#- module: nginx
+#  enabled: true
+#  metricsets: ["stubstatus"]
+#  period: 5s
+#  hosts: ["http://nginx"]
+#  server_status_path: "nginx_status"
+
+#-------------------------- Elasticsearch output ------------------------------
+output.elasticsearch:
+  #password: ""
+  hosts: ["${HOST_ELASTICSEARCH}"]
+
+setup.kibana:
+  host: "${HOST_KIBANA}"
+
+#============================== Dashboards =====================================
+# These settings control loading the sample dashboards to the Kibana index. Loading
+# the dashboards is disabled by default and can be enabled either by setting the
+# options here, or by using the `-setup` CLI flag.
+setup.dashboards.enabled: true
+
+logging.level: warning
+logging.to_files: true
+logging.to_syslog: false
+logging.files:
+  path: /var/log/metricbeat
+  name: metricbeat.log
+  keepfiles: 2
+  permissions: 0644

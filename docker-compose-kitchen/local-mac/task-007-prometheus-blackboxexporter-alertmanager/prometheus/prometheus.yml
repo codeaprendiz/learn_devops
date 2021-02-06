@@ -1,0 +1,40 @@
+global:
+  scrape_interval: 5s
+
+
+# Rules and alerts are read from the specified file(s)
+rule_files:
+  - alert.rules.yml
+
+# Alerting specifies settings related to the Alertmanager
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            # Alertmanager's default port is 9093
+            - host.docker.internal:9093
+
+scrape_configs:
+  - job_name: blackbox # To get metrics about the exporter itself
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - host.docker.internal:9115   # For Windows and macOS replace with - host.docker.internal:9115
+
+  - job_name: blackbox-http # To get metrics about the exporter’s targets
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+          - http://prometheus.io    # Target to probe with http
+          - https://prometheus.io   # Target to probe with https
+          - http://example.com:8080 # Target to probe with http on port 8080
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: host.docker.internal:9115  # The blackbox exporter’s real hostname:port. For Windows and macOS replace with - host.docker.internal:9115
+

@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  elasticsearch_service:
+    restart: unless-stopped
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
+    container_name: elasticsearch_local
+    environment:
+      xpack.security.enabled: 'false'
+      xpack.monitoring.enabled: 'false'
+      xpack.graph.enabled: 'false'
+      xpack.watcher.enabled: 'false'
+      discovery.type: 'single-node'
+      bootstrap.memory_lock: 'true'
+      indices.memory.index_buffer_size: '30%'
+    volumes:
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./data:/usr/share/elasticsearch/data
+      - ./elasticsearch-backup:/var/elasticsearch-backup
+    ports:
+      - 9200:9200
+      - 9300:9300
+#    network_mode: host
+

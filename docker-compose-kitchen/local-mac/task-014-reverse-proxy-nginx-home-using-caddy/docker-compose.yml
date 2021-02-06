@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  caddy:
+    image: caddy:2.2.1
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/index.html:/usr/share/caddy/index.html
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/caddy_data:/data
+      - ./certs:/etc/ssl/certs
+    networks:
+      - host
+
+  web:
+    image: nginx
+    volumes:
+      - $PWD/nginx-home/index.html:/usr/share/nginx/html/index.html:ro
+    ports:
+      - "8080:80"
+    environment:
+      #      - NGINX_HOST=foobar.com
+      - NGINX_PORT=80
+    networks:
+      - host
+
+volumes:
+  data01:
+    driver: local
+
+networks:
+  host:

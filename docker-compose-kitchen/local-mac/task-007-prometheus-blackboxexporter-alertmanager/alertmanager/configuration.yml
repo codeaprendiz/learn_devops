@@ -1,0 +1,74 @@
+route:
+  receiver: 'slack-critical'
+  routes:
+    - match:
+        threshold: warning
+      continue: true
+      receiver: slack-warning
+    - match:
+        threshold: danger
+      continue: true
+      receiver: slack-danger
+    - match:
+        threshold: critical
+      receiver: slack-critical
+
+
+receivers:
+  - name: 'slack-warning'
+    slack_configs:
+      - send_resolved: true
+        username: 'hubot'
+        icon_url: https://avatars3.githubusercontent.com/u/3380462
+        pretext: '{{ .CommonAnnotations.summary }}'
+        title: '[{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] Monitoring Event Notification'
+        text: >-
+          {{ range .Alerts }}
+             *Alert:* {{ .Annotations.summary }} - `{{ .Labels.threshold }}`
+             *Description:* {{ .Annotations.description }}
+             *Graph:* <{{ .GeneratorURL }}|:chart_with_upwards_trend:>
+             *Details:*
+             {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
+             {{ end }}
+          {{ end }}
+        channel: '#test-monitoring'
+        api_url: 'https://hooks.slack.com/services/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'
+
+  - name: 'slack-danger'
+    slack_configs:
+      - send_resolved: true
+        username: 'hubot'
+        icon_url: https://avatars3.githubusercontent.com/u/3380462
+        pretext: '{{ .CommonAnnotations.summary }}'
+        title: '[{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] Monitoring Event Notification'
+        text: >-
+          {{ range .Alerts }}
+             *Alert:* {{ .Annotations.summary }} - `{{ .Labels.threshold }}`
+             *Description:* {{ .Annotations.description }}
+             *Graph:* <{{ .GeneratorURL }}|:chart_with_upwards_trend:>
+             *Details:*
+             {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
+             {{ end }}
+          {{ end }}
+        channel: '#test-monitoring'
+        api_url: 'https://hooks.slack.com/services/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'
+
+  - name: 'slack-critical'
+    slack_configs:
+      - send_resolved: true
+        username: 'hubot'
+        icon_url: https://avatars3.githubusercontent.com/u/3380462
+        pretext: '{{ .CommonAnnotations.summary }}'
+        title: '[{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] Monitoring Event Notification'
+        text: >-
+          {{ range .Alerts }}
+             *Alert:* {{ .Annotations.summary }} - `{{ .Labels.threshold }}`
+             *Description:* {{ .Annotations.description }}
+             *Graph:* <{{ .GeneratorURL }}|:chart_with_upwards_trend:>
+             *Details:*
+             {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
+             {{ end }}
+          {{ end }}
+        channel: '#test-monitoring'
+        api_url: 'https://hooks.slack.com/services/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'
+

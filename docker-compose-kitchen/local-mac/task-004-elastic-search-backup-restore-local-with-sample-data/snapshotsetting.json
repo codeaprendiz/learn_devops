@@ -1,0 +1,6 @@
+{
+  "indices": "bank*,shakespeare*,logstash*",
+  "ignore_unavailable": true,
+  "include_global_state": false,
+  "partial": false
+}

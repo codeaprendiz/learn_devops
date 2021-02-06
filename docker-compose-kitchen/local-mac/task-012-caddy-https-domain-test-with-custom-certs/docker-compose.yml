@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/index.html:/usr/share/caddy/index.html
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/caddy_data:/data
+      - ./certs:/etc/ssl/certs
+    networks:
+      - host
+
+volumes:
+  data01:
+    driver: local
+
+networks:
+  host:

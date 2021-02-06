@@ -1,0 +1,4 @@
+test.domain.com:443 {
+    root * /usr/share/caddy
+    file_server
+}

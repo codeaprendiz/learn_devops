@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  logstash-sandbox:
+    image: docker.elastic.co/logstash/logstash:7.8.0
+    container_name: logstash-sandbox
+    user: root
+    volumes:
+      - ./logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./conf:/var/logstash/configuration
+      - ./log-sample:/tmp
+    ports:
+      - 9600:9600
+      - 5044:5044
+    networks:
+      - host
+networks:
+  host:
