@@ -27,6 +27,7 @@
 - [history](history/history.md)
 - [host](host/host.md)
 - [hostname](hostname/hostname.md)
+- [ifconfig](ifconfig/ifconfig.md)
 - [ip](ip/ip.md)
 - [jar](jar/jar.md)
 - [jobs](jobs/jobs.md)
