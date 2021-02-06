@@ -1,0 +1,15 @@
+{
+  "indices": "kibana*,my-index*",
+  "ignore_unavailable": true,
+  "include_global_state": false,
+  "include_aliases": false,
+  "partial": false,
+  "rename_pattern": "kibana(.+)",
+  "rename_replacement": "restored-kibana$1",
+  "index_settings": {
+    "index.blocks.read_only": false
+  },
+  "ignore_index_settings": [
+    "index.refresh_interval"
+  ]
+}

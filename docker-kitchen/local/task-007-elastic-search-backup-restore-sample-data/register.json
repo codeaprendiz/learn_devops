@@ -1,0 +1,6 @@
+{
+  "type": "s3",
+  "settings": {
+    "bucket": "elk-backup-codeaprendiz"
+  }
+}

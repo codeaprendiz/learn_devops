@@ -1,0 +1,6 @@
+{
+  "indices": "kibana*,my-index*,-my-index-2016",
+  "ignore_unavailable": true,
+  "include_global_state": false,
+  "partial": false
+}
