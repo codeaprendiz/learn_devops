@@ -1,6 +1,7 @@
 # DevOps Essentials
 
 - [docker-kitchen](docker-kitchen/README.md)
+- [docker-compose-kitchen](docker-compose-kitchen/README.md)
 - [linux-commands](linux-commands/linux-commands-index.md)
 - [linux-essentials](linux-essentials/linux-essentials.md)
 - [nginx](nginx/nginx-index.md)
