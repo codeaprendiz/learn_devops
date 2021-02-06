@@ -22,6 +22,9 @@ ifconfig - configure a network interface
 ### EXAMPLES
 
 - To display all the interfaces present 
+  - Consider ens4 here
+    - has internal IP 10.128.0.38
+    - has mac address 42:01:0a:80:00:26  (identified by ether)
 
 ```bash
 # ifconfig -a
