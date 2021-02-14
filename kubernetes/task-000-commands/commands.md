@@ -87,3 +87,8 @@ Command / Options |  Use Case        |     Example      |
 | [uncordon](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#uncordon) | | 
 | | Mark node as schedulable. | kubectl uncordon node-01 | 
 
+
+
+```bash
+kubectl get all --all-namespaces
+```
