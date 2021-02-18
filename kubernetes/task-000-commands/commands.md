@@ -92,4 +92,5 @@ Command / Options |  Use Case        |     Example      |
 
 ```bash
 kubectl get all --all-namespaces
+kubectl  get ep
 ```
