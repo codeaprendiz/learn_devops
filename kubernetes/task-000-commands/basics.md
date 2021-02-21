@@ -26,3 +26,7 @@
   - [kubelet-authentication-authorization](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/)
   - [TLS bootstrapping](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/)
 
+
+
+NOTES:
+- Editing a replicaset, don't forget to delete the pods so that the new ones get crated with the new changes.
