@@ -64,6 +64,7 @@
 - [tee](tee/tee.md)
 - [telnet](telnet/telnet.md)
 - [top](top/top.md)
+- [tr](tr/tr.md)
 - [traceroute](traceroute/traceroute.md)
 - [tty](tty/tty.md)
 - [ulimit](ulimit/ulimit.md)
