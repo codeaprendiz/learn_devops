@@ -36,3 +36,15 @@ YWRtaW4K
 $ echo "password" | base64
 cGFzc3dvcmQK
 ```
+
+
+
+- Set up a k8s cluster on GCP
+
+```bash
+$ kubectl get storageclass
+NAME                 PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+premium-rwo          pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   true                   3m6s
+standard (default)   kubernetes.io/gce-pd    Delete          Immediate              true                   3m6s
+standard-rwo         pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   true                   3m6s
+```
