@@ -22,20 +22,21 @@ $ docker push codeaprendiz/node-kubernetes
 ```
 
 
-- Create secets
+- Create secrets
 
- - username
+
 ```bash
-$ echo "admin" | base64
-YWRtaW4K
+$ kubectl create secret generic mongo-secret --from-literal=MONGO_USERNAME=admin --from-literal=MONGO_PASSWORD=password --dry-run=client -o yaml
+apiVersion: v1
+data:
+  MONGO_PASSWORD: cGFzc3dvcmQ=
+  MONGO_USERNAME: YWRtaW4=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: mongo-secret
 ```
 
- - password
- 
-```bash
-$ echo "password" | base64
-cGFzc3dvcmQK
-```
 
 
 

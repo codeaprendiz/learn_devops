@@ -19,17 +19,17 @@ spec:
       containers:
       - env:
         - name: MONGO_INITDB_ROOT_PASSWORD
-          value: "password"
-#          valueFrom:
-#            secretKeyRef:
-#              name: mongo-secret
-#              key: MONGO_PASSWORD
+#          value: "password"
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO_PASSWORD
         - name: MONGO_INITDB_ROOT_USERNAME
-          value: "admin"
-#          valueFrom:
-#            secretKeyRef:
-#              name: mongo-secret
-#              key: MONGO_USERNAME
+#          value: "admin"
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO_USERNAME
         image: mongo:4.1.8-xenial
         name: db
         resources: {}
