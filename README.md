@@ -1,5 +1,6 @@
 # DevOps Essentials
 
+- [coding-tasks](coding-tasks)
 - [docker-kitchen](docker-kitchen/README.md)
 - [docker-compose-kitchen](docker-compose-kitchen/README.md)
 - [linux-commands](linux-commands/linux-commands-index.md)
