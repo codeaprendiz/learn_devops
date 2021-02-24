@@ -30,7 +30,7 @@ spec:
 #            secretKeyRef:
 #              name: mongo-secret
 #              key: MONGO_USERNAME
-#        image: mongo:4.1.8-xenial
+        image: mongo:4.1.8-xenial
         name: db
         resources: {}
         volumeMounts:
