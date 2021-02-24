@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-image-demo",
+  "version": "1.0.0",
+  "description": "nodejs image demo",
+  "author": "katjuell <kathleenjuell@gmail.com>",
+  "license": "MIT",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/katjuell/nodejs-image-demo.git"
+  },
+  "keywords": [
+    "nodejs",
+    "bootstrap",
+    "express"
+  ],
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
