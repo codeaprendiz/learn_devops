@@ -25,20 +25,22 @@ spec:
         - name: MONGO_HOSTNAME
           value: db
         - name: MONGO_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: MONGO_PASSWORD
+          value: "password"
+#          valueFrom:
+#            secretKeyRef:
+#              name: mongo-secret
+#              key: MONGO_PASSWORD
         - name: MONGO_PORT
           valueFrom:
             configMapKeyRef:
               key: MONGO_PORT
               name: nodejs-env
         - name: MONGO_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: MONGO_USERNAME
+          value: "admin"
+#          valueFrom:
+#            secretKeyRef:
+#              name: mongo-secret
+#              key: MONGO_USERNAME
         image: codeaprendiz/node-kubernetes
         name: nodejs
         ports:
