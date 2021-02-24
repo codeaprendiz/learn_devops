@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  nodejs: codeaprendiz/node-kubernetes
-    image: nodejs
+  nodejs:
+    image: codeaprendiz/node-kubernetes
     container_name: nodejs
     restart: always
     env_file: .env
