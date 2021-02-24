@@ -1,5 +1,8 @@
+### Coding Tasks
 
-
-- [To build Nodejs Application with Docker](task-001-nodejs-docker-app)
-- [To build Nodejs App which can connect to docker-mongo locally](task-002-nodejs-mongo-docker)
-- [To build NodeJs App with MongoDB using docker-compose](task-003-nodejs-mongo-docker-compose)
+Domain Used | Tasks Details | 
+---    | --- | 
+[Nodejs Docker](task-001-nodejs-docker-app) | Starting a Nodejs App using docker |
+[Nodejs and Docker-Mongo](task-002-nodejs-mongo-docker)  | To build Nodejs App which can connect to docker-mongo locally |
+[Nodejs Mongo Docker-Compose](task-003-nodejs-mongo-docker-compose)  | To build NodeJs App with MongoDB and deploy using docker-compose
+[Nodejs Mongo Kubernetes](task-004-nodejs-mongo-k8s) | To build Nodejs App with MongoDB and deploy using Kubernetes
