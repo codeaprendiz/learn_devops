@@ -239,3 +239,19 @@ Search the working directory for foo():
 ```bash
 git grep "foo()"
 ```
+
+
+To un-commit the changes you have recently committed to local. Note the "\" is due to the shell.
+
+```bash
+git reset --soft HEAD\^
+```
+
+
+To check the size of you git repo 
+
+```bash
+$ git bundle create tmp.bundle --all
+$ du -sh tmp.bundle
+ 19M    tmp.bundle
+```
