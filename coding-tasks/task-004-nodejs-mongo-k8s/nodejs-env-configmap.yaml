@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  MONGO_DB: sharkinfo
+  MONGO_PORT: "27017"
+kind: ConfigMap
+metadata:
+  labels:
+    io.kompose.service: nodejs-env
+  name: nodejs-env

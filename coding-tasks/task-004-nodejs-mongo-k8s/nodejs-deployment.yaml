@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.18.0 (06a2e56)
+  labels:
+    io.kompose.service: nodejs
+  name: nodejs
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.kompose.service: nodejs
+    spec:
+      containers:
+      - env:
+        - name: MONGO_DB
+          valueFrom:
+            configMapKeyRef:
+              key: MONGO_DB
+              name: nodejs-env
+        - name: MONGO_HOSTNAME
+          value: db
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO_PASSWORD
+        - name: MONGO_PORT
+          valueFrom:
+            configMapKeyRef:
+              key: MONGO_PORT
+              name: nodejs-env
+        - name: MONGO_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO_USERNAME
+        image: codeaprendiz/node-kubernetes
+        name: nodejs
+        ports:
+        - containerPort: 8080
+        resources: {}
+      initContainers:
+        - name: init-db
+          image: busybox
+          command: ['sh', '-c', 'until nc -z db:27017; do echo waiting for db; sleep 2; done;']
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      io.kompose.service: nodejs

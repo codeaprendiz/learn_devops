@@ -20,3 +20,19 @@ Login Succeeded
 ```bash
 $ docker push codeaprendiz/node-kubernetes                                    
 ```
+
+
+- Create secets
+
+ - username
+```bash
+$ echo "admin" | base64
+YWRtaW4K
+```
+
+ - password
+ 
+```bash
+$ echo "password" | base64
+cGFzc3dvcmQK
+```
