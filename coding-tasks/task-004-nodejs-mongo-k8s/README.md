@@ -1,6 +1,8 @@
 
 ### Nodejs Mongo Application on kubernetes GCP
 
+[docs](https://www.digitalocean.com/community/tutorials/how-to-migrate-a-docker-compose-workflow-to-kubernetes)
+
 - Build Project
 
 ```bash
