@@ -1,5 +1,8 @@
 ### Objectives
 
+[Referred - doc](https://www.digitalocean.com/community/tutorials/how-to-scale-a-node-js-application-with-mongodb-on-kubernetes-using-helm)
+
+
 Tasks |   Exit Criteria | Status |
 ---    | --- | --- | 
 Nodejs Mongo App | Create an application with Nodejs with Mongo as database | Done
@@ -16,11 +19,35 @@ Use Helm to create template | Use helm charts for node and mongo | Done
 Use Load Balancer as Ingress | Use load balancer as ingress | Done
 Use Nginx/Treafik as Ingress if not Load Balancer |  | 
 Security | Removing unnecessary binaries/permissions to improve container security is a huge plus. |  
- 
 
-[doc](https://www.digitalocean.com/community/tutorials/how-to-scale-a-node-js-application-with-mongodb-on-kubernetes-using-helm)
+### Nodejs Mongo App
+
+We are using node `v15.8.0` and mongodb to run the application
+
+### Clean Dockerfile and Docker Image Size
+
+We are not mounting the folder `node_modules` to the container so the docker-image size is greatly reduced.
 
 
+### docker-compose up
+
+- Edit the db.js and change the connnection URI to use the non-replica set URL as we are running it locally
+- The following is the successful run of the app, adding one document to the DB
+```bash
+$ docker-compose up  
+Creating network "node_project_app-network" with driver "bridge"
+Creating db     ... done
+Creating nodejs ... done
+Attaching to db, nodejs
+.
+.
+db        | 2021-02-25T18:32:06.552+0000 I ACCESS   [conn2] Successfully authenticated as principal sammy on admin
+nodejs    | MongoDB is connected
+nodejs    | { name: 'Ankit', character: 'Rathi' }
+db        | 2021-02-25T18:32:35.950+0000 I SHARDING [conn2] Marking collection sharkinfo.sharks as collection version: <unsharded>
+```
+
+- change the connection URI to default again
 
 
 - build image using
@@ -43,8 +70,6 @@ Login Succeeded
 $ docker push codeaprendiz/node-replicas  
 ```
 
-
-
 - create secret for mongo
 
 ```bash
@@ -55,10 +80,12 @@ $ kubectl create secret generic mongo-secret --from-literal=MONGO_USERNAME=admin
 
 - Create the values file mongodb-values.yaml
 
-- Add stable version of the mongodb-replicaset chart [Referred stackoverflow](https://stackoverflow.com/questions/57970255/helm-v3-cannot-find-the-official-repo)
+- Add stable version of the mongodb-replicaset chart 
 
-[bitnami/mongodb](https://github.com/bitnami/charts/tree/master/bitnami/mongodb)
-[values.yam](https://github.com/bitnami/charts/blob/master/bitnami/mongodb/values.yaml)
+  - [Referred stackoverflow](https://stackoverflow.com/questions/57970255/helm-v3-cannot-find-the-official-repo)
+  - [bitnami/mongodb](https://github.com/bitnami/charts/tree/master/bitnami/mongodb)
+  - [values.yam](https://github.com/bitnami/charts/blob/master/bitnami/mongodb/values.yaml)
+
 ```bash
 $ helm version                  
 version.BuildInfo{Version:"v3.5.2", GitCommit:"167aac70832d3a384f65f9745335e9fb40169dc2", GitTreeState:"dirty", GoVersion:"go1.15.7"}
