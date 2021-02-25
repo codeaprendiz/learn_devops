@@ -2,9 +2,9 @@
 
 Tasks | Checkpoints | 
 ---    | --- | 
-nodejs mongo app | [x]  |
+nodejs mongo app | - [x] test |
 
-
+- [x] test
 
 [doc](https://www.digitalocean.com/community/tutorials/how-to-scale-a-node-js-application-with-mongodb-on-kubernetes-using-helm)
 
