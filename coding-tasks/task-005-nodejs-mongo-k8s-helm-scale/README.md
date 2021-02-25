@@ -15,6 +15,8 @@ Automatic Scaling | No of pods should increase if load increases | Done
 Use Config Maps for environments vars | Use config maps for env vars | Done
 Use Secrets for passwords | Use secrets for passwords | Done
 Have declarative resource limits in pods | Define resource limits in pods | Done
+MongoDB replicaset | Ensure that you are using mongodb replicaset for high availability | Done
+Persistence Volume Claim | Ensure that you are using persistent volume claim in k8s for the mongodb database | Done
 Use Helm to create template | Use helm charts for node and mongo | Done
 Use Load Balancer as Ingress | Use load balancer as ingress | Done
 Use Nginx/Treafik as Ingress if not Load Balancer |  | 
@@ -216,13 +218,78 @@ $ helm template app ./nodeapp > resources-app.yaml
 
 #### How to deploy the application
 
+- create secret
+
+```bash
+$ kubectl apply -f secret.yaml
+secret/mongo-secret created
+```
+
 - Deploy the database resources first
 ```bash
 $ kubectl apply -f resources-db.yaml
+serviceaccount/mongo-mongodb created
+configmap/mongo-mongodb-scripts created
+service/mongo-mongodb-arbiter-headless created
+service/mongo-mongodb-headless created
+statefulset.apps/mongo-mongodb-arbiter created
+statefulset.apps/mongo-mongodb created
+
+$ kubectl get pods
+NAME                      READY   STATUS    RESTARTS   AGE
+mongo-mongodb-0           1/1     Running   0          93s
+mongo-mongodb-1           1/1     Running   0          62s
+mongo-mongodb-2           1/1     Running   0          42s
+mongo-mongodb-arbiter-0   1/1     Running   0          93s
 ```
 
 - Once db is up, deploy the app
 
 ```bash
 $ kubectl apply -f resources-app.yaml
+serviceaccount/app-nodeapp created
+secret/app-auth created
+configmap/app-config created
+service/app-nodeapp created
+deployment.apps/app-nodeapp created
+horizontalpodautoscaler.autoscaling/app-nodeapp created
+pod/app-nodeapp-test-connection created
+
+
+### Note that there is only one pod duo to auto-scaling enabled (HPA). Ignore the app-nodeapp-test-connection. Please.
+$ kubectl get pods
+NAME                           READY   STATUS    RESTARTS   AGE
+app-nodeapp-6dfc8c56b6-cblvn   1/1     Running   0          102s
+app-nodeapp-test-connection    0/1     Error     0          102s
+mongo-mongodb-0                1/1     Running   0          3m30s
+mongo-mongodb-1                1/1     Running   0          2m59s
+mongo-mongodb-2                1/1     Running   0          2m39s
+mongo-mongodb-arbiter-0        1/1     Running   0          3m30s
+
+$ kubectl logs -f app-nodeapp-6dfc8c56b6-cblvn
+Example app listening on 8080!
+MongoDB is connected
+
+$ kubectl get svc
+NAME                             TYPE           CLUSTER-IP   EXTERNAL-IP      PORT(S)        AGE
+app-nodeapp                      LoadBalancer   10.8.2.120   35.202.195.148   80:31304/TCP   3m54s
+kubernetes                       ClusterIP      10.8.0.1     <none>           443/TCP        10h
+mongo-mongodb-arbiter-headless   ClusterIP      None         <none>           27017/TCP      5m42s
+mongo-mongodb-headless           ClusterIP      None         <none>           27017/TCP      5m42s
 ```
+
+
+#### Screenshots
+
+- Homepage
+
+![](../../images/coding-tasks/task-005-nodejs-mongo-k8s-helm-scale/app-homepage.png)
+
+
+- Add shark
+
+![](../../images/coding-tasks/task-005-nodejs-mongo-k8s-helm-scale/add-shark-page.png)
+
+- After adding shark
+
+![](../../images/coding-tasks/task-005-nodejs-mongo-k8s-helm-scale/after-adding-shark.png)
