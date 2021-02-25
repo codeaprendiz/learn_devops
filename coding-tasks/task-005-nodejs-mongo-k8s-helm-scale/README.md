@@ -1,4 +1,15 @@
+### Objectives
+
+Tasks | Checkpoints | 
+---    | --- | 
+nodejs mongo app | [x]  |
+
+
+
 [doc](https://www.digitalocean.com/community/tutorials/how-to-scale-a-node-js-application-with-mongodb-on-kubernetes-using-helm)
+
+
+
 
 - build image using
 
