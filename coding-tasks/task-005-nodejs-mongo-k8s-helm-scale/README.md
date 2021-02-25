@@ -1,10 +1,11 @@
 ### Objectives
 
-Tasks | Checkpoints | 
----    | --- | 
-nodejs mongo app | - [x] test |
+Tasks | Covered | Comments |
+---    | --- | --- | 
+nodejs mongo app | - [x] yes | | 
+clean dockerfile | - [x] | | 
 
-- [x] test
+
 
 [doc](https://www.digitalocean.com/community/tutorials/how-to-scale-a-node-js-application-with-mongodb-on-kubernetes-using-helm)
 
