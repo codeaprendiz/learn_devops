@@ -130,7 +130,12 @@ spec:
               path: /sharks
               port: http
           resources:
-            {}
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
 ---
 # Source: nodeapp/templates/hpa.yaml
 apiVersion: autoscaling/v2beta1
