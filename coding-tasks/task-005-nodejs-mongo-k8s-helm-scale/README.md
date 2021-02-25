@@ -212,3 +212,17 @@ metadata:
 ```bash
 $ helm template app ./nodeapp > resources-app.yaml
 ```
+
+
+#### How to deploy the application
+
+- Deploy the database resources first
+```bash
+$ kubectl apply -f resources-db.yaml
+```
+
+- Once db is up, deploy the app
+
+```bash
+$ kubectl apply -f resources-app.yaml
+```
