@@ -1,10 +1,19 @@
 ### Objectives
 
-Tasks | Covered | Comments |
+Tasks |   Exit Criteria | Status |
 ---    | --- | --- | 
-nodejs mongo app | - [x] yes | | 
-clean dockerfile | - [x] | | 
-
+Nodejs Mongo App | Create an application with Nodejs with Mongo as database | Done
+Clean Dockerfile | Try to optimize the Dockerfile by removing all unnecessary cache/files to reduce the image size. | Done
+Docker Image Size | Remove caches | Done
+Security | Removing unnecessary binaries/permissions to improve container security is a huge plus. |  
+docker-compose up  | docker-compose up runs the app locally | Done | 
+kubernetes resources | You should have all k8s resources | Done | 
+Health checks on pods | Health check probes like /healthz or any other | Done
+Automatic Scaling | No of pods should increase if load increases | Done
+Use Config Maps for environments vars | Use config maps for env vars | Done
+Use Secrets for passwords | Use secrets for passwords | Done
+Have declarative resource limits in pods | Define resource limits in pods | Done
+Use Helm to create template | Use helm charts for node and mongo | Done
 
 
 [doc](https://www.digitalocean.com/community/tutorials/how-to-scale-a-node-js-application-with-mongodb-on-kubernetes-using-helm)
