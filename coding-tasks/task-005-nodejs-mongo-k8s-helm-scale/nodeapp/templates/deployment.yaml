@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "nodeapp.fullname" . }}
+  labels:
+    {{- include "nodeapp.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "nodeapp.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "nodeapp.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "nodeapp.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: MONGO_USERNAME
+            valueFrom:
+              secretKeyRef:
+                key: MONGO_USERNAME
+                name: {{ .Release.Name }}-auth
+          - name: MONGO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: MONGO_PASSWORD
+                name: {{ .Release.Name }}-auth
+          - name: MONGO_HOSTNAME
+            valueFrom:
+              configMapKeyRef:
+                key: MONGO_HOSTNAME
+                name: {{ .Release.Name }}-config
+          - name: MONGO_PORT
+            valueFrom:
+              configMapKeyRef:
+                key: MONGO_PORT
+                name: {{ .Release.Name }}-config
+          - name: MONGO_DB
+            valueFrom:
+              configMapKeyRef:
+                key: MONGO_DB
+                name: {{ .Release.Name }}-config
+          - name: MONGO_REPLICASET
+            valueFrom:
+              configMapKeyRef:
+                key: MONGO_REPLICASET
+                name: {{ .Release.Name }}-config
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /sharks
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /sharks
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

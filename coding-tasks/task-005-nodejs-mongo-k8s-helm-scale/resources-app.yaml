@@ -1,0 +1,156 @@
+---
+# Source: nodeapp/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: app-nodeapp
+  labels:
+    helm.sh/chart: nodeapp-0.1.0
+    app.kubernetes.io/name: nodeapp
+    app.kubernetes.io/instance: app
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+---
+# Source: nodeapp/templates/secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-auth
+data:
+  MONGO_PASSWORD: cGFzc3dvcmQ=
+  MONGO_USERNAME: YWRtaW4=
+---
+# Source: nodeapp/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  MONGO_HOSTNAME: "mongo-mongodb-0.mongo-mongodb-headless.default.svc.cluster.local,mongo-mongodb-1.mongo-mongodb-headless.default.svc.cluster.local,mongo-mongodb-2.mongo-mongodb-headless.default.svc.cluster.local"
+  MONGO_PORT: "27017"
+  MONGO_DB: "sharkinfo"
+  MONGO_REPLICASET: "db"
+---
+# Source: nodeapp/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-nodeapp
+  labels:
+    helm.sh/chart: nodeapp-0.1.0
+    app.kubernetes.io/name: nodeapp
+    app.kubernetes.io/instance: app
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: nodeapp
+    app.kubernetes.io/instance: app
+---
+# Source: nodeapp/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-nodeapp
+  labels:
+    helm.sh/chart: nodeapp-0.1.0
+    app.kubernetes.io/name: nodeapp
+    app.kubernetes.io/instance: app
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: nodeapp
+      app.kubernetes.io/instance: app
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: nodeapp
+        app.kubernetes.io/instance: app
+    spec:
+      serviceAccountName: app-nodeapp
+      securityContext:
+        {}
+      containers:
+        - name: nodeapp
+          securityContext:
+            {}
+          image: "codeaprendiz/node-replicas:latest"
+          imagePullPolicy: IfNotPresent
+          env:
+          - name: MONGO_USERNAME
+            value: "root"
+#            valueFrom:
+#              secretKeyRef:
+#                key: MONGO_USERNAME
+#                name: app-auth
+          - name: MONGO_PASSWORD
+            value: "password"
+#            valueFrom:
+#              secretKeyRef:
+#                key: MONGO_PASSWORD
+#                name: app-auth
+          - name: MONGO_HOSTNAME
+            valueFrom:
+              configMapKeyRef:
+                key: MONGO_HOSTNAME
+                name: app-config
+          - name: MONGO_PORT
+            valueFrom:
+              configMapKeyRef:
+                key: MONGO_PORT
+                name: app-config
+          - name: MONGO_DB
+            value: "sharkinfo"
+#            valueFrom:
+#              configMapKeyRef:
+#                key: MONGO_DB
+#                name: app-config
+          - name: MONGO_REPLICASET
+            valueFrom:
+              configMapKeyRef:
+                key: MONGO_REPLICASET
+                name: app-config
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /sharks
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /sharks
+              port: http
+          resources:
+            {}
+---
+# Source: nodeapp/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "app-nodeapp-test-connection"
+  labels:
+    helm.sh/chart: nodeapp-0.1.0
+    app.kubernetes.io/name: nodeapp
+    app.kubernetes.io/instance: app
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['app-nodeapp:80']
+  restartPolicy: Never

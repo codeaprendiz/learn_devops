@@ -1,0 +1,388 @@
+---
+# Source: mongodb/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: mongo-mongodb
+  namespace: default
+  labels:
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.7.1
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/managed-by: Helm
+secrets:
+  - name: mongo-mongodb
+---
+# Source: mongodb/templates/secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mongo-mongodb
+  namespace: default
+  labels:
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.7.1
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: mongodb
+type: Opaque
+data:
+  mongodb-root-password:  "cGFzc3dvcmQ="
+  mongodb-password:  "cGFzc3dvcmQ="
+  mongodb-replica-set-key: "ck9VOHBPS29iUw=="
+---
+# Source: mongodb/templates/replicaset/scripts-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-mongodb-scripts
+  namespace: default
+  labels:
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.7.1
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: mongodb
+data:
+  setup.sh: |-
+    #!/bin/bash
+
+    echo "Advertised Hostname: $MONGODB_ADVERTISED_HOSTNAME"
+
+    if [[ "$MY_POD_NAME" = "mongo-mongodb-0" ]]; then
+        echo "Pod name matches initial primary pod name, configuring node as a primary"
+        export MONGODB_REPLICA_SET_MODE="primary"
+    else
+        echo "Pod name doesn't match initial primary pod name, configuring node as a secondary"
+        export MONGODB_REPLICA_SET_MODE="secondary"
+        export MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD="$MONGODB_ROOT_PASSWORD"
+        export MONGODB_INITIAL_PRIMARY_PORT_NUMBER="$MONGODB_PORT_NUMBER"
+        export MONGODB_ROOT_PASSWORD="" MONGODB_USERNAME="" MONGODB_DATABASE="" MONGODB_PASSWORD=""
+    fi
+
+    exec /opt/bitnami/scripts/mongodb/entrypoint.sh /opt/bitnami/scripts/mongodb/run.sh
+---
+# Source: mongodb/templates/arbiter/headless-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-mongodb-arbiter-headless
+  namespace: default
+  labels:
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.7.1
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: arbiter
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+    - name: tcp-mongodb
+      port: 27017
+      targetPort: mongodb
+  selector:
+    app.kubernetes.io/name: mongodb
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/component: arbiter
+---
+# Source: mongodb/templates/replicaset/headless-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-mongodb-headless
+  namespace: default
+  labels:
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.7.1
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: mongodb
+spec:
+  type: ClusterIP
+  clusterIP: None
+  publishNotReadyAddresses: true
+  ports:
+    - name: mongodb
+      port: 27017
+      targetPort: mongodb
+  selector:
+    app.kubernetes.io/name: mongodb
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/component: mongodb
+---
+# Source: mongodb/templates/arbiter/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo-mongodb-arbiter
+  namespace: default
+  labels:
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.7.1
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: arbiter
+spec:
+  serviceName: mongo-mongodb-arbiter-headless
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mongodb
+      app.kubernetes.io/instance: mongo
+      app.kubernetes.io/component: arbiter
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mongodb
+        helm.sh/chart: mongodb-10.7.1
+        app.kubernetes.io/instance: mongo
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/component: arbiter
+    spec:
+      
+      serviceAccountName: mongo-mongodb
+      affinity:
+        podAffinity:
+          
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app.kubernetes.io/name: mongodb
+                    app.kubernetes.io/instance: mongo
+                    app.kubernetes.io/component: arbiter
+                namespaces:
+                  - "default"
+                topologyKey: kubernetes.io/hostname
+              weight: 1
+        nodeAffinity:
+          
+      securityContext:
+        fsGroup: 1001
+        sysctls: []
+      initContainers:
+      containers:
+        - name: mongodb-arbiter
+          image: docker.io/bitnami/mongodb:4.4.4-debian-10-r0
+          imagePullPolicy: "IfNotPresent"
+          securityContext:
+            runAsUser: 1001
+          env:
+            - name: BITNAMI_DEBUG
+              value: "false"
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: MY_POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: K8S_SERVICE_NAME
+              value: "mongo-mongodb-arbiter-headless"
+            - name: MONGODB_REPLICA_SET_MODE
+              value: "arbiter"
+            - name: MONGODB_INITIAL_PRIMARY_HOST
+              value: "mongo-mongodb-0.mongo-mongodb-headless.$(MY_POD_NAMESPACE).svc.cluster.local"
+            - name: MONGODB_REPLICA_SET_NAME
+              value: "db"
+            - name: MONGODB_ADVERTISED_HOSTNAME
+              value: "$(MY_POD_NAME).$(K8S_SERVICE_NAME).$(MY_POD_NAMESPACE).svc.cluster.local"
+            - name: MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-mongodb
+                  key: mongodb-root-password
+            - name: MONGODB_REPLICA_SET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-mongodb
+                  key: mongodb-replica-set-key
+            - name: ALLOW_EMPTY_PASSWORD
+              value: "no"
+          ports:
+            - containerPort: 27017
+              name: mongodb
+          livenessProbe:
+            tcpSocket:
+              port: mongodb
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 6
+          readinessProbe:
+            tcpSocket:
+              port: mongodb
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 6
+          resources:
+            limits: {}
+            requests: {}
+---
+# Source: mongodb/templates/replicaset/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo-mongodb
+  namespace: default
+  labels:
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.7.1
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: mongodb
+spec:
+  serviceName: mongo-mongodb-headless
+  podManagementPolicy: OrderedReady
+  replicas: 3
+  updateStrategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mongodb
+      app.kubernetes.io/instance: mongo
+      app.kubernetes.io/component: mongodb
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mongodb
+        helm.sh/chart: mongodb-10.7.1
+        app.kubernetes.io/instance: mongo
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/component: mongodb
+    spec:
+      
+      serviceAccountName: mongo-mongodb
+      affinity:
+        podAffinity:
+          
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app.kubernetes.io/name: mongodb
+                    app.kubernetes.io/instance: mongo
+                    app.kubernetes.io/component: mongodb
+                namespaces:
+                  - "default"
+                topologyKey: kubernetes.io/hostname
+              weight: 1
+        nodeAffinity:
+          
+      securityContext:
+        fsGroup: 1001
+        sysctls: []
+      containers:
+        - name: mongodb
+          image: docker.io/bitnami/mongodb:4.4.4-debian-10-r0
+          imagePullPolicy: "IfNotPresent"
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1001
+          command:
+            - /scripts/setup.sh
+          env:
+            - name: BITNAMI_DEBUG
+              value: "false"
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: MY_POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: K8S_SERVICE_NAME
+              value: "mongo-mongodb-headless"
+            - name: MONGODB_INITIAL_PRIMARY_HOST
+              value: "mongo-mongodb-0.$(K8S_SERVICE_NAME).$(MY_POD_NAMESPACE).svc.cluster.local"
+            - name: MONGODB_REPLICA_SET_NAME
+              value: "db"
+            - name: MONGODB_ADVERTISED_HOSTNAME
+              value: "$(MY_POD_NAME).$(K8S_SERVICE_NAME).$(MY_POD_NAMESPACE).svc.cluster.local"
+            - name: MONGODB_USERNAME
+              value: "admin"
+            - name: MONGODB_DATABASE
+              value: "sharkinfo"
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-mongodb
+                  key: mongodb-password
+            - name: MONGODB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-mongodb
+                  key: mongodb-root-password
+            - name: MONGODB_REPLICA_SET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-mongodb
+                  key: mongodb-replica-set-key
+            - name: ALLOW_EMPTY_PASSWORD
+              value: "no"
+            - name: MONGODB_SYSTEM_LOG_VERBOSITY
+              value: "0"
+            - name: MONGODB_DISABLE_SYSTEM_LOG
+              value: "no"
+            - name: MONGODB_ENABLE_IPV6
+              value: "no"
+            - name: MONGODB_ENABLE_DIRECTORY_PER_DB
+              value: "no"
+          ports:
+            - containerPort: 27017
+              name: mongodb
+          livenessProbe:
+            exec:
+              command:
+                - mongo
+                - --disableImplicitSessions
+                - --eval
+                - "db.adminCommand('ping')"
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 6
+          readinessProbe:
+            exec:
+              command:
+                - bash
+                - -ec
+                - |
+                  mongo --disableImplicitSessions $TLS_OPTIONS --eval 'db.hello().isWritablePrimary || db.hello().secondary' | grep -q 'true'
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 6
+          resources:
+            limits: {}
+            requests: {}
+          volumeMounts:
+            - name: datadir
+              mountPath: /bitnami/mongodb
+              subPath: 
+            - name: scripts
+              mountPath: /scripts/setup.sh
+              subPath: setup.sh
+      volumes:
+        - name: scripts
+          configMap:
+            name: mongo-mongodb-scripts
+            defaultMode: 0755
+  volumeClaimTemplates:
+    - metadata:
+        name: datadir
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: "8Gi"
