@@ -67,7 +67,6 @@ metadata:
     app.kubernetes.io/version: "1.16.0"
     app.kubernetes.io/managed-by: Helm
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app.kubernetes.io/name: nodeapp
@@ -132,6 +131,30 @@ spec:
               port: http
           resources:
             {}
+---
+# Source: nodeapp/templates/hpa.yaml
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: app-nodeapp
+  labels:
+    helm.sh/chart: nodeapp-0.1.0
+    app.kubernetes.io/name: nodeapp
+    app.kubernetes.io/instance: app
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: app-nodeapp
+  minReplicas: 1
+  maxReplicas: 100
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 80
 ---
 # Source: nodeapp/templates/tests/test-connection.yaml
 apiVersion: v1
