@@ -18,7 +18,9 @@ metadata:
   name: app-auth
 data:
   MONGO_PASSWORD: cGFzc3dvcmQ=
-  MONGO_USERNAME: YWRtaW4=
+  MONGO_USERNAME: cm9vdA==
+  mongodb-replica-set-key: a2V5MTIz
+  mongodb-root-password: cGFzc3dvcmQ=
 ---
 # Source: nodeapp/templates/configmap.yaml
 apiVersion: v1
@@ -87,17 +89,15 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
           - name: MONGO_USERNAME
-            value: "root"
-#            valueFrom:
-#              secretKeyRef:
-#                key: MONGO_USERNAME
-#                name: app-auth
+            valueFrom:
+              secretKeyRef:
+                key: MONGO_USERNAME
+                name: app-auth
           - name: MONGO_PASSWORD
-            value: "password"
-#            valueFrom:
-#              secretKeyRef:
-#                key: MONGO_PASSWORD
-#                name: app-auth
+            valueFrom:
+              secretKeyRef:
+                key: MONGO_PASSWORD
+                name: app-auth
           - name: MONGO_HOSTNAME
             valueFrom:
               configMapKeyRef:
@@ -109,11 +109,10 @@ spec:
                 key: MONGO_PORT
                 name: app-config
           - name: MONGO_DB
-            value: "sharkinfo"
-#            valueFrom:
-#              configMapKeyRef:
-#                key: MONGO_DB
-#                name: app-config
+            valueFrom:
+              configMapKeyRef:
+                key: MONGO_DB
+                name: app-config
           - name: MONGO_REPLICASET
             valueFrom:
               configMapKeyRef:

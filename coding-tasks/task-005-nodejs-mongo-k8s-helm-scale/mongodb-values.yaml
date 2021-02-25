@@ -19,18 +19,18 @@ auth:
   ## MongoDB(R) root password
   ## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#setting-the-root-password-on-first-run
   ##
-  rootPassword: "password"
+#  rootPassword: "password"
 
-  username: admin
-  password: password
-  database: sharkinfo
+#  username: admin
+#  password: password
+#  database: sharkinfo
 
   replicaSetKey: ""
 
   ## Existing secret with MongoDB(R) credentials
   ## NOTE: When it's set the previous parameters are ignored.
   ##
-  # existingSecret: name-of-existing-secret
+  existingSecret: mongo-secret
 
 tls:
   enabled: false

@@ -13,24 +13,6 @@ metadata:
 secrets:
   - name: mongo-mongodb
 ---
-# Source: mongodb/templates/secrets.yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: mongo-mongodb
-  namespace: default
-  labels:
-    app.kubernetes.io/name: mongodb
-    helm.sh/chart: mongodb-10.7.1
-    app.kubernetes.io/instance: mongo
-    app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/component: mongodb
-type: Opaque
-data:
-  mongodb-root-password:  "cGFzc3dvcmQ="
-  mongodb-password:  "cGFzc3dvcmQ="
-  mongodb-replica-set-key: "ck9VOHBPS29iUw=="
----
 # Source: mongodb/templates/replicaset/scripts-configmap.yaml
 apiVersion: v1
 kind: ConfigMap
@@ -192,12 +174,12 @@ spec:
             - name: MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mongo-mongodb
+                  name: mongo-secret
                   key: mongodb-root-password
             - name: MONGODB_REPLICA_SET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: mongo-mongodb
+                  name: mongo-secret
                   key: mongodb-replica-set-key
             - name: ALLOW_EMPTY_PASSWORD
               value: "no"
@@ -306,24 +288,15 @@ spec:
               value: "db"
             - name: MONGODB_ADVERTISED_HOSTNAME
               value: "$(MY_POD_NAME).$(K8S_SERVICE_NAME).$(MY_POD_NAMESPACE).svc.cluster.local"
-            - name: MONGODB_USERNAME
-              value: "admin"
-            - name: MONGODB_DATABASE
-              value: "sharkinfo"
-            - name: MONGODB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-mongodb
-                  key: mongodb-password
             - name: MONGODB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mongo-mongodb
+                  name: mongo-secret
                   key: mongodb-root-password
             - name: MONGODB_REPLICA_SET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: mongo-mongodb
+                  name: mongo-secret
                   key: mongodb-replica-set-key
             - name: ALLOW_EMPTY_PASSWORD
               value: "no"

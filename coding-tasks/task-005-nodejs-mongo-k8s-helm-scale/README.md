@@ -73,7 +73,15 @@ $ docker push codeaprendiz/node-replicas
 - create secret for mongo
 
 ```bash
-$ kubectl create secret generic mongo-secret --from-literal=MONGO_USERNAME=admin --from-literal=MONGO_PASSWORD=password --dry-run=client -o yaml > secret.yaml
+$ kubectl create secret generic mongo-secret --from-literal=mongodb-root-password=password --from-literal=mongodb-replica-set-key=key123 --dry-run=client -o yaml
+apiVersion: v1
+data:
+  mongodb-replica-set-key: a2V5MTIz
+  mongodb-root-password: cGFzc3dvcmQ=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: mongo-secret
 ```
 
 - Ensure that you have a storage class in your k8s cluster
@@ -103,15 +111,60 @@ Hang tight while we grab the latest from your chart repositories...
 Update Complete. ⎈Happy Helming!⎈
 
 
-$ helm install mongo -f mongodb-values.yaml bitnami/mongodb --dry-run --debug > helm-output.txt
-install.go:173: [debug] Original chart version: ""
-install.go:190: [debug] CHART PATH: /Users/ankitsinghrathi/Library/Caches/helm/repository/mongodb-10.7.1.tgz
 
-## OR
 ## Lets create the templates
-$ helm template mongo -f mongodb-values.yaml bitnami/mongodb > resources.yaml
-
+$ helm template mongo1 -f mongodb-values.yaml bitnami/mongodb > resources-db.yaml
 ```
+
+
+- Let's deploy mongodb on k8s cluster and check if its working as expected
+
+```bash
+$ kubectl create secret generic mongo-secret --from-literal=mongodb-root-password=password --from-literal=mongodb-replica-set-key=key123
+secret/mongo-secret created
+$ kubectl apply -f resources-db.yaml
+serviceaccount/mongo-mongodb created
+configmap/mongo-mongodb-scripts created
+service/mongo-mongodb-arbiter-headless created
+service/mongo-mongodb-headless created
+statefulset.apps/mongo-mongodb-arbiter created
+statefulset.apps/mongo-mongodb created
+$ kubectl get pods
+NAME                      READY   STATUS              RESTARTS   AGE
+mongo-mongodb-0           0/1     ContainerCreating   0          4s
+mongo-mongodb-arbiter-0   0/1     Running             0          4s
+$ kubectl get pods
+NAME                      READY   STATUS    RESTARTS   AGE
+mongo-mongodb-0           1/1     Running   0          38s
+mongo-mongodb-1           0/1     Running   0          11s
+mongo-mongodb-arbiter-0   1/1     Running   0          38s
+$ kubectl exec -it mongo-mongodb-0 -- sh
+$ hostname
+mongo-mongodb-0
+$ mongo --host mongo-mongodb-0.mongo-mongodb-headless.default.svc.cluster.local --username=root --password=password
+MongoDB shell version v4.4.4
+connecting to: mongodb://mongo-mongodb-0.mongo-mongodb-headless.default.svc.cluster.local:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("4fff93b7-95e6-4150-a69d-a8078b03a870") }
+MongoDB server version: 4.4.4
+---
+The server generated these startup warnings when booting:
+        2021-02-25T19:16:56.215+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+db:PRIMARY>
+```
+
+So our database is working! :)
 
 
 
@@ -123,8 +176,39 @@ Creating nodeapp
 ```
 
 
-- Create the nodeapp resources
+- Add the following data to the configmap
+
+
+```yaml
+MONGO_HOSTNAME: "mongo-mongodb-0.mongo-mongodb-headless.default.svc.cluster.local,mongo-mongodb-1.mongo-mongodb-headless.default.svc.cluster.local,mongo-mongodb-2.mongo-mongodb-headless.default.svc.cluster.local"
+MONGO_PORT: "27017"
+MONGO_DB: "sharkinfo"
+MONGO_REPLICASET: "db"
+```
+
+- Update our secret with more required values
 
 ```bash
+$ kubectl create secret generic mongo-secret \
+--from-literal=mongodb-root-password=password \
+--from-literal=mongodb-replica-set-key=key123  \
+--from-literal=MONGO_USERNAME=root \
+--from-literal=MONGO_PASSWORD=password \
+--dry-run=client -o yaml
+apiVersion: v1
+data:
+  MONGO_PASSWORD: cGFzc3dvcmQ=
+  MONGO_USERNAME: cm9vdA==
+  mongodb-replica-set-key: a2V5MTIz
+  mongodb-root-password: cGFzc3dvcmQ=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: mongo-secret
+```
 
+- Generate the yaml's for the application
+
+```bash
+$ helm template app ./nodeapp > resources-app.yaml
 ```
