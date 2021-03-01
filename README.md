@@ -8,4 +8,5 @@
 - [nginx](nginx/nginx-index.md)
 - [kubernetes](kubernetes/README.md)
 - [terraform](terraform/README.md)
+- [tools](tools)
 - [monitoring](monitoring/README.md)
