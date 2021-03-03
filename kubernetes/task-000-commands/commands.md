@@ -94,3 +94,101 @@ Command / Options |  Use Case        |     Example      |
 kubectl get all --all-namespaces
 kubectl  get ep
 ```
+
+### json path
+
+[kubectl/jsonpath/](https://kubernetes.io/docs/reference/kubectl/jsonpath/)
+
+- Suppose we deploy sample nginx pod
+
+```bash
+$ kubectl get pods        
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          11m
+```
+
+- Get the full json object
+
+```bash
+$ kubectl get pods -o json
+```
+
+- Get the type of object
+
+```bash
+$ kubectl get pods -o=jsonpath='{$.kind}'
+List
+```
+
+- Get the name of the pod
+
+```bash
+$ kubectl get pods -o=jsonpath='{.items[0].metadata.name}'
+nginx
+```
+
+- Get the nodeName
+
+```bash
+$ kubectl get pods -o=jsonpath='{.items[0].spec.nodeName}'
+docker-desktop
+```
+
+- Get the container details 
+
+```bash
+$ kubectl get pods -o=jsonpath='{.items[0].spec.containers}'
+[{"image":"nginx","imagePullPolicy":"Always","name":"nginx","resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","volumeMounts":[{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount","name":"default-token-qg6zs","readOnly":true}]}]
+```
+
+- Get the deployed image name
+
+```bash
+$ kubectl get pods -o=jsonpath='{.items[0].spec.containers[0].image}'
+nginx
+```
+
+- Get the pod IPs in pretty format
+
+```bash
+$ kubectl get pods -o=jsonpath='{.items[0].status.podIPs}' | jq
+[
+  {
+    "ip": "10.1.5.59"
+  }
+]
+```
+
+- Get the phase of the pod
+
+```bash
+$ kubectl get pods -o=jsonpath='{.items[0].status.phase}'
+Running
+```
+
+- Get the restart count of the first container
+
+```bash
+$ kubectl get pods -o=jsonpath='{.items[0].status.containerStatuses}' | jq
+
+[
+  {
+    "containerID": "docker://55704ca318bc577589652a8851deac7fafa0b99b1d10a4527777bf816d5c5041",
+    "image": "nginx:latest",
+    "imageID": "docker-pullable://nginx@sha256:f3693fe50d5b1df1ecd315d54813a77afd56b0245a404055a946574deb6b34fc",
+    "lastState": {},
+    "name": "nginx",
+    "ready": true,
+    "restartCount": 0,
+    "started": true,
+    "state": {
+      "running": {
+        "startedAt": "2021-03-03T12:44:39Z"
+      }
+    }
+  }
+]
+
+$ kubectl get pods -o=jsonpath='{.items[0].status.containerStatuses[0].restartCount}' | jq
+0
+```
