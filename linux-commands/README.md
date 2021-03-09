@@ -31,6 +31,7 @@
 - [ip](ip/ip.md)
 - [jar](jar/jar.md)
 - [jobs](jobs/jobs.md)
+- [jq](jq/jq.md)
 - [jstack](jstack/jstack.md)
 - [keytool](keytool/keytool.md)
 - [ln](ln/ln.md)

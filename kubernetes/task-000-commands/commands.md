@@ -192,3 +192,14 @@ $ kubectl get pods -o=jsonpath='{.items[0].status.containerStatuses}' | jq
 $ kubectl get pods -o=jsonpath='{.items[0].status.containerStatuses[0].restartCount}' | jq
 0
 ```
+
+- To get the list of pv's sorted by capacity storage
+
+```bash
+controlplane $ kubectl get pv --sort-by='{.spec.capacity.storage}'
+NAME       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+pv-log-4   40Mi       RWX            Retain           Available                                   5m39s
+pv-log-1   100Mi      RWX            Retain           Available                                   5m39s
+pv-log-2   200Mi      RWX            Retain           Available                                   5m39s
+pv-log-3   300Mi      RWX            Retain           Available                                   5m39s
+```
