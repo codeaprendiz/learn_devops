@@ -138,7 +138,13 @@ $ uri_complete=mongodb://username:password@mongodbhost.company.com:27017/admin:2
 $ mongorestore --uri=$uri_complete -v --gzip --archive=standalone-complete-host-1616062771.gzip --nsInclude="module-*" --nsInclude="cli*" --numInsertionWorkersPerCollection=15 --bypassDocumentValidation --drop --preserveUUID --convertLegacyIndexes
 ```
 
+### mysql
 
+Connecting to mysql db
+
+```bash
+$ mysql -h<hostname> -u<username> -p<password> 
+```
 
 
 ### nohup
