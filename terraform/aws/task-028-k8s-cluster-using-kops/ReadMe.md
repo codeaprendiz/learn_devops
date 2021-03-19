@@ -7,6 +7,12 @@
 
 #### Pre-requisite
 
+You should own a domain for example in this case I own `devopsk8.com`
+
+```bash
+
+```
+
 - Install binary
 
 ```bash
@@ -37,11 +43,26 @@ aws configure
 - Create the bucket 
 
 ```bash
-$ aws s3api create-bucket --bucket kops-ankitrathi-info-state-store --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1
-{
-    "Location": "http://kops-ankitrathi-info-state-store.s3.amazonaws.info/"
-}
+$ bucket_name=kops-stage-test
+
 ```
+
+```bash
+$ aws s3api create-bucket --bucket ${bucket_name} --region us-east-1                               
+{
+    "Location": "/k8-kops-stage-test"
+}
+
+```
+
+- Enable versioning
+
+```bash
+$ aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configuration Status=Enabled
+```
+
+
+- export KOPS_CLUSTER_NAME=k8.tradelingk8.com
 
 - Create the cluster
 
