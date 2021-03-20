@@ -228,3 +228,57 @@ company.com.          99      IN      TXT     "lopgle-site-verification=22nceW24
 ;; WHEN: Tue Feb 02 16:53:43 +04 2021
 ;; MSG SIZE  rcvd: 268
 ```
+
+
+- Dig the ns records for a given domain
+
+```bash
+$ dig ns devopsk8.com            
+
+; <<>> DiG 9.10.6 <<>> ns devopsk8.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55429
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;devopsk8.com.                  IN      NS
+
+;; ANSWER SECTION:
+devopsk8.com.           172800  IN      NS      ns-1991.awsdns-56.co.uk.
+devopsk8.com.           172800  IN      NS      ns-1442.awsdns-52.org.
+devopsk8.com.           172800  IN      NS      ns-157.awsdns-19.com.
+devopsk8.com.           172800  IN      NS      ns-945.awsdns-54.net.
+
+;; Query time: 222 msec
+;; SERVER: 195.229.241.222#53(195.229.241.222)
+;; WHEN: Sat Mar 20 13:57:38 +04 2021
+;; MSG SIZE  rcvd: 178
+```
+
+- Dig soa record type for given domain
+
+```bash
+$ dig soa devopsk8.com                              
+
+; <<>> DiG 9.10.6 <<>> soa devopsk8.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25736
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;devopsk8.com.                  IN      SOA
+
+;; ANSWER SECTION:
+devopsk8.com.           857     IN      SOA     ns-157.awsdns-19.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+
+;; Query time: 4 msec
+;; SERVER: 213.42.20.20#53(213.42.20.20)
+;; WHEN: Sat Mar 20 14:03:31 +04 2021
+;; MSG SIZE  rcvd: 119
+```
