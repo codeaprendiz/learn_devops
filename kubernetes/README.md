@@ -14,6 +14,7 @@ Initial Steps | [commands](task-000-commands/commands.md) <br> [basics](task-000
 External IP | [external IP to access Application In Cluster](gcp/task-008-external-IP-to-access-Application-In-Cluster) |
 DNS and Static IPs | [configuring dns with static IPs k8 using-Service](gcp/task-009-configuring-dns-with-static-IPs-k8-using-Service) <br> [configuring dns with static IPs k8 using Ingress](gcp/task-010-configuring-dns-with-static-IPs-k8-using-Ingress) |
 Administer A Cluster | [Configure default CPU requests and limits for a namespace](local-mac/administer-a-cluster/task-017-configure-default-CPU-requests-and-limits-for-a-namespace) <br>  [Configure default memory requests and limits for a namespace](./local-mac/administer-a-cluster/task-018-configure-default-memory-requests-and-limits-for-a-namespace) | 
+TLS KOPS k8s Let's Encrypt | [IN-PROGRESS - Create k8s using kops, enable https using let's encrypt for given domain and deploy whoami on the same](aws/task-019-lets-encrypt-kops-cluster) | 
 
 ### Enterprise Level Tasks
 
