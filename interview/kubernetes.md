@@ -1,6 +1,6 @@
 ## Kubernetes
 
-- What is kubernetes?
+What is kubernetes?
 
 <details>
 
@@ -13,7 +13,7 @@
 </details>
 
 
-- What are the components on master (Control Plane Components)
+What are the components on master (Control Plane Components)
 
 <details>
 
@@ -27,4 +27,14 @@
 
 </details>
 
-What are the 
+What are the Node Components
+
+<details>
+
+[concepts/overview/components](https://kubernetes.io/docs/concepts/overview/components/)
+
+- kubelet : An agent that runs on each node in the cluster. It makes sure that containers are running in a Pod.
+- kube-proxy : kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept.
+- Container runtime : The container runtime is the software that is responsible for running containers.
+
+</details>
