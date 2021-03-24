@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  jenkins_service:
+    restart: unless-stopped
+    image: jenkins/jenkins:lts
+    container_name: jenkins_local
+    environment:
+      - "JAVA_OPTS=-Djava.awt.headless=true
+        -Dhudson.footerURL=https://acme.com
+        -Xmx512m
+        -Djava.io.tmpdir=/tmp/jenkins
+        -XX:+UseG1GC
+        -XX:MaxGCPauseMillis=400
+        -XX:+ParallelRefProcEnabled
+        -XX:+ExplicitGCInvokesConcurrentAndUnloadsClasses
+        -XX:+UnlockDiagnosticVMOptions
+        -XX:G1SummarizeRSetStatsPeriod=1
+        -XX:MaxMetaspaceExpansion=128M
+        -Dhudson.DNSMultiCast.disabled=true
+        -Dorg.eclipse.jetty.server.Request.maxFormContentSize=51000000"
+      - "JENKINS_HOME=/var/lib/jenkins"
+    #      - "JENKINS_SLAVE_AGENT_PORT=50001"
+    #      - "JENKINS_OPTS=--httpPort=6999"
+    volumes:
+      - ./config:/tmp/jenkins                 # tmp directory
+      - ./config:/var/config/jenkins          # config directory
+      - ./lib:/var/lib/jenkins                # data directory i.e. JENKINS_HOME set via environment vars
+    ports:
+      - 8080:8080
+      - 50000:50000
+

@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  jenkins_service:
+    restart: unless-stopped
+    image: jenkins/jenkins:{{ jenkins_version }}
+    container_name: jenkins_{{ env }}
+    environment:
+      - "JAVA_OPTS=-Djava.awt.headless=true
+        -Dhudson.footerURL=https://acme.com
+        -Djava.io.tmpdir=/tmp/jenkins
+        -XX:MaxGCPauseMillis=400
+        -XX:+ParallelRefProcEnabled
+        -XX:+ExplicitGCInvokesConcurrentAndUnloadsClasses
+        -XX:+UnlockDiagnosticVMOptions
+        -XX:G1SummarizeRSetStatsPeriod=1
+        -XX:MaxMetaspaceExpansion=128M
+        -Dhudson.DNSMultiCast.disabled=true
+        -Dorg.eclipse.jetty.server.Request.maxFormContentSize=51000000"
+#       -Xmx{{ jenkins_xmx }}m
+#       -XX:+UseG1GC
+      - "JENKINS_HOME=/var/lib/jenkins"
+#    - "JENKINS_SLAVE_AGENT_PORT={{ jenkins_agent_port }}"
+#    - "JENKINS_OPTS=--httpPort={{ jenkins_port }}"
+    volumes:
+      - {{ jenkins_tmp_dir }}:/tmp/jenkins
+      - {{ jenkins_config_dir }}:/var/config/jenkins
+      - {{ jenkins_data_dir }}:/var/lib/jenkins
+    ports:
+      - {{ jenkins_agent_port }}:{{ jenkins_agent_port }}
+      - {{ jenkins_port }}:{{jenkins_port }}
