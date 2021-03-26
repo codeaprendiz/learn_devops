@@ -12,6 +12,7 @@ jenkins_group: jenkins
 jenkins_hostname: localhost
 jenkins_port: "8080"
 jenkins_agent_port: "50001"
+jenkins_http_port: "6999"
 jenkins_jar_location: /opt/jenkins-cli.jar
 jenkins_connection_delay: 5
 jenkins_connection_retries: 60

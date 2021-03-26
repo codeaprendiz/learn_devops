@@ -10,6 +10,16 @@
     - jenkins
     - install-jenkins
 
+- name: create jenkins caddy file
+  template:
+    dest: "{{ jenkins_config_dir }}/Caddyfile"
+    owner: "{{ jenkins_user }}"
+    group: "{{ jenkins_user }}"
+    mode: 0777
+    src: Caddyfile
+  tags:
+    - jenkins
+
 - name: start jenkins docker-compose
   become: true
   docker_compose:

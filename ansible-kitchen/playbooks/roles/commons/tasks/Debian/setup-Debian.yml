@@ -11,7 +11,7 @@
     - curl
     - software-properties-common
     - python3-pip
-    - python-pip
+#    - python-pip
     - virtualenv
     - python3-setuptools
     - vim
@@ -26,6 +26,8 @@
     - "boto3"
     - "docker"
     - "docker-compose"
+  environment:
+    ansible_python_interpreter: "/usr/bin/python3"
   tags:
     - all
     - vm-required

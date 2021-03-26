@@ -1,4 +1,4 @@
-- name: install docker kibana
+- name: install docker jenkins
   import_tasks: install-jenkins.yaml
   tags:
     - jenkins
