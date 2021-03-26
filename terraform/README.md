@@ -9,6 +9,8 @@
 Topic | Tasks | 
 ---    | --- | 
 Initial Steps | [commands](task-000-commands/ReadMe.md) <br> [terraform doc references](task-001-doc-references/ReadMe.md) <br> [task-002-tutorial-links](task-002-tutorial-links/ReadMe.md) |
+Initialization setup with terraform | [Setting up IAM user for terraform](aws/task-000-initialization-setup) |
+Creating EC2 instance with datasource | [Create an EC2 instance by using AWS data source to choose the AMI](aws/task-001-vars-provider-ec2-dataSources) |
 S3 IAM  | [Create S3 bucket with IAM policy to access the bucket](aws/task-020-s3-iam-using-modules) |
 Kubernetes Typhoon|  [Create kubernetes cluster using typhoon kubernetes](aws/task-021-k8s-cluster-typhoon) |
 Route53 EC2 | [To create Route53 record to access EC2 instance](aws/task-022-route53-ec2) | 
