@@ -42,3 +42,6 @@ all:
       hosts:
         bar.example.com:
         three.example.com:
+    jenkins:
+      hosts:
+        54.194.212.216

@@ -3,15 +3,15 @@
 ###############################################################################################################
 
 - name: install docker jenkins
-  hosts: localhost
-#  remote_user: codeaprendiz
+  hosts: jenkins
+  remote_user: ubuntu
   become: true
+
   vars:
+    ansible_ssh_private_key_file: "../../terraform/aws/task-029-ec2-jenkins-instance-and-slave-instance/jenkins.pem"
 ##### CREATING REQUIRED USERS ##############
-#    user: "jenkins"
-#    group: "jenkins"
-    user: "ankitsinghrathi"
-    group: "staff"
+    user: "jenkins"
+    group: "jenkins"
 ####### CREATING REQUIRED DIRECTORIES #####
 #    mount_path: "/data"
     mount_path: "/tmp"
