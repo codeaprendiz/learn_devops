@@ -29,3 +29,18 @@ var eventListeners = myEmitter.listenerCount('connection');
 
 
 console.log(eventListeners + " Listner(s) listening to connection event");
+
+// Fire the connection event
+myEmitter.emit('connection');
+
+// Remove the binding of listner1 function
+myEmitter.removeListener('connection', listner1);
+console.log("Listner1 will not listen now.");
+
+// Fire the connection event
+myEmitter.emit('connection');
+
+eventListeners = myEmitter.listenerCount('connection');
+console.log(eventListeners + " Listner(s) listening to connection event");
+
+console.log("Program Ended.");
