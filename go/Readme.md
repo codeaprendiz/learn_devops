@@ -7,3 +7,4 @@
 - [variables](task-002-variables)
 - [operators](task-003-operators)
 - [cards project](task-004-proj-cards)
+- [structs](task-005-struct)
