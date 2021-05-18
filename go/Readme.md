@@ -16,3 +16,4 @@
 - [channels](task-009-channels)
 - [go-modules](task-010-go-modules)
 - [adding-dependency](task-011-adding-dependency)
+- [odd-even](task-012-odd-even)
