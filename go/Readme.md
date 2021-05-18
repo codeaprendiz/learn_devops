@@ -1,5 +1,7 @@
 
 [Go Playground](https://play.golang.org/)
+[Golang blog](https://blog.golang.org/using-go-modules)
+[using go modules](https://blog.golang.org/using-go-modules)
 
 
 - [commands](task-000-commands)
@@ -12,3 +14,4 @@
 - [interfaces](task-007-interfaces)
 - [http](task-008-http)
 - [channels](task-009-channels)
+- [go-modules](task-010-go-modules)

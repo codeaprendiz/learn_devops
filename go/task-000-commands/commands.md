@@ -35,4 +35,17 @@ go get
 go test
 ```
 
+- To get the go environment variables
 
+```bash
+$ go env        
+GO111MODULE=""
+GOARCH="amd64"
+GOBIN=""
+```
+
+- To create a go module
+
+```bash
+go mod init
+```
