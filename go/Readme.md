@@ -11,3 +11,4 @@
 - [maps](task-006-maps)
 - [interfaces](task-007-interfaces)
 - [http](task-008-http)
+- [channels](task-009-channels)
