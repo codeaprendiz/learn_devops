@@ -1,4 +1,5 @@
 
+[golang.org/](https://golang.org/)
 [Go Playground](https://play.golang.org/)
 [Golang blog](https://blog.golang.org/using-go-modules)
 [using go modules](https://blog.golang.org/using-go-modules)
@@ -17,3 +18,4 @@
 - [go-modules](task-010-go-modules)
 - [adding-dependency](task-011-adding-dependency)
 - [odd-even](task-012-odd-even)
+- [short-declaration-and-var](task-013-short-declaration-and-var)
