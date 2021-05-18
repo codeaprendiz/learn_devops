@@ -15,3 +15,4 @@
 - [http](task-008-http)
 - [channels](task-009-channels)
 - [go-modules](task-010-go-modules)
+- [adding-dependency](task-011-adding-dependency)
