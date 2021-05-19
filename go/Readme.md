@@ -4,6 +4,7 @@
 [Go Playground](https://play.golang.org/)
 [Golang blog](https://blog.golang.org/using-go-modules)
 [using go modules](https://blog.golang.org/using-go-modules)
+[String formatting](https://golang.org/pkg/fmt/)
 
 
 - [commands](task-000-commands)
@@ -20,3 +21,4 @@
 - [adding-dependency](task-011-adding-dependency)
 - [odd-even](task-012-odd-even)
 - [short-declaration-and-var](task-013-short-declaration-and-var)
+- [variable formatting](task-014-variable-formatting)
