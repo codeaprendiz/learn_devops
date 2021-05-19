@@ -13,5 +13,7 @@ $ go run main.go
 68       1000100         44      'D' 
 69       1000101         45      'E' 
 Type of a is  10
-Type of a is int %      
+Type of a is int 
+Binary value a is 1010 
+34      I am str        true   
 ```
