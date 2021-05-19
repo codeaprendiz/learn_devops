@@ -1,5 +1,6 @@
 
 [golang.org/](https://golang.org/)
+[golang spec](https://golang.org/ref/spec)
 [Go Playground](https://play.golang.org/)
 [Golang blog](https://blog.golang.org/using-go-modules)
 [using go modules](https://blog.golang.org/using-go-modules)
