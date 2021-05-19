@@ -25,3 +25,4 @@
 - [custom-type](task-015-custom-type)
 - [type conversion](task-016-type-conversion)
 - [zero values](task-017-zero-values)
+- [bool](task-018-bool)
