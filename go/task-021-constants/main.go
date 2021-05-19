@@ -5,7 +5,9 @@ import (
 )
 
 const (
-	a = 10
+	// Type constants
+	a int = 10
+	// Untype constants
 	b = 2.1
 	c = "Hello"
 )
