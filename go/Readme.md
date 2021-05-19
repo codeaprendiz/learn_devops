@@ -22,3 +22,4 @@
 - [odd-even](task-012-odd-even)
 - [short-declaration-and-var](task-013-short-declaration-and-var)
 - [variable formatting](task-014-variable-formatting)
+- [custom-type](task-015-custom-type)
