@@ -27,3 +27,4 @@
 - [zero values](task-017-zero-values)
 - [bool](task-018-bool)
 - [int overflow](task-019-int-overflow)
+- [strings and slice](task-020-strings)
