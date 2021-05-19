@@ -29,3 +29,4 @@
 - [int overflow](task-019-int-overflow)
 - [strings and slice](task-020-strings)
 - [constants](task-021-constants)
+- [bit shifting](task-022-bit-shifting)
