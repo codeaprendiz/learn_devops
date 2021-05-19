@@ -23,3 +23,5 @@
 - [short-declaration-and-var](task-013-short-declaration-and-var)
 - [variable formatting](task-014-variable-formatting)
 - [custom-type](task-015-custom-type)
+- []()
+- [zero values](task-017-zero-values)
