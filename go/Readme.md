@@ -28,3 +28,4 @@
 - [bool](task-018-bool)
 - [int overflow](task-019-int-overflow)
 - [strings and slice](task-020-strings)
+- [constants](task-021-constants)
