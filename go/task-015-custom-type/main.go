@@ -14,6 +14,12 @@ func main() {
 	fmt.Println(a)
 	fmt.Println(b)
 	fmt.Printf("\n%T", a)
-	fmt.Printf("\n%T", b)
+	fmt.Printf("\n%T\n", b)
+
+	// Type conversion
+
+	a = int(b)
+	fmt.Println(a)
+	fmt.Printf("%T", a)
 
 }

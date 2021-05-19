@@ -7,4 +7,6 @@ $ go run main.go
 
 int
 main.testtype
+34
+int    
 ```
