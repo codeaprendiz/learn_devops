@@ -8,6 +8,8 @@ type testtype int
 
 var b testtype
 
+
+
 func main() {
 	a = 23
 	b = 34
@@ -16,10 +18,5 @@ func main() {
 	fmt.Printf("\n%T", a)
 	fmt.Printf("\n%T\n", b)
 
-	// Type conversion
-
-	a = int(b)
-	fmt.Println(a)
-	fmt.Printf("%T", a)
 
 }
