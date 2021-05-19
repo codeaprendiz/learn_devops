@@ -1,5 +1,6 @@
 
 [golang.org/](https://golang.org/)
+[doc](https://golang.org/doc)
 [golang spec](https://golang.org/ref/spec)
 [Go Playground](https://play.golang.org/)
 [Golang blog](https://blog.golang.org/using-go-modules)
@@ -30,3 +31,4 @@
 - [strings and slice](task-020-strings)
 - [constants](task-021-constants)
 - [bit shifting](task-022-bit-shifting)
+- [loops](task-023-loops)
