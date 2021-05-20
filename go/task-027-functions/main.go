@@ -21,6 +21,11 @@ func main() {
 	
 	anyNumberOfArgs(x...)
 
+	// Anonymous functions
+	func(x int) {
+		fmt.Println("I am anonymous function and called with argument " , x )
+	}(23)
+
 }
 
 func foo() {
