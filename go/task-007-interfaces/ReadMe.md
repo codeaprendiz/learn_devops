@@ -4,4 +4,6 @@
 $ go run main.go
 Hi there!
 Hola!
+I was passed into bar {{James Bond} true}
+I was passed into bar {Dr Who}
 ```
