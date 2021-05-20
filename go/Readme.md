@@ -32,3 +32,4 @@
 - [constants](task-021-constants)
 - [bit shifting](task-022-bit-shifting)
 - [loops](task-023-loops)
+- [conditionals](task-024-conditional)
