@@ -35,3 +35,4 @@
 - [conditionals](task-024-conditional)
 - [arrays](task-025-arrays)
 - [slice](task-026-slice)
+- [functions](task-027-functions)
