@@ -76,6 +76,20 @@ func main() {
 
 	bar(sa1)
 	bar(p1)
+
+	checkType(p1)
+	checkType(sa1)
+
 }
 
+func checkType(h human) {
+	switch h.(type) {
+	case person:
+		fmt.Println("I am person")
+	case secretAgent:
+		fmt.Println("I am secret agent")
+	default: 
+		fmt.Println("I am default")	
+	}
+}
 
