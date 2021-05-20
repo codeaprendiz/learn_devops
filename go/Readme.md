@@ -36,3 +36,4 @@
 - [arrays](task-025-arrays)
 - [slice](task-026-slice)
 - [functions](task-027-functions)
+- [defer a function](task-028-defer-function)
