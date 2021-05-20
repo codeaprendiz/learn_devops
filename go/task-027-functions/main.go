@@ -15,6 +15,12 @@ func main() {
 
 	anyNumberOfArgs(1,2,3,4,45)
 
+	// Unfurling a slice
+
+	x := []int{1,2,3,4,5,6,76,8}
+	
+	anyNumberOfArgs(x...)
+
 }
 
 func foo() {
@@ -35,5 +41,5 @@ func multiReturnFunc() (string,bool) {
 
 func anyNumberOfArgs(x ...int) {
 	fmt.Println(x)
-	fmt.Printf("\n%T",x)
+	fmt.Printf("\n%T\n",x)
 }
