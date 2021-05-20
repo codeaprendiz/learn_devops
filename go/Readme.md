@@ -34,3 +34,4 @@
 - [loops](task-023-loops)
 - [conditionals](task-024-conditional)
 - [arrays](task-025-arrays)
+- [slice](task-026-slice)
