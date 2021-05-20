@@ -23,6 +23,8 @@ func main() {
 		},
 	}
 
+	fmt.Println(jim)
+	fmt.Println(jim.firstName)
 	jim.updateName("jimmy")
 	jim.print()
 }
