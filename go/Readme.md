@@ -37,3 +37,4 @@
 - [slice](task-026-slice)
 - [functions](task-027-functions)
 - [defer a function](task-028-defer-function)
+- [methods](task-029-methods)
