@@ -37,4 +37,5 @@ func main() {
 	secondStringArray := []string{"this","is","string"}
 	multi := [][]string{firstStringArray ,secondStringArray}
 	fmt.Println(multi)
+
 }
