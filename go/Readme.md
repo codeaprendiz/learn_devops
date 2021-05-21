@@ -40,3 +40,4 @@
 - [methods](task-029-methods)
 - [function expression](task-030-func-expression)
 - [function callback](task-031-callback)
+- [scope](task-032-scope)
