@@ -44,3 +44,4 @@
 - [recursion](task-033-recursion)
 - [pointers](task-034-pointers)
 - [method sets](task-035-method-sets)
+- [pointers in structs](task-036-pointers-in-structs)
