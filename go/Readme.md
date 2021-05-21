@@ -38,3 +38,5 @@
 - [functions](task-027-functions)
 - [defer a function](task-028-defer-function)
 - [methods](task-029-methods)
+- [function expression](task-030-func-expression)
+- [function callback](task-031-callback)
