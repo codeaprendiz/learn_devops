@@ -46,3 +46,5 @@
 - [pointers](task-034-pointers)
 - [method sets](task-035-method-sets)
 - [pointers in structs](task-036-pointers-in-structs)
+- [json marshall](task-037-json-marshall)
+- [json unmarshall](task-038-json-unmarshall)
