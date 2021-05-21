@@ -43,3 +43,4 @@
 - [scope](task-032-scope)
 - [recursion](task-033-recursion)
 - [pointers](task-034-pointers)
+- [method sets](task-035-method-sets)
