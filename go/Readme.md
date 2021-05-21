@@ -41,3 +41,5 @@
 - [function expression](task-030-func-expression)
 - [function callback](task-031-callback)
 - [scope](task-032-scope)
+- [recursion](task-033-recursion)
+- [pointers](task-034-pointers)
