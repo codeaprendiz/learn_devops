@@ -51,3 +51,4 @@
 - [writer interface](task-039-writer-interface)
 - [sort](task-040-sort)
 - [custom sort](task-041-custom-sort)
+- [waitgroup](task-042-waitgroup)
