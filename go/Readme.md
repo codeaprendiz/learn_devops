@@ -52,3 +52,4 @@
 - [sort](task-040-sort)
 - [custom sort](task-041-custom-sort)
 - [waitgroup](task-042-waitgroup)
+- [race condition](task-043-race-condition)
