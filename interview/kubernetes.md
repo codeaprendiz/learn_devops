@@ -52,3 +52,10 @@ What is the difference between a deployment and stateful set?
 <details>
 
 </details>
+
+
+How can we do blue green deployment in kubernetes ?
+
+<details>
+
+</details>
