@@ -9,3 +9,18 @@
 - Users define and provision data center infrastructure using a declarative configuration language known as HashiCorp Configuration Language, or optionally JSON.
 
 </details>
+
+
+- How can i use output variables from one folder in `terraform run` of another folder?
+
+<details>
+
+</details>
+
+
+- How you guys maintain the terraform code for different environments in your company?
+
+<details>
+
+</details>
+

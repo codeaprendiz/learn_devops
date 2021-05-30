@@ -55,3 +55,18 @@ OR
 - Run a different OS inside another OS (such as running Unix on Linux)
 
 </details>
+
+
+
+By default what is the memory limit for a docker container?
+
+<details>
+
+</details>
+
+
+How can you set a limit on the container memory in docker?
+
+<details>
+
+</details>

@@ -59,3 +59,10 @@ How can we do blue green deployment in kubernetes ?
 <details>
 
 </details>
+
+
+Can you explain the end-to-end workflow of accessing microservice in PRODUCTION in kubernetes from any of your past experiences? 
+
+<details>
+
+</details>
