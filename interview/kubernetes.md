@@ -38,3 +38,17 @@ What are the Node Components
 - Container runtime : The container runtime is the software that is responsible for running containers.
 
 </details>
+
+
+We have NODES A,B,C and PODS A,B,C how will you ensure that pod A goes to A node, B goes to B and C goes to C node and no other case happens
+
+<details>
+
+</details>
+
+
+What is the difference between a deployment and stateful set?
+
+<details>
+
+</details>
