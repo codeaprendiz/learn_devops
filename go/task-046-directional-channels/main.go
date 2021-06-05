@@ -25,6 +25,6 @@ func send(c chan <- int) {
 	c <- 43
 }
 func receive(c <- chan int) {
-	//fmt.Println("\ninside receive()")
+	fmt.Println("\ninside receive()")
 	fmt.Println(<-c)
 }
