@@ -54,3 +54,4 @@
 - [waitgroup](task-042-waitgroup)
 - [race condition](task-043-race-condition)
 - [mutex](task-044-mutex)
+- [channel-intro](task-045-channel-intro)
