@@ -114,6 +114,13 @@ You can also remove all those files but BE VERY CAREFUL when you execute rm -rf 
 for j in `find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \)`;do echo $j; ls -ltrh $j; done;
 ```
 
+### kubectl
+Start a busy box container anywhere and login to debugging
+```bash
+$ kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+```
+
+
 ### mongo
 
 ```bash
