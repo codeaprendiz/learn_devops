@@ -57,3 +57,4 @@
 - [channel-intro](task-045-channel-intro)
 - [directional-channels](task-046-directional-channels)
 - [range-in-channel](task-047-range-in-channels)
+- [select-channels](task-048-select-channels)
