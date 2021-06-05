@@ -59,3 +59,4 @@
 - [range-in-channel](task-047-range-in-channels)
 - [select-channels](task-048-select-channels)
 - [fan-in-channels](task-049-fan-in-channels)
+- [fan-out-channels](task-050-fan-out-channels)
