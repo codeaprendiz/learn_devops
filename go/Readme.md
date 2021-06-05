@@ -56,3 +56,4 @@
 - [mutex](task-044-mutex)
 - [channel-intro](task-045-channel-intro)
 - [directional-channels](task-046-directional-channels)
+- [range-in-channel](task-047-range-in-channels)
