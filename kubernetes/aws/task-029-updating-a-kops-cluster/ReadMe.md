@@ -15,7 +15,7 @@ aws s3api create-bucket --bucket ${bucket_name} --region us-east-1
 aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configuration Status=Enabled
 export KOPS_CLUSTER_NAME=k8.mydomain.com
 export KOPS_STATE_STORE=s3://${bucket_name}
-kops create cluster --node-count=1 --node-size=t2.micro --master-count=1 --master-size=t2.micro --zones=us-east-1a --name=${KOPS_CLUSTER_NAME} --yes
+kops create cluster --node-count=1 --node-size=t2.medium --master-count=1 --master-size=t2.medium --zones=us-east-1a --name=${KOPS_CLUSTER_NAME} --yes
 kops validate cluster --wait 10m
 
 ## updating instance size
