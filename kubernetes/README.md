@@ -17,6 +17,8 @@ Administer A Cluster | [Configure default CPU requests and limits for a namespac
 TLS KOPS k8s Let's Encrypt | [IN-PROGRESS - Create k8s using kops, enable https using let's encrypt for given domain and deploy whoami on the same](aws/task-019-lets-encrypt-kops-cluster) | 
 Create Kops cluster | [Creating a kops cluster](aws/task-028-k8s-cluster-using-kops)
 Updating a Kops cluster | [Updating existing KOPS cluster resources](aws/task-029-updating-a-kops-cluster)
+Deploying treafik using Helm Kops | [Deploy treafik using Helm in Kops](aws/task-001-deploy-treafik-kops-k8s-helm)
+
 ### Enterprise Level Tasks
 
 
