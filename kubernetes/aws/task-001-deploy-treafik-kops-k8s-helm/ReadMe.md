@@ -106,4 +106,41 @@ $ kubectl describe svc treafik-helm-template-traefik
 Error syncing load balancer: failed to ensure load balancer: AccessDenied
 ```
 
-- We will try with create again with Admin permissions.
+- Trying again with correct permissions.
+
+```bash
+$ kubectl get svc
+NAME                            TYPE           CLUSTER-IP      EXTERNAL-IP                                                              PORT(S)                      AGE
+kubernetes                      ClusterIP      100.64.0.1      <none>                                                                   443/TCP                      16m
+treafik-helm-template-traefik   LoadBalancer   100.65.168.87   a93259cfe3e6840489e86a2b80b5f26d-546301547.us-east-1.elb.amazonaws.com   80:32444/TCP,443:32481/TCP   7m38s
+```
+
+You will get the following Load Balancer on AWS
+
+![](../../../images/kubernetes/aws/task-001-deploy-treafik-kops-k8s-helm/aws_load_balancer.png)
+
+
+Now we are getting 404 when we hit the load balancer.
+
+```bash
+$ curl -v a93259cfe3e6840489e86a2b80b5f26d-546301547.us-east-1.elb.amazonaws.com                                                                                                                                  
+*   Trying 54.175.76.116...
+* TCP_NODELAY set
+* Connected to a93259cfe3e6840489e86a2b80b5f26d-546301547.us-east-1.elb.amazonaws.com (54.175.76.116) port 80 (#0)
+> GET / HTTP/1.1
+> Host: a93259cfe3e6840489e86a2b80b5f26d-546301547.us-east-1.elb.amazonaws.com
+> User-Agent: curl/7.64.1
+> Accept: */*
+> 
+< HTTP/1.1 404 Not Found
+< Content-Type: text/plain; charset=utf-8
+< X-Content-Type-Options: nosniff
+< Date: Thu, 10 Jun 2021 05:35:38 GMT
+< Content-Length: 19
+< 
+404 page not found
+* Connection #0 to host a93259cfe3e6840489e86a2b80b5f26d-546301547.us-east-1.elb.amazonaws.com left intact
+* Closing connection 0
+```
+
+In the next tasks we will try deploying some app behind load balancer and test routes.
