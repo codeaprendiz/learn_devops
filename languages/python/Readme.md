@@ -2,3 +2,4 @@
 - [Emails](task-050-emails/emails.py)
 - [JIRA](task-051-jira/jira.py)
 - [Utility](task-052-utility)
+- [Slack](task-053-slack)
