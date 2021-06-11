@@ -1,2 +1,3 @@
-- [numbers](task-001-numbers)
-- [Emails](task-050-emails)
+- [numbers](task-001-numbers/ReadMe.md)
+- [Emails](task-050-emails/emails.py)
+- [JIRA](task-051-jira/jira.py)
