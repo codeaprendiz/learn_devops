@@ -6,4 +6,5 @@
 - [Slack](task_053_slack/slack.py)
 - [SCM Repo Git Operations](task_054_SCMRepo/scmrepo.py)
 - [Github API operations](task_055_github/github.py)
-- [Jenkins](task_056_jenkins)
+- [Jenkins](task_056_jenkins/jenkins.py)
+- [DockerHub](task_057_dockerhub/dockerhub.py)
