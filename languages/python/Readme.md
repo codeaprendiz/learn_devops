@@ -4,3 +4,5 @@
 - [JIRA](task_051_jira/jira.py)
 - [Utility](task_052_utility/utility.py)
 - [Slack](task_053_slack/slack.py)
+- [SCM Repo Git Operations](task_054_SCMRepo/scmrepo.py)
+- [Github API operations](task_055_github/github.py)

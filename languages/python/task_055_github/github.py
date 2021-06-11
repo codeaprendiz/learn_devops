@@ -12,6 +12,7 @@ from task_052_utility.utility import *
 from task_050_emails.emails import *
 from task_051_jira.jira import *
 from task_053_slack.slack import *
+from task_054_SCMRepo.scmrepo import *
 
 
 """
