@@ -9,3 +9,4 @@
 - [Jenkins](task_056_jenkins/jenkins.py)
 - [DockerHub](task_057_dockerhub/dockerhub.py)
 - [Kubernetes](task_058_kubernetes/kubernetes.py)
+- [Mongodb Atlas](task_059_mongodb_atlas/mongodb_atlas.py)
