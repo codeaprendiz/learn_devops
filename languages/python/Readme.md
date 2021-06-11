@@ -8,3 +8,4 @@
 - [Github API operations](task_055_github/github.py)
 - [Jenkins](task_056_jenkins/jenkins.py)
 - [DockerHub](task_057_dockerhub/dockerhub.py)
+- [Kubernetes](task_058_kubernetes/kubernetes.py)
