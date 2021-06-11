@@ -1,13 +1,115 @@
 import json
-import re
-import datetime
-from datetime import datetime
+# import re
+# import datetime
+# from datetime import datetime
+# import time
+# import logging
 
 from github import Github
-import time
-import logging
+
 from prettytable import PrettyTable
-from utility import
+from task_052_utility.utility import *
+from task_050_emails.emails import *
+from task_051_jira.jira import *
+from task_053_slack.slack import *
+
+
+"""
+########################################################################################################################################################
+# CONSTANT_GITHUB_TOKEN : Github token required authenticate for private repositories and execute actions authorized by the token priviledges
+########################################################################################################################################################
+"""
+CONSTANT_GITHUB_TOKEN = ""
+
+"""
+########################################################################################################################################################
+# CONSTANT_ORGANIZATION_NAME : Github Organization name
+########################################################################################################################################################
+"""
+CONSTANT_ORGANIZATION_NAME = "testorg"
+
+
+"""
+##################################################################
+# VAR_ENVIRONMENT_IN_CONSIDERATION
+##################################################################
+"""
+
+VAR_ENVIRONMENT_IN_CONSIDERATION = ""
+
+
+CONSTANT_EMAIL_RELEASE_DL = "releaseteam@mycompany.com"
+CONSTANT_TEST_DL = "team-ops@mycompany.com"
+CONSTANT_FROM_DL = 'ankit.rathi@mycompany.com'
+
+"""
+##################################################################
+# COLUMN_APPLICATION_DETAILS : The application details column in the email table
+##################################################################
+"""
+COLUMN_APPLICATION_DETAILS = "Application Details"
+
+""" 
+##################################################################
+# COLUMN_JIRA_LINK : The jira link column in the email table
+##################################################################
+"""
+COLUMN_JIRA_LINKS_AND_PR_DETAILS = "JIRA Link And PR Details"
+
+
+"""
+########################################################################################################################################################
+# CONSTANT_BUILD_STATUS_IN_PROGRESS : Github API response keyword for in-progress workflows
+########################################################################################################################################################
+"""
+CONSTANT_BUILD_STATUS_IN_PROGRESS = "in_progress"
+
+"""
+########################################################################################################################################################
+# CONSTANT_BUILD_STATUS_COMPLETED : Github API response keyword for completed workflows
+########################################################################################################################################################
+"""
+CONSTANT_BUILD_STATUS_COMPLETED = "completed"
+
+
+"""
+########################################################################################################################################################
+# CONSTANTS_SCRIPT_START_TIME : At what time the script was started like 1603628003.0897448. This is required to calculate other threshold time limite
+#                               like how long should we check for build completion, how long should we check for docker image upload etc
+########################################################################################################################################################
+"""
+CONSTANTS_SCRIPT_START_TIME = time.time()
+
+"""
+########################################################################################################################################################
+# CONSTANT_BUILD_TRIGGER_WAIT_THRESHOLD_SECONDS : Till what time the script should keep on checking for build trigger
+########################################################################################################################################################
+"""
+CONSTANT_BUILD_TRIGGER_WAIT_THRESHOLD_SECONDS = CONSTANTS_SCRIPT_START_TIME + CONSTANT_30_MINUTES_TO_SECONDS
+
+"""
+########################################################################################################################################################
+# CONSTANT_BUILD_COMPLETION_THRESHOLD_SECONDS : Till what time the script should keep on checking for build completion
+########################################################################################################################################################
+"""
+## Testing
+CONSTANT_BUILD_COMPLETION_THRESHOLD_SECONDS = CONSTANTS_SCRIPT_START_TIME + \
+                                              CONSTANT_30_MINUTES_TO_SECONDS
+#   CONSTANT_3_MINUTE_TO_SECONDS
+"""
+########################################################################################################################################################
+# CONSTANT_IMAGE_UPLOAD_THRESHOLD_SECONDS : Till what time the script should keep on checking for docker image upload
+########################################################################################################################################################
+"""
+CONSTANT_IMAGE_UPLOAD_THRESHOLD_SECONDS = CONSTANTS_SCRIPT_START_TIME + CONSTANT_45_MINUTES_TO_SECONDS
+
+"""
+########################################################################################################################################################
+# CONSTANT_DEPLOYMENT_VALIDATION_THRESHOLD_SECONDS : Till what time the script should keep on checking if the deployment is completed and changes
+                                                     reflected
+########################################################################################################################################################
+"""
+CONSTANT_DEPLOYMENT_VALIDATION_THRESHOLD_SECONDS = CONSTANTS_SCRIPT_START_TIME + CONSTANT_45_MINUTES_TO_SECONDS
 
 
 
@@ -98,7 +200,7 @@ class GitHubTasks(object):
         :return: the commit hash string
         """
         logging.info("----------------------INFO----------------------------------------------------GITHUBTASKS.get_latest_commit_hash-------------------------------")
-        # https://api.github.com/repos/tradeling/module-account/commits/master
+        # https://api.github.com/repos/mycompany/k8s-microservice-account/commits/master
         query_url = f"https://api.github.com/repos/{self.owner}/{repository_name}/commits/{branch_name}"
         headers = {'Authorization': f'token {self.token}'
                    }
@@ -121,7 +223,7 @@ class GitHubTasks(object):
         logging.info("----------------------INFO----------------------------------------------------GITHUBTASKS.get_closed_pr_description-------------------------------")
         logging.info("Page number being considered " + str(page_number))
         found_pr_description = False
-        # https://api.github.com/repos/tradeling/module-backoffice/pulls\?state\=closed
+        # https://api.github.com/repos/mycompany/k8s-microservice-backoffice/pulls\?state\=closed
         query_url = f"https://api.github.com/repos/{self.owner}/{repo_name}/pulls"
         headers = {'Authorization': f'token {self.token}'}
         params = {'state': 'closed',
@@ -152,7 +254,7 @@ class GitHubTasks(object):
         """
         logging.info("----------------------INFO----------------------------------------------------GITHUBTASKS.get_closed_pr_title-------------------------------")
         logging.info("The page number being considered : " + str(page_number))
-        # https://api.github.com/repos/tradeling/module-backoffice/pulls\?state\=closed
+        # https://api.github.com/repos/mycompany/k8s-microservice/pulls\?state\=closed
         query_url = f"https://api.github.com/repos/{self.owner}/{repo_name}/pulls"
         headers = {'Authorization': f'token {self.token}'}
         params = {'state': 'closed',
@@ -188,7 +290,7 @@ class GitHubTasks(object):
         """
         logging.info("----------------------INFO----------------------------------------------------GITHUBTASKS.from_last_n_commits_of_branch_return_pr_numbers_for_only_merge_commit-------------------------------")
         logging.info("The page number being called " + str(page_number))
-        # https://api.github.com/repos/tradeling/module-catalog-search/commits\?sha\=develop
+        # https://api.github.com/repos/mycompany/k8s-microservice/commits\?sha\=develop
         list_of_pr_numbers = []
         if n == 0:
             return list_of_pr_numbers
@@ -275,7 +377,7 @@ class GitHubTasks(object):
             pr_numbers_to_check = self.from_last_n_commits_of_branch_return_pr_numbers_for_only_merge_commit(repo, Utility.get_base_branch(branch_name), number_of_commits_to_traverse, 1)
             pr_links_string = ""
             for pr in pr_numbers_to_check:
-                pr_links_string = pr_links_string + " https://github.com/tradeling/" + repo + "/pull/" + str(pr) + "/files " + str(self.get_closed_pr_title(repo, pr, 1)) + "\n"
+                pr_links_string = pr_links_string + " https://github.com/mycompany/" + repo + "/pull/" + str(pr) + "/files " + str(self.get_closed_pr_title(repo, pr, 1)) + "\n"
             logging.info("PR numbers to check " + str(pr_numbers_to_check))
             if len(pr_numbers_to_check) > 0:
                 for pr_number in pr_numbers_to_check:
@@ -291,15 +393,15 @@ class GitHubTasks(object):
                             if index >= 1:
                                 jira_title_string = jira_title_string + "\n"
                             link_to_jira = jira_links[index]
-                            ticket_status = jira_obj.get_issue_status_from_link(link_to_jira)
+                            ticket_status = jira_object.get_issue_status_from_link(link_to_jira)
                             jira_title_string = jira_title_string + link_to_jira + " " + " (" + ticket_status + ") " + ticket_title
                             index = index + 1
                         email_content = email_content + "\n" + str(jira_title_string)
             if email_content != "":
-                application_details_column_data = "Repo: https://github.com/tradeling/" + repo + " \n" + \
-                                                  " Github Diff : https://github.com/tradeling/" + repo + "/compare/" + str(self.get_latest_commit_hash(repo, branch_name))[0:7] + "..." + \
+                application_details_column_data = "Repo: https://github.com/mycompany/" + repo + " \n" + \
+                                                  " Github Diff : https://github.com/mycompany/" + repo + "/compare/" + str(self.get_latest_commit_hash(repo, branch_name))[0:7] + "..." + \
                                                   str(self.get_latest_commit_hash(repo, Utility.get_base_branch(branch_name)))[0:7] + " "
-                # https://github.com/tradeling/web-www/compare/abee006593471aac1a27e2cc19f701e6c2d48b68...663527f845066b046a301ae3fbbad04868ab4c32
+                # https://github.com/mycompany/www/compare/abee93471aac1a27e2cc19f701e6c2d48b68...663527f8b046a301ae3fbbad04868ab4c32
                 jira_link_column_data = "Jira tasks:" + email_content + "\n\nGitHub pull requests:\n" + pr_links_string
 
                 tabular_table.add_row([jira_link_column_data, application_details_column_data])
@@ -327,7 +429,7 @@ class GitHubTasks(object):
         jira_links = []
         for link in all_links:
             logging.info("Considering link " + str(link))
-            if "tradeling.atlassian.net" in link:
+            if "mycompany.atlassian.net" in link:
                 jira_links.append(link)
         if len(jira_links) > 0:
             return jira_links
@@ -342,7 +444,7 @@ class GitHubTasks(object):
         """
         if "web" in repository_name:
             return "Frontend"
-        if "module" in repository_name:
+        if "k8s-microservice" in repository_name:
             return "API"
         return "None"
 
@@ -452,7 +554,7 @@ class GitHubTasks(object):
         flag_check_for_commit_hash = False
         slack_logging_class_obj = SlackClass(CONSTANT_LOGGING_SLACK_CHANNEL, CONSTANT_SLACK_TOKEN)
         slack_logging_class_obj.update_on_slack_channel("----------------------INFO----------------------------------------------------GITHUBTASKS.is_all_builds_completed-------------------------------")
-        slack_class_obj = SlackClass(CONSTANT_SLACK_CHANNEL, CONSTANT_SLACK_TOKEN)
+        slack_class_obj = SlackClass(CONSTANT_LOGGING_SLACK_CHANNEL, CONSTANT_SLACK_TOKEN)
         slack_class_obj.update_on_slack_channel("\n *Auto - Release updates for environment " + branch_name + "* \n")
         index = 0
         slack_message = ""
@@ -529,3 +631,5 @@ class GitHubTasks(object):
         with open('updated.json', 'w', encoding='utf-8') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
         GitHubTasks.prepare_email_from_file_input("updated.json")
+
+github_task_obj = GitHubTasks(CONSTANT_GITHUB_TOKEN, CONSTANT_ORGANIZATION_NAME)
