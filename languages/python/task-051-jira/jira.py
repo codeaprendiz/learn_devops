@@ -2,7 +2,27 @@ import logging
 from jira.client import JIRA
 from jira import JIRAError
 
+"""
+########################################################################################################################################################
+# CONSTANT_JIRA_TOKEN : JIRA token required for authentication with the JIRA server
+########################################################################################################################################################
+"""
+CONSTANT_JIRA_TOKEN = ""
 
+"""
+########################################################################################################################################################
+# CONSTANT_JIRA_SERVER_ADDRESS : JIRA server address
+########################################################################################################################################################
+"""
+CONSTANT_JIRA_SERVER_ADDRESS = "https://mycompany.atlassian.net"
+
+
+"""
+########################################################################################################################################################
+# CONSTANT_JIRA_EMAIL_ADDRESS : JIRA email address associated with the account
+########################################################################################################################################################
+"""
+CONSTANT_JIRA_EMAIL_ADDRESS = "admin@mycompany.com"
 
 class JIRATasks(object):
     """
@@ -75,4 +95,8 @@ class JIRATasks(object):
             jira_id = link.replace("https://mycompany.atlassian.net/browse/", "")
             jira_title.append(self.get_issue_title(jira_id))
         return jira_title
+
+
+jira_object = JIRATasks(CONSTANT_JIRA_TOKEN, CONSTANT_JIRA_SERVER_ADDRESS, CONSTANT_JIRA_EMAIL_ADDRESS)
+
 
