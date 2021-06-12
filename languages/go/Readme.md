@@ -62,3 +62,4 @@
 - [fan-out-channels](task-050-fan-out-channels)
 - [checking errors](task-051-checking-errors)
 - [file handling](task-052-files)
+- [print-logging](task-053-printing-logging)
