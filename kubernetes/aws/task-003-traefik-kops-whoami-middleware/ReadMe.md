@@ -188,19 +188,63 @@ Handling connection for 9000
 
 
 
-Let's try to deploy some middlewares. Ensure that the middleware.yaml is deployed
+- Let's try to deploy some middlewares. Ensure that the middleware.yaml is deployed
 
 ```bash
 kubectl apply -f middleware.yaml
 ```
 
-Also the route in IngressRoute should contain the middleware reference as show in the example
+- Also the route in IngressRoute should contain the middleware reference as show in the example
+- When the changes are deployed with the following part commented. See the response we get
+```bash
+$ cat whoami.yaml| grep -A 4 middleware          
+#      middlewares:
+#        - name: test-stripprefix
+#          namespace: default
 
+$ curl http://ad639fc8779704f558f7f3132f112d96-330009778.us-east-1.elb.amazonaws.com/api/whoami-app-api/
+Hostname: whoami-658d568b94-k8v8d
+IP: 127.0.0.1
+IP: 100.96.1.18
+RemoteAddr: 100.96.1.5:55748
+GET /api/whoami-app-api/ HTTP/1.1
+Host: ad639fc8779704f558f7f3132f112d96-330009778.us-east-1.elb.amazonaws.com
+User-Agent: curl/7.64.1
+Accept: */*
+Accept-Encoding: gzip
+X-Forwarded-For: 100.96.1.1
+X-Forwarded-Host: ad639fc8779704f558f7f3132f112d96-330009778.us-east-1.elb.amazonaws.com
+X-Forwarded-Port: 80
+X-Forwarded-Proto: http
+X-Forwarded-Server: treafik-helm-template-traefik-bf8f77bfc-jznxx
+X-Real-Ip: 100.96.1.1
+```
 
+> Note: the GET /api/whoami-app-api/ HTTP/1.1 and there is not X-Forwarded-Prefix
 
+- Now when the middleware part above is uncommented and deployed again
 
+```bash
+$ curl http://ad639fc8779704f558f7f3132f112d96-330009778.us-east-1.elb.amazonaws.com/api/whoami-app-api/
+Hostname: whoami-658d568b94-k8v8d
+IP: 127.0.0.1
+IP: 100.96.1.18
+RemoteAddr: 100.96.1.5:57574
+GET /whoami-app-api/ HTTP/1.1
+Host: ad639fc8779704f558f7f3132f112d96-330009778.us-east-1.elb.amazonaws.com
+User-Agent: curl/7.64.1
+Accept: */*
+Accept-Encoding: gzip
+X-Forwarded-For: 100.96.1.1
+X-Forwarded-Host: ad639fc8779704f558f7f3132f112d96-330009778.us-east-1.elb.amazonaws.com
+X-Forwarded-Port: 80
+X-Forwarded-Prefix: /api/
+X-Forwarded-Proto: http
+X-Forwarded-Server: treafik-helm-template-traefik-bf8f77bfc-jznxx
+X-Real-Ip: 100.96.1.1
+```
 
-
+> Note: GET /whoami-app-api/ HTTP/1.1 and X-Forwarded-Prefix: /api/     which says that the middleware is working.
     
     
     

@@ -53,8 +53,8 @@ spec:
       services:
         - name: whoami
           port: 80
-#      middlewares:
-#        - name: test-stripprefix
+      middlewares:
+        - name: test-stripprefix
 #          namespace: default
 
 
