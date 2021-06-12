@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: test-stripprefix
+#  namespace: default
+spec:
+  stripPrefix:
+    prefixes:
+      - /api/
+    forceSlash: false
+
+#spec:
+#  addPrefix:
+#    prefix: /foo

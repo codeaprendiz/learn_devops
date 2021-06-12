@@ -19,6 +19,8 @@ Create Kops cluster | [Creating a kops cluster](aws/task-028-k8s-cluster-using-k
 Updating a Kops cluster | [Updating existing KOPS cluster resources](aws/task-029-updating-a-kops-cluster)
 Deploying traefik using Helm Kops | [Deploy traefik using Helm in Kops](aws/task-001-deploy-treafik-kops-k8s-helm)
 Deploying traefik on KOPS with whoami | [Deploying traefik on KOPS with whoami](aws/task-002-treafik-kops-whoami)
+Understanding Middlewares in Treafik KOPS whoami | [Traefik Middleware Kops whoami](aws/task-003-traefik-kops-whoami-middleware)
+
 ### Enterprise Level Tasks
 
 
