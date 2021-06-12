@@ -61,3 +61,4 @@
 - [fan-in-channels](task-049-fan-in-channels)
 - [fan-out-channels](task-050-fan-out-channels)
 - [checking errors](task-051-checking-errors)
+- [file handling](task-052-files)
