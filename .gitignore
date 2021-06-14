@@ -41,3 +41,8 @@ post_tasks/
 
 ## python
 __pycache__
+
+
+## go
+pkg
+bin
