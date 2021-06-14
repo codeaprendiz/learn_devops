@@ -1,4 +1,10 @@
 
+GOPATH - Points to go workspace
+GOROOT - Points to binary installation of go
+
+
+
+
 - To compile go source code files
 
 ```bash
