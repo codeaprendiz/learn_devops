@@ -96,7 +96,39 @@ postgres=#
 - Create the environment variables
 
 ```bash
-export APP_DB_USERNAME=postgre
+export APP_DB_USERNAME=postgres
 export APP_DB_PASSWORD=my_password
 export APP_DB_NAME=postgres
+export APP_DB_PORT=54320          
+```
+
+- Now let's run some tests
+
+```bash
+$ go test -v                                    
+testing: warning: no tests to run
+PASS
+ok      github.com/codeaprendiz/rest-api-postgres       0.365s
+```
+
+
+- Running the tests at the end 
+
+```bash
+$ go test -v
+=== RUN   TestDeleteProduct
+--- PASS: TestDeleteProduct (0.02s)
+=== RUN   TestUpdateProduct
+--- PASS: TestUpdateProduct (0.02s)
+=== RUN   TestGetProduct
+--- PASS: TestGetProduct (0.02s)
+=== RUN   TestCreateProduct
+--- PASS: TestCreateProduct (0.02s)
+=== RUN   TestEmptyTable
+--- PASS: TestEmptyTable (0.02s)
+=== RUN   TestGetNonExistentProduct
+--- PASS: TestGetNonExistentProduct (0.02s)
+PASS
+ok      github.com/codeaprendiz/rest-api-postgres       0.573s
+
 ```
