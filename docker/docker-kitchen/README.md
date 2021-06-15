@@ -24,5 +24,6 @@ ElasticSearch | [To start elastic-search](local/task-005-elastic-search) |
 Kibana | [To start kibana](local/task-006-kibana) |
 MySQL | [To start mysql](local-mac/task-009-mysql) | 
 MongoDB | [To start mongo](local-mac/task-010-mongo) |
+Postgres | [To start psql](local-mac/task-012-postgres) |
 Cert Validation using nginx | [To test https certs valid for domain (*.domain.com) using nginx](local/task-008-nginx-https-domain-test)
 
