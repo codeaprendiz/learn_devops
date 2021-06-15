@@ -1,3 +1,4 @@
 - [connecting-to-db](task-001-connecting-to-db)
 - [show-all-tables-in-a-db](task-002-show-all-tables-in-a-database)
 - [drop-table](task-003-drop-table)
+- [show users](task-004-show-users)
