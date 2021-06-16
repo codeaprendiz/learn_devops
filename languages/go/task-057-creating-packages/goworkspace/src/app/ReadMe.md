@@ -40,31 +40,3 @@ $ tree -L 2 ../../
 
 The install directory is controlled by the GOPATH and GOBIN environment variables. If GOBIN is set, binaries are installed to that directory. If GOPATH is set, binaries are installed to the bin subdirectory of the first directory in the GOPATH list. Otherwise, binaries are installed to the bin subdirectory of the default GOPATH ($HOME/go or %USERPROFILE%\go).
 
-Lets create one more package and then try importing it
-
-If a package does not contain a file with main package declaration, then Go creates a package archive (.a) file inside pkg directory.
-
-```bash
-$ mkdir reversestring
-$ go mod init github.com/codeaprendiz/morestrings  
-$ go install github.com/codeaprendiz/morestrings  
-$ tree -L 3 ../../
-../../
-├── bin
-│   └── app
-├── pkg
-│   ├── darwin_amd64
-│   │   └── reversestring.a
-│   └── mod
-│       └── cache
-└── src
-    ├── app
-    │   ├── ReadMe.md
-    │   ├── app.go
-    │   └── go.mod
-    └── reversestring
-        ├── go.mod
-        └── reverse.go
-```
-
-
