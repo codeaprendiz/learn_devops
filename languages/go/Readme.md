@@ -69,3 +69,4 @@
 - [creating-packages](task-057-creating-packages)
 - [importing local packages](task-058-importing-local-package)
 - [importing global packages](task-059-importing-global-packages)
+- [testing](task-060-testing)
