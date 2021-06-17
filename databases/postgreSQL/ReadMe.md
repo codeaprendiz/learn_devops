@@ -2,3 +2,5 @@
 - [show-all-tables-in-a-db](task-002-show-all-tables-in-a-database)
 - [drop-table](task-003-drop-table)
 - [show users](task-004-show-users)
+- [creating-databases](task-005-creating-database)
+- [showing-all-databases](task-006-showing-all-databases)
