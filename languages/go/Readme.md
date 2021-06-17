@@ -68,3 +68,4 @@
 - [rest-api-gorilla-mix-postgres](task-056-rest-api-gorilla-mix-postgres/goworkspace/src/proj)
 - [creating-packages](task-057-creating-packages)
 - [importing local packages](task-058-importing-local-package)
+- [importing global packages](task-059-importing-global-packages)

@@ -79,3 +79,22 @@ rsc.io/sampler v1.0.0 v1.2.0 v1.2.1 v1.3.0 v1.3.1 v1.99.99
 $ go get rsc.io/sampler@v1.3.0       
 ```
 
+- To remove all downloaded modules, you can pass the -modcache flag to go clean:
+
+
+```bash
+go clean -modcache
+```
+
+
+- You can use the go env command to portably set the default value for an environment variable for future go commands:
+
+```bash
+$ go env -w GOBIN=/somewhere/else/bin
+```
+
+- To unset a variable previously set by go env -w, use go env -u:
+
+```bash
+$ go env -u GOBIN
+```
