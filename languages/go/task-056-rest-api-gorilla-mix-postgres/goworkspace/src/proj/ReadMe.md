@@ -132,3 +132,59 @@ PASS
 ok      github.com/codeaprendiz/rest-api-postgres       0.573s
 
 ```
+
+- Let's insert a product into the database before we run the application
+
+```bash
+$ psql -h localhost -p 54320 --username=postgres
+Password for user postgres: 
+psql (13.2, server 13.3 (Debian 13.3-1.pgdg100+1))
+Type "help" for help.
+postgres=# \c postgres
+psql (13.2, server 13.3 (Debian 13.3-1.pgdg100+1))
+You are now connected to database "postgres" as user "postgres".
+
+postgres=# INSERT INTO products(name, price) VALUES('green ball', 24);
+INSERT 0 1
+postgres=# select * from products;
+ id |    name    | price 
+----+------------+-------
+  1 | green ball | 24.00
+(1 row)
+
+
+```
+
+
+- Now if we try running the application after creating the binary
+
+```bash
+$ go install
+$ ls ../../bin/rest-api-postgres 
+../../bin/rest-api-postgres
+
+$ ../../bin/rest-api-postgres
+2021/06/18 22:07:01 Initializing the application ---------------------   Initialize()
+2021/06/18 22:07:01 Initializing the routes -------------- initializeRoutes() 
+2021/06/18 22:07:01 ----------- Starting the application on port 8010 --------- (a *App) Run(addr string)
+
+```
+
+- Now let's get the product using curl
+
+```bash
+$ curl http://localhost:8010/product/1
+{"id":1,"name":"green ball","price":24}
+```
+
+- Application output for the call
+
+```bash
+$ ../../bin/rest-api-postgres
+2021/06/18 22:07:01 Initializing the application ---------------------   Initialize()
+2021/06/18 22:07:01 Initializing the routes -------------- initializeRoutes() 
+2021/06/18 22:07:01 ----------- Starting the application on port 8010 --------- (a *App) Run(addr string)
+2021/06/18 22:07:25 ------------- (a *App) getProduct(w http.ResponseWriter, r *http.Request)
+2021/06/18 22:07:25 ---------------- (p *product) getProduct(db *sql.DB) error
+2021/06/18 22:07:25 ----------------- respondWithJSON(w http.ResponseWriter, code int, payload interface{})
+```
