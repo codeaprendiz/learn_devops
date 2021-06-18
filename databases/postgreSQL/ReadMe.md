@@ -5,3 +5,5 @@
 - [creating-databases](task-005-creating-database)
 - [showing-all-databases](task-006-showing-all-databases)
 - [Creating table](task-007-creating-tables)
+- [describe table](task-008-describe-table)
+- [connect to required db](task-009-connect-to-req-db)
