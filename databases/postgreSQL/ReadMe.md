@@ -4,3 +4,4 @@
 - [show users](task-004-show-users)
 - [creating-databases](task-005-creating-database)
 - [showing-all-databases](task-006-showing-all-databases)
+- [Creating table](task-007-creating-tables)
