@@ -7,3 +7,5 @@
 - [Creating table](task-007-creating-tables)
 - [describe table](task-008-describe-table)
 - [connect to required db](task-009-connect-to-req-db)
+- [inserting-into-table](task-010-inserting-into-table)
+- [viewing-table-contents](task-011-viewing-table-contents)

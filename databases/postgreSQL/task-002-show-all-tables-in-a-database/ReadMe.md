@@ -15,3 +15,16 @@ db-> WHERE table_type = 'BASE TABLE' AND table_schema NOT IN ('pg_catalog', 'inf
  schema.table1
  schema.table2
 ```
+
+
+You can also run the following to get list of relations/tables
+
+```bash
+postgres=# \d 
+               List of relations
+ Schema |      Name       |   Type   |  Owner   
+--------+-----------------+----------+----------
+ public | products        | table    | postgres
+ public | products_id_seq | sequence | postgres
+(2 rows)
+```
