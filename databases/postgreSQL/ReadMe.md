@@ -1,7 +1,7 @@
 - [connecting-to-db](task-001-connecting-to-db)
 - [show-all-tables-in-a-db](task-002-show-all-tables-in-a-database)
 - [drop-table](task-003-drop-table)
-- [show users](task-004-show-users)
+- [show users](task-004-show-users-and-priv)
 - [creating-databases](task-005-creating-database)
 - [showing-all-databases](task-006-showing-all-databases)
 - [Creating table](task-007-creating-tables)
@@ -9,3 +9,4 @@
 - [connect to required db](task-009-connect-to-req-db)
 - [inserting-into-table](task-010-inserting-into-table)
 - [viewing-table-contents](task-011-viewing-table-contents)
+- [create users](task-012-create-user)
