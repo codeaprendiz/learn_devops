@@ -10,6 +10,7 @@
 - [interview](interview)
 - [languages](languages)
 - [linux-commands](linux/linux-commands)
+- [bookmark-me](linux/linux-commands/bookmark-me/bookmark-me.md)
 - [linux-essentials](linux/linux-essentials)
 - [monitoring](monitoring)
 - [nginx](nginx)

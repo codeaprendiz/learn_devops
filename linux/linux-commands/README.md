@@ -1,5 +1,5 @@
 ## linux commands
-- [frequently-used](frequently-used/frequently-used.md)
+- [frequently-used](bookmark-me/bookmark-me.md)
 - [arp](arp/arp.md)
 - [awk](awk/awk.md)
 - [chage](chage/chage.md)

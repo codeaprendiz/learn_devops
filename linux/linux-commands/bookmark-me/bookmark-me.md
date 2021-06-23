@@ -226,3 +226,14 @@ To login using the bastion server
 ```bash
 $ ssh -o ProxyCommand="ssh -i private_key_to_login.pem -W %h:%p ubuntu@bastion.host.link" -i private_key_to_login.pem ubuntu@172.126.146.224 -vvvvv
 ```
+
+### ssh-keygen
+
+To create your keys
+
+```bash
+$ ssh-keygen -q -t rsa -f key.pem -C key -N ''
+$ ls
+key.pem     key.pem.pub
+
+```
