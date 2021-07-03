@@ -4,6 +4,8 @@
 
 [system-monitoring-and-troubleshooting](https://www.rapid7.com/fundamentals/system-monitoring-and-troubleshooting/)
 
+[What is blue green deployment?](https://semaphoreci.com/blog/blue-green-deployment)
+
 ### Free Ebooks
 
 [building_secure_and_reliable_systems](https://static.googleusercontent.com/media/sre.google/en//static/pdf/building_secure_and_reliable_systems.pdf)
