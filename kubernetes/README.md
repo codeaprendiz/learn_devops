@@ -15,6 +15,7 @@ External IP | [external IP to access Application In Cluster](gcp/task-008-extern
 DNS and Static IPs | [configuring dns with static IPs k8 using-Service](gcp/task-009-configuring-dns-with-static-IPs-k8-using-Service) <br> [configuring dns with static IPs k8 using Ingress](gcp/task-010-configuring-dns-with-static-IPs-k8-using-Ingress) |
 Administer A Cluster | [Configure default CPU requests and limits for a namespace](local-mac/task-001-configure-default-CPU-requests-and-limits-for-a-namespace) <br>  [Configure default memory requests and limits for a namespace](./local-mac/task-002-configure-default-memory-requests-and-limits-for-a-namespace) | 
 Understanding kubectl port-forward | [Understand kubectl port forward](local-mac/task-003-understanding-k8s-port-forward)
+Expose Service via NodePort | [Expose Service Via NodePort](local-mac/task-004-expose-svc-via-nodeport)
 TLS KOPS k8s Let's Encrypt | [IN-PROGRESS - Create k8s using kops, enable https using let's encrypt for given domain and deploy whoami on the same](aws/task-019-lets-encrypt-kops-cluster) | 
 Create Kops cluster | [Creating a kops cluster](aws/task-028-k8s-cluster-using-kops)
 Updating a Kops cluster | [Updating existing KOPS cluster resources](aws/task-029-updating-a-kops-cluster)
