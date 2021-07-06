@@ -10,3 +10,6 @@
 - [inserting-into-table](task-010-inserting-into-table)
 - [viewing-table-contents](task-011-viewing-table-contents)
 - [create users](task-012-create-user)
+- [dump database](task-013-dump-database)
+- [restore database](task-014-restore-database)
+- [drop database](task-015-drop-database)
