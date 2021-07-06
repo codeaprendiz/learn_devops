@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-wildcard-host
+spec:
+  rules:
+    - host: "testingress.com"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/whoami"
+            backend:
+              service:
+                name: whoami-dep-svc
+                port:
+                  number: 80
