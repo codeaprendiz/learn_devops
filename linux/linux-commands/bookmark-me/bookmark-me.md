@@ -5,6 +5,9 @@
 >/catalina.out
 ```
 
+
+
+
 ### du
 
 To get all the large files with size greater than 1000MB
@@ -114,6 +117,44 @@ You can also remove all those files but BE VERY CAREFUL when you execute rm -rf 
 for j in `find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \)`;do echo $j; ls -ltrh $j; done;
 ```
 
+### growpart
+Grow the disksize
+
+```bash
+root@host:/# lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1     259:0    0   20G  0 disk
+└─nvme0n1p1 259:1    0    8G  0 part /
+
+root@host:/# sudo growpart /dev/nvme0n1 1
+CHANGED: partition=1 start=2048 old: size=16775135 end=16777183 new: size=41940959 end=41943007
+
+root@host:/# df -kh .
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.7G  7.7G   44M 100% /
+
+root@host:/# resize2fs /dev/root
+resize2fs 1.45.5 (07-Jan-2020)
+Filesystem at /dev/root is mounted on /; on-line resizing required
+old_desc_blocks = 1, new_desc_blocks = 3
+The filesystem on /dev/root is now 5242619 (4k) blocks long.
+
+root@host:/# df -kh .
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        20G  7.7G   12G  40% /
+```
+
+### lsblk
+To get the disknames and mountpoints
+
+```bash
+root@ip-172-23-45-36:/# lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1     259:0    0   20G  0 disk
+└─nvme0n1p1 259:1    0    8G  0 part /
+```
+
+
 ### kubectl
 Start a busy box container anywhere and login to debugging
 ```bash
@@ -218,6 +259,35 @@ To check which all Oracle Databases are running in the DB server
 oracle   23274     1  0 Aug19 ?        00:11:08 ora_pmon_db1
 oracle   23689     1  0 Aug19 ?        00:12:12 ora_pmon_db2
 ```
+
+
+
+### resize2fs
+
+```bash
+root@host:/# lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1     259:0    0   20G  0 disk
+└─nvme0n1p1 259:1    0    8G  0 part /
+
+root@host:/# sudo growpart /dev/nvme0n1 1
+CHANGED: partition=1 start=2048 old: size=16775135 end=16777183 new: size=41940959 end=41943007
+
+root@host:/# df -kh .
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.7G  7.7G   44M 100% /
+
+root@host:/# resize2fs /dev/root
+resize2fs 1.45.5 (07-Jan-2020)
+Filesystem at /dev/root is mounted on /; on-line resizing required
+old_desc_blocks = 1, new_desc_blocks = 3
+The filesystem on /dev/root is now 5242619 (4k) blocks long.
+
+root@host:/# df -kh .
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        20G  7.7G   12G  40% /
+```
+
 
 ### ssh
 
