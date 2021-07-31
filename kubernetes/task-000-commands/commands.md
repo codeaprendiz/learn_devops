@@ -77,6 +77,7 @@ Command / Options |  Use Case        |     Example      |
 | | To create a pod with image redis and name redis in namespace kube-system | kubectl run redis --image=redis --dry-run=client -n kube-system -o yaml > pod.yaml ; kubectl apply -f . <br> OR <br> kubectl run redis --image=redis -n kube-system
 |-o yaml  | To create nginx pod and generate the yaml | kubectl run nginx --image=nginx -o yaml  |
 | -p | Create a new pod called custom-nginx using the nginx image and expose it on container port 8080 | kubectl run custom-nginx --image=nginx --port=5701 |
+| --tty | To start and login into a busybox container in pod spun up on the fly | kubectl run -i --tty busybox --image=busybox --restart=Never -- sh |
 | [scale](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#scale) | | 
 | --replicas=3 | To scale a deployment named httpd-frontend to 3 replicas | kubectl scale deployment httpd-frontend --replicas=3 |
 | [set](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#set) | | 
