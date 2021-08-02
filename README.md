@@ -4,6 +4,7 @@
 - [kubernetes](kubernetes)
 - [terraform](terraform)
 - [ansible](ansible-kitchen)
+- [cloud](cloud)
 - [databases](databases)
 - [docker-compose](docker/docker-compose-kitchen)
 - [docker](docker/docker-kitchen)
