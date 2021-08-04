@@ -13,3 +13,8 @@
 [SRE Workbook](https://sre.google/workbook/table-of-contents/)
 
 [SRE Book](https://sre.google/sre-book/table-of-contents/)
+
+
+### Train Your Mind
+
+[from-engineer-to-tech-lead-doubts-and-challenges](https://dev.to/dvddpl/from-engineer-to-tech-lead-doubts-and-challenges-4n9e)
