@@ -18,3 +18,4 @@
 ### Train Your Mind
 
 [from-engineer-to-tech-lead-doubts-and-challenges](https://dev.to/dvddpl/from-engineer-to-tech-lead-doubts-and-challenges-4n9e)
+[how-to-break-the-senior-engineer-career-ceiling](https://theburningmonk.com/2019/11/how-to-break-the-senior-engineer-career-ceiling)
