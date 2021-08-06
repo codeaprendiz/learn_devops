@@ -8,3 +8,11 @@
 ### Tools that you should have knowledge about
 
 - [Apache Kafka](https://kafka.apache.org/documentation/)
+
+
+
+
+
+### Blogs worth Reading
+
+- [kafka-lag-monitoring-and-metrics-at-appsflyer]([kafka-lag-monitoring-and-metrics-at-appsflyer](https://www.confluent.io/blog/kafka-lag-monitoring-and-metrics-at-appsflyer/))
