@@ -43,7 +43,10 @@ What are the Node Components
 We have NODES A,B,C and PODS A,B,C how will you ensure that pod A goes to A node, B goes to B and C goes to C node and no other case happens
 
 <details>
-
+You can use `nodeSelector` and label the nodes.
+Label Node A as a:a and give this lablel to `nodeSelector`. Similarly
+Label Node B as b:b
+Label Node C as c:c
 </details>
 
 

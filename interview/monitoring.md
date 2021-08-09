@@ -14,7 +14,7 @@ How do you make dashboards for individual microservices in Datadog?
 
 Can you explain monitoring architecture in Kubernetes using the ELK stack
 
-<deatils>
+<details>
 
 </details>
 
