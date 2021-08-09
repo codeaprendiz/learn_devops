@@ -17,4 +17,4 @@
 ### Blogs worth Reading
 
 - [kafka-lag-monitoring-and-metrics-at-appsflyer]([kafka-lag-monitoring-and-metrics-at-appsflyer](https://www.confluent.io/blog/kafka-lag-monitoring-and-metrics-at-appsflyer/))
-
+- [kubernetes-networking-guide-beginners.html](https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-networking-guide-beginners.html)
