@@ -28,6 +28,7 @@ S3 | [Create S3 bucket](aws/task-026-terragrunt-s3-bucket) |
 Route53 EC2 | [To create Route53 record to access EC2 instance](aws/task-022-route53-ec2) | 
 AWS Certificate Manager | [Create a private certificate for your Domain using AWS Certificate Manager](aws/task-024-certificate-manager) |
 CDN | [To create CDN](aws/task-027-terragrunt-cdn) | 
+EKS | [To create EKS cluster](aws/task-030-creating-eks)
 
 
 
