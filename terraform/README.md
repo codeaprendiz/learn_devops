@@ -29,6 +29,7 @@ Route53 EC2 | [To create Route53 record to access EC2 instance](aws/task-022-rou
 AWS Certificate Manager | [Create a private certificate for your Domain using AWS Certificate Manager](aws/task-024-certificate-manager) |
 CDN | [To create CDN](aws/task-027-terragrunt-cdn) | 
 EKS | [To create EKS cluster](aws/task-030-creating-eks)
+EKS using Spot and Ondemand | [To create EKS cluster using spot and on demand instance types](aws/task-031-creating-eks-spot)
 
 
 
