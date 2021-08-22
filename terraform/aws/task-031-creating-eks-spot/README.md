@@ -59,7 +59,7 @@ kube-proxy-sf5dl           1/1     Running   0          5m15s
 
 - Launch configuration
 
-![](.images/launch configuration.png)
+![](.images/launch-configuration.png)
 
 
 - Instances
