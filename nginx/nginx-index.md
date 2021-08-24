@@ -1,7 +1,8 @@
 ### Learning Nginx The Docker Way
 
-- [task-001-running-nginx](task-001-running-nginx/running-nginx.md)
+- [running-nginx](task-001-running-nginx/running-nginx.md)
 - [Learn nginx conf.d and html directories](task-003-nginx-conf/ReadMe.md)
+- [Returning different status code in nginx for different endpoints](task-004-return-different-http-codes)
 
 
 ### Learning Nginx The Docker-Compose Way
