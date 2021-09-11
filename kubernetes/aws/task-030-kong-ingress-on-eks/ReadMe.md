@@ -33,7 +33,7 @@ Server: kong/2.5.0
 {"message":"no Route matched with those values"}%
 ```
 
-- Following the getting started guide
+- Following the getting started [guide](https://docs.konghq.com/kubernetes-ingress-controller/1.3.x/guides/getting-started/)
 
 ```bash
 $ kubectl apply -f dep.yaml,svc.yaml
@@ -377,3 +377,107 @@ Via: kong/2.5.0
 
 ```
 
+- Now we create a global plugin.
+
+> With this plugin (please note the global label), every request through the Kubernetes Ingress Controller will be rate-limited:
+  
+
+```bash
+$ kubectl apply -f ratelimitplugin.yaml
+kongclusterplugin.configuration.konghq.com/global-rate-limit created
+```
+
+
+- After 5 successful requests we get the following
+
+```bash
+$ curl -i -H 'apikey: my-sooper-secret-key' bf3ad6d307c3858239565d757ae733636-111947221.us-east-1.elb.amazonaws.com:80/foo/status/200
+HTTP/1.1 429 Too Many Requests
+Date: Sat, 11 Sep 2021 12:25:15 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+RateLimit-Reset: 45
+Retry-After: 45
+X-RateLimit-Limit-Minute: 5
+X-RateLimit-Remaining-Minute: 0
+RateLimit-Limit: 5
+RateLimit-Remaining: 0
+Content-Length: 41
+demo:  injected-by-kong
+X-Kong-Response-Latency: 1
+Server: kong/2.5.0
+
+{
+  "message":"API rate limit exceeded"
+}                                                                                                                                                                                                                    
+```
+
+
+- Now we try applying the rate limit to a specific consumer
+
+```bash
+$ kubectl apply -f specific-consumer-plugin.yaml                   
+kongplugin.configuration.konghq.com/harry-rate-limit created
+```
+
+- Reconfigure the consumer
+
+```bash
+$ kubectl apply -f consumer.yaml                
+kongconsumer.configuration.konghq.com/harry configured
+```
+
+- Now if you consume the api with harry's credentials after 10 successful requests you would get
+
+```bash
+$ curl -i -H 'apikey: my-sooper-secret-key' bf3ad6d307c3858239565d757ae733636-111947221.us-east-1.elb.amazonaws.com:80/foo/status/200
+HTTP/1.1 429 Too Many Requests
+Date: Sat, 11 Sep 2021 12:38:23 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+RateLimit-Reset: 37
+Retry-After: 37
+X-RateLimit-Limit-Minute: 10
+X-RateLimit-Remaining-Minute: 0
+RateLimit-Limit: 10
+RateLimit-Remaining: 0
+Content-Length: 41
+demo:  injected-by-kong
+X-Kong-Response-Latency: 0
+Server: kong/2.5.0
+
+{
+  "message":"API rate limit exceeded"
+}              
+```
+
+#### Using KongIngress Resource
+
+- Creating customized KongIngress
+
+```bash
+$ kubectl apply -f customizedKongIngress.yaml
+kongingress.configuration.konghq.com/sample-customization created
+```
+
+- Now we will patch the demo ingress with this customization
+
+```bash
+$ kubectl patch ingress demo -p '{"metadata":{"annotations":{"konghq.com/override":"sample-customization"}}}'
+ingress.networking.k8s.io/demo patched
+```
+
+- Now, Kong will proxy only GET requests on /foo path and strip away /foo:
+  
+```bash
+$ curl -i -H 'apikey: my-sooper-secret-key' bf3ad6d307c3858239565d757ae733636-111947221.us-east-1.elb.amazonaws.com:80/foo -X POST
+HTTP/1.1 404 Not Found
+Date: Sat, 11 Sep 2021 13:00:35 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Content-Length: 48
+X-Kong-Response-Latency: 1
+Server: kong/2.5.0
+
+{"message":"no Route matched with those values"}
+```

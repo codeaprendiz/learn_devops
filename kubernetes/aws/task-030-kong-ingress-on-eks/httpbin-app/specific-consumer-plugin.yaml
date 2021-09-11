@@ -1,0 +1,9 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: harry-rate-limit
+config:
+  minute: 10
+  limit_by: consumer
+  policy: local
+plugin: rate-limiting

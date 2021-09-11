@@ -1,0 +1,8 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: sample-customization
+route:
+  methods:
+    - GET
+  strip_path: true
