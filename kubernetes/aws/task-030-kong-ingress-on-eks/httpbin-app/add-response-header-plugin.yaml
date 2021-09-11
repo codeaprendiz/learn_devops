@@ -1,0 +1,9 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: add-response-header
+config:
+  add:
+    headers:
+      - "demo: injected-by-kong"
+plugin: response-transformer

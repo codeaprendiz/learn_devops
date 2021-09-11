@@ -30,6 +30,7 @@ RBAC |  [basic namespace wide kubeconfig](gcp/task-002-basic-namespace-wide-kube
 Traefik | [whoami](gcp/task-005-traefik-whoami) <br>  [whoami toml In ConfigMap](gcp/task-006-traefik-whoami-tomlInConfigMap) <br> [whoami lets encrypt](gcp/task-007-traefik-whoami-lets-encrypt) <br> [whoami tls custom-certs](gcp/task-013-traefik-whoami-tls-custom-certs)| 
 Monitoring | [configuring datadog](gcp/task-011-configuring-datadog) <br> [configuring metricbeat](gcp/task-014-metricbeat) <br> [kube-state-metrics](gcp/task-015-kube-state-metrics) | 
 Logging | [journalbeat](gcp/task-016-journalbeat)  |
+EKS Kong | [Configuring Kong on EKS cluster and doing some basic tasks to learn its functionality](aws/task-030-kong-ingress-on-eks) |
 
 
 

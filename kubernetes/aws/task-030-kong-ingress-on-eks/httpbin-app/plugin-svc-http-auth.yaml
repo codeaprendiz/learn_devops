@@ -1,0 +1,5 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: httpbin-auth
+plugin: key-auth
