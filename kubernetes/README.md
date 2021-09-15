@@ -31,7 +31,7 @@ Traefik | [whoami](gcp/task-005-traefik-whoami) <br>  [whoami toml In ConfigMap]
 Monitoring | [configuring datadog](gcp/task-011-configuring-datadog) <br> [configuring metricbeat](gcp/task-014-metricbeat) <br> [kube-state-metrics](gcp/task-015-kube-state-metrics) | 
 Logging | [journalbeat](gcp/task-016-journalbeat)  |
 EKS Kong | [Configuring Kong on EKS cluster and doing some basic tasks to learn its functionality](aws/task-030-kong-ingress-on-eks) |
-Kafka On local Using Helm | [Installing Kafka on local using helm](local-mac/task-007-kafka)
+Kafka On local Using Helm | [Installing Kafka on local using helm](local-mac/task-008-kafka)
 
 
 
