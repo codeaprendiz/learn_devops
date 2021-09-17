@@ -32,7 +32,7 @@ Monitoring | [configuring datadog](gcp/task-011-configuring-datadog) <br> [confi
 Logging | [journalbeat](gcp/task-016-journalbeat)  |
 EKS Kong | [Configuring Kong on EKS cluster and doing some basic tasks to learn its functionality](aws/task-030-kong-ingress-on-eks) |
 Kafka On local Using Helm | [Installing Kafka on local using helm](local-mac/task-008-kafka)
-
+Kafdrop for kafka monitoring | [Kafdrop for kafka monitoring](local-mac/task-009-kafdrop)
 
 
 Domain | Tasks | 
