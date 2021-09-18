@@ -1,0 +1,31 @@
+{{- if .Values.traefik.enabled -}}
+  {{- $servicePort := .Values.service.port -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kafdrop-ingress
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - kind: Rule
+      match: {{ printf "Host(`%s`) && PathPrefix(`/`)" .Values.traefik.ingress.host }}
+      middlewares:
+      - name: headers
+      - name: redirect
+      - name: errors
+      priority: 1
+      services:
+        - name: kafdrop-release
+          port: {{ $servicePort }}
+    - kind: Rule
+      match: {{ printf "Host(`%s`) && (PathPrefix(`/oauth2/`) || Path(`/logout`))" .Values.traefik.ingress.host }}
+      middlewares:
+        - name: cors-security-headers
+      priority: 2
+      services:
+        - name: oauth-release-oauth2-proxy
+          port: 8080
+  tls: {}
+  {{- end -}}

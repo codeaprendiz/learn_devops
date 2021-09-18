@@ -1,0 +1,117 @@
+{{- if .Values.service.enabled -}}
+
+{{ $tcpPorts := dict }}
+{{ $udpPorts := dict }}
+{{- range $name, $config := .Values.ports }}
+  {{- if eq (toString $config.protocol) "UDP" }}
+    {{ $_ := set $udpPorts $name $config }}
+  {{- else }}
+    {{ $_ := set $tcpPorts $name $config }}
+  {{- end }}
+{{- end }}
+
+apiVersion: v1
+kind: List
+metadata:
+  name: {{ template "traefik.fullname" . }}
+items:
+{{- if  $tcpPorts }}
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: {{ template "traefik.fullname" . }}
+      labels:
+        app.kubernetes.io/name: {{ template "traefik.name" . }}
+        helm.sh/chart: {{ template "traefik.chart" . }}
+        app.kubernetes.io/managed-by: {{ .Release.Service }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      {{- with .Values.service.labels }}
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      annotations:
+      {{- with (merge .Values.service.annotationsTCP .Values.service.annotations) }}
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+    spec:
+      {{- $type := default "LoadBalancer" .Values.service.type }}
+      type: {{ $type }}
+      {{- with .Values.service.spec }}
+      {{- toYaml . | nindent 6 }}
+      {{- end }}
+      selector:
+        app.kubernetes.io/name: {{ template "traefik.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      ports:
+      {{- range $name, $config := $tcpPorts }}
+      {{- if $config.expose }}
+      - port: {{ default $config.port $config.exposedPort }}
+        name: {{ $name }}
+        targetPort: {{ $name | quote }}
+        protocol: {{ default "TCP" $config.protocol | quote }}
+        {{- if $config.nodePort }}
+        nodePort: {{ $config.nodePort }}
+        {{- end }}
+      {{- end }}
+      {{- end }}
+      {{- if eq $type "LoadBalancer" }}
+      {{- with .Values.service.loadBalancerSourceRanges }}
+      loadBalancerSourceRanges:
+      {{- toYaml . | nindent 6 }}
+      {{- end -}}
+      {{- end -}}
+      {{- with .Values.service.externalIPs }}
+      externalIPs:
+      {{- toYaml . | nindent 6 }}
+      {{- end -}}
+{{- end }}
+
+{{- if  $udpPorts }}
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: {{ template "traefik.fullname" . }}-udp
+      labels:
+        app.kubernetes.io/name: {{ template "traefik.name" . }}
+        helm.sh/chart: {{ template "traefik.chart" . }}
+        app.kubernetes.io/managed-by: {{ .Release.Service }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      {{- with .Values.service.labels }}
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      annotations:
+      {{- with (merge .Values.service.annotationsUDP .Values.service.annotations) }}
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+    spec:
+      {{- $type := default "LoadBalancer" .Values.service.type }}
+      type: {{ $type }}
+      {{- with .Values.service.spec }}
+      {{- toYaml . | nindent 6 }}
+      {{- end }}
+      selector:
+        app.kubernetes.io/name: {{ template "traefik.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      ports:
+      {{- range $name, $config := $udpPorts }}
+      {{- if $config.expose }}
+      - port: {{ default $config.port $config.exposedPort }}
+        name: {{ $name }}
+        targetPort: {{ $name | quote }}
+        protocol: {{ default "UDP" $config.protocol | quote }}
+        {{- if $config.nodePort }}
+        nodePort: {{ $config.nodePort }}
+        {{- end }}
+      {{- end }}
+      {{- end }}
+      {{- if eq $type "LoadBalancer" }}
+      {{- with .Values.service.loadBalancerSourceRanges }}
+      loadBalancerSourceRanges:
+      {{- toYaml . | nindent 6 }}
+      {{- end -}}
+      {{- end -}}
+      {{- with .Values.service.externalIPs }}
+      externalIPs:
+      {{- toYaml . | nindent 6 }}
+      {{- end -}}
+{{- end }}
+{{- end -}}

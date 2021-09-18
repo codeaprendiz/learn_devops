@@ -1,0 +1,21 @@
+{{- if .Values.traefik.enabled -}}
+{{- $servicePort := .Values.service.port -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: oauth2-https
+spec:
+  entryPoints:
+  - web
+  - websecure
+  routes:
+  - kind: Rule
+    match: {{ printf "Host(`%s`) && PathPrefix(`/`)" .Values.traefik.ingress.host }}
+    priority: 0
+    middlewares:
+      - name: cors-security-headers
+    services:
+    - name: oauth-release-oauth2-proxy
+      port: {{ $servicePort }}
+  tls: {}
+{{- end -}}

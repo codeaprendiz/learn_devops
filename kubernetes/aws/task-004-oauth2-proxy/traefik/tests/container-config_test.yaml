@@ -1,0 +1,108 @@
+suite: Main Container configuration
+templates:
+  - deployment.yaml
+tests:
+  - it: should have the default Docker image when no value is specified
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].image
+          value: traefik:2.5.1
+  - it: should change image when image.tag value is specified
+    set:
+      image:
+        tag: v2.0.0-beta1
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].image
+          value: traefik:v2.0.0-beta1
+  - it: should change image when image.name value is specified
+    set:
+      image:
+        name: traefik/traefik
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].image
+          value: traefik/traefik:2.5.1
+
+  - it: should have no resource limit by default
+    asserts:
+      - isNull:
+          path: spec.template.spec.containers[0].resources
+  - it: should have a custom resource limit when specified
+    set:
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "50Mi"
+        limits:
+          cpu: "300m"
+          memory: "150Mi"
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].resources.requests.cpu
+          value: "100m"
+      - equal:
+          path: spec.template.spec.containers[0].resources.requests.memory
+          value: "50Mi"
+      - equal:
+          path: spec.template.spec.containers[0].resources.limits.cpu
+          value: "300m"
+      - equal:
+          path: spec.template.spec.containers[0].resources.limits.memory
+          value: "150Mi"
+  - it: should not have data volumeMount subPath by default
+    asserts:
+      - isNull:
+          path: spec.template.spec.containers[0].volumeMounts[0].subPath
+  - it: should have data volumeMount subPath when specified in config
+    set:
+      persistence:
+        subPath: "subdir/traefik"
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].volumeMounts[0].subPath
+          value: "subdir/traefik"
+  - it: should have templated config map volume
+    set:
+      volumes:
+        - name: '{{ printf "%s-custom-config" .Release.Name }}'
+          mountPath: /etc/traefik
+          type: configMap
+        - name: 'non-templated'
+          mountPath: /etc/non-templated
+          type: configMap
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].volumeMounts[2].name
+          value: "RELEASE-NAME-custom-config"
+      - equal:
+          path: spec.template.spec.containers[0].volumeMounts[3].name
+          value: "non-templated"
+      - equal:
+          path: spec.template.spec.volumes[2].name
+          value: "RELEASE-NAME-custom-config"
+      - equal:
+          path: spec.template.spec.volumes[2].configMap.name
+          value: "RELEASE-NAME-custom-config"
+      - equal:
+          path: spec.template.spec.volumes[3].name
+          value: "non-templated"
+      - equal:
+          path: spec.template.spec.volumes[3].configMap.name
+          value: "non-templated"
+  - it: should have templated secret volume
+    set:
+      volumes:
+        - name: '{{ printf "%s-custom-secret" .Release.Name }}'
+          mountPath: /etc/secret
+          type: secret
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].volumeMounts[2].name
+          value: "RELEASE-NAME-custom-secret"
+      - equal:
+          path: spec.template.spec.volumes[2].name
+          value: "RELEASE-NAME-custom-secret"
+      - equal:
+          path: spec.template.spec.volumes[2].secret.secretName
+          value: "RELEASE-NAME-custom-secret"

@@ -1,0 +1,33 @@
+{{- if .Values.experimental.kubernetesGateway.enabled }}
+--- 
+apiVersion: networking.x-k8s.io/v1alpha1
+kind: Gateway
+metadata: 
+  name: traefik-gateway
+  namespace: {{ default .Release.Namespace .Values.experimental.kubernetesGateway.namespace }}
+spec: 
+  gatewayClassName: traefik
+  listeners: 
+    - port: {{ .Values.ports.web.port }}
+      protocol: HTTP
+      routes: 
+        kind: HTTPRoute
+        selector: 
+          matchLabels: 
+            app: {{ .Values.experimental.kubernetesGateway.appLabelSelector }}
+
+    {{- range $index, $cert:= .Values.experimental.kubernetesGateway.certificates }}
+    - port: {{ $.Values.ports.websecure.port }}
+      protocol: HTTPS
+      tls:
+        certificateRef:
+          name: {{ $cert.name }}
+          group: {{ $cert.group }}
+          kind: {{ $cert.kind }}
+      routes: 
+        kind: HTTPRoute
+        selector: 
+          matchLabels: 
+            app: {{ $.Values.experimental.kubernetesGateway.appLabelSelector }}
+    {{- end }}
+{{- end }}

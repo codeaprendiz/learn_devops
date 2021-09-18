@@ -1,0 +1,251 @@
+suite: Pod configuration
+templates:
+  - deployment.yaml
+tests:
+  - it: should have envFrom with specified values
+    set:
+      envFrom:
+        - configMapRef:
+            name: config-map-name
+        - secretRef:
+            name: secret-name
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].envFrom[0].configMapRef.name
+          value: config-map-name
+      - equal:
+          path: spec.template.spec.containers[0].envFrom[1].secretRef.name
+          value: secret-name
+  - it: should have priorityClassName
+    set:
+      priorityClassName: important
+    asserts:
+      - equal:
+          path: spec.template.spec.priorityClassName
+          value: important
+  - it: should have merged securityContext
+    set:
+      podSecurityContext:
+        readOnlyRootFilesystem: false
+      securityContext:
+        runAsUser: 1000
+    asserts:
+      - equal:
+          path: spec.template.spec.securityContext.fsGroup
+          value: 65532
+      - equal:
+          path: spec.template.spec.securityContext.readOnlyRootFilesystem
+          value: false
+      - equal:
+          path: spec.template.spec.containers[0].securityContext.runAsNonRoot
+          value: true
+      - equal:
+          path: spec.template.spec.containers[0].securityContext.runAsUser
+          value: 1000
+  - it: should have pvc with specified value
+    set:
+      persistence:
+        enabled: true
+        existingClaim: existing-pvc
+    asserts:
+      - equal:
+          path: spec.template.spec.volumes[0].persistentVolumeClaim.claimName
+          value: existing-pvc
+      - equal:
+          path: spec.template.spec.volumes[0].name
+          value: data
+  - it: should have pvc with specified name
+    set:
+      persistence:
+        name: my-data
+    asserts:
+      - equal:
+          path: spec.template.spec.volumes[0].name
+          value: my-data
+  - it: should have initContainer with specified value
+    set:
+      deployment:
+        initContainers:
+          - name: volume-permissions
+            image: busybox:1.31.1
+            command: ["sh"]
+            volumeMounts:
+              - name: data
+                mountPath: /data
+    asserts:
+      - equal:
+          path: spec.template.spec.initContainers[0].name
+          value: volume-permissions
+      - equal:
+          path: spec.template.spec.initContainers[0].image
+          value: busybox:1.31.1
+      - equal:
+          path: spec.template.spec.initContainers[0].command[0]
+          value: sh
+      - equal:
+          path: spec.template.spec.initContainers[0].volumeMounts[0].name
+          value: data
+      - equal:
+          path: spec.template.spec.initContainers[0].volumeMounts[0].mountPath
+          value: /data
+  - it: should have additional containers
+    set:
+      deployment:
+        additionalContainers:
+          - image: foo:latest
+            name: bar
+      asserts:
+        - equal:
+            path: spec.template.additionalContainers[0].image
+            value: foo:latest
+        - equal:
+            path: spec.template.additionalContainers[0].name
+            value: bar
+  - it: should have additional volumes
+    set:
+      deployment:
+        additionalVolumes:
+          - hostpath:
+              path: /foo
+            name: bar
+      asserts:
+        - equal:
+            path: spec.template.spec.volumes[4].hostpath.path
+            value: /foo
+        - equal:
+            path: spec.template.spec.volumes[4].name
+            value: bar
+  - it: should have imagePullPolicy with specified value
+    set:
+      image:
+        pullPolicy: Always
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].imagePullPolicy
+          value: Always
+  - it: should have no imagePullSecrets
+    asserts:
+      - isEmpty:
+          path: spec.template.spec.imagePullSecrets
+  - it: should have imagePullSecrets with specified value
+    set:
+      deployment:
+        imagePullSecrets:
+          - name: myRegistryKeySecretName
+    asserts:
+      - equal:
+          path: spec.template.spec.imagePullSecrets[0].name
+          value: myRegistryKeySecretName
+  - it: should have multiple imagePullSecrets with specified value
+    set:
+      deployment:
+        imagePullSecrets:
+          - name: myRegistryKeySecretName
+          - name: myOtherRegistryKeySecretName
+    asserts:
+      - equal:
+          path: spec.template.spec.imagePullSecrets[0].name
+          value: myRegistryKeySecretName
+      - equal:
+          path: spec.template.spec.imagePullSecrets[1].name
+          value: myOtherRegistryKeySecretName
+  - it: should have customized labels when specified via values
+    set:
+      deployment:
+        podLabels:
+          custom-label: custom-value
+    asserts:
+      - equal:
+          path: spec.template.metadata.labels.custom-label
+          value: custom-value
+  - it: should have no nodeSelector by default
+    asserts:
+      - isNull:
+          path: spec.template.spec.nodeSelector
+  - it: should have a custom nodeSelector when specified
+    set:
+      nodeSelector:
+        planet: earth
+        disktype: ssd
+    asserts:
+      - equal:
+          path: spec.template.spec.nodeSelector.planet
+          value: earth
+      - equal:
+          path: spec.template.spec.nodeSelector.disktype
+          value: ssd
+
+  - it: should have no tolerations by default
+    asserts:
+      - isNull:
+          path: spec.template.spec.tolerations
+  - it: should have a custom toleration when specified
+    set:
+      tolerations:
+        - key: "key"
+          operator: "Equal"
+          value: "value"
+          effect: "NoSchedule"
+        - key: "RSA"
+          operator: "Destructor"
+    asserts:
+      - contains:
+          path: spec.template.spec.tolerations
+          content:
+            key: "key"
+            operator: "Equal"
+            value: "value"
+            effect: "NoSchedule"
+      - contains:
+          path: spec.template.spec.tolerations
+          content:
+            key: "RSA"
+            operator: "Destructor"
+  - it: should have all k8s provider enabled when gateway provider is enabled
+    set:
+      experimental:
+        kubernetesGateway:
+          enabled: true
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content:
+            "--providers.kubernetescrd"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content:
+            "--providers.kubernetesingress"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content:
+            "--providers.kubernetesgateway"
+  - it: should have the pilot dashboard enabled by default
+    asserts:
+      - notContains:
+          path: spec.template.spec.containers[0].args
+          content:
+            "--pilot.dashboard=false"
+  - it: should have the pilot dashboard disabled
+    set:
+      pilot:
+        dashboard: false
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content:
+            "--pilot.dashboard=false"
+  - it: should have prometheus annotations with specified values
+    set:
+      ports:
+        metrics:
+          port: 9100
+      metrics:
+        prometheus:
+          entryPoint: metrics
+    asserts:
+      - equal:
+          path: spec.template.metadata.annotations
+          value:
+            prometheus.io/path: /metrics
+            prometheus.io/port: "9100"
+            prometheus.io/scrape: "true"

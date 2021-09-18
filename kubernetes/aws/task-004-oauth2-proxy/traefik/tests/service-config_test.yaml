@@ -1,0 +1,198 @@
+suite: Service configuration
+templates:
+  - service.yaml
+tests:
+  - it: should be a type LoadBalancer by default
+    asserts:
+      - equal:
+          path: items[0].spec.type
+          value: LoadBalancer
+  - it: should be a custom type when specified via values
+    set:
+      service:
+        type: NodePort
+    asserts:
+      - equal:
+          path: items[0].spec.type
+          value: NodePort
+  - it: should have no annotations by default
+    asserts:
+      - isNull:
+          path: items[0].metadata.annotations
+  - it: should have customized annotations when specified via values
+    set:
+      service:
+        annotations:
+          azure-load-balancer-internal: true
+    asserts:
+      - equal:
+          path: items[0].metadata.annotations.azure-load-balancer-internal
+          value: true
+  - it: should have TCP only annotations when specified via values
+    set:
+      service:
+        annotationsTCP:
+          dns-hostname: tcp.example.com
+      ports:
+        udp:
+          port: 3000
+          expose: true
+          exposedPort: 80
+          protocol: UDP
+    asserts:
+      - equal:
+          path: items[0].metadata.annotations.dns-hostname
+          value: tcp.example.com
+      - isNull:
+          path: items[1].metadata.annotations
+  - it: should have UDP only annotations when specified via values
+    set:
+      service:
+        annotationsUDP:
+          dns-hostname: udp.example.com
+      ports:
+        udp:
+          port: 3000
+          expose: true
+          exposedPort: 80
+          protocol: UDP
+    asserts:
+      - isNull:
+          path: items[0].metadata.annotations
+      - equal:
+          path: items[1].metadata.annotations.dns-hostname
+          value: udp.example.com
+  - it: should merge protocol specific service annotations when specified via values
+    set:
+      service:
+        annotations:
+          azure-load-balancer-internal: true
+        annotationsTCP:
+          dns-hostname: tcp.example.com 
+        annotationsUDP:
+          dns-hostname: udp.example.com 
+      ports:
+        udp:
+          port: 3000
+          expose: true
+          exposedPort: 80
+          protocol: UDP
+    asserts:
+      - equal:
+          path: items[0].metadata.annotations
+          value:
+            azure-load-balancer-internal: true
+            dns-hostname: tcp.example.com
+      - equal:
+          path: items[1].metadata.annotations
+          value:
+            azure-load-balancer-internal: true
+            dns-hostname: udp.example.com
+  - it: should merge protocol specific service annotations with annotationsTCP unspecified when specified via values
+    set:
+      service:
+        annotations:
+          azure-load-balancer-internal: true
+        annotationsUDP:
+          dns-hostname: udp.example.com 
+      ports:
+        udp:
+          port: 3000
+          expose: true
+          exposedPort: 80
+          protocol: UDP
+    asserts:
+      - equal:
+          path: items[0].metadata.annotations
+          value:
+            azure-load-balancer-internal: true
+      - equal:
+          path: items[1].metadata.annotations
+          value:
+            azure-load-balancer-internal: true
+            dns-hostname: udp.example.com
+  - it: should merge protocol specific service annotations with annotationsUDP unspecified when specified via values
+    set:
+      service:
+        annotations:
+          azure-load-balancer-internal: true
+        annotationsTCP:
+          dns-hostname: tcp.example.com 
+      ports:
+        udp:
+          port: 3000
+          expose: true
+          exposedPort: 80
+          protocol: UDP
+    asserts:
+      - equal:
+          path: items[0].metadata.annotations
+          value:
+            azure-load-balancer-internal: true
+            dns-hostname: tcp.example.com
+      - equal:
+          path: items[1].metadata.annotations
+          value:
+            azure-load-balancer-internal: true
+  - it: should have customized labels when specified via values
+    set:
+      service:
+        labels:
+          custom-label: custom-value
+    asserts:
+      - equal:
+          path: items[0].metadata.labels.custom-label
+          value: custom-value
+
+  - it: should have custom spec elements when specified via values
+    set:
+      service:
+        spec:
+          externalTrafficPolicy: Cluster
+          loadBalancerIP: "1.2.3.4"
+          clusterIP: "2.3.4.5"
+          loadBalancerSourceRanges:
+            - 192.168.0.1/32
+            - 172.16.0.0/16
+          externalIPs:
+            - "1.2.3.4"
+    asserts:
+      - equal:
+          path: items[0].spec.ports[0].name
+          value: web
+      - equal:
+          path: items[0].spec.ports[0].protocol
+          value: TCP
+      - equal:
+          path: items[0].spec.externalTrafficPolicy
+          value: Cluster
+      - equal:
+          path: items[0].spec.loadBalancerIP
+          value: "1.2.3.4"
+      - equal:
+          path: items[0].spec.clusterIP
+          value: "2.3.4.5"
+      - equal:
+          path: items[0].spec.loadBalancerSourceRanges[0]
+          value: 192.168.0.1/32
+      - equal:
+          path: items[0].spec.loadBalancerSourceRanges[1]
+          value: 172.16.0.0/16
+      - equal:
+          path: items[0].spec.externalIPs[0]
+          value: "1.2.3.4"
+  - it: should have custom spec elements when specified via values for UPD ports
+    set:
+      ports:
+        udp:
+          port: 3000
+          expose: true
+          exposedPort: 80
+          protocol: UDP
+    asserts:
+      - equal:
+          path: items[1].spec.ports[0].name
+          value: udp
+      - equal:
+          path: items[1].spec.ports[0].protocol
+          value: UDP

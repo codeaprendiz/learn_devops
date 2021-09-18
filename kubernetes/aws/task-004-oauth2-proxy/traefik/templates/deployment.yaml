@@ -1,0 +1,47 @@
+{{- if and .Values.deployment.enabled (eq .Values.deployment.kind "Deployment") -}}
+  {{- if gt (int .Values.deployment.replicas) 1 -}}
+    {{- with .Values.additionalArguments -}}
+      {{- range . -}}
+        {{- if contains ".acme." . -}}
+          {{- fail (printf "You can not enable acme if you set more than one traefik replica") -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if eq (default .Chart.AppVersion .Values.image.tag) "latest" }}
+    {{- fail "\n\n ERROR: latest tag should not be used" }}
+  {{- end }}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "traefik.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ template "traefik.name" . }}
+    helm.sh/chart: {{ template "traefik.chart" . }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  {{- with .Values.deployment.labels }}
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
+  annotations:
+  {{- with .Values.deployment.annotations }}
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ default 1 .Values.deployment.replicas }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ template "traefik.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      {{- with .Values.rollingUpdate }}
+        {{- toYaml . | nindent 6 }}
+      {{- end }}
+  template: {{ template "traefik.podTemplate" . }}
+{{- end -}}

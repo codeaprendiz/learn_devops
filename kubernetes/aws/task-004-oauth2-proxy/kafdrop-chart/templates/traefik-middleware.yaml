@@ -1,0 +1,43 @@
+{{- if .Values.traefik.enabled -}}
+{{- $servicePort := .Values.service.port -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: headers
+spec:
+  headers:
+    customRequestHeaders:
+      X-Auth-Request-Redirect: {{ printf "https://%s/" .Values.traefik.ingress.host }}
+    customResponseHeaders:
+      X-Auth-Request-Redirect: {{ printf "https://%s/" .Values.traefik.ingress.host }}
+---
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect
+spec:
+  forwardAuth:
+    address: {{ printf "https://%s" .Values.traefik.ingress.forwardhost }}
+    trustForwardHeader: true
+    authResponseHeaders:
+      - X-Auth-Request-Access-Token
+      - Authorization
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: errors
+spec:
+  errors:
+    status:
+      - "401"
+    query: /oauth2/sign_in
+    service:
+      name: kafdrop-release
+      port: {{ $servicePort }}
+---
+{{- end -}}
+
+
+

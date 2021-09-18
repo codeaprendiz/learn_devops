@@ -1,0 +1,59 @@
+suite: PodSecurityPolicy configuration
+tests:
+  - it: should be disabled by default
+    asserts:
+      - hasDocuments:
+          count: 0
+        template: rbac/podsecuritypolicy.yaml
+  - it: should have privileged set to false
+    set:
+      podSecurityPolicy:
+        enabled: true
+    asserts:
+      - equal:
+          path: spec.privileged
+          value: false
+        template: rbac/podsecuritypolicy.yaml
+  - it: should have hostNetwork set to false by default
+    set:
+      podSecurityPolicy:
+        enabled: true
+    asserts:
+      - equal:
+          path: spec.hostNetwork
+          value: false
+        template: rbac/podsecuritypolicy.yaml
+  - it: should have hostNetwork set to true when enabled
+    set:
+      podSecurityPolicy:
+        enabled: true
+      hostNetwork: true
+    asserts:
+      - equal:
+          path: spec.hostNetwork
+          value: true
+        template: rbac/podsecuritypolicy.yaml
+  - it: should be enabled in clusterrole
+    set:
+      podSecurityPolicy:
+        enabled: true
+    asserts:
+      - equal:
+          path: rules[4].resources[0]
+          value: podsecuritypolicies
+        template: rbac/clusterrole.yaml
+      - equal:
+          path: rules[4].verbs[0]
+          value: use
+        template: rbac/clusterrole.yaml
+  - it: should allow persistentVolumeClaim when persistence is enabled
+    set:
+      podSecurityPolicy:
+        enabled: true
+      persistence:
+        enabled: true
+    asserts:
+      - equal:
+          path: spec.volumes[5]
+          value: persistentVolumeClaim
+        template: rbac/podsecuritypolicy.yaml

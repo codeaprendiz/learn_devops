@@ -1,0 +1,25 @@
+{{- if .Values.traefik.enabled -}}
+{{- $servicePort := .Values.service.portNumber -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: cors-security-headers
+spec:
+  headers:
+    accessControlAllowCredentials: true
+    accessControlAllowMethods:
+      - GET
+      - OPTIONS
+      - HEAD
+    accessControlAllowOriginList:
+      - '*'
+    accessControlMaxAge: 604800
+    addVaryHeader: false
+    browserXssFilter: true
+    contentTypeNosniff: true
+    sslRedirect: true
+    sslTemporaryRedirect: false
+    stsIncludeSubdomains: true
+    stsPreload: true
+    stsSeconds: 10886400
+{{- end -}}
