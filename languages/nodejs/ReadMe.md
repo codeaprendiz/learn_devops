@@ -5,4 +5,7 @@
 - [Callback Concept](task-004-callbacks-concept)
 - [Event-loop](task-005-event-loop)
 - [Event-emitter](task-006-event-emitter)
+- [Buffers](task-007-buffers)
+
+- [create-a-simple-and-stylish-node-express-app](task-008-web-app)
 
