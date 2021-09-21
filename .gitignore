@@ -47,3 +47,6 @@ __pycache__
 ## go
 pkg
 bin
+
+## node
+.env
