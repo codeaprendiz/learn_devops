@@ -1,6 +1,6 @@
 Best Design includes cost optimized design too.
 
-
+- [Auto Scaling](#Auto-Scaling)
 - [Billing and Cost Management](#Billing and Cost Management)
 - [CloudFormation](#CloudFormation)
 - [CloudWatch](#CloudWatch)
@@ -11,6 +11,18 @@ Best Design includes cost optimized design too.
 - [S3](#S3)
 - [Server Migration Service](#Server Migration Service)
 - [VPC](#VPC)
+
+### Auto-Scaling
+
+[Scheduled scaling for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html)
+
+- cooldown timer does not influence the scheduled activity
+
+[Cooldown](https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html)
+
+- even if the cooldown timer is running, the scheduled action takes high priority and executes immediately
+
+
 
 ### Billing and Cost Management
 
