@@ -72,6 +72,11 @@ Use CloudWatch alarm actions to automatically stop, terminate, reboot, or recove
 }
 ```
 
+Data in AWS CodeCommit repositories is already encrypted in transit as
+well as at rest.
+
+[how-to-migrate-existing-share](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository-existing.html#how-to-migrate-existing-share)
+
 ### Dynamodb
 
 [Dynamodb best practices](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/best-practices.html)
@@ -98,6 +103,7 @@ Use CloudWatch alarm actions to automatically stop, terminate, reboot, or recove
 - AWS Elastic Beanstalk provides several options for how deployments are processed, including deployment policies (All at once, Rolling, Rolling with additional batch, Immutable, and Traffic splitting)
 - If you use blue/green deployment stratergy then two environments are required.
 
+[Blue/Green deployments with Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html)
 
 ### Quicksight
 
