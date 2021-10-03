@@ -3,3 +3,8 @@
 - [change css style](task-003-change-css-styles)
 - [hiding html elements](task-004-hide-html-elements)
 - [display hidden elements](task-005-display-hidden-elements)
+- [code-inserted-between-script-tags](task-006-code-inserted-between-script-tags)
+- [js-in-head](task-007-js-in-head)
+- [js-in-body](task-008-js-in-body)
+- [external js](task-009-external-js)
+- [inner html](task-010-inner-html)
