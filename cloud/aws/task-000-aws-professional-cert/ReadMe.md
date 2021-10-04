@@ -4,6 +4,8 @@ Best Design includes cost optimized design too.
 - [Billing and Cost Management](#Billing and Cost Management)
 - [CloudFormation](#CloudFormation)
 - [CloudWatch](#CloudWatch)
+- [Code Commit](#codecommit)
+- [Code Pipeline]()
 - [Dynamodb](#Dynamodb)
 - [EC2](#EC2)
 - [Elasticbeanstalk](#Elasticbeanstalk)
@@ -21,6 +23,10 @@ Best Design includes cost optimized design too.
 [Cooldown](https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html)
 
 - even if the cooldown timer is running, the scheduled action takes high priority and executes immediately
+
+[Amazon EC2 Auto Scaling lifecycle hooks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)
+
+- When a scale-out event occurs, your newly launched instance completes its startup sequence and transitions to a wait state. While the instance is in a wait state, it runs a script to download and install the needed software packages for your application, making sure that your instance is fully ready before it starts receiving traffic. When the script is finished installing software, it sends the complete-lifecycle-action command to continue.
 
 
 
@@ -88,6 +94,20 @@ Data in AWS CodeCommit repositories is already encrypted in transit as
 well as at rest.
 
 [how-to-migrate-existing-share](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository-existing.html#how-to-migrate-existing-share)
+
+
+### CodePipeline
+
+[Grant approval permissions to an IAM user in CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/approvals-iam-permissions.html)
+
+- attaching the AWSCodePipelineApproverAccess managed policy to an IAM user
+
+[Approve or reject an approval action in CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/approvals-approve-or-reject.html)
+
+[Invoke an AWS Lambda function in a pipeline in CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-invoke-lambda-function.html)
+
+- Do not log the JSON event that CodePipeline sends to Lambda because this can result in user credentials being logged in CloudWatch Logs. The CodePipeline role uses a JSON event to pass temporary credentials to Lambda in the artifactCredentials field.
+
 
 ### Dynamodb
 
