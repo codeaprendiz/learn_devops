@@ -5,9 +5,11 @@ Best Design includes cost optimized design too.
 - [CloudFormation](#CloudFormation)
 - [CloudWatch](#CloudWatch)
 - [Code Commit](#codecommit)
+- [Code Deploy](#codedeploy)
 - [Code Pipeline]()
 - [Dynamodb](#Dynamodb)
 - [EC2](#EC2)
+- [ECS](#ECS)
 - [Elasticbeanstalk](#Elasticbeanstalk)
 - [Quicksight](#Quicksight)
 - [S3](#S3)
@@ -56,6 +58,13 @@ Specify the allocated HostID
  CloudFormation CLI create-change-set
 ```
 
+[Conditionally create resources for a production, development, or test stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-sample-templates.html)
+
+[Exporting stack output values](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html)
+
+[Listing stacks that import an exported output value](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-imports.html)
+
+
 ### CloudWatch
 
 [Monitoring deployments with Amazon CloudWatch Events](https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-cloudwatch-events.html)
@@ -95,6 +104,24 @@ well as at rest.
 
 [how-to-migrate-existing-share](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository-existing.html#how-to-migrate-existing-share)
 
+### CodeDeploy
+
+[Register an on-premises instance with CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/on-premises-instances-register.html)
+
+[Use the register command (IAM user ARN) to register an on-premises instance](https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-on-premises-register-instance.html)
+
+The register command can create an IAM user for the server and register the server with CodeDeploy
+
+```bash
+aws deploy register --instance-name AssetTag234AESDD --tags
+Key=Name,Value=CodeDeployDemo-OnPremise --region eu-west-1
+```
+
+[Manually remove on-premises instance tags from an on-premises instance](https://docs.aws.amazon.com/codedeploy/latest/userguide/on-premises-instances-operations-remove-tags.html)
+
+Typically, you remove an on-premises instance tag from an on-premises instance when that tag is no longer being used, or you want to remove the on-premises instance from any deployment groups that rely on that tag. You can use the AWS CLI or the AWS CodeDeploy console to remove on-premises instance tags from on-premises instances.
+
+[Create a deployment group for an in-place deployment (console)]()
 
 ### CodePipeline
 
@@ -127,6 +154,9 @@ well as at rest.
 
 [security-group-load-balancer](https://aws.amazon.com/premiumsupport/knowledge-center/security-group-load-balancer/)
 
+### ECS
+
+[Target tracking scaling policies](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-autoscaling-targettracking.html)
 
 ### Elasticbeanstalk
 
