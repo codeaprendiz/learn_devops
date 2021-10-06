@@ -1,0 +1,1 @@
+[js_output - window.alert](https://www.w3schools.com/js/js_output.asp)
