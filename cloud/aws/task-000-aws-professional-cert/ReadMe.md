@@ -1,7 +1,7 @@
 Best Design includes cost optimized design too.
 
 - [AutoScaling](#AutoScaling)
-- [Billing and Cost Management](#Billing and Cost Management)
+- [Billing and Cost Management](#BillingAndCostManagement)
 - [CloudFormation](#CloudFormation)
 - [CloudWatch](#CloudWatch)
 - [Code Commit](#codecommit)
@@ -14,7 +14,7 @@ Best Design includes cost optimized design too.
 - [Elastic Load Balancing](#ElasticLoadBalancing)
 - [Quicksight](#Quicksight)
 - [S3](#S3)
-- [Server Migration Service](#Server Migration Service)
+- [Server Migration Service](#ServerMigrationService)
 - [VPC](#VPC)
 
 ### AutoScaling
@@ -35,7 +35,7 @@ Best Design includes cost optimized design too.
 
 To specify how AWS CloudFormation handles replacement updates for an Auto Scaling group, use the AutoScalingReplacingUpdate policy. This policy enables you to specify whether AWS CloudFormation replaces an Auto Scaling group with a new one or replaces only the instances in the Auto Scaling group.
 
-### Billing and Cost Management
+### BillingAndCostManagement
 
 [Cost Alloc Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html)
 - After you activate cost allocation tags, AWS uses the cost allocation tags
@@ -198,7 +198,7 @@ QuickSight lets you easily create and publish interactive BI dashboards as well 
 - storing logs in Amazon S3, and use lifecycle policies to archive to Amazon
   Glacier
 
-### Server Migration Service
+### ServerMigrationService
 
 [Using Amazon CloudWatch Events and AWS Lambda with AWS SMS](https://docs.aws.amazon.com/server-migration-service/latest/userguide/cwe-sms.html)
 
