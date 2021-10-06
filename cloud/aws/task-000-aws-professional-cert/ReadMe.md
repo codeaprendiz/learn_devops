@@ -1,6 +1,6 @@
 Best Design includes cost optimized design too.
 
-- [Auto Scaling](#Auto-Scaling)
+- [AutoScaling](#AutoScaling)
 - [Billing and Cost Management](#Billing and Cost Management)
 - [CloudFormation](#CloudFormation)
 - [CloudWatch](#CloudWatch)
@@ -11,12 +11,13 @@ Best Design includes cost optimized design too.
 - [EC2](#EC2)
 - [ECS](#ECS)
 - [Elasticbeanstalk](#Elasticbeanstalk)
+- [Elastic Load Balancing](#ElasticLoadBalancing)
 - [Quicksight](#Quicksight)
 - [S3](#S3)
 - [Server Migration Service](#Server Migration Service)
 - [VPC](#VPC)
 
-### Auto-Scaling
+### AutoScaling
 
 [Scheduled scaling for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html)
 
@@ -30,7 +31,9 @@ Best Design includes cost optimized design too.
 
 - When a scale-out event occurs, your newly launched instance completes its startup sequence and transitions to a wait state. While the instance is in a wait state, it runs a script to download and install the needed software packages for your application, making sure that your instance is fully ready before it starts receiving traffic. When the script is finished installing software, it sends the complete-lifecycle-action command to continue.
 
+[AutoScalingReplacingUpdate policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html)
 
+To specify how AWS CloudFormation handles replacement updates for an Auto Scaling group, use the AutoScalingReplacingUpdate policy. This policy enables you to specify whether AWS CloudFormation replaces an Auto Scaling group with a new one or replaces only the instances in the Auto Scaling group.
 
 ### Billing and Cost Management
 
@@ -64,6 +67,13 @@ Specify the allocated HostID
 
 [Listing stacks that import an exported output value](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-imports.html)
 
+[DeletionPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html)
+
+With the DeletionPolicy attribute you can preserve, and in some cases, backup a resource when its stack is deleted
+
+[UpdateReplacePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html)
+
+Use the UpdateReplacePolicy attribute to retain or, in some cases, backup the existing physical instance of a resource when it's replaced during a stack update operation.
 
 ### CloudWatch
 
@@ -158,6 +168,9 @@ Typically, you remove an on-premises instance tag from an on-premises instance w
 
 [Target tracking scaling policies](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-autoscaling-targettracking.html)
 
+[How do I troubleshoot Amazon ECS tasks that take a long time to stop when the container instance is set to DRAINING?](https://aws.amazon.com/premiumsupport/knowledge-center/ecs-tasks-stop-delayed-draining/)
+
+
 ### Elasticbeanstalk
 
 [using-features.rolling-version-deploy](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.rolling-version-deploy.html)
@@ -166,6 +179,10 @@ Typically, you remove an on-premises instance tag from an on-premises instance w
 - If you use blue/green deployment stratergy then two environments are required.
 
 [Blue/Green deployments with Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html)
+
+### ElasticLoadBalancing
+
+[Deregistration delay](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay)
 
 ### Quicksight
 
