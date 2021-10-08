@@ -75,6 +75,26 @@ With the DeletionPolicy attribute you can preserve, and in some cases, backup a 
 
 Use the UpdateReplacePolicy attribute to retain or, in some cases, backup the existing physical instance of a resource when it's replaced during a stack update operation.
 
+
+[Walkthrough: Refer to resource outputs in another AWS CloudFormation stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html)
+
+To export resources from one AWS CloudFormation stack to another, create a cross-stack reference. Cross-stack references let you use a layered or service-oriented architecture.
+
+To create a cross-stack reference, use the Export output field to flag the value of a resource output for export. Then, use the Fn::ImportValue intrinsic function to import the value.
+
+
+- There are some limitations if there is a cross-stack reference
+between two CloudFormation stacks. Stack A cannot be deleted if it has a resource output
+that is referenced by stack B.
+- You cannot modify the output value that is referenced by
+another stack
+- you can update stack B to remove the cross-stack reference.
+
+[Custom resources](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html)
+
+- The template developer defines a custom resource in their template, which includes a service token and any input data parameters. Depending on the custom resource, the input data might be required; however, the service token is always required.
+- The service token specifies where AWS CloudFormation sends requests to, such as an Amazon SNS topic ARN or an AWS Lambda function ARN
+
 ### CloudWatch
 
 [Monitoring deployments with Amazon CloudWatch Events](https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-cloudwatch-events.html)
@@ -166,11 +186,27 @@ Typically, you remove an on-premises instance tag from an on-premises instance w
 
 ### ECS
 
+[What is ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
+
 [Target tracking scaling policies](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-autoscaling-targettracking.html)
 
 [How do I troubleshoot Amazon ECS tasks that take a long time to stop when the container instance is set to DRAINING?](https://aws.amazon.com/premiumsupport/knowledge-center/ecs-tasks-stop-delayed-draining/)
 
+[service_definition_parameters](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service_definition_parameters.html)
 
+- If a service is using the rolling update (ECS) deployment type, the minimumHealthyPercent represents a lower limit on the number of your service's tasks that must remain in the RUNNING state during a deployment
+- Minimum healthy percent represents a lower limit on the tasks. When the parameter is set to 100, the number of the service's running tasks would be equal or
+  more than the desired count of tasks during a rolling update.
+  
+[Blue/Green deployment with CodeDeploy](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html)
+  
+- You must configure the service to use either an Application Load Balancer or Network Load Balancer. Classic Load Balancers aren't supported
+
+> The Fargate launch type is unnecessary for the blue/green deployment type. The EC2 launch type is also supported.
+
+- When you initially create a CodeDeploy application and deployment group, you must specify the following:
+  You must define two target groups for the load balancer
+  
 ### Elasticbeanstalk
 
 [using-features.rolling-version-deploy](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.rolling-version-deploy.html)
