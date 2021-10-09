@@ -4,6 +4,7 @@ Best Design includes cost optimized design too.
 - [Billing and Cost Management](#BillingAndCostManagement)
 - [CloudFormation](#CloudFormation)
 - [CloudWatch](#CloudWatch)
+- [Code Build](#CodeBuild)
 - [Code Commit](#codecommit)
 - [Code Deploy](#codedeploy)
 - [Code Pipeline]()
@@ -110,6 +111,22 @@ Use CloudWatch alarm actions to automatically stop, terminate, reboot, or recove
 
 - Cheap
 
+### CodeBuild
+
+[Create a build project (console)](https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-console.html)
+
+- We recommend that you store an environment variable with a sensitive value, such as an AWS access key ID, an AWS secret access key, or a password as a parameter in Amazon EC2 Systems Manager Parameter Store or AWS Secrets Manager.
+
+[Docker images provided by CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html)
+
+[Extending AWS CodeBuild with Custom Build Environments](https://aws.amazon.com/blogs/devops/extending-aws-codebuild-with-custom-build-environments/)
+
+- Build environments are Docker images that include a complete file system with everything required to build and test your project. 
+  To use a custom build environment in a CodeBuild project, you build a container image for your platform that contains your build tools, 
+  push it to a Docker container registry such as Amazon EC2 Container Registry (ECR), and reference it in the project configuration. When 
+  building your application, CodeBuild will retrieve the Docker image from the container registry specified in the project configuration 
+  and use the environment to compile your source code, run your tests, and package your application.
+
 ### CodeCommit
 
 [auth-and-access-control-iam-identity-based-access-control](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#identity-based-policies-example-4)
@@ -134,6 +151,30 @@ well as at rest.
 
 [how-to-migrate-existing-share](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository-existing.html#how-to-migrate-existing-share)
 
+[Using identity-based policies (IAM Policies) for CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html)
+
+- AWS manage policy AWSCodeCommitPowerUser allows users access to CodeCommit but disallows the action of deleting
+  CodeCommit repositories.
+
+
+[Cross-account repository access: Actions for the administrator in AccountA](https://docs.aws.amazon.com/codecommit/latest/userguide/cross-account-administrator-a.html)
+
+To allow users or groups in AccountB to access a repository in AccountA, an AccountA administrator must:
+- Create a policy in AccountA that grants access to the repository.
+- Create a role in AccountA that can be assumed by IAM users and groups in AccountB.
+- Attach the policy to the role.
+
+[Cross-account repository access: Actions for the administrator in AccountB](https://docs.aws.amazon.com/codecommit/latest/userguide/cross-account-administrator-b.html)
+
+To allow users or groups in AccountB to access a repository in AccountA, the AccountB 
+administrator must create a group in AccountB. This group must be configured with a policy having
+action `"sts:AssumeRole` that allows group members to assume the role created by the AccountA administrator
+
+[Setup steps for SSH connections to AWS CodeCommit repositories on Linux, macOS, or Unix](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html)
+
+After you upload the SSH public key for the IAM user, the user can establish SSH connections to the CodeCommit repositories:
+
+
 ### CodeDeploy
 
 [Register an on-premises instance with CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/on-premises-instances-register.html)
@@ -153,6 +194,15 @@ Typically, you remove an on-premises instance tag from an on-premises instance w
 
 [Create a deployment group for an in-place deployment (console)]()
 
+[Deployment configurations on an AWS Lambda compute platform](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html#deployment-configuration-lambda)
+
+There are three ways traffic can shift during a deployment:
+
+- Canary: Traffic is shifted in two increments. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Lambda function version in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment.
+- Linear: Traffic is shifted in equal increments with an equal number of minutes between each increment. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment.
+- All-at-once: All traffic is shifted from the original Lambda function to the updated Lambda function version all at once.
+
+
 ### CodePipeline
 
 [Grant approval permissions to an IAM user in CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/approvals-iam-permissions.html)
@@ -165,6 +215,50 @@ Typically, you remove an on-premises instance tag from an on-premises instance w
 
 - Do not log the JSON event that CodePipeline sends to Lambda because this can result in user credentials being logged in CloudWatch Logs. The CodePipeline role uses a JSON event to pass temporary credentials to Lambda in the artifactCredentials field.
 
+[CodePipeline pipeline structure reference](https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html)
+
+- To specify parallel actions, use the same integer for each action you want to run in parallel. In the console, you can specify a serial sequence for an action by choosing Add action group at the level in the stage where you want it to run, or you can specify a parallel sequence by choosing Add action. Action group refers to a run order of one or more actions at the same level
+- different action groups have different runOrder values and their actions do not run in parallel.
+
+[Configure server-side encryption for artifacts stored in Amazon S3 for CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/S3-artifact-encryption.html)
+
+```json
+{
+    "Version": "2012-10-17",
+    "Id": "SSEAndSSLPolicy",
+    "Statement": [
+        {
+            "Sid": "DenyUnEncryptedObjectUploads",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::codepipeline-us-west-2-89050EXAMPLE/*",
+            "Condition": {
+                "StringNotEquals": {
+                    "s3:x-amz-server-side-encryption": "aws:kms"
+                }
+            }
+        },
+        {
+            "Sid": "DenyInsecureConnections",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::codepipeline-us-west-2-89050EXAMPLE/*",
+            "Condition": {
+                "Bool": {
+                    "aws:SecureTransport": "false"
+                }
+            }
+        }
+    ]
+}
+```
+
+
+[FAQ](https://aws.amazon.com/codepipeline/faqs/)
+
+- Pipeline actions occur in a specified order, in serial or in parallel, as determined in the configuration of the stage
 
 ### Dynamodb
 
