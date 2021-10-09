@@ -1,0 +1,8 @@
+displayName: Add Trace ID
+type: middleware
+import: github.com/trinnylondon/traefik-add-trace-id
+summary: 'Add a header for tracing if one does not exist already'
+testData:
+  headerName: 'X-Trace-Id'
+  headerPrefix: ''
+  verbose: false

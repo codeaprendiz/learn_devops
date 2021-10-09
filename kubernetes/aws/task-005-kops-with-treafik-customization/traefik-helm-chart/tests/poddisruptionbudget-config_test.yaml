@@ -1,0 +1,30 @@
+suite: PodDisruptionBudget configuration
+templates:
+  - poddisruptionbudget.yaml
+tests:
+  - it: should be disabled by default
+    asserts:
+      - hasDocuments:
+          count: 0
+  - it: should have minAvailable set
+    set:
+      podDisruptionBudget:
+        enabled: true
+        minAvailable: 2
+    asserts:
+      - equal:
+          path: spec.minAvailable
+          value: 2
+      - isEmpty:
+          path: spec.maxUnavailable
+  - it: should have maxUnavailable set
+    set:
+      podDisruptionBudget:
+        enabled: true
+        maxUnavailable: 1
+    asserts:
+      - equal:
+          path: spec.maxUnavailable
+          value: 1
+      - isEmpty:
+          path: spec.minAvailable

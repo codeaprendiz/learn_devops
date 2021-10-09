@@ -34,6 +34,7 @@ EKS Kong | [Configuring Kong on EKS cluster and doing some basic tasks to learn 
 Kafka On local Using Helm | [Installing Kafka on local using helm](local-mac/task-008-kafka)
 Kafdrop for kafka monitoring | [Kafdrop for kafka monitoring](local-mac/task-009-kafdrop)
 Kafdrop on kops authenticated by Oauth2-proxy | [Kafdrop OAuth2-proxy kops traefik](aws/task-004-oauth2-proxy)
+Traefik Custom Changes in Image for X-trace-id with kops | [Kops Custom Traefik with X-Trace-ID for every request](aws/task-005-kops-with-treafik-customization)
 
 Domain | Tasks | 
 ---    | --- | 

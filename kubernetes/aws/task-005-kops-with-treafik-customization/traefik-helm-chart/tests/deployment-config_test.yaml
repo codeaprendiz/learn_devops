@@ -1,0 +1,74 @@
+suite: Deployment configuration
+templates:
+  - deployment.yaml
+tests:
+  - it: should have 1 replica by default
+    asserts:
+      - equal:
+          path: spec.replicas
+          value: 1
+  - it: should have the specified amount of replicas when specified via values
+    set:
+      deployment:
+        replicas: 3
+    asserts:
+      - equal:
+          path: spec.replicas
+          value: 3
+  - it: should have a rollingUpdate strategy with default values
+    asserts:
+      - equal:
+          path: spec.strategy.type
+          value: RollingUpdate
+      - equal:
+          path: spec.strategy.rollingUpdate.maxUnavailable
+          value: 1
+      - equal:
+          path: spec.strategy.rollingUpdate.maxSurge
+          value: 1
+  - it: should have a custom merged rollingUpdate strategy with specified values
+    set:
+      rollingUpdate:
+        maxUnavailable: 4
+        vegetaForce: 9000
+    asserts:
+      - equal:
+          path: spec.strategy.type
+          value: RollingUpdate
+      - equal:
+          path: spec.strategy.rollingUpdate.maxUnavailable
+          value: 4
+      - equal:
+          path: spec.strategy.rollingUpdate.maxSurge
+          value: 1
+      - equal:
+          path: spec.strategy.rollingUpdate.vegetaForce
+          value: 9000
+  - it: should have annotations with specified values
+    set:
+      deployment:
+        annotations:
+          traefik/powpow: annotations
+        podAnnotations:
+          traefik/powpow: podAnnotations
+    asserts:
+      - equal:
+          path: metadata.annotations.traefik/powpow
+          value: annotations
+      - equal:
+          path: spec.template.metadata.annotations.traefik/powpow
+          value: podAnnotations
+  - it: should have labels with specified values
+    set:
+      deployment:
+        labels:
+          traefik/powpow: labels
+        podLabels:
+          traefik/powpow: podLabels
+    asserts:
+      - equal:
+          path: metadata.labels.traefik/powpow
+          value: labels
+      - equal:
+          path: spec.template.metadata.labels.traefik/powpow
+          value: podLabels

@@ -1,0 +1,194 @@
+suite: Traefik configuration
+templates:
+  - deployment.yaml
+tests:
+  - it: should have no custom arguments when specified by default
+    set:
+      additionalArguments:
+        - --the.force.is.with.me=true
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--the.force.is.with.me=true"
+  - it: should have namespace restriction if rbac is namespaced
+    set:
+      rbac:
+        namespaced: true
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.namespaces=NAMESPACE"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetescrd.namespaces=NAMESPACE"
+  - it: should have a custom string of watched namespaces when specified in configuration
+    set:
+      rbac:
+        namespaced: true
+      providers:
+        kubernetesCRD:
+          enabled: true
+          allowCrossNamespace: true
+          namespaces:
+          - "foo"
+          - "bar"
+        kubernetesIngress:
+          enabled: true
+          namespaces:
+          - "foo"
+          - "bar"
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.namespaces=foo,bar"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetescrd.allowCrossNamespace=true"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetescrd.namespaces=foo,bar"
+  - it: should not have the watched namespace when provider is disabled
+    set:
+      providers:
+        kubernetesCRD:
+          enabled: false
+          namespaces:
+          - "foo"
+          - "bar"
+        kubernetesIngress:
+          enabled: false
+          namespaces:
+            - "foo"
+            - "bar"
+    asserts:
+      - notContains:
+          path: spec.template.spec.containers[0].args
+          content:
+            "--providers.kubernetesingress.namespaces"
+      - notContains:
+          path: spec.template.spec.containers[0].args
+          content:
+            "--providers.kubernetesingress"
+      - notContains:
+          path: spec.template.spec.containers[0].args
+          content:
+            "--providers.kubernetescrd.namespaces"
+      - notContains:
+          path: spec.template.spec.containers[0].args
+          content:
+            "--providers.kubernetescrd"
+  - it: should have disable published Kubernetes service when default configuration
+    asserts:
+      - notContains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.ingressendpoint.publishedservice=NAMESPACE/RELEASE-NAME-traefik"
+  - it: should have enable published Kubernetes service when specified in configuration
+    set:
+        providers:
+          kubernetesIngress:
+            publishedService:
+              enabled: true
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.ingressendpoint.publishedservice=NAMESPACE/RELEASE-NAME-traefik"
+  - it: should have a custom string in published Kubernetes service when specified in configuration
+    set:
+      providers:
+        kubernetesIngress:
+          publishedService:
+            enabled: true
+            pathOverride: foo/bar
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.ingressendpoint.publishedservice=foo/bar"
+  - it: should match ingresses based on input label
+    set:
+        providers:
+          kubernetesIngress:
+            labelSelector: environment=devel
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.labelSelector=environment=devel"
+  - it: should have a plugin storage if the experimental feature is enabled
+    set:
+      experimental:
+        plugins:
+          enabled: true
+    asserts:
+      - equal:
+          path: spec.template.spec.volumes[2]
+          value:
+            name: plugins
+            emptyDir: {}
+      - contains:
+          path: spec.template.spec.containers[0].volumeMounts
+          content:
+            name: plugins
+            mountPath: "/plugins-storage"
+  - it: should have tls configuration args when specified in values.yaml for port
+    set:
+      ports:
+        websecure:
+          tls:
+            enabled: true
+            options: "foo"
+            certResolver: "certResolverFoo"
+            domains:
+              - main: "sub.domain.tld"
+                sans:
+                  - "alt1.domain.tld"
+                  - "alt2.domain.tld"
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--entrypoints.websecure.http.tls=true"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--entrypoints.websecure.http.tls.options=foo"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--entrypoints.websecure.http.tls.certResolver=certResolverFoo"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--entrypoints.websecure.http.tls.domains[0].main=sub.domain.tld"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--entrypoints.websecure.http.tls.domains[0].sans=alt1.domain.tld,alt2.domain.tld"
+  - it: should have additional volumeMounts
+    set:
+      additionalVolumeMounts:
+        - name: foo-logs
+          mountPath: /var/log/traefik
+      asserts:
+        - equal:
+            path: spec.template.spec.containers[0].volumeMounts[3].name
+            value: foo-logs
+        - equal:
+            path: spec.template.spec.containers[0].volumeMounts[3].mountPath
+            value: /var/log/traefik
+  - it: should set custom probe port
+    set:
+      additionalArguments:
+        - --ping
+        - --ping.entrypoint=web
+      ports:
+        traefik:
+          port: 9000
+          healthchecksPort: 9001
+          exposedPort: 9000
+      asserts:
+        - equal:
+            path: spec.template.spec.containers[0].livenessProbe.httpGet.port
+            content: 9001
+        - equal:
+            path: spec.template.spec.containers[0].readinessProbe.httpGet.port
+            content: 9001
+        - contains:
+            path: spec.template.spec.containers[0].args
+            content: "--ping"
+        - contains:
+            path: spec.template.spec.containers[0].args
+            content: "--ping.entrypoint=web"

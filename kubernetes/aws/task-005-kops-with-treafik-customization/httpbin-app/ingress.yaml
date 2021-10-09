@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: demo1
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: "HostRegexp(`yourdomain.com`) && PathPrefix(`/`)"
+      kind: Rule
+      services:
+        - name: httpbin
+          port: 80
+      middlewares:
+        - name: traceid

@@ -1,0 +1,81 @@
+suite: RBAC configuration
+tests:
+  - it: should create default RBAC related objects
+    asserts:
+      - isKind:
+          of: ClusterRole
+        template: rbac/clusterrole.yaml
+      - isKind:
+          of: ClusterRoleBinding
+        template: rbac/clusterrolebinding.yaml
+      - hasDocuments:
+          count: 0
+        template: rbac/role.yaml
+      - hasDocuments:
+          count: 0
+        template: rbac/rolebinding.yaml
+      - isKind:
+          of: ServiceAccount
+        template: rbac/serviceaccount.yaml
+      - equal:
+          path: metadata.name
+          value: RELEASE-NAME-traefik
+        template: rbac/serviceaccount.yaml
+      - equal:
+          path: spec.template.spec.serviceAccountName
+          value: RELEASE-NAME-traefik
+        template: deployment.yaml
+      - equal:
+          path: subjects[0].name
+          value: RELEASE-NAME-traefik
+        template: rbac/clusterrolebinding.yaml
+  - it: should not create RBAC related objects when disabled
+    set:
+      rbac:
+        enabled: false
+    asserts:
+      - hasDocuments:
+          count: 0
+        template: rbac/clusterrole.yaml
+      - hasDocuments:
+          count: 0
+        template: rbac/clusterrolebinding.yaml
+      - hasDocuments:
+          count: 0
+        template: rbac/role.yaml
+      - hasDocuments:
+          count: 0
+        template: rbac/rolebinding.yaml
+  - it: should create RBAC related objects at namespace scope
+    set:
+      rbac:
+        namespaced: true
+    asserts:
+      - isKind:
+          of: Role
+        template: rbac/role.yaml
+      - isKind:
+          of: RoleBinding
+        template: rbac/rolebinding.yaml
+      - hasDocuments:
+          count: 0
+        template: rbac/clusterrole.yaml
+      - hasDocuments:
+          count: 0
+        template: rbac/clusterrolebinding.yaml
+  - it: should use existing ServiceAccount
+    set:
+      serviceAccount:
+        name: foobar
+    asserts:
+      - hasDocuments:
+          count: 0
+        template: rbac/serviceaccount.yaml
+      - equal:
+          path: spec.template.spec.serviceAccountName
+          value: foobar
+        template: deployment.yaml
+      - equal:
+          path: subjects[0].name
+          value: foobar
+        template: rbac/clusterrolebinding.yaml

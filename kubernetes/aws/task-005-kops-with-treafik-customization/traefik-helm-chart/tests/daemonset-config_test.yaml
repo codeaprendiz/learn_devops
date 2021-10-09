@@ -1,0 +1,45 @@
+suite: DaemonSet configuration
+templates:
+  - daemonset.yaml
+tests:
+  - it: should have a rollingUpdate strategy with default values
+    set:
+      deployment:
+        kind: DaemonSet
+    asserts:
+      - equal:
+          path: spec.updateStrategy.type
+          value: RollingUpdate
+      - equal:
+          path: spec.updateStrategy.rollingUpdate.maxUnavailable
+          value: 1
+  - it: should have annotations with specified values
+    set:
+      deployment:
+        kind: DaemonSet
+        annotations:
+          traefik/powpow: annotations
+        podAnnotations:
+          traefik/powpow: podAnnotations
+    asserts:
+      - equal:
+          path: metadata.annotations.traefik/powpow
+          value: annotations
+      - equal:
+          path: spec.template.metadata.annotations.traefik/powpow
+          value: podAnnotations
+  - it: should have labels with specified values
+    set:
+      deployment:
+        kind: DaemonSet
+        labels:
+          traefik/powpow: labels
+        podLabels:
+          traefik/powpow: podLabels
+    asserts:
+      - equal:
+          path: metadata.labels.traefik/powpow
+          value: labels
+      - equal:
+          path: spec.template.metadata.labels.traefik/powpow
+          value: podLabels

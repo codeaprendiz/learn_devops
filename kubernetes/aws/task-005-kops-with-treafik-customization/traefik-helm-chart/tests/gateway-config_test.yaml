@@ -1,0 +1,57 @@
+suite: Gateway configuration
+templates:
+  - gateway.yaml
+tests:
+  - it: should have one gateway with the correct class and an http port
+    set:
+      experimental:
+        kubernetesGateway:
+          enabled: true
+    asserts:
+      - equal:
+          path: spec.gatewayClassName
+          value: "traefik"
+      - equal:
+          path: spec.listeners[0].port
+          value: 8000
+      - equal:
+          path: metadata.namespace
+          value: "NAMESPACE"
+  - it: should have one gateway with the correct class and an http port as well as an https port
+    set:
+      experimental:
+        kubernetesGateway:
+          enabled: true
+          certificates:
+            - name: "my-name"
+              group: "my-group"
+              kind: "my-kind"
+    asserts:
+      - equal:
+          path: spec.gatewayClassName
+          value: "traefik"
+      - equal:
+          path: spec.listeners[0].port
+          value: 8000
+      - equal:
+          path: spec.listeners[1].port
+          value: 8443
+      - equal:
+          path: spec.listeners[1].tls.certificateRef.name
+          value: "my-name"
+      - equal:
+          path: spec.listeners[1].tls.certificateRef.group
+          value: "my-group"
+      - equal:
+          path: spec.listeners[1].tls.certificateRef.kind
+          value: "my-kind"
+  - it: should install gateway in custom namespace
+    set:
+      experimental:
+        kubernetesGateway:
+          enabled: true
+          namespace: "default"
+    asserts:
+      - equal:
+          path: metadata.namespace
+          value: "default"

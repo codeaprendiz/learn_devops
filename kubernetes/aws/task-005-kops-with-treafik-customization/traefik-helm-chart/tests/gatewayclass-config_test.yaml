@@ -1,0 +1,13 @@
+suite: Gatewayclass configuration
+templates:
+  - gatewayclass.yaml
+tests:
+  - it: should have one gatewayclass with controller value traefik.io/gateway-controller
+    set:
+      experimental:
+        kubernetesGateway:
+          enabled: true
+    asserts:
+      - equal:
+          path: spec.controller
+          value: traefik.io/gateway-controller

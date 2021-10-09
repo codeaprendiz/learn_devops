@@ -1,0 +1,11 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: traceid
+spec:
+  plugin:
+    traceid:
+      headerName: X-Trace-Id
+      headerPrefix: ""
+      verbose: true
+

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: echo
+  name: echo
+spec:
+  ports:
+    - port: 8080
+      name: high
+      protocol: TCP
+      targetPort: 8080
+    - port: 80
+      name: low
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: echo
+---
