@@ -1,4 +1,4 @@
-### AutoScaling
+## AutoScaling
 
 [Scheduled scaling for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html)
 
@@ -15,3 +15,13 @@
 [AutoScalingReplacingUpdate policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html)
 
 To specify how AWS CloudFormation handles replacement updates for an Auto Scaling group, use the AutoScalingReplacingUpdate policy. This policy enables you to specify whether AWS CloudFormation replaces an Auto Scaling group with a new one or replaces only the instances in the Auto Scaling group.
+
+
+### Supports Following Deployment Methods
+
+- AllAtOnce
+- HalfAtATime
+- OneAtATime. 
+
+
+But it does not support the canary type.
