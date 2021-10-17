@@ -12,3 +12,13 @@ Use CloudWatch alarm actions to automatically stop, terminate, reboot, or recove
 [dynamic-dns-for-route-53](https://aws.amazon.com/blogs/compute/building-a-dynamic-dns-for-route-53-using-cloudwatch-events-and-lambda/)
 
 - Cheap
+
+
+[Sending and Receiving Events Between AWS Accounts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html)
+
+
+The overall process is as follows:
+
+- On the receiver account, edit the permissions on the default event bus to allow specified AWS accounts, an organization, or all AWS accounts to send events to the receiver account.
+- On the sender account, set up one or more rules that have the receiver account's default event bus as the target.
+- On the receiver account, set up one or more rules that match events that come from the sender account.
