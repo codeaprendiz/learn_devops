@@ -14,6 +14,7 @@ Best Design includes cost optimized design too.
 - [ECS](ecs.md)
 - [Elasticbeanstalk](elasticbeanstalk.md)
 - [Elastic Load Balancing](elasticLoadBalancing.md)
+- [Event Bridge](eventBridge.md)
 - [Quicksight](quicksight.md)
 - [S3](s3.md)
 - [Server Migration Service](serverMigrationService.md)
