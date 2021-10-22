@@ -1,4 +1,4 @@
-## AutoScaling
+## EC2 AutoScaling
 
 [Scheduled scaling for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html)
 
@@ -25,3 +25,7 @@ To specify how AWS CloudFormation handles replacement updates for an Auto Scalin
 
 
 But it does not support the canary type.
+
+### Auto Scaling groups with multiple instance types and purchase options
+
+- You can launch and automatically scale a fleet of On-Demand Instances and Spot Instances within a single Auto Scaling group. In addition to receiving discounts for using Spot Instances, you can use Reserved Instances or a Savings Plan to receive discounted rates of the regular On-Demand Instance pricing.

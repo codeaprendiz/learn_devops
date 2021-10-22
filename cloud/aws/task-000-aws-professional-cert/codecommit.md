@@ -63,6 +63,12 @@ After you upload the SSH public key for the IAM user, the user can establish SSH
 
 - When you have an approval rule on a pull request, you cannot merge that pull request until its conditions have been met. You can change the approval rules for pull requests to make it easier to satisfy their conditions, or to increase the rigor of reviews. You can change the number of users who must approve a pull request.
 
+#### Working with approval rule templates
+
+[Working with approval rule templates](https://docs.aws.amazon.com/codecommit/latest/userguide/approval-rule-templates.html)
+
+- You can create approval rules for pull requests. To automatically apply approval rules to some or all of the pull requests created in repositories, use approval rule templates. Approval rule templates help you customize your development workflows across repositories so that different branches have appropriate levels of approvals and control. You can define different rules for production and development branches. Those rules are applied every time a pull request that matches the rule conditions is created.
+
 #### Working with branches
 
 [Limit pushes and merges to branches in AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-conditional-branch.html)
@@ -112,6 +118,11 @@ After you upload the SSH public key for the IAM user, the user can establish SSH
 
 - You can configure a CodeCommit repository so that code pushes or other events trigger actions, such as sending a notification from Amazon Simple Notification Service (Amazon SNS) or invoking a function in AWS Lambda. You can create up to 10 triggers for each CodeCommit repository.
 
+##### Configuring notifications for events in an AWS CodeCommit repository
+
+[Configuring notifications for events in an AWS CodeCommit repository](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-repository-email.html)
+
+- You can set up notification rules for a repository so that repository users receive emails about the repository event types you specify. Notifications are sent when events match the notification rule settings. You can create an Amazon SNS topic to use for notifications or use an existing one in your Amazon Web Services account
 
 #### Security
 

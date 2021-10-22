@@ -20,3 +20,9 @@ To stop and start EC2 instances at regular intervals using Lambda, do the follow
 
 This example setup is a simple solution. For a more robust solution, use the AWS Instance Scheduler
 
+
+#### No Spot capacity available
+
+[Why am I receiving a "no Spot capacity available" error when trying to launch an Amazon EC2 Spot Instance?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-spot-instance-insufficient-capacity/)
+
+- Be flexible about which instance types you request and which Availability Zones you deploy your workload in
