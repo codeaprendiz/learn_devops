@@ -29,3 +29,17 @@ But it does not support the canary type.
 ### Auto Scaling groups with multiple instance types and purchase options
 
 - You can launch and automatically scale a fleet of On-Demand Instances and Spot Instances within a single Auto Scaling group. In addition to receiving discounts for using Spot Instances, you can use Reserved Instances or a Savings Plan to receive discounted rates of the regular On-Demand Instance pricing.
+
+### Monitoring
+
+#### Health checks for Auto Scaling instances
+
+[Health checks for Auto Scaling instances](https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html)
+
+The health status of an Auto Scaling instance is either healthy or unhealthy. All instances in your Auto Scaling group start in the healthy state. Instances are assumed to be healthy unless Amazon EC2 Auto Scaling receives notification that they are unhealthy. This notification can come from one or more of the following sources: Amazon EC2, Elastic Load Balancing (ELB), or a custom health check.
+
+Using custom health checks
+
+```bash
+aws autoscaling set-instance-health --instance-id i-123abc45d --health-status Unhealthy
+```

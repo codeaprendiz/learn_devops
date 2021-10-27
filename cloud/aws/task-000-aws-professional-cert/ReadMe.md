@@ -18,6 +18,7 @@ Best Design includes cost optimized design too.
 - [Event Bridge](eventBridge.md)
 - [Guard Duty](guardDuty.md)
 - [Inspector](Inspector.md)
+- [Opswork](opswork.md)
 - [Quicksight](quicksight.md)
 - [S3](s3.md)
 - [Server Migration Service](serverMigrationService.md)

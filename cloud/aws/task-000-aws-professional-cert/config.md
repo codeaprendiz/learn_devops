@@ -24,6 +24,14 @@
   - Configuration changes
   - Periodic
 
+#### Managing Rules
+
+##### restricted-ssh
+
+[restricted-ssh](https://docs.aws.amazon.com/config/latest/developerguide/restricted-ssh.html)
+
+- Checks if the incoming SSH traffic for the security groups is accessible. The rule is COMPLIANT when IP addresses of the incoming SSH traffic in the security groups are restricted (CIDR other than 0.0.0.0/0). This rule applies only to IPv4.
+
 #### Remediating Noncompliant AWS Resources by AWS Config Rules
 
 [Remediating Noncompliant AWS Resources by AWS Config Rules](https://docs.aws.amazon.com/config/latest/developerguide/remediation.html)
