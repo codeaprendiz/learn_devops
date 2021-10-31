@@ -38,8 +38,36 @@ But it does not support the canary type.
 
 The health status of an Auto Scaling instance is either healthy or unhealthy. All instances in your Auto Scaling group start in the healthy state. Instances are assumed to be healthy unless Amazon EC2 Auto Scaling receives notification that they are unhealthy. This notification can come from one or more of the following sources: Amazon EC2, Elastic Load Balancing (ELB), or a custom health check.
 
+**Instance health status**
+
+Amazon EC2 Auto Scaling can determine the health status of an instance using one or more of the following:
+
+- Status checks provided by Amazon EC2 to identify hardware and software issues that may impair an instance. The default health checks for an Auto Scaling group are EC2 status checks only.
+- Health checks provided by Elastic Load Balancing (ELB). These health checks are disabled by default but can be enabled.
+- Your custom health checks.
+
 Using custom health checks
 
 ```bash
 aws autoscaling set-instance-health --instance-id i-123abc45d --health-status Unhealthy
+```
+
+Health check grace period
+
+- By default, the health check grace period is 300 seconds when you create an Auto Scaling group from the AWS Management Console. Its default value is 0 seconds when you create an Auto Scaling group using the AWS CLI or an SDK.
+- If you add a lifecycle hook, the grace period does not start until the lifecycle hook actions are completed and the instance enters the InService state.
+
+
+### Scaling Your Group
+
+#### Temporarily removing instances from your Auto Scaling group
+
+[Temporarily removing instances from your Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html)
+
+- You can put an instance that is in the InService state into the Standby state, update or troubleshoot the instance, and then return the instance to service. Instances that are on standby are still part of the Auto Scaling group, but they do not actively handle load balancer traffic.
+- Amazon EC2 Auto Scaling does not perform health checks on instances that are in a standby state.
+
+```bash
+aws autoscaling enter-standby --instance-ids i-05b4f7d5be44822a6 \
+  --auto-scaling-group-name my-asg --should-decrement-desired-capacity
 ```

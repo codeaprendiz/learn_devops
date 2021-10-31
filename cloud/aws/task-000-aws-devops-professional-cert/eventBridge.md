@@ -32,3 +32,9 @@ An event bus is a pipeline that receives events. Rules associated with the event
 You can configure EventBridge to send and receive events between AWS accounts. When you configure EventBridge to send or receive events between accounts, you can specify which AWS accounts can send events to or receive events from the event bus in your account. 
 
 [Video - The following video covers routing events between accounts](https://youtu.be/pX_xIW_EuCE)
+
+
+#### Decoupling larger applications with Amazon EventBridge
+[Decoupling larger applications with Amazon EventBridge](https://aws.amazon.com/blogs/compute/decoupling-larger-applications-with-amazon-eventbridge/)
+
+- you can use an event-based architecture to decouple services and functional areas of applications.
