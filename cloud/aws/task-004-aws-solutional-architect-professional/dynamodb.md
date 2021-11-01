@@ -1,6 +1,6 @@
 # Dynamodb
 
-[Cheatsheet](https://tutorialsdojo.com/amazon-dynamodb/?src=udemy#core-components)
+[Cheatsheet - Dynamodb](https://tutorialsdojo.com/amazon-dynamodb/?src=udemy#core-components)
 
 - fast
 - highly scalable
