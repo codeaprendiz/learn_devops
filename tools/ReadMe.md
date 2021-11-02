@@ -11,6 +11,11 @@
 - [Apache Kafka](https://kafka.apache.org/documentation/)
 
 
+### Infra Architecture Diagrams
+
+[https://online.visual-paradigm.com/](https://online.visual-paradigm.com/)
+[https://www.edrawmax.com/](https://www.edrawmax.com/)
+[https://sketchboard.me/](https://sketchboard.me/)
 
 
 
