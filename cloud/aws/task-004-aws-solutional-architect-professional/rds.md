@@ -10,3 +10,14 @@
 - Read replicas can also be promoted when needed to become standalone DB instances
 - Read replicas are available in Amazon RDS for MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server as well as Amazon Aurora.
 - You can reduce the load on your source DB instance by routing read queries from your applications to the read replica
+
+## Backing up and restoring an Amazon RDS DB instance
+
+[Backing up and restoring an Amazon RDS DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_CommonTasks.BackupRestore.html)
+
+### Restoring a DB instance to a specified time
+
+- You can restore a DB instance to a specific point in time, creating a new DB instance.
+- RDS uploads transaction logs for DB instances to Amazon S3 every 5 minutes.
+- To see the latest restorable time for a DB instance, use the AWS CLI describe-db-instances command and look at the value returned in the LatestRestorableTime field for the DB instance.
+- To see the latest restorable time for each DB instance in the Amazon RDS console, choose Automated backups.

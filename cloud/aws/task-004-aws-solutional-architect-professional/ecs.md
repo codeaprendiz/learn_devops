@@ -1,6 +1,6 @@
 # ECS
 
-[Cheetsheet - ECS](https://tutorialsdojo.com/amazon-elastic-container-service-amazon-ecs/?src=udemy)
+[Cheetsheet - ECS](https://tutorialsdojo.com/amazon-elastic-container-service-amazon-ecs/)
 
 [What is Amazon Elastic Container Service?](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
 
@@ -34,3 +34,15 @@ ECS_ENABLE_SPOT_INSTANCE_DRAINING=true
 
 
 [Four Steps to Run ECS Clusters on EC2 Spot Instances](https://aws.amazon.com/ec2/spot/containers-for-less/get-started/)
+
+
+## Task Definations
+
+Amazon ECS enables you to inject sensitive data into your containers by storing your sensitive data in either AWS Secrets Manager secrets or AWS Systems Manager Parameter Store parameters and then referencing them in your container definition.
+
+- Store the database credentials using the AWS Secrets Manager
+- encrypt them using AWS KMS
+- Create an IAM Role for your Amazon ECS task execution role
+  - and reference it with your task definition which allows access to both KMS and AWS Secrets Manager
+- Within your container definition, specify secrets with the name of the environment variable to set in the container and the full ARN of the Secrets Manager secret which contains the sensitive data, to present to the container.
+> Systems Manager Parameter Store service doesn't provide dedicated storage with lifecycle management and key rotation, unlike Secrets Manager.
