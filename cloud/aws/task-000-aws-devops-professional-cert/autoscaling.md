@@ -10,7 +10,10 @@
 
 [Amazon EC2 Auto Scaling lifecycle hooks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)
 
-- When a scale-out event occurs, your newly launched instance completes its startup sequence and transitions to a wait state. While the instance is in a wait state, it runs a script to download and install the needed software packages for your application, making sure that your instance is fully ready before it starts receiving traffic. When the script is finished installing software, it sends the complete-lifecycle-action command to continue.
+- When a scale-out event occurs, your newly launched instance completes its startup sequence and transitions to a wait state. 
+- While the instance is in a wait state, it runs a script to download and install the needed software packages for your application, 
+  making sure that your instance is fully ready before it starts receiving traffic. 
+- When the script is finished installing software, it sends the complete-lifecycle-action command to continue.
 
 [AutoScalingReplacingUpdate policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html)
 
