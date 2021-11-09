@@ -1,5 +1,8 @@
 - [Best Practices](bestPractices.md)
+- [Cloud Formation](cloudFormation.md)
+- [Cloud Front](cloudFront.md)
 - [EC2](ec2.md)
+- [EC2 Autoscaling](ec2AutoScaling.md)
 - [ECS](ecs.md)
 - [Elastic Cache](elasticCache.md)
 - [Dynamo DB](dynamodb.md)
