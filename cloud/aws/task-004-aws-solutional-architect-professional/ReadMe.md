@@ -14,5 +14,6 @@
 - [Resource Access Manager](resourceAccessManager.md)
 - [Schema Conversion Tool](schemaConversionTool.md)
 - [Secrets Manager](secretsManager.md)
+- [Server Migration Service](serverMigrationService.md)
 - [Simple Workflow Service](simpleWorkflowService.md)
 - [Web Identify Federation](webIdentifyFederation.md)
