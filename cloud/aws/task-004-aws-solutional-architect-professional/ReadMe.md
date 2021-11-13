@@ -1,6 +1,7 @@
 - [Best Practices](bestPractices.md)
 - [Cloud Formation](cloudFormation.md)
 - [Cloud Front](cloudFront.md)
+- [Config](config.md)
 - [Direct Connect](directConnect.md)
 - [EC2](ec2.md)
 - [EC2 Autoscaling](ec2AutoScaling.md)
@@ -17,4 +18,5 @@
 - [Secrets Manager](secretsManager.md)
 - [Server Migration Service](serverMigrationService.md)
 - [Simple Workflow Service](simpleWorkflowService.md)
+- [System Manager](systemManager.md)
 - [Web Identify Federation](webIdentifyFederation.md)
