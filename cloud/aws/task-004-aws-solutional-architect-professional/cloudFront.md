@@ -22,3 +22,14 @@ You can use geo restriction, also known as geo blocking, to prevent users in spe
 - Use the CloudFront geo restriction feature. Use this option to restrict access to all of the files that are associated with a distribution and to restrict access at the country level.
 
 - Use a third-party geolocation service. Use this option to restrict access to a subset of the files that are associated with a distribution or to restrict access at a finer granularity than the country level.
+
+## Optimizing Caching and availability
+
+### Optimizing high availability with CloudFront origin failover
+
+[Optimizing high availability with CloudFront origin failover](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html)
+
+
+- You can set up CloudFront with origin failover for scenarios that require high availability. 
+- To get started, you create an origin group with two origins: a primary and a secondary. 
+- If the primary origin is unavailable, or returns specific HTTP response status codes that indicate a failure, CloudFront automatically switches to the secondary origin.
