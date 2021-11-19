@@ -41,3 +41,25 @@
 - You can store values as plain text or encrypted data
 - Parameter Store is also integrated with Secrets Manager
 
+### Setting up AWS Systems Manager for hybrid environments
+
+[Setting up AWS Systems Manager for hybrid environments](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html)
+
+Configuring your hybrid environment for Systems Manager allows you to do the following:
+- Create a consistent and secure way to remotely manage your hybrid workloads from one location using the same tools or scripts.
+- Centralize access control for actions that can be performed on your servers and VMs by using AWS Identity and Access Management (IAM).
+- Centralize auditing and your view into the actions performed on your servers and VMs by recording all actions in AWS CloudTrail.
+- Centralize monitoring by configuring Amazon EventBridge and Amazon Simple Notification Service (Amazon SNS) to send notifications about service execution success.
+
+
+#### Step 7: (Optional) Create Systems Manager service roles
+
+[Step 7: (Optional) Create Systems Manager service roles](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-service-role.html)
+
+- This topic explains the difference between a service role and a service-linked role for AWS Systems Manager. It also explains when you need to create or use either type of role.
+- Service role: 
+  - A service role is an AWS Identity and Access Management (IAM) that grants permissions to an AWS service so that the service can access AWS resources. 
+  - Only a few Systems Manager scenarios require a service role. 
+  - When you create a service role for Systems Manager, you choose the permissions to grant in order for it to access or interact with other AWS resources.
+- Service-linked role: 
+  - A service-linked role is predefined by Systems Manager and includes all the permissions that the service requires to call other AWS services on your behalf.

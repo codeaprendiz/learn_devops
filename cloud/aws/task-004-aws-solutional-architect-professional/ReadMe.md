@@ -4,6 +4,7 @@
 - [Cloud Front](cloudFront.md)
 - [CloudWatch](cloudwatch.md)
 - [CloudWatchLogs](cloudWatchLogs.md)
+- [CodeCommit](codeCommit.md)
 - [Cognito](cognito.md)
 - [Config](config.md)
 - [Direct Connect](directConnect.md)
