@@ -4,6 +4,8 @@
 
 [Cheat Sheet - AWS CloudFormation](https://tutorialsdojo.com/aws-cloudformation)
 
+[Cheat Sheet - aws-cloudformation-stacksets-and-nested-stacks](https://tutorialsdojo.com/aws-cloudformation-stacksets-and-nested-stacks)
+
 - AWS CloudFormation is a service that helps you model and set up your AWS resources so that you can spend less time managing those resources and more time focusing on your applications that run in AWS.
 - You create a template that describes all the AWS resources that you want (like Amazon EC2 instances or Amazon RDS DB instances), and CloudFormation takes care of provisioning and configuring those resources for you.
 
@@ -31,4 +33,8 @@
   - CloudFormation keeps the resource without deleting the resource or its contents when its stack is deleted.
 - Snapshot
   - For resources that support snapshots, CloudFormation creates a snapshot for the resource before deleting it
+  
 
+## Blogs
+
+[Use CloudFormation StackSets to Provision Resources Across Multiple AWS Accounts and Regions](https://aws.amazon.com/blogs/aws/use-cloudformation-stacksets-to-provision-resources-across-multiple-aws-accounts-and-regions)
