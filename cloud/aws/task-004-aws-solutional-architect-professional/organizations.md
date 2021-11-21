@@ -1,5 +1,9 @@
 # Organizations
 
+[Cheat Sheet - AWS Organization](https://tutorialsdojo.com/aws-organizations)
+
+[service-control-policies-scp-vs-iam-policies](https://tutorialsdojo.com/service-control-policies-scp-vs-iam-policies/)
+
 [Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)
 
 - AWS Organizations is an account management service that enables you to consolidate multiple AWS accounts into an organization that you create and centrally manage. 
@@ -34,3 +38,19 @@ Service-linked roles created when you enable integration
 ```bash
   AWSServiceRoleForResourceAccessManager
 ```  
+
+
+## Managing Policies
+
+### Service control policies
+
+[Service control policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html)
+
+- Service control policies (SCPs) are a type of organization policy that you can use to manage permissions in your organization.
+- SCPs offer central control over the maximum available permissions for all accounts in your organization.
+- SCPs help you to ensure your accounts stay within your organization’s access control guidelines. 
+- SCPs are available only in an organization that has all features enabled
+- An SCP defines a guardrail, or sets limits, on the actions that the account's administrator can delegate to the IAM users and roles in the affected accounts. 
+- The administrator must still attach identity-based or resource-based policies to IAM users or roles, or to the resources in your accounts to actually grant permissions
+
+> AWS strongly recommends that you don't attach SCPs to the root of your organization without thoroughly testing the impact that the policy has on accounts.

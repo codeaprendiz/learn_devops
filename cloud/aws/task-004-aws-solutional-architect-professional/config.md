@@ -17,6 +17,11 @@ With AWS Config, you can do the following:
 - Receive a notification whenever a resource is created, modified, or deleted.
 - View relationships between resources. For example, you might want to find all resources that use a particular security group.
 
+[AWS Config](https://aws.amazon.com/config/)
+
+- AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources.
+- Config continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations. 
+- With Config, you can review changes in configurations and relationships between AWS resources, dive into detailed resource configuration histories, and determine your overall compliance against the configurations specified in your internal guidelines.
 
 ## AWS Config Managed Rules
 
