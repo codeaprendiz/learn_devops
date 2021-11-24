@@ -1,5 +1,8 @@
 # VPC
 
+[Cheat Sheet - AWS VPC](https://tutorialsdojo.com/amazon-vpc)
+[Cheat Sheet - VPC Peering](https://tutorialsdojo.com/vpc-peering)
+
 
 ## Network ACLs
 
@@ -36,4 +39,26 @@
 [Compare NAT gateways and NAT instances](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html)
 
 
+
+## VPC peering
+
+[VPC peering](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-peering.html)
+
+- A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. 
+- Instances in either VPC can communicate with each other as if they are within the same network. 
+- You can create a VPC peering connection between your own VPCs, with a VPC in another AWS account, or with a VPC in a different AWS Region.
+
+
+## VPC Flow Logs
+
+[VPC Flow Logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)
+
+- VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC.
+- Flow log data can be published to Amazon CloudWatch Logs or Amazon S3.
+- After you create a flow log, you can retrieve and view its data in the chosen destination.
+
+- Flow logs can help you with a number of tasks, such as:
+  - Diagnosing overly restrictive security group rules
+  - Monitoring the traffic that is reaching your instance
+  - Determining the direction of the traffic to and from the network interfaces
 

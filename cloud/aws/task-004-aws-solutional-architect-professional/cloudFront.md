@@ -33,3 +33,31 @@ You can use geo restriction, also known as geo blocking, to prevent users in spe
 - You can set up CloudFront with origin failover for scenarios that require high availability. 
 - To get started, you create an origin group with two origins: a primary and a secondary. 
 - If the primary origin is unavailable, or returns specific HTTP response status codes that indicate a failure, CloudFront automatically switches to the secondary origin.
+
+
+## Configuring secure access and restricting access to content
+
+### Using field-level encryption to help protect sensitive data
+
+[Using field-level encryption to help protect sensitive data](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html)
+
+- With Amazon CloudFront, you can enforce secure end-to-end connections to origin servers by using HTTPS
+- Field-level encryption adds an additional layer of security that lets you protect specific data throughout system processing so that only certain applications can see it.
+- Field-level encryption allows you to enable your users to securely upload sensitive information to your web servers.
+- The sensitive information provided by your users is encrypted at the edge, close to the user, and remains encrypted throughout your entire application stack. 
+- This encryption ensures that only applications that need the data—and have the credentials to decrypt it—are able to do so.
+- To use field-level encryption, when you configure your CloudFront distribution, specify the set of fields in POST requests that you want to be encrypted, and the public key to use to encrypt them. 
+- You can encrypt up to 10 data fields in a reques
+
+
+## Optimizing caching and availability
+
+### Increasing the proportion of requests that are served directly from the CloudFront caches (cache hit ratio)
+
+[Increasing the proportion of requests that are served directly from the CloudFront caches (cache hit ratio)](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cache-hit-ratio.html)
+
+- You can improve performance by increasing the proportion of your viewer requests that are served directly from the CloudFront cache instead of going to your origin servers for content. 
+- This is known as improving the cache hit ratio.
+
+- Specifying how long CloudFront caches your objects
+  - To increase your cache hit ratio, you can configure your origin to add a Cache-Control max-age directive to your objects, and specify the longest practical value for max-age
