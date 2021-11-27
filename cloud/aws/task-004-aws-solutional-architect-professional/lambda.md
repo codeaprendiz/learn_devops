@@ -20,3 +20,11 @@
   - Before CloudFront forwards the request to the origin (origin request)
   - After CloudFront receives the response from the origin (origin response)
   - Before CloudFront forwards the response to the viewer (viewer respo
+
+
+## AWS Lambda Pricing
+
+[AWS Lambda Pricing](https://aws.amazon.com/lambda/pricing)
+
+- Lambda counts a request each time it starts executing in response to an event notification trigger, such as from Amazon Simple Notification Service (SNS) or Amazon EventBridge, or an invoke call, such as from Amazon API Gateway, or via the AWS SDK, including test invokes from the AWS Console.
+- Duration is calculated from the time your code begins executing until it returns or otherwise terminates, rounded up to the nearest 1 ms*. The price depends on the amount of memory you allocate to your function.

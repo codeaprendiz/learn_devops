@@ -40,3 +40,4 @@
 - [VPC](vpc.md)
 - [WAF](waf.md)
 - [Web Identify Federation](webIdentifyFederation.md)
+- [Whitepapers](whitepapers.md)

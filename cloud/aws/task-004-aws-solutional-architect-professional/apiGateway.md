@@ -1,5 +1,6 @@
 # API Gateway
 
+[CheatSheet - API Gateway](https://tutorialsdojo.com/amazon-api-gateway)
 [FAQs - API Gateway](https://aws.amazon.com/api-gateway/faqs)
 
 ## Enabling API caching to enhance responsiveness
