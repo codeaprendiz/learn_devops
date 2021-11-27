@@ -46,3 +46,16 @@ Amazon ECS enables you to inject sensitive data into your containers by storing 
   - and reference it with your task definition which allows access to both KMS and AWS Secrets Manager
 - Within your container definition, specify secrets with the name of the environment variable to set in the container and the full ARN of the Secrets Manager secret which contains the sensitive data, to present to the container.
 > Systems Manager Parameter Store service doesn't provide dedicated storage with lifecycle management and key rotation, unlike Secrets Manager.
+
+
+### Amazon ECS task networking
+
+[Amazon ECS task networking](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html)
+
+- The networking behavior of Amazon ECS tasks hosted on Amazon EC2 instances is dependent on the network mode defined in the task definition. The following are the available network modes. Amazon ECS recommends using the awsvpc network mode unless you have a specific need to use a different network mode.
+  - awsvpc — The task is allocated its own elastic network interface (ENI) and a primary private IPv4 address. This gives the task the same networking properties as Amazon EC2 instances.
+  - bridge — The task utilizes Docker's built-in virtual network which runs inside each Amazon EC2 instance hosting the task.
+  - host — The task bypasses Docker's built-in virtual network and maps container ports directly to the ENI of the Amazon EC2 instance hosting the task. As a result, you can't run multiple instantiations of the same task on a single Amazon EC2 instance when port mappings are used.
+  - none — The task has no external network connectivity.
+
+- In order for you to use security groups and network monitoring tools at a more granular level within your ECS tasks, you have to use the awsvpc network mode
