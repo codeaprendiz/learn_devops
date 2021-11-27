@@ -1,6 +1,6 @@
 # RDS
 
-[Cheat Sheet - RDS](https://tutorialsdojo.com/amazon-relational-database-service-amazon-rds/)
+[Cheat Sheet - RDS](https://tutorialsdojo.com/amazon-relational-database-service-amazon-rds)
 
 [RDS Read Replicas](https://aws.amazon.com/rds/features/read-replicas/)
 
@@ -21,3 +21,8 @@
 - RDS uploads transaction logs for DB instances to Amazon S3 every 5 minutes.
 - To see the latest restorable time for a DB instance, use the AWS CLI describe-db-instances command and look at the value returned in the LatestRestorableTime field for the DB instance.
 - To see the latest restorable time for each DB instance in the Amazon RDS console, choose Automated backups.
+
+
+## NOTES
+
+- The Amazon RDS MySQL does not have a single reader endpoint for read replicas. You must use Amazon Aurora for MySQL to support this. Creating read replicas is recommended to increase the read performance of an RDS cluster.
