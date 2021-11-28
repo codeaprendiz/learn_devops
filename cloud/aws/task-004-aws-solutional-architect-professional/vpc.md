@@ -72,3 +72,13 @@
 - These services include some AWS services, services hosted by other AWS customers and Partners in their own VPCs (referred to as endpoint services), and supported AWS Marketplace Partner services. 
 - The owner of the service is the service provider, and you, as the principal creating the interface endpoint, are the service consumer.
 
+## DNS support for your VPC
+
+[DNS attributes in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-support)
+
+DNS attributes in your VPC
+
+- enableDnsHostnames	
+- enableDnsSupport
+
+>  IF both attributes are enabled, an instance launched into the VPC receives a public DNS hostname IF it is assigned a public IPv4 address or an Elastic IP address at creation.

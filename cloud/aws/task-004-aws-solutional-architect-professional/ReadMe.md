@@ -28,6 +28,7 @@
 - [Lambda](lambda.md)
 - [Macie](macie.md)
 - [Mechanical Turk](mechanicalTurk.md)
+- [OpsWorks](opsworks.md)
 - [Organization](organizations.md)
 - [RDS](rds.md)
 - [Redshift](redShift.md)
