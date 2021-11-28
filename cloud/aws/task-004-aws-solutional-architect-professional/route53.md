@@ -32,3 +32,16 @@
   - The status of other health checks.
   - The status of an Amazon CloudWatch alarm.
   - With Amazon Route 53 Application Recovery Controller, you can set up routing control health checks with DNS failover records to manage traffic failover for your application. 
+
+
+## Choosing a routing policy
+
+[Choosing a routing policy](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html)
+
+- Simple routing policy – Use for a single resource that performs a given function for your domain, for example, a web server that serves content for the example.com website.
+- Failover routing policy – Use when you want to configure active-passive failover.
+- Geolocation routing policy – Use when you want to route traffic based on the location of your users.
+- Geoproximity routing policy – Use when you want to route traffic based on the location of your resources and, optionally, shift traffic from resources in one location to resources in another.
+- Latency routing policy – Use when you have resources in multiple AWS Regions and you want to route traffic to the Region that provides the best latency with less round-trip time.
+- Multivalue answer routing policy – Use when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random.
+- Weighted routing policy – Use to route traffic to multiple resources in proportions that you specify
