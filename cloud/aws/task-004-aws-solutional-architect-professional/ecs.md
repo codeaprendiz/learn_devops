@@ -59,3 +59,14 @@ Amazon ECS enables you to inject sensitive data into your containers by storing 
   - none — The task has no external network connectivity.
 
 - In order for you to use security groups and network monitoring tools at a more granular level within your ECS tasks, you have to use the awsvpc network mode
+
+## Troubleshooting
+
+### CannotPullContainer task errors
+
+[CannotPullContainer task errors](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_cannot_pull_image.html)
+
+[How can I resolve the Amazon ECR error "CannotPullContainerError: API error" in Amazon ECS?
+](https://aws.amazon.com/premiumsupport/knowledge-center/ecs-pull-container-api-error-ecr)
+
+- One reason : because a route to the internet doesn't exist:

@@ -3,6 +3,33 @@
 [Cheat Sheet - AWS Route53](https://tutorialsdojo.com/amazon-route-53)
 [Cheat Sheet - AWS Database Migration Service](https://tutorialsdojo.com/aws-database-migration-service)
 
+
+## Working with hosted zones
+
+[Working with hosted zones](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-working-with.html)
+
+- A hosted zone is a container for records, and records contain information about how you want to route traffic for a specific domain, such as example.com, and its subdomains (acme.example.com, zenith.example.com). A hosted zone and the corresponding domain have the same name. 
+
+  - Public hosted zones contain records that specify how you want to route traffic on the internet.
+  - Private hosted zones contain records that specify how you want to route traffic in an Amazon VPC
+
+[How do I associate a Route 53 private hosted zone with a VPC in a different AWS account or Region?
+](https://aws.amazon.com/premiumsupport/knowledge-center/route53-private-hosted-zone)
+
+### Working with a private hosted zone
+
+#### Associating more VPCs with a private hosted zone
+
+[Associating more VPCs with a private hosted zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-associate-vpcs.html)
+
+- You can use the Amazon Route 53 console to associate more VPCs with a private hosted zone if you created the hosted zone and the VPCs by using the same AWS account.
+
+#### Associating an Amazon VPC and a private hosted zone that you created with different AWS accounts
+
+[Associating an Amazon VPC and a private hosted zone that you created with different AWS accounts](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-associate-vpcs-different-accounts.html)
+
+
+
 ## Routing internet traffic to your AWS resources
 
 ### Routing traffic to an ELB load balancer
@@ -45,3 +72,5 @@
 - Latency routing policy – Use when you have resources in multiple AWS Regions and you want to route traffic to the Region that provides the best latency with less round-trip time.
 - Multivalue answer routing policy – Use when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random.
 - Weighted routing policy – Use to route traffic to multiple resources in proportions that you specify
+
+

@@ -62,3 +62,13 @@
   - Monitoring the traffic that is reaching your instance
   - Determining the direction of the traffic to and from the network interfaces
 
+## VPC Endpoints
+
+### Interface VPC endpoints (AWS PrivateLink)
+
+[Interface VPC endpoints (AWS PrivateLink)](https://docs.aws.amazon.com/vpc/latest/privatelink/vpce-interface.html)
+
+- An interface VPC endpoint (interface endpoint) allows you to connect to services powered by AWS PrivateLink
+- These services include some AWS services, services hosted by other AWS customers and Partners in their own VPCs (referred to as endpoint services), and supported AWS Marketplace Partner services. 
+- The owner of the service is the service provider, and you, as the principal creating the interface endpoint, are the service consumer.
+
