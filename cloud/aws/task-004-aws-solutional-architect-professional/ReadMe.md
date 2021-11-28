@@ -15,6 +15,7 @@
 - [Cognito](cognito.md)
 - [Config](config.md)
 - [ControlTower](awsControlTower.md)
+- [Data Migration Service](dataMigrationService.md)
 - [Direct Connect](directConnect.md)
 - [Dynamo DB](dynamodb.md)
 - [EC2](ec2.md)
