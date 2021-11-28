@@ -18,3 +18,11 @@
 - Elastic Load Balancing helps to manage incoming requests by optimally routing traffic so that no one instance is overwhelmed.
 - To use Elastic Load Balancing with your Auto Scaling group, attach the load balancer to your Auto Scaling group.
 - This registers the group with the load balancer, which acts as a single point of contact for all incoming web traffic to your Auto Scaling group.
+
+
+### Scaling based on Amazon SQS
+
+[Scaling based on Amazon SQS](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-using-sqs-queue.html)
+
+- There are some scenarios where you might think about scaling in response to activity in an Amazon SQS queue. 
+- For example, suppose that you have a web app that lets users upload images and use them online.

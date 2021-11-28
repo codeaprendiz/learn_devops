@@ -41,9 +41,12 @@
 
 [Integrating Amazon Cognito with web and mobile apps](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-integrate-apps.html)
 
+[simplifying-token-vending-machine-deployment-with-aws-cloudformation](https://aws.amazon.com/blogs/mobile/simplifying-token-vending-machine-deployment-with-aws-cloudformation)
+
 - By integrating Amazon Cognito with your client code, you connect your app to backend AWS functionality that aids authentication and authorization workflows.
 - Your app will use the Amazon Cognito API to, for example, create new users in your user pool, retrieve user pool tokens, and obtain temporary credentials from your identity pool. 
 - To integrate Amazon Cognito with your web or mobile app, use the SDKs and libraries that the AWS Amplify framework provides.
+
 
 
 
