@@ -37,6 +37,14 @@
 - OpenID Connect is an open standard for authentication that is supported by a number of login providers
 - Amazon Cognito supports linking of identities with OpenID Connect providers that are configured through AWS Identity and Access Management.
 
+## Integrating Amazon Cognito with web and mobile apps
+
+[Integrating Amazon Cognito with web and mobile apps](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-integrate-apps.html)
+
+- By integrating Amazon Cognito with your client code, you connect your app to backend AWS functionality that aids authentication and authorization workflows.
+- Your app will use the Amazon Cognito API to, for example, create new users in your user pool, retrieve user pool tokens, and obtain temporary credentials from your identity pool. 
+- To integrate Amazon Cognito with your web or mobile app, use the SDKs and libraries that the AWS Amplify framework provides.
+
 
 
 ## SSO FAQs

@@ -1,6 +1,9 @@
 # Rekognition
 
+[CheatSheet - AWS Rekognition](https://tutorialsdojo.com/amazon-rekognition)
+
 [What is Amazon Rekognition?](https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html)
+
 
 ## What is Amazon Rekognition?
 
