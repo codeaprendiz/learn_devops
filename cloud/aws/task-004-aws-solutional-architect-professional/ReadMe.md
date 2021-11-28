@@ -24,6 +24,7 @@
 - [Elastic Cache](elasticCache.md)
 - [Elastic Load Balancing](elasticLoadBalancing.md)
 - [IAM](iam.md)
+- [Kinesis](kinesis.md)
 - [Lambda](lambda.md)
 - [Macie](macie.md)
 - [Mechanical Turk](mechanicalTurk.md)

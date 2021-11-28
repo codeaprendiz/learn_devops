@@ -2,6 +2,9 @@
 
 [Cheat Sheet - AWS Organization](https://tutorialsdojo.com/aws-organizations)
 
+[Cheat Sheet - Multi-Account Multi-Region Data Aggregation On AWS Config
+](https://tutorialsdojo.com/multi-account-multi-region-data-aggregation-on-aws-config)
+
 [service-control-policies-scp-vs-iam-policies](https://tutorialsdojo.com/service-control-policies-scp-vs-iam-policies/)
 
 [Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)
@@ -54,3 +57,26 @@ Service-linked roles created when you enable integration
 - The administrator must still attach identity-based or resource-based policies to IAM users or roles, or to the resources in your accounts to actually grant permissions
 
 > AWS strongly recommends that you don't attach SCPs to the root of your organization without thoroughly testing the impact that the policy has on accounts.
+
+
+## Tutorial: Monitor important changes to your organization with CloudWatch Events
+
+[Tutorial: Monitor important changes to your organization with CloudWatch Events](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tutorials_cwe.html)
+
+- You start by configuring a rule that is triggered when users invoke specific AWS Organizations operations. 
+- Next, you configure CloudWatch Events to run an AWS Lambda function when the rule is triggered, 
+- and you configure Amazon SNS to send an email with details about the event.
+
+
+## Using other AWS Services
+
+### AWS Config and AWS Organizations
+
+[AWS Config and AWS Organizations
+](https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-config.html)
+
+- Multi-account, multi-region data aggregation in AWS Config enables you to aggregate AWS Config data from multiple accounts and AWS Regions into a single account.
+- An aggregator is a resource type in AWS Config that collects AWS Config data from multiple source accounts and Regions. 
+- Create an aggregator in the Region where you want to see the aggregated AWS Config data. 
+- While creating an aggregator, you can choose to add either individual account IDs or your organization
+
