@@ -58,6 +58,8 @@ Service-linked roles created when you enable integration
 
 > AWS strongly recommends that you don't attach SCPs to the root of your organization without thoroughly testing the impact that the policy has on accounts.
 
+> SCPs do not affect any service-linked role. Service-linked roles enable other AWS services to integrate with AWS Organizations and can't be restricted by SCPs.
+
 
 ## Tutorial: Monitor important changes to your organization with CloudWatch Events
 

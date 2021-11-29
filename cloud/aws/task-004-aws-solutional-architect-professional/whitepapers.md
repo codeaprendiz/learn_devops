@@ -13,4 +13,9 @@
 [Clone a Stack in AWS OpsWorks and Update DNS](https://docs.aws.amazon.com/whitepapers/latest/blue-green-deployments/clone-a-stack-in-aws-opsworks-and-update-dns.html)
 
 - AWS OpsWorks utilizes the concept of stacks, which are logical groupings of AWS resources (EC2 instances, Amazon RDS, Elastic Load Balancing, and so on) that have a common purpose and should be logically managed together
-- 
+
+
+
+[Building a Scalable and
+Secure Multi-VPC AWS
+Network Infrastructure](https://d1.awsstatic.com/whitepapers/building-a-scalable-and-secure-multi-vpc-aws-network-infrastructure.pdf)

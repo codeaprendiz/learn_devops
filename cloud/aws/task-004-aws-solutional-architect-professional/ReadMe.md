@@ -1,5 +1,8 @@
 [Cheat Sheet - AWS Pro Path](https://tutorialsdojo.com/aws-certified-solutions-architect-professional)
+
 [Free AWS Learning Plan](https://explore.skillbuilder.aws/learn/signin)
+
+[Comparision of AWS Services](https://tutorialsdojo.com/comparison-of-aws-services)
 
 - [API Gateway](apiGateway.md)
 - [Aurora](aurora.md)
