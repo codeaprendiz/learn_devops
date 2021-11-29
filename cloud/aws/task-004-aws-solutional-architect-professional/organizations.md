@@ -7,7 +7,7 @@
 
 [service-control-policies-scp-vs-iam-policies](https://tutorialsdojo.com/service-control-policies-scp-vs-iam-policies/)
 
-[Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)
+[What is AWS Organizations?](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)
 
 - AWS Organizations is an account management service that enables you to consolidate multiple AWS accounts into an organization that you create and centrally manage. 
 - AWS Organizations includes account management and consolidated billing capabilities that enable you to better meet the budgetary, security, and compliance needs of your business. 
@@ -80,3 +80,6 @@ Service-linked roles created when you enable integration
 - Create an aggregator in the Region where you want to see the aggregated AWS Config data. 
 - While creating an aggregator, you can choose to add either individual account IDs or your organization
 
+## Blogs
+
+[What's the difference between an AWS Organizations service control policy and an IAM policy?](https://aws.amazon.com/premiumsupport/knowledge-center/iam-policy-service-control-policy)
