@@ -1,5 +1,14 @@
 # Storage Gateway
 
+[Cheat Sheet - AWS Storage Gateway](https://tutorialsdojo.com/aws-storage-gateway)
+
+
+- AWS Storage Gateway connects an on-premises software appliance with cloud-based storage to provide seamless integration with data security features between your on-premises IT environment and the AWS storage infrastructure.
+- You can use the service to store data in the Amazon Web Services Cloud for scalable and cost-effective storage that helps maintain data security.
+- AWS Storage Gateway offers file-based file gateways (Amazon S3 File and Amazon FSx File), volume-based (Cached and Stored), and tape-based storage solutions
+
+
+
 [Storage Gateway](https://aws.amazon.com/storagegateway)
 
 - AWS Storage Gateway is a set of hybrid cloud storage services that provide on-premises access to virtually unlimited cloud storage.
@@ -8,9 +17,23 @@
 - Offer virtually unlimited cloud storage to users and applications without deploying new storage hardware.
 
 
+### Amazon S3 File Gateway
+
+[Amazon S3 File Gateway](https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html)
+
+- Amazon S3 File Gateway supports a file interface into Amazon Simple Storage Service (Amazon S3) and combines a service and a virtual software appliance
+- By using this combination, you can store and retrieve objects in Amazon S3 using industry-standard file protocols such as Network File System (NFS) and Server Message Block (SMB).
+-  The software appliance, or gateway, is deployed into your on-premises environment as a virtual machine (VM) running on VMware ESXi, Microsoft Hyper-V, or Linux Kernel-based Virtual Machine (KVM) hypervisor. 
+- The gateway provides access to objects in S3 as files or file share mount points.
+
+### Amazon FSx File Gateway
+
+[Amazon FSx File Gateway](https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html)
+
+- Amazon FSx File Gateway (FSx File) is a new file gateway type that provides low latency, and efficient access to in-cloud Amazon FSx for Windows File Server file shares from your on-premises facility.
 
 
-## File Gateway
+### File Gateway
 
 [File Gateway](https://aws.amazon.com/storagegateway/file/)
 
@@ -19,7 +42,13 @@
   - Amazon S3 File Gateway enables you to store file data as objects in Amazon S3 cloud storage for data lakes, backups, and ML workflows. 
   - For user or team file shares, and file-based application migrations, Amazon FSx File Gateway provides low-latency, on-premises access to fully managed file shares in Amazon FSx for Windows File Server.
 
-## Tape Gateway
+### Tape Gateway
+
+[Tape Gateway](https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html)
+
+- A tape gateway provides cloud-backed virtual tape storage. 
+- The tape gateway is deployed into your on-premises environment as a VM running on VMware ESXi, KVM, or Microsoft Hyper-V hypervisor.
+
 
 [Tape Gateway](https://aws.amazon.com/storagegateway/vtl/)
 
@@ -28,3 +57,23 @@
 - you can't directly fetch the media files from your tape gateway in real-time since this is backed up using Glacier.
 
 > Set up a tape gateway appliance on-premises and connect it to your AWS Storage Gateway
+
+
+### Volume Gateway
+
+[Volume Gateway](https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html)
+
+-  A volume gateway provides cloud-backed storage volumes that you can mount as Internet Small Computer System Interface (iSCSI) devices from your on-premises application servers.
+- The volume gateway is deployed into your on-premises environment as a VM running on VMware ESXi, KVM, or Microsoft Hyper-V hypervisor.
+
+- The gateway supports the following volume configurations:
+  - Cached volumes
+    - You store your data in Amazon Simple Storage Service (Amazon S3) and retain a copy of frequently accessed data subsets locally
+  - Stored volumes
+    - If you need low-latency access to your entire dataset, first configure your on-premises gateway to store all your data locally. Then asynchronously back up point-in-time snapshots of this data to Amazon S3.
+
+
+## How Storage Gateway works (architecture)
+
+[How Storage Gateway works (architecture)](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts)
+
