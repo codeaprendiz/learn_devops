@@ -20,6 +20,7 @@
 - If you don't configure a trail, you can still view the most recent events in the CloudTrail console in Event history
 
 
+
 ## How IAM roles differ from resource-based policies
 
 [How IAM roles differ from resource-based policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html)
