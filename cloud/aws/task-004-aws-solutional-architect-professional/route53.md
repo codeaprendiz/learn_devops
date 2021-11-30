@@ -1,6 +1,7 @@
 # Route53
 
 [Cheat Sheet - AWS Route53](https://tutorialsdojo.com/amazon-route-53)
+
 [Cheat Sheet - AWS Database Migration Service](https://tutorialsdojo.com/aws-database-migration-service)
 
 
@@ -73,4 +74,14 @@
 - Multivalue answer routing policy – Use when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random.
 - Weighted routing policy – Use to route traffic to multiple resources in proportions that you specify
 
+### Configuring DNSSEC for a domain
 
+[Configuring DNSSEC for a domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-configure-dnssec.html)
+
+- Attackers sometimes hijack traffic to internet endpoints such as web servers by intercepting DNS queries and returning their own IP addresses to DNS resolvers in place of the actual IP addresses for those endpoints
+- Users are then routed to the IP addresses provided by the attackers in the spoofed response, for example, to fake websites.
+- You can protect your domain from this type of attack, known as DNS spoofing or a man-in-the-middle attack, by configuring Domain Name System Security Extensions (DNSSEC), a protocol for securing DNS traffic.
+
+## Blogs
+
+[Simplify DNS management in a multi-account environment with Route 53 Resolver](https://aws.amazon.com/blogs/security/simplify-dns-management-in-a-multiaccount-environment-with-route-53-resolver)

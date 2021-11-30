@@ -65,3 +65,32 @@ Configuring your hybrid environment for Systems Manager allows you to do the fol
   - When you create a service role for Systems Manager, you choose the permissions to grant in order for it to access or interact with other AWS resources.
 - Service-linked role: 
   - A service-linked role is predefined by Systems Manager and includes all the permissions that the service requires to call other AWS services on your behalf.
+
+
+### About SSM documents for patching managed nodes
+
+[About SSM documents for patching managed nodes](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-ssm-documents.html)
+
+The five recommended SSM documents include:
+- AWS-ConfigureWindowsUpdate
+- AWS-InstallWindowsUpdates
+- AWS-RunPatchBaseline
+- AWS-RunPatchBaselineAssociation
+- AWS-RunPatchBaselineWithHooks
+
+### About patching schedules using maintenance windows
+
+[About patching schedules using maintenance windows](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-patch-scheduletasks.html)
+
+- After you configure a patch baseline (and optionally a patch group), you can apply patches to your node by using a maintenance window. 
+- A maintenance window can reduce the impact on server availability by letting you specify a time to perform the patching process that doesn't interrupt business operations.
+
+### AWS Systems Manager Automation
+
+[AWS Systems Manager Automation](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html)
+
+- Automation, a capability of AWS Systems Manager, simplifies common maintenance and deployment tasks of Amazon Elastic Compute Cloud (Amazon EC2) instances and other AWS resources.
+  - Build automations to configure and manage instances and AWS resources.
+  - Create custom runbooks or use pre-defined runbooks maintained by AWS.
+  - Receive notifications about Automation tasks and runbooks by using Amazon EventBridge.
+  - Monitor Automation progress and details by using the Systems Manager console.

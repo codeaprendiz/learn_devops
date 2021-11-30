@@ -82,3 +82,15 @@ DNS attributes in your VPC
 - enableDnsSupport
 
 >  IF both attributes are enabled, an instance launched into the VPC receives a public DNS hostname IF it is assigned a public IPv4 address or an Elastic IP address at creation.
+
+
+### Work with shared VPCs
+
+[Blog - VPC sharing: A new approach to multiple accounts and VPC management](https://aws.amazon.com/blogs/networking-and-content-delivery/vpc-sharing-a-new-approach-to-multiple-accounts-and-vpc-management)
+
+[Work with shared VPCs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html)
+
+- VPC sharing allows multiple AWS accounts to create their application resources, such as Amazon EC2 instances, Amazon Relational Database Service (RDS) databases, Amazon Redshift clusters, and AWS Lambda functions, into shared, centrally-managed virtual private clouds (VPCs)
+- In this model, the account that owns the VPC (owner) shares one or more subnets with other accounts (participants) that belong to the same organization from AWS Organizations
+- After a subnet is shared, the participants can view, create, modify, and delete their application resources in the subnets shared with them. 
+- Participants cannot view, modify, or delete resources that belong to other participants or the VPC owner.

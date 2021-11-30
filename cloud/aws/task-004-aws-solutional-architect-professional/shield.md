@@ -25,3 +25,6 @@
   - Elastic Load Balancing (ELB) load balancers
   - Amazon Elastic Compute Cloud (Amazon EC2) Elastic IP addresses
 
+
+> There are two types of AWS Shield: the Standard one which is free and the Advanced type which has an additional cost of around $3,000 per month.
+
