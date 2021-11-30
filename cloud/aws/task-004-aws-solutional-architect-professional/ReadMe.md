@@ -11,6 +11,8 @@
 - [Billing And Cost Management](billingAndCostManagement.md)
 - [Cloud Formation](cloudFormation.md)
 - [Cloud Front](cloudFront.md)
+- [CloudHSM](cloudHSM.md)
+- [CloudSearch](cloudsearch.md)
 - [CloudTrail](cloudTrail.md)
 - [CloudWatch](cloudwatch.md)
 - [CloudWatchLogs](cloudWatchLogs.md)

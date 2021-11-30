@@ -16,3 +16,7 @@
 
 - Amazon Rekognition can store information about detected faces in server-side containers known as collections
 -  You can use the facial information that's stored in a collection to search for known faces in images, stored videos, and streaming videos. 
+
+## Text detection
+
+- Extract skewed and distorted text from images and videos of street signs, social media posts, and product packaging.
