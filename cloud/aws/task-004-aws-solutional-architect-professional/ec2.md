@@ -1,5 +1,7 @@
 # EC2
 
+[Cheat Sheet - EBS](https://tutorialsdojo.com/amazon-ebs)
+
 ## EC2 Spot
 
 ### Getting Started with Amazon EC2 Spot Instances
@@ -28,4 +30,7 @@
 - Previous generation — Hard disk drives that can be used for workloads with small datasets where data is accessed infrequently and performance is not of primary importance
 
 There are several factors that can affect the performance of EBS volumes, such as instance configuration, I/O characteristics, and workload demand
+
+
+[Comparision of varios block storage types](https://aws.amazon.com/ebs/features)
 

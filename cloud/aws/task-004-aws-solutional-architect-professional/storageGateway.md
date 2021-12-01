@@ -77,3 +77,17 @@
 
 [How Storage Gateway works (architecture)](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts)
 
+
+
+
+## Security
+
+### Configuring CHAP authentication for your volumes
+
+[Configuring CHAP authentication for your volumes](https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedConfigureChap.html)
+
+- In Storage Gateway, your iSCSI (Internet Small Computer System Interface) initiators connect to your volumes as iSCSI targets. 
+- Storage Gateway uses Challenge-Handshake Authentication Protocol (CHAP) to authenticate iSCSI and initiator connections.
+- CHAP provides protection against playback attacks by requiring authentication to access storage volume targets.
+
+

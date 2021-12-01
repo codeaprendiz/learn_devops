@@ -61,3 +61,15 @@ You can use geo restriction, also known as geo blocking, to prevent users in spe
 
 - Specifying how long CloudFront caches your objects
   - To increase your cache hit ratio, you can configure your origin to add a Cache-Control max-age directive to your objects, and specify the longest practical value for max-age
+
+
+### Requiring HTTPS for communication between viewers and CloudFront
+
+[Requiring HTTPS for communication between viewers and CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html)
+
+- You can configure one or more cache behaviors in your CloudFront distribution to require HTTPS for communication between viewers and CloudFront. 
+- You also can configure one or more cache behaviors to allow both HTTP and HTTPS, so that CloudFront requires HTTPS for some objects but not for others. 
+- The configuration steps depend on which domain name you're using in object URLs:
+
+  - If you're using the domain name that CloudFront assigned to your distribution, such as d111111abcdef8.cloudfront.net, you change the Viewer Protocol Policy setting for one or more cache behaviors to require HTTPS communication. In that configuration, CloudFront provides the SSL/TLS certificate.
+  - If you're using your own domain name, such as example.com, you need to change several CloudFront settings. You also need to use an SSL/TLS certificate provided by AWS Certificate Manager (ACM), or import a certificate from a third-party certificate authority into ACM or the IAM certificate store.
