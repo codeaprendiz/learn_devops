@@ -41,8 +41,10 @@
 
 ## Blogs
 
-- [Understanding Burst vs. Baseline Performance with Amazon RDS and GP2
-](https://aws.amazon.com/blogs/database/understanding-burst-vs-baseline-performance-with-amazon-rds-and-gp2/)
+- [Understanding Burst vs. Baseline Performance with Amazon RDS and GP2](https://aws.amazon.com/blogs/database/understanding-burst-vs-baseline-performance-with-amazon-rds-and-gp2/)
+
 - [How to use CloudWatch metrics to decide between General Purpose or Provisioned IOPS for your RDS database](https://aws.amazon.com/blogs/database/how-to-use-cloudwatch-metrics-to-decide-between-general-purpose-or-provisioned-iops-for-your-rds-database)
 
+- [Amazon RDS Multi-AZ Deployments](https://aws.amazon.com/rds/features/multi-az)
 
+- [Amazon RDS – Multi-AZ Deployments For Enhanced Availability & Reliability](https://aws.amazon.com/blogs/aws/amazon-rds-multi-az-deployment)

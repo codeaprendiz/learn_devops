@@ -94,3 +94,7 @@ DNS attributes in your VPC
 - In this model, the account that owns the VPC (owner) shares one or more subnets with other accounts (participants) that belong to the same organization from AWS Organizations
 - After a subnet is shared, the participants can view, create, modify, and delete their application resources in the subnets shared with them. 
 - Participants cannot view, modify, or delete resources that belong to other participants or the VPC owner.
+
+## Blogs
+
+[How to set up an outbound VPC proxy with domain whitelisting and content filtering](https://aws.amazon.com/blogs/security/how-to-set-up-an-outbound-vpc-proxy-with-domain-whitelisting-and-content-filtering)

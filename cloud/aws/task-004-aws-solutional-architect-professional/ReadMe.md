@@ -19,6 +19,7 @@
 - [CloudWatchLogs](cloudWatchLogs.md)
 - [CodeCommit](codeCommit.md)
 - [Cognito](cognito.md)
+- [Command Line Interface](commandLineInterface.md)
 - [Config](config.md)
 - [Connect](connect.md)
 - [ControlTower](awsControlTower.md)
