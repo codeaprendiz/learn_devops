@@ -34,6 +34,12 @@
 - You can create your own AMI that provides network address translation and use your AMI to launch an EC2 instance as a NAT instance. 
 - You launch a NAT instance in a public subnet to enable instances in the private subnet to initiate outbound IPv4 traffic to the internet or other AWS services, but prevent the instances from receiving inbound traffic initiated on the internet.
 
+### NAT devices for your VPC
+
+[NAT devices for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat.html)
+
+
+
 ### Compare NAT gateways and NAT instances
 
 [Compare NAT gateways and NAT instances](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html)
