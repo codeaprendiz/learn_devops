@@ -2,6 +2,8 @@
 
 [Cheat Sheet - EBS](https://tutorialsdojo.com/amazon-ebs)
 
+[EC2](https://tutorialsdojo.com/amazon-elastic-compute-cloud-amazon-ec2)
+
 ## EC2 Spot
 
 ### Getting Started with Amazon EC2 Spot Instances
@@ -34,3 +36,12 @@ There are several factors that can affect the performance of EBS volumes, such a
 
 [Comparision of varios block storage types](https://aws.amazon.com/ebs/features)
 
+
+## Instances
+
+### Reserved Instances
+
+[Reserved Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html)
+
+- Reserved Instances provide you with significant savings on your Amazon EC2 costs compared to On-Demand Instance pricing. 
+- Reserved Instances are not physical instances, but rather a billing discount applied to the use of On-Demand Instances in your account.

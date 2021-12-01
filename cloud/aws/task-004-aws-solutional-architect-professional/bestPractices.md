@@ -2,7 +2,10 @@
 
 ## Migration Strategies
 
-[CheatSheet - aws-migration-strategies-the-6-rs](https://tutorialsdojo.com/aws-migration-strategies-the-6-rs/)
+[CheatSheet - aws-migration-strategies-the-6-rs](https://tutorialsdojo.com/aws-migration-strategies-the-6-rs)
+
+[Phase 2: Plan](https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-database-migration/planning-phase.html)
+
 
 6 Application Migration Strategies: “The 6 R’s”
 

@@ -48,6 +48,7 @@
 - [S3](s3.md)
 - [Schema Conversion Tool](schemaConversionTool.md)
 - [Secrets Manager](secretsManager.md)
+- [Security Token Service](securityTokenService.md)
 - [Serverless Application Model](serverlessApplicationModel.md)
 - [Server Migration Service](serverMigrationService.md)
 - [Shield](shield.md)

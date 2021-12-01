@@ -1,6 +1,6 @@
 # Identify And Access Management
 
-[Cheat Sheet - Identify And Access Management](https://tutorialsdojo.com/aws-cloudtrail)
+[Cheat Sheet - Identify And Access Management](https://tutorialsdojo.com/aws-identity-and-access-management-iam)
 
 [Enabling SAML 2.0 federated users to access the AWS Management Console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html)
 
@@ -29,3 +29,12 @@
 - To do this, you attach a policy directly to the resource that you want to share, instead of using a role as a proxy.
 - The resource that you want to share must support resource-based policies. 
 -  Unlike an identity-based policy, a resource-based policy specifies who (which principal) can access that resource.
+
+
+### Temporary security credentials in IAM
+
+[Temporary security credentials in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html)
+
+- You can use the AWS Security Token Service (AWS STS) to create and provide trusted users with temporary security credentials that can control access to your AWS resources.
+  - Temporary security credentials are short-term, as the name implies. They can be configured to last for anywhere from a few minutes to several hours
+  - Temporary security credentials are not stored with the user but are generated dynamically and provided to the user when requested.

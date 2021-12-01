@@ -38,6 +38,7 @@
 ## NOTES
 
 - The Amazon RDS MySQL does not have a single reader endpoint for read replicas. You must use Amazon Aurora for MySQL to support this. Creating read replicas is recommended to increase the read performance of an RDS cluster.
+- Amazon RDS does not support certain features in Oracle such as Multitenant Database, Real Application Clusters (RAC), Unified Auditing, Database Vault
 
 ## Blogs
 
@@ -48,3 +49,4 @@
 - [Amazon RDS Multi-AZ Deployments](https://aws.amazon.com/rds/features/multi-az)
 
 - [Amazon RDS – Multi-AZ Deployments For Enhanced Availability & Reliability](https://aws.amazon.com/blogs/aws/amazon-rds-multi-az-deployment)
+
