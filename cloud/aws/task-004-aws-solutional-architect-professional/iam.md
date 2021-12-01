@@ -38,3 +38,13 @@
 - You can use the AWS Security Token Service (AWS STS) to create and provide trusted users with temporary security credentials that can control access to your AWS resources.
   - Temporary security credentials are short-term, as the name implies. They can be configured to last for anywhere from a few minutes to several hours
   - Temporary security credentials are not stored with the user but are generated dynamically and provided to the user when requested.
+
+
+
+  ## Tutorials
+
+  ### IAM tutorial: Delegate access across AWS accounts using IAM roles
+
+[IAM tutorial: Delegate access across AWS accounts using IAM roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
+
+The above tutorial teaches you how to use a role to delegate access to resources in different AWS accounts that you own called Production and Development

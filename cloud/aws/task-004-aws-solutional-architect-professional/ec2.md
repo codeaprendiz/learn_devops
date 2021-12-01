@@ -45,3 +45,15 @@ There are several factors that can affect the performance of EBS volumes, such a
 
 - Reserved Instances provide you with significant savings on your Amazon EC2 costs compared to On-Demand Instance pricing. 
 - Reserved Instances are not physical instances, but rather a billing discount applied to the use of On-Demand Instances in your account.
+
+
+## Security
+
+#### Supported resource-level permissions for Amazon EC2 API actions
+
+[Supported resource-level permissions for Amazon EC2 API actions](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#ec2-supported-iam-actions-resources)
+
+- Resource-level permissions refers to the ability to specify which resources users are allowed to perform actions on. 
+- Amazon EC2 has partial support for resource-level permissions. 
+- This means that for certain Amazon EC2 actions, you can control when users are allowed to use those actions based on conditions that have to be fulfilled, or specific resources that users are allowed to use. 
+- For example, you can grant users permissions to launch instances, but only of a specific type, and only using a specific AMI.

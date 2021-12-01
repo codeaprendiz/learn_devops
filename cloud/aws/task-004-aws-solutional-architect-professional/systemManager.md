@@ -18,6 +18,7 @@
 - Patch Manager, a capability of AWS Systems Manager, automates the process of patching managed instances with both security related and other types of updates
 - You can use Patch Manager to apply patches for both operating systems and applications. (On Windows Server, application support is limited to updates for applications released by Microsoft.) 
 - You can use Patch Manager to install Service Packs on Windows instances and perform minor version upgrades on Linux instances. 
+- You can install patches on a regular basis by scheduling patching to run as a Systems Manager maintenance window task.
 
 [Patching your Windows EC2 instances using AWS Systems Manager Patch Manager](https://aws.amazon.com/blogs/mt/patching-your-windows-ec2-instances-using-aws-systems-manager-patch-manager)
 

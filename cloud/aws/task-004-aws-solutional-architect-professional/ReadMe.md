@@ -58,4 +58,5 @@
 - [VPC](vpc.md)
 - [WAF](waf.md)
 - [Web Identify Federation](webIdentifyFederation.md)
+- [Well-Architected](wellArchitected.md)
 - [Whitepapers](whitepapers.md)

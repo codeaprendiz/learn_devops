@@ -82,6 +82,17 @@ Service-linked roles created when you enable integration
 - Create an aggregator in the Region where you want to see the aggregated AWS Config data. 
 - While creating an aggregator, you can choose to add either individual account IDs or your organization
 
+## Managing organizational units (OUs)
+
+[Managing organizational units (OUs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html)
+
+- You can use organizational units (OUs) to group accounts together to administer as a single unit.
+- you can attach a policy-based control to an OU, and all accounts within the OU automatically inherit the policy. 
+- You can create multiple OUs within a single organization, and you can create OUs within other OUs. 
+- Each OU can contain multiple accounts, and you can move accounts from one OU to another. 
+- However, OU names must be unique within a parent OU or root.
+
+
 ## Blogs
 
 [What's the difference between an AWS Organizations service control policy and an IAM policy?](https://aws.amazon.com/premiumsupport/knowledge-center/iam-policy-service-control-policy)
