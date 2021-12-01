@@ -1,6 +1,6 @@
 # Dynamodb
 
-[Cheatsheet - Dynamodb](https://tutorialsdojo.com/amazon-dynamodb/?src=udemy#core-components)
+[Cheatsheet - Dynamodb](https://tutorialsdojo.com/amazon-dynamodb)
 
 - fast
 - highly scalable
@@ -26,10 +26,18 @@
 
 [Amazon DynamoDB global tables](https://aws.amazon.com/dynamodb/global-tables/)
 
+## Security
+
+### Identity and Access Management in Amazon DynamoDB
+
+[Identity and Access Management in Amazon DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/authentication-and-access-control.html)
+
+- Access to Amazon DynamoDB requires credentials. Those credentials must have permissions to access AWS resources, such as an Amazon DynamoDB table or an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+  - Authentication
+  - Access Control
 
 
-
-### Note
+## Note
 
 - RDS MySQL is not as scalable and cost-effective as DynamoDB.
 

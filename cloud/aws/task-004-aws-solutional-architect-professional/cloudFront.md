@@ -50,6 +50,31 @@ You can use geo restriction, also known as geo blocking, to prevent users in spe
 - You can encrypt up to 10 data fields in a reques
 
 
+### Using AWS WAF to control access to your content
+
+[Using AWS WAF to control access to your content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-awswaf.html)
+
+- AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to CloudFront, and lets you control access to your content
+- Based on conditions that you specify, such as the values of query strings or the IP addresses that requests originate from, CloudFront responds to requests either with the requested content or with an HTTP status code 403 (Forbidden). 
+
+### Restricting access to Amazon S3 content by using an origin access identity (OAI)
+
+[Restricting access to Amazon S3 content by using an origin access identity (OAI)](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html)
+
+To restrict access to content that you serve from Amazon S3 buckets, follow these steps:
+- Create a special CloudFront user called an origin access identity (OAI) and associate it with your distribution
+- Configure your S3 bucket permissions so that CloudFront can use the OAI to access the files in your bucket and serve them to your users. Make sure that users can’t use a direct URL to the S3 bucket to access a file there.
+
+### Restricting access to files on custom origins
+
+[Restricting access to files on custom origins](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-overview.html#forward-custom-headers-restrict-access)
+
+- If you use a custom origin, you can optionally set up custom headers to restrict access. 
+- But by using custom headers, you can further restrict access to your content so that users can access it only through CloudFront, not directly. 
+- To require that users access content through CloudFront, change the following settings in your CloudFront distributions:
+  - Origin Custom Headers: Configure CloudFront to forward custom headers to your origin.
+
+
 ## Optimizing caching and availability
 
 ### Increasing the proportion of requests that are served directly from the CloudFront caches (cache hit ratio)
@@ -73,3 +98,9 @@ You can use geo restriction, also known as geo blocking, to prevent users in spe
 
   - If you're using the domain name that CloudFront assigned to your distribution, such as d111111abcdef8.cloudfront.net, you change the Viewer Protocol Policy setting for one or more cache behaviors to require HTTPS communication. In that configuration, CloudFront provides the SSL/TLS certificate.
   - If you're using your own domain name, such as example.com, you need to change several CloudFront settings. You also need to use an SSL/TLS certificate provided by AWS Certificate Manager (ACM), or import a certificate from a third-party certificate authority into ACM or the IAM certificate store.
+
+
+## Blogs
+
+[How do I use CloudFront to serve a static website hosted on Amazon S3?](https://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-serve-static-website)
+

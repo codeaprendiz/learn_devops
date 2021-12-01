@@ -19,6 +19,16 @@
 - To use Elastic Load Balancing with your Auto Scaling group, attach the load balancer to your Auto Scaling group.
 - This registers the group with the load balancer, which acts as a single point of contact for all incoming web traffic to your Auto Scaling group.
 
+## Elastic Load Balancing
+
+### Attaching a load balancer to your Auto Scaling group
+
+[Attaching a load balancer to your Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html)
+
+- Amazon EC2 Auto Scaling integrates with Elastic Load Balancing to help you to insert an Application Load Balancer, Network Load Balancer, Classic Load Balancer, or Gateway Load Balancer in front of your Auto Scaling group.
+- When you attach an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer, you attach a target group. 
+- Amazon EC2 Auto Scaling adds instances to the attached target group when they are launched. 
+- You can attach one or multiple target groups, and configure health checks on a per target group basis.
 
 ### Scaling based on Amazon SQS
 

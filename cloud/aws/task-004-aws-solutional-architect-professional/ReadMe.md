@@ -52,6 +52,7 @@
 - [Serverless Application Model](serverlessApplicationModel.md)
 - [Server Migration Service](serverMigrationService.md)
 - [Shield](shield.md)
+- [Simple Notification Service](simpleNotificationService.md)
 - [Simple Workflow Service](simpleWorkflowService.md)
 - [Storage Gatway](storageGateway.md)
 - [System Manager](systemManager.md)

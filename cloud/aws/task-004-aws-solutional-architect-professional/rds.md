@@ -14,6 +14,17 @@
 [Working with read replicas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html)
 
 
+### Multi-AZ deployments for high availability
+
+[Multi-AZ deployments for high availability](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html)
+
+- Multi-AZ deployments can have one standby or two standby DB instances. 
+- When the deployment has one standby DB instance, it's called a Multi-AZ DB instance deployment. 
+  - A Multi-AZ DB instance deployment has one standby DB instance that provides failover support, but doesn't serve read traffic. 
+- When the deployment has two standby DB instances, it's called a Multi-AZ DB cluster deployment. 
+  - A Multi-AZ DB cluster deployment has standby DB instances that provide failover support and can also serve read traffic.
+
+
 ## Backing up and restoring an Amazon RDS DB instance
 
 [Backing up and restoring an Amazon RDS DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_CommonTasks.BackupRestore.html)
@@ -38,7 +49,7 @@
 ## NOTES
 
 - The Amazon RDS MySQL does not have a single reader endpoint for read replicas. You must use Amazon Aurora for MySQL to support this. Creating read replicas is recommended to increase the read performance of an RDS cluster.
-- Amazon RDS does not support certain features in Oracle such as Multitenant Database, Real Application Clusters (RAC), Unified Auditing, Database Vault
+- Amazon RDS does not support certain features in Oracle such as Multitenant Database, Real Application Clusters (RAC), Unified Auditing, Database Vault, Recovery Manager (RMAN)
 
 ## Blogs
 

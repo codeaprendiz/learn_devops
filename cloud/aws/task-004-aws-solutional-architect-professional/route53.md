@@ -82,6 +82,18 @@
 - Users are then routed to the IP addresses provided by the attackers in the spoofed response, for example, to fake websites.
 - You can protect your domain from this type of attack, known as DNS spoofing or a man-in-the-middle attack, by configuring Domain Name System Security Extensions (DNSSEC), a protocol for securing DNS traffic.
 
+
+## Configuring DNS Failover
+
+### Active-active and active-passive failover
+
+[Active-active and active-passive failover](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-types.html)
+
+- You can use Route 53 health checking to configure active-active and active-passive failover configurations. 
+  - You configure active-active failover using any routing policy (or combination of routing policies) other than failover, 
+  - and you configure active-passive failover using the failover routing policy.
+
+
 ## Blogs
 
 [Simplify DNS management in a multi-account environment with Route 53 Resolver](https://aws.amazon.com/blogs/security/simplify-dns-management-in-a-multiaccount-environment-with-route-53-resolver)
