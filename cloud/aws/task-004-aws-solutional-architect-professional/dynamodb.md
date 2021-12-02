@@ -37,6 +37,12 @@
   - Access Control
 
 
+## Error Handling with DynamoDB
+
+[Error Handling with DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html)
+
+
+
 ## Note
 
 - RDS MySQL is not as scalable and cost-effective as DynamoDB.

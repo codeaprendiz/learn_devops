@@ -61,3 +61,4 @@
 
 - [Amazon RDS – Multi-AZ Deployments For Enhanced Availability & Reliability](https://aws.amazon.com/blogs/aws/amazon-rds-multi-az-deployment)
 
+- [Implementing a disaster recovery strategy with Amazon RDS](https://aws.amazon.com/blogs/database/implementing-a-disaster-recovery-strategy-with-amazon-rds)

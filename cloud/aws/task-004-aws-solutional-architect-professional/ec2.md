@@ -57,3 +57,10 @@ There are several factors that can affect the performance of EBS volumes, such a
 - Amazon EC2 has partial support for resource-level permissions. 
 - This means that for certain Amazon EC2 actions, you can control when users are allowed to use those actions based on conditions that have to be fulfilled, or specific resources that users are allowed to use. 
 - For example, you can grant users permissions to launch instances, but only of a specific type, and only using a specific AMI.
+
+
+## VM Import/Export
+
+[VM Import/Export](https://aws.amazon.com/ec2/vm-import)
+
+- VM Import/Export enables you to easily import virtual machine images from your existing environment to Amazon EC2 instances and export them back to your on-premises environment

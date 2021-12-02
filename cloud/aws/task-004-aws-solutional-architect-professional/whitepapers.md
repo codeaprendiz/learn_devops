@@ -14,3 +14,4 @@
 - [Building a Scalable and Secure Multi-VPC AWS Network Infrastructure](https://d1.awsstatic.com/whitepapers/building-a-scalable-and-secure-multi-vpc-aws-network-infrastructure.pdf)
 - [Security Groups and Network Access Control Lists (Network ACLs) (BP5)](https://docs.aws.amazon.com/whitepapers/latest/aws-best-practices-ddos-resiliency/security-groups-and-network-access-control-lists-nacls-bp5.html)
 - [Using AWS for Disaster Recovery](https://aws.amazon.com/blogs/aws/new-whitepaper-use-aws-for-disaster-recovery)
+- [Overview of Deployment Options on AWS](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/aws-deployment-services.html)

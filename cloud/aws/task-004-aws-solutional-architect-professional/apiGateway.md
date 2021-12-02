@@ -27,3 +27,11 @@
 [Use @connections commands in your backend service](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-how-to-call-websocket-api-connections.html)
 
 Your backend service can use the WebSocket connection HTTP requests to send a callback message to a connected client, get connection information, or disconnect the client
+
+
+## Tutorials
+
+### Tutorial: Create a REST API as an Amazon Kinesis proxy in API Gateway
+
+[Tutorial: Create a REST API as an Amazon Kinesis proxy in API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-kinesis.html)
+

@@ -54,6 +54,8 @@
 - [Shield](shield.md)
 - [Simple Notification Service](simpleNotificationService.md)
 - [Simple Workflow Service](simpleWorkflowService.md)
+- [Snowball](snowball.md)
+- [Snowball Edge](snowballEdge.md)
 - [Storage Gatway](storageGateway.md)
 - [System Manager](systemManager.md)
 - [VPC](vpc.md)

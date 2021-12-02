@@ -78,6 +78,10 @@
 - These services include some AWS services, services hosted by other AWS customers and Partners in their own VPCs (referred to as endpoint services), and supported AWS Marketplace Partner services. 
 - The owner of the service is the service provider, and you, as the principal creating the interface endpoint, are the service consumer.
 
+[How do I configure security and network ACLs for my interface-based Amazon VPC endpoint for endpoint services?](https://aws.amazon.com/premiumsupport/knowledge-center/security-network-acl-vpc-endpoint)
+
+> When you create an Amazon VPC endpoint interface with AWS PrivateLink, an Elastic Network Interface is created inside of the subnet that you specify. This interface VPC endpoint (interface endpoint) inherits the network ACL of the associated subnet. You must associate a security group with the interface endpoint to protect incoming and outgoing requests.
+
 ## DNS support for your VPC
 
 [DNS attributes in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-support)
