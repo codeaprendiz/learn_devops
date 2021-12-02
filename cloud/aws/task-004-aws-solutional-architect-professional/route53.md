@@ -93,6 +93,24 @@
   - You configure active-active failover using any routing policy (or combination of routing policies) other than failover, 
   - and you configure active-passive failover using the failover routing policy.
 
+## Resolving DNS queries between VPCs and your network
+
+[Resolving DNS queries between VPCs and your network](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html)
+
+- When you create a VPC using Amazon VPC, Route 53 Resolver automatically uses a Resolver on the VPC to answer DNS queries for local Amazon VPC domain names for EC2 instances (ec2-192-0-2-44.compute-1.amazonaws.com) and records in private hosted zones (acme.example.com). 
+- For all other domain names, Resolver performs recursive lookups against public name servers.
+
+- You also can integrate DNS resolution between Resolver and DNS resolvers on your network by configuring forwarding rules. Your network can include any network that is reachable from your VPC, such as the following:
+  - The VPC itself
+  - Another peered VPC
+  - An on-premises network that is connected to AWS with AWS Direct Connect, a VPN, or a network address translation (NAT) gateway
+- Before you start to forward queries, you create Resolver inbound and/or outbound endpoints in the connected VPC. These endpoints provide a path for inbound or outbound queries:
+  - Inbound endpoint: DNS resolvers on your network can forward DNS queries to Route 53 Resolver via this endpoint
+    - This allows your DNS resolvers to easily resolve domain names for AWS resources such as EC2 instances or records in a Route 53 private hosted zone.
+  - Outbound endpoint: Resolver conditionally forwards queries to resolvers on your network via this endpoint
+    - To forward selected queries, you create Resolver rules that specify the domain names for the DNS queries that you want to forward (such as example.com), and the IP addresses of the DNS resolvers on your network that you want to forward the queries to
+
+[How do I configure a Route 53 Resolver inbound endpoint to resolve DNS records in my private hosted zone from my remote network?](https://aws.amazon.com/premiumsupport/knowledge-center/route53-resolve-with-inbound-endpoint)
 
 ## Blogs
 

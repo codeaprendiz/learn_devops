@@ -64,3 +64,10 @@ There are several factors that can affect the performance of EBS volumes, such a
 [VM Import/Export](https://aws.amazon.com/ec2/vm-import)
 
 - VM Import/Export enables you to easily import virtual machine images from your existing environment to Amazon EC2 instances and export them back to your on-premises environment
+
+
+## Dynamic Scaling
+
+### Scaling based on Amazon SQS
+
+[Scaling based on Amazon SQS](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-using-sqs-queue.html)

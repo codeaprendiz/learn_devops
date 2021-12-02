@@ -2,7 +2,9 @@
 
 [Cheat Sheet - Identify And Access Management](https://tutorialsdojo.com/aws-identity-and-access-management-iam)
 
-[Enabling SAML 2.0 federated users to access the AWS Management Console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html)
+[Cheat Sheet - SCP vs IAM](https://tutorialsdojo.com/service-control-policies-scp-vs-iam-policies)
+
+[Cheat Sheet - security-identity-services](https://tutorialsdojo.com/aws-cheat-sheets-security-identity-services)
 
 [Enabling SAML 2.0 federated users to access the AWS Management Console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html)
 
@@ -40,10 +42,17 @@
   - Temporary security credentials are not stored with the user but are generated dynamically and provided to the user when requested.
 
 
+## Actions
 
-  ## Tutorials
+[UploadServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadServerCertificate.html)
 
-  ### IAM tutorial: Delegate access across AWS accounts using IAM roles
+- Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private key, and an optional certificate chain, which should all be PEM-encoded.
+
+
+
+## Tutorials
+
+### IAM tutorial: Delegate access across AWS accounts using IAM roles
 
 [IAM tutorial: Delegate access across AWS accounts using IAM roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
 

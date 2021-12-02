@@ -93,6 +93,14 @@ DNS attributes in your VPC
 
 >  IF both attributes are enabled, an instance launched into the VPC receives a public DNS hostname IF it is assigned a public IPv4 address or an Elastic IP address at creation.
 
+## DHCP options sets for your VPC
+
+[DHCP options sets for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html)
+
+- The Dynamic Host Configuration Protocol (DHCP) provides a standard for passing configuration information to hosts on a TCP/IP network. 
+- The options field of a DHCP message contains configuration parameters, including the domain name, domain name server, and the netbios-node-type.
+- When you create a VPC, we automatically create a set of DHCP options and associate them with the VPC. You can configure your own DHCP options set for your VPC.
+
 
 ### Work with shared VPCs
 

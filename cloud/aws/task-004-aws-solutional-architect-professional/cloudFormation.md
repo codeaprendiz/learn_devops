@@ -34,6 +34,18 @@
 - Snapshot
   - For resources that support snapshots, CloudFormation creates a snapshot for the resource before deleting it
   
+## Intrinsic Functions
+
+[Intrinsic function reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html)
+
+- AWS CloudFormation provides several built-in functions that help you manage your stacks. Use intrinsic functions in your templates to assign values to properties that are not available until runtime.
+
+
+### Fn::GetAtt
+
+[Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html)
+
+- The Fn::GetAtt intrinsic function returns the value of an attribute from a resource in the template
 
 ## Blogs
 

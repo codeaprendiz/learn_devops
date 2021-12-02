@@ -15,3 +15,5 @@
 - [Security Groups and Network Access Control Lists (Network ACLs) (BP5)](https://docs.aws.amazon.com/whitepapers/latest/aws-best-practices-ddos-resiliency/security-groups-and-network-access-control-lists-nacls-bp5.html)
 - [Using AWS for Disaster Recovery](https://aws.amazon.com/blogs/aws/new-whitepaper-use-aws-for-disaster-recovery)
 - [Overview of Deployment Options on AWS](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/aws-deployment-services.html)
+- [AWS Best Practices for DDoS Resiliency](https://docs.aws.amazon.com/whitepapers/latest/aws-best-practices-ddos-resiliency/welcome.html)
+

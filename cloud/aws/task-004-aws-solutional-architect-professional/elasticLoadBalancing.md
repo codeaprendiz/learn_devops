@@ -31,6 +31,6 @@
 
 ## Blogs
 
-[How do I attach a security group to my Elastic Load Balancer?](https://aws.amazon.com/premiumsupport/knowledge-center/security-group-load-balancer)
+- [How do I attach a security group to my Elastic Load Balancer?](https://aws.amazon.com/premiumsupport/knowledge-center/security-group-load-balancer)
 
-
+- [AWS Elastic Load Balancing: Support for SSL Termination](https://aws.amazon.com/blogs/aws/elastic-load-balancer-support-for-ssl-termination)
