@@ -95,3 +95,12 @@ The five recommended SSM documents include:
   - Create custom runbooks or use pre-defined runbooks maintained by AWS.
   - Receive notifications about Automation tasks and runbooks by using Amazon EventBridge.
   - Monitor Automation progress and details by using the Systems Manager console.
+
+
+
+### Actions
+
+#### DeleteParameter
+
+- Delete a parameter from the system. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.
+

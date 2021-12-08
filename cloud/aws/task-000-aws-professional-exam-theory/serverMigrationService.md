@@ -16,3 +16,7 @@
 
 - AWS Server Migration Service supports the automated migration of multi-server application stacks from your on-premises data center to Amazon EC2
 - Where server migration is accomplished by replicating a single server as an Amazon Machine Image (AMI), application migration replicates all of the servers in an application as AMIs and generates an AWS CloudFormation template to launch them in a coordinated fashion.
+
+
+
+[Using Amazon CloudWatch Events and AWS Lambda with AWS SMS](https://docs.aws.amazon.com/server-migration-service/latest/userguide/cwe-sms.html)

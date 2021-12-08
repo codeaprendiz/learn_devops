@@ -113,6 +113,12 @@ DNS attributes in your VPC
 - After a subnet is shared, the participants can view, create, modify, and delete their application resources in the subnets shared with them. 
 - Participants cannot view, modify, or delete resources that belong to other participants or the VPC owner.
 
+
+[VPC Flow Logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)
+
+VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. Flow log data can be published to Amazon CloudWatch Logs or Amazon S3. 
+
+
 ## Blogs
 
 [How to set up an outbound VPC proxy with domain whitelisting and content filtering](https://aws.amazon.com/blogs/security/how-to-set-up-an-outbound-vpc-proxy-with-domain-whitelisting-and-content-filtering)

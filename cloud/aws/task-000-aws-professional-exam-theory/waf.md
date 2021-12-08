@@ -14,3 +14,10 @@
 
 - AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API.
 - AWS WAF also lets you control access to your content. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, Amazon CloudFront, Amazon API Gateway, Application Load Balancer, or AWS AppSync responds to requests either with the requested content or with an HTTP 403 status code (Forbidden).
+
+
+
+
+[White paper - aws-waf-owasp](https://d0.awsstatic.com/whitepapers/Security/aws-waf-owasp.pdf)
+
+[Prepare for the OWASP Top 10 Web Application Vulnerabilities Using AWS WAF](https://aws.amazon.com/blogs/aws/prepare-for-the-owasp-top-10-web-application-vulnerabilities-using-aws-waf-and-our-new-white-paper/)
