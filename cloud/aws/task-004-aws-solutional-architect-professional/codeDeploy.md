@@ -1,5 +1,4 @@
-
-## CodeDeploy
+## Code Deploy
 
 [Register an on-premises instance with CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/on-premises-instances-register.html)
 
@@ -76,4 +75,3 @@ Predefined deployment configurations for an AWS Lambda compute platform (for all
 **CanaryDeployment**
 - AWS Lambda
 - ECS
-
