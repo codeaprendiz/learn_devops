@@ -1,4 +1,4 @@
-## AWS Inspector
+# AWS Inspector
 
 ### Amazon Inspector rules packages and rules
 

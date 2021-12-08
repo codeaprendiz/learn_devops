@@ -22,6 +22,8 @@
 - When you register EC2 instances as targets, you must ensure that the security groups for these instances allow traffic on both the listener port and the health check port.
 
 
+[Deregistration delay](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay)
+
 
 
 ## Notes
@@ -34,3 +36,4 @@
 - [How do I attach a security group to my Elastic Load Balancer?](https://aws.amazon.com/premiumsupport/knowledge-center/security-group-load-balancer)
 
 - [AWS Elastic Load Balancing: Support for SSL Termination](https://aws.amazon.com/blogs/aws/elastic-load-balancer-support-for-ssl-termination)
+
