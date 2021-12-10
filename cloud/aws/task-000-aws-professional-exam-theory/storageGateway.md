@@ -2,6 +2,8 @@
 
 [Cheat Sheet - AWS Storage Gateway](https://tutorialsdojo.com/aws-storage-gateway)
 
+[How Storage Gateway works (architecture)](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html)
+
 
 - AWS Storage Gateway connects an on-premises software appliance with cloud-based storage to provide seamless integration with data security features between your on-premises IT environment and the AWS storage infrastructure.
 - You can use the service to store data in the Amazon Web Services Cloud for scalable and cost-effective storage that helps maintain data security.
@@ -15,6 +17,7 @@
 - Deliver low-latency data access to on-premises applications while leveraging the agility, economics and security capabilities of AWS in the cloud.
 - Provide on-premises applications access to cloud-backed storage without disruption to your business by maintaining user and application workflows.
 - Offer virtually unlimited cloud storage to users and applications without deploying new storage hardware.
+
 
 
 ### Amazon S3 File Gateway

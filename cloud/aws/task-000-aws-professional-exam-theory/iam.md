@@ -68,6 +68,13 @@ The above tutorial teaches you how to use a role to delegate access to resources
 [Providing access to an IAM user in another AWS account that you own](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html)
 
 
+## Controlling access to AWS resources using tags
+
+[Controlling access to AWS resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)
+
+- You can use tags to control access to your AWS resources that support tagging, including IAM resources. 
+
+
 ## Premium Support
 
 [What's the difference between an AWS Organizations service control policy and an IAM policy?](https://console.aws.amazon.com/console/home?nc2=h_ct&src=header-signin&hashArgs=%23)

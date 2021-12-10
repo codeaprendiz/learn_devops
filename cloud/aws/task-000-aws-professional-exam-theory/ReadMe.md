@@ -6,6 +6,7 @@
 
 - [API Gateway](apiGateway.md)
 - [Aurora](aurora.md)
+- [Backup](backup.md)
 - [Batch](batch.md)
 - [Best Practices](bestPractices.md)
 - [Billing And Cost Management](billingAndCostManagement.md)

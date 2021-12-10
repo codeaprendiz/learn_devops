@@ -74,6 +74,13 @@ To restrict access to content that you serve from Amazon S3 buckets, follow thes
 - To require that users access content through CloudFront, change the following settings in your CloudFront distributions:
   - Origin Custom Headers: Configure CloudFront to forward custom headers to your origin.
 
+## Serving private content with signed URLs and signed cookies
+
+[Serving private content with signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html)
+
+- Many companies that distribute content over the internet want to restrict access to documents, business data, media streams, or content that is intended for selected users, for example, users who have paid a fee.
+  - Require that your users access your private content by using special CloudFront signed URLs or signed cookies.
+  - Require that your users access your content by using CloudFront URLs, not URLs that access content directly on the origin server (for example, Amazon S3 or a private HTTP server).
 
 ## Optimizing caching and availability
 
