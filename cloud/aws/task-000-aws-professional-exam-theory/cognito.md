@@ -48,7 +48,14 @@
 - To integrate Amazon Cognito with your web or mobile app, use the SDKs and libraries that the AWS Amplify framework provides.
 
 
+### Amazon Cognito user pools
 
+[Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html)
+
+- A user pool is a user directory in Amazon Cognito. 
+- With a user pool, your users can sign in to your web or mobile app through Amazon Cognito. 
+- Your users can also sign in through social identity providers like Google, Facebook, Amazon, or Apple, and through SAML identity providers. 
+- Whether your users sign in directly or through a third party, all members of the user pool have a directory profile that you can access through a Software Development Kit (SDK).
 
 ## SSO FAQs
 

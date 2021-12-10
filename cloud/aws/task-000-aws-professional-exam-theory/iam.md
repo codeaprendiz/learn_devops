@@ -48,7 +48,12 @@
 
 - Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private key, and an optional certificate chain, which should all be PEM-encoded.
 
+## Using an IAM role to grant permissions to applications running on Amazon EC2 instances
 
+[Using an IAM role to grant permissions to applications running on Amazon EC2 instances](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html#roles-usingrole-ec2instance-roles)
+
+- Applications that run on an EC2 instance must include AWS credentials in the AWS API requests
+- you can and should use an IAM role to manage temporary credentials for applications that run on an EC2 instance.
 
 ## Tutorials
 
@@ -57,3 +62,14 @@
 [IAM tutorial: Delegate access across AWS accounts using IAM roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
 
 The above tutorial teaches you how to use a role to delegate access to resources in different AWS accounts that you own called Production and Development
+
+### Providing access to an IAM user in another AWS account that you own
+
+[Providing access to an IAM user in another AWS account that you own](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html)
+
+
+## Premium Support
+
+[What's the difference between an AWS Organizations service control policy and an IAM policy?](https://console.aws.amazon.com/console/home?nc2=h_ct&src=header-signin&hashArgs=%23)
+
+

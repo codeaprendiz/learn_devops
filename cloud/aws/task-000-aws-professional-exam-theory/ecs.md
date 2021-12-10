@@ -2,6 +2,8 @@
 
 [Cheetsheet - ECS](https://tutorialsdojo.com/amazon-elastic-container-service-amazon-ecs/)
 
+[CheatSheet - Elastic Container Service (ECS) vs Lambda](https://tutorialsdojo.com/ec2-container-service-ecs-vs-lambda)
+
 [What is Amazon Elastic Container Service?](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
 
 - highly scalable, fast container management service that makes it easy to run, stop, and manage containers on a cluster

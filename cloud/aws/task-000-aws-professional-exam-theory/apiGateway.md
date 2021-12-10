@@ -29,6 +29,17 @@
 Your backend service can use the WebSocket connection HTTP requests to send a callback message to a connected client, get connection information, or disconnect the client
 
 
+### Lambda Integration
+
+#### Understand API Gateway Lambda proxy integration
+
+[Understand API Gateway Lambda proxy integration](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html)
+
+- Amazon API Gateway Lambda proxy integration is a simple, powerful, and nimble mechanism to build an API with a setup of a single API method. 
+- The Lambda proxy integration allows the client to call a single Lambda function in the backend. 
+- The function accesses many resources or features of other AWS services, including calling other Lambda functions.
+
+
 ## Tutorials
 
 ### Tutorial: Create a REST API as an Amazon Kinesis proxy in API Gateway

@@ -55,6 +55,23 @@
 - You can create a VPC peering connection between your own VPCs, with a VPC in another AWS account, or with a VPC in a different AWS Region.
 
 
+### Configurations with specific routes
+
+[Configurations with specific routes](https://docs.aws.amazon.com/vpc/latest/peering/peering-configurations-partial-access.html)
+
+[One VPC peered with two VPCs using longest prefix match](https://docs.aws.amazon.com/vpc/latest/peering/peering-configurations-partial-access.html#one-to-two-vpcs-lpm)
+
+
+## Route Tables
+
+### Example routing options
+
+[Example routing options](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html)
+
+
+
+
+
 ## VPC Flow Logs
 
 [VPC Flow Logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)

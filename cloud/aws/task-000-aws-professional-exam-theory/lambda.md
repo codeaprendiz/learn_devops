@@ -56,6 +56,10 @@ There are two types of concurrency controls available:
 - Reserved concurrency – Reserved concurrency guarantees the maximum number of concurrent instances for the function. When a function has reserved concurrency, no other function can use that concurrency. No charge for this
 - Provisioned concurrency – Provisioned concurrency initializes a requested number of execution environments so that they are prepared to respond immediately to your function's invocations. Note that configuring provisioned concurrency incurs charges to your AWS account.
 
+## Notes
+
+- AWS Lambda is suited for creating serverless/stateless APIs and costs cheaper than AWS Fargate.
+
 ## Blogs
 
 [How do I troubleshoot Lambda function throttling with "Rate exceeded" and 429 "TooManyRequestsException" errors?](https://aws.amazon.com/premiumsupport/knowledge-center/lambda-troubleshoot-throttling)
