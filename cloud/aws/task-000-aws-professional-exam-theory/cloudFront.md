@@ -107,6 +107,14 @@ To restrict access to content that you serve from Amazon S3 buckets, follow thes
   - If you're using your own domain name, such as example.com, you need to change several CloudFront settings. You also need to use an SSL/TLS certificate provided by AWS Certificate Manager (ACM), or import a certificate from a third-party certificate authority into ACM or the IAM certificate store.
 
 
+### Managing how long content stays in the cache (expiration)
+
+[Managing how long content stays in the cache (expiration)](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html)
+
+- You can control how long your files stay in a CloudFront cache before CloudFront forwards another request to your origin
+  - If the CloudFront cache already has the latest version, the origin returns a status code 304 Not Modified.
+  - If the CloudFront cache does not have the latest version, the origin returns a status code 200 OK and the latest version of the file.
+
 ## Blogs
 
 [How do I use CloudFront to serve a static website hosted on Amazon S3?](https://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-serve-static-website)

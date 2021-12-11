@@ -81,6 +81,11 @@
 [How Storage Gateway works (architecture)](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts)
 
 
+## AWS Storage Gateway quotas
+
+[AWS Storage Gateway quotas](https://docs.aws.amazon.com/storagegateway/latest/userguide/resource-gateway-limits.html#resource-volume-limits)
+
+
 
 
 ## Security

@@ -28,3 +28,8 @@
   - You can have producers push data directly into a stream. 
   - For example, push system and application logs and they are available for processing in seconds. 
   - This prevents the log data from being lost if the front end or application server fails
+
+
+  ## Examples
+
+  - [Capturing Web Page Scroll Progress with Amazon Kinesis](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/kinesis-examples-capturing-page-scrolling.html)

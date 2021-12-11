@@ -65,6 +65,7 @@
 - [Simple Notification Service](simpleNotificationService.md)
 - [Simple Queue Service](simpleQueueService.md)
 - [Simple Workflow Service](simpleWorkflowService.md)
+- [Single Sing-On](singleSignOn.md)
 - [Snowball](snowball.md)
 - [Snowball Edge](snowballEdge.md)
 - [Storage Gatway](storageGateway.md)
