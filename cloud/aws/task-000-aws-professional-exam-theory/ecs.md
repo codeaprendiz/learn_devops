@@ -4,6 +4,8 @@
 
 [CheatSheet - Elastic Container Service (ECS) vs Lambda](https://tutorialsdojo.com/ec2-container-service-ecs-vs-lambda)
 
+[CheatSheet - AWS Fargate](https://tutorialsdojo.com/aws-fargate)
+
 [What is Amazon Elastic Container Service?](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
 
 - highly scalable, fast container management service that makes it easy to run, stop, and manage containers on a cluster
@@ -92,3 +94,11 @@ Amazon ECS enables you to inject sensitive data into your containers by storing 
 ](https://aws.amazon.com/premiumsupport/knowledge-center/ecs-pull-container-api-error-ecr)
 
 - One reason : because a route to the internet doesn't exist:
+
+
+## Amazon ECS on AWS Fargate
+
+[Amazon ECS on AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html)
+
+- AWS Fargate is a technology that you can use with Amazon ECS to run containers without having to manage servers or clusters of Amazon EC2 instances. 
+- With AWS Fargate, you no longer have to provision, configure, or scale clusters of virtual machines to run containers

@@ -39,6 +39,23 @@ This example setup is a simple solution. For a more robust solution, use the AWS
 
 - Be flexible about which instance types you request and which Availability Zones you deploy your workload in
 
+
+[Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html)
+
+
+### Elastic network interfaces
+
+[Elastic network interfaces](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html)
+
+- An elastic network interface is a logical networking component in a VPC that represents a virtual network card.
+
+### Multiple IP addresses
+
+[Multiple IP addresses](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html)
+
+- You can specify multiple private IPv4 and IPv6 addresses for your instances. 
+- The number of network interfaces and private IPv4 and IPv6 addresses that you can specify for an instance depends on the instance type.
+
 ## Fleets
 
 ### Example 5: Launch a Spot Fleet using the diversified allocation strategy

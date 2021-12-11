@@ -136,6 +136,21 @@ DNS attributes in your VPC
 VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. Flow log data can be published to Amazon CloudWatch Logs or Amazon S3. 
 
 
+### Internetwork traffic privacy in Amazon VPC
+
+[Internetwork traffic privacy in Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html)
+
+- Security groups: Security groups act as a firewall for associated Amazon EC2 instances, controlling both inbound and outbound traffic at the instance level.
+- Network access control lists (ACLs): Network ACLs act as a firewall for associated subnets, controlling both inbound and outbound traffic at the subnet level.
+- Flow logs: Flow logs capture information about the IP traffic going to and from network interfaces in your VPC.
+- Traffic mirroring: You can copy network traffic from an elastic network interface of an Amazon EC2 instance.
+
+
 ## Blogs
 
-[How to set up an outbound VPC proxy with domain whitelisting and content filtering](https://aws.amazon.com/blogs/security/how-to-set-up-an-outbound-vpc-proxy-with-domain-whitelisting-and-content-filtering)
+- [How to set up an outbound VPC proxy with domain whitelisting and content filtering](https://aws.amazon.com/blogs/security/how-to-set-up-an-outbound-vpc-proxy-with-domain-whitelisting-and-content-filtering)
+
+- [How to set up an outbound VPC proxy with domain whitelisting and content filtering](https://aws.amazon.com/blogs/security/how-to-set-up-an-outbound-vpc-proxy-with-domain-whitelisting-and-content-filtering)
+
+  - Controlling outbound communication from your Amazon Virtual Private Cloud (Amazon VPC) to the internet is an important part of your overall preventive security controls. 
+  - By limiting outbound traffic to certain trusted domains (called “whitelisting”) you help prevent instances from downloading malware, communicating with bot networks, or attacking internet hosts.
