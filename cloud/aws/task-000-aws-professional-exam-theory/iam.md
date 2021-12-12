@@ -74,6 +74,15 @@ The above tutorial teaches you how to use a role to delegate access to resources
 
 - You can use tags to control access to your AWS resources that support tagging, including IAM resources. 
 
+## Using an IAM role to grant permissions to applications running on Amazon EC2 instances
+
+### Using instance profiles
+
+[Using instance profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)
+
+- Use an instance profile to pass an IAM role to an EC2 instance.
+- you can and should use an IAM role to manage temporary credentials for applications that run on an EC2 instance
+
 
 ## Premium Support
 

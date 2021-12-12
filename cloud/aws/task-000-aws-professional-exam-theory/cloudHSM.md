@@ -12,3 +12,10 @@
 
 - Web servers and their clients (web browsers) can use Secure Sockets Layer (SSL) or Transport Layer Security (TLS). 
 - These protocols confirm the identity of the web server and establish a secure connection to send and receive webpages or other data over the internet. This is commonly known as HTTPS.
+
+
+### How SSL/TLS Offload with AWS CloudHSM Works
+
+
+[How SSL/TLS Offload with AWS CloudHSM Works](https://docs.aws.amazon.com/cloudhsm/latest/userguide/ssl-offload-overview.html)
+

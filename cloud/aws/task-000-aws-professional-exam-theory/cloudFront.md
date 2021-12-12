@@ -115,6 +115,35 @@ To restrict access to content that you serve from Amazon S3 buckets, follow thes
   - If the CloudFront cache already has the latest version, the origin returns a status code 304 Not Modified.
   - If the CloudFront cache does not have the latest version, the origin returns a status code 200 OK and the latest version of the file.
 
+
+
+## Customizing at the edge with Lambda@Edge
+
+[Customizing at the edge with Lambda@Edge](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-at-the-edge.html)
+
+- Lambda@Edge is an extension of AWS Lambda, a compute service that lets you execute functions that customize the content that CloudFront delivers.
+
+- When you associate a CloudFront distribution with a Lambda@Edge function, CloudFront intercepts requests and responses at CloudFront edge locations. You can execute Lambda functions when the following CloudFront events occur:
+  - When CloudFront receives a request from a viewer (viewer request)
+  - Before CloudFront forwards a request to the origin (origin request)
+  - When CloudFront receives a response from the origin (origin response)
+  - Before CloudFront returns the response to the viewer (viewer response)
+
+[Get started creating and using Lambda@Edge functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-how-it-works.html)
+
+
+## Request and response behavior for custom origins
+
+### User-Agent header
+
+[User-Agent header](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-user-agent-header)
+
+- If you want CloudFront to cache different versions of your objects based on the device that a user is using to view your content, we recommend that you configure CloudFront to forward one or more of the following headers to your custom origin:
+  - CloudFront-Is-Desktop-Viewer
+  - CloudFront-Is-Mobile-Viewer
+  - CloudFront-Is-SmartTV-Viewer
+  - CloudFront-Is-Tablet-Viewer
+
 ## Blogs
 
 [How do I use CloudFront to serve a static website hosted on Amazon S3?](https://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-serve-static-website)
