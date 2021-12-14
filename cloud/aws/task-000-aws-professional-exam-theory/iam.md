@@ -83,6 +83,40 @@ The above tutorial teaches you how to use a role to delegate access to resources
 - Use an instance profile to pass an IAM role to an EC2 instance.
 - you can and should use an IAM role to manage temporary credentials for applications that run on an EC2 instance
 
+## Identity providers and federation
+
+- If you already manage user identities outside of AWS, you can use IAM identity providers instead of creating IAM users in your AWS account. 
+- With an identity provider (IdP), you can manage your user identities outside of AWS and give these external user identities permissions to use AWS resources in your account
+
+
+## Providing access to externally authenticated users (identity federation)
+
+[Providing access to externally authenticated users (identity federation)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_federated-users.html)
+
+- Your users might already have identities outside of AWS, such as in your corporate directory. 
+- If those users need to work with AWS resources (or work with applications that access those resources), then those users also need AWS security credentials. 
+- You can use an IAM role to specify permissions for users whose identity is federated from your organization or a third-party identity provider (IdP).
+
+### Federating users of a mobile or web-based app with Amazon Cognito
+
+- If you create a mobile or web-based app that accesses AWS resources, the app needs security credentials in order to make programmatic requests to AWS. 
+- For most mobile application scenarios, we recommend that you use Amazon Cognito.
+
+### Federating users of a mobile or web-based app with Amazon Cognito
+
+- for more advanced scenarios, you can work directly with a third-party service like Login with Amazon, Facebook, Google, or any IdP that is compatible with OpenID Connect (OIDC).
+
+### Federating users with SAML 2.0
+
+- If your organization already uses an identity provider software package that supports SAML 2.0 (Security Assertion Markup Language 2.0), you can create trust between your organization as an identity provider (IdP) and AWS as the service provider.
+- You can then use SAML to provide your users with federated single-sign on (SSO) to the AWS Management Console or federated access to call AWS API operations.
+
+### Federating users by creating a custom identity broker application
+
+- If your identity store is not compatible with SAML 2.0, then you can build a custom identity broker application to perform a similar function. 
+- The broker application authenticates users, requests temporary credentials for users from AWS, and then provides them to the user to access AWS resources.
+
+
 
 ## Premium Support
 
