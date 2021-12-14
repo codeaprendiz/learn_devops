@@ -43,6 +43,10 @@
 
 ## Creating metrics from log events using filters
 
+- You can search and filter the log data coming into CloudWatch Logs by creating one or more metric filters. 
+- Metric filters define the terms and patterns to look for in log data as it is sent to CloudWatch Logs. 
+- CloudWatch Logs uses these metric filters to turn log data into numerical CloudWatch metrics that you can graph or set an alarm on.
+
 ### Creating metric filters
 
 [Creating metric filters](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringPolicyExamples.html)
@@ -50,6 +54,20 @@
 
 
 [Monitoring deployments with Amazon CloudWatch Events](https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-cloudwatch-events.html)
+
+
+- You can use Amazon CloudWatch Events to detect and react to changes in the state of an instance or a deployment (an "event") in your CodeDeploy operations. 
+- Then, based on rules you create, CloudWatch Events will invoke one or more target actions when a deployment or instance enters the state you specify in a rule. 
+- Depending on the type of state change, you might want to send notifications, capture state information, take corrective action, initiate events, or take other actions. 
+- You can select the following types of targets when using CloudWatch Events as part of your CodeDeploy operations:
+  - AWS Lambda functions
+  - Kinesis streams
+  - Amazon SQS queues
+  
+Built-in targets (EC2 CreateSnapshot API call, EC2 RebootInstances API call, EC2 StopInstances API call , and EC2 TerminateInstances API call)
+
+Amazon SNS topics
+
 
 ```bash
 The following are some use cases:

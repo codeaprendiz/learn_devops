@@ -65,6 +65,15 @@ This example setup is a simple solution. For a more robust solution, use the AWS
 - A best practice to increase the chance that a spot request can be fulfilled by EC2 capacity in the event of an outage in one of the Availability Zones is to diversify across zones.
 - For this scenario, include each Availability Zone available to you in the launch specification. And, instead of using the same subnet each time, use three unique subnets (each mapping to a different zone).
 
+### Dedicated Instances
+
+[Dedicated Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html)
+
+- Dedicated Instances are Amazon EC2 instances that run in a virtual private cloud (VPC) on hardware that's dedicated to a single customer. 
+
+```bash
+Tenancy type to be dedicated host.
+```
 
 ## Storage
 

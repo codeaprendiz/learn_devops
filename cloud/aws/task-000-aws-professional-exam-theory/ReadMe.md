@@ -14,7 +14,7 @@
 - [Cloud Formation](cloudFormation.md)
 - [Cloud Front](cloudFront.md)
 - [CloudHSM](cloudHSM.md)
-- [CloudSearch](cloudsearch.md)
+- [CloudSearch](cloudSearch.md)
 - [CloudTrail](cloudTrail.md)
 - [CloudWatch](cloudwatch.md)
 - [CloudWatchLogs](cloudWatchLogs.md)

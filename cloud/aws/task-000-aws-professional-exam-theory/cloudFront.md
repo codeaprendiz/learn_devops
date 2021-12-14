@@ -4,9 +4,13 @@
 
 [geoproximity-routing-vs-geolocation-routing](https://tutorialsdojo.com/latency-routing-vs-geoproximity-routing-vs-geolocation-routing)
 
+## What is Amazon CloudFront?
+
 [What is Amazon CloudFront?](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
 
-Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and image files, to your users. CloudFront delivers your content through a worldwide network of data centers called edge locations. When a user requests content that you're serving with CloudFront, the request is routed to the edge location that provides the lowest latency (time delay), so that content is delivered with the best possible performance.
+- Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and image files, to your users. 
+- CloudFront delivers your content through a worldwide network of data centers called edge locations. 
+- When a user requests content that you're serving with CloudFront, the request is routed to the edge location that provides the lowest latency (time delay), so that content is delivered with the best possible performance.
 
 - If the content is already in the edge location with the lowest latency, CloudFront delivers it immediately.
 
@@ -17,11 +21,13 @@ Amazon CloudFront is a web service that speeds up distribution of your static an
 
 [Restricting the geographic distribution of your content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/georestrictions.html)
 
-You can use geo restriction, also known as geo blocking, to prevent users in specific geographic locations from accessing content that you're distributing through a CloudFront distribution. To use geo restriction, you have two options:
+- You can use geo restriction, also known as geo blocking, to prevent users in specific geographic locations from accessing content that you're distributing through a CloudFront distribution. 
+- To use geo restriction, you have two options:
 
-- Use the CloudFront geo restriction feature. Use this option to restrict access to all of the files that are associated with a distribution and to restrict access at the country level.
+  - Use the CloudFront geo restriction feature. 
+  - Use this option to restrict access to all of the files that are associated with a distribution and to restrict access at the country level.
 
-- Use a third-party geolocation service. Use this option to restrict access to a subset of the files that are associated with a distribution or to restrict access at a finer granularity than the country level.
+  - Use a third-party geolocation service. Use this option to restrict access to a subset of the files that are associated with a distribution or to restrict access at a finer granularity than the country level.
 
 ## Optimizing Caching and availability
 
@@ -45,9 +51,9 @@ You can use geo restriction, also known as geo blocking, to prevent users in spe
 - Field-level encryption adds an additional layer of security that lets you protect specific data throughout system processing so that only certain applications can see it.
 - Field-level encryption allows you to enable your users to securely upload sensitive information to your web servers.
 - The sensitive information provided by your users is encrypted at the edge, close to the user, and remains encrypted throughout your entire application stack. 
-- This encryption ensures that only applications that need the data—and have the credentials to decrypt it—are able to do so.
+- This encryption ensures that only applications that need the data and have the credentials to decrypt it are able to do so.
 - To use field-level encryption, when you configure your CloudFront distribution, specify the set of fields in POST requests that you want to be encrypted, and the public key to use to encrypt them. 
-- You can encrypt up to 10 data fields in a reques
+- You can encrypt up to 10 data fields in a request
 
 
 ### Using AWS WAF to control access to your content
