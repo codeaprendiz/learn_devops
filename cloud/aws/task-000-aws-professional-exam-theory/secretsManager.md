@@ -14,6 +14,8 @@
 
 [Automate secret creation in AWS CloudFormation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/integrating_cloudformation.html)
 
+[How to create and retrieve secrets managed in AWS Secrets Manager using AWS CloudFormation templates](https://aws.amazon.com/blogs/security/how-to-create-and-retrieve-secrets-managed-in-aws-secrets-manager-using-aws-cloudformation-template)
+
 - You can use AWS CloudFormation to create and reference secrets from within your AWS CloudFormation stack template. 
 - You can create a secret and then reference it from another part of the template. 
 - For example, you can retrieve the user name and password from the new secret and then use that to define the user name and password for a new database. 

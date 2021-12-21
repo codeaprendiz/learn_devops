@@ -6,11 +6,19 @@
 
 [Cheat Sheet - security-identity-services](https://tutorialsdojo.com/aws-cheat-sheets-security-identity-services)
 
+### Identity providers and federation
+
 [Enabling SAML 2.0 federated users to access the AWS Management Console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html)
 
 - You can use a role to configure your SAML 2.0-compliant identity provider (IdP) and AWS to permit your federated users to access the AWS Management Console. 
 - The role grants the user permissions to carry out tasks in the console.
 
+### Enabling custom identity broker access to the AWS console
+
+[Enabling custom identity broker access to the AWS console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html)
+
+- You can write and run code to create a URL that lets users who sign in to your organization's network securely access the AWS Management Console. 
+- The URL includes a sign-in token that you get from AWS and that authenticates the user to AWS.
 
 ## Logging IAM and AWS STS API calls with AWS CloudTrail
 
@@ -83,6 +91,16 @@ The above tutorial teaches you how to use a role to delegate access to resources
 - Use an instance profile to pass an IAM role to an EC2 instance.
 - you can and should use an IAM role to manage temporary credentials for applications that run on an EC2 instance
 
+## Identity federation in AWS
+
+[Identity federation in AWS](https://aws.amazon.com/identity/federation)
+
+- Identity federation is a system of trust between two parties for the purpose of authenticating users and conveying information needed to authorize their access to resources. 
+- In this system, an identity provider (IdP) is responsible for user authentication, and a service provider (SP), such as a service or an application, controls access to resources.
+- By administrative agreement and configuration, the SP trusts the IdP to authenticate users and relies on the information provided by the IdP about them. 
+- After authenticating a user, the IdP sends the SP a message, called an assertion, containing the user's sign-in name and other attributes that the SP needs to establish a session with the user and to determine the scope of resource access that the SP should grant. 
+ 
+
 ## Identity providers and federation
 
 - If you already manage user identities outside of AWS, you can use IAM identity providers instead of creating IAM users in your AWS account. 
@@ -121,5 +139,13 @@ The above tutorial teaches you how to use a role to delegate access to resources
 ## Premium Support
 
 [What's the difference between an AWS Organizations service control policy and an IAM policy?](https://console.aws.amazon.com/console/home?nc2=h_ct&src=header-signin&hashArgs=%23)
+
+## Blog
+
+[How to Establish Federated Access to Your AWS Resources by Using Active Directory User Attributes](https://aws.amazon.com/blogs/security/how-to-establish-federated-access-to-your-aws-resources-by-using-active-directory-user-attributes)
+
+
+
+
 
 

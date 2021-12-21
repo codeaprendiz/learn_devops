@@ -74,6 +74,10 @@
 - Multivalue answer routing policy – Use when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random.
 - Weighted routing policy – Use to route traffic to multiple resources in proportions that you specify
 
+
+
+
+
 ### Configuring DNSSEC for a domain
 
 [Configuring DNSSEC for a domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-configure-dnssec.html)
@@ -111,6 +115,29 @@
     - To forward selected queries, you create Resolver rules that specify the domain names for the DNS queries that you want to forward (such as example.com), and the IP addresses of the DNS resolvers on your network that you want to forward the queries to
 
 [How do I configure a Route 53 Resolver inbound endpoint to resolve DNS records in my private hosted zone from my remote network?](https://aws.amazon.com/premiumsupport/knowledge-center/route53-resolve-with-inbound-endpoint)
+
+
+### Values specific for simple alias records
+
+[Values specific for simple alias records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-values-alias.html)
+
+- When you create alias records, you specify the following values
+  - Routing policy
+  - Record name
+  - Value/route traffic to
+  - Record type
+  - Evaluate target health
+
+
+### Choosing between alias and non-alias records
+
+[Choosing between alias and non-alias records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html)
+
+- Amazon Route 53 alias records provide a Route 53–specific extension to DNS functionality. 
+- Alias records let you route traffic to selected AWS resources, such as CloudFront distributions and Amazon S3 buckets. 
+- They also let you route traffic from one record in a hosted zone to another record.
+- Unlike a CNAME record, you can create an alias record at the top node of a DNS namespace, also known as the zone apex.
+
 
 ## Blogs
 

@@ -125,6 +125,20 @@
 - AWS CloudFormation provides several built-in functions that help you manage your stacks. Use intrinsic functions in your templates to assign values to properties that are not available until runtime.
 
 
+### Using dynamic references to specify template values
+
+
+[Using dynamic references to specify template values](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html)
+
+- Dynamic references provide a compact, powerful way for you to specify external values that are stored and managed in other services, such as the Systems Manager Parameter Store, in your stack templates. 
+- When you use a dynamic reference, CloudFormation retrieves the value of the specified reference when necessary during stack and change set operations.
+- CloudFormation currently supports the following dynamic reference patterns:
+  - ssm, for plaintext values stored in AWS Systems Manager Parameter Store.
+  - ssm-secure, for secure strings stored in AWS Systems Manager Parameter Store.
+  - secretsmanager, for entire secrets or specific secret values that are stored in AWS Secrets Manager.
+
+
+
 ### Fn::GetAtt
 
 [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html)
