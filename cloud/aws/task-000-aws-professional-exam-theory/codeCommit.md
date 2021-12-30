@@ -1,3 +1,5 @@
+> Revision Count: 1
+
 # CodeCommit
 
 [Cheat Sheet -  AWS CodeCommit](https://tutorialsdojo.com/aws-codecommit)
@@ -8,6 +10,7 @@
 
 - You can configure a CodeCommit repository so that code pushes or other events trigger actions, such as sending a notification from Amazon Simple Notification Service (Amazon SNS) or invoking a function in AWS Lambda. 
 - You can create up to 10 triggers for each CodeCommit repository.
+- Data in AWS CodeCommit repositories is already encrypted in transit as well as at rest.
 
 ### Example: Create an AWS CodeCommit trigger for an Amazon SNS topic
 
@@ -23,7 +26,7 @@
 - You can create a trigger for a CodeCommit repository so that events in the repository invoke a Lambda function. 
 
 
--- 
+### Example: auth-and-access-control-iam-identity-based-access-control
 
 [auth-and-access-control-iam-identity-based-access-control](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#identity-based-policies-example-4)
 
@@ -42,15 +45,23 @@
 }
 ```
 
-Data in AWS CodeCommit repositories is already encrypted in transit as
-well as at rest.
 
-[how-to-migrate-existing-share](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository-existing.html#how-to-migrate-existing-share)
+### Migrate a Git repository to AWS CodeCommit
+
+
+[Share the CodeCommit repository](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository-existing.html#how-to-migrate-existing-share)
+
+- When you create a repository in CodeCommit, two endpoints are generated: one for HTTPS connections and one for SSH connections. 
+- Both provide secure connections over a network
+
+### Using identity-based policies (IAM Policies) for CodeCommit
 
 [Using identity-based policies (IAM Policies) for CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html)
-
+- An account administrator can attach permissions policies to IAM identities (users, groups, and roles) to grant permissions to perform operations on CodeCommit resources.
 - AWS manage policy AWSCodeCommitPowerUser allows users access to CodeCommit but disallows the action of deleting
   CodeCommit repositories.
+
+### Cross-account repository access: Actions for the administrator in AccountA
 
 
 [Cross-account repository access: Actions for the administrator in AccountA](https://docs.aws.amazon.com/codecommit/latest/userguide/cross-account-administrator-a.html)
@@ -66,25 +77,35 @@ To allow users or groups in AccountB to access a repository in AccountA, the Acc
 administrator must create a group in AccountB. This group must be configured with a policy having
 action `"sts:AssumeRole` that allows group members to assume the role created by the AccountA administrator
 
+### Setup steps for SSH connections to AWS CodeCommit repositories on Linux, macOS, or Unix
+
 [Setup steps for SSH connections to AWS CodeCommit repositories on Linux, macOS, or Unix](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html)
 
-After you upload the SSH public key for the IAM user, the user can establish SSH connections to the CodeCommit repositories:
+- After you upload the SSH public key for the IAM user, the user can establish SSH connections to the CodeCommit repositories:
 
 #### Supported Operations
+
 [Change branch settings in AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-change-branch.html)
 
-- You can change which branch to use as the default branch in the AWS CodeCommit console or with the AWS CLI. For example, if you created your first commit using a Git client that set the  
-  default branch to master, you could create a branch named main, and then change the branch settings so that the new branch is set as the default branch for the repository.
-  To change other branch settings, you can use Git from a local repo connected to the CodeCommit repository.
+- You can change which branch to use as the default branch in the AWS CodeCommit console or with the AWS CLI. 
+- For example, if you created your first commit using a Git client that set the default branch to master, you could create a branch named main, and then change the branch settings so that the new branch is set as the default branch for the repository.
+- To change other branch settings, you can use Git from a local repo connected to the CodeCommit repository.
+
+### Merge a pull request in an AWS CodeCommit repository
 
 [Merge a pull request in an AWS CodeCommit repository](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-merge-pull-request.html)
 
+- After your code has been reviewed and all approval rules (if any) on the pull request have been satisfied, you can merge a pull request in one of several ways:  
+  - You can use the console to merge your source branch to the destination branch using one of the available merge strategies, which also closes the pull request.
+  - You can use the AWS CLI to merge and close the pull request using the fast-forward, squash, or 3-way merge strategy.
+  - On your local computer, you can use the git merge command to merge the source branch into the destination branch, and then push your merged code to the destination branch
 
 #### Working with pull requests
 
 [Edit or delete an approval rule for a pull request](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-edit-delete-pull-request-approval-rule.html)
 
-- When you have an approval rule on a pull request, you cannot merge that pull request until its conditions have been met. You can change the approval rules for pull requests to make it easier to satisfy their conditions, or to increase the rigor of reviews. You can change the number of users who must approve a pull request.
+- When you have an approval rule on a pull request, you cannot merge that pull request until its conditions have been met. 
+- You can change the approval rules for pull requests to make it easier to satisfy their conditions, or to increase the rigor of reviews. You can change the number of users who must approve a pull request.
 
 #### Working with approval rule templates
 
@@ -135,17 +156,15 @@ After you upload the SSH public key for the IAM user, the user can establish SSH
 ```
 
 
-#### Working with repositories
 
-[Manage triggers for an AWS CodeCommit repository](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify.html)
-
-- You can configure a CodeCommit repository so that code pushes or other events trigger actions, such as sending a notification from Amazon Simple Notification Service (Amazon SNS) or invoking a function in AWS Lambda. You can create up to 10 triggers for each CodeCommit repository.
 
 ##### Configuring notifications for events in an AWS CodeCommit repository
 
 [Configuring notifications for events in an AWS CodeCommit repository](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-repository-email.html)
 
-- You can set up notification rules for a repository so that repository users receive emails about the repository event types you specify. Notifications are sent when events match the notification rule settings. You can create an Amazon SNS topic to use for notifications or use an existing one in your Amazon Web Services account
+- You can set up notification rules for a repository so that repository users receive emails about the repository event types you specify. 
+- Notifications are sent when events match the notification rule settings. 
+- You can create an Amazon SNS topic to use for notifications or use an existing one in your Amazon Web Services account
 
 #### Security
 

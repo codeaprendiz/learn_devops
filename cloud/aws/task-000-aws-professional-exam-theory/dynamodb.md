@@ -1,3 +1,5 @@
+> Revision Count: 0
+
 # Dynamodb
 
 [Cheatsheet - Dynamodb](https://tutorialsdojo.com/amazon-dynamodb)
@@ -63,6 +65,7 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 ## Note
 
 - RDS MySQL is not as scalable and cost-effective as DynamoDB.
+- It is not recommended to store authorization tokens permanently on DynamoDB tables. These tokens should be generated upon user authentication and then temporarily saved on a DynamoDB for a fixed session length.
 
 
 ## Blogs

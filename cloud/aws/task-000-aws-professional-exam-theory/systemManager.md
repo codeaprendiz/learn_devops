@@ -1,3 +1,5 @@
+> Revision Count: 1
+
 # System Manager
 
 [What is AWS Systems Manager?](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)
@@ -8,7 +10,12 @@
 - you can use to view and control your infrastructure on AWS
 - you can view operational data from multiple AWS services and automate operational tasks across your AWS resources.
 - helps you maintain security and compliance by scanning your managed instances and reporting on (or taking corrective action on) any policy violations it detects.
-- Systems Manager is comprised of individual capabilities, which are grouped into five categories: Operations Management, Application Management, Change Management, Node Management, and Shared Resources.
+- Systems Manager is comprised of individual capabilities, which are grouped into five categories: 
+  - Operations Management, 
+  - Application Management, 
+  - Change Management, 
+  - Node Management, 
+  - and Shared Resources.
 
 
 ## Systems Manager Patch Manager
@@ -18,9 +25,14 @@
 - Patch Manager, a capability of AWS Systems Manager, automates the process of patching managed instances with both security related and other types of updates
 - You can use Patch Manager to apply patches for both operating systems and applications. (On Windows Server, application support is limited to updates for applications released by Microsoft.) 
 - You can use Patch Manager to install Service Packs on Windows instances and perform minor version upgrades on Linux instances. 
+- You can patch fleets of Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, or your on-premises servers and virtual machines (VMs) by operating system type. 
 - You can install patches on a regular basis by scheduling patching to run as a Systems Manager maintenance window task.
+- Patch Manager integrates with AWS Identity and Access Management (IAM), AWS CloudTrail, and Amazon EventBridge to provide a secure patching experience that includes event notifications and the ability to audit usage.
+- Patch Manager uses `patch baselines`, which include rules for auto-approving patches within days of their release, in addition to a list of approved and rejected patches. 
+- You can install patches on a regular basis by scheduling patching to run as a Systems Manager maintenance window task. You can also install patches individually or to large groups of managed nodes by using tags. (Tags are keys that help identify and sort your resources within your organization.) 
+- You can add tags to your patch baselines themselves when you create or update them.
 
-[Patching your Windows EC2 instances using AWS Systems Manager Patch Manager](https://aws.amazon.com/blogs/mt/patching-your-windows-ec2-instances-using-aws-systems-manager-patch-manager)
+
 
 
 ## Monitoring
@@ -39,7 +51,7 @@
 
 [AWS Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html)
 
-- Parameter Store, a capability of AWS Systems Manager, provides secure, hierarchical storage for configuration data management and secrets managemen
+- Parameter Store, a capability of AWS Systems Manager, provides secure, hierarchical storage for configuration data management and secrets management
 - You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values
 - You can store values as plain text or encrypted data
 - Parameter Store is also integrated with Secrets Manager
@@ -104,3 +116,19 @@ The five recommended SSM documents include:
 
 - Delete a parameter from the system. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.
 
+
+
+## Notes
+
+- The AWS Systems Manager Run Command is primarily used to remotely manage the configuration of your managed instances while AWS Systems Manager State Manager is just a configuration management service that automates the process of keeping your Amazon EC2 and hybrid infrastructure in a state that you define
+
+
+## Blogs
+
+- [Patching your Windows EC2 instances using AWS Systems Manager Patch Manager](https://aws.amazon.com/blogs/mt/patching-your-windows-ec2-instances-using-aws-systems-manager-patch-manager)
+  - For example, you can create patch groups for different environments/tagged instances such as development, test, and production
+  - you can install patches on a regular basis by scheduling patching to run as a Maintenance Windows task
+  - A patch baseline defines which patches should and shouldn’t be installed on your instances. 
+  - You can individually specify approved or rejected patches, or you can use auto-approval rules to specify that certain types of updates (for example, critical updates), should automatically be approved for patching.
+  - AWS Systems Manager Maintenance Windows let you define a schedule for when to perform potentially disruptive actions on your instances such as patching an operating system (OS), updating drivers, or installing software. 
+  - Each Maintenance Window has a schedule, a duration, a set of registered targets, and a set of registered tasks. 
