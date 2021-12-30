@@ -1,4 +1,4 @@
-> Revision Count: 0
+> Revision Count: 1
 
 
 # Identify And Access Management
@@ -62,9 +62,13 @@
 ## Using an IAM role to grant permissions to applications running on Amazon EC2 instances
 
 [Using an IAM role to grant permissions to applications running on Amazon EC2 instances](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html#roles-usingrole-ec2instance-roles)
-
-- Applications that run on an EC2 instance must include AWS credentials in the AWS API requests
-- you can and should use an IAM role to manage temporary credentials for applications that run on an EC2 instance.
+- The administrator uses IAM to create the Get-pics role. 
+- In the role's trust policy, the administrator specifies that only EC2 instances can assume the role
+- In the role's permission policy, the administrator specifies read-only permissions for the photos bucket.
+- A developer launches an EC2 instance and assigns the Get-pics role to that instance.
+- When the application runs, it obtains temporary security credentials from Amazon EC2 instance metadata,
+- Using the retrieved temporary credentials, the application accesses the photo bucket. 
+- Because of the policy attached to the Get-pics role, the application has read-only permissions.
 
 ## Tutorials
 
@@ -74,9 +78,17 @@
 
 The above tutorial teaches you how to use a role to delegate access to resources in different AWS accounts that you own called Production and Development
 
+- Step 1: Create a role in the Production Account
+  - First, you use the AWS Management Console to establish trust between the Production account (ID number 999999999999) and the Development account (ID number 111111111111). 
+  - You start by creating an IAM role named UpdateApp. 
+  - When you create the role, you define the Development account as a trusted entity and specify a permissions policy that allows trusted users to update the productionapp bucket.
+  
+
 ### Providing access to an IAM user in another AWS account that you own
 
 [Providing access to an IAM user in another AWS account that you own](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html)
+
+- You can grant your IAM users permission to switch to roles within your AWS account or to roles defined in other AWS accounts that you own.
 
 
 ## Controlling access to AWS resources using tags
@@ -84,6 +96,19 @@ The above tutorial teaches you how to use a role to delegate access to resources
 [Controlling access to AWS resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)
 
 - You can use tags to control access to your AWS resources that support tagging, including IAM resources. 
+- Imagine that you have Amazon EC2 instances that are critical to your organization. 
+- Instead of directly granting your users permission to terminate the instances, you can create a role with those privileges.
+
+- Example scenario using separate development and production accounts
+  - In the production account, an administrator uses IAM to create the UpdateApp role in that account. 
+    - In the role, the administrator defines a trust policy that specifies the development account as a Principal, meaning that authorized users from the development account can use the UpdateApp role. 
+    - The administrator also defines a permissions policy for the role that specifies the read and write permissions to the Amazon S3 bucket named productionapp.
+  - In the development account, an administrator grants members of the Developers group permission to switch to the role. 
+    - This is done by granting the Developers group permission to call the AWS Security Token Service (AWS STS) AssumeRole API for the UpdateApp role.
+  - The user requests switches to the role
+  - AWS STS returns temporary credentials
+  - The temporary credentials allow access to the AWS resource
+
 
 ## Using an IAM role to grant permissions to applications running on Amazon EC2 instances
 
@@ -122,10 +147,8 @@ The above tutorial teaches you how to use a role to delegate access to resources
 
 - If you create a mobile or web-based app that accesses AWS resources, the app needs security credentials in order to make programmatic requests to AWS. 
 - For most mobile application scenarios, we recommend that you use Amazon Cognito.
-
-### Federating users of a mobile or web-based app with Amazon Cognito
-
 - for more advanced scenarios, you can work directly with a third-party service like Login with Amazon, Facebook, Google, or any IdP that is compatible with OpenID Connect (OIDC).
+
 
 ### Federating users with SAML 2.0
 
