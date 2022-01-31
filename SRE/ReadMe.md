@@ -6,6 +6,8 @@
 
 [What is blue green deployment?](https://semaphoreci.com/blog/blue-green-deployment)
 
+[what-happens-when-you-type-an-url-in-the-browser-and-press-enter](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
+
 ### Free Ebooks
 
 [building_secure_and_reliable_systems](https://static.googleusercontent.com/media/sre.google/en//static/pdf/building_secure_and_reliable_systems.pdf)
