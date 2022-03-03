@@ -28,3 +28,4 @@
 - [kafka-lag-monitoring-and-metrics-at-appsflyer](kafka-lag-monitoring-and-metrics-at-appsflyer](https://www.confluent.io/blog/kafka-lag-monitoring-and-metrics-at-appsflyer)
 - [kubernetes-networking-guide-beginners.html](https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-networking-guide-beginners.html)
 - [10-best-practices-to-containerize-nodejs-web-applications-with-docker](https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/)
+- [enterprise-ci-cd-best-practices-part-1](https://codefresh.io/devops/enterprise-ci-cd-best-practices-part-1/)
