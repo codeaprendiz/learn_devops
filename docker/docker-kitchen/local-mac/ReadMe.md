@@ -1,2 +1,3 @@
 - [Getting started](task-001-getting-started)
 - [Sample App](task-002-sample-app)
+- [Update the sample app](task-003-update-sample-app)
