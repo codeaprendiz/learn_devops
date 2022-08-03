@@ -4,6 +4,7 @@
 - [if IP address belongs to CIDR](task-003-if-IP-belongs-to-CIDR)
 - [visualizing-k8s-using-dashboard](task-002-visualizing-k8s-using-dashboard)
 - [mac book pro productivity](https://medium.com/adventures-in-consumer-technology/3-keyboard-shortcuts-i-wish-i-learned-long-ago-385d7f73e822)
+- [Creating email signatures](https://webapp.wisestamp.com/editor)
 
 ### Developer Experience
 
