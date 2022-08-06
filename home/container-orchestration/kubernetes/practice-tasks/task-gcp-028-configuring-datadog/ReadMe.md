@@ -59,28 +59,28 @@ $ kubectl exec -it datadog-cluster-agent-67588d6f7b-znkxm agent status | egrep "
 
 - Live Tail
 
-![](../../../images/kubernetes/gcp/task-011-configuring-datadog/live-tail-logs.png)
+![](.images/live-tail-logs.png)
 
 
 - Logs dashboard
 
-![](../../../images/kubernetes/gcp/task-011-configuring-datadog/logs-dasboard-page.png)
+![](.images/logs-dasboard-page.png)
 
 
 ### Dashboard
 
 - k8s dashboard
 
-![](../../../images/kubernetes/gcp/task-011-configuring-datadog/k8s-dashboard-pic1.png)
+![](.images/k8s-dashboard-pic1.png)
 
 
-![](../../../images/kubernetes/gcp/task-011-configuring-datadog/k8s-dashboard-pic2.png)
+![](.images/k8s-dashboard-pic2.png)
 
 
-![](../../../images/kubernetes/gcp/task-011-configuring-datadog/k8s-dashboard-pic3.png)
+![](.images/k8s-dashboard-pic3.png)
 
 ### Events
 
 - Events tab
 
-![](../../../images/kubernetes/gcp/task-011-configuring-datadog/events-tab.png)
+![](.images/events-tab.png)
