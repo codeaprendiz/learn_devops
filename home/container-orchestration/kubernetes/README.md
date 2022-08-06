@@ -27,6 +27,12 @@ Tasks Local |
 [task-gcp-020   :    Basic namespace wide kubeconfig](practice-tasks/task-gcp-020-basic-namespace-wide-kubeconfig)
 [task-gcp-021   :    Intermediate namespace wide kubeconfig](practice-tasks/task-gcp-021-intermediate-namespace-wide-kubeconfig)
 [task-gcp-022   :    k8s dashboard](practice-tasks/task-gcp-022-k8s-dashboard)
+[task-gcp-023   :    traefik whoami](practice-tasks/task-gcp-023-traefik-whoami)
+[task-gcp-024   :    traefik whoami tomlInConfigMap](practice-tasks/task-gcp-024-traefik-whoami-tomlInConfigMap)
+[task-gcp-025   :    traefik whoami lets encrypt](practice-tasks/task-gcp-025-traefik-whoami-lets-encrypt)
+[task-gcp-026   :    external IP to access Application In Cluster](practice-tasks/task-gcp-026-external-IP-to-access-Application-In-Cluster)
+[task-gcp-027   :    Intermediate cluster wide kubeconfig](practice-tasks/task-gcp-027-intermediate-cluster-wide-kubeconfig)
+
 
 
 ## gcp
