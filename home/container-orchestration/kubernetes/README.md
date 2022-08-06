@@ -3,7 +3,10 @@
 
 Tasks |
 ---    | 
- [task-000-commands](practice-tasks/task-000-commands/commands.md)|
+[task-000-commands](practice-tasks/task-000-commands/commands.md)|
+[task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace](practice-tasks/task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace) |
+[task-local-002-configure-default-memory-requests-and-limits-for-a-namespace](practice-tasks/task-local-002-configure-default-memory-requests-and-limits-for-a-namespace)
+[task-local-003-understanding-k8s-port-forward](practice-tasks/task-local-003-understanding-k8s-port-forward)
 
 ## gcp
 
