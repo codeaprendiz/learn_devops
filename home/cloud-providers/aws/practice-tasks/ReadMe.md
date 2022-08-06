@@ -1,10 +1,9 @@
 # practice-tasks
 
 
-- [AWS Professional Certification](task-000-aws-professional-cert)
-- [Use AWS KMS to do symmetric key encryption for PCI data](task-001-kms)
-- [How can we monitor AWS MSK using CloudWatch](task-002-monitoring-msk)
-- [Redirecting Apex domain to the another domain's subdomain](task-003-redirection-using-s3-cloudfront)
+- [task-000 - Use AWS KMS to do symmetric key encryption for PCI data](task-001-kms)
+- [task-001 - How can we monitor AWS MSK using CloudWatch](task-002-monitoring-msk)
+- [task-002 - Redirecting Apex domain to the another domain's subdomain](task-003-redirection-using-s3-cloudfront)
 
 
 
