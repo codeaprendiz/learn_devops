@@ -117,7 +117,7 @@ treafik-helm-template-traefik   LoadBalancer   100.65.168.87   a93259cfe3e684048
 
 You will get the following Load Balancer on AWS
 
-![](../../../images/kubernetes/aws/task-001-deploy-treafik-kops-k8s-helm/aws_load_balancer.png)
+![](.images/aws_load_balancer.png)
 
 
 Now we are getting 404 when we hit the load balancer.
