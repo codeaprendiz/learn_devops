@@ -13,7 +13,6 @@ This tutorial demonstrates the following steps:
 GKE Cluster created `us-central1-c	`
 
 
-![](../../../images/kubernetes/gcp/task-009-configuring-dns-with-static-IPs-k8-using-Service/GKE_cluster_created.png)
 
 ## Step 1: 
 
