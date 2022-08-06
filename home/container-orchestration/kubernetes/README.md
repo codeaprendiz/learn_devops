@@ -1,25 +1,25 @@
 # Practice Tasks
 
-[task-000-commands](practice-tasks/task-000-commands/commands.md)|
+[task-000       :    Commands](practice-tasks/task-000-commands/commands.md)
 
 
 Tasks Local |
 ---    | 
-[task-local-001 : configure default CPU requests and limits for a namespace](practice-tasks/task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace) |
-[task-local-002-configure-default-memory-requests-and-limits-for-a-namespace](practice-tasks/task-local-002-configure-default-memory-requests-and-limits-for-a-namespace)
-[task-local-003-understanding-k8s-port-forward](practice-tasks/task-local-003-understanding-k8s-port-forward)
-[task-local-004-expose-svc-via-nodeport](practice-tasks/task-local-004-expose-svc-via-nodeport)
-[task-local-005-access-svc-nodeport-via-ingress](practice-tasks/task-local-005-access-svc-nodeport-via-ingress)
-[task-local-006-access-svc-clusterip-via-ingress](practice-tasks/task-local-006-access-svc-clusterip-via-ingress)
-[task-local-007-jenkins-k8s](practice-tasks/task-local-007-jenkins-k8s)
-[task-local-008-kafka](practice-tasks/task-local-008-kafka)
-[task-local-009-kafdrop](practice-tasks/task-local-009-kafdrop)
+[task-local-001 :    Configure default cpu requests and limits for a namespace](practice-tasks/task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace) |
+[task-local-002 :    Configure default memory requests and limits for a namespace](practice-tasks/task-local-002-configure-default-memory-requests-and-limits-for-a-namespace)
+[task-local-003 :    Understanding k8s port forward](practice-tasks/task-local-003-understanding-k8s-port-forward)
+[task-local-004 :    Expose svc via nodeport](practice-tasks/task-local-004-expose-svc-via-nodeport)
+[task-local-005 :    Access svc nodeport via ingress](practice-tasks/task-local-005-access-svc-nodeport-via-ingress)
+[task-local-006 :    Access svc clusterip via ingress](practice-tasks/task-local-006-access-svc-clusterip-via-ingress)
+[task-local-007 :    Jenkins k8s](practice-tasks/task-local-007-jenkins-k8s)
+[task-local-008 :    Kafka](practice-tasks/task-local-008-kafka)
+[task-local-009 :    Kafdrop](practice-tasks/task-local-009-kafdrop)
 
 
 Tasks aws |
 ---    | 
-[task-aws-010-deploy-treafik-kops-k8s-helm](practice-tasks/task-aws-010-deploy-treafik-kops-k8s-helm) |
-[task-aws-011-treafik-kops-whoami](practice-tasks/task-aws-011-treafik-kops-whoami)
+[task-aws-010   :    Deploy-treafik-kops-k8s-helm](practice-tasks/task-aws-010-deploy-treafik-kops-k8s-helm) |
+[task-aws-011   :    Treafik-kops-whoami](practice-tasks/task-aws-011-treafik-kops-whoami)
 
 ## gcp
 

@@ -1,9 +1,9 @@
 # practice-tasks
 
 
-- [task-000 - Use AWS KMS to do symmetric key encryption for PCI data](door/task-001-kms)
-- [task-001 - How can we monitor AWS MSK using CloudWatch](door/task-002-monitoring-msk)
-- [task-002 - Redirecting Apex domain to the another domain's subdomain](door/task-003-redirection-using-s3-cloudfront)
+- [task-000 :    Use AWS KMS to do symmetric key encryption for PCI data](door/task-001-kms)
+- [task-001 :    How can we monitor AWS MSK using CloudWatch](door/task-002-monitoring-msk)
+- [task-002 :    Redirecting Apex domain to the another domain's subdomain](door/task-003-redirection-using-s3-cloudfront)
 
 
 
