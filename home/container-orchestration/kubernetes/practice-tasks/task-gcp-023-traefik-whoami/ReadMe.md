@@ -21,21 +21,21 @@ whoami       ClusterIP      10.109.10.217   <none>          80/TCP              
 
 - Dashboard
     
-![](./../../../images/kubernetes/gcp/task-005-traefik-whoami/traefik-homepage-part1.png)
+![](.images/traefik-homepage-part1.png)
 
-![](./../../../images/kubernetes/gcp/task-005-traefik-whoami/traefik-homepage-part2.png)
+![](.images/traefik-homepage-part2.png)
 
 
 - HTTP Routers
-![](./../../../images/kubernetes/gcp/task-005-traefik-whoami/http-routers.png)
+![](.images/http-routers.png)
 
 - HTTP Services
-![](./../../../images/kubernetes/gcp/task-005-traefik-whoami/http-services.png)
+![](.images/http-services.png)
 
 - HTTP Middlewares
-![](./../../../images/kubernetes/gcp/task-005-traefik-whoami/http-middlewares.png)
+![](.images/http-middlewares.png)
 
 
 - Accessing whoami service
 
-![](./../../../images/kubernetes/gcp/task-005-traefik-whoami/whoami-service.png)
+![](.images/whoami-service.png)
