@@ -38,33 +38,33 @@ $ kubectl apply -f .
 
     - Infra VMs
 
-        ![](../../../images/kubernetes/gcp/task-014-metricbeat/Infra-vms.png)
+        ![](.images/Infra-vms.png)
 
     - Infra Pods
     
-        ![](../../../images/kubernetes/gcp/task-014-metricbeat/Infra-Pods.png)
+        ![](.images/Infra-Pods.png)
         
     - Pod Metrics
     
-        ![](../../../images/kubernetes/gcp/task-014-metricbeat/Pod-metrics.png)
+        ![](.images/Pod-metrics.png)
         
     - Pre Built Imported Dashboard
     
-        ![](../../../images/kubernetes/gcp/task-014-metricbeat/K8s-dashboard.png)
+        ![](.images/K8s-dashboard.png)
         
     - Pre Built System - Overview Dashboard
     
-        ![](../../../images/kubernetes/gcp/task-014-metricbeat/system-overview.png)
+        ![](.images/system-overview.png)
         
     - Pre Built Host Overview Dashboard
     
-        ![](../../../images/kubernetes/gcp/task-014-metricbeat/host-overview.png)
+        ![](.images/host-overview.png)
         
-        ![](../../../images/kubernetes/gcp/task-014-metricbeat/host-overview-2.png)
+        ![](.images/host-overview-2.png)
         
     - Pre Built Containers Dashboard
     
-        ![](../../../images/kubernetes/gcp/task-014-metricbeat/containers-overview.png)
+        ![](.images/containers-overview.png)
      
         
         
