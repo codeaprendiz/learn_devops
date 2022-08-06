@@ -1,4 +1,7 @@
+[Article](https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-networking-guide-beginners.html)
+
 ### Networking
+
 
 #### Communication between containers in the same pod
 
@@ -71,6 +74,3 @@ In Kubernetes, this bridge is called cbr0. Every pod on a node is part of the br
 - Then kube-proxy converts that service's IP address into a pod IP address. After that, based on whether the pods are on the same node or on different
 
 
-References
-
-[kubernetes-networking-guide-beginners.html](https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-networking-guide-beginners.html)
