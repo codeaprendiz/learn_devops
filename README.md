@@ -21,8 +21,7 @@
   
 | Contents        |            | 
 | ------------- |:-------------:| 
-| [door](home/cloud-providers/aws)   |  | 
-| [certification-digest](home/cloud-providers/aws/door/certifications-digest)    | [practice-tasks](home/cloud-providers/aws/door/practice-tasks) | 
+| [certification-digest](home/cloud-providers/aws/certifications-digest)    | [practice-tasks](home/cloud-providers/aws/practice-tasks) | 
 
 
 
