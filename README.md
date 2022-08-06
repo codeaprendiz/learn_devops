@@ -33,7 +33,7 @@
 
 | Contents                 |                    | 
 |--------------------------|:------------------:| 
-| [kubernetes-concepts](home/container-orchestration/kubernetes/concepts) | [kubernetes-practice-tasks](home/container-orchestration/kubernetes/practice-tasks) | 
+| [kubernetes-concepts](home/container-orchestration/kubernetes/concepts) | [kubernetes-practice-tasks](home/container-orchestration/kubernetes) | 
 
 
 ## databases
