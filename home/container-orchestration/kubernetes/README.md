@@ -7,6 +7,14 @@ Tasks |
 [task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace](practice-tasks/task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace) |
 [task-local-002-configure-default-memory-requests-and-limits-for-a-namespace](practice-tasks/task-local-002-configure-default-memory-requests-and-limits-for-a-namespace)
 [task-local-003-understanding-k8s-port-forward](practice-tasks/task-local-003-understanding-k8s-port-forward)
+[task-local-004-expose-svc-via-nodeport](practice-tasks/task-local-004-expose-svc-via-nodeport)
+[task-local-005-access-svc-nodeport-via-ingress](practice-tasks/task-local-005-access-svc-nodeport-via-ingress)
+[task-local-006-access-svc-clusterip-via-ingress](practice-tasks/task-local-006-access-svc-clusterip-via-ingress)
+[task-local-007-jenkins-k8s](practice-tasks/task-local-007-jenkins-k8s)
+[task-local-008-kafka](practice-tasks/task-local-008-kafka)
+[task-009-kafdrop](practice-tasks/task-009-kafdrop)
+
+
 
 ## gcp
 
