@@ -1,9 +1,10 @@
-# kubernetes
+# Practice Tasks
 
-
-Tasks |
----    | 
 [task-000-commands](practice-tasks/task-000-commands/commands.md)|
+
+
+Tasks Local |
+---    | 
 [task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace](practice-tasks/task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace) |
 [task-local-002-configure-default-memory-requests-and-limits-for-a-namespace](practice-tasks/task-local-002-configure-default-memory-requests-and-limits-for-a-namespace)
 [task-local-003-understanding-k8s-port-forward](practice-tasks/task-local-003-understanding-k8s-port-forward)
@@ -12,9 +13,13 @@ Tasks |
 [task-local-006-access-svc-clusterip-via-ingress](practice-tasks/task-local-006-access-svc-clusterip-via-ingress)
 [task-local-007-jenkins-k8s](practice-tasks/task-local-007-jenkins-k8s)
 [task-local-008-kafka](practice-tasks/task-local-008-kafka)
-[task-009-kafdrop](practice-tasks/task-009-kafdrop)
+[task-local-009-kafdrop](practice-tasks/task-local-009-kafdrop)
 
 
+Tasks aws |
+---    | 
+[task-aws-010-deploy-treafik-kops-k8s-helm](practice-tasks/task-aws-010-deploy-treafik-kops-k8s-helm) |
+[task-aws-011-treafik-kops-whoami](practice-tasks/task-aws-011-treafik-kops-whoami)
 
 ## gcp
 
