@@ -5,7 +5,7 @@
 
 Tasks Local |
 ---    | 
-[task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace](practice-tasks/task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace) |
+[task-local-001 : configure default CPU requests and limits for a namespace](practice-tasks/task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace) |
 [task-local-002-configure-default-memory-requests-and-limits-for-a-namespace](practice-tasks/task-local-002-configure-default-memory-requests-and-limits-for-a-namespace)
 [task-local-003-understanding-k8s-port-forward](practice-tasks/task-local-003-understanding-k8s-port-forward)
 [task-local-004-expose-svc-via-nodeport](practice-tasks/task-local-004-expose-svc-via-nodeport)
