@@ -1,6 +1,9 @@
-# kubernetes-kitchen
+# kubernetes
 
 
+Tasks |
+---    | 
+ [task-000-commands](practice-tasks/task-000-commands/commands.md)|
 
 ## gcp
 
