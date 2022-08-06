@@ -2,7 +2,6 @@
 
 [task-000       :    Commands](practice-tasks/task-000-commands/commands.md)
 
-## Local Tasks
 
 Tasks Local |
 ---    | 
@@ -15,15 +14,15 @@ Tasks Local |
 [task-local-007 :    Jenkins k8s](practice-tasks/task-local-007-jenkins-k8s)
 [task-local-008 :    Kafka](practice-tasks/task-local-008-kafka)
 [task-local-009 :    Kafdrop](practice-tasks/task-local-009-kafdrop)
-
-## AWS Tasks
-
-Tasks aws |
----    | 
 [task-aws-010   :    Deploy-treafik-kops-k8s-helm](practice-tasks/task-aws-010-deploy-treafik-kops-k8s-helm) |
 [task-aws-011   :    Treafik-kops-whoami](practice-tasks/task-aws-011-treafik-kops-whoami)
 [task-aws-012   :    Kops-with-treafik-customization](practice-tasks/task-aws-012-kops-with-treafik-customization)
 [task-aws-013   :    Oauth2 proxy](practice-tasks/task-aws-013-oauth2-proxy)
+[task-aws-014   :    Traefik kops whoami middleware](practice-tasks/task-aws-014-traefik-kops-whoami-middleware)
+[task-aws-015   :    INPROGRESS lets encrypt kops cluster](practice-tasks/task-aws-015-lets-encrypt-kops-cluster)
+[task-aws-016   :    k8s cluster using kops](practice-tasks/task-aws-016-k8s-cluster-using-kops)
+[task-aws-017   :    Updating a kops cluster](practice-tasks/task-aws-017-updating-a-kops-cluster)
+[task-aws-018   :    Kong ingress on eks](practice-tasks/task-aws-018-kong-ingress-on-eks)
 
 ## gcp
 
