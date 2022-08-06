@@ -2,6 +2,7 @@
 
 [task-000       :    Commands](practice-tasks/task-000-commands/commands.md)
 
+## Local Tasks
 
 Tasks Local |
 ---    | 
@@ -15,11 +16,14 @@ Tasks Local |
 [task-local-008 :    Kafka](practice-tasks/task-local-008-kafka)
 [task-local-009 :    Kafdrop](practice-tasks/task-local-009-kafdrop)
 
+## AWS Tasks
 
 Tasks aws |
 ---    | 
 [task-aws-010   :    Deploy-treafik-kops-k8s-helm](practice-tasks/task-aws-010-deploy-treafik-kops-k8s-helm) |
 [task-aws-011   :    Treafik-kops-whoami](practice-tasks/task-aws-011-treafik-kops-whoami)
+[task-aws-012   :    Kops-with-treafik-customization](practice-tasks/task-aws-012-kops-with-treafik-customization)
+[task-aws-013   :    Oauth2 proxy](practice-tasks/task-aws-013-oauth2-proxy)
 
 ## gcp
 
