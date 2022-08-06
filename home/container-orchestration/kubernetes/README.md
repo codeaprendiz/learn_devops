@@ -23,6 +23,11 @@ Tasks Local |
 [task-aws-016   :    k8s cluster using kops](practice-tasks/task-aws-016-k8s-cluster-using-kops)
 [task-aws-017   :    Updating a kops cluster](practice-tasks/task-aws-017-updating-a-kops-cluster)
 [task-aws-018   :    Kong ingress on eks](practice-tasks/task-aws-018-kong-ingress-on-eks)
+[task-gcp-019   :    Elastic search](practice-tasks/task-gcp-019-elastic-search)
+[task-gcp-020   :    Basic namespace wide kubeconfig](practice-tasks/task-gcp-020-basic-namespace-wide-kubeconfig)
+[task-gcp-021   :    Intermediate namespace wide kubeconfig](practice-tasks/task-gcp-021-intermediate-namespace-wide-kubeconfig)
+[task-gcp-022   :    k8s dashboard](practice-tasks/task-gcp-022-k8s-dashboard)
+
 
 ## gcp
 
