@@ -12,7 +12,7 @@ This tutorial demonstrates the following steps:
 ## Step 0:
 GKE Cluster created `us-central1-c	`
 
-![](../task-009-configuring-dns-with-static-IPs-k8-using-Service/.ReadMe_images/GKE_cluster_created.png)
+![](.images/GKE_cluster_created.png)
 
 ## Step 1: 
 
