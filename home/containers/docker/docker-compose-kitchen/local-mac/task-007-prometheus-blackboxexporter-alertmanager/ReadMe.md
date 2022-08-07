@@ -117,7 +117,7 @@ receivers:
              {{ end }}
           {{ end }}
         channel: '#test-monitoring'
-        api_url: 'https://hooks.slack.com/services/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'
+        api_url: 'https://hooks.slack.com/services/TTRU82U0N/some_secret_here'
 
   - name: 'slack-danger'
     slack_configs:
@@ -136,7 +136,7 @@ receivers:
              {{ end }}
           {{ end }}
         channel: '#test-monitoring'
-        api_url: 'https://hooks.slack.com/services/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'
+        api_url: 'https://hooks.slack.com/services/TTRU82U0N/some_secret_here'
 
   - name: 'slack-critical'
     slack_configs:
@@ -155,7 +155,7 @@ receivers:
              {{ end }}
           {{ end }}
         channel: '#test-monitoring'
-        api_url: 'https://hooks.slack.com/services/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'
+        api_url: 'https://hooks.slack.com/services/TTRU82U0N/some_secret_here'
 ```
 
 - blackboxexporter/config.yml

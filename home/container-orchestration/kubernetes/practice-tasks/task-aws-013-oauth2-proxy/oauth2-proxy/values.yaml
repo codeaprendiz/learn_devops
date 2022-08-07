@@ -199,14 +199,14 @@ configuration:
   clientID: "something23423423423-a95o1338f0ckk0s32hesn7o441icep2l.apps.googleusercontent.com"
   ## @param configuration.clientSecret OAuth client secret
   ##
-  clientSecret: "XI3f_something23423423423BWTl"
+  clientSecret: "type_secret_here"
   ## Create a new secret with the following command openssl rand -base64 32 | head -c 32 | base64
   ## Use an existing secret for OAuth2 credentials (see secret.yaml for required fields)
   ##
   ## @param configuration.cookieSecret OAuth cookie secret
   ##
   ### cookie_secret must be 16, 24, or 32 bytes to create an AES cipher
-  cookieSecret: "Y29va2llCgskdnfs"
+  cookieSecret: "type_secret_here"
   ## @param configuration.existingSecret Secret with the client ID, secret and cookie secret
   ##
   existingSecret: ""
