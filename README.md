@@ -58,3 +58,7 @@
 ## programming-languages
 
 ## web-servers
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
