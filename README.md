@@ -12,6 +12,7 @@
   - [observability](#observability)
   - [os-and-concepts](#os-and-concepts)
   - [productivity-tools](#productivity-tools)
+    - [Infrastructure model](#infrastructure-model)
   - [programming-languages](#programming-languages)
   - [web-servers](#web-servers)
 
@@ -55,10 +56,11 @@
 
 ## productivity-tools
 
+### Infrastructure model
+
+![Infrastructure model](home/productivity-tools/.images/infrastructure_model.png)
+
 ## programming-languages
 
 ## web-servers
 
-### Infrastructure model
-
-![Infrastructure model](.infragenie/infrastructure_model.png)
