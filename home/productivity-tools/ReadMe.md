@@ -8,7 +8,8 @@
 
 ### Developer Experience
 
-- [Setting up IDE Microsoft Visual Studio for Python]w(task-004-setting-up-visual-studio-python)
+- [Setting up you mac terminal](task-000-setting-up-terminal)
+- [Setting up IDE Microsoft Visual Studio for Python](task-004-setting-up-visual-studio-python)
 
 
 ### Tools that you should have knowledge about
