@@ -12,7 +12,6 @@
   - [observability](#observability)
   - [os-and-concepts](#os-and-concepts)
   - [productivity-tools](#productivity-tools)
-    - [Infrastructure model](#infrastructure-model)
   - [programming-languages](#programming-languages)
   - [web-servers](#web-servers)
 
