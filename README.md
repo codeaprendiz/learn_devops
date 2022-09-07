@@ -56,9 +56,7 @@
 
 ## productivity-tools
 
-### Infrastructure model
 
-![Infrastructure model](home/productivity-tools/.images/infrastructure_model.png)
 
 ## programming-languages
 
