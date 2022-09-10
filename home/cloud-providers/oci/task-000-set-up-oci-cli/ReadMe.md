@@ -40,5 +40,5 @@ key_file=~/.oci/oci-private.pem
 - If you have created any buckets, then you can list those buckets using the following command
 
 ```bash
-
+╰─ oci os bucket list --compartment-id <compartment-id> | jq '.data[] | {name} '
 ```
