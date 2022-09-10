@@ -1,4 +1,6 @@
+# Set up OCI Cli
 
+[Setup oci cli](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-provider/01-summary.htm)
 
 - Login to oracle cloud
 
