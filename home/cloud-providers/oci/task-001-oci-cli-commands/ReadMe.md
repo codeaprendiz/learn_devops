@@ -1,15 +1,7 @@
 # OCI Commands
 
 
-
-- To create a bucket in OCI
-
-```bash
-
-```
-
-
-# kubectl
+# oci
 
 
 Command / Options |  Use Case        |     Example      |  
