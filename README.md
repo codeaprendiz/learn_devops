@@ -15,7 +15,7 @@
   - [programming-languages](#programming-languages)
   - [web-servers](#web-servers)
 
-[bookmark](home/images/linux-commands/../../os-and-concepts/linux-commands/bookmark-me/bookmark-me.md)
+
 
 ## cloud-providers
 ### aws
@@ -54,6 +54,11 @@
 
 
 ## os-and-concepts
+
+| Contents        |            | 
+| ------------- |:-------------:| 
+| [linux-commands](/Users/rinkydahiya/workspace/codeaprendiz/devops-essentials/home/os-and-concepts/linux-commands/README.md)    | [bookmark me ? ](home/images/linux-commands/../../os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
+
 
 ## productivity-tools
 
