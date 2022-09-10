@@ -35,7 +35,7 @@ fingerprint=<key-fingerprint>
 tenancy=<tenancy>
 region=<region>
 key_file=~/.oci/oci-private.pem
-```~
+```
 
 - If you have created any buckets, then you can list those buckets using the following command
 
