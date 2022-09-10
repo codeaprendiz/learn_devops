@@ -1,6 +1,6 @@
 # Set up OCI Cli
 
-[Setup oci cli](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-provider/01-summary.htm)
+[Setup oci cli](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
 
 - Login to oracle cloud
 
