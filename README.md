@@ -57,7 +57,7 @@
 
 | Contents        |            | 
 | ------------- |:-------------:| 
-| [linux-commands](/Users/rinkydahiya/workspace/codeaprendiz/devops-essentials/home/os-and-concepts/linux-commands/README.md)    | [bookmark me ? ](home/images/linux-commands/../../os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
+| [linux-commands](home/os-and-concepts/linux-commands/README.md)    | [bookmark me ? ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
 
 
 ## productivity-tools
