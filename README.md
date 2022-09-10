@@ -57,7 +57,7 @@
 
 | Contents        |            | 
 | ------------- |:-------------:| 
-| [linux-commands](home/os-and-concepts/linux-commands/README.md)    | [bookmark me ? ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
+| [linux-commands 0_0](home/os-and-concepts/linux-commands/README.md)    | [bookmark me ? 0_0 ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
 
 
 ## productivity-tools
