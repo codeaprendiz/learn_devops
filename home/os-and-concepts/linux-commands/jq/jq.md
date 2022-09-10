@@ -39,3 +39,8 @@ $ echo $json | jq '.'
 $ echo $json | jq '.commit_id'
 "b8f2b8b"
 ```
+
+
+- Good links to learn
+
+[jq](https://lzone.de/cheat-sheet/jq)
