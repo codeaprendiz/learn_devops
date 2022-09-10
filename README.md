@@ -3,6 +3,7 @@
 - [home](#home)
   - [cloud-providers](#cloud-providers)
     - [aws](#aws)
+    - [oci](#oci)
   - [containers](#containers)
   - [container-orchestration](#container-orchestration)
   - [databases](#databases)
@@ -24,6 +25,8 @@
 | Contents        |            | 
 | ------------- |:-------------:| 
 | [certification-digest](home/cloud-providers/aws/certifications-digest)    | [practice-tasks](home/cloud-providers/aws/practice-tasks) | 
+
+### oci
 | | [practice-tasks](home/cloud-providers/oci/practice-tasks)
 
 
