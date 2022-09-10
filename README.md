@@ -27,6 +27,8 @@
 | [certification-digest](home/cloud-providers/aws/certifications-digest)    | [practice-tasks](home/cloud-providers/aws/practice-tasks) | 
 
 ### oci
+| Contents        |            | 
+| ------------- |:-------------:| 
 | | [practice-tasks](home/cloud-providers/oci/practice-tasks) |
 
 
