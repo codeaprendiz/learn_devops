@@ -2,6 +2,12 @@
 
 [Create compartment](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-compartment/01-summary.htm)
 
+## Key tasks include how to:
+
+Use Oracle Cloud Infrastructure Terraform provider resources to:
+- Declare a compartment with your specifics.
+- Create the compartment in your tenancy.
+
 - Plan
 
 ```bash
