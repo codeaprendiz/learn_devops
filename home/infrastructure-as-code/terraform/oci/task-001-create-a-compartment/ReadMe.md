@@ -1,5 +1,7 @@
 # Create a compartment
 
+[Create compartment](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-compartment/01-summary.htm)
+
 - Plan
 
 ```bash
@@ -18,3 +20,5 @@ Plan: 1 to add, 0 to change, 0 to destroy.
   + create
   Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
+
+
