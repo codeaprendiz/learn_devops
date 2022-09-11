@@ -9,6 +9,8 @@
   - [databases](#databases)
   - [devops-blogs](#devops-blogs)
   - [infrastructure-as-code](#infrastructure-as-code)
+    - [aws-terraform](#aws-terraform)
+    - [oci-terraform](#oci-terraform)
   - [interview](#interview)
   - [observability](#observability)
   - [os-and-concepts](#os-and-concepts)
@@ -51,6 +53,19 @@
 
 
 ## infrastructure-as-code
+
+### aws-terraform
+
+  
+| Contents        |            | 
+| ------------- |:-------------:| 
+| [Practice Tasks](home/infrastructure-as-code/terraform)    |  | 
+
+### oci-terraform
+| Contents        |            | 
+| ------------- |:-------------:| 
+| [practice-tasks](home/infrastructure-as-code/terraform/oci) |  |
+
 
 
 ## interview
