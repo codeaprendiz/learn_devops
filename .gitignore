@@ -50,3 +50,8 @@ bin
 
 ## node
 .env
+
+
+## Temp
+home/infrastructure-as-code/terraform/oci/task-004-kubernetes-cluster/
+home/infrastructure-as-code/terraform/oci/task-005-set-up-resource-discovery/
