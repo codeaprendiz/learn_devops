@@ -9,7 +9,9 @@ oke-vcn-quick-sandbox-k8s-a4bf5e044
 
 - IPV4 CIDR `10.0.0.0/16`
 - Default route table `oke-public-routetable-sandbox-k8s-a4bf5e044`
-  
+
+![](.images/subnets.png)
+
 
 ## Subnets
 
@@ -30,8 +32,11 @@ oke-nodeseclist-quick-sandbox-k8s-a4bf5e044
 > Allow pods on one worker node to communicate with pods on other worker nodes. Anything from within the subnet can communicate with one another
 - 10.0.0.0/28	--------------ICMP ------------->
 > Path discovery. Anything from API endpoint subnet can communicate over ICMP 
-- Anything coming from API endpoint subnet can communicate over TCP, all source ports to all destination ports
-- Anything coming from Internet can communicate over TCP 22 for SSH access
+- 10.0.0.0/28  All Ports --------------All Protocols-----------> All Ports
+> TCP traffic for ports: All
+> TCP access from Kubernetes Control Plane. Anything coming from API endpoint subnet can communicate over TCP, all source ports to all destination ports
+- 0.0.0.0/0 All Ports ---------------TCP-----------------------> 22 
+> TCP traffic for ports: 22 SSH Remote Login Protocol. Inbound SSH traffic to worker nodes. Anything coming from Internet can communicate over TCP 22 for SSH access
 
 #### Egress
 
@@ -56,15 +61,89 @@ oke-nodeseclist-quick-sandbox-k8s-a4bf5e044
 
 oke-private-routetable-sandbox-k8s-a4bf5e044
 
+- If -------------> 0.0.0.0/0,  go to NAT Gateway
+> traffic to the internet
+
+- If -------------> All BOM Services In Oracle Services Network, go to Service Gateway
+> traffic to OCI services
+
+
+
 
 oke-k8sApiEndpoint-subnet-quick-sandbox-k8s-a4bf5e044-regional
 - CIDR `10.0.0.0/28`
 - Public
 
+### Security List
+
+oke-k8sApiEndpoint-quick-sandbox-k8s-a4bf5e044
+
+#### Ingress
+
+![img.png](.images/ingress-api-subnet.png)
+
+- 0.0.0.0/0 All Ports ---------------TCP-----------------> 6443
+> TCP traffic for ports: 6443
+> External access to Kubernetes API endpoint
+
+- 10.0.10.0/24 All Ports ------------TCP-----------------> 6443
+> TCP traffic for ports: 6443
+> Kubernetes worker to Kubernetes API endpoint communication
+
+- 10.0.10.0/24 All Ports -----------TCP--------------------> 12250
+> TCP traffic for ports: 12250 
+> Kubernetes worker to control plane communication
+
+- 10.0.10.0/24           -----------ICMP-------------------> 
+> Path Discovery
+
+#### Egress
+
+![img.png](.images/egress-api-subnet.png)
+
+- All Ports  ------------------------TCP----------------------->             All BOM Services In Oracle Services Network, 443
+> TCP traffic for ports: 443 HTTPS
+> Allow Kubernetes Control Plane to communicate with OKE
+
+- All Ports ------------------------TCP----------------------->  10.0.10.0/24, All Ports
+> TCP traffic for ports: All
+> All traffic to worker nodes
+
+-           ------------------------ICMP----------------------> 10.0.10.0/24	
+> Path discovery
+
+
+### Route Table
+
+
+oke-public-routetable-sandbox-k8s-a4bf5e044
+
+- If ------------> 0.0.0.0/0, then go to    Internet Gateway 
+> traffic to/from internet
+
+
 oke-svclbsubnet-quick-sandbox-k8s-a4bf5e044-regional
 - CIDR `10.0.20.0/24`
 - Public
 
-![](.images/subnets.png)
+### Security List
+
+oke-svclbseclist-quick-sandbox-k8s-a4bf5e044
+
+#### Ingress
+
+![img.png](.images/ingress-lb-sec.png)
+
+#### Egress
+
+![img.png](.images/eggress-lb-sec.png)
+
+
+### Route Table
+
+
+oke-public-routetable-sandbox-k8s-a4bf5e044
+
+
 
 
