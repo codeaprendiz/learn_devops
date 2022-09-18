@@ -2,18 +2,25 @@
 
 We can later use this to create our own cluster using terraform
 
+## K8S created
+
+![](.images/k8s.png)
 
 ## The VCN Created
+
+![img.png](.images/vcn.png)
 
 oke-vcn-quick-sandbox-k8s-a4bf5e044
 
 - IPV4 CIDR `10.0.0.0/16`
 - Default route table `oke-public-routetable-sandbox-k8s-a4bf5e044`
 
-![](.images/subnets.png)
 
 
 ## Subnets
+
+![](.images/subnets.png)
+
 
 oke-nodesubnet-quick-sandbox-k8s-a4bf5e044-regional
 - CIDR `10.0.10.0/24`
