@@ -93,15 +93,15 @@ nodejs       LoadBalancer   10.8.10.40   35.239.116.72   80:30248/TCP   5m48s
 
   - Home page
 
-![](../../images/coding-tasks/task-004-nodejs-mongo-k8s/home-page.png)
+![](.images/home-page.png)
 
 
   - Get Shark Info Page
   
-![](../../images/coding-tasks/task-004-nodejs-mongo-k8s/get-shark-info-page.png)
+![](.images/get-shark-info-page.png)
 
   - After adding sharks
   
-![](../../images/coding-tasks/task-004-nodejs-mongo-k8s/after-adding-sharks.png)
+![](.images/after-adding-sharks.png)
 
 
