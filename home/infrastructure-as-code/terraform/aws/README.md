@@ -5,17 +5,19 @@
 ## Learning Tasks
 
 
-| S.No | Stack                                           | Tasks                                                                                                                | 
-|-----|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------| 
-| 1   | Commands                                        | [commands](task-set/task-000-commands/ReadMe.md)                                                                     |
-| 2   | Initialization                                  | [Setting up IAM user for terraform](task-set/task-000-initialization-setup)                                          |
-| 3   | EC2, Datasource                                 | [Create an EC2 instance by using AWS data source to choose the AMI](task-set/task-001-vars-provider-ec2-dataSources) |
-| 4   | VPC default, Subnet, Security Group, KeyPair, EC2 | [To create EC2 instance in default VPC and login](task-set/task-002-defaultVPC-sbnt-sg-kp-ec2)                       |                                                               
-| 5   | VPC default, Subnet, Security Group, KeyPair, EC2 Script | [To create EC2 instance in default VPC and run a script](task-set/task-003-defaultVPC-kp-sbnt-sg-ec2-script)
-| 6   | EC2, Output, Local File                         |  [To create EC2 instance, save private IP in local file](task-set/task-004-vars-provider-ec2-output)
-| 7   | EC2, State, S3                                  | [To create EC2 instance and save the remote state in an S3 bucket created manually](task-set/task-005-vars-provider-ec2-remoteStateInS3)
+| S.No | Stack                                                    | Tasks                                                                                                                                     | 
+|------|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------| 
+| 1    | Commands                                                 | [Commands](task-set/task-000-commands/ReadMe.md)                                                                                          |
+| 2    | Initialization                                           | [Setting up IAM user for terraform](task-set/task-000-initialization-setup)                                                               |
+| 3    | EC2, Datasource                                          | [Create an EC2 instance by using AWS data source to choose the AMI](task-set/task-001-vars-provider-ec2-dataSources)                      |
+| 4    | VPC default, Subnet, Security Group, KeyPair, EC2        | [To create EC2 instance in default VPC and login](task-set/task-002-defaultVPC-sbnt-sg-kp-ec2)                                            |                                                               
+| 5    | VPC default, Subnet, Security Group, KeyPair, EC2 Script | [To create EC2 instance in default VPC and run a script](task-set/task-003-defaultVPC-kp-sbnt-sg-ec2-script)                              |                          
+| 6    | EC2, Output, Local File                                  | [To create EC2 instance, save private IP in local file](task-set/task-004-vars-provider-ec2-output)                                       | 
+| 7    | EC2, State, S3                                           | [To create EC2 instance and save the remote state in an S3 bucket created manually](task-set/task-005-vars-provider-ec2-remoteStateInS3)  | 
+| 8    | VPC, Subnets, Module                                     | [To create default VPC and subnets using module](task-set/task-006-defaultVPC-defaultSbnt-modules-kp)                                     |
 
 
+## 
 4    | S3 IAM                                                   | [Create S3 bucket with IAM policy to access the bucket](aws/task-020-s3-iam-using-modules)                     |
 
 Kubernetes Typhoon| [Create kubernetes cluster using typhoon kubernetes](aws/task-021-k8s-cluster-typhoon)                         |
