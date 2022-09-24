@@ -5,12 +5,12 @@
 ## Learning Tasks
 
 
-| S.No | Stack                       | Tasks                                                                                                         | 
-|-----|-----------------------------|---------------------------------------------------------------------------------------------------------------| 
-| 1   | Commands                    | [commands](task-000-commands/ReadMe.md)                                                                       |
-| 2   | Initialization              | [Setting up IAM user for terraform](task-000-initialization-setup)                                            |
-| 3   | EC2, Datasource             | [Create an EC2 instance by using AWS data source to choose the AMI](task-001-vars-provider-ec2-dataSources) |
-| 4   | VPC default, Subnet, Security Group, KeyPair, EC2 | [To create EC2 instance in default VPC and login](task-002-defaultVPC-sbnt-sg-kp-ec2)      |                                                               
+| S.No | Stack                       | Tasks                                                                                                                | 
+|-----|-----------------------------|----------------------------------------------------------------------------------------------------------------------| 
+| 1   | Commands                    | [commands](task-set/task-000-commands/ReadMe.md)                                                                     |
+| 2   | Initialization              | [Setting up IAM user for terraform](task-set/task-000-initialization-setup)                                          |
+| 3   | EC2, Datasource             | [Create an EC2 instance by using AWS data source to choose the AMI](task-set/task-001-vars-provider-ec2-dataSources) |
+| 4   | VPC default, Subnet, Security Group, KeyPair, EC2 | [To create EC2 instance in default VPC and login](task-set/task-002-defaultVPC-sbnt-sg-kp-ec2)                       |                                                               
 
 
  4    | S3 IAM                      | [Create S3 bucket with IAM policy to access the bucket](aws/task-020-s3-iam-using-modules)                     |
