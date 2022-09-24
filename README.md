@@ -12,11 +12,12 @@
     - [aws-terraform](#aws-terraform)
     - [oci-terraform](#oci-terraform)
   - [interview](#interview)
+    - [coding-tasks](#coding-tasks)
   - [observability](#observability)
   - [os-and-concepts](#os-and-concepts)
   - [productivity-tools](#productivity-tools)
   - [programming-languages](#programming-languages)
-  - [version control](#version-control)
+  - [version-control](#version-control)
   - [web-servers](#web-servers)
 
 
@@ -70,6 +71,12 @@
 
 
 ## interview
+
+### coding-tasks
+| Contents        |            | 
+| ------------- |:-------------:| 
+| [coding-tasks](home/interview/coding-tasks) |  |
+
 
 
 ## observability
