@@ -8,4 +8,5 @@ Stack Used | Tasks Details |
 [Nodejs Mongo Kubernetes](task-004-nodejs-mongo-k8s) | To build Nodejs App with MongoDB and deploy using Kubernetes
 [Nodejs Mongo Kubernetes Helm Autoscale](task-005-nodejs-mongo-k8s-helm-scale) | To build Nodejs App with MongoDB and deploy using Kubernetes and Helm Charts | 
 [Nginx Kubernetes Docker](task-006-nginx-docker) | Create required docker image of nginx and test k8s pod locally |
-[Creating EKS cluster using on demand](task-007-eks-on-demand) | Creating EKS cluster using on demand
+[Terraform AWS-EKS](task-007-eks-on-demand) | Creating EKS cluster using on demand |
+[Kubernetes Nginx](task-008-k8s-nginx) | K8S Nginx | 

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-dep
+  name: nginx-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-dep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-dep
+    spec:
+      containers:
+      - image: dubizzledotcom/demo-nginx
+        name: demo-nginx
+        resources: {}
+status: {}

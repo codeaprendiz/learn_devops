@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-wildcard-host
+spec:
+  rules:
+    - host: "testingress.com"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/check.txt"
+            backend:
+              service:
+                name: nginx-dep-svc-nodeport
+                port:
+                  number: 8080
