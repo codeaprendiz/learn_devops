@@ -11,6 +11,7 @@
   - [infrastructure-as-code](#infrastructure-as-code)
     - [aws-terraform](#aws-terraform)
     - [oci-terraform](#oci-terraform)
+    - [ansible](#ansible)
   - [interview](#interview)
     - [coding-tasks](#coding-tasks)
   - [observability](#observability)
@@ -68,7 +69,11 @@
 | ------------- |:-------------:| 
 | [practice-tasks](home/infrastructure-as-code/terraform/oci) |  |
 
+### ansible
 
+| Contents        |            | 
+| ------------- |:-------------:| 
+| [practice-tasks](home/infrastructure-as-code/ansible-kitchen/README.md) |  |
 
 ## interview
 
