@@ -283,13 +283,13 @@ mongo-mongodb-headless           ClusterIP      None         <none>           27
 
 - Homepage
 
-![](../../images/coding-tasks/task-005-nodejs-mongo-k8s-helm-scale/app-homepage.png)
+![](.images/app-homepage.png)
 
 
 - Add shark
 
-![](../../images/coding-tasks/task-005-nodejs-mongo-k8s-helm-scale/add-shark-page.png)
+![](.images/add-shark-page.png)
 
 - After adding shark
 
-![](../../images/coding-tasks/task-005-nodejs-mongo-k8s-helm-scale/after-adding-shark.png)
+![](.images/after-adding-shark.png)
