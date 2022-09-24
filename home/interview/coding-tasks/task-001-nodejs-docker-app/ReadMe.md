@@ -140,11 +140,11 @@ $ docker push codeaprendiz/nodejs-image-demo
 - Images
 
   - Home page
-![](../../images/coding-tasks/task-001-nodejs-docker-app/home_page.png)
+![](.images/home_page.png)
 
   - Info page
 
-![](../../images/coding-tasks/task-001-nodejs-docker-app/info_page.png)
+![](.images/info_page.png)
 
 
 
