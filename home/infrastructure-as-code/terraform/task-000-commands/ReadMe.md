@@ -1,4 +1,4 @@
-#  terraform COMMANDS
+#  Terraform commands 
 
 - [apply](#apply)
 - [console](#console)
@@ -12,6 +12,8 @@
 - [refresh](#refresh)
 - [show](#show)
 - [taint & untaint](#taint)
+
+
   
 
 ## apply
@@ -195,12 +197,6 @@ Plan: 1 to add, 0 to change, 1 to destroy.
 $ terraform untaint aws_key_pair.mykey           
 Resource instance aws_key_pair.mykey has been successfully untainted.
 ```
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,6 @@
+// Let’s create a key pair which we are going to use to SSH on our EC2
+
+resource "aws_key_pair" "ec2key" {
+  key_name   = "publicKey"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLmviSRpF6tvGLpMExQZ94I9mqhVtINyjH1rEeDwSPB+1v00P608klF++uhRvREUyNID/i2w1cwjOi9H1isoZNoVaSKdiVIqEIp2HaIhTtKTo+NqVCdIeQXnwK2bS/OeIVScYn6YZjPAcWgMk0GH1q9zIn+sz1own3QxD4qysvoqN5bD9BxsDboLxKw803jJlcjRiSrdWbmEOoIXrEbv9t99ZxsYLIDIDZJskiAcvqKEywt+dRpvM/49c3pJ5JVluNNJypTObM2GI4piC1TcOL6xMgs+UsbDgEsHPYHXZnYENX/GGXYJcdDITCtMHap8O33EvOh5piIXHF6kQEgXDRCE61AEWnHQeGERJtTqlCiBAUUDNzAHt9UjZJVmioLJ+vLeW9M3KjUCh5MWxZ7hIJ7xvLxermNlRahzTlaGLhvkiyoaUyuh+qhpBIfCv7lioLaagv9jegc6AErMqDGFgPieJh479z+QqagPODwP0UB0jt07b7V/3csImEiy1aKY2wOQriXCkcAnSvKuAuiT2a2gOfPMJlzVd8hLrA2f5YuLWLm8p8rLXvkNSJ8YKNbQx1z5pII9R54YEOixjgp9bDNJL39ekrxlzLj72gpWg+AF+FFVNJ4gfZDjBSxUbkPhox7jhIV4DOCvc6W5uLkCXe62R9aNn1/Hkxcq99eoen1w== codeaprendiz@gmail.com"
+}
