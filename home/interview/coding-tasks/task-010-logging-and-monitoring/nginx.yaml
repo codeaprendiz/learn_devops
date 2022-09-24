@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+spec:
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      annotations:
+        ad.datadoghq.com/nginx.logs: '[{"source":"nginx","service":"webapp"}]'
+      labels:
+        app: webapp
+      name: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx

@@ -10,4 +10,5 @@ S.No | Stack Used                                                               
 6    | [Nginx Kubernetes Docker](task-006-nginx-docker)                               | Create required docker image of nginx and test k8s pod locally               |
 7    | [Terraform AWS-EKS](task-007-eks-on-demand)                                    | Creating EKS cluster using on demand instances                               |
 8    | [Kubernetes Nginx](task-008-k8s-nginx)                                         | K8S Nginx                                                                    | 
-9    | [Terraform AWS-EKS Spot And OneDemand](task-009-eks-spot-and-on-demand)        | Creating EKS cluster using on demand and spot instances
+9    | [Terraform AWS-EKS Spot And OneDemand](task-009-eks-spot-and-on-demand)        | Creating EKS cluster using on demand and spot instances                      | 
+10   | [AWS-EKS Datadog Helm Kubernetes Nginx](task-010-logging-and-monitoring) | Logging And Monitoring                                                       |
