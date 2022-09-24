@@ -19,6 +19,8 @@
 | 10   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP             | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP ](task-set/task-008-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt)                              
 | 11   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP, EBS        | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP, EBS](task-set/task-009-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt-ec2-ebs)                  
 | 12   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP, EBS, Mount | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP, EBS, Mount](task-set/task-010-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt-ec2-ebs-withMount) | 
+| 13   | Route53 Hosted Zone                                                         | [Create a hosted zone and get the list of name servers](task-set/task-011-route53)
+
 
 ## 
 4    | S3 IAM                                                   | [Create S3 bucket with IAM policy to access the bucket](aws/task-020-s3-iam-using-modules)                     |
