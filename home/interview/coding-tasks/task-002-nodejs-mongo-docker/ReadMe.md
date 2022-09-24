@@ -102,8 +102,8 @@ Example app listening on port 8080!
 
 - Add shark screen
 
-![](../../images/coding-tasks/task-002-nodejs-mongo-docker/add-shark-screen.png)
+![](.images/add-shark-screen.png)
 
 - After adding shark
 
-![](../../images/coding-tasks/task-002-nodejs-mongo-docker/after-adding-shark.png)
+![](.images/after-adding-shark.png)
