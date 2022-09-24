@@ -87,57 +87,57 @@ Forwarding from [::1]:8080 -> 80
 
 - Logs shipped to datadog
 
-![](.ReadMe_images/logs-shipped.png)
+![](.images/logs-shipped.png)
 
 
 - Kubernetes Overview
 
-![](.ReadMe_images/kubernetes-overview.png)
+![](.images/kubernetes-overview.png)
 
-![](.ReadMe_images/k8s-overview.png)
+![](.images/k8s-overview.png)
 
 - Pods Overview
 
-![](.ReadMe_images/pods-overview.png)
+![](.images/pods-overview.png)
 
 
 - Host map
 
-![](.ReadMe_images/hostmap.png)
+![](.images/hostmap.png)
 
 - Infrastructure list
 
-![](.ReadMe_images/infra-list.png)
+![](.images/infra-list.png)
 
 - Containers
 
-![](.ReadMe_images/containers.png)
+![](.images/containers.png)
 
 - CoreDNS Overview
 
-![](.ReadMe_images/coredns-overview.png)
+![](.images/coredns-overview.png)
 
 - Docker Overview
 
-![](.ReadMe_images/docker-overview.png)
+![](.images/docker-overview.png)
 
 - Daemonset overview
 
-![](.ReadMe_images/daemonset-overview.png)
+![](.images/daemonset-overview.png)
 
 - Deployments Overview
 
-![](.ReadMe_images/deployments-overview.png)
+![](.images/deployments-overview.png)
 
-![](.ReadMe_images/deployment-overview2.png)
+![](.images/deployment-overview2.png)
 
 - Cronjob Overview
 
-![](.ReadMe_images/cronjob-overview.png)
+![](.images/cronjob-overview.png)
 
 - Nodes Overview
 
-![](.ReadMe_images/nodes-overview.png)
+![](.images/nodes-overview.png)
 
 
 
@@ -146,12 +146,12 @@ Forwarding from [::1]:8080 -> 80
 
 This can also be integrated with slack
 
-![](.ReadMe_images/alert.png)
+![](.images/alert.png)
 
 We generate 500 logs manually
 
-![](.ReadMe_images/generate500.png)
+![](.images/generate500.png)
 
 And Monitor gets triggered
 
-![](.ReadMe_images/monitortriggered.png)
+![](.images/monitortriggered.png)
