@@ -165,3 +165,63 @@ Deleted branch branch1 (was 4e2e8c1).
 ## ZSH
 ╰─ gbr                           
 ```
+
+- To find out which remote branch a local is tracking. [Here's the reference](https://stackoverflow.com/questions/171550/find-out-which-remote-branch-a-local-branch-is-tracking)
+
+```bash
+╰─ git remote -vv        
+origin  git@github.com:codeaprendiz/github-playground.git (fetch)
+origin  git@github.com:codeaprendiz/github-playground.git (push)
+```
+
+- Another way to check would be
+
+```bash
+╰─ git status -sb
+## master...origin/master
+```
+
+- Yet another way to check
+
+```vim
+╰─ bat .git/config 
+───────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: .git/config
+───────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ [core]
+   2   │     repositoryformatversion = 0
+   3   │     filemode = true
+   4   │     bare = false
+   5   │     logallrefupdates = true
+   6   │     ignorecase = true
+   7   │     precomposeunicode = true
+   8   │ [remote "origin"]
+   9   │     url = git@github.com:codeaprendiz/github-playground.git
+  10   │     fetch = +refs/heads/*:refs/remotes/origin/*
+  11   │ [branch "master"]
+  12   │     remote = origin
+  13   │     merge = refs/heads/master
+```
+
+- Yet another way to track
+
+```bash
+╰─ git remote show origin
+* remote origin
+  Fetch URL: git@github.com:codeaprendiz/github-playground.git
+  Push  URL: git@github.com:codeaprendiz/github-playground.git
+  HEAD branch: master
+  Remote branches:
+    branch5 tracked
+    master  tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local refs configured for 'git push':
+    branch5 pushes to branch5 (up to date)
+    master  pushes to master  (up to date)
+```
+
+
+
+
+
