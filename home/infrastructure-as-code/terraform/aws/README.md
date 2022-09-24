@@ -5,18 +5,19 @@
 ## Learning Tasks
 
 
-| S.No | Stack                                                           | Tasks                                                                                                                                 | 
-|------|-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------| 
-| 1    | Commands                                                        | [Commands](task-set/task-000-commands/ReadMe.md)                                                                                      |
-| 2    | Initialization                                                  | [Setting up IAM user for terraform](task-set/task-000-initialization-setup)                                                           |
-| 3    | EC2, Datasource                                                 | [Create an EC2 instance by using AWS data source to choose the AMI](task-set/task-001-vars-provider-ec2-dataSources)                  |
-| 4    | VPC default, Subnet, Security Group, KeyPair, EC2               | [Create EC2 instance in default VPC and login](task-set/task-002-defaultVPC-sbnt-sg-kp-ec2)                                           |                                                               
-| 5    | VPC default, Subnet, Security Group, KeyPair, EC2 Script        | [Create EC2 instance in default VPC and run a script](task-set/task-003-defaultVPC-kp-sbnt-sg-ec2-script)                             |                          
-| 6    | EC2, Output, Local File                                         | [Create EC2 instance, save private IP in local file](task-set/task-004-vars-provider-ec2-output)                                      | 
-| 7    | EC2, State, S3                                                  | [Create EC2 instance and save the remote state in an S3 bucket created manually](task-set/task-005-vars-provider-ec2-remoteStateInS3) | 
-| 8    | VPC default, Subnets, Module                                    | [Create default VPC and subnets using module](task-set/task-006-defaultVPC-defaultSbnt-modules-kp)                                    |
-| 9    | VPC custom, Internet Gateway, Routetables, Subnet, EC2, Login   | [Custom VPC with EC2, routetables, Internet Gateway](task-set/task-007-customVPC-igw-sbnt-rt-sg-kp-ec2)                               
-| 10   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP ](task-set/task-008-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt)
+| S.No | Stack                                                                | Tasks                                                                                                                                 | 
+|------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------| 
+| 1    | Commands                                                             | [Commands](task-set/task-000-commands/ReadMe.md)                                                                                      |
+| 2    | Initialization                                                       | [Setting up IAM user for terraform](task-set/task-000-initialization-setup)                                                           |
+| 3    | EC2, Datasource                                                      | [Create an EC2 instance by using AWS data source to choose the AMI](task-set/task-001-vars-provider-ec2-dataSources)                  |
+| 4    | VPC default, Subnet, Security Group, KeyPair, EC2                    | [Create EC2 instance in default VPC and login](task-set/task-002-defaultVPC-sbnt-sg-kp-ec2)                                           |                                                               
+| 5    | VPC default, Subnet, Security Group, KeyPair, EC2 Script             | [Create EC2 instance in default VPC and run a script](task-set/task-003-defaultVPC-kp-sbnt-sg-ec2-script)                             |                          
+| 6    | EC2, Output, Local File                                              | [Create EC2 instance, save private IP in local file](task-set/task-004-vars-provider-ec2-output)                                      | 
+| 7    | EC2, State, S3                                                       | [Create EC2 instance and save the remote state in an S3 bucket created manually](task-set/task-005-vars-provider-ec2-remoteStateInS3) | 
+| 8    | VPC default, Subnets, Module                                         | [Create default VPC and subnets using module](task-set/task-006-defaultVPC-defaultSbnt-modules-kp)                                    |
+| 9    | VPC custom, Internet Gateway, Routetables, Subnet, EC2, Login        | [Custom VPC with EC2, routetables, Internet Gateway](task-set/task-007-customVPC-igw-sbnt-rt-sg-kp-ec2)                               
+| 10   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP      | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP ](task-set/task-008-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt)
+| 11   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP, EBS | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP, EBS](task-set/task-009-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt-ec2-ebs)
 
 ## 
 4    | S3 IAM                                                   | [Create S3 bucket with IAM policy to access the bucket](aws/task-020-s3-iam-using-modules)                     |
