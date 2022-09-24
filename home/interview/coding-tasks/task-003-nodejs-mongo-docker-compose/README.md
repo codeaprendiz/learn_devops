@@ -149,8 +149,8 @@ nodejs    | { name: 'Uzumaki', character: 'Naruto' }
 
   - Shark adding screen
   
-![](../../images/coding-tasks/task-003-nodejs-mongo-docker-compose/shark-adding-screen.png)
+![](.images/shark-adding-screen.png)
 
   - After adding sharks to db
   
-![](../../images/coding-tasks/task-003-nodejs-mongo-docker-compose/after-adding-sharks.png)
+![](.images/after-adding-sharks.png)
