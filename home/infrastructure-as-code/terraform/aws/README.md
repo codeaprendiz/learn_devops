@@ -25,6 +25,8 @@
 | 16   | EC2, IAM Role, Private S3                                                   | [Attach IAM role to EC2 to upload objects to private S3](task-set/task-014-IAM-roles-s3-upload-to-s3)
 | 17   | Autoscaling Group, Cloudwatch Alarms, Launch Configuration, EC2, SNS        | [Autoscaling Group, Cloudwatch Alarms, Launch Configuration, EC2](task-set/task-015-autoscaling-cloudwatchAlarm-ec2-launchConfiguration)
 | 18   | Autoscaling Group, ELB, VPC                                                 | [Autoscaling Group, ELB](task-set/task-016-ELB-autoscaling)
+| 19   | ElasticBeanStalk                                                            | [ElasticBeanStalk](task-set/task-017-Elastic-Beanstalk)
+
 ## 
 4    | S3 IAM                                                   | [Create S3 bucket with IAM policy to access the bucket](aws/task-020-s3-iam-using-modules)                     |
 
