@@ -84,7 +84,7 @@
 ### postgresql
 | Content                                       |                    | 
 |-----------------------------------------------|:------------------:| 
-| [postgresSQL-practice-tasks](/home/databases/postgresql) |  | 
+| [postgresSQL-practice-tasks](/home/databases/postgreSQL) |  | 
 
 ## devops-blogs
 
