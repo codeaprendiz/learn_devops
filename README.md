@@ -163,6 +163,12 @@ coming..soon
 |-----------------------------------------------------|:-------------:| 
 | [practice-tasks](home/programming-languages/nodejs) |  |
 
+### python
+
+| Content                                             |            | 
+|-----------------------------------------------------|:-------------:| 
+| [practice-tasks](home/programming-languages/python) |  |
+
 ## version-control
 
 ## web-servers
