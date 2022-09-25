@@ -124,12 +124,15 @@
 
 ## observability
 
+coming..soon
+
 
 ## os-and-concepts
 
-| Content        |            | 
-| ------------- |:-------------:| 
-| [linux-commands 0_0](home/os-and-concepts/linux-commands/README.md)    | [bookmark me ? 0_0 ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
+| Content                                                             |            | 
+|---------------------------------------------------------------------|:-------------:| 
+| [linux-commands 0_0](home/os-and-concepts/linux-commands/README.md) | [bookmark me ? 0_0 ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
+| [linux concepts](home/os-and-concepts/linux-essentials/README.md)   |  | 
 
 
 ## productivity-tools
