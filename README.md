@@ -11,7 +11,7 @@
   - [databases](#databases)
     - [mongo](#mongo)
     - [mysql](#mysql)
-    - [postgresSQL](#postgressql)
+    - [postgresSQL](#postgresql)
   - [devops-blogs](#devops-blogs)
   - [infrastructure-as-code](#infrastructure-as-code)
     - [aws-terraform](#aws-terraform)
@@ -81,10 +81,10 @@
 |-----------------------------------------------|:------------------:| 
 | [mysql-practice-tasks](/home/databases/mysql) |  | 
 
-### postgresSQL
+### postgresql
 | Content                                       |                    | 
 |-----------------------------------------------|:------------------:| 
-| [postgresSQL-practice-tasks](/home/databases/postgresSQL) |  | 
+| [postgresSQL-practice-tasks](/home/databases/postgresql) |  | 
 
 ## devops-blogs
 
