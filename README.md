@@ -169,6 +169,12 @@ coming..soon
 |-----------------------------------------------------|:-------------:| 
 | [practice-tasks](home/programming-languages/python) |  |
 
+### shell
+
+| Content                                            |            | 
+|----------------------------------------------------|:-------------:| 
+| [practice-tasks](home/programming-languages/shell) |  |
+
 ## version-control
 
 ## web-servers
