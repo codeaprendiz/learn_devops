@@ -28,6 +28,7 @@
 | 19   | ElasticBeanStalk                                                            | [ElasticBeanStalk](task-set/task-017-Elastic-Beanstalk)
 | 20   | ECR                                                                         | [ECR Repo](task-set/task-018-create-ECR-repo)
 | 21   | S3, IAM, Modules                                                            | [Create S3 bucket with IAM policy to access the bucket](aws/task-020-s3-iam-using-modules)                     |
+| 22   | ECS                                                                         | [In-progress ECS](task-set/task-019-ECS)
 
 Kubernetes Typhoon| [Create kubernetes cluster using typhoon kubernetes](aws/task-021-k8s-cluster-typhoon)                         |
 Route53 EC2 | [To create Route53 record to access EC2 instance](aws/task-022-route53-ec2)                                    | 
