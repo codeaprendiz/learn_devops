@@ -88,6 +88,10 @@
 
 ## devops-blogs
 
+| Content                           |                    | 
+|-----------------------------------|:------------------:| 
+| [blogs-links](/home/devops-blogs) |  | 
+
 
 ## infrastructure-as-code
 
