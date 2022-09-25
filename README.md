@@ -157,6 +157,12 @@ coming..soon
 |---------------------------------------------------------|:-------------:| 
 | [practice-tasks](home/programming-languages/javascript) |  |
 
+### nodejs
+
+| Content                                             |            | 
+|-----------------------------------------------------|:-------------:| 
+| [practice-tasks](home/programming-languages/nodejs) |  |
+
 ## version-control
 
 ## web-servers
