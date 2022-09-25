@@ -22,6 +22,7 @@
   - [observability](#observability)
   - [os-and-concepts](#os-and-concepts)
   - [productivity-tools](#productivity-tools)
+    - [task-set](#tasks-set)
   - [programming-languages](#programming-languages)
   - [version-control](#version-control)
   - [web-servers](#web-servers)
@@ -137,6 +138,10 @@ coming..soon
 
 ## productivity-tools
 
+### tasks-set
+| Content                             |            | 
+|-------------------------------------|:-------------:| 
+| [task-set](home/productivity-tools) |  |
 
 
 ## programming-languages
