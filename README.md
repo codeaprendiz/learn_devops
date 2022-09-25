@@ -9,6 +9,9 @@
     - [docker-compose](#docker-compose)
   - [container-orchestration](#container-orchestration)
   - [databases](#databases)
+    - [mongo](#mongo)
+    - [mysql](#mysql)
+    - [postgresSQL](#postgressql)
   - [devops-blogs](#devops-blogs)
   - [infrastructure-as-code](#infrastructure-as-code)
     - [aws-terraform](#aws-terraform)
@@ -68,6 +71,20 @@
 
 ## databases
 
+### mongo
+| Content                                       |                    | 
+|-----------------------------------------------|:------------------:| 
+| [mongo-practice-tasks](/home/databases/mongo) |  | 
+
+### mysql
+| Content                                       |                    | 
+|-----------------------------------------------|:------------------:| 
+| [mysql-practice-tasks](/home/databases/mysql) |  | 
+
+### postgresSQL
+| Content                                       |                    | 
+|-----------------------------------------------|:------------------:| 
+| [postgresSQL-practice-tasks](/home/databases/postgresSQL) |  | 
 
 ## devops-blogs
 
