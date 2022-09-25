@@ -24,6 +24,11 @@
   - [productivity-tools](#productivity-tools)
     - [task-set](#tasks-set)
   - [programming-languages](#programming-languages)
+    - [go](#go)
+    - [nodejs](#javascript)
+    - [nodejs](#nodejs)
+    - [python](#python)
+    - [shell](#shell)
   - [version-control](#version-control)
   - [web-servers](#web-servers)
 
