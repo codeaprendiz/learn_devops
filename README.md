@@ -77,9 +77,9 @@
 ### aws-terraform
 
   
-| Content        |            | 
-| ------------- |:-------------:| 
-| [Practice Tasks](home/infrastructure-as-code/terraform)    |  | 
+| Content                                                     |            | 
+|-------------------------------------------------------------|:-------------:| 
+| [Practice Tasks](home/infrastructure-as-code/terraform/aws) |  | 
 
 ### oci-terraform
 | Content        |            | 

@@ -27,27 +27,19 @@
 | 18   | Autoscaling Group, ELB, VPC                                                 | [Autoscaling Group, ELB](task-set/task-016-ELB-autoscaling)
 | 19   | ElasticBeanStalk                                                            | [ElasticBeanStalk](task-set/task-017-Elastic-Beanstalk)
 | 20   | ECR                                                                         | [ECR Repo](task-set/task-018-create-ECR-repo)
-| 21   | S3, IAM, Modules                                                            | [Create S3 bucket with IAM policy to access the bucket](aws/task-020-s3-iam-using-modules)                     |
+| 21   | S3, IAM, Modules                                                            | [Create S3 bucket with IAM policy to access the bucket](task-set/task-020-s3-iam-using-modules)                     |
 | 22   | ECS                                                                         | [In-progress ECS](task-set/task-019-ECS)
+| 23   | Kubernetes Typhoon                                                          | [Create kubernetes cluster using typhoon kubernetes](task-set/task-021-k8s-cluster-typhoon)                         |
+| 24   | Route53 EC2 HostedZone                                                      | [To create Route53 record to access EC2 instance](task-set/task-022-route53-ec2)                                   | 
+| 25   | AWS Certificate Manager                                                     | [Create a private certificate for your Domain using AWS Certificate Manager](task-set/task-024-certificate-manager) |
+| 26   | Terragrunt EC2 default VPC                                                  | [Create ec2 instance in default VPC](task-set/task-023-terragrunt-ec2) |
+| 27   | Terragrunt S3 IAM-User                                                      | [Create IAM User for already existing S3 bucket](task-set/task-025-terragrunt-iam-user) |
+| 28   | Terragrunt S3                                                               | [Create S3 bucket](task-set/task-026-terragrunt-s3-bucket) |
+| 29   | CDN                                                                         | [To create CDN](task-set/task-027-terragrunt-cdn) | 
+| 30   | EKS                                                                         | [To create EKS cluster](task-set/task-030-creating-eks) | 
+| 31   | EKS Spot and Ondemand                                                       | [To create EKS cluster using spot and on demand instance types](task-set/task-031-creating-eks-spot)
 
-Kubernetes Typhoon| [Create kubernetes cluster using typhoon kubernetes](aws/task-021-k8s-cluster-typhoon)                         |
-Route53 EC2 | [To create Route53 record to access EC2 instance](aws/task-022-route53-ec2)                                    | 
-AWS Certificate Manager | [Create a private certificate for your Domain using AWS Certificate Manager](aws/task-024-certificate-manager) |
 
-
-
-### Terragrunt Implementation
-
-Topic | Tasks | 
----    | --- | 
-EC2  | [Create ec2 instance in default VPC](aws/task-023-terragrunt-ec2) |
-S3 IAM | [Create IAM User for already existing S3 bucket](aws/task-025-terragrunt-iam-user) |
-S3 | [Create S3 bucket](aws/task-026-terragrunt-s3-bucket) |
-Route53 EC2 | [To create Route53 record to access EC2 instance](aws/task-022-route53-ec2) | 
-AWS Certificate Manager | [Create a private certificate for your Domain using AWS Certificate Manager](aws/task-024-certificate-manager) |
-CDN | [To create CDN](aws/task-027-terragrunt-cdn) | 
-EKS | [To create EKS cluster](aws/task-030-creating-eks)
-EKS using Spot and Ondemand | [To create EKS cluster using spot and on demand instance types](aws/task-031-creating-eks-spot)
 
 
 
