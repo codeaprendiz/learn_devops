@@ -30,7 +30,9 @@
     - [python](#python)
     - [shell](#shell)
   - [version-control](#version-control)
+    - [git](#git)
   - [web-servers](#web-servers)
+    - [nginx](#nginx)
 
 
 
@@ -182,5 +184,16 @@ coming..soon
 
 ## version-control
 
+### git
+| Content                                    |            | 
+|--------------------------------------------|:-------------:| 
+| [practice-tasks](home/version-control/git) |  |
+
 ## web-servers
+
+### nginx
+| Content                                  |            | 
+|------------------------------------------|:-------------:| 
+| [practice-tasks](home/web-servers/nginx) |  |
+
 
