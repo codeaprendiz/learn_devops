@@ -146,6 +146,11 @@ coming..soon
 
 ## programming-languages
 
+### Go
+| Content                                   |            | 
+|-------------------------------------------|:-------------:| 
+| [practice-tasks](home/programming-languages/go) |  |
+
 ## version-control
 
 ## web-servers
