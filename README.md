@@ -151,6 +151,12 @@ coming..soon
 |-------------------------------------------|:-------------:| 
 | [practice-tasks](home/programming-languages/go) |  |
 
+### javascript
+
+| Content                                                 |            | 
+|---------------------------------------------------------|:-------------:| 
+| [practice-tasks](home/programming-languages/javascript) |  |
+
 ## version-control
 
 ## web-servers
