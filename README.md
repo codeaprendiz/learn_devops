@@ -25,7 +25,7 @@
     - [task-set](#tasks-set)
   - [programming-languages](#programming-languages)
     - [go](#go)
-    - [nodejs](#javascript)
+    - [javascript](#javascript)
     - [nodejs](#nodejs)
     - [python](#python)
     - [shell](#shell)
