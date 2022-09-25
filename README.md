@@ -132,7 +132,7 @@ coming..soon
 | Content                                                             |            | 
 |---------------------------------------------------------------------|:-------------:| 
 | [linux-commands 0_0](home/os-and-concepts/linux-commands/README.md) | [bookmark me ? 0_0 ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
-| [linux concepts](home/os-and-concepts/linux-essentials/README.md)   |  | 
+| [linux concepts](home/os-and-concepts/linux-essentials)   |  | 
 
 
 ## productivity-tools
