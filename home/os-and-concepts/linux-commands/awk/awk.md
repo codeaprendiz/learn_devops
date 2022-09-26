@@ -1,5 +1,7 @@
 ## awk
 
+[awk](https://man7.org/linux/man-pages/man1/awk.1p.html)
+
 ### NAME
 awk - pattern-directed scanning and processing language
 
