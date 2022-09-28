@@ -10,6 +10,7 @@
 
 - [Setting up you mac terminal](task-000-setting-up-terminal)
 - [Setting up IDE Microsoft Visual Studio for Python](task-004-setting-up-visual-studio-python)
+- [Productivity Shortcuts]()
 
 
 ### Tools that you should have knowledge about
