@@ -2,9 +2,7 @@
 
 ## Docs Referred
 
-[autonomous-database/doc/download-client-credentials.html](https://docs.oracle.com/en-us/iaas/autonomous-database/doc/download-client-credentials.html)
-[prepare-oci-odbc-and-jdbc-oci-connections-01.html](https://docs.oracle.com/en-us/iaas/autonomous-database/doc/prepare-oci-odbc-and-jdbc-oci-connections-01.html)
-[oracle.com/database/technologies/instant-client/downloads.html](https://www.oracle.com/database/technologies/instant-client/downloads.html)
+- [autonomous-database/doc/connect-dedicated-adb.html](https://docs.oracle.com/en-us/iaas/autonomous-database/doc/connect-dedicated-adb.html)
 
 
 ## Prerequisite installation required
@@ -19,7 +17,7 @@ OpenJDK 64-Bit Server VM Homebrew (build 19, mixed mode, sharing)
 ```
 
 
-## Using SQL Developer
+### Using SQL Developer
 
 [autonomous-database/doc/connect-oracle-sql-developer.html](https://docs.oracle.com/en-us/iaas/autonomous-database/doc/connect-oracle-sql-developer.html)
 
@@ -47,6 +45,67 @@ OpenJDK 64-Bit Server VM Homebrew (build 19, mixed mode, sharing)
   - Config zip file which you downloaded
 
 ![img.png](.images/sql-developer-connect.png)
+
+### Using SQLPlus
+
+[autonomous-database/doc/connect-sqlplus.html](https://docs.oracle.com/en-us/iaas/autonomous-database/doc/connect-sqlplus.html)
+
+```bash
+╰─ brew tap InstantClientTap/instantclient
+╰─ brew update                     
+╰─ brew install instantclient-basic
+╰─ brew install instantclient-sqlplus
+
+
+╰─ sqlplus -v                                                                                                         
+
+SQL*Plus: Release 19.0.0.0.0 - Production
+Version 19.8.0.0.0
+```
+
+- Go to the database
+
+![img.png](.images/db.png)
+
+
+- Click on `DB connection`
+
+- Download the `instance` wallet
+
+- Remember the password you create while downloading the wallet `mypass`
+
+```bash
+╰─ mkdir wallet-unzipped                                                                                            
+╰─ mv Wallet_deletemedb.zip wallet-unzipped 
+╰─ unzip Wallet_deletemedb.zip
+╰─ ls
+README                cwallet.sso           ewallet.pem           ojdbc.properties      tnsnames.ora
+Wallet_deletemedb.zip ewallet.p12           keystore.jks          sqlnet.ora            truststore.jks
+
+## Only ZSH users ## https://unix.stackexchange.com/questions/706227/how-can-i-use-the-sed-command-to-replace-home-user-with
+╰─ print -P '%~'
+~/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/wallet-unzipped
+
+## Make changes in sqlnet.ora, 
+╰─ cat sqlnet.ora    
+WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/Users/username/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/wallet-unzipped")))
+SSL_SERVER_DN_MATCH=yes
+
+
+╰─ export TNS_ADMIN=/Users/username/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/wallet-unzipped
+
+
+╰─ cat tnsnames.ora | grep  deletemedb_high
+deletemedb_high = (.........)
+
+╰─ sqlplus -l  admin/yourdbpassword@deletemedb_high
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.17.0.1.0
+SQL> 
+```
+
+
 
 
 ### SQLCL
