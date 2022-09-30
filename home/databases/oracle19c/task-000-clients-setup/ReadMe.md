@@ -110,14 +110,36 @@ SQL>
 
 ### SQLCL
 
-[iaas/autonomous-database/doc/connect-oracle-sqlcl.html](https://docs.oracle.com/en-us/iaas/autonomous-database/doc/connect-oracle-sqlcl.html)
-
-
-[www.oracle.com/database/sqldeveloper/technologies/sqlcl/download](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
-
-OR [homebrew sqlcl](https://formulae.brew.sh/cask/sqlcl)
+- [autonomous-database/doc/connect-oracle-sqlcl.html](https://docs.oracle.com/en-us/iaas/autonomous-database/doc/connect-oracle-sqlcl.html)
+- [homebrew sqlcl](https://formulae.brew.sh/cask/sqlcl)
 
 ```bash
 brew install --cask sqlcl
+```
+
+- Download the wallet in the same way as above
+
+- Change the `sqlnet.ora` file in unzipped wallet
+
+```bash
+╰─ cat sqlnet.ora                          
+WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/Users/username/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/wallet-unzipped")))
+SSL_SERVER_DN_MATCH=yes
+```
+- Set the `TNS_ADMIN`
+
+```bash
+╰─ export TNS_ADMIN=/Users/username/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/wallet-unzipped
+```
+
+- Connect
+
+```bash
+╰─ sql /nolog
+SQLcl: Release 22.2 Production on Fri Sep 30 07:41:27 2022
+Copyright (c) 1982, 2022, Oracle.  All rights reserved.
+SQL> set cloudconfig /Users/username/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/Wallet_deletemedb.zip
+SQL> connect admin/qWert1234567@deletemedb_high
+Connected.
 ```
 

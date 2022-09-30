@@ -12,6 +12,7 @@
     - [mongo](#mongo)
     - [mysql](#mysql)
     - [postgresSQL](#postgresql)
+    - [oracle19c](#oracle19c)
   - [devops-blogs](#devops-blogs)
   - [infrastructure-as-code](#infrastructure-as-code)
     - [aws-terraform](#aws-terraform)
@@ -93,6 +94,11 @@
 | Content                                       |                    | 
 |-----------------------------------------------|:------------------:| 
 | [postgresSQL-practice-tasks](/home/databases/postgreSQL) |  | 
+
+### oracle19c
+| Content                                                |                    | 
+|--------------------------------------------------------|:------------------:| 
+| [oracle19c-practice-tasks](/home/databases/oracle19c) |  | 
 
 ## devops-blogs
 
