@@ -143,3 +143,22 @@ SQL> connect admin/qWert1234567@deletemedb_high
 Connected.
 ```
 
+
+### Dbeaver
+
+- [dbeaver.io/download](https://dbeaver.io/download)
+
+- New connection -> Oracle
+- Select `TNS` and give the 
+> TNS Names path : /Users/username/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/wallet-unzipped
+
+- Give the username and password for the database
+- Now go to `Driver Properties`. It might download drivers needed to connect depending on whether they are already present
+  or not.
+- Set the values for the following
+  - javax.net.ssl.keyStore : /Users/username/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/wallet-unzipped/keystore.jks
+  - javax.net.ssl.keyStorePassword: <your_wallet_password_that_you_gave_while_downloading_wallet>
+  - javax.net.ssl.trustStore: /Users/username/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/wallet-unzipped/truststore.jks
+  - javax.net.ssl.trustStorePassword : <your_wallet_password_that_you_gave_while_downloading_wallet>
+
+![img.png](.images/dbeaver.png)
