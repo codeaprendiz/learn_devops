@@ -1,28 +1,28 @@
 ## Host Monitoring
 
-|               Stats                                                |           Visualization                                                                                                                                     | 
-|--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|[CPU Usage Guage](#CPU-Usage-Gauge)                                 | ![](../../../images/monitoring/host/metricbeat/cpu-usage-guage.png)                                             | 
-|[Memroy Usage Guage](#Memory-Usage-Gauge)                           | ![](../../../images/monitoring/host/metricbeat/memory-usage-guage.png)                                          | 
-|[Load Guage](#Load-Guage)                                           | ![](../../../images/monitoring/host/metricbeat/load-guage.png)                                                  | 
-|[Inbound Traffic](#Inbound-Traffic)                                 | ![](../../../images/monitoring/host/metricbeat/inbound-traffic.png)                                             | 
-|[Outbound Traffic](#Outbound-Traffic)                               | ![](../../../images/monitoring/host/metricbeat/outbound-traffic.png)                                            | 
-|[Packetloss](#Packetloss)                                           | ![](../../../images/monitoring/host/metricbeat/packetloss.png)                                                  | 
-|[Swap Usage](#Swap-uage)                                            | ![](../../../images/monitoring/host/metricbeat/swap-usage.png)                                                  | 
-|[Memory usage vs total](#Memory-usage-vs-total)                     | ![](../../../images/monitoring/host/metricbeat/memory-usage-vs-total.png)                                       | 
-|[Number of processes](#Number-of-processes)                         | ![](../../../images/monitoring/host/metricbeat/number-of-processes.png)                                         | 
-|[Disk Used](#Disk-used)                                             | ![](../../../images/monitoring/host/metricbeat/disk-used.png)                                                   | 
-|[Disk Usage](#Disk-Usage)                                           | ![](../../../images/monitoring/host/metricbeat/disk-usage.png)                                                  | 
-|[CPU Usage](#CPU-Usage)                                             | ![](../../../images/monitoring/host/metricbeat/cpu-usage.png)                                                   | 
-|[System Load](#System-Load)                                         | ![](../../../images/monitoring/host/metricbeat/system-load.png)                                                 | 
-|[Memory Usage](#Memory-Usage)                                       | ![](../../../images/monitoring/host/metricbeat/memory-usage.png)                                                | 
-|[Disk IO](#Disk-IO)                                                 | ![](../../../images/monitoring/host/metricbeat/disk-io.png)                                                     | 
-|[Network Traffic Packets](Network-Traffic-Packets#)                 | ![](../../../images/monitoring/host/metricbeat/network-traffic-packets.png)                                     | 
-|[Network Traffic Bytes](#Network-Traffic-Bytes)                     | ![](../../../images/monitoring/host/metricbeat/network-traffic-bytes.png)                                       | 
-|[Processes By Memory](#Processes-By-Memory)                         | ![](../../../images/monitoring/host/metricbeat/processes-by-memory.png)                                         | 
-|[Top Processes By CPU](#Top-Processes-By-CPU)                       | ![](../../../images/monitoring/host/metricbeat/top-processes-by-cpu.png)                                        | 
-|[Interfaces By Incoming Traffic](#Interfaces-By-Incoming-Traffic)   | ![](../../../images/monitoring/host/metricbeat/interfaces-by-incoming-traffic.png)                              | 
-|[Interfaces By Outgoing Traffic](#Interfaces-By-Outgoing-Traffic)   | ![](../../../images/monitoring/host/metricbeat/interfaces-by-outgoing-traffic.png)                              | 
+| Stats                                                             | Visualization                                   | 
+|-------------------------------------------------------------------|-------------------------------------------------|
+| [CPU Usage Guage](#CPU-Usage-Gauge)                               | ![](.images/cpu-usage-guage.png)                | 
+| [Memroy Usage Guage](#Memory-Usage-Gauge)                         | ![](.images/memory-usage-guage.png)             | 
+| [Load Guage](#Load-Guage)                                         | ![](.images/load-guage.png)                     | 
+| [Inbound Traffic](#Inbound-Traffic)                               | ![](.images/inbound-traffic.png)                | 
+| [Outbound Traffic](#Outbound-Traffic)                             | ![](.images/outbound-traffic.png)               | 
+| [Packetloss](#Packetloss)                                         | ![](.images/packetloss.png)                     | 
+| [Swap Usage](#Swap-uage)                                          | ![](.images/swap-usage.png)                     | 
+| [Memory usage vs total](#Memory-usage-vs-total)                   | ![](.images/memory-usage-vs-total.png)          | 
+| [Number of processes](#Number-of-processes)                       | ![](.images/number-of-processes.png)            | 
+| [Disk Used](#Disk-used)                                           | ![](.images/disk-used.png)                      | 
+| [Disk Usage](#Disk-Usage)                                         | ![](.images/disk-usage.png)                     | 
+| [CPU Usage](#CPU-Usage)                                           | ![](.images/cpu-usage.png)                      | 
+| [System Load](#System-Load)                                       | ![](.images/system-load.png)                    | 
+| [Memory Usage](#Memory-Usage)                                     | ![](.images/memory-usage.png)                   | 
+| [Disk IO](#Disk-IO)                                               | ![](.images/disk-io.png)                        | 
+| [Network Traffic Packets](Network-Traffic-Packets#)               | ![](.images/network-traffic-packets.png)        | 
+| [Network Traffic Bytes](#Network-Traffic-Bytes)                   | ![](.images/network-traffic-bytes.png)          | 
+| [Processes By Memory](#Processes-By-Memory)                       | ![](.images/processes-by-memory.png)            | 
+| [Top Processes By CPU](#Top-Processes-By-CPU)                     | ![](.images/top-processes-by-cpu.png)           | 
+| [Interfaces By Incoming Traffic](#Interfaces-By-Incoming-Traffic) | ![](.images/interfaces-by-incoming-traffic.png) | 
+| [Interfaces By Outgoing Traffic](#Interfaces-By-Outgoing-Traffic) | ![](.images/interfaces-by-outgoing-traffic.png) | 
 
 
 

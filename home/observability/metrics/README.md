@@ -1,7 +1,7 @@
 # monitoring-kitchen
 
 ## Host
-[host - kibana, elasticsearch, metricbeat](./host/metricbeat/ReadMe.md)
+[host - kibana, elasticsearch, metricbeat](task-001-host)
 
 ## Kubernetes
 [kubernetes - kibana, elasticsearch, metricbeat](./kubernetes/metricbeat/ReadMe.md)
