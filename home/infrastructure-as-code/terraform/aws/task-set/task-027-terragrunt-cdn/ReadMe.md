@@ -64,15 +64,15 @@ s3-user-test-username = "backend-dev-test"
 
 ### Screenshots
 
-![](../../../images/terraform/task-027-terragrunt-cdn/cdn_home.png)
+![](.images/cdn_home.png)
 
-![](../../../images/terraform/task-027-terragrunt-cdn/cdn_general_tab.png)
+![](.images/cdn_general_tab.png)
 
-![](../../../images/terraform/task-027-terragrunt-cdn/cdn_origin_and_origin_groups.png)
+![](.images/cdn_origin_and_origin_groups.png)
 
-![](../../../images/terraform/task-027-terragrunt-cdn/cdn_behaviour.png)
+![](.images/cdn_behaviour.png)
 
-![](../../../images/terraform/task-027-terragrunt-cdn/cdn_its_working.png)
+![](.images/cdn_its_working.png)
 
 - You can also validate using the curl command
 
