@@ -2,12 +2,12 @@
 
 #### PRE-REQUISITE
 - You own a domain for example in following case I own - `ankitrathi.info`
-![](../../../images/terraform/task-024-certificate-manager/route53_dashboard.png)
+![](.images/route53_dashboard.png)
 
-![](../../../images/terraform/task-024-certificate-manager/route53_dashboard_registered_domains.png)
+![](.images/route53_dashboard_registered_domains.png)
 
 - You should also have a default hosted zone
-![](../../../images/terraform/task-024-certificate-manager/route53_hosted_zones.png)
+![](.images/route53_hosted_zones.png)
 
 
 #### Let's Begin
@@ -22,12 +22,12 @@ Error: error creating CloudFront Distribution: InvalidViewerCertificate: The spe
 
 - Click on `Get started`
 
-![](../../../images/terraform/task-024-certificate-manager/cert_manager_provision_certificates.png)
+![](.images/cert_manager_provision_certificates.png)
 
 
 - Now choose `Request a public certificate` and click on `Request a certificate`
 
-![](../../../images/terraform/task-024-certificate-manager/cert_manager_request_a_public_certificate.png)
+![](.images/cert_manager_request_a_public_certificate.png)
 
 
 
@@ -36,24 +36,24 @@ Error: error creating CloudFront Distribution: InvalidViewerCertificate: The spe
   - ankitrathi.info
   - *.ankitrathi.info
 
-![](../../../images/terraform/task-024-certificate-manager/cert_manager_add_domain_names.png)  
+![](.images/cert_manager_add_domain_names.png)  
 
 - Choose the validation method as `DNS Validation` and hit next
 
-![](../../../images/terraform/task-024-certificate-manager/cert_manager_select_validation_method.png)
+![](.images/cert_manager_select_validation_method.png)
 
 - Give tags if required
 
 - Review and confirm
 
-![](../../../images/terraform/task-024-certificate-manager/cert_manager_review.png)
+![](.images/cert_manager_review.png)
 
 
 - Now click on the `Create record in Route 53` for creating the records for validation
 
-![](../../../images/terraform/task-024-certificate-manager/cert_manager_validation.png)
+![](.images/cert_manager_validation.png)
 
-![](../../../images/terraform/task-024-certificate-manager/cert_manager_create_record_in_route_53.png)
+![](.images/cert_manager_create_record_in_route_53.png)
   
 You will see a success message. Finally click on continue.
 
@@ -62,7 +62,7 @@ You will see a success message. Finally click on continue.
 - Wait for sometime and you should see `Validation Complete`. Meanwhile you can go to Route 53 and check the two CNAMES you just added
 
 
-![](../../../images/terraform/task-024-certificate-manager/cert_manager_validation_success.png)
+![](.images/cert_manager_validation_success.png)
 
 - Now you can use the certificate `ARN` visible on the above screen where-ever you need.
   It will be of following type
