@@ -41,14 +41,14 @@
 ### aws
 
   
-| Content        |            | 
-| ------------- |:-------------:| 
-| [certification-digest](home/cloud-providers/aws/certifications-digest)    | [practice-tasks](home/cloud-providers/aws/practice-tasks) | 
+| Content                                                                |                                                           | 
+|------------------------------------------------------------------------|-----------------------------------------------------------|
+| [certification-digest](home/cloud-providers/aws/certifications-digest) | [practice-tasks](home/cloud-providers/aws/practice-tasks) | 
 
 ### oci
-| Content        |            | 
-| ------------- |:-------------:| 
-| | [practice-tasks](home/cloud-providers/oci/practice-tasks) |
+| Content |                                                           | 
+|---------|-----------------------------------------------------------|
+|         | [practice-tasks](home/cloud-providers/oci/practice-tasks) |
 
 
 
@@ -56,16 +56,16 @@
 
 ### docker
 
-| Content        |                                                 | 
-| ------------- |:-----------------------------------------------:| 
-| |    [practice-tasks](home/containers/docker)     |
+| Content |                                          | 
+|---------|------------------------------------------|
+|         | [practice-tasks](home/containers/docker) |
 
 
 ### docker-compose
 
-| Content        |                                                  | 
-| ------------- |:------------------------------------------------:| 
-| | [practice-tasks](home/containers/docker-compose) |
+| Content |                                                  | 
+|---------|--------------------------------------------------|
+|         | [practice-tasks](home/containers/docker-compose) |
 
 
 
@@ -73,38 +73,38 @@
 
 ## container-orchestration
 
-| Content                 |                    | 
-|--------------------------|:------------------:| 
+| Content                                                                 |                                                                      | 
+|-------------------------------------------------------------------------|----------------------------------------------------------------------|
 | [kubernetes-concepts](home/container-orchestration/kubernetes/concepts) | [kubernetes-practice-tasks](home/container-orchestration/kubernetes) | 
 
 
 ## databases
 
 ### mongo
-| Content                                       |                    | 
-|-----------------------------------------------|:------------------:| 
-| [mongo-practice-tasks](/home/databases/mongo) |  | 
+| Content                                       |                  | 
+|-----------------------------------------------|------------------|
+| [mongo-practice-tasks](/home/databases/mongo) |                  | 
 
 ### mysql
-| Content                                       |                    | 
-|-----------------------------------------------|:------------------:| 
-| [mysql-practice-tasks](/home/databases/mysql) |  | 
+| Content                                       |                  | 
+|-----------------------------------------------|------------------|
+| [mysql-practice-tasks](/home/databases/mysql) |                  | 
 
 ### postgresql
-| Content                                       |                    | 
-|-----------------------------------------------|:------------------:| 
-| [postgresSQL-practice-tasks](/home/databases/postgreSQL) |  | 
+| Content                                                  |     | 
+|----------------------------------------------------------|-----|
+| [postgresSQL-practice-tasks](/home/databases/postgreSQL) |     | 
 
 ### oracle19c
-| Content                                                |                    | 
-|--------------------------------------------------------|:------------------:| 
-| [oracle19c-practice-tasks](/home/databases/oracle19c) |  | 
+| Content                                               |     | 
+|-------------------------------------------------------|-----|
+| [oracle19c-practice-tasks](/home/databases/oracle19c) |     | 
 
 ## devops-blogs
 
-| Content                           |                    | 
-|-----------------------------------|:------------------:| 
-| [blogs-links](/home/devops-blogs) |  | 
+| Content                           |     | 
+|-----------------------------------|-----|
+| [blogs-links](/home/devops-blogs) |     | 
 
 
 ## infrastructure-as-code
@@ -112,94 +112,97 @@
 ### aws-terraform
 
   
-| Content                                                     |            | 
-|-------------------------------------------------------------|:-------------:| 
-| [Practice Tasks](home/infrastructure-as-code/terraform/aws) |  | 
+| Content                                                     |     | 
+|-------------------------------------------------------------|-----|
+| [Practice Tasks](home/infrastructure-as-code/terraform/aws) |     | 
 
 ### oci-terraform
-| Content        |            | 
-| ------------- |:-------------:| 
-| [practice-tasks](home/infrastructure-as-code/terraform/oci) |  |
+| Content                                                     |     | 
+|-------------------------------------------------------------|-----|
+| [practice-tasks](home/infrastructure-as-code/terraform/oci) |     |
 
 ### ansible
 
-| Content        |            | 
-| ------------- |:-------------:| 
-| [practice-tasks](home/infrastructure-as-code/ansible-kitchen/README.md) |  |
+| Content                                                                 |     | 
+|-------------------------------------------------------------------------|-----|
+| [practice-tasks](home/infrastructure-as-code/ansible-kitchen/README.md) |     |
 
 ## interview
 
 ### coding-tasks
-| Content        |            | 
-| ------------- |:-------------:| 
-| [coding-tasks](home/interview/coding-tasks) |  |
+| Content                                     |     | 
+|---------------------------------------------|-----|
+| [coding-tasks](home/interview/coding-tasks) |     |
 
 
 
 ## observability
 
-coming..soon
+### metrics
+| Content                                                |     | 
+|--------------------------------------------------------|-----|
+| [host, kubernetes, system](home/observability/metrics) |     |
 
 
 ## os-and-concepts
 
-| Content                                                             |            | 
-|---------------------------------------------------------------------|:-------------:| 
-| [linux-commands 0_0](home/os-and-concepts/linux-commands/README.md) | [bookmark me ? 0_0 ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
-| [linux concepts](home/os-and-concepts/linux-essentials/linux-essentials.md)            |  | 
+| Content                                                                     |                                                                                      | 
+|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| [linux-commands 0_0](home/os-and-concepts/linux-commands/README.md)         | [bookmark me ? 0_0 ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
+| [linux concepts](home/os-and-concepts/linux-essentials/linux-essentials.md) |                                                                                      | 
 
 
 ## productivity-tools
 
 ### tasks-set
-| Content                             |            | 
-|-------------------------------------|:-------------:| 
-| [task-set](home/productivity-tools) |  |
+| Content                             |     | 
+|-------------------------------------|-----|
+| [task-set](home/productivity-tools) |     |
 
 
 ## programming-languages
 
 ### Go
-| Content                                   |            | 
-|-------------------------------------------|:-------------:| 
-| [practice-tasks](home/programming-languages/go) |  |
+| Content                                         |     | 
+|-------------------------------------------------|-----|
+| [practice-tasks](home/programming-languages/go) |     |
 
 ### javascript
 
-| Content                                                 |            | 
-|---------------------------------------------------------|:-------------:| 
-| [practice-tasks](home/programming-languages/javascript) |  |
+| Content                                                 |     | 
+|---------------------------------------------------------|-----|
+| [practice-tasks](home/programming-languages/javascript) |     |
 
 ### nodejs
 
-| Content                                             |            | 
-|-----------------------------------------------------|:-------------:| 
-| [practice-tasks](home/programming-languages/nodejs) |  |
+| Content                                             |     | 
+|-----------------------------------------------------|-----|
+| [practice-tasks](home/programming-languages/nodejs) |     |
 
 ### python
 
-| Content                                             |            | 
-|-----------------------------------------------------|:-------------:| 
-| [practice-tasks](home/programming-languages/python) |  |
+| Content                                             |     | 
+|-----------------------------------------------------|-----|
+| [practice-tasks](home/programming-languages/python) |     |
 
 ### shell
 
-| Content                                            |            | 
-|----------------------------------------------------|:-------------:| 
-| [practice-tasks](home/programming-languages/shell) |  |
+| Content                                            |     | 
+|----------------------------------------------------|-----|
+| [practice-tasks](home/programming-languages/shell) |     |
 
 ## version-control
 
 ### git
-| Content                                    |            | 
-|--------------------------------------------|:-------------:| 
-| [practice-tasks](home/version-control/git) |  |
+| Content                                    |     | 
+|--------------------------------------------|-----|
+| [practice-tasks](home/version-control/git) |     |
 
 ## web-servers
 
 ### nginx
-| Content                                  |            | 
-|------------------------------------------|:-------------:| 
-| [practice-tasks](home/web-servers/nginx) |  |
+| Content                                  |     | 
+|------------------------------------------|-----|
+| [practice-tasks](home/web-servers/nginx) |     |
 
 
