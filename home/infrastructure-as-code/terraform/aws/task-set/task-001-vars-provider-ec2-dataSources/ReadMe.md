@@ -33,7 +33,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
 - Verifying the instance created by logging into the console
 
-![](../../../images/terraform/aws/task-001-vars-provider-ec2-dataSources/instance_details_screen.png)
+![](.images/instance_details_screen.png)
 
 
 - Destroy
