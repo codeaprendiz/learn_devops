@@ -45,11 +45,11 @@ devopslink-public-zone-id = Z10390782TEJ7ISXDVZ22
 
 - Once applied. You will be able to see the hosted zone as follows
 
-![](./../../../images/terraform/task-022-route53-ec2/hosted-zone-window.png)
+![](.images/hosted-zone-window.png)
 
 - And the EC2 instance as well
 
-![](./../../../images/terraform/task-022-route53-ec2/ec2-instance.png)
+![](.images/ec2-instance.png)
 
 
 
@@ -57,7 +57,7 @@ devopslink-public-zone-id = Z10390782TEJ7ISXDVZ22
   So we will need to go back to [https://my.freenom.com/](https://my.freenom.com/) and manage the domain `codeaprendiz.tk` (specifically go to
   Management Tools -> Nameservers) and give the list of these nameservers there so it know where to look. Once this is completed.
 
-![](./../../../images/terraform/task-022-route53-ec2/nameservers-config-window.png)
+![](.images/nameservers-config-window.png)
   
   
 ```bash
