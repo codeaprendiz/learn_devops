@@ -5,8 +5,8 @@
 ## Learning Tasks
 
 
-| S.No | Stack                                                                       | Tasks                                                                                                                                                                            | 
-|------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
+| S.No | Stack                                                                       | Tasks                                                                                                                                                                            |
+|------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1    | Commands                                                                    | [Commands](task-set/task-000-commands/ReadMe.md)                                                                                                                                 |
 | 2    | Initialization                                                              | [Setting up IAM user for terraform](task-set/task-000-initialization-setup)                                                                                                      |
 | 3    | EC2, Datasource                                                             | [Create an EC2 instance by using AWS data source to choose the AMI](task-set/task-001-vars-provider-ec2-dataSources)                                                             |
@@ -15,34 +15,29 @@
 | 6    | EC2, Output, Local File                                                     | [Create EC2 instance, save private IP in local file](task-set/task-004-vars-provider-ec2-output)                                                                                 | 
 | 7    | EC2, State, S3                                                              | [Create EC2 instance and save the remote state in an S3 bucket created manually](task-set/task-005-vars-provider-ec2-remoteStateInS3)                                            | 
 | 8    | VPC default, Subnets, Module                                                | [Create default VPC and subnets using module](task-set/task-006-defaultVPC-defaultSbnt-modules-kp)                                                                               |
-| 9    | VPC custom, Internet Gateway, Routetables, Subnet, EC2, Login               | [Custom VPC with EC2, routetables, Internet Gateway](task-set/task-007-customVPC-igw-sbnt-rt-sg-kp-ec2)                                                                          
-| 10   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP             | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP ](task-set/task-008-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt)                              
-| 11   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP, EBS        | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP, EBS](task-set/task-009-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt-ec2-ebs)                  
+| 9    | VPC custom, Internet Gateway, Routetables, Subnet, EC2, Login               | [Custom VPC with EC2, routetables, Internet Gateway](task-set/task-007-customVPC-igw-sbnt-rt-sg-kp-ec2)                                                                          |
+| 10   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP             | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP ](task-set/task-008-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt)                              |
+| 11   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP, EBS        | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP, EBS](task-set/task-009-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt-ec2-ebs)                  |
 | 12   | VPC custom, Pub & Pri Subnet, NAT, Internet Gateway, Elastic IP, EBS, Mount | [Custom VPC with public and private subnet, nat gateway, internet gateway, Elastic IP, EBS, Mount](task-set/task-010-customVPC-3PriSbnts-3PubSbnts-nat-igw-rt-ec2-ebs-withMount) | 
-| 13   | Route53 Hosted Zone                                                         | [Create a hosted zone and get the list of name servers](task-set/task-011-route53)
-| 14   | EC2, RDS, Pub & Pri Subnet, VPC                                             | [Create RDS in pri subnet, EC2 in public subnet](task-set/task-012-rds-vpc-ec2)
-| 15   | Users, Groups, Policies                                                     | [Create users, groups, policy](task-set/task-013-IAM)
-| 16   | EC2, IAM Role, Private S3                                                   | [Attach IAM role to EC2 to upload objects to private S3](task-set/task-014-IAM-roles-s3-upload-to-s3)
-| 17   | Autoscaling Group, Cloudwatch Alarms, Launch Configuration, EC2, SNS        | [Autoscaling Group, Cloudwatch Alarms, Launch Configuration, EC2](task-set/task-015-autoscaling-cloudwatchAlarm-ec2-launchConfiguration)
-| 18   | Autoscaling Group, ELB, VPC                                                 | [Autoscaling Group, ELB](task-set/task-016-ELB-autoscaling)
-| 19   | ElasticBeanStalk                                                            | [ElasticBeanStalk](task-set/task-017-Elastic-Beanstalk)
-| 20   | ECR                                                                         | [ECR Repo](task-set/task-018-create-ECR-repo)
-| 21   | S3, IAM, Modules                                                            | [Create S3 bucket with IAM policy to access the bucket](task-set/task-020-s3-iam-using-modules)                     |
-| 22   | ECS                                                                         | [In-progress ECS](task-set/task-019-ECS)
-| 23   | Kubernetes Typhoon                                                          | [Create kubernetes cluster using typhoon kubernetes](task-set/task-021-k8s-cluster-typhoon)                         |
-| 24   | Route53 EC2 HostedZone                                                      | [To create Route53 record to access EC2 instance](task-set/task-022-route53-ec2)                                   | 
-| 25   | AWS Certificate Manager                                                     | [Create a private certificate for your Domain using AWS Certificate Manager](task-set/task-024-certificate-manager) |
-| 26   | Terragrunt EC2 default VPC                                                  | [Create ec2 instance in default VPC](task-set/task-023-terragrunt-ec2) |
-| 27   | Terragrunt S3 IAM-User                                                      | [Create IAM User for already existing S3 bucket](task-set/task-025-terragrunt-iam-user) |
-| 28   | Terragrunt S3                                                               | [Create S3 bucket](task-set/task-026-terragrunt-s3-bucket) |
-| 29   | CDN                                                                         | [To create CDN](task-set/task-027-terragrunt-cdn) | 
-| 30   | EKS                                                                         | [To create EKS cluster](task-set/task-030-creating-eks) | 
-| 31   | EKS Spot and Ondemand                                                       | [To create EKS cluster using spot and on demand instance types](task-set/task-031-creating-eks-spot)
-
-
-
-
-
+| 13   | Route53 Hosted Zone                                                         | [Create a hosted zone and get the list of name servers](task-set/task-011-route53)                                                                                               |
+| 14   | EC2, RDS, Pub & Pri Subnet, VPC                                             | [Create RDS in pri subnet, EC2 in public subnet](task-set/task-012-rds-vpc-ec2)                                                                                                  |
+| 15   | Users, Groups, Policies                                                     | [Create users, groups, policy](task-set/task-013-IAM)                                                                                                                            |
+| 16   | EC2, IAM Role, Private S3                                                   | [Attach IAM role to EC2 to upload objects to private S3](task-set/task-014-IAM-roles-s3-upload-to-s3)                                                                            |
+| 17   | Autoscaling Group, Cloudwatch Alarms, Launch Configuration, EC2, SNS        | [Autoscaling Group, Cloudwatch Alarms, Launch Configuration, EC2](task-set/task-015-autoscaling-cloudwatchAlarm-ec2-launchConfiguration)                                         |
+| 18   | Autoscaling Group, ELB, VPC                                                 | [Autoscaling Group, ELB](task-set/task-016-ELB-autoscaling)                                                                                                                      |
+| 19   | ElasticBeanStalk                                                            | [ElasticBeanStalk](task-set/task-017-Elastic-Beanstalk)                                                                                                                          |
+| 20   | ECR                                                                         | [ECR Repo](task-set/task-018-create-ECR-repo)                                                                                                                                    |
+| 21   | S3, IAM, Modules                                                            | [Create S3 bucket with IAM policy to access the bucket](task-set/task-020-s3-iam-using-modules)                                                                                  |
+| 22   | ECS                                                                         | [In-progress ECS](task-set/task-019-ECS)                                                                                                                                         |
+| 23   | Kubernetes Typhoon                                                          | [Create kubernetes cluster using typhoon kubernetes](task-set/task-021-k8s-cluster-typhoon)                                                                                      |
+| 24   | Route53 EC2 HostedZone                                                      | [To create Route53 record to access EC2 instance](task-set/task-022-route53-ec2)                                                                                                 | 
+| 25   | AWS Certificate Manager                                                     | [Create a private certificate for your Domain using AWS Certificate Manager](task-set/task-024-certificate-manager)                                                              |
+| 26   | Terragrunt EC2 default VPC                                                  | [Create ec2 instance in default VPC](task-set/task-023-terragrunt-ec2)                                                                                                           |
+| 27   | Terragrunt S3 IAM-User                                                      | [Create IAM User for already existing S3 bucket](task-set/task-025-terragrunt-iam-user)                                                                                          |
+| 28   | Terragrunt S3                                                               | [Create S3 bucket](task-set/task-026-terragrunt-s3-bucket)                                                                                                                       |
+| 29   | CDN                                                                         | [To create CDN](task-set/task-027-terragrunt-cdn)                                                                                                                                | 
+| 30   | EKS                                                                         | [To create EKS cluster](task-set/task-030-creating-eks)                                                                                                                          | 
+| 31   | EKS Spot and Ondemand                                                       | [To create EKS cluster using spot and on demand instance types](task-set/task-031-creating-eks-spot)                                                                             |
 
 ### Frequently visited
 - [Amazon EC2 AMI Locator](http://cloud-images.ubuntu.com/locator/ec2/)
