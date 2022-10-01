@@ -72,34 +72,34 @@ kube-scheduler-ip-10-0-2-187            1/1     Running   0          7m13s
 ```
 
 - Route53 Records which got created in the hosted zone `k118.tk`
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/r53-records.png)
+![](.images/r53-records.png)
 
 
 - Instances created
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/instances-created.png)
+![](.images/instances-created.png)
 
 - Load Balancer Created
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/lb-created.png)
+![](.images/lb-created.png)
 
 
 - Target Groups
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/target-groups.png)
+![](.images/target-groups.png)
 
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/target-groups-health.png)
+![](.images/target-groups-health.png)
 
 
 - Launch Configuration
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/launch-configuration.png)
+![](.images/launch-configuration.png)
 
 - Autoscaling groups created
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/auto-scaling-groups.png)
+![](.images/auto-scaling-groups.png)
 
 - VPC Created
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/vpc-created.png)
+![](.images/vpc-created.png)
 
 - Subnets Created
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/subnets-created.png)
+![](.images/subnets-created.png)
 
 - Route Tables
-![](./../../../images/terraform/task-021-k8s-cluster-typhoon/route-tables.png)
+![](.images/route-tables.png)
 
