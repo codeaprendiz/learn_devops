@@ -1,17 +1,19 @@
-## System - Monitoring
+# System - Monitoring
 
 
-|               Stats                                                |           Visualization                                                                                                                                     | 
-|--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------ | 
-|[Number of hosts](#Number-of-hosts)                                 | ![](../../../images/monitoring/system/metricbeat/number-of-hosts.png)                                           | 
-|[CPU Usage Guage](#CPU-Usage-Gauge)                                 | ![](../../../images/monitoring/system/metricbeat/cpu-usage-guage.png)                                           | 
-|[Memory Usage Gauge](#Memory-Usage-Gauge)                           | ![](../../../images/monitoring/system/metricbeat/memory-usage-guage.png)                                        | 
-|[Disk used](#Disk-used)                                             | ![](../../../images/monitoring/system/metricbeat/disk-used.png)                                                 | 
-|[Inbound Traffic](#Inbound-Traffic)                                 | ![](../../../images/monitoring/system/metricbeat/inbound-traffic.png)                                           | 
-|[Outbound Traffic](#Outbound-Traffic)                               | ![](../../../images/monitoring/system/metricbeat/outbound-traffic.png)                                          | 
-|[Top Hosts By CPU Realtime](#Top-Hosts-By-CPU-Realtime)             | ![](../../../images/monitoring/system/metricbeat/top-hosts-by-cpu-realtime.png)                                 | 
-|[Top Hosts By Memory Realtime](#Top-Hosts-By-Memory-Realtime)       | ![](../../../images/monitoring/system/metricbeat/top-hosts-by-memory-realtime.png)                              | 
-|[Host histogram by CPU usage](#Hosts-histogram-by-CPU-usage)        | ![](../../../images/monitoring/system/metricbeat/host-histogram-by-cpu-usage.png)                                |
+
+
+| Stats                                                         | Visualization                                 |
+|---------------------------------------------------------------|-----------------------------------------------|
+| [Number of hosts](#Number-of-hosts)                           | ![](.images/number-of-hosts.png)              | 
+| [CPU Usage Guage](#CPU-Usage-Gauge)                           | ![](.images/cpu-usage-guage.png)              | 
+| [Memory Usage Gauge](#Memory-Usage-Gauge)                     | ![](.images/memory-usage-guage.png)           | 
+| [Disk used](#Disk-used)                                       | ![](.images/disk-used.png)                    | 
+| [Inbound Traffic](#Inbound-Traffic)                           | ![](.images/inbound-traffic.png)              | 
+| [Outbound Traffic](#Outbound-Traffic)                         | ![](.images/outbound-traffic.png)             | 
+| [Top Hosts By CPU Realtime](#Top-Hosts-By-CPU-Realtime)       | ![](.images/top-hosts-by-cpu-realtime.png)    | 
+| [Top Hosts By Memory Realtime](#Top-Hosts-By-Memory-Realtime) | ![](.images/top-hosts-by-memory-realtime.png) | 
+| [Host histogram by CPU usage](#Hosts-histogram-by-CPU-usage)  | ![](.images/host-histogram-by-cpu-usage.png)  |
 
 
 
