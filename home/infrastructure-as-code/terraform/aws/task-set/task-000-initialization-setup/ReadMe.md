@@ -2,15 +2,15 @@
 
 - Create a user `terraform` by navigating _Login to AWS_ ->  _IAM_ -> _Users_ -> _Add User_
 
-![](../../../images/terraform/aws/task-000-initialization-setup/Add_user_screen.png)
+![](.images/Add_user_screen.png)
 
 - Create a group `terraform-administrators`
 
-![](../../../images/terraform/aws/task-000-initialization-setup/group_creation_screen.png)
+![](.images/group_creation_screen.png)
 
 - Review screen
 
-![](../../../images/terraform/aws/task-000-initialization-setup/review_screen.png)
+![](.images/review_screen.png)
 
 - Download the `credentials.csv` containing `Access key ID` and `Secret access key`
 
