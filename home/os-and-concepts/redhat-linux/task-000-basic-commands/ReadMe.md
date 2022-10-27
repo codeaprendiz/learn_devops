@@ -16,3 +16,19 @@ $ sudo dnf update -y
 ```bash
 $ systemctl status docker
 ```
+
+
+## To check the CPU architecture
+
+[stackoverflow](https://stackoverflow.com/questions/48678152/how-to-detect-386-amd64-arm-or-arm64-os-architecture-via-shell-bash)
+
+```bash
+$ arch
+x86_64
+
+$ lscpu | awk '/Architecture:/{print $2}'
+x86_64
+
+$ uname -m
+x86_64
+```

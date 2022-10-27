@@ -120,3 +120,14 @@ ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX packets 50435  bytes 5498608 (5.4 MB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
+
+#### Port Forwarding                  localhost:8000 <-------------------- PUBLIC-IP:80
+
+Let's say you want to forward the service running on public-ip:80 to your localhost:8000
+
+[how-to-forward-local-port-80-to-another-machine](https://askubuntu.com/questions/361426/how-to-forward-local-port-80-to-another-machine)
+
+```bash
+## Assuming you have SSH access to the machine
+ssh -L 8000:localhost:80 opc@PUBLIC-IP
+```
