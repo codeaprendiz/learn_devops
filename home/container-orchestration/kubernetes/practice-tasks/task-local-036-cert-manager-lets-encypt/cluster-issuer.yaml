@@ -1,0 +1,22 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-staging
+spec:
+  acme:
+    # You must replace this email address with your own.
+    # Let's Encrypt will use this to contact you about expiring
+    # certificates, and issues related to your account.
+    email: kedesom362@corylan.com
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    ## Replace the following for PRODUCTION
+    # server: https://acme-v02.api.letsencrypt.org/directory
+    # preferredChain: "ISRG Root X1"
+    privateKeySecretRef:
+      # Secret resource that will be used to store the account's private key.
+      name: example-issuer-account-key
+    # Add a single challenge solver, HTTP01 using nginx
+    solvers:
+      - http01:
+          ingress:
+            class: nginx
