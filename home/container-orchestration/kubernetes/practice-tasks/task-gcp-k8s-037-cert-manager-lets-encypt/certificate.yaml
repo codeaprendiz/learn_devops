@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: acme-crt
+spec:
+  secretName: tls-secret
+  dnsNames:
+    - testcertmanager.ankitrathi.info
+  issuerRef:
+    name: letsencrypt-staging
+    # We can reference ClusterIssuers by changing the kind here.
+    # The default value is Issuer (i.e. a locally namespaced Issuer)
+    kind: ClusterIssuer

@@ -1,0 +1,25 @@
+# https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/basic-configuration/
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  name: whoami-ingress
+spec:
+  tls:
+    - hosts:
+        - testcertmanager.ankitrathi.info
+      secretName: tls-secret
+  rules:
+    - host: testcertmanager.ankitrathi.info
+      http:
+        paths:
+          - path: /test
+            pathType: Prefix
+            backend:
+              service:
+                name: whoami
+                port:
+                  number: 80
+---
