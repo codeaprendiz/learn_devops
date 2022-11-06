@@ -5,7 +5,7 @@ metadata:
 spec:
   secretName: tls-secret
   dnsNames:
-    - testcertmanager.domainname.com
+    - testcertmanager.ankitrathi.info
   issuerRef:
     name: letsencrypt-staging
     # We can reference ClusterIssuers by changing the kind here.

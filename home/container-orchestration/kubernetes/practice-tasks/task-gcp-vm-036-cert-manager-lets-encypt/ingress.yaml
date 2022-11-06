@@ -7,12 +7,12 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
   name: whoami-ingress
 spec:
-#  tls:
-#    - hosts:
-#        - testcertmanager.domainname.com
-#      secretName: tls-secret
+  tls:
+    - hosts:
+        - testcertmanager.ankitrathi.info
+      secretName: tls-secret
   rules:
-    - host: testcertmanager.domainname.com
+    - host: testcertmanager.ankitrathi.info
       http:
         paths:
           - path: /test
@@ -23,4 +23,3 @@ spec:
                 port:
                   number: 80
 ---
-

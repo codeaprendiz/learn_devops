@@ -22,7 +22,7 @@ ReadMe.md         cert-manager.yaml
     5518
 ```
 
-- Create namespace and Deploy
+- Deploy cert-manager
 
 ```bash
 ╰─ kubectl apply -f cert-manager.yaml
