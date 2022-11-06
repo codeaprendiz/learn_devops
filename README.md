@@ -24,12 +24,6 @@
   - [os-and-concepts](#os-and-concepts)
   - [productivity-tools](#productivity-tools)
     - [task-set](#tasks-set)
-  - [programming-languages](#programming-languages)
-    - [go](#go)
-    - [javascript](#javascript)
-    - [nodejs](#nodejs)
-    - [python](#python)
-    - [shell](#shell)
   - [version-control](#version-control)
     - [git](#git)
   - [web-servers](#web-servers)
@@ -160,36 +154,7 @@
 | [task-set](home/productivity-tools) |     |
 
 
-## programming-languages
 
-### Go
-| Content                                         |     | 
-|-------------------------------------------------|-----|
-| [practice-tasks](home/programming-languages/go) |     |
-
-### javascript
-
-| Content                                                 |     | 
-|---------------------------------------------------------|-----|
-| [practice-tasks](home/programming-languages/javascript) |     |
-
-### nodejs
-
-| Content                                             |     | 
-|-----------------------------------------------------|-----|
-| [practice-tasks](home/programming-languages/nodejs) |     |
-
-### python
-
-| Content                                             |     | 
-|-----------------------------------------------------|-----|
-| [practice-tasks](home/programming-languages/python) |     |
-
-### shell
-
-| Content                                            |     | 
-|----------------------------------------------------|-----|
-| [practice-tasks](home/programming-languages/shell) |     |
 
 ## version-control
 
