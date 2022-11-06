@@ -40,6 +40,7 @@ Tasks Local |
 [task-gcp-033   :    Configuring dns with static IPs k8 using Service](practice-tasks/task-gcp-033-configuring-dns-with-static-IPs-k8-using-Service)
 [task-gcp-034   :    Metricbeat](practice-tasks/task-gcp-034-metricbeat)
 [task-gcp-035   :    Journalbeat](practice-tasks/task-gcp-035-journalbeat)
+[task-gcp-036   :    Let's encrypt HTTP challenge GCP instance cert-manager k8s](practice-tasks/task-gcp-vm-036-cert-manager-lets-encypt)
 
 
 
