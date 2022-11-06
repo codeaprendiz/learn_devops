@@ -1,13 +1,5 @@
 # Let's Encrypt And Cert-Manager
 
-## Create Cluster
-
-```bash
-╰─ kind create cluster
-╰─ kubectl get nodes
-NAME                 STATUS   ROLES           AGE    VERSION
-kind-control-plane   Ready    control-plane   117s   v1.25.3
-```
 
 ## Cert-Manager Releases
 
