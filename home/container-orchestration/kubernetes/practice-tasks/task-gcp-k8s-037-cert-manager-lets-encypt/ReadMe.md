@@ -86,6 +86,7 @@ job.batch/ingress-nginx-admission-patch    1/1           19s        2m18s
 ## Nginx will create a external IP svc. This svc is the one which you should attach to your DNS
 
 ```bash
+$ kubectl get svc
 ingress-nginx   ingress-nginx-controller             LoadBalancer   10.48.14.196   34.66.238.103   80:31487/TCP,443:30253/TCP   62s
 ingress-nginx   ingress-nginx-controller-admission   ClusterIP      10.48.7.20     <none>          443/TCP
 
