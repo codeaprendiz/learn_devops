@@ -4,6 +4,7 @@
   - [cloud-providers](#cloud-providers)
     - [aws](#aws)
     - [oci](#oci)
+    - [gcp](#gcp)
   - [containers](#containers)
     - [docker](#docker)
     - [docker-compose](#docker-compose)
@@ -44,7 +45,10 @@
 |---------|-----------------------------------------------------------|
 |         | [practice-tasks](home/cloud-providers/oci/practice-tasks) |
 
-
+### gcp
+| Content |                                            | 
+|---------|--------------------------------------------|
+|         | [practice-tasks](home/cloud-providers/gcp) |
 
 ## containers
 

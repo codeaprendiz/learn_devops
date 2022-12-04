@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-deployment
+  labels:
+    app: devops
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: devops
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: devops
+        tier: frontend
+    spec:
+      containers:
+        - name: devops-demo
+          image: <YOUR IMAGE PATH HERE>
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-deployment-lb
+  labels:
+    app: devops
+    tier: frontend-lb
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: devops
+    tier: frontend
