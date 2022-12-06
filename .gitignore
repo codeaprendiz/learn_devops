@@ -51,6 +51,8 @@ bin
 ## node
 .env
 
+## python
+venv
 
 ## Temp
 home/infrastructure-as-code/terraform/oci/task-004-kubernetes-cluster/
