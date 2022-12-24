@@ -1,4 +1,22 @@
-# 
+# GCP Tasks
+
+- [task-001 : intro-console-projects-iam-apis](task-001-intro-console-projects-iam-apis)
+- [task-002 : getting-started-with-cloud-market-place](task-002-getting-started-with-cloud-market-place)
+- [task-003 : vpc-networking-and-google-compute-engine](task-003-vpc-networking-and-google-compute-engine)
+- [task-004 : getting-started-with-cloud-storage-and-cloud-sql--php](task-004-getting-started-with-cloud-storage-and-cloud-sql--php)
+- [task-005 : getting-started-with-gke--nginx](task-005-getting-started-with-gke--nginx)
+- [task-006 : hello-cloud-run--node](task-006-hello-cloud-run--node)
+- [task-007 : building-a-devops-pipeline--python](task-007-building-a-devops-pipeline--python)
+- [task-008 : deploying-app-to-app-engine-and-gke-and-cloudrun](task-008-deploying-app-to-app-engine-and-gke-and-cloudrun)
+- [task-009 : monitoring-applications-in-gcp--python](task-009-monitoring-applications-in-gcp--python)
+- [task-010 : alerting-in-google-cloud--python](task-010-alerting-in-google-cloud--python)
+- [task-011 : service-monitoring--node-app](task-011-service-monitoring--node-app)
+- [task-012 : monitoring-and-dashboarding-multiple-projects-from-a-single-workspace](task-012-monitoring-and-dashboarding-multiple-projects-from-a-single-workspace)
+- [task-013 : compute-logging-and-monitoring](task-013-compute-logging-and-monitoring)
+- [task-014 : log-analysis](task-014-log-analysis)
+- [task-015 : cloud-audit-logs](task-015-cloud-audit-logs)
+- [task-016 : analyzing-network-traffic-with-vpc-flow-logs](task-016-analyzing-network-traffic-with-vpc-flow-logs)
+- [task-017 : application-performance-management](task-017-application-performance-management)
 
 [docs/regions-zones](https://cloud.google.com/compute/docs/regions-zones)
 [https://cloud.google.com/about/locations](https://cloud.google.com/about/locations)

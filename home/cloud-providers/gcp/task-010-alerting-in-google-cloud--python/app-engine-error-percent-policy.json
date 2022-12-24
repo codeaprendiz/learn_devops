@@ -1,0 +1,43 @@
+{
+  "displayName": "HTTP error count exceeds 1 percent for App Engine apps",
+  "combiner": "OR",
+  "conditions": [
+    {
+      "displayName": "Ratio: HTTP 500s error-response counts / All HTTP response counts",
+      "conditionThreshold": {
+        "filter": "metric.label.response_code>=\"500\" AND metric.label.response_code<\"600\" AND metric.type=\"appengine.googleapis.com/http/server/response_count\" AND resource.type=\"gae_app\"",
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "groupByFields": [
+              "project",
+              "resource.label.module_id",
+              "resource.label.version_id"
+            ],
+            "perSeriesAligner": "ALIGN_DELTA"
+          }
+        ],
+        "denominatorFilter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" AND resource.type=\"gae_app\"",
+        "denominatorAggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "groupByFields": [
+              "project",
+              "resource.label.module_id",
+              "resource.label.version_id"
+            ],
+            "perSeriesAligner": "ALIGN_DELTA"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 0.01,
+        "duration": "0s",
+        "trigger": {
+          "count": 1
+        }
+      }
+    }
+  ]
+}
