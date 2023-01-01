@@ -17,6 +17,16 @@
 - [task-015 : cloud-audit-logs](task-015-cloud-audit-logs)
 - [task-016 : analyzing-network-traffic-with-vpc-flow-logs](task-016-analyzing-network-traffic-with-vpc-flow-logs)
 - [task-017 : application-performance-management](task-017-application-performance-management)
+- [task-018 : 2instances-2buckets-2iam-cloudshell](task-018-2inst-2buckets-2iam)
+- [task-019 : working with cloud build](task-019-working-with-cloud-build)
+- [task-020 : deploying google kubernetes engine](task-020-deploying-google-kubernetes-engine)
+- [task-021 : creating google kubernetes engine deployments](task-021-creating-google-kubernetes-engine-deployments)
+- [task-022 : configuring persistent storage for google kubernetes engine](task-022-configuring-persistent-storage-for-google-kubernetes-engine)
+- [task-023 : anthos service mesh walkthrough](task-023-anthos-service-mesh-walkthrough)
+
+
+
+
 
 [docs/regions-zones](https://cloud.google.com/compute/docs/regions-zones)
 [https://cloud.google.com/about/locations](https://cloud.google.com/about/locations)
