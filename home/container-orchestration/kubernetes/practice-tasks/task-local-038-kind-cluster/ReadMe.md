@@ -118,3 +118,60 @@ root@local-pod:/# cd /mnt/data
 root@local-pod:/mnt/data# cat test.log 
 hello
 ```
+
+## Extra Port Mapping
+
+[extra-port-mappings](https://kind.sigs.k8s.io/docs/user/configuration/#extra-port-mappings)
+
+- config.yaml
+
+```yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  # port forward 80 on the host to 80 on this node
+  extraPortMappings:
+  - containerPort: 8080
+    hostPort: 8080
+    # optional: set the bind address on the host
+    # 0.0.0.0 is the current default
+    listenAddress: "127.0.0.1"
+    # optional: set the protocol to one of TCP, UDP, SCTP.
+    # TCP is the default
+    protocol: TCP
+```
+
+- Create
+
+```bash
+kind create cluster --config  config.yaml
+```
+
+- Dep.yaml
+
+```yaml
+kind: Pod
+apiVersion: v1
+metadata:
+  name: foo
+spec:
+  containers:
+  - name: foo
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+      hostPort: 8080
+```
+
+- Apply
+
+```bash
+kubectl apply -f dep.yaml
+pod/foo created
+
+# hit localhost:8080
+curl --silent localhost:8080 | egrep "Welcome"
+<title>Welcome to nginx!</title>
+<h1>Welcome to nginx!</h1>
+```
