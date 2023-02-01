@@ -1,0 +1,16 @@
+# fault injection: inserting aborts
+# The below example returns an HTTP 400 error code for 10% of the requests to the ratings service "v1"
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+name: ratings
+spec:
+hosts:
+  - ratings
+http: - fault:
+abort:
+percent: 10 httpStatus: 400
+route:
+  - destination:
+host: ratings subset: v1

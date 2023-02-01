@@ -1,0 +1,16 @@
+# conditional routing: based on request headers
+# The below rule only applies to an incoming request if it includes a custom "end-user" header that contains the string “atharvak”.
+
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+    - reviews
+  http:
+  - match:
+    - headers:
+        end-user:
+          exact: atharvak

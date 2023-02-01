@@ -10,7 +10,7 @@
 - Become familiar with the Cloud Console
 - Become familiar with Cloud Shell features, including the Cloud Shell code editor
 - Use the Cloud Console and Cloud Shell to create buckets and VMs and service accounts
--Perform other commands in Cloud Shell
+- Perform other commands in Cloud Shell
 
 
 ### Use the Cloud Console and Cloud Shell to create buckets and VMs and service accounts

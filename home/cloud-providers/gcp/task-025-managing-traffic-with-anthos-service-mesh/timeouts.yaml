@@ -1,0 +1,16 @@
+
+#  timeouts :  Set a timeout, the amount of time Istio waits for a response to a request.
+#  The timeout for HTTP requests is 15 seconds, but it can be overridden.
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ratings
+spec:
+  hosts:
+    - ratings
+  http:
+  - route:
+    - destination:
+        host: ratings
+        subset: v1
+    timeout: 8s

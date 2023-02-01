@@ -2,7 +2,7 @@
 
 [https://www.cloudskillsboost.google](https://www.cloudskillsboost.google)
 
-[Select - Getting Started with Google Kubernetes Engine Course](https://www.cloudskillsboost.google)
+[Select - Cloud Operations and Service Mesh with Anthos Course](https://www.cloudskillsboost.google)
 
 ## High Level Objectives
 
@@ -11,6 +11,8 @@
 - Observe distributed services, view metrics, set up SLOs, and investigate network topology.
 - Use the Anthos Service Mesh Dashboards to verify security and encryption configuration.
 
+
+Anthos Service Mesh (ASM) on Google Kubernetes Engine. Anthos Service Mesh is a managed service based on Istio, the leading open source service mesh
 
 ### Intro
 

@@ -6,7 +6,7 @@
 
 ## High Level Objectives
 
-- Create deployment manifests, deploy to cluster, and verify Pod rescheduling as nodes are disabled
+- Create deployment manifests, deploy to cluster
 - Trigger manual scaling up and down of Pods in deployments
 - Trigger deployment rollout (rolling update to new version) and rollbacks
 - Perform a Canary deployment
@@ -29,6 +29,9 @@ gcloud container clusters get-credentials $my_cluster --zone $my_zone
 
 # In Cloud Shell enter the following command to clone the repository to the lab Cloud Shell:
 git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+
+# Create a soft link as a shortcut to the working directory:
+ln -s ~/training-data-analyst/courses/ak8s/v1.1 ~/ak8s
 
 # Change to the directory that contains the sample files for this lab:
 cd ~/ak8s/Deployments/
