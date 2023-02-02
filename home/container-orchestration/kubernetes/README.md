@@ -42,6 +42,7 @@ Tasks Local |
 [task-gcp-035   :    Journalbeat](practice-tasks/task-gcp-035-journalbeat)
 [task-gcp-036   :    Let's encrypt HTTP challenge GCP instance cert-manager k8s](practice-tasks/task-gcp-vm-036-cert-manager-lets-encypt)
 [task-gcp-037   :    Let's encrypt HTTP challenge GCP managed k8s cert-manager](practice-tasks/task-gcp-k8s-037-cert-manager-lets-encypt)
+[task-local-038 :    Working with the kind cluster locally](./practice-tasks/task-local-038-kind-cluster)
 
 
 
