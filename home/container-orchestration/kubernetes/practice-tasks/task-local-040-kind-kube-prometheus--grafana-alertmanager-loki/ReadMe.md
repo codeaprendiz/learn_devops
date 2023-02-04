@@ -1,5 +1,8 @@
 # Loki
 
+[bitnami/grafana-loki](https://github.com/bitnami/charts/tree/main/bitnami/grafana-loki)
+[bitnami.com/stack/grafana-loki/helm](https://bitnami.com/stack/grafana-loki/helm)
+
 - Ensure that you have completed the [task-local-039-kind-kube-prometheus--grafana-alertmanager](task-local-039-kind-kube-prometheus--grafana-alertmanager) and we will continue from there
 
 ```bash
