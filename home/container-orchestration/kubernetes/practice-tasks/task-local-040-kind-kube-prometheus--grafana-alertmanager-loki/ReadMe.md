@@ -1,4 +1,4 @@
-# Loki
+# Loki And Prometheus Operator
 
 [bitnami/grafana-loki](https://github.com/bitnami/charts/tree/main/bitnami/grafana-loki)
 [bitnami.com/stack/grafana-loki/helm](https://bitnami.com/stack/grafana-loki/helm)
