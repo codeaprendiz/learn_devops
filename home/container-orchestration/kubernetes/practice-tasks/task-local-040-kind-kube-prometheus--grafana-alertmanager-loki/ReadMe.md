@@ -1,7 +1,7 @@
 # Loki And Prometheus Operator
 
-[bitnami/grafana-loki](https://github.com/bitnami/charts/tree/main/bitnami/grafana-loki)
-[bitnami.com/stack/grafana-loki/helm](https://bitnami.com/stack/grafana-loki/helm)
+- [bitnami/grafana-loki](https://github.com/bitnami/charts/tree/main/bitnami/grafana-loki)
+- [bitnami.com/stack/grafana-loki/helm](https://bitnami.com/stack/grafana-loki/helm)
 
 - Ensure that you have completed the [task-local-040-kind-kube-prometheus--grafana-alertmanager-loki](../task-local-040-kind-kube-prometheus--grafana-alertmanager-loki) and we will continue from there
 
