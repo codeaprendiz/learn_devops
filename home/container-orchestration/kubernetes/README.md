@@ -42,7 +42,7 @@
 | [task-gcp-036   :    Let's encrypt HTTP challenge GCP instance cert-manager k8s](practice-tasks/task-gcp-vm-036-cert-manager-lets-encypt)                                      |
 | [task-gcp-037   :    Let's encrypt HTTP challenge GCP managed k8s cert-manager](practice-tasks/task-gcp-k8s-037-cert-manager-lets-encypt)                                      |
 | [task-local-038 :    Working with the kind cluster locally](./practice-tasks/task-local-038-learn-kind-cluster)                                                                |
-
+| [task-local-039 :    Setting up kube-prometheus in kind cluster -- alertmanager, grafana](./practice-tasks/task-local-039-kind-kube-prometheus--grafana-alertmanager)          |
 
 
 
