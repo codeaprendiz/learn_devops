@@ -3,7 +3,7 @@
 [https://go.dev/doc/tutorial/getting-started](https://go.dev/doc/tutorial/getting-started)
 
 ```bash
-╰─ ls
+$ ls
 ReadMe.md      hello-world.go
 
 go mod init example/hello
@@ -11,7 +11,7 @@ go: creating new go.mod: module example/hello
 go: to add module requirements and sums:
         go mod tidy
 
-╰─ go run .                 
+$ go run .                 
 Hello, World!
 
 ```
