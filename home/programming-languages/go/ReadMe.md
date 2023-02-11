@@ -1,6 +1,8 @@
 # Golang Tasks
 
 
-|  TasksLocal                                                                                                                                                                               |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [task-local-001 :    Configure default cpu requests and limits for a namespace](practice-tasks/task-local-001-configure-default-CPU-requests-and-limits-for-a-namespace)
+| Tasks Set                                                              |
+|------------------------------------------------------------------------|
+| [task-001 : hello world](task-001-hello-world)                         |
+| [task-002 : calling-external-module](task-002-calling-external-module) |
+| [task-003 : variables-in-go](task-003-variables-in-go)                 |
