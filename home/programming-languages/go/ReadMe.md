@@ -11,3 +11,5 @@
 | [task-006 : type-conversion](task-006-type-conversion)                 |
 | [task-007 : packages](task-007-packages)                               |
 | [task-008 : imports](task-008-imports)                                 |
+| [task-009 : exported-names](task-009-exported-names)                   |
+| [task-010 : functions](task-010-functions)                             |
