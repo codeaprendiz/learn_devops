@@ -10,3 +10,4 @@
 | [task-005 : custom-types](task-005-custom-types)                       |
 | [task-006 : type-conversion](task-006-type-conversion)                 |
 | [task-007 : packages](task-007-packages)                               |
+| [task-008 : imports](task-008-imports)                                 |
