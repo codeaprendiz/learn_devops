@@ -16,4 +16,5 @@ func main() {
 	default:
 		fmt.Println("I am default")
 	}
+
 }
