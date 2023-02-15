@@ -23,8 +23,18 @@ func abs(v2 vertex) int {
 	return v2.x * v2.y
 }
 
+// Pointer receivers
+func (v *vertex) mPointerReceiver(i int) {
+	v.x = v.x * i
+	v.y = v.y * i
+}
+
 func main() {
 	v := vertex{2, 3}
 	fmt.Println(v.abs())
 	fmt.Println(abs(v))
+
+	fmt.Println(v)
+	v.mPointerReceiver(2)
+	fmt.Println(v)
 }
