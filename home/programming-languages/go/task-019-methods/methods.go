@@ -23,11 +23,33 @@ func abs(v2 vertex) int {
 	return v2.x * v2.y
 }
 
-// Pointer receivers
+
+/*
+Pointer receivers
+methods with pointer receivers take either a value or a pointer as the receiver when they are called
+        var v Vertex
+        v.Scale(5)  // OK
+        p := &v
+        p.Scale(10) // OK
+*/
+
 func (v *vertex) mPointerReceiver(i int) {
 	v.x = v.x * i
 	v.y = v.y * i
 }
+
+/*
+you might notice that functions with a pointer argument must take a pointer:
+        var v Vertex
+        ScaleFunc(v, 5)  // Compile error!
+        ScaleFunc(&v, 5) // OK
+*/
+func mPointerArgument(v *vertex, i int) {
+	v.x = v.x * i
+	v.y = v.y * i
+}
+
+
 
 func main() {
 	v := vertex{2, 3}
@@ -37,4 +59,20 @@ func main() {
 	fmt.Println(v)
 	v.mPointerReceiver(2)
 	fmt.Println(v)
+
+	v1 := vertex{23,34}
+	fmt.Println(v1)
+	v1.mPointerReceiver(2)
+	fmt.Println(v1)
+	mPointerArgument(&v1,2)
+	fmt.Println(v1)
+	// mPointerArgument(v1,2) // Compile time error : cannot use v1 (variable of type vertex) as type *vertex in argument to mPointerArgument
+
+	p := &vertex{6,7}
+	fmt.Println(*p)
+	p.mPointerReceiver(2)
+	fmt.Println(*p)
+	mPointerArgument(p,2)
+	fmt.Println(*p)
+
 }
