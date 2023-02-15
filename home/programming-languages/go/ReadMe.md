@@ -18,4 +18,4 @@
 | [task-013 : defer](task-013-defer)                                     |
 | [task-014 : pointers](task-014-pointers)                               |
 | [task-015 : structs](task-015-structs)                                 |
-| [task-016 : arrays](task-016-arrays)                                   |
+| [task-016 : arrays-and-slices](task-016-arrays-and-slices)             |
