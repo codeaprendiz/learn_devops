@@ -13,3 +13,7 @@
 | [task-008 : imports](task-008-imports)                                 |
 | [task-009 : exported-names](task-009-exported-names)                   |
 | [task-010 : functions](task-010-functions)                             |
+| [task-011 : loops](task-011-loops)                                     |
+| [task-012 : flow-control](task-012-flow-control)                       |
+| [task-013 : defer](task-013-defer)                                     |
+| [task-014 : pointers](task-014-pointers)                               |
