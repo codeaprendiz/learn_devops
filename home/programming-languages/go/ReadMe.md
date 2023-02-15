@@ -19,3 +19,5 @@
 | [task-014 : pointers](task-014-pointers)                               |
 | [task-015 : structs](task-015-structs)                                 |
 | [task-016 : arrays-and-slices](task-016-arrays-and-slices)             |
+| [task-017 : maps](task-017-maps)                                       |
+| [task-018 : function-values](task-018-function-values)                 |
