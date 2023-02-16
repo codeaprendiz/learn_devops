@@ -28,3 +28,4 @@
 | [task-023 : type-assertions](task-023-type-assertions)                 |
 | [task-024 : type-switches](task-024-type-switches)                     |
 | [task-025 : stringers](task-025-stringers)                             |
+| [task-026 : reader](task-026-reader)                                   |
