@@ -8,3 +8,9 @@
 $ go run interfaces.go
 hello
 ```
+
+
+```bash
+go run interfaces-2.go
+The area of rectangle is :  8
+```
