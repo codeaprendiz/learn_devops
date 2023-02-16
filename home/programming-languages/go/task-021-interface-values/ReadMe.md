@@ -10,3 +10,12 @@ hello
 (3.141592653589793, main.m_float)
 3.141592653589793
 ```
+
+```bash
+go run interface-with-nil-underlying-values.go
+Area :  4
+(<nil>, *main.Square)
+Nil
+(&{2}, *main.Square)
+Area :  4
+```
