@@ -26,3 +26,4 @@
 | [task-021 : interface-values](task-021-interface-values)               |
 | [task-022 : pointer-receivers](task-022-pointer-receivers)             |
 | [task-023 : type-assertions](task-023-type-assertions)                 |
+| [task-024 : type-switches](task-024-type-switches)                     |
