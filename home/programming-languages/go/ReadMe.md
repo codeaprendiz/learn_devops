@@ -23,3 +23,6 @@
 | [task-018 : function-values](task-018-function-values)                 |
 | [task-019 : methods](task-019-methods)                                 |
 | [task-020 : interfaces](task-020-interfaces)                           |
+| [task-021 : interface-values](task-021-interface-values)               |
+| [task-022 : pointer-receivers](task-022-pointer-receivers)             |
+| [task-023 : type-assertions](task-023-type-assertions)                 |
