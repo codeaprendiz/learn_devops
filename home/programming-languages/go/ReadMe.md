@@ -21,3 +21,5 @@
 | [task-016 : arrays-and-slices](task-016-arrays-and-slices)             |
 | [task-017 : maps](task-017-maps)                                       |
 | [task-018 : function-values](task-018-function-values)                 |
+| [task-019 : methods](task-019-methods)                                 |
+| [task-020 : interfaces](task-020-interfaces)                           |
