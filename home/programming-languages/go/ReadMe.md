@@ -29,3 +29,6 @@
 | [task-024 : type-switches](task-024-type-switches)                     |
 | [task-025 : stringers](task-025-stringers)                             |
 | [task-026 : reader](task-026-reader)                                   |
+| [task-027 : type-parameters](task-027-type-parameters)                 |
+| [task-028 : generic-types](task-028-generic-types)                     |
+| [task-029 : goroutines](task-029-goroutines)                           |
