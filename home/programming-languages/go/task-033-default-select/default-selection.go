@@ -15,6 +15,7 @@ func main() {
 		case <-boom:
 			fmt.Println("BOOM!")
 			return
+			// The default case in a select is run if no other case is ready.
 		default:
 			fmt.Println("    .")
 			time.Sleep(50 * time.Millisecond)
