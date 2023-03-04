@@ -1,5 +1,10 @@
 # Range and close
 
+## Explaination
+
+
+
+
 [https://go.dev/tour/concurrency/4](https://go.dev/tour/concurrency/4)
 
 ```bash
