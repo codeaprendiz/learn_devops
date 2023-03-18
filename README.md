@@ -18,6 +18,7 @@
   - [infrastructure-as-code](#infrastructure-as-code)
     - [aws-terraform](#aws-terraform)
     - [oci-terraform](#oci-terraform)
+    - [gcp-terraform](#gcp-terraform)
     - [ansible](#ansible)
   - [interview](#interview)
     - [coding-tasks](#coding-tasks)
@@ -123,6 +124,11 @@
 | Content                                                     |     | 
 |-------------------------------------------------------------|-----|
 | [practice-tasks](home/infrastructure-as-code/terraform/oci) |     |
+
+### gcp-terraform
+| Content                                                               |     | 
+|-----------------------------------------------------------------------|-----|
+| [practice-tasks](home/infrastructure-as-code/terraform/terraform-gcp) |     |
 
 ### ansible
 
