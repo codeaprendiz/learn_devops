@@ -1,0 +1,27 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: require-jwt
+  namespace: mtls-service
+spec:
+  selector:
+    matchLabels:
+      app: httpbin
+  # sets the default action for the policy to allow traffic.
+  action: ALLOW
+  rules:
+    - from:
+        - source:
+            requestPrincipals: ["testing@secure.istio.io/testing@secure.istio.io"]
+      to:
+      #  specifies the operation(s) that this rule applies to.
+        - operation:
+            # specifies the HTTP method(s) that this rule applies to. In this case, the rule applies to the HTTP GET method.
+            methods: ["GET"]
+            paths: ["/ip"]
+
+# Together, this AuthorizationPolicy specifies that requests from a source whose request
+# principal matches the given string (in this case, "testing@secure.istio.io/testing@secure.istio.io") are
+# allowed to access the httpbin application, but only for the HTTP GET method and the path /ip.
+# This kind of policy configuration allows for fine-grained control over access to specific operations and
+# resources within a service, and helps to enforce the principle of least privilege.

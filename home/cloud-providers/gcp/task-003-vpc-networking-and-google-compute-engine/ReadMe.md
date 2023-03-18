@@ -32,21 +32,21 @@
 - Create a VPC using automode `mynetwork`
 - Create a VM instance in us-central1
 
-| Property | Value          |
-|----------|----------------|
-| Name     | mynet-us-vm    | 
-| Region   | us-central1    |
-| Zone     | us-central1-c  |
+| Property | Value         |
+|----------|---------------|
+| Name     | mynet-us-vm   |
+| Region   | us-central1   |
+| Zone     | us-central1-c |
 
 - The Internal IP should be 10.128.0.2 because 10.128.0.1 is reserved for the gateway and you have not configured any other instances in that subnet.
 
 - Create a VM instance in europe-central2
 
-| Property | Value              |
-|----------|--------------------|
-| Name     | mynet-eu-vm        | 
-| Region   | europe-central2    |
-| Zone     | europe-central2-a  |
+| Property | Value             |
+|----------|-------------------|
+| Name     | mynet-eu-vm       |
+| Region   | europe-central2   |
+| Zone     | europe-central2-a |
 
 - The Internal IP should be 10.186.0.2 because 10.186.0.1 is reserved for the gateway and you have not configured any other instances in that subnet.
 

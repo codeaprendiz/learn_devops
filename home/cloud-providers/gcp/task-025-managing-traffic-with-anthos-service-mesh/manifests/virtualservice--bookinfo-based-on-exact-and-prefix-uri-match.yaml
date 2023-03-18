@@ -1,0 +1,38 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: bookinfo
+spec:
+  #  This field specifies the list of hosts that this VirtualService will apply to.
+  #  In this case, it is using the wildcard character "*" to match all hosts.
+  hosts:
+    - "*"
+  # This field specifies the list of Gateway resources that this VirtualService will apply to.
+  # In this case, it is using the Gateway resource named "bookinfo-gateway".
+  gateways:
+    - bookinfo-gateway
+  # This field specifies the configuration for HTTP traffic routing.
+  http:
+    # This field specifies the list of HTTP path matching rules that this VirtualService will apply to.
+    # In this case, it is using a set of URI path matching rules.
+    - match:
+        - uri:
+            # This field specifies an exact match for the URI path.
+            exact: /productpage
+        - uri:
+            # This field specifies a prefix match for the URI path.
+            prefix: /static
+        - uri:
+            exact: /login
+        - uri:
+            exact: /logout
+        - uri:
+            prefix: /api/v1/products
+      # This field specifies the list of destinations that matching traffic will be routed to.
+      route:
+        #  This field specifies the destination host and port for the matching traffic.
+        - destination:
+            # This field specifies the name of the destination host which is productpage service
+            host: productpage
+            port:
+              number: 9080

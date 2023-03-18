@@ -1,0 +1,72 @@
+# This is a Kubernetes manifest file for an Istio DestinationRule resource, which is used
+# to configure traffic routing and policy rules for network traffic between Kubernetes services.
+# Here's what this particular manifest is doing:
+
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: productpage
+spec:
+  # This specifies the name of the Kubernetes service that this DestinationRule applies to. In this case, it is the "productpage" service.
+  host: productpage
+  subsets:
+  # This defines a subset within the "productpage" service, which is identified by the name "v1".
+    - name: v1
+      labels:
+        version: v1
+
+# Overall, this manifest is creating a DestinationRule for the "productpage" service with a
+# single subset named "v1" that has a label of "version: v1". This subset can be used to route traffic
+# specifically to instances of the "productpage" service with that label, or to apply policy rules specific to that version of the service.
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: reviews
+spec:
+  host: reviews
+  subsets:
+    - name: v1
+      labels:
+        version: v1
+    - name: v2
+      labels:
+        version: v2
+    - name: v3
+      labels:
+        version: v3
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: ratings
+spec:
+  host: ratings
+  subsets:
+    - name: v1
+      labels:
+        version: v1
+    - name: v2
+      labels:
+        version: v2
+    - name: v2-mysql
+      labels:
+        version: v2-mysql
+    - name: v2-mysql-vm
+      labels:
+        version: v2-mysql-vm
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: details
+spec:
+  host: details
+  subsets:
+    - name: v1
+      labels:
+        version: v1
+    - name: v2
+      labels:
+        version: v2
+---

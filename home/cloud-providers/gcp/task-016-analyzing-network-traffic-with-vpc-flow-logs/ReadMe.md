@@ -17,9 +17,9 @@
 - In the Cloud Console, in the Navigation menu (Navigation menu icon), select VPC network > VPC networks.  `vpc-net`
 
 
-| Property    | Value           |
-|-------------|-----------------|
-| Name        | vpc-net         |
+| Property | Value   |
+|----------|---------|
+| Name     | vpc-net |
 
 
 - Subnet creation mode, click Custom

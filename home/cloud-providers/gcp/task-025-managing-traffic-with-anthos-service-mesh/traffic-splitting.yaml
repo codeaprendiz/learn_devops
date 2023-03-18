@@ -1,5 +1,13 @@
 
 ## traffic splitting : Route traffic to multiple versions of a service.
+# This Kubernetes manifest creates a virtual service called "reviews" for routing traffic to different
+# subsets of a service named "reviews". The service can have multiple versions, or subsets, running concurrently,
+# and traffic is split between them based on the specified weights. In this case, traffic is split between two subsets,
+# "v1" and "v2", with 75% of traffic being sent to "v1" and 25% of traffic being sent to "v2". The traffic routing
+# is based on the HTTP protocol, and the "reviews" service is the destination host.
+# This configuration allows for gradual deployment of new versions of the service, as well as testing and
+# experimentation with different versions by splitting traffic between them. Istio, a
+# popular service mesh for Kubernetes, provides this traffic splitting functionality through its VirtualService resource.
 apiVersion: networking. istio.io/v1alpha3
 kind: VirtualService
 metadata:

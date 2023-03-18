@@ -1,0 +1,33 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+    # This specifies the host name that this VirtualService applies to, which is the "reviews" service.
+    - reviews
+  http:
+    - match:
+        # This specifies a matching rule based on the end-user HTTP header with the exact value of jason.
+        # This means that if the end-user header in the incoming HTTP request has a value of jason, the
+        # VirtualService will route the request to the v2 subset of the reviews service.
+        - headers:
+            end-user:
+              exact: jason
+      # This defines the destination for the incoming traffic that matches the above match rule.
+      # Specifically, it routes traffic to the v2 subset of the reviews service.
+      route:
+        - destination:
+            host: reviews
+            subset: v2
+    - route:
+        # This defines a default route for all other incoming traffic that does not match the above rule.
+        # Specifically, it routes traffic to the v1 subset of the reviews service.
+        - destination:
+            host: reviews
+            subset: v1
+
+# Overall, this manifest creates a VirtualService that applies to the reviews service,
+# and routes incoming traffic to either the v1 or v2 subset of the service based on whether
+# the end-user HTTP header has a value of jason. This is a basic example of how you can use VirtualService to
+# implement traffic routing rules based on HTTP headers in an Istio service mesh.

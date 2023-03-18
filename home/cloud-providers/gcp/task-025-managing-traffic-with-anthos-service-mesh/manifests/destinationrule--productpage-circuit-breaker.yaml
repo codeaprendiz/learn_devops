@@ -1,0 +1,35 @@
+# DestinationRule is an Istio resource that defines policies to apply to traffic intended
+# for a specific service instance. It is used to configure traffic management features such
+# as load balancing, circuit breaking, and fault injection.
+
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: productpage
+spec:
+  # This specifies the host name that this DestinationRule applies to, which is the "productpage" service.
+  host: productpage
+  subsets:
+    # This defines a subset of the "productpage" service called "v1" that has a label of version: v1.
+    - name: v1
+      labels:
+        version: v1
+  trafficPolicy:
+    connectionPool:
+      # This defines connection pool settings for the service. Specifically, it limits the maximum
+      # number of TCP connections to 1 and the maximum number of pending HTTP requests per connection to 1.
+      tcp:
+        maxConnections: 1
+      http:
+        http1MaxPendingRequests: 1
+        maxRequestsPerConnection: 1
+    outlierDetection:
+    # This defines outlier detection settings for the service.
+    # Specifically, it specifies that if there are more than 1 consecutive 5xx HTTP responses from the "productpage"
+    # service within a 1-second interval, the service instance will be ejected from the pool for 3 minutes.
+    # Additionally, if all instances of the service are ejected, Istio will still allow traffic to be sent to the service,
+    # up to 100% of the total traffic.
+      consecutive5xxErrors: 1
+      interval: 1s
+      baseEjectionTime: 3m
+      maxEjectionPercent: 100

@@ -1,0 +1,27 @@
+# This is a Kubernetes YAML configuration for an Istio RequestAuthentication resource, which specifies how to
+# authenticate incoming requests
+# based on their JWT tokens
+apiVersion: "security.istio.io/v1beta1"
+kind: "RequestAuthentication"
+metadata:
+  name: "jwt-example"
+  namespace: mtls-service
+spec:
+  # defines the target workload(s) to which the policy applies, in this case any workload with the label "app: httpbin".
+  selector:
+    matchLabels:
+      app: httpbin
+  #  specifies the rules for authenticating incoming requests based on their JWT tokens.
+  jwtRules:
+    # specifies the issuer that the JWT token must come from in order to be considered valid.
+    # In this case, the issuer is "testing@secure.istio.io".
+    - issuer: "testing@secure.istio.io"
+      # specifies the URI where the JSON Web Key Set (JWKS) containing the public keys used for verifying the
+      # JWT signatures can be obtained. In this case, the JWKS URI is a public URL hosted on GitHub.
+      jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.8/security/tools/jwt/samples/jwks.json"
+
+# Together, this RequestAuthentication resource specifies that requests to the httpbin application
+# must include a valid JWT token with an issuer of "testing@secure.istio.io", and that the signature
+# on the token must be verifiable using one of the public keys specified in the JWKS at the given URL.
+# This kind of policy configuration helps to ensure that only authenticated requests are able to access the
+# httpbin application, and that those requests are properly signed and verified.

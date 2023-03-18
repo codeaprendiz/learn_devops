@@ -23,6 +23,9 @@
 - [task-021 : creating google kubernetes engine deployments](task-021-creating-google-kubernetes-engine-deployments)
 - [task-022 : configuring persistent storage for google kubernetes engine](task-022-configuring-persistent-storage-for-google-kubernetes-engine)
 - [task-023 : anthos service mesh walkthrough](task-023-anthos-service-mesh-walkthrough)
+- [task-024 : observing anthos services](task-024-observing-anthos-services)
+- [task-025 : managing traffic with anthos service mesh](task-025-managing-traffic-with-anthos-service-mesh)
+
 
 
 
@@ -36,6 +39,10 @@
 [docs/grant-role-console](https://cloud.google.com/iam/docs/grant-role-console)
 
 [shell/docs](https://cloud.google.com/shell/docs)
+
+[architecture/identity](https://cloud.google.com/architecture/identity)
+
+[docs/cloud-platform-resource-hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy)
 
 [https://cloud.google.com/products/calculator](https://cloud.google.com/products/calculator)
 

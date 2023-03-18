@@ -110,10 +110,10 @@ nohup ab -n 1000 -c 10 https://<your-project-id>.appspot.com/ > nohup6.out &
 |-------------------------|-------------------------------|
 | Title                   | App Engine Uptime Check       |
 | App Engine Uptime Check | HTTPS                         |
-| Hostname                | <your-project-id>.appspot.com | 
+| Hostname                | <your-project-id>.appspot.com |
 | Resource Type           | URL                           |
-| Path                    | /                             | 
-| Check Frequency         | 1 minute                      | 
+| Path                    | /                             |
+| Check Frequency         | 1 minute                      |
 
 
 - `Test`

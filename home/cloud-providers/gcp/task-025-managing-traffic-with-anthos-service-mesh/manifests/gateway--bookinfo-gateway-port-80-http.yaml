@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: bookinfo-gateway
+  namespace: ingress
+spec:
+  selector:
+    istio: ingressgateway
+  # This field specifies the servers that will be created for the Gateway.
+  servers:
+    # This field specifies the port that the server will listen on.
+    - port:
+        number: 80
+        name: http
+        # This field specifies the protocol used by the port. In this case, it is using HTTP.
+        protocol: HTTP
+      # This field specifies the list of hosts that this Gateway will accept traffic for. In this case, it is using the wildcard character "*" to accept traffic for all hosts.
+      hosts:
+        - "*"

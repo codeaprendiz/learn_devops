@@ -1,0 +1,33 @@
+# This is a Kubernetes YAML configuration for an Istio AuthorizationPolicy,
+# which defines access control rules for traffic flowing through the Istio service mesh
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: require-jwt
+  namespace: mtls-service
+spec:
+  # defines the target workload(s) to which the policy applies, in this case any workload with the label "app: httpbin".
+  selector:
+    matchLabels:
+      app: httpbin
+  #  sets the default action for the policy to allow traffic.
+  action: ALLOW
+  # specifies a list of rules for controlling access to the workload(s).
+  rules:
+    - from:
+        - source:
+            # specifies the request principal(s) that must be present in order to allow traffic.
+            # In this case, the rule allows traffic from a source whose request principal matches the given string.
+            requestPrincipals: ["testing@secure.istio.io/testing@secure.istio.io"]
+
+#  A request principal is a piece of identity information that identifies the entity making a request to a service.
+#  In Istio, request principals are typically represented as strings that identify a user or a service account,
+#  and can be used in access control policies to grant or deny access to resources.
+#
+#  In the example YAML configuration, the requestPrincipals field is used to specify a list of principals
+#  that are allowed to access the httpbin application. Specifically, the rule allows traffic from a source
+#  whose request principal matches the string "testing@secure.istio.io/testing@secure.istio.io".
+#  This means that requests originating from a client that presents a JWT (JSON Web Token) with the "testing@secure.istio.io/testing@secure.istio.io" principal will be allowed to access the httpbin application.
+#
+#  Using request principals in access control policies helps to ensure that only authorized clients and
+#  services are able to access resources, which is an important aspect of securing microservices-based architectures.

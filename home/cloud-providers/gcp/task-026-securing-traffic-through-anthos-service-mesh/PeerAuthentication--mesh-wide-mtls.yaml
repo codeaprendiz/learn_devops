@@ -1,0 +1,15 @@
+apiVersion: "security.istio.io/v1beta1"
+kind: "PeerAuthentication"
+metadata:
+  name: "mesh-wide-mtls"
+spec:
+  mtls:
+    # sets the mTLS mode to "STRICT", which requires both the client and server workloads to
+    # present valid TLS certificates and chains that can be verified by the mTLS trust anchors configured in the mesh.
+    mode: STRICT
+
+# Together, this PeerAuthentication resource specifies that all workloads in the
+# Istio service mesh must communicate over mutual TLS with strict mode enabled, which helps
+# to ensure that all communication within the mesh is encrypted and authenticated, and that the identities
+# of both client and server are verified. This provides a strong security posture for the entire
+# service mesh, and helps to protect against attacks such as man-in-the-middle attacks or eavesdropping.

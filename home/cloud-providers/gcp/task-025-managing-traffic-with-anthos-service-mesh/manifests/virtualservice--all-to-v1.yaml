@@ -1,0 +1,60 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: productpage
+spec:
+  hosts:
+    # This specifies the host name that this VirtualService applies to, which is the "productpage" service.
+    - productpage
+  http:
+    - route:
+        - destination:
+            # This defines the route that the VirtualService should use for incoming HTTP traffic to the "productpage" service.
+            # Specifically, it routes all traffic to the "v1" subset of the "productpage" service.
+            host: productpage
+            subset: v1
+# Why both spec: hosts: - productpage and http: - route: - destination: host: productpage subset: v1 as same ?
+# It's true that both the spec.hosts and spec.http.route.destination.host fields in the Istio VirtualService resource manifest are set to productpage, which may seem redundant or confusing. However, each field serves a different purpose:
+# spec.hosts: This field specifies the list of hosts that this VirtualService applies to. In this case, there is only one host specified, which is the productpage service.
+# spec.http.route.destination.host: This field specifies the destination host to which the incoming HTTP requests should be routed by the VirtualService. In this case, it is also set to productpage, which means that all incoming HTTP requests for the productpage service will be routed to the destination host specified in the route field.
+# The reason why both fields are set to productpage in this example is because the VirtualService is intended to apply to only one Kubernetes service (productpage) and route all incoming HTTP traffic to a specific subset (v1) of that service. In more complex scenarios where a VirtualService may apply to multiple hosts, or multiple subsets of the same host, you would need to specify the spec.hosts and spec.http.route.destination.host fields differently for each host or subset.
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+    - reviews
+  http:
+    - route:
+        - destination:
+            host: reviews
+            subset: v1
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ratings
+spec:
+  hosts:
+    - ratings
+  http:
+    - route:
+        - destination:
+            host: ratings
+            subset: v1
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: details
+spec:
+  hosts:
+    - details
+  http:
+    - route:
+        - destination:
+            host: details
+            subset: v1
+---
