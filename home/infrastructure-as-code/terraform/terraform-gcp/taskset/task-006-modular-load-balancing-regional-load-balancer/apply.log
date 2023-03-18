@@ -1,0 +1,594 @@
+Terraform will perform the following actions:
+
+  # google_compute_network.network will be created
+  + resource "google_compute_network" "network" {
+      + auto_create_subnetworks         = false
+      + delete_default_routes_on_create = false
+      + gateway_ipv4                    = (known after apply)
+      + id                              = (known after apply)
+      + internal_ipv6_range             = (known after apply)
+      + mtu                             = (known after apply)
+      + name                            = "load-balancer-module-network"
+      + project                         = (known after apply)
+      + routing_mode                    = (known after apply)
+      + self_link                       = (known after apply)
+    }
+
+  # google_compute_router.router will be created
+  + resource "google_compute_router" "router" {
+      + creation_timestamp = (known after apply)
+      + id                 = (known after apply)
+      + name               = "load-balancer-module-router"
+      + network            = (known after apply)
+      + project            = (known after apply)
+      + region             = "us-central1"
+      + self_link          = (known after apply)
+    }
+
+  # google_compute_subnetwork.subnetwork will be created
+  + resource "google_compute_subnetwork" "subnetwork" {
+      + creation_timestamp         = (known after apply)
+      + external_ipv6_prefix       = (known after apply)
+      + fingerprint                = (known after apply)
+      + gateway_address            = (known after apply)
+      + id                         = (known after apply)
+      + ip_cidr_range              = "10.0.0.0/16"
+      + ipv6_cidr_range            = (known after apply)
+      + name                       = "load-balancer-module-subnetwork"
+      + network                    = (known after apply)
+      + private_ip_google_access   = (known after apply)
+      + private_ipv6_google_access = (known after apply)
+      + project                    = (known after apply)
+      + purpose                    = (known after apply)
+      + region                     = "us-central1"
+      + secondary_ip_range         = (known after apply)
+      + self_link                  = (known after apply)
+      + stack_type                 = (known after apply)
+    }
+
+  # google_service_account.instance-group will be created
+  + resource "google_service_account" "instance-group" {
+      + account_id = "instance-group"
+      + disabled   = false
+      + email      = (known after apply)
+      + id         = (known after apply)
+      + member     = (known after apply)
+      + name       = (known after apply)
+      + project    = (known after apply)
+      + unique_id  = (known after apply)
+    }
+
+  # module.cloud_nat.google_compute_router_nat.main will be created
+  + resource "google_compute_router_nat" "main" {
+      + enable_dynamic_port_allocation      = (known after apply)
+      + enable_endpoint_independent_mapping = true
+      + icmp_idle_timeout_sec               = 30
+      + id                                  = (known after apply)
+      + min_ports_per_vm                    = 64
+      + name                                = "load-balancer-module-nat"
+      + nat_ip_allocate_option              = "AUTO_ONLY"
+      + project                             = "qwiklabs-gcp-04-0058fbc31079"
+      + region                              = "us-central1"
+      + router                              = "load-balancer-module-router"
+      + source_subnetwork_ip_ranges_to_nat  = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+      + tcp_established_idle_timeout_sec    = 1200
+      + tcp_time_wait_timeout_sec           = 120
+      + tcp_transitory_idle_timeout_sec     = 30
+      + udp_idle_timeout_sec                = 30
+    }
+
+  # module.cloud_nat.random_string.name_suffix will be created
+  + resource "random_string" "name_suffix" {
+      + id          = (known after apply)
+      + length      = 6
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = true
+      + numeric     = true
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.instance_template.google_compute_instance_template.tpl will be created
+  + resource "google_compute_instance_template" "tpl" {
+      + can_ip_forward          = false
+      + id                      = (known after apply)
+      + machine_type            = "n1-standard-1"
+      + metadata_fingerprint    = (known after apply)
+      + metadata_startup_script = <<-EOT
+            #!/bin/bash -xe
+
+            apt-get update
+            apt-get install -y apache2 libapache2-mod-php
+
+            cat > /var/www/html/index.php <<'EOF'
+            <?php
+            function metadata_value($value) {
+                $opts = [
+                    "http" => [
+                        "method" => "GET",
+                        "header" => "Metadata-Flavor: Google"
+                    ]
+                ];
+                $context = stream_context_create($opts);
+                $content = file_get_contents("http://metadata/computeMetadata/v1/$value", false, $context);
+                return $content;
+            }
+            ?>
+
+            <!doctype html>
+            <html>
+            <head>
+            <!-- Compiled and minified CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+
+            <!-- Compiled and minified JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+            <title>Frontend Web Server</title>
+            </head>
+            <body>
+            <div class="container">
+            <div class="row">
+            <div class="col s2">&nbsp;</div>
+            <div class="col s8">
+
+
+            <div class="card blue">
+            <div class="card-content white-text">
+            <div class="card-title">Backend that serviced this request</div>
+            </div>
+            <div class="card-content white">
+            <table class="bordered">
+              <tbody>
+                <tr>
+                  <td>Name</td>
+                  <td><?php printf(metadata_value("instance/name")) ?></td>
+                </tr>
+                <tr>
+                  <td>ID</td>
+                  <td><?php printf(metadata_value("instance/id")) ?></td>
+                </tr>
+                <tr>
+                  <td>Hostname</td>
+                  <td><?php printf(metadata_value("instance/hostname")) ?></td>
+                </tr>
+                <tr>
+                  <td>Zone</td>
+                  <td><?php printf(metadata_value("instance/zone")) ?></td>
+                </tr>
+                <tr>
+                  <td>Machine Type</td>
+                  <td><?php printf(metadata_value("instance/machine-type")) ?></td>
+                </tr>
+                <tr>
+                  <td>Project</td>
+                  <td><?php printf(metadata_value("project/project-id")) ?></td>
+                </tr>
+                <tr>
+                  <td>Internal IP</td>
+                  <td><?php printf(metadata_value("instance/network-interfaces/0/ip")) ?></td>
+                </tr>
+                <tr>
+                  <td>External IP</td>
+                  <td><?php printf(metadata_value("instance/network-interfaces/0/access-configs/0/external-ip")) ?></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            </div>
+
+            <div class="card blue">
+            <div class="card-content white-text">
+            <div class="card-title">Proxy that handled this request</div>
+            </div>
+            <div class="card-content white">
+            <table class="bordered">
+              <tbody>
+                <tr>
+                  <td>Address</td>
+                  <td><?php printf($_SERVER["HTTP_HOST"]); ?></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+
+            </div>
+            </div>
+            <div class="col s2">&nbsp;</div>
+            </div>
+            </div>
+            </html>
+            EOF
+            sudo mv /var/www/html/index.html /var/www/html/index.html.old
+
+            [[ -n "" ]] && mkdir -p /var/www/html/ && cp /var/www/html/index.php /var/www/html//index.php
+
+            systemctl enable apache2
+            systemctl restart apache2
+        EOT
+      + name                    = (known after apply)
+      + name_prefix             = "default-instance-template-"
+      + project                 = (known after apply)
+      + region                  = (known after apply)
+      + self_link               = (known after apply)
+      + tags_fingerprint        = (known after apply)
+
+      + advanced_machine_features {
+          + enable_nested_virtualization = false
+        }
+
+      + confidential_instance_config {
+          + enable_confidential_compute = false
+        }
+
+      + disk {
+          + auto_delete  = true
+          + boot         = true
+          + device_name  = (known after apply)
+          + disk_size_gb = 100
+          + disk_type    = "pd-standard"
+          + interface    = (known after apply)
+          + mode         = (known after apply)
+          + source_image = "debian-cloud/debian-11"
+          + type         = "PERSISTENT"
+        }
+
+      + network_interface {
+          + ipv6_access_type   = (known after apply)
+          + name               = (known after apply)
+          + stack_type         = "IPV4_ONLY"
+          + subnetwork         = (known after apply)
+          + subnetwork_project = (known after apply)
+        }
+
+      + scheduling {
+          + automatic_restart   = true
+          + on_host_maintenance = "MIGRATE"
+          + preemptible         = false
+          + provisioning_model  = (known after apply)
+        }
+
+      + service_account {
+          + email  = (known after apply)
+          + scopes = [
+              + "https://www.googleapis.com/auth/cloud-platform",
+            ]
+        }
+    }
+
+  # module.load_balancer_custom_hc.google_compute_firewall.default-hc-fw[0] will be created
+  + resource "google_compute_firewall" "default-hc-fw" {
+      + creation_timestamp      = (known after apply)
+      + destination_ranges      = (known after apply)
+      + direction               = (known after apply)
+      + enable_logging          = (known after apply)
+      + id                      = (known after apply)
+      + name                    = "basic-load-balancer-custom-hc-hc"
+      + network                 = "load-balancer-module-network"
+      + priority                = 1000
+      + project                 = (known after apply)
+      + self_link               = (known after apply)
+      + source_ranges           = [
+          + "209.85.152.0/22",
+          + "209.85.204.0/22",
+          + "35.191.0.0/16",
+        ]
+      + target_service_accounts = (known after apply)
+
+      + allow {
+          + ports    = [
+              + "8080",
+            ]
+          + protocol = "tcp"
+        }
+    }
+
+  # module.load_balancer_custom_hc.google_compute_firewall.default-lb-fw will be created
+  + resource "google_compute_firewall" "default-lb-fw" {
+      + creation_timestamp      = (known after apply)
+      + destination_ranges      = (known after apply)
+      + direction               = (known after apply)
+      + enable_logging          = (known after apply)
+      + id                      = (known after apply)
+      + name                    = "basic-load-balancer-custom-hc-vm-service"
+      + network                 = "load-balancer-module-network"
+      + priority                = 1000
+      + project                 = (known after apply)
+      + self_link               = (known after apply)
+      + source_ranges           = [
+          + "0.0.0.0/0",
+        ]
+      + target_service_accounts = (known after apply)
+
+      + allow {
+          + ports    = [
+              + "8080",
+            ]
+          + protocol = "tcp"
+        }
+    }
+
+  # module.load_balancer_custom_hc.google_compute_forwarding_rule.default will be created
+  + resource "google_compute_forwarding_rule" "default" {
+      + creation_timestamp    = (known after apply)
+      + id                    = (known after apply)
+      + ip_address            = (known after apply)
+      + ip_protocol           = "TCP"
+      + label_fingerprint     = (known after apply)
+      + load_balancing_scheme = "EXTERNAL"
+      + name                  = "basic-load-balancer-custom-hc"
+      + network               = (known after apply)
+      + network_tier          = (known after apply)
+      + port_range            = "8080"
+      + psc_connection_id     = (known after apply)
+      + psc_connection_status = (known after apply)
+      + region                = "us-central1"
+      + self_link             = (known after apply)
+      + service_name          = (known after apply)
+      + subnetwork            = (known after apply)
+      + target                = (known after apply)
+
+      + service_directory_registrations {
+          + namespace = (known after apply)
+          + service   = (known after apply)
+        }
+    }
+
+  # module.load_balancer_custom_hc.google_compute_http_health_check.default[0] will be created
+  + resource "google_compute_http_health_check" "default" {
+      + check_interval_sec  = 1
+      + creation_timestamp  = (known after apply)
+      + healthy_threshold   = 4
+      + host                = "1.2.3.4"
+      + id                  = (known after apply)
+      + name                = "basic-load-balancer-custom-hc-hc"
+      + port                = 8080
+      + project             = (known after apply)
+      + request_path        = "/mypath"
+      + self_link           = (known after apply)
+      + timeout_sec         = 1
+      + unhealthy_threshold = 5
+    }
+
+  # module.load_balancer_custom_hc.google_compute_target_pool.default will be created
+  + resource "google_compute_target_pool" "default" {
+      + health_checks    = (known after apply)
+      + id               = (known after apply)
+      + instances        = (known after apply)
+      + name             = "basic-load-balancer-custom-hc"
+      + project          = (known after apply)
+      + region           = "us-central1"
+      + self_link        = (known after apply)
+      + session_affinity = "NONE"
+    }
+
+  # module.load_balancer_default.google_compute_firewall.default-hc-fw[0] will be created
+  + resource "google_compute_firewall" "default-hc-fw" {
+      + creation_timestamp      = (known after apply)
+      + destination_ranges      = (known after apply)
+      + direction               = (known after apply)
+      + enable_logging          = (known after apply)
+      + id                      = (known after apply)
+      + name                    = "basic-load-balancer-default-hc"
+      + network                 = "load-balancer-module-network"
+      + priority                = 1000
+      + project                 = (known after apply)
+      + self_link               = (known after apply)
+      + source_ranges           = [
+          + "209.85.152.0/22",
+          + "209.85.204.0/22",
+          + "35.191.0.0/16",
+        ]
+      + target_service_accounts = (known after apply)
+
+      + allow {
+          + ports    = [
+              + "80",
+            ]
+          + protocol = "tcp"
+        }
+    }
+
+  # module.load_balancer_default.google_compute_firewall.default-lb-fw will be created
+  + resource "google_compute_firewall" "default-lb-fw" {
+      + creation_timestamp      = (known after apply)
+      + destination_ranges      = (known after apply)
+      + direction               = (known after apply)
+      + enable_logging          = (known after apply)
+      + id                      = (known after apply)
+      + name                    = "basic-load-balancer-default-vm-service"
+      + network                 = "load-balancer-module-network"
+      + priority                = 1000
+      + project                 = (known after apply)
+      + self_link               = (known after apply)
+      + source_ranges           = [
+          + "0.0.0.0/0",
+        ]
+      + target_service_accounts = (known after apply)
+
+      + allow {
+          + ports    = [
+              + "80",
+            ]
+          + protocol = "tcp"
+        }
+    }
+
+  # module.load_balancer_default.google_compute_forwarding_rule.default will be created
+  + resource "google_compute_forwarding_rule" "default" {
+      + creation_timestamp    = (known after apply)
+      + id                    = (known after apply)
+      + ip_address            = (known after apply)
+      + ip_protocol           = "TCP"
+      + label_fingerprint     = (known after apply)
+      + load_balancing_scheme = "EXTERNAL"
+      + name                  = "basic-load-balancer-default"
+      + network               = (known after apply)
+      + network_tier          = (known after apply)
+      + port_range            = "80"
+      + psc_connection_id     = (known after apply)
+      + psc_connection_status = (known after apply)
+      + region                = "us-central1"
+      + self_link             = (known after apply)
+      + service_name          = (known after apply)
+      + subnetwork            = (known after apply)
+      + target                = (known after apply)
+
+      + service_directory_registrations {
+          + namespace = (known after apply)
+          + service   = (known after apply)
+        }
+    }
+
+  # module.load_balancer_default.google_compute_http_health_check.default[0] will be created
+  + resource "google_compute_http_health_check" "default" {
+      + check_interval_sec  = 5
+      + creation_timestamp  = (known after apply)
+      + healthy_threshold   = 2
+      + id                  = (known after apply)
+      + name                = "basic-load-balancer-default-hc"
+      + port                = 80
+      + project             = (known after apply)
+      + request_path        = "/"
+      + self_link           = (known after apply)
+      + timeout_sec         = 5
+      + unhealthy_threshold = 2
+    }
+
+  # module.load_balancer_default.google_compute_target_pool.default will be created
+  + resource "google_compute_target_pool" "default" {
+      + health_checks    = (known after apply)
+      + id               = (known after apply)
+      + instances        = (known after apply)
+      + name             = "basic-load-balancer-default"
+      + project          = (known after apply)
+      + region           = "us-central1"
+      + self_link        = (known after apply)
+      + session_affinity = "NONE"
+    }
+
+  # module.load_balancer_no_hc.google_compute_firewall.default-lb-fw will be created
+  + resource "google_compute_firewall" "default-lb-fw" {
+      + creation_timestamp      = (known after apply)
+      + destination_ranges      = (known after apply)
+      + direction               = (known after apply)
+      + enable_logging          = (known after apply)
+      + id                      = (known after apply)
+      + name                    = "basic-load-balancer-no-hc-vm-service"
+      + network                 = "load-balancer-module-network"
+      + priority                = 1000
+      + project                 = (known after apply)
+      + self_link               = (known after apply)
+      + source_ranges           = [
+          + "0.0.0.0/0",
+        ]
+      + target_service_accounts = (known after apply)
+
+      + allow {
+          + ports    = [
+              + "80",
+            ]
+          + protocol = "tcp"
+        }
+    }
+
+  # module.load_balancer_no_hc.google_compute_forwarding_rule.default will be created
+  + resource "google_compute_forwarding_rule" "default" {
+      + creation_timestamp    = (known after apply)
+      + id                    = (known after apply)
+      + ip_address            = (known after apply)
+      + ip_protocol           = "TCP"
+      + label_fingerprint     = (known after apply)
+      + load_balancing_scheme = "EXTERNAL"
+      + name                  = "basic-load-balancer-no-hc"
+      + network               = (known after apply)
+      + network_tier          = (known after apply)
+      + port_range            = "80"
+      + psc_connection_id     = (known after apply)
+      + psc_connection_status = (known after apply)
+      + region                = "us-central1"
+      + self_link             = (known after apply)
+      + service_name          = (known after apply)
+      + subnetwork            = (known after apply)
+      + target                = (known after apply)
+
+      + service_directory_registrations {
+          + namespace = (known after apply)
+          + service   = (known after apply)
+        }
+    }
+
+  # module.load_balancer_no_hc.google_compute_target_pool.default will be created
+  + resource "google_compute_target_pool" "default" {
+      + health_checks    = []
+      + id               = (known after apply)
+      + instances        = (known after apply)
+      + name             = "basic-load-balancer-no-hc"
+      + project          = (known after apply)
+      + region           = "us-central1"
+      + self_link        = (known after apply)
+      + session_affinity = "NONE"
+    }
+
+  # module.managed_instance_group.google_compute_region_instance_group_manager.mig will be created
+  + resource "google_compute_region_instance_group_manager" "mig" {
+      + base_instance_name               = "mig-simple"
+      + distribution_policy_target_shape = (known after apply)
+      + distribution_policy_target_shape = (known after apply)
+      + distribution_policy_zones        = [
+          + "us-central1-a",
+          + "us-central1-b",
+          + "us-central1-c",
+          + "us-central1-f",
+        ]
+      + fingerprint                      = (known after apply)
+      + id                               = (known after apply)
+      + instance_group                   = (known after apply)
+      + list_managed_instances_results   = "PAGELESS"
+      + name                             = "mig-simple-mig"
+      + project                          = (known after apply)
+      + region                           = "us-central1"
+      + self_link                        = (known after apply)
+      + status                           = (known after apply)
+      + target_pools                     = (known after apply)
+      + target_size                      = 2
+      + wait_for_instances               = false
+      + wait_for_instances_status        = "STABLE"
+
+      + instance_lifecycle_policy {
+          + force_update_on_repair = (known after apply)
+        }
+
+      + named_port {
+          + name = "http"
+          + port = 80
+        }
+
+      + timeouts {
+          + create = "5m"
+          + delete = "15m"
+          + update = "5m"
+        }
+
+      + update_policy {
+          + instance_redistribution_type   = (known after apply)
+          + max_surge_fixed                = (known after apply)
+          + max_surge_percent              = (known after apply)
+          + max_unavailable_fixed          = (known after apply)
+          + max_unavailable_percent        = (known after apply)
+          + min_ready_sec                  = (known after apply)
+          + minimal_action                 = (known after apply)
+          + most_disruptive_allowed_action = (known after apply)
+          + replacement_method             = (known after apply)
+          + type                           = (known after apply)
+        }
+
+      + version {
+          + instance_template = (known after apply)
+          + name              = "mig-simple-mig-version-0"
+        }
+    }
