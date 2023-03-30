@@ -255,3 +255,12 @@ $ git bundle create tmp.bundle --all
 $ du -sh tmp.bundle
  19M    tmp.bundle
 ```
+
+To check currently set git config
+
+```bash
+$ git config user.name
+Ankit
+git config user.email
+youemail@gmail.com
+```
