@@ -5,6 +5,7 @@ resource "google_compute_network" "network" {
   auto_create_subnetworks = "false"
 }
 
+
 resource "google_compute_subnetwork" "subnetwork" {
   name          = "load-balancer-module-subnetwork"
   region        = var.region

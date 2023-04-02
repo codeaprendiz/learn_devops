@@ -1,7 +1,8 @@
 /*
-The code above is an example of using Terraform's "locals" block to define a variable with a nested object.
+The code below is an example of using Terraform's "locals" block to define a variable with a nested object.
 
-The object defined in the "health_check" variable represents a health check configuration for a load balancer or other similar infrastructure component. Here's what each key-value pair means:
+The object defined in the "health_check" variable represents a health check configuration for a load 
+balancer or other similar infrastructure component. Here's what each key-value pair means:
 
     - check_interval_sec: The number of seconds between each health check.
     - healthy_threshold: The number of consecutive successful health checks required to mark an instance as healthy.

@@ -1,6 +1,7 @@
 /*
   This block of code defines a Terraform data source of type "template_file" named "instance_startup_script".
-  The data source reads the contents of a file named "gceme.sh.tpl" located in the module directory using the file() function.
+  The data source reads the contents of a file named "gceme.sh.tpl" located in the module directory using the file() 
+  function.
   It also defines a variable named "PROXY_PATH" with an empty string as its value to be used in the template.
 */
 data "template_file" "instance_startup_script" {
@@ -31,7 +32,8 @@ resource "google_service_account" "instance-group" {
   resource and scopes to ["cloud-platform"].
 
   what does the module do?
-  the module named "instance_template" is used to create a reusable template for a virtual machine instance in Google Cloud Platform
+  the module named "instance_template" is used to create a reusable template for a virtual machine instance in 
+  Google Cloud Platform
 
   why do we need a service account for the module?
   The module "instance_template" creates a virtual machine instance template on Google Cloud Platform. To create this
@@ -40,9 +42,12 @@ resource "google_service_account" "instance-group" {
   difficult to manage, the module creates a dedicated service account with the necessary permissions to access the
   Google Cloud Platform APIs.
   The service account is specified in the "service_account" variable of the module, which includes the email
-  address of the service account and the scopes that it requires. These scopes are used to grant the service account access to the specific APIs that are required for the module to function properly.
+  address of the service account and the scopes that it requires. These scopes are used to grant the service account 
+  access to the specific APIs that are required for the module to function properly.
   By using a dedicated service account, the module is more secure and easier to manage. The service account can
-  be managed separately from other accounts, and its permissions can be restricted to only the APIs that are required for the module to function. Additionally, if the service account credentials are compromised, they can be revoked without affecting other accounts or services.
+  be managed separately from other accounts, and its permissions can be restricted to only the APIs that are 
+  required for the module to function. Additionally, if the service account credentials are compromised, they 
+  can be revoked without affecting other accounts or services.
 
 */
 
@@ -105,7 +110,8 @@ This code defines a Terraform module named "load_balancer_default" which creates
 (GCP) load balancer.
 The module takes several input variables such as the load balancer name, region, service port, network name,
 and target service account email.
-- The source parameter specifies that the module is defined locally in the same directory ("../../") as the root module.
+- The source parameter specifies that the module is defined locally in the same directory ("../../") as the 
+  root module.
   git clone https://github.com/GoogleCloudPlatform/terraform-google-lb ; cd ~/terraform-google-lb/examples/basic
 
 The name parameter specifies the name of the load balancer that will be created in GCP.
@@ -116,7 +122,9 @@ The service_port parameter specifies the port that the load balancer will listen
 
 The network parameter specifies the name of the GCP network that the load balancer will be created in.
 
-The target_service_accounts parameter is an array of email addresses for the service accounts that the load balancer will direct traffic to. In this code, it points to the email address of the service account defined in the google_service_account.instance-group resource.
+The target_service_accounts parameter is an array of email addresses for the service accounts that the 
+load balancer will direct traffic to. In this code, it points to the email address of the service account defined 
+in the google_service_account.instance-group resource.
 */
 
 module "load_balancer_default" {

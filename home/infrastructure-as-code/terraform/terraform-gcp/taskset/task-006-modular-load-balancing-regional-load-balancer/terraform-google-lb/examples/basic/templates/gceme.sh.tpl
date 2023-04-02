@@ -1,3 +1,19 @@
+# This is a bash script that installs Apache and PHP on a Debian-based Linux machine and sets up a web page that
+# displays the metadata of the
+# Google Cloud instance that the script is running on. The script starts by updating the package list with apt-get
+# update and installs Apache
+# and PHP with apt-get install -y apache2 libapache2-mod-php.
+#
+# The script then uses a here document to write a PHP script to /var/www/html/index.php that displays the metadata of the
+# instance using the Google Cloud metadata server. The PHP script defines a metadata_value function that makes an HTTP GET
+# request to the metadata server with a specific header indicating the use of the Google Cloud metadata server. The PHP script
+# then prints the metadata values in an HTML table.
+#
+# The script also checks if the PROXY_PATH environment variable is set and creates a directory at /var/www/html/${PROXY_PATH}
+# if it is. It then copies the index.php file to this directory to enable the script to be accessed through a proxy server.
+#
+# Finally, the script enables and restarts the Apache web server with systemctl enable apache2 and systemctl restart apache2.
+
 #!/bin/bash -xe
 
 apt-get update
