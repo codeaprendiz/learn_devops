@@ -47,9 +47,9 @@
 |         | [practice-tasks](home/cloud-providers/oci/practice-tasks) |
 
 ### gcp
-| Content |                                            | 
-|---------|--------------------------------------------|
-|         | [practice-tasks](home/cloud-providers/gcp) |
+| Content |                                                    | 
+|---------|----------------------------------------------------|
+|         | [practice-tasks](home/cloud-providers/gcp/taskset) |
 
 ## containers
 
@@ -126,9 +126,9 @@
 | [practice-tasks](home/infrastructure-as-code/terraform/oci) |     |
 
 ### gcp-terraform
-| Content                                                               |     | 
-|-----------------------------------------------------------------------|-----|
-| [practice-tasks](home/infrastructure-as-code/terraform/terraform-gcp) |     |
+| Content                                                                        |     | 
+|--------------------------------------------------------------------------------|-----|
+| [practice-tasks](home/infrastructure-as-code/terraform/terraform-gcp/taskset)  |     |
 
 ### ansible
 
