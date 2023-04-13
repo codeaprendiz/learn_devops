@@ -1,6 +1,7 @@
-## linux commands
+# linux commands
+
 - [frequently-used](bookmark-me/bookmark-me.md)
-- [arp](arp/arp.md)
+- [arp](arp)
 - [awk](awk/awk.md)
 - [chage](chage/chage.md)
 - [chmod](chmod/chmod.md)
