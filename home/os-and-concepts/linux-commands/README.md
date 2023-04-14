@@ -2,7 +2,7 @@
 
 - [frequently-used](bookmark-me/bookmark-me.md)
 - [arp](arp)
-- [awk](awk/awk.md)
+- [awk](awk)
 - [chage](chage/chage.md)
 - [chmod](chmod/chmod.md)
 - [chown](chown/chown.md)
