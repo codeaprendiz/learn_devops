@@ -26,13 +26,15 @@ Vim is a text editor that is upwards compatible to Vi.  It can be used to edit a
 
 ### COMMANDS
 
-To search and replace globally in a file
+### Examples
+
+#### To search and replace globally in a file
 
 ```bash
 :%s/search/replace/g
 ```
 
-#### How to paste yaml in vi 
+#### How to paste yaml in vi
 
 - When you try to paste yaml directly
 
@@ -76,4 +78,4 @@ To search and replace globally in a file
     - code-deploy
 ```
 
-- You can turn it back on 
+- You can turn it back on
