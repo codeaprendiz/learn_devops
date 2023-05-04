@@ -29,7 +29,6 @@ CMD+SHIFT+TILDE
 CMD+SHIFT+H
 ```
 
-
 ## Chrome Shortcuts
 
 [support.google.com/chrome/answer/157179](https://support.google.com/chrome/answer/157179)
@@ -43,7 +42,9 @@ CMD+T
 - Navigate between tabs
 
 ```bash
-CMD+OPTION+LEFT/RIGHT
+CMD + OPTION + LEFT/RIGHT
+# OR
+CMD + SHIFT + [
 ```
 
 - Go to the address bar
@@ -52,7 +53,7 @@ CMD+OPTION+LEFT/RIGHT
 CMD+L
 ```
 
-- Open the last closed tab 
+- Open the last closed tab
 
 ```bash
 CMD+SHIFT+T
@@ -70,4 +71,34 @@ CNTR + ~
 
 ```bash
 CNTR + SHIFT + ~
+```
+
+- Command Pellete
+
+```bash
+CMD + SHIFT + P
+```
+
+- Open recently used files
+
+```bash
+CMD + P
+```
+
+- Navigate between terminals (once you are in one terminal)
+
+```bash
+CMD + SHIFT + [
+```
+
+- Open first opened file in editor
+
+```bash
+CMD + 1
+```
+
+- Navigate between files (once you are in any one file)
+
+```bash
+CMD + SHIFT + [
 ```
