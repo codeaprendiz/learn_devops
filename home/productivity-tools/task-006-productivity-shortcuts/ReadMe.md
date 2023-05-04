@@ -1,4 +1,6 @@
-# MAC Shortcuts
+# Keyboard shortcuts frequently used
+
+## MAC Shortcuts
 
 - Make the bottom icons on Desktop toggle
 
@@ -56,4 +58,16 @@ CMD+L
 CMD+SHIFT+T
 ```
 
+## VS Code (Mac)
 
+- Open terminal
+
+```bash
+CNTR + ~
+```
+
+- Open new terminal
+
+```bash
+CNTR + SHIFT + ~
+```
