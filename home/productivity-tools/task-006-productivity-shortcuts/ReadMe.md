@@ -102,3 +102,18 @@ CMD + 1
 ```bash
 CMD + SHIFT + [
 ```
+
+- Hide the sidebar containing the directories (you should be in terminal)
+
+```bash
+# While editing a file the following combination actually producess ****
+CMD + B
+
+## If you want to do it while editing a file, open command pellete and type Toggle Primary Sidebar Visibility
+```
+
+- To close only the current VS code window
+
+```bash
+CMD + SHIFT + W
+```
