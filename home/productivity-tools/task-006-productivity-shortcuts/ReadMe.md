@@ -117,3 +117,21 @@ CMD + B
 ```bash
 CMD + SHIFT + W
 ```
+
+- To toggle VS code between full screen and previous screen configuration
+
+```bash
+CNTR + CMD + F
+```
+
+- To open the ReadMe mode file in VS code
+
+```bash
+CMD + SHIFT + V
+```
+
+- To close a file
+
+```bash
+CMD + W
+```
