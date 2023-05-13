@@ -164,6 +164,7 @@ CNTR + SHIFT + G
 
 - Folder navigation using `j` and `k`
 - Toggle open folder using `o`
+- Open file in currently open file using `o` and new file using `l`
 
 - To open `Finder`
 
