@@ -154,10 +154,6 @@ CMD + SHIFT + E
 CMD + 0
 ```
 
-```bash
-CMD + SHIFT + F
-```
-
 - To open `Source Control`
 
 ```bash
@@ -170,6 +166,10 @@ CNTR + SHIFT + G
 - Toggle open folder using `o`
 
 - To open `Finder`
+
+```bash
+CMD + SHIFT + F
+```
 
 ### Others
 
