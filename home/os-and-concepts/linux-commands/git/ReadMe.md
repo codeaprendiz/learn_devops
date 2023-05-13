@@ -45,7 +45,7 @@ git commit -m "Name-for-this-commit"
 git push -u origin master
 ```
 
-- Incase you want to change the origin url then you can use the command 
+- Incase you want to change the origin url then you can use the command
 
 ```bash
 git remote show origin
