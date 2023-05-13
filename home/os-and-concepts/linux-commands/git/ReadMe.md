@@ -1,18 +1,18 @@
-## git
+# git
 
-### NAME
+## NAME
 
 git - the content tracker
 
-### SYNOPSIS
+## SYNOPSIS
 
 > git [--version] [--help] [-C <path>] [-c <name>=<value>] [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path][-p|--paginate|--no-pager] [--no-replace-objects][--bare][--git-dir=<path>] [--work-tree=<path>][--namespace=<name>][--super-prefix=<path>] <command> [<args>]
 
-### DESCRIPTION
+## DESCRIPTION
 
 Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
 
-### EXAMPLES BASICS
+## EXAMPLES BASICS
 
 Create a new repository using the command line
 
@@ -55,12 +55,46 @@ git remote add origin https://repository-url
 
 ### EXAMPLES
 
+#### Configuring Git
+
 - Tell Git who you are
 
 ```bash
 git config --global user.name "Sam Smith"
 git config --global user.email sam@example.com
 ```
+
+- To check currently set git config
+
+```bash
+$ git config user.name
+Ankit
+git config user.email
+youemail@gmail.com
+```
+
+- To list the current `git config`, like the `user.name` and `user.email`
+
+```bash
+git config --list
+## For --no-pager output
+GIT_PAGER= git config --list
+```
+
+- Signing commits with gpg key
+  - [docs](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
+
+```bash
+$ git config --global gpg.format openpgp
+.
+$ git config --global user.signingkey <your_gpg_key>
+.
+# To ensure commits are signed by default
+$ git config --global commit.gpgsign true
+.
+```
+
+#### Others
 
 - Create a new local repository
 
@@ -215,7 +249,7 @@ git log
 git push --tags origin
 ```
 
-- If you mess up, you can replace the changes in your working tree with the last content in head: 
+- If you mess up, you can replace the changes in your working tree with the last content in head:
 
 - Changes already added to the index, as well as new files, will be kept.
 
@@ -223,7 +257,7 @@ git push --tags origin
 git checkout -- <filename>
 ```
 
-- Instead, to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it, do this: 
+- Instead, to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it, do this:
 
 ```bash
 git fetch origin
@@ -248,21 +282,6 @@ git reset --soft HEAD\^
 $ git bundle create tmp.bundle --all
 $ du -sh tmp.bundle
  19M    tmp.bundle
-```
-
-- To check currently set git config
-
-```bash
-$ git config user.name
-Ankit
-git config user.email
-youemail@gmail.com
-```
-
-- To list the current `git config`, like the `user.name` and `user.email`
-
-```bash
-git config --list
 ```
 
 - To permanently remove few commits from remote branch (USE WITH CAUTION) [stackoverflow link](https://stackoverflow.com/questions/3293531/how-to-permanently-remove-few-commits-from-remote-branch)
