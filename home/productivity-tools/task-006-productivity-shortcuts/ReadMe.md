@@ -20,7 +20,7 @@ CMD+TAB
 
 ```bash
 ## Tilde is the key on left side of 1 with ~ printed on top ` below
-CMD+SHIFT+TILDE
+CMD+TILDE
 ```
 
 - Open Home in Finder
@@ -165,11 +165,25 @@ CNTR + SHIFT + G
 - Folder navigation using `j` and `k`
 - Toggle open folder using `o`
 - Open file in currently open file using `o` and new file using `l`
+- Open all selected files at once in the editor
+
+```bash
+# Select all files
+SHIFT + DOWN_ARROR
+## Press
+SPACEBAR
+```
 
 - To open `Finder`
 
 ```bash
 CMD + SHIFT + F
+```
+
+- To open `Search and Replace`
+
+```bash
+CMD + SHIFT + H
 ```
 
 ### Others
