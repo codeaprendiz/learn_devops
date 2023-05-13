@@ -64,7 +64,7 @@ CMD+SHIFT+T
 - Go to previous page using
 
 ```bash
-CMD + <-
+CMD + 
 ```
 
 ## VS Code (Mac)
@@ -154,13 +154,6 @@ CMD + SHIFT + E
 CMD + 0
 ```
 
-#### Navigate Folders
-
-- Folder navigation using `j` and `k`
-- Toggle open folder using `o`
-
-- To open `Finder`
-
 ```bash
 CMD + SHIFT + F
 ```
@@ -169,3 +162,19 @@ CMD + SHIFT + F
 
 ```bash
 CNTR + SHIFT + G
+```
+
+#### Navigate Folders (When in Explorer)
+
+- Folder navigation using `j` and `k`
+- Toggle open folder using `o`
+
+- To open `Finder`
+
+### Others
+
+- To toggle `Zen Mode` (You should be editing a file)
+
+```bash
+CMD+K (together) + Z
+```
