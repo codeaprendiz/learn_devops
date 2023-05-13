@@ -135,3 +135,30 @@ CMD + SHIFT + V
 ```bash
 CMD + W
 ```
+
+### Side Panel Shortcuts
+
+- To open the sidebar `Explorer`, you should be in terminal
+
+```bash
+CMD + SHIFT + E
+## OR
+CMD + 0
+```
+
+#### Navigate Folders
+
+- Folder navigation using `j` and `k`
+- Toggle open folder using `o`
+
+- To open `Finder`
+
+```bash
+CMD + SHIFT + F
+```
+
+- To open `Source Control`
+
+```bash
+CNTR + SHIFT + G
+```
