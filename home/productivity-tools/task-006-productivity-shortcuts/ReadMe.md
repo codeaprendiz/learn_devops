@@ -59,6 +59,14 @@ CMD+L
 CMD+SHIFT+T
 ```
 
+- Go to search bar using `/`
+
+- Go to previous page using
+
+```bash
+CMD + <-
+```
+
 ## VS Code (Mac)
 
 - Open terminal
@@ -161,4 +169,3 @@ CMD + SHIFT + F
 
 ```bash
 CNTR + SHIFT + G
-```
