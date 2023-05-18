@@ -1,4 +1,8 @@
 
+# Virtualization Tools
+
+## Virtual Box
+
 - [Download Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 
 ```bash
@@ -13,3 +17,7 @@ $ vagrant --version
 Vagrant 2.2.14
 
 ```
+
+## Running only ubuntu server locally
+
+- [multipass](https://github.com/canonical/multipass)
