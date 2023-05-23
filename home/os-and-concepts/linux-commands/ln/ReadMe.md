@@ -1,10 +1,12 @@
-## ln
+# ln
 
-### NAME
+- [ln](https://man7.org/linux/man-pages/man1/ln.1.html)
+  
+## NAME
 
 link, ln -- make links
 
-### SYNOPSIS
+## SYNOPSIS
 
 > ln [-Ffhinsv] source_file [target_file]
 
@@ -12,7 +14,7 @@ link, ln -- make links
 
 > link source_file target_file
 
-### DESCRIPTION
+## DESCRIPTION
 
 The ln utility creates a new directory entry (linked file) which has the same modes as the original file.  It is useful for maintaining multiple copies of a file in many places at once without using up storage for the ``copies''; instead, a link ``points'' to the original copy.  There are two types of links; hard links and symbolic links. How a link ``points'' to a file is one of the differences between a hard and symbolic link.
 
@@ -22,14 +24,15 @@ You can check where a symbolic link points to using the ls -l fileName command
 
 ln -s Existing-file New-name
 
-### OPTIONS
+## OPTIONS
 
 * -s
     * Create a symbolic link.
 
-### EXAMPLE
+## EXAMPLES
 
 ```bash
 $ rm java
+
 $ ln -s /usr/lib/jvm/java-8-oracle/jre/bin/java java
 ```

@@ -36,7 +36,7 @@
 - [jq](jq/jq.md)
 - [jstack](jstack/jstack.md)
 - [keytool](keytool/keytool.md)
-- [ln](ln/ln.md)
+- [ln](ln)
 - [lsof](lsof/lsof.md)
 - [mail](mail/mail.md)
 - [mkdir](mkdir/mkdir.md)
