@@ -24,7 +24,7 @@
 - [free](free/free.md)
 - [ftp](ftp/ftp.md)
 - [git](git)
-- [gunzip-gzip](gunzip-gzip/gunzip-gzip.md)
+- [gunzip-gzip](gunzip-gzip)
 - [head](head/head.md)
 - [history](history/history.md)
 - [host](host/host.md)

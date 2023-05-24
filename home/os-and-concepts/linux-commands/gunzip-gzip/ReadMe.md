@@ -1,8 +1,6 @@
-## gunzip 
+# gunzip & gzip
 
-## gzip
-
-### NAME
+## NAME
 
 gzip -- compression/decompression tool using Lempel-Ziv coding (LZ77)
 
@@ -14,7 +12,7 @@ SYNOPSIS
 
 > zcat [-fhV] file [file [...]]
 
-### DESCRIPTION
+## DESCRIPTION
 
 The gzip program compresses and decompresses files using Lempel-Ziv coding (LZ77).  
 
@@ -24,9 +22,9 @@ When in compression mode, each file will be replaced with another file with the 
 
 In decompression mode, each file will be checked for existence, as will the file with the suffix added.  Each file argument must contain a separate complete archive; when multiple files are indicated, each is decompressed in turn.
 
-### OPTIONS
+## OPTIONS
 
-* -l, --list        
+* -l, --list
   * This option displays information about the file's compressed and uncompressed size, ratio, uncompressed name.  With the -v option, it also displays the compres- sion method, CRC, date and time embedded in the file.
 
 ### EXAMPLES
@@ -48,7 +46,7 @@ total 72
 -rw-r--r--  1 asr000p 74715970  5428 Dec 1 15:33 test.xml
 ```
  
-
+```bash
 $ ls -ltr
 total 72
 -rw-r--r--  1 asr000p 74715970  5428 Dec 1 15:33 test.xml
@@ -63,3 +61,4 @@ $ gunzip test.xml.gz
 $  ls -ltr
 total 72
 -rw-r--r--  1 asr000p 74715970  5428 Dec 1 15:33 test.xml
+```
