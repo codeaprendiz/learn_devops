@@ -193,3 +193,17 @@ CMD + SHIFT + H
 ```bash
 CMD+K (together) + Z
 ```
+
+## Miro
+
+- To move the icon under
+
+```bash
+Function + Down_arrow
+```
+
+- To select all icons you might want to move
+
+```bash
+SHIFT + hover mouse in the area
+```
