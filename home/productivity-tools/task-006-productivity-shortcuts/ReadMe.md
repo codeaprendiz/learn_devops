@@ -29,6 +29,12 @@ CMD+TILDE
 CMD+SHIFT+H
 ```
 
+- Toggle Finder hidden files and folder
+
+```bash
+CMD+SHIFT+.
+```
+
 ## Chrome Shortcuts
 
 [support.google.com/chrome/answer/157179](https://support.google.com/chrome/answer/157179)
