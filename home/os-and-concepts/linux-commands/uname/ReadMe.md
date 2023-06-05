@@ -43,9 +43,11 @@ Linux test.hq.test.com 2.6.18-419.el5 #1 SMP Wed Feb 22 22:40:57 EST 2017 x86_64
 $ uname -s
 Linux
 
-$ uname -m
+# x86_64: If you see this, your computer has a 64-bit Intel or AMD processor, which is not ARM-based.
+# arm64, aarch64: These indicate that your processor is 64-bit ARM architecture. The M1 Macs, released by Apple in 2020, use Apple's own M1 chips, which are based on ARM architecture.
+$ uname -m   # linux machine
 x86_64
+
+$ uname -m    # m1 mac 
+arm64
 ```
-
-
-
