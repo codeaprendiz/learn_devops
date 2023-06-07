@@ -86,5 +86,5 @@
 - [whereis](whereis/whereis.md)
 - [which](which/which.md)
 - [xargs](xargs/xargs.md)
-- [zcat](zcat/zcat.md)
+- [zcat](zcat)
 - [zip](zip)
