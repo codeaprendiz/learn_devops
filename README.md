@@ -86,4 +86,3 @@ Table of Contents:
 | Nginx |
 | --- |
 | [Practice Tasks](home/web-servers/nginx) |
-```
