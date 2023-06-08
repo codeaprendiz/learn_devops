@@ -1,188 +1,89 @@
-# home
+# Home
 
-- [home](#home)
-  - [cloud-providers](#cloud-providers)
-    - [aws](#aws)
-    - [oci](#oci)
-    - [gcp](#gcp)
-  - [containers](#containers)
-    - [docker](#docker)
-    - [docker-compose](#docker-compose)
-  - [container-orchestration](#container-orchestration)
-  - [databases](#databases)
-    - [mongo](#mongo)
-    - [mysql](#mysql)
-    - [postgresSQL](#postgresql)
-    - [oracle19c](#oracle19c)
-  - [devops-blogs](#devops-blogs)
-  - [infrastructure-as-code](#infrastructure-as-code)
-    - [aws-terraform](#aws-terraform)
-    - [oci-terraform](#oci-terraform)
-    - [gcp-terraform](#gcp-terraform)
-    - [ansible](#ansible)
-  - [interview](#interview)
-    - [coding-tasks](#coding-tasks)
-  - [observability](#observability)
-  - [os-and-concepts](#os-and-concepts)
-  - [productivity-tools](#productivity-tools)
-    - [task-set](#tasks-set)
-  - [version-control](#version-control)
-    - [git](#git)
-  - [web-servers](#web-servers)
-    - [nginx](#nginx)
+Table of Contents:
 
+- [Cloud Providers](#cloud-providers)
+- [Containers](#containers)
+- [Container Orchestration](#container-orchestration)
+- [Databases](#databases)
+- [DevOps Blogs](#devops-blogs)
+- [Infrastructure as Code](#infrastructure-as-code)
+- [Interview](#interview)
+- [Observability](#observability)
+- [OS and Concepts](#os-and-concepts)
+- [Productivity Tools](#productivity-tools)
+- [Version Control](#version-control)
+- [Web Servers](#web-servers)
 
+## Cloud Providers
 
-## cloud-providers
-### aws
+| AWS | OCI | GCP |
+| --- | --- | --- |
+| [Certification Digest](home/cloud-providers/aws/certifications-digest)<br> [Practice Tasks](home/cloud-providers/aws/practice-tasks) | [Practice Tasks](home/cloud-providers/oci/practice-tasks) | [Practice Tasks](home/cloud-providers/gcp/taskset) |
 
-  
-| Content                                                                |                                                           | 
-|------------------------------------------------------------------------|-----------------------------------------------------------|
-| [certification-digest](home/cloud-providers/aws/certifications-digest) | [practice-tasks](home/cloud-providers/aws/practice-tasks) | 
+## Containers
 
-### oci
-| Content |                                                           | 
-|---------|-----------------------------------------------------------|
-|         | [practice-tasks](home/cloud-providers/oci/practice-tasks) |
+| Docker | Docker-Compose |
+| --- | --- |
+| [Practice Tasks](home/containers/docker-old) | [Practice Tasks](home/containers/docker-compose) |
 
-### gcp
-| Content |                                                    | 
-|---------|----------------------------------------------------|
-|         | [practice-tasks](home/cloud-providers/gcp/taskset) |
+## Container Orchestration
 
-## containers
+| Kubernetes |
+| --- |
+| [Concepts](home/container-orchestration/kubernetes/concepts)<br> [Practice Tasks](home/container-orchestration/kubernetes) | 
 
+## Databases
 
-| Content |                                   | 
-|---------|-----------------------------------|
-|         | [practice-tasks](home/containers) |
+| Mongo | MySQL | PostgreSQL | Oracle19c |
+| --- | --- | --- | --- |
+| [Practice Tasks](/home/databases/mongo) | [Practice Tasks](/home/databases/mysql) | [Practice Tasks](/home/databases/postgreSQL) | [Practice Tasks](/home/databases/oracle19c) | 
 
-### docker
+## DevOps Blogs
 
-| Content |                                              | 
-|---------|----------------------------------------------|
-|         | [practice-tasks](home/containers/docker-old) |
+| Blogs |
+| --- |
+| [Blog Links](/home/devops-blogs) |
 
+## Infrastructure as Code
 
-### docker-compose
+| AWS Terraform | OCI Terraform | GCP Terraform | Ansible |
+| --- | --- | --- | --- |
+| [Practice Tasks](home/infrastructure-as-code/terraform/aws) | [Practice Tasks](home/infrastructure-as-code/terraform/oci) | [Practice Tasks](home/infrastructure-as-code/terraform/terraform-gcp/taskset) | [Practice Tasks](home/infrastructure-as-code/ansible-kitchen/README.md) |
 
-| Content |                                                  | 
-|---------|--------------------------------------------------|
-|         | [practice-tasks](home/containers/docker-compose) |
+## Interview
 
+| Coding Tasks |
+| --- |
+| [Coding Tasks](home/interview/coding-tasks) |
 
+## Observability
 
+| Metrics |
+| --- |
+| [Host, Kubernetes, System](home/observability/metrics) |
 
+## OS and Concepts
 
-## container-orchestration
+| Linux Commands | Linux Concepts |
+| --- | --- |
+| [Linux Commands 0_0](home/os-and-concepts/linux-commands/README.md)<br> [Bookmark Me ? 0_0 ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | [Linux Concepts](home/os-and-concepts/linux-essentials/linux-essentials.md) | 
 
-| Content                                                                 |                                                                      | 
-|-------------------------------------------------------------------------|----------------------------------------------------------------------|
-| [kubernetes-concepts](home/container-orchestration/kubernetes/concepts) | [kubernetes-practice-tasks](home/container-orchestration/kubernetes) | 
+## Productivity Tools
 
+| Task Set |
+| --- |
+| [Task Set](home/productivity-tools) |
 
-## databases
+## Version Control
 
-### mongo
-| Content                                       |                  | 
-|-----------------------------------------------|------------------|
-| [mongo-practice-tasks](/home/databases/mongo) |                  | 
+| Git |
+| --- |
+| [Practice Tasks](home/version-control/git) |
 
-### mysql
-| Content                                       |                  | 
-|-----------------------------------------------|------------------|
-| [mysql-practice-tasks](/home/databases/mysql) |                  | 
+## Web Servers
 
-### postgresql
-| Content                                                  |     | 
-|----------------------------------------------------------|-----|
-| [postgresSQL-practice-tasks](/home/databases/postgreSQL) |     | 
-
-### oracle19c
-| Content                                               |     | 
-|-------------------------------------------------------|-----|
-| [oracle19c-practice-tasks](/home/databases/oracle19c) |     | 
-
-## devops-blogs
-
-| Content                           |     | 
-|-----------------------------------|-----|
-| [blogs-links](/home/devops-blogs) |     | 
-
-
-## infrastructure-as-code
-
-### aws-terraform
-
-  
-| Content                                                     |     | 
-|-------------------------------------------------------------|-----|
-| [Practice Tasks](home/infrastructure-as-code/terraform/aws) |     | 
-
-### oci-terraform
-| Content                                                     |     | 
-|-------------------------------------------------------------|-----|
-| [practice-tasks](home/infrastructure-as-code/terraform/oci) |     |
-
-### gcp-terraform
-| Content                                                                        |     | 
-|--------------------------------------------------------------------------------|-----|
-| [practice-tasks](home/infrastructure-as-code/terraform/terraform-gcp/taskset)  |     |
-
-### ansible
-
-| Content                                                                 |     | 
-|-------------------------------------------------------------------------|-----|
-| [practice-tasks](home/infrastructure-as-code/ansible-kitchen/README.md) |     |
-
-## interview
-
-### coding-tasks
-| Content                                     |     | 
-|---------------------------------------------|-----|
-| [coding-tasks](home/interview/coding-tasks) |     |
-
-
-
-## observability
-
-### metrics
-| Content                                                |     | 
-|--------------------------------------------------------|-----|
-| [host, kubernetes, system](home/observability/metrics) |     |
-
-
-## os-and-concepts
-
-| Content                                                                     |                                                                                      | 
-|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| [linux-commands 0_0](home/os-and-concepts/linux-commands/README.md)         | [bookmark me ? 0_0 ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | 
-| [linux concepts](home/os-and-concepts/linux-essentials/linux-essentials.md) |                                                                                      | 
-
-
-## productivity-tools
-
-### tasks-set
-| Content                             |     | 
-|-------------------------------------|-----|
-| [task-set](home/productivity-tools) |     |
-
-
-
-
-## version-control
-
-### git
-| Content                                    |     | 
-|--------------------------------------------|-----|
-| [practice-tasks](home/version-control/git) |     |
-
-## web-servers
-
-### nginx
-| Content                                  |     | 
-|------------------------------------------|-----|
-| [practice-tasks](home/web-servers/nginx) |     |
-
-
+| Nginx |
+| --- |
+| [Practice Tasks](home/web-servers/nginx) |
+```

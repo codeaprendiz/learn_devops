@@ -19,6 +19,7 @@
 - [dos2unix](dos2unix/dos2unix.md)
 - [du](du/du.md)
 - [export](export/export.md)
+- [fc](fc)
 - [find](find/find.md)
 - [firewall-cmd](firewall-cmd)
 - [free](free/free.md)
