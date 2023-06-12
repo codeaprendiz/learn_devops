@@ -295,3 +295,14 @@ $ du -sh tmp.bundle
 git reset --hard B
 git push --force
 ```
+
+- To find the size of github repository locally [stackoverflow](https://stackoverflow.com/questions/8185276/find-size-of-git-repository)
+
+```bash
+$ git bundle create tmp.bundle --all
+.
+$ du -sh tmp.bundle
+.
+$ rm tmp.bundle
+.
+```
