@@ -59,7 +59,7 @@
 - [sh](sh/sh.md)
 - [setenforce](setenforce/setenforce.md)
 - [sort](sort/sort.md)
-- [ssh](ssh/ssh.md)
+- [ssh](ssh)
 - [sudo](sudo/sudo.md)
 - [sysctl](sysctl/sysctl.md)
 - [system](system/system.md)
