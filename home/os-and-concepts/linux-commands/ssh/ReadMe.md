@@ -140,7 +140,7 @@ $ ssh -L 8000:localhost:80 opc@PUBLIC-IP
 .
 ```
 
-- Port forwarding via a Jump Server
+- Port forwarding via a Jump Server         localhost:8081 <-------------------- PUBLIC-IP <------------------------- PRIVATE-IP:8081
 
   - `ssh`: This command starts the SSH client program that allows secure connection to the SSH server on a remote machine.
 
