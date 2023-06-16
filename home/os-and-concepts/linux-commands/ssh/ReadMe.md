@@ -162,6 +162,6 @@ $ ssh -L 8000:localhost:80 opc@PUBLIC-IP
 $ ssh -L 8081:localhost:8081 -J <jump_server_username>@<jump_server_public_ip> <dest_host_username>@<destination_host_private_ip> -N -f -q 
 .
 # If you have separate keys for both
-$ ssh -i ~/.ssh/id_rsa_jump -L 8081:localhost:8081 -J <jump_server_username>@<jump_server_public_ip> -o 'IdentityFile=~/.ssh/id_rsa_dest' <dest_host_username>@<destination_host_private_ip> -N -f -q
+$ ssh -i /Users/<username>/workspace/_ssh/id_rsa_dest -L 6443:localhost:6443 -o ProxyCommand="ssh -i /Users/<username>/workspace/_ssh/id_rsa_jump  -W %h:%p <jump_login_user>@<jump_public_ip>" <dest_login_user>@<dest_private_ip> -N -f -q          # -v
 .
 ```
