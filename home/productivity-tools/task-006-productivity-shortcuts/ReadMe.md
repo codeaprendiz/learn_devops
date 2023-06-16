@@ -213,3 +213,22 @@ Function + Down_arrow
 ```bash
 SHIFT + hover mouse in the area
 ```
+
+- To zoom in
+
+```bash
+CMD + +(Plus)
+```
+
+- To zoom out
+
+```bash
+CMD + -(minus)
+```
+
+- To enter edit more in text
+
+```bash
+# Ensure that the section (like table cell) is selected
+ENTER
+```
