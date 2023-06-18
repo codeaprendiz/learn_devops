@@ -1,116 +1,85 @@
 <?php
 
-function createTree($dir, $depth = 0) {
-    $tree = "";
+$global_readme="";
 
-    $dirs = array_filter(glob($dir . '/*'), 'is_dir');
-    sort($dirs);
+// $ ls -ltrh home | egrep -v "total" | awk '{print "\"" $9 "\","}'
+$languages = array(
+    "container-orchestration",
+    "devops-blogs",
+    "infrastructure-as-code",
+    "observability",
+    "web-servers",
+    "version-control",
+    "databases",
+    "monitoring-kitchen",
+    "images",
+    "os-and-concepts",
+    "cloud-providers",
+    "programming-languages",
+    "productivity-tools",
+    "containers",
+    "interview",
+);
 
-    foreach ($dirs as $d) {
-        $dirName = basename($d);
+function getDirectories($directoryPath, $pattern) {
+    $directoryIterator = new RecursiveDirectoryIterator($directoryPath, RecursiveDirectoryIterator::SKIP_DOTS);
+    $recursiveIterator = new RecursiveIteratorIterator($directoryIterator, RecursiveIteratorIterator::CHILD_FIRST);
 
-        // Exclude directories that match the pattern task-*
-        if (preg_match('/^task/', $dirName)) {
-            continue;
-        }
+    $directories = [];
 
-        $link = str_replace(' ', '-', strtolower($dirName));
-        $indent = str_repeat('  ', $depth+1);
-
-        $tree .= "$indent- [$dirName](#$link)\n";
-
-        if (!empty(glob("$d/*"))) {
-            $tree .= createTree($d, $depth + 1);
+    foreach($recursiveIterator as $path) {
+        if ($path->isDir() && preg_match($pattern, $path->getFilename())) {
+            $directories[] = $path->getPathname();
         }
     }
 
-    return $tree;
+    // Sort the array
+    sort($directories);
+
+    return $directories;
 }
 
-function createTable($taskCount, $link) {
-    $table = "| No of Tasks |                                            | \n";
-    $table .= "|---------|--------------------------------------------|\n";
-    $table .= sprintf("|%9d|%44s|\n", $taskCount, $link);
-    return $table;
-}
+// Function that create a global global_readme.md file
+function createGlobalglobal_readme($languages) {
+    $global_readme = "# Learn Fullstack\n\n";
+
+    $taskDirectories = array_merge(getDirectories('.', '/task-/'), getDirectories('.', '/task_/'));
 
 
+    // echo '<pre>'; print_r($taskDirectories); echo '</pre>';
+
+    // Print total number of tasks completed in the ReadMe.md file
+
+    $global_readme .= ">Total number of tasks: " . count($taskDirectories) . "\n\n";
+
+    $global_readme .= "## Languages\n\n";
+
+    $global_readme .= "Click on individual language for more detailed information\n\n";
+
+    foreach($languages as $language) {
+        $global_readme .= "- [" . $language . "](" . $language . ")" . "\n";
+    }
 
 
-
-$tree = createTree("home");
-
-$content = "- [home](#home)\n$tree";
-
-echo $content;
-
-
-$stringArray = explode("\n", $content);
-
-$body="";
-
-foreach($stringArray as $line) {
-    $output="";
-    $outputIsTaskFolderExist="";
-    echo "\n";
-    $hyphenCount=0;
-    if (empty($line))
-        continue;
-    $line=str_replace(' ', '-', $line);
-    // echo "\nLine under consideration $line ";
-    $parts = explode('[', $line);
-    if (array_key_exists(0,$parts)) {
-        $hyphenCount=substr_count($parts[0], '-');
-        // echo "Hyphencount : $hyphenCount";
-        if (array_key_exists(1,$parts)) {
-            $hashes=($hyphenCount)/2;
-
-            $title = substr($parts[1], 0, strpos($parts[1], ']'));
-            // echo " Title : $title";
-            // echo str_repeat('#', $hashes) . ' ' . $title;
-            $body = $body."\n".str_repeat('#', $hashes) . ' ' . $title;
-
-            exec("find . -name $title", $output);
-            // $dirName = "$title";
-            // $matchingDirectories = findDirectory($title);
-            // print_r($matchingDirectories);
-            // print_r($output);
-
-            # Assuming only one folder exists with the name
-            // print($output[0]);
-            // Print the output
-            foreach ($output as $line) {
-                // echo $line . PHP_EOL;
-                exec("(ls -ltrh $line | egrep task | wc -l)",$outputIsTaskFolderExist);
-                // print($outputIsTaskFolderExist[0]);
-                $table=createTable($outputIsTaskFolderExist[0],$line);
-                // echo $table;
+    foreach($languages as $language) {
+        $global_readme .= "\n## " . $language . "\n\n";
+        foreach($taskDirectories as $taskDirectory) {
+            // $taskDirectory is of form - [281] => ./reactjs/taskset/task-004-eslint-setup
+            // if $taskDirectory does not contain the language string, continue
+            if (strpos($taskDirectory, "./".$language) === false) {
+                continue;
             }
 
-            $body = $body."\n".$table;
-        }
-        else {
+            // save only the task-004-eslint-setup part of the path in a new variable without changing the $taskDirectory by getting the part after last /
             
-            echo "No part1 found when line is $line";
+            $taskName = substr($taskDirectory, strrpos($taskDirectory, '/') + 1);
+            $global_readme .= "- [" . $taskName . "](" . $taskDirectory . "/"  . ")\n";
         }
     }
-    else {
-        echo "No part0 found";
-    }
-    
 
-
-
+    file_put_contents('Readme.md', $global_readme);
 }
 
-echo "Body is : $body";
+createGlobalglobal_readme($languages);
 
-$content = $content."\n".$body;
-file_put_contents("README.md", $content);
-
-#markdown-table-formatter
-# npm install markdown-table-formatter -g
-# https://github.com/nvuillam/markdown-table-formatter
-
-
-// echo "Done!\n";
+?>
