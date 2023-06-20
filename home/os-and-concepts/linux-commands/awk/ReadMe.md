@@ -1,15 +1,16 @@
-## awk
+# awk
 
 [awk](https://man7.org/linux/man-pages/man1/awk.1p.html)
 
-### NAME
+## NAME
+
 awk - pattern-directed scanning and processing language
 
-### SYNOPSIS
+## SYNOPSIS
+
 > awk [ -F fs ] [ -v var=value ] [ 'prog' | -f progfile ] [ file ...  ]
 
-
-### EXAMPLES
+## EXAMPLES
 
 - Print only columns one and three using stdin
 
@@ -23,7 +24,7 @@ this one
 $ 
 ```
 
-- Print only elements from column 2 that match pattern using stdin 
+- Print only elements from column 2 that match pattern using stdin
 
 ```bash
 $ awk ' /'pattern'/ {print $2} '
@@ -37,7 +38,7 @@ at
 $
 ```
 
-- Classic "Hello, world" in awk 
+- Classic "Hello, world" in awk
 
 ```bash
 $ awk "BEGIN { print \"Hello, world\" }"
@@ -45,7 +46,7 @@ Hello, world
 $
 ```
 
-4. Print what's entered on the command line until EOF
+- Print what's entered on the command line until EOF
 
 ```bash
 $ awk '{ print }'
@@ -59,7 +60,7 @@ end now
 $
 ```
 
-5. Extract first and last column of a text file
+- Extract first and last column of a text file
 
 ```bash
 awk '{print $1, $NF}' filename
