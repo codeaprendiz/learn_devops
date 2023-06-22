@@ -21,7 +21,7 @@
 - [export](task-018-export)
 - [fc](task-019-fc)
 - [find](task-020-find)
-- [firewall-cmd](firewall-cmd)
+- [firewall-cmd](task-021-firewall-cmd)
 - [free](free/free.md)
 - [ftp](ftp/ftp.md)
 - [git](git)
