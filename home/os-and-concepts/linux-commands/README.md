@@ -18,7 +18,7 @@
 - [dir](task-015-dir)
 - [dos2unix](task-016-dos2unix)
 - [du](task-017-du)
-- [export](export/export.md)
+- [export](task-018-export)
 - [fc](fc)
 - [find](find/find.md)
 - [firewall-cmd](firewall-cmd)
