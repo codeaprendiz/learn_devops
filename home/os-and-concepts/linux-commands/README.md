@@ -31,7 +31,7 @@
 - [host](task-028-host)
 - [hostname](task-29-hostname)
 - [ifconfig](task-030-ifconfig)
-- [ip](ip/ip.md)
+- [ip](task-031-ip)
 - [jar](jar/jar.md)
 - [jobs](jobs/jobs.md)
 - [jq](jq/jq.md)
