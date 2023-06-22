@@ -53,7 +53,7 @@
 - [ps](task-050-ps)
 - [rm](task-051-rm)
 - [route](task-052-route)
-- [rsync](rsync/rsync.md)
+- [rsync](task-053-rsync)
 - [scp](scp/scp.md)
 - [sed](sed/sed.md)
 - [sh](sh/sh.md)

@@ -1,10 +1,10 @@
-## rsync
+# rsync
 
-### NAME
+## NAME
 
 rsync - faster, flexible replacement for rcp
 
-### SYNOPSIS
+## SYNOPSIS
 
 > rsync [OPTION]... SRC [SRC]... DEST
 
@@ -22,7 +22,7 @@ rsync - faster, flexible replacement for rcp
 
 > rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 
-### DESCRIPTION
+## DESCRIPTION
 
 rsync  is a program that behaves in much the same way that rcp does, but has many more options and uses the rsync remote-update protocol to greatly speed up file transfers when the destination file is being updated.
 
@@ -47,7 +47,6 @@ Supports copying links, devices, owners, groups and permissions.
 It’s faster than scp (Secure Copy) because rsync uses remote-update protocol which allows to transfer just the differences between two sets of files. First time, it copies the whole content of a file or a directory from source to destination but from next time, it copies only the changed blocks and bytes to the destination.
 
 Rsync consumes less bandwidth as it uses compression and decompression method while sending and receiving data both ends.
- 
 
 OPTIONS
 
@@ -62,9 +61,9 @@ OPTIONS
 * -h : human-readable, output numbers in a human-readable format
 
 * -u,  
-  *   --update skip files that are newer on the receiver
-  *  --inplace update destination files in-place
-  *  --append append data onto shorter files
+  * --update skip files that are newer on the receiver
+  * --inplace update destination files in-place
+  * --append append data onto shorter files
 
 * -r,  --recursive
        This tells rsync to copy directories recursively.
@@ -74,13 +73,12 @@ OPTIONS
   * When this option is off, permissions are set as follows:
     * Existing  files (including  updated files) retain their existing permissions, though the --executability option might change just the execute permission for the file.
     * New files get their "normal" permission bits set to the source file's permissions masked with the receiving end's umask setting, and their special permission bits disabled except in the case where a new directory inherits a setgid bit from its parent directory.
- 
 * -g, --group
   * This option causes rsync to set the group of the destination file to be the same as the source file.  If the receiving program is not running as the super-user (or if --no-super was specified), only  groups that the invoking user on the receiving side is a member of will be preserved. Without this option, the group is set to the default group of the invoking user on the receiving side.
 * -t, --times
   * This tells rsync to transfer modification times along with the files and update them on the remote system.  Note that if this option is not used, the optimization that excludes files that have not been modified cannot be effective; in other words, a missing -t or -a will cause the next transfer to behave as if it used -I, causing all files to be updated (though the rsync algorithm will make the update fairly efficient if the files haven't actually changed, you're much better off using -t).
 
-### EXAMPLES
+## EXAMPLES
 
 This following command will sync a single file on a local machine from one location to another location. Here in this example, a file name backup.tar needs to be copied or synced to /tmp/backups/ folder.
 
@@ -132,8 +130,7 @@ Here in this example, rsync command will include those files and directory only 
 
 Automatically delete source files after complete successfull transfer.
 
-
 ```bash
 [root@tecmint]# rsync --remove-source-files -zvh backup.tar /tmp/backups/
+.
 ```
-
