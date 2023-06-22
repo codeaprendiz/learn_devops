@@ -47,7 +47,7 @@
 - [nmap](task-044-nmap)
 - [nohup](task-045-nohup)
 - [nslookup](task-046-nslookup)
-- [openssl](openssl/openssl.md)
+- [openssl](task-047-openssl)
 - [passwd](passwd/passwd.md)
 - [ping](ping/ping.md)
 - [ps](ps/ps.md)
