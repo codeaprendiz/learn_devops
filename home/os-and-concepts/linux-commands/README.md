@@ -76,7 +76,7 @@
 - [ulimit](task-073-ulimit)
 - [umask](task-074-umask)
 - [uname](task-075-uname)
-- [uniq](uniq/uniq.md)
+- [uniq](task-076-uniq)
 - [unzip](unzip/unzip.md)
 - [uptime](uptime/uptime.md)
 - [vi](vi)
