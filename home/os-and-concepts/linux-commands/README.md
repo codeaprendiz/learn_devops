@@ -78,7 +78,7 @@
 - [uname](task-075-uname)
 - [uniq](task-076-uniq)
 - [unzip](task-077-unzip)
-- [uptime](uptime/uptime.md)
+- [uptime](task-078-uptime)
 - [vi](vi)
 - [vmstat](vmstat/vmstat.md)
 - [wall](wall/wall.md)

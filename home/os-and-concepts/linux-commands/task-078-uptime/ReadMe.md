@@ -1,19 +1,18 @@
-## uptime
+# uptime
 
-### NAME
+## NAME
 
 uptime -- show how long system has been running
 
-### SYNOPSIS
+## SYNOPSIS
 
 > uptime
 
-### DESCRIPTION
+## DESCRIPTION
 
 The uptime utility displays the current time, the length of time the system has been up, the number of users, and the load average of the system over the last 1, 5, and 15 minutes.
 
-
-### EXAMPLES
+## EXAMPLES
 
 ```bash
 $ uptime
