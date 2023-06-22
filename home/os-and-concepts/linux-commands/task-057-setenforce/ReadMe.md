@@ -1,23 +1,24 @@
-## setenforce
+# setenforce
 
 [setenforce](https://man7.org/linux/man-pages/man8/setenforce.8.html)
 
-### NAME
+## NAME
 
 setenforce - modify the mode SELinux is running in
 
-### SYNOPSIS         
+## SYNOPSIS
 
 > setenforce [Enforcing|Permissive|1|0]
 
-### DESCRIPTION         
+## DESCRIPTION
+
 Use Enforcing or 1 to put SELinux in enforcing mode.
 Use Permissive or 0 to put SELinux in permissive mode.
 
 If SELinux is disabled and you want to enable it, or SELinux is
 enabled and you want to disable it, please see selinux(8).
 
-### EXAMPLES
+## EXAMPLES
 
 - Tested on Fedora CoreOS
 
@@ -30,6 +31,5 @@ PRETTY_NAME="Fedora CoreOS 33.20210104.3.1"
 
 ```bash
 setenforce 0
-
-
+.
 ```

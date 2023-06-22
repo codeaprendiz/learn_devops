@@ -57,7 +57,7 @@
 - [scp](task-054-scp)
 - [sed](task-055-sed)
 - [sh](task-056-sh)
-- [setenforce](setenforce/setenforce.md)
+- [setenforce](task-057-setenforce)
 - [sort](sort/sort.md)
 - [ssh](ssh)
 - [sudo](sudo/sudo.md)
