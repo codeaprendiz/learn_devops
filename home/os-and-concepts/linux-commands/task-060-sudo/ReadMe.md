@@ -1,10 +1,10 @@
-## sudo
+# sudo
 
-### NAME
+## NAME
 
 sudo, sudoedit - execute a command as another user
 
-### SYNOPSIS
+## SYNOPSIS
 
 > sudo -h | -K | -k | -V
 
@@ -16,11 +16,11 @@ sudo, sudoedit - execute a command as another user
 
 > sudoedit [-AknS] [-C num] [-g group] [-h host] [-p prompt] [-u user] file ...
 
-### DESCRIPTION
+## DESCRIPTION
 
 sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy.  The invoking user's real (not effective) user ID is used to determine the user name with which to query the security policy.
 
-### EXAMPLE
+## EXAMPLE
 
 To switch to a user “looker”
 

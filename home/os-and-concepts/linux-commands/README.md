@@ -60,7 +60,7 @@
 - [setenforce](task-057-setenforce)
 - [sort](task-058-sort)
 - [ssh](task-059-ssh)
-- [sudo](sudo/sudo.md)
+- [sudo](task-060-sudo)
 - [sysctl](sysctl/sysctl.md)
 - [system](system/system.md)
 - [systemctl](systemctl)
