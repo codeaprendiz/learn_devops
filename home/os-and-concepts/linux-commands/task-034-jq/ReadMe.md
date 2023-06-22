@@ -1,15 +1,15 @@
-## jq
+# jq
 
-[jq](http://manpages.ubuntu.com/manpages/bionic/man1/jq.1.html)
+- [jq](http://manpages.ubuntu.com/manpages/bionic/man1/jq.1.html)
+- [learn-jq](https://lzone.de/cheat-sheet/jq)
 
 jq - Command-line JSON processor
 
-### SYNOPSIS
+## SYNOPSIS
 
 > jq [options...] filter [files...]
 
-
-### EXAMPLES
+## EXAMPLES
 
 Let the json be
 
@@ -39,8 +39,3 @@ $ echo $json | jq '.'
 $ echo $json | jq '.commit_id'
 "b8f2b8b"
 ```
-
-
-- Good links to learn
-
-[jq](https://lzone.de/cheat-sheet/jq)

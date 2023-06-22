@@ -34,7 +34,7 @@
 - [ip](task-031-ip)
 - [jar](task-032-jar)
 - [jobs](task-033-jobs)
-- [jq](jq/jq.md)
+- [jq](task-034-jq)
 - [jstack](jstack/jstack.md)
 - [keytool](keytool/keytool.md)
 - [ln](ln)
