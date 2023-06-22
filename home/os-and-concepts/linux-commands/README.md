@@ -89,4 +89,4 @@
 - [which](task-086-which)
 - [xargs](task-087-xargs)
 - [zcat](task-088-zcat)
-- [zip](zip)
+- [zip](task-089-zip)
