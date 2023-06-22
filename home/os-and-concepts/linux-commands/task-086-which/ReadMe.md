@@ -1,27 +1,27 @@
-## which
+# which
 
-### NAME
+## NAME
 
 which -- locate a program file in the user's path
 
-### SYNOPSIS
+## SYNOPSIS
 
 > which [-as] program ...
 
-### DESCRIPTION
+## DESCRIPTION
 
 The which utility takes a list of command names and searches the path for each executable file that would be run had these commands actually been invoked.
 
 Some shells may provide a builtin which command which is similar or identical to this utility.
 
-### OPTIONS
+## OPTIONS
 
-* -a      
+* -a
   * List all instances of executables found (instead of just the first one of each).
-* -s      
+* -s
   * No output, just return 0 if any of the executables are found, or 1 if none are found.
 
-### EXAMPLES    
+## EXAMPLES
 
 which - shows the full path of (shell) commands
 

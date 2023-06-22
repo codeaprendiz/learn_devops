@@ -86,7 +86,7 @@
 - [wget](task-083-wget)
 - [whatis](task-084-whatis)
 - [whereis](task-085-whereis)
-- [which](which/which.md)
+- [which](task-086-which)
 - [xargs](xargs/xargs.md)
 - [zcat](zcat)
 - [zip](zip)
