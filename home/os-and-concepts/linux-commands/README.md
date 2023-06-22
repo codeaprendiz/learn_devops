@@ -15,7 +15,7 @@
 - [df](task-012-df)
 - [diff](task-013-diff)
 - [dig](task-014-dig)
-- [dir](dir/dir.md)
+- [dir](task-015-dir)
 - [dos2unix](dos2unix/dos2unix.md)
 - [du](du/du.md)
 - [export](export/export.md)
