@@ -49,7 +49,7 @@
 - [nslookup](task-046-nslookup)
 - [openssl](task-047-openssl)
 - [passwd](task-048-passwd)
-- [ping](ping/ping.md)
+- [ping](task-049-ping)
 - [ps](ps/ps.md)
 - [rm](rm/rm.md)
 - [route](route/route.md)
