@@ -1,14 +1,14 @@
-## whereis
+# whereis
 
-### NAME
+## NAME
 
 whereis -- locate programs
 
-### SYNOPSIS
+## SYNOPSIS
 
 > whereis [program ...]
 
-### DESCRIPTION
+## DESCRIPTION
 
 The whereis utility checks the standard binary directories for the specified programs, printing out the paths of any it finds.
 
