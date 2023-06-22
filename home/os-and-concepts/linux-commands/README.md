@@ -24,7 +24,7 @@
 - [firewall-cmd](task-021-firewall-cmd)
 - [free](task-022-free)
 - [ftp](task-023-ftp)
-- [git](git)
+- [git](task-024-git)
 - [gunzip-gzip](gunzip-gzip)
 - [head](head/head.md)
 - [history](history/history.md)
