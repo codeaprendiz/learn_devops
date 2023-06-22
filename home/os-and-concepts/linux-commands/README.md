@@ -41,7 +41,7 @@
 - [lsof](task-038-lsof)
 - [mail](task-039-mail)
 - [mkdir](task-040-mkdir)
-- [mount](mount/mount.md)
+- [mount](task-041-mount)
 - [nc](nc/nc.md)
 - [netstat](netstat/netstat.md)
 - [nmap](nmap/nmap.md)
