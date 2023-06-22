@@ -26,13 +26,14 @@ ln -s Existing-file New-name
 
 ## OPTIONS
 
-* -s
-    * Create a symbolic link.
+- -s
+  - Create a symbolic link.
 
 ## EXAMPLES
 
 ```bash
 $ rm java
-
+.
 $ ln -s /usr/lib/jvm/java-8-oracle/jre/bin/java java
+.
 ```
