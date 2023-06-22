@@ -1,27 +1,20 @@
-## ifconfig
+# ifconfig
 
 [ifconfig](https://www.man7.org/linux/man-pages/man8/ifconfig.8.html)
 
-### NAME
+## NAME
 
 ifconfig - configure a network interface
 
-### SYNOPSIS
-
-> ifconfig [-v] [-a] [-s] [interface]
-
-> ifconfig [-v] interface [aftype] options | address ...
-
-
-### OPTIONS
+## OPTIONS
 
 - -a
   - display all interfaces which are currently available, even
     if down
-    
-### EXAMPLES
 
-- To display all the interfaces present 
+## EXAMPLES
+
+- To display all the interfaces present
   - Consider ens4 here
     - has internal IP 10.128.0.38
     - has mac address 42:01:0a:80:00:26  (identified by ether)

@@ -30,7 +30,7 @@
 - [history](task-027-history)
 - [host](task-028-host)
 - [hostname](task-29-hostname)
-- [ifconfig](ifconfig/ifconfig.md)
+- [ifconfig](task-030-ifconfig)
 - [ip](ip/ip.md)
 - [jar](jar/jar.md)
 - [jobs](jobs/jobs.md)
