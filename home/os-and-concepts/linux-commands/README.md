@@ -38,7 +38,7 @@
 - [jstack](task-035-jstack)
 - [keytool](task-036-keytool)
 - [ln](task-037-ln)
-- [lsof](lsof/lsof.md)
+- [lsof](task-038-lsof)
 - [mail](mail/mail.md)
 - [mkdir](mkdir/mkdir.md)
 - [mount](mount/mount.md)
