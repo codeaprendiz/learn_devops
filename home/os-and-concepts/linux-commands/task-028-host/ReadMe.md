@@ -1,22 +1,22 @@
-## host
+# host
 
-### NAME
+## NAME
 
 host - DNS lookup utility
 
-### SYNOPSIS
+## SYNOPSIS
 
 > host [-aCdlnrsTwv] [-c class] [-N ndots] [-R number] [-t type] [-W wait] [-m flag] [-4] [-6] [-v] [-V] {name} [server]
 
-### DESCRIPTION
+## DESCRIPTION
 
 host is a simple utility for performing DNS lookups. It is normally used to convert names to IP addresses and vice versa. When no arguments or options are given, host prints a short summary of its command line arguments and options.
 
-**name** 
+name
 
 is the domain name that is to be looked up. It can also be a dotted-decimal IPv4 address or a colon-delimited IPv6 address, in which case host will by default perform a reverse lookup for that address.  server is an optional argument which is either the name or IP address of the name server that host should query instead of the server or servers listed in /etc/resolv.conf.
 
-### OPTIONS
+## OPTIONS
 
 * -4
   * Use IPv4 only for query transport. See also the -6 option.
@@ -32,7 +32,6 @@ is the domain name that is to be looked up. It can also be a dotted-decimal IPv4
   * Print debugging traces. Equivalent to the -v verbose option.
 * -l
   * List zone: The host command performs a zone transfer of zone name and prints out the NS, PTR and address records (A/AAAA). Together, the -l -a options print all records in the zone.
-  
   
 ```bash
 $ host google.com

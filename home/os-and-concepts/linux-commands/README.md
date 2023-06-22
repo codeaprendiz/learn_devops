@@ -28,7 +28,7 @@
 - [gunzip-gzip](task-025-gunzip-gzip)
 - [head](task-026-head)
 - [history](task-027-history)
-- [host](host/host.md)
+- [host](task-028-host)
 - [hostname](hostname/hostname.md)
 - [ifconfig](ifconfig/ifconfig.md)
 - [ip](ip/ip.md)
