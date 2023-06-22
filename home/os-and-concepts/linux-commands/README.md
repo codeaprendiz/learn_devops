@@ -23,7 +23,7 @@
 - [find](task-020-find)
 - [firewall-cmd](task-021-firewall-cmd)
 - [free](task-022-free)
-- [ftp](ftp/ftp.md)
+- [ftp](task-023-ftp)
 - [git](git)
 - [gunzip-gzip](gunzip-gzip)
 - [head](head/head.md)
