@@ -40,7 +40,7 @@
 - [ln](task-037-ln)
 - [lsof](task-038-lsof)
 - [mail](task-039-mail)
-- [mkdir](mkdir/mkdir.md)
+- [mkdir](task-040-mkdir)
 - [mount](mount/mount.md)
 - [nc](nc/nc.md)
 - [netstat](netstat/netstat.md)
