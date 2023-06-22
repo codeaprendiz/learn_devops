@@ -17,7 +17,7 @@
 - [dig](task-014-dig)
 - [dir](task-015-dir)
 - [dos2unix](task-016-dos2unix)
-- [du](du/du.md)
+- [du](task-017-du)
 - [export](export/export.md)
 - [fc](fc)
 - [find](find/find.md)
