@@ -42,7 +42,7 @@
 - [mail](task-039-mail)
 - [mkdir](task-040-mkdir)
 - [mount](task-041-mount)
-- [nc](nc/nc.md)
+- [nc](task-042-nc)
 - [netstat](netstat/netstat.md)
 - [nmap](nmap/nmap.md)
 - [nohup](nohup/nohup.md)
