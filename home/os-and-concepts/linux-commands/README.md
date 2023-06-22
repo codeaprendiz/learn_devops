@@ -16,7 +16,7 @@
 - [diff](task-013-diff)
 - [dig](task-014-dig)
 - [dir](task-015-dir)
-- [dos2unix](dos2unix/dos2unix.md)
+- [dos2unix](task-016-dos2unix)
 - [du](du/du.md)
 - [export](export/export.md)
 - [fc](fc)
