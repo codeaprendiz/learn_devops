@@ -1,11 +1,11 @@
 # linux commands
 
 - [frequently-used](bookmark-me/bookmark-me.md)
-- [arp](arp)
-- [awk](awk)
-- [chage](chage)
-- [chmod](chmod)
-- [chown](chown)
+- [arp](task-001-arp)
+- [awk](task-002-awk)
+- [chage](task-003-chage)
+- [chmod](task-004-chmod)
+- [chown](task-005-chown)
 - [cksum](cksum)
 - [clear](clear)
 - [cp](cp)
