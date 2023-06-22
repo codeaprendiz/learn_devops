@@ -1,20 +1,14 @@
-## crontab
+# crontab
 
-### NAME
+## NAME
 
 crontab -- maintain crontab files for individual users (V3)
 
-### SYNOPSIS
-
-> crontab [-u user] file
-
-> crontab [-u user] { -l | -r | -e }
-
-**NOTE**
+NOTE
 
 You should have a empty line at the end of crontab to work on Red Hat linux boxes.
 
-### DESCRIPTION
+## DESCRIPTION
 
 The crontab utility is the program used to install, deinstall or list the tables used to drive the cron(8) daemon in Vixie Cron.  
 Each user can have their own crontab, and they are not intended to be edited directly.
@@ -35,18 +29,15 @@ Where,
 /path/to/command – Script or command name to schedule
 ```
 
-### OPTIONS
+## OPTIONS
 
 - -e
-     
-    - This option is used to edit the current crontab using the editor specified by the VISUAL or EDITOR environment variables.  After you exit from the editor, the modified crontab will be installed automatically.
+  - This option is used to edit the current crontab using the editor specified by the VISUAL or EDITOR environment variables.  After you exit from the editor, the modified crontab will be installed automatically.
 
-- -l 
-    
-    - The current crontab will be displayed on standard output.
-    
+- -l
+  - The current crontab will be displayed on standard output.
 
-#### EXAMPLES
+## EXAMPLES
 
 To edit or create your own crontab file, type the following command at the UNIX / Linux shell prompt:
 
