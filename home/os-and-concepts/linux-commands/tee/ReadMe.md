@@ -1,14 +1,14 @@
-## tee
+# tee
 
-### NAME
+## NAME
 
 tee - read from standard input and write to standard output and files
 
-### SYNOPSIS
+## SYNOPSIS
 
 > tee [OPTION]... [FILE]..
 
-### DESCRIPTION
+## DESCRIPTION
 
 Copy standard input to each FILE, and also to standard output.
 
