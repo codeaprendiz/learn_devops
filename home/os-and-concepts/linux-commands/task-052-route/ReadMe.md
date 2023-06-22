@@ -1,20 +1,18 @@
-## route
+# route
 
 [route](https://linux.die.net/man/8/route)
 
-### NAME
+## NAME
 
 route - show / manipulate the IP routing table
 
+## SYNOPSIS
 
-### SYNOPSIS
+> route [-CFvnee]
 
->  route [-CFvnee]
+## OPTIONS
 
-
-### OPTIONS
-
-- n 
+- n
 
   - show numerical addresses instead of trying to determine symbolic host names. This is useful if you are trying to determine why the route to your nameserver has vanished.
   

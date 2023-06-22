@@ -52,7 +52,7 @@
 - [ping](task-049-ping)
 - [ps](task-050-ps)
 - [rm](task-051-rm)
-- [route](route/route.md)
+- [route](task-052-route)
 - [rsync](rsync/rsync.md)
 - [scp](scp/scp.md)
 - [sed](sed/sed.md)
