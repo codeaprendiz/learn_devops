@@ -73,7 +73,7 @@
 - [traceroute](task-070-traceroute)
 - [top](task-071-top)
 - [tty](task-072-tty)
-- [ulimit](ulimit/ulimit.md)
+- [ulimit](task-073-ulimit)
 - [umask](umask/umask.md)
 - [uname](uname)
 - [uniq](uniq/uniq.md)
