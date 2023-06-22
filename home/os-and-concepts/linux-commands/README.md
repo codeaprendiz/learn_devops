@@ -51,7 +51,7 @@
 - [passwd](task-048-passwd)
 - [ping](task-049-ping)
 - [ps](task-050-ps)
-- [rm](rm/rm.md)
+- [rm](task-051-rm)
 - [route](route/route.md)
 - [rsync](rsync/rsync.md)
 - [scp](scp/scp.md)
