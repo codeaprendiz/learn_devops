@@ -1,18 +1,18 @@
-##sort
+# sort
 
-### NAME
+## NAME
 
 sort - sort lines of text file
 
-### SYNOPSIS
+## SYNOPSIS
 
 sort [OPTION]... [FILE]...
 
-### DESCRIPTION
+## DESCRIPTION
 
 Write sorted concatenation of all FILE(s) to standard output.
 
-### OPTIONS
+## OPTIONS
 
 * -b, --ignore-leading-blanks
   * ignore leading blanks
@@ -25,13 +25,13 @@ Write sorted concatenation of all FILE(s) to standard output.
 * -i, --ignore-nonprinting
   * consider only printable characters
 * -M, --month-sort
-  * compare (unknown) < `JAN' < ... < `DEC'
+  * compare (unknown) < `JAN' < ... < DEC`
 * -n, --numeric-sort
   * compare according to string numerical value
 * -r, --reverse
   * reverse the result of comparisons
   
-### EXAMPLES
+## EXAMPLES
 
 ```bash
 $ cat num alpha alphaNum

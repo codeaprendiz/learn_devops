@@ -58,7 +58,7 @@
 - [sed](task-055-sed)
 - [sh](task-056-sh)
 - [setenforce](task-057-setenforce)
-- [sort](sort/sort.md)
+- [sort](task-058-sort)
 - [ssh](ssh)
 - [sudo](sudo/sudo.md)
 - [sysctl](sysctl/sysctl.md)
