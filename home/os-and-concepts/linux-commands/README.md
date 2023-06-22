@@ -81,7 +81,7 @@
 - [uptime](task-078-uptime)
 - [vi](task-079-vi)
 - [vmstat](task-080-vmstat)
-- [wall](wall/wall.md)
+- [wall](task-081-wall)
 - [wc](wc/wc.md)
 - [wget](wget/wget.md)
 - [whatis](whatis/whatis.md)
