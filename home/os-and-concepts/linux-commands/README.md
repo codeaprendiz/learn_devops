@@ -64,7 +64,7 @@
 - [sysctl](task-061-sysctl)
 - [system](task-062-system)
 - [systemctl](task-063-systemctl)
-- [tail](tail/tail.md)
+- [tail](task-064-tail)
 - [tar](tar/tar.md)
 - [tee](tee/tee.md)
 - [telnet](telnet/telnet.md)
