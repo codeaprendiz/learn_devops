@@ -1,19 +1,9 @@
 
 ## truncating files
 
-### du
 
-To get all the large files with size greater than 1000MB
 
-```bash
-find . -xdev -type f -size +1000M -exec du -sh {} + 
-```
 
-To get large files with their time stamp 
-
-```bash
-find . -xdev -type f -size +100M -exec du -sh {} + | awk {'print $2'} | xargs ls -ltrh | grep *.out 
-```
 
 Find all the files in current directory which are older than 1 month 
 
