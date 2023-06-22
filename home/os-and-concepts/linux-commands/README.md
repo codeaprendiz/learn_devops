@@ -26,7 +26,7 @@
 - [ftp](task-023-ftp)
 - [git](task-024-git)
 - [gunzip-gzip](task-025-gunzip-gzip)
-- [head](head/head.md)
+- [head](task-026-head)
 - [history](history/history.md)
 - [host](host/host.md)
 - [hostname](hostname/hostname.md)

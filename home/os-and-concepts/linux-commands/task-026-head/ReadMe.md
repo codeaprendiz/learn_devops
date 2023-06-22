@@ -1,24 +1,24 @@
-## head
+# head
 
 
-### NAME
+## NAME
 
 head -- display first lines of a file
 
-### SYNOPSIS
+## SYNOPSIS
 
 > head [-n count | -c bytes] [file ...]
 
-### DESCRIPTION
+## DESCRIPTION
 
 This filter displays the first count lines or bytes of each of the specified files, or of the standard input if no files are specified.  If count is omitted it defaults to 10.
-If more than a single file is specified, each file is preceded by a header consisting of the string ``==> XXX <=='' where ``XXX'' is the name of the file.
+If more than a single file is specified, each file is preceded by a header consisting of the string `==> XXX <=='' where` XXX'' is the name of the file.
 
-**EXIT STATUS**
+EXIT STATUS
 
 The head utility exits 0 on success, and >0 if an error occurs.
 
-### EXAMPLES
+## EXAMPLES
 
 ```bash
 $ echo "this is first line \n this is second \n this is third " > file
