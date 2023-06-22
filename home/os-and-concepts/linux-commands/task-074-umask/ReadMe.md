@@ -1,6 +1,6 @@
-## umask
+# umask
 
-### DESCRIPTION 
+## DESCRIPTION
 
 Its a shell built-in
 
@@ -18,7 +18,7 @@ In Linux, the default permissions value is 666 for a regular file, and 777 for a
 
 So if our umask value is 022, then any new files will, by default, have the permissions 644 (666 - 022). Likewise, any new directories will, by default, be created with the permissions 755 (777 - 022).
 
-### EXAMPLES
+## EXAMPLES
 
 Following  will return your system's umask as a four-digit octal number, for example:
 
@@ -43,4 +43,3 @@ $ touch testfile
 ls -l testfile
 -rw-r--r-- 1 myusername myusername 0 Jan  7 14:39 testfile
 ```
-
