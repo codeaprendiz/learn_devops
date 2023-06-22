@@ -1,53 +1,43 @@
-## dig
+# dig
 
 [dig](https://linux.die.net/man/1/dig)
 
-### NAME
+## NAME
 
 dig - DNS lookup utility
 
-### SYNOPSIS
+## DESCRIPTION
 
-> dig [@server] [-b address] [-c class] [-f filename] [-k filename] [-m] [-p port#] [-q name] [-t type] [-x addr] [-y [hmac:]name:key] [-4] [-6] [name] [type] [class][queryopt...]
-
->dig [-h]
-
->dig [global-queryopt...] [query...]
-
-### DESCRIPTION
-
-dig (domain information groper) is a flexible tool for interrogating DNS name servers. 
-It performs DNS lookups and displays the answers that are returned from the name server(s) that were queried. 
+dig (domain information groper) is a flexible tool for interrogating DNS name servers.
+It performs DNS lookups and displays the answers that are returned from the name server(s) that were queried.
 Unless it is told to query a specific name server, dig will try each of the servers listed in /etc/resolv.conf.
 When no command line arguments or options are given, dig will perform an NS query for "." (the root).
 As mentioned in synopsis
-server 
-Is the name or IP address of the name server to query. 
-This can be an IPv4 address in dotted-decimal notation or an IPv6 address in colon-delimited notation. 
-When the supplied server argument is a hostname, dig resolves that name before querying that name server. 
+server
+Is the name or IP address of the name server to query.
+This can be an IPv4 address in dotted-decimal notation or an IPv6 address in colon-delimited notation.
+When the supplied server argument is a hostname, dig resolves that name before querying that name server.
 If no server argument is provided, dig consults /etc/resolv.conf and queries the name servers listed there.
 The reply from the name server that responds is displayed.
 name
 Is the name of the resource record that is to be looked up.
 type
 Indicates what type of query is required -- ANY, A, MX, SIG, etc.  
-Type can be any valid query type. 
+Type can be any valid query type.
 If no type argument is supplied, dig will perform a lookup for an A record.
 
-### OPTIONS
+## OPTIONS
 
 - +[no]trace
-
-    - Toggle tracing of the delegation path from the root name servers for the name being looked up.
-      Tracing is disabled by default. 
-      When tracing is enabled, dig makes iterative queries to resolve the name being looked up. 
+  - Toggle tracing of the delegation path from the root name servers for the name being looked up.
+      Tracing is disabled by default.
+      When tracing is enabled, dig makes iterative queries to resolve the name being looked up.
       It will follow referrals from the root servers, showing the answer from each server that was used to resolve the lookup.
-      
 - -t
 
-  - The -t option sets the query type to type      
+  - The -t option sets the query type to type
 
-**OUTPUT EXPLANATION**
+OUTPUT EXPLANATION
 
 ```bash
 $ dig example.com
@@ -70,7 +60,6 @@ example.com. 19727 IN A 93.184.216.34
 ;; MSG SIZE  rcvd: 45
 ```
 
-
 ```bash
 ; <<>> DiG 9.8.3-P1 <<>> example.com
 ```
@@ -89,20 +78,20 @@ Default instance of DIG was set up to display the first line of the response.
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
 ```
 
-Got an answer, hooray! The first part of the answer is the header, which has been clearly marked up with all manner of operators. 
+Got an answer, hooray! The first part of the answer is the header, which has been clearly marked up with all manner of operators.
 
-The opcode is the action that DIG took, in this case a query. 
+The opcode is the action that DIG took, in this case a query.
 
-Status is an important one to note; in this case, there was no error reported. 
+Status is an important one to note; in this case, there was no error reported.
 
 This field may show one of the following statuses when a query is invoked:
 
 - NOERROR - Everything's cool. The zone is being served from the requested authority without issues.
-- SERVFAIL - The name that was queried exists, but there's no data or invalid data for that name at the requested authority. 
+- SERVFAIL - The name that was queried exists, but there's no data or invalid data for that name at the requested authority.
 - NXDOMAIN - The name in question does not exist, and therefore there is no authoritative DNS data to be served.
 - REFUSED - Not only does the zone not exist at the requested authority, but their infrastructure is not in the business of serving things that don't exist at all.
 
-Next line starts out with flags - these are options that can be set to determine which sections of the answer get printed, or determine the timeout and retry strategies. 
+Next line starts out with flags - these are options that can be set to determine which sections of the answer get printed, or determine the timeout and retry strategies.
 
 The subsequent fields, Query, Answer, Authority and Additional provide the count of results for the DIG that was performed.
 
@@ -127,14 +116,13 @@ example.com. 19727 IN A 93.184.216.34
 
 We see that example.com, with a TTL of 19727 seconds has an A record - 93.184.216.34.
 
-Query time shows how long it took to get the DNS response back from the server, which is listed on the next line. 
+Query time shows how long it took to get the DNS response back from the server, which is listed on the next line.
 
 You can also see the exact moment in time that I requested this information, and how many bytes the response contained.
 
+## EXAMPLE
 
-### EXAMPLE
-
-- dig +trace 
+- dig +trace
 
 ```bash
 $ dig +trace www.example.com
@@ -183,7 +171,7 @@ example.com. 86400 IN NS b.iana-servers.net.
 
 - Similar to above example we can get an authoritative answer if we pass the dns server also
    Here in response note that the AUTHORITY=1 and we specifically have an AUTHORITY section.
-   
+
 ```bash
 dig example.com @dns1.p01.nsone.net                                                  
 
@@ -228,7 +216,6 @@ company.com.          99      IN      TXT     "lopgle-site-verification=22nceW24
 ;; WHEN: Tue Feb 02 16:53:43 +04 2021
 ;; MSG SIZE  rcvd: 268
 ```
-
 
 - Dig the ns records for a given domain
 

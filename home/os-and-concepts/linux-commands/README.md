@@ -14,7 +14,7 @@
 - [cut](task-011-cut)
 - [df](task-012-df)
 - [diff](task-013-diff)
-- [dig](dig/dig.md)
+- [dig](task-014-dig)
 - [dir](dir/dir.md)
 - [dos2unix](dos2unix/dos2unix.md)
 - [du](du/du.md)
