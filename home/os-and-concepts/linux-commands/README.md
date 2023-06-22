@@ -83,7 +83,7 @@
 - [vmstat](task-080-vmstat)
 - [wall](task-081-wall)
 - [wc](task-82-wc)
-- [wget](wget/wget.md)
+- [wget](task-083-wget)
 - [whatis](whatis/whatis.md)
 - [whereis](whereis/whereis.md)
 - [which](which/which.md)
