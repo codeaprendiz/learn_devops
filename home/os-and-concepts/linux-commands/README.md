@@ -27,7 +27,7 @@
 - [git](task-024-git)
 - [gunzip-gzip](task-025-gunzip-gzip)
 - [head](task-026-head)
-- [history](history/history.md)
+- [history](task-027-history)
 - [host](host/host.md)
 - [hostname](hostname/hostname.md)
 - [ifconfig](ifconfig/ifconfig.md)
