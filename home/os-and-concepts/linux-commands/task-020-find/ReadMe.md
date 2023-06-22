@@ -1,60 +1,52 @@
-## find
+# find
 
-### NAME
+## NAME
 
 find -- walk a file hierarchy
 
-### SYNOPSIS
-
-> find [-H | -L | -P] [-EXdsx] [-f path] path ... [expression]
-
->find [-H | -L | -P] [-EXdsx] -f path [path ...] [expression]
-
-### DESCRIPTION
+## DESCRIPTION
 
 GNU find searches the directory tree rooted at each given starting-point by evaluating the given expression from left to right, according to the rules of precedence, until the outcome is known (the left hand side is false for and operations, true for or), at which point find moves on to the next file name.  
 If no starting point is specified, `.' is assumed.
 
-### OPTIONS
+## OPTIONS
 
-* -mtime n 
+* -mtime n
   * File's data was last modified n*24 hours ago.  
     All primaries which take a numeric argument allow the number to be preceded by a plus sign (``+'') or a minus sign (``-'').  
-    A preceding plus sign means ``more than n'', a preceding minus sign means ``less than n'' and neither means ``exactly n''.
+    A preceding plus sign means `more than n'', a preceding minus sign means` less than n'' and neither means ``exactly n''.
 * -mmin n
-   * File as data was last modified n minutes ago.
+  * File as data was last modified n minutes ago.
 * -size n[cwbkMG]
   * File uses n units of space.  The following suffixes can be used:
-    * b    
+    * b
       * for 512-byte blocks (this is the default if no suffix is used)
-    * c    
+    * c
       * for bytes
-    * w    
+    * w
       * for two-byte words
     * k
       * for Kilobytes (units of 1024 bytes)
-    * M    
+    * M
       * for Megabytes (units of 1048576 bytes)
     * G    f
       * or Gigabytes (units of 1073741824 bytes)
 
-* -type c 
-
-  - File is of type c: 
-    * b      block (buffered) special 
-    * c      character (unbuffered) special 
-    * d      directory 
-    * p      named pipe (FIFO) 
-    * f      regular file 
-    * l      symbolic link 
-    * s      socket 
-    * D      door (Solaris) 
+* -type c
+  * File is of type c:
+    * b      block (buffered) special
+    * c      character (unbuffered) special
+    * d      directory
+    * p      named pipe (FIFO)
+    * f      regular file
+    * l      symbolic link
+    * s      socket
+    * D      door (Solaris)
 
 * -xdev
   * Do not descend directories on other filesystems.
 
-
-EXAMPLES
+## EXAMPLES
 
 * For example to show all the files in /app/endeca/PlatformServices/workspace/logs directory that have not been updated since last 25 days do
 
@@ -84,5 +76,22 @@ find $HOME/.BUILD_SCRIPTS_AREA/  -mmin -180 -name "*-bld.lock"|grep "$BLD_LOCK"|
 107M    ./tmp-02082016/.jenkins/plugins.zip 
 ```
 
+## Example usage with other commands
 
+Find all the files in current directory which are older than 1 month
 
+```bash
+find ./ -maxdepth 1 -type f -mtime +30 -print 
+find ./ -maxdepth 1 -type f -mtime +30 
+```
+
+Move the files older than 30 days to a particular directory
+
+```bash
+$ mkdir tmp
+.
+$ find ./ -maxdepth 1 -type f -mtime +30 -exec mv -t ./tmp/ {} + 
+.
+$ rm -rf tmp
+.
+```

@@ -20,7 +20,7 @@
 - [du](task-017-du)
 - [export](task-018-export)
 - [fc](task-019-fc)
-- [find](find/find.md)
+- [find](task-020-find)
 - [firewall-cmd](firewall-cmd)
 - [free](free/free.md)
 - [ftp](ftp/ftp.md)

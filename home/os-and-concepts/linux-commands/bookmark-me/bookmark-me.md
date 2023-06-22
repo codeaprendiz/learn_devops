@@ -1,24 +1,4 @@
 
-## truncating files
-
-
-
-
-
-Find all the files in current directory which are older than 1 month 
-
-```bash
-find ./ -maxdepth 1 -type f -mtime +30 -print 
-find ./ -maxdepth 1 -type f -mtime +30 
-```
-
-Move the files older than 30 days to a particular directory 
-
-```bash
-$ mkdir tmp 
-$ find ./ -maxdepth 1 -type f -mtime +30 -exec mv -t ./tmp/ {} + 
-$ rm -rf tmp
-```
 
 
 ### egrep
