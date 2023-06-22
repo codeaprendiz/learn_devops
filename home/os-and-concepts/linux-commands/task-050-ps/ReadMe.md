@@ -1,16 +1,16 @@
-## ps
+# ps
 
-### NAME
+## NAME
 
 ps -- process status
 
-### SYNOPSIS
+## SYNOPSIS
 
 > ps [-AaCcEefhjlMmrSTvwXx] [-O fmt | -o fmt] [-G gid[,gid...]] [-g grp[,grp...]] [-u uid[,uid...]] [-p pid[,pid...]] [-t tty[,tty...]] [-U user[,user...]]
 
 > ps [-L]
 
-### DESCRIPTION
+## DESCRIPTION
 
 The ps utility displays a header line, followed by lines containing information about all of your processes that have controlling terminals.
 
@@ -20,28 +20,26 @@ For the processes which have been selected for display, ps will usually display 
 
 For the processes which have been selected for display, the information to display is selected based on a set of keywords (see the -L, -O, and -o options).  The default output format includes, for each process, the process' ID, controlling terminal, CPU time (including both user and system time), state, and associated command.
 
+## OPTIONS
 
-### OPTIONS
-
-* -A     
+* -A
   * Display information about other users' processes, including those without controlling terminals.
 
 * -e
   * Identical to -A
 
-* -f      
+* -f
   * Display the uid, pid, parent pid, recent CPU usage, process start time, controlling tty, elapsed CPU usage, and the associated command.  If the -u option is also used, display the user name rather then the numeric uid. When -o or -O is used to add to the display following -f, the command field is not truncated as severely as it is in other formats.
 
-* -o format       
+* -o format
   * user-defined format.
   * format is a single argument in the form of a blank-separated or comma-separated list, which offers a way to specify individual output columns. The recognized keywords are described in the STANDARD FORMAT SPECIFIERS section below. Headers may be renamed (ps -o pid,ruser=RealUser -o comm=Command) as desired. If all column headers are empty (ps -o pid= -o comm=) then the header line will not be output. Column width will increase as needed for wide headers; this may be used to widen up columns such as 
     WCHAN (ps -o pid,wchan=WIDE-WCHAN-COLUMN -o comm). Explicit width control (ps opid,wchan:42,cmd) is offered too. The behavior of ps -o pid=X,comm=Y varies with personality; output may be one column named "X,comm=Y" or two columns named "X" and "Y". Use multiple -o options when in doubt. Use the PS_FORMAT environment variable to specify a default as desired; DefSysV and DefBSD are macros that may be used to choose the default UNIX or BSD columns.
   
 * -p pidlist      Select by PID.
   * This selects the processes whose process ID numbers appear in pidlist. Identical to p and --pid.
-    
 
-### EXAMPLES
+## EXAMPLES
 
 It is used to get the process status.
 

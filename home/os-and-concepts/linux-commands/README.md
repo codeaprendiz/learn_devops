@@ -50,7 +50,7 @@
 - [openssl](task-047-openssl)
 - [passwd](task-048-passwd)
 - [ping](task-049-ping)
-- [ps](ps/ps.md)
+- [ps](task-050-ps)
 - [rm](rm/rm.md)
 - [route](route/route.md)
 - [rsync](rsync/rsync.md)
