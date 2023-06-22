@@ -39,7 +39,7 @@
 - [keytool](task-036-keytool)
 - [ln](task-037-ln)
 - [lsof](task-038-lsof)
-- [mail](mail/mail.md)
+- [mail](task-039-mail)
 - [mkdir](mkdir/mkdir.md)
 - [mount](mount/mount.md)
 - [nc](nc/nc.md)
