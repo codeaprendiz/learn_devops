@@ -1,6 +1,6 @@
-## tty
+# tty
 
-### NAME
+## NAME
 
 tty - print the file name of the terminal connected to standard input
 
@@ -8,11 +8,11 @@ tty - print the file name of the terminal connected to standard input
 
 > tty [OPTION]...
 
-### DESCRIPTION
+## DESCRIPTION
 
 Print the file name of the terminal connected to standard input.
 
-### OPTIONS
+## OPTIONS
 
 * -s, --silent, --quiet
 
@@ -28,5 +28,7 @@ Print the file name of the terminal connected to standard input.
 /dev/pts/0
 ```
 
+```bash
 [ngcs_tg@dolnxprdxnvm33 ~]$ tty
 /dev/pts/0
+```
