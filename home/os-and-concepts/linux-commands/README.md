@@ -67,7 +67,7 @@
 - [tail](task-064-tail)
 - [tar](task-065-tar)
 - [tee](task-066-tee)
-- [telnet](telnet/telnet.md)
+- [telnet](task-067-telnet)
 - [top](top/top.md)
 - [tr](tr/tr.md)
 - [traceroute](traceroute/traceroute.md)
