@@ -25,7 +25,7 @@
 - [free](task-022-free)
 - [ftp](task-023-ftp)
 - [git](task-024-git)
-- [gunzip-gzip](gunzip-gzip)
+- [gunzip-gzip](task-025-gunzip-gzip)
 - [head](head/head.md)
 - [history](history/history.md)
 - [host](host/host.md)
