@@ -75,7 +75,7 @@
 - [tty](task-072-tty)
 - [ulimit](task-073-ulimit)
 - [umask](task-074-umask)
-- [uname](uname)
+- [uname](task-075-uname)
 - [uniq](uniq/uniq.md)
 - [unzip](unzip/unzip.md)
 - [uptime](uptime/uptime.md)
