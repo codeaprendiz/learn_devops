@@ -46,7 +46,7 @@
 - [netstat](task-043-netstat)
 - [nmap](task-044-nmap)
 - [nohup](task-045-nohup)
-- [nslookup](nslookup/nslookup.md)
+- [nslookup](task-046-nslookup)
 - [openssl](openssl/openssl.md)
 - [passwd](passwd/passwd.md)
 - [ping](ping/ping.md)
