@@ -48,7 +48,7 @@
 - [nohup](task-045-nohup)
 - [nslookup](task-046-nslookup)
 - [openssl](task-047-openssl)
-- [passwd](passwd/passwd.md)
+- [passwd](task-048-passwd)
 - [ping](ping/ping.md)
 - [ps](ps/ps.md)
 - [rm](rm/rm.md)
