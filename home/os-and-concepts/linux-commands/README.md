@@ -11,7 +11,7 @@
 - [cp](task-008-cp)
 - [crontab](task-009-crontab)
 - [curl](task-010-curl)
-- [cut](cut)
+- [cut](task-011-cut)
 - [df](df/df.md)
 - [diff](diff/diff.md)
 - [dig](dig/dig.md)
