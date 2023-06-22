@@ -84,7 +84,7 @@
 - [wall](task-081-wall)
 - [wc](task-82-wc)
 - [wget](task-083-wget)
-- [whatis](whatis/whatis.md)
+- [whatis](task-084-whatis)
 - [whereis](whereis/whereis.md)
 - [which](which/which.md)
 - [xargs](xargs/xargs.md)
