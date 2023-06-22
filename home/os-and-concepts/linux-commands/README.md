@@ -45,7 +45,7 @@
 - [nc](task-042-nc)
 - [netstat](task-043-netstat)
 - [nmap](task-044-nmap)
-- [nohup](nohup/nohup.md)
+- [nohup](task-045-nohup)
 - [nslookup](nslookup/nslookup.md)
 - [openssl](openssl/openssl.md)
 - [passwd](passwd/passwd.md)
