@@ -6,7 +6,7 @@
 - [chage](task-003-chage)
 - [chmod](task-004-chmod)
 - [chown](task-005-chown)
-- [cksum](cksum)
+- [cksum](task-006-cksum)
 - [clear](clear)
 - [cp](cp)
 - [crontab](crontab)
