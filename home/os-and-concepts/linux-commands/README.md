@@ -88,5 +88,5 @@
 - [whereis](task-085-whereis)
 - [which](task-086-which)
 - [xargs](task-087-xargs)
-- [zcat](zcat)
+- [zcat](task-088-zcat)
 - [zip](zip)
