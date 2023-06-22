@@ -55,7 +55,7 @@
 - [route](task-052-route)
 - [rsync](task-053-rsync)
 - [scp](task-054-scp)
-- [sed](sed/sed.md)
+- [sed](task-055-sed)
 - [sh](sh/sh.md)
 - [setenforce](setenforce/setenforce.md)
 - [sort](sort/sort.md)
