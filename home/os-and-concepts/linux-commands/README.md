@@ -43,7 +43,7 @@
 - [mkdir](task-040-mkdir)
 - [mount](task-041-mount)
 - [nc](task-042-nc)
-- [netstat](netstat/netstat.md)
+- [netstat](task-043-netstat)
 - [nmap](nmap/nmap.md)
 - [nohup](nohup/nohup.md)
 - [nslookup](nslookup/nslookup.md)
