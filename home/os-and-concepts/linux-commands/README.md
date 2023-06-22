@@ -33,7 +33,7 @@
 - [ifconfig](task-030-ifconfig)
 - [ip](task-031-ip)
 - [jar](task-032-jar)
-- [jobs](jobs/jobs.md)
+- [jobs](task-033-jobs)
 - [jq](jq/jq.md)
 - [jstack](jstack/jstack.md)
 - [keytool](keytool/keytool.md)

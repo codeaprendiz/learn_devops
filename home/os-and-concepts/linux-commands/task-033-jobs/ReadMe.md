@@ -1,4 +1,4 @@
-## jobs
+# jobs
 
 JOB CONTROL
 
@@ -6,29 +6,18 @@ Job control is nothing but the ability to stop/suspend the execution of processe
 This is done using your operating system and shell such as bash/ksh or POSIX shell.
 Your shell keeps a table of currently executing jobs and can be displayed with jobs command.
 
-### DESCRIPTION
+## DESCRIPTION
 
 It's a shell builtin
 Shell builtin commands are commands that can be executed within the running shell's process.
 
-### PURPOSE
+## PURPOSE
 
 Displays status of jobs in the current shell session.
 
-### SYNTAX
+## OPTIONS
 
-> jobs [-lnprs] [ jobspec ... ]
-
-> jobs -x command [ args ... 
-
-The basic syntax is as follows:
-- jobs
-- jobs jobID
-- jobs [options] jobID
-
-### OPTIONS
-
-* -l 
+* -l
   * Show process id’s in addition to the normal information.
 * -p
   * Show process id’s only.
@@ -41,7 +30,7 @@ The basic syntax is as follows:
 * -x
   * COMMAND is run after all job specifications that appear in ARGS have been replaced with the process ID of that job’s process group leader.
 
-### EXAMPLES
+## EXAMPLES
 
 Before you start using jobs command, you need to start couple of jobs on your system. Type the following commands to start jobs:
 
@@ -78,8 +67,9 @@ $ jobs -p %p
 
 To show process IDs in addition to the normal information
 
-- Pass the -l(lowercase L) option to jobs command for more information about each job listed, run:
-- Info in sequence is : JobID, ProcessId, Status, Job
+* Pass the -l(lowercase L) option to jobs command for more information about each job listed, run:
+
+* Info in sequence is : JobID, ProcessId, Status, Job
 
 ```bash
 $ jobs -l
@@ -88,13 +78,14 @@ $ jobs -l
 
 To list only processes that have changed status since the last notification
 
-- First, start a new job as follows:
+* First, start a new job as follows:
 
 ```bash
 $ sleep 100 &
+.
 ```
 
-- Now, only show jobs that have stopped or exited since last notified, type:
+* Now, only show jobs that have stopped or exited since last notified, type:
 
 ```bash
 $ jobs -n
@@ -102,7 +93,8 @@ $ jobs -n
 ```
 
 Display lists process IDs (PIDs) only
-- Pass the -p option to jobs command to display PIDs only:
+
+* Pass the -p option to jobs command to display PIDs only:
 
 ```bash
 $ jobs -p
@@ -114,7 +106,8 @@ $ jobs -p
 ```
 
 A note about /usr/bin/jobs and shell builtin
-- Type the following type command to find out whether jobs is part of shell, external command or both:
+
+* Type the following type command to find out whether jobs is part of shell, external command or both:
 
 ```bash
 $ type -a jobs
@@ -122,6 +115,6 @@ jobs is a shell builtin
 jobs is /usr/bin/jobs
 ```
 
-In almost all cases you need to use the jobs command that is implemented as a BASH/KSH/POSIX shell built-in. 
-The /usr/bin/jobs command can not be used in the current shell. The /usr/bin/jobs command operates in a different 
-environment and does not share the parent bash/ksh’s shells understanding of jobs. 
+In almost all cases you need to use the jobs command that is implemented as a BASH/KSH/POSIX shell built-in.
+The /usr/bin/jobs command can not be used in the current shell. The /usr/bin/jobs command operates in a different
+environment and does not share the parent bash/ksh’s shells understanding of jobs.
