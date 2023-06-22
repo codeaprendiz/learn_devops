@@ -56,7 +56,7 @@
 - [rsync](task-053-rsync)
 - [scp](task-054-scp)
 - [sed](task-055-sed)
-- [sh](sh/sh.md)
+- [sh](task-056-sh)
 - [setenforce](setenforce/setenforce.md)
 - [sort](sort/sort.md)
 - [ssh](ssh)
