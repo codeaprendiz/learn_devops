@@ -70,7 +70,7 @@
 - [telnet](task-067-telnet)
 - [top](task-068-top)
 - [tr](task-069-tr)
-- [traceroute](traceroute/traceroute.md)
+- [traceroute](task-070-traceroute)
 - [tty](tty/tty.md)
 - [ulimit](ulimit/ulimit.md)
 - [umask](umask/umask.md)

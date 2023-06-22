@@ -1,7 +1,6 @@
-## traceroute
+# traceroute
 
-
-### NAME
+## NAME
 
 traceroute -- print the route packets take to network host
 
@@ -9,7 +8,7 @@ SYNOPSIS
 
 > traceroute [-adeFISdNnrvx] [-A as_server] [-f first_ttl] [-g gateway] [-i iface] [-M first_ttl] [-m max_ttl] [-P proto] [-p port] [-q nqueries] [-s src_addr] [-t tos][-w waittime] [-z pausemsecs] host [packetsize]
 
-### DESCRIPTION
+## DESCRIPTION
 
 The Internet is a large and complex aggregation of network hardware, connected together by gateways.  Tracking the route one's packets follow (or finding the miscreant gateway that's discarding your packets) can be difficult.  traceroute utilizes the IP protocol `time to live' field and attempts to elicit an ICMP TIME_EXCEEDED response from each gateway along the path to some host.
 
@@ -25,4 +24,5 @@ The Internet is a large and complex aggregation of network hardware, connected t
 
 ```bash
 $ traceroute google.com
+.
 ```
