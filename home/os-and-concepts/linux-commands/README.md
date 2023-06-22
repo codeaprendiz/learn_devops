@@ -29,7 +29,7 @@
 - [head](task-026-head)
 - [history](task-027-history)
 - [host](task-028-host)
-- [hostname](hostname/hostname.md)
+- [hostname](task-29-hostname)
 - [ifconfig](ifconfig/ifconfig.md)
 - [ip](ip/ip.md)
 - [jar](jar/jar.md)
