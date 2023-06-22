@@ -12,7 +12,7 @@
 - [crontab](task-009-crontab)
 - [curl](task-010-curl)
 - [cut](task-011-cut)
-- [df](df/df.md)
+- [df](task-012-df)
 - [diff](diff/diff.md)
 - [dig](dig/dig.md)
 - [dir](dir/dir.md)
