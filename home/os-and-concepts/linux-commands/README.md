@@ -10,7 +10,7 @@
 - [clear](task-007-clear)
 - [cp](task-008-cp)
 - [crontab](task-009-crontab)
-- [curl](curl)
+- [curl](task-010-curl)
 - [cut](cut)
 - [df](df/df.md)
 - [diff](diff/diff.md)
