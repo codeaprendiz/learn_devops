@@ -19,7 +19,7 @@
 - [dos2unix](task-016-dos2unix)
 - [du](task-017-du)
 - [export](task-018-export)
-- [fc](fc)
+- [fc](task-019-fc)
 - [find](find/find.md)
 - [firewall-cmd](firewall-cmd)
 - [free](free/free.md)
