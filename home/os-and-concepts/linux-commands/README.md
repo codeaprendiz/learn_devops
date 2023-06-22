@@ -8,7 +8,7 @@
 - [chown](task-005-chown)
 - [cksum](task-006-cksum)
 - [clear](task-007-clear)
-- [cp](cp)
+- [cp](task-008-cp)
 - [crontab](crontab)
 - [curl](curl)
 - [cut](cut)

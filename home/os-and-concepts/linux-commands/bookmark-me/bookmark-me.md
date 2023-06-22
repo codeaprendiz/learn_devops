@@ -1,12 +1,5 @@
 
-### truncating files
-
-```bash
->/catalina.out
-```
-
-
-
+## truncating files
 
 ### du
 
