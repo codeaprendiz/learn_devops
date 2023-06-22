@@ -1,30 +1,29 @@
-## free
+# free
 
-
-### NAME
+## NAME
 
 free - Display amount of free and used memory in the system
 
-### SYNOPSIS
+## SYNOPSIS
 
 > free [-b | -k | -m] [-o] [-s delay ] [-t] [-V]
 
-### DESCRIPTION
+## DESCRIPTION
 
-free displays the total amount of free and used physical and swap memory in the system, as well as the buffers used by the  kernel. 
+free displays the total amount of free and used physical and swap memory in the system, as well as the buffers used by the  kernel.
 
 The shared memory column should be ignored; it is obsolete.
 
-### OPTIONS
+## OPTIONS
 
-* -b 
+* -b
   * switch  displays the  amount of memory in bytes; the -k switch (set by default) displays it in kilobytes; the  -m switch displays it in megabytes.
-* -t 
+* -t
   * switch displays a line containing the totals.
-* -o 
+* -o
   * switch disables the display of a "buffer adjusted" line
-* -s 
-  * switch activates continuous polling delay seconds apart. 
+* -s
+  * switch activates continuous polling delay seconds apart.
   * You may actually specify any floating  point number for delay, usleep(3) is used for microsecond resolution delay times.
   
 ```bash
