@@ -13,7 +13,7 @@
 - [curl](task-010-curl)
 - [cut](task-011-cut)
 - [df](task-012-df)
-- [diff](diff/diff.md)
+- [diff](task-013-diff)
 - [dig](dig/dig.md)
 - [dir](dir/dir.md)
 - [dos2unix](dos2unix/dos2unix.md)

@@ -1,23 +1,21 @@
 
-## diff
+# diff
 
 [diff](https://man7.org/linux/man-pages/man1/diff.1.html)
 
-### NAME
+## NAME
 
 diff - compare files line by line
 
-### SYNOPSIS
+## SYNOPSIS
 
 > diff [OPTION]... FILES
 
-
-### DESCRIPTION
+## DESCRIPTION
 
 Compare FILES line by line.
 
-
-### EXAMPLES
+## EXAMPLES
 
 When you want to check the difference in two files in linux system
 
@@ -28,4 +26,3 @@ $ diff /etc/kubernetes/manifests/kube-apiserver.yaml /var/answers/kube-apiserver
 ---
 >     - --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
 ```
-
