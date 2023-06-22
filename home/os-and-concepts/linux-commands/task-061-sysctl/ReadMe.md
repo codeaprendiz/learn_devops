@@ -1,40 +1,36 @@
-## sysctl
+# sysctl
 
 [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html)
 
-
-### NAME
+## NAME
 
 sysctl - configure kernel parameters at runtime
 
-### SYNOPSIS
+## SYNOPSIS
 
 > sysctl [options] [variable[=value]] [...]
 
 > sysctl -p [file or regexp] [...]
 
-
-### DESCRIPTION
+## DESCRIPTION
 
 sysctl is used to modify kernel parameters at runtime.  The
 parameters available are those listed under /proc/sys/.  Procfs
 is required for sysctl support in Linux.  You can use sysctl to
 both read and write sysctl data.
 
+## OPTIONS
 
-### OPTIONS
-
-- -n 
+- -n
   - Use this option to disable printing of the key name when
     printing values.
-    
 - --system
 
   - Load settings from all system configuration files. Files
     are read from directories in the following list in given
     order from top to bottom
-    
-### EXAMPLES
+
+## EXAMPLES
 
 - To view the sysctl variables.
 
@@ -49,4 +45,5 @@ net.ipv4.ip_forward_use_pmtu = 0
 
 ```bash
 $ sysctl --system
+.
 ```
