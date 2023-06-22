@@ -32,7 +32,7 @@
 - [hostname](task-29-hostname)
 - [ifconfig](task-030-ifconfig)
 - [ip](task-031-ip)
-- [jar](jar/jar.md)
+- [jar](task-032-jar)
 - [jobs](jobs/jobs.md)
 - [jq](jq/jq.md)
 - [jstack](jstack/jstack.md)
