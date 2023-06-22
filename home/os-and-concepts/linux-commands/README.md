@@ -44,7 +44,7 @@
 - [mount](task-041-mount)
 - [nc](task-042-nc)
 - [netstat](task-043-netstat)
-- [nmap](nmap/nmap.md)
+- [nmap](task-044-nmap)
 - [nohup](nohup/nohup.md)
 - [nslookup](nslookup/nslookup.md)
 - [openssl](openssl/openssl.md)
