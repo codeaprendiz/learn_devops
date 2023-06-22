@@ -36,7 +36,7 @@
 - [jobs](task-033-jobs)
 - [jq](task-034-jq)
 - [jstack](task-035-jstack)
-- [keytool](keytool/keytool.md)
+- [keytool](task-036-keytool)
 - [ln](ln)
 - [lsof](lsof/lsof.md)
 - [mail](mail/mail.md)
