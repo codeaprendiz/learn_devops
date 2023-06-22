@@ -1,10 +1,10 @@
-## vmstat
+# vmstat
 
-### NAME
+## NAME
 
 vmstat - Report virtual memory statistics
 
-### SYNOPSIS
+## SYNOPSIS
 
 > vmstat [-a] [-n] [-S unit] [delay [ count]]
 
@@ -20,10 +20,9 @@ vmstat - Report virtual memory statistics
 
 > vmstat [-V]
 
-### DESCRIPTION
+## DESCRIPTION
 
 vmstat reports information about processes, memory, paging, block IO, traps, and cpu activity. The  first report produced gives averages since the last reboot. Additional reports give information on a sampling period of length delay.  The process and memory reports are instantaneous in either case.
-
 
 ```bash
 [ngcs_tg@dolnxprdxnvm33 ~]$ vmstat
