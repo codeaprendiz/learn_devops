@@ -35,7 +35,7 @@
 - [jar](task-032-jar)
 - [jobs](task-033-jobs)
 - [jq](task-034-jq)
-- [jstack](jstack/jstack.md)
+- [jstack](task-035-jstack)
 - [keytool](keytool/keytool.md)
 - [ln](ln)
 - [lsof](lsof/lsof.md)
