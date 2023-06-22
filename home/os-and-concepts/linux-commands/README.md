@@ -77,7 +77,7 @@
 - [umask](task-074-umask)
 - [uname](task-075-uname)
 - [uniq](task-076-uniq)
-- [unzip](unzip/unzip.md)
+- [unzip](task-077-unzip)
 - [uptime](uptime/uptime.md)
 - [vi](vi)
 - [vmstat](vmstat/vmstat.md)
