@@ -80,7 +80,7 @@
 - [unzip](task-077-unzip)
 - [uptime](task-078-uptime)
 - [vi](task-079-vi)
-- [vmstat](vmstat/vmstat.md)
+- [vmstat](task-080-vmstat)
 - [wall](wall/wall.md)
 - [wc](wc/wc.md)
 - [wget](wget/wget.md)
