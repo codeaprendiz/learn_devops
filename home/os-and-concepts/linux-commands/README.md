@@ -79,7 +79,7 @@
 - [uniq](task-076-uniq)
 - [unzip](task-077-unzip)
 - [uptime](task-078-uptime)
-- [vi](vi)
+- [vi](task-079-vi)
 - [vmstat](vmstat/vmstat.md)
 - [wall](wall/wall.md)
 - [wc](wc/wc.md)

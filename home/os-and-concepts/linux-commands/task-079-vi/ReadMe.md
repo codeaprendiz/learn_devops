@@ -1,12 +1,12 @@
-## vi
+# vi
 
-### NAME
+## NAME
 
 vim - Vi IMproved, a programmers text editor
 
-### SYNOPSIS
+## SYNOPSIS
 
-> vim [options] [file ..] 
+> vim [options] [file ..]
 
 > vim [options] - 
 
@@ -20,21 +20,21 @@ vim - Vi IMproved, a programmers text editor
 
 > rvim rview rgvim rgview
 
-### DESCRIPTION
+## DESCRIPTION
 
 Vim is a text editor that is upwards compatible to Vi.  It can be used to edit all kinds of plain text.  It is especially useful for editing programs.
 
-### COMMANDS
+## COMMANDS
 
-### Examples
+## Examples
 
-#### To search and replace globally in a file
+To search and replace globally in a file
 
 ```bash
 :%s/search/replace/g
 ```
 
-#### How to paste yaml in vi
+How to paste yaml in vi
 
 - When you try to paste yaml directly
 
