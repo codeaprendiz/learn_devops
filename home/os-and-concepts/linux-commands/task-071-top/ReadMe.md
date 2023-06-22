@@ -1,10 +1,10 @@
-## top
+# top
 
-### NAME
+## NAME
 
 top - display and update sorted information about processes
 
-### SYNOPSIS
+## SYNOPSIS
 
 > top    [-a | -d | -e | -c <mode>]
 
@@ -38,7 +38,7 @@ top - display and update sorted information about processes
 
 > top   [-u]
 
-### DESCRIPTION
+## DESCRIPTION
 
 The top program periodically displays a sorted list of system processes.  The default sorting key is pid, but other keys can be used instead. Various output options are available.
 
@@ -74,7 +74,6 @@ Tasks: 372 total,   1 running, 370 sleeping,   0 stopped, 1 zombie
 Cpu(s):  2.8%us, 0.3%sy,  0.0%ni, 96.9%id, 0.0%wa,  0.0%hi, 0.1%si, 0.0%st
 ```
 
-
 * Percentage of the CPU for user processes (2.8%us)
 
 * Percentage of the CPU for system processes (0.3%sy)
@@ -102,7 +101,6 @@ Swap:  4095992k total,   270564k used, 3825428k free, 20027500k cached
 PID USER      PR NI VIRT RES  SHR S %CPU %MEM TIME+  COMMAND
 16909 gie_tx    19 0 1957m 369m 3316 S 11.3  0.8 3:47.36 java
 ```
-
 
 * PID – l’ID of the process(16909 )
 
@@ -145,9 +143,10 @@ Command line option specifications are processed from left to right.  Options ca
 
 ```bash
 $ top  -o cpu
+.
 ```
 
-* -p 
+* -p
   * To get results for a single process
   
 ```bash
