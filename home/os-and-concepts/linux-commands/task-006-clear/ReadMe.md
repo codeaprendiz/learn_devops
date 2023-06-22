@@ -1,20 +1,20 @@
-## clear
+# clear
 
 [clear](https://man7.org/linux/man-pages/man1/clear.1.html)
 
-
-### NAME
+## NAME
 
 clear the terminal screen
 
-### SYNOPSIS
+## SYNOPSIS
 
 > @CLEAR@ [-Ttype] [-V] [-x]
 
-### EXAMPLES
+## EXAMPLES
 
 - To clear the terminal screen
 
 ```bash
 $ clear
+.
 ```

@@ -7,7 +7,7 @@
 - [chmod](task-004-chmod)
 - [chown](task-005-chown)
 - [cksum](task-006-cksum)
-- [clear](clear)
+- [clear](task-007-clear)
 - [cp](cp)
 - [crontab](crontab)
 - [curl](curl)
