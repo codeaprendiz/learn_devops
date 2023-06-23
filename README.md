@@ -1,88 +1,68 @@
-# Home
+# Learn DevOps
 
-Table of Contents:
+>Total number of tasks: 379
 
-- [Cloud Providers](#cloud-providers)
-- [Containers](#containers)
-- [Container Orchestration](#container-orchestration)
-- [Databases](#databases)
-- [DevOps Blogs](#devops-blogs)
-- [Infrastructure as Code](#infrastructure-as-code)
-- [Interview](#interview)
-- [Observability](#observability)
-- [OS and Concepts](#os-and-concepts)
-- [Productivity Tools](#productivity-tools)
-- [Version Control](#version-control)
-- [Web Servers](#web-servers)
+## Languages
 
-## Cloud Providers
+Click on individual language for more detailed information
 
-| AWS | OCI | GCP |
-| --- | --- | --- |
-| [Certification Digest](home/cloud-providers/aws/certifications-digest)<br> [Practice Tasks](home/cloud-providers/aws/practice-tasks) | [Practice Tasks](home/cloud-providers/oci/practice-tasks) | [Practice Tasks](home/cloud-providers/gcp/taskset) |
+- [container-orchestration](container-orchestration)
+- [devops-blogs](devops-blogs)
+- [infrastructure-as-code](infrastructure-as-code)
+- [observability](observability)
+- [web-servers](web-servers)
+- [version-control](version-control)
+- [databases](databases)
+- [monitoring-kitchen](monitoring-kitchen)
+- [images](images)
+- [os-and-concepts](os-and-concepts)
+- [cloud-providers](cloud-providers)
+- [programming-languages](programming-languages)
+- [productivity-tools](productivity-tools)
+- [containers](containers)
+- [interview](interview)
 
-## Containers
+## container-orchestration
 
-| Docker | Docker-Compose |
-| --- | --- |
-| [Practice Tasks](home/containers/docker-old) | [Practice Tasks](home/containers/docker-compose) |
 
-## Container Orchestration
+## devops-blogs
 
-| Kubernetes |
-| --- |
-| [Concepts](home/container-orchestration/kubernetes/concepts)<br> [Practice Tasks](home/container-orchestration/kubernetes) | 
 
-## Databases
+## infrastructure-as-code
 
-| Mongo | MySQL | PostgreSQL | Oracle19c |
-| --- | --- | --- | --- |
-| [Practice Tasks](/home/databases/mongo) | [Practice Tasks](/home/databases/mysql) | [Practice Tasks](/home/databases/postgreSQL) | [Practice Tasks](/home/databases/oracle19c) | 
 
-## DevOps Blogs
+## observability
 
-| Blogs |
-| --- |
-| [Blog Links](/home/devops-blogs) |
 
-## Infrastructure as Code
+## web-servers
 
-| AWS Terraform | OCI Terraform | GCP Terraform | Ansible |
-| --- | --- | --- | --- |
-| [Practice Tasks](home/infrastructure-as-code/terraform/aws) | [Practice Tasks](home/infrastructure-as-code/terraform/oci) | [Practice Tasks](home/infrastructure-as-code/terraform/terraform-gcp/taskset) | [Practice Tasks](home/infrastructure-as-code/ansible-kitchen/README.md) |
 
-## Interview
+## version-control
 
-| Coding Tasks |
-| --- |
-| [Coding Tasks](home/interview/coding-tasks) |
 
-## Observability
+## databases
 
-| Metrics |
-| --- |
-| [Host, Kubernetes, System](home/observability/metrics) |
 
-## OS and Concepts
+## monitoring-kitchen
 
-| Linux Commands | Linux Concepts |
-| --- | --- |
-| [Linux Commands 0_0](home/os-and-concepts/linux-commands/README.md)<br> [Bookmark Me ? 0_0 ](home/os-and-concepts/linux-commands/bookmark-me/bookmark-me.md) | [Linux Concepts](home/os-and-concepts/linux-essentials/linux-essentials.md) | 
 
-## Productivity Tools
+## images
 
-| Task Set |
-| --- |
-| [Task Set](home/productivity-tools) |
 
-## Version Control
+## os-and-concepts
 
-| Git |
-| --- |
-| [Practice Tasks](home/version-control/git) |
 
-## Web Servers
+## cloud-providers
 
-| Nginx |
-| --- |
-| [Practice Tasks](home/web-servers/nginx) |
+
+## programming-languages
+
+
+## productivity-tools
+
+
+## containers
+
+
+## interview
+
