@@ -29,68 +29,38 @@ $batch_folders = array(
  * @param string $directoryRegex is an optional argument that defines the regular expression pattern used to include directories in the tree structure (default value is /^task-/)
  * @return string The tree structure as a string.
  */
-function createTree($directoryPath = './', $directoryRegex = '/^task-/') {
-    $tree = []; // Initialize an empty array to store the tree structure
-
-    $directoriesArray = array_filter( // Get all subdirectories within the given directory, If you give ./home as the directory path, then the glob function will return an array of all subdirectories within the home directory i.e [0] => ./home/cloud-certifications, [1] => ./home/cloud-providers etc. 
-            glob($directoryPath . '/*'), // The glob() function scans the directory specified by $directoryPath and returns an array of matching file and directory paths.
-            'is_dir' //  The returned array contains the paths of all subdirectories within the given directory because the is_dir parameter is used as the second argument of array_filter(). 
-            ); // This means that only the directory paths from the result of glob() will be included in the final filtered array.
-    
-    sort($directoriesArray); // Sort the directories in ascending order
-
-    foreach ($directoriesArray as $directory) {
-        $dirName = trim(basename($directory)); // Get the directory name, if $d is ./home/cloud-certifications, then the basename() function inside trim() will return cloud-certifications
-
-        if (preg_match($directoryRegex, $dirName)) {
-            $relativePath = realpath($directory);
-            print("\nRelative path: "); print_r($relativePath);
-            exit;
-            $link = trim(str_replace(' ', '-', strtolower($relativePath)));
-
-            $pathParts = explode(DIRECTORY_SEPARATOR, $relativePath);
-            $parentDir = $pathParts[count($pathParts) - 2];
-
-            if (!isset($tree[$parentDir])) {
-                $tree[$parentDir] = [];
-            }
-
-            $tree[$parentDir][] = "- [$dirName]($link)";
-        }
-
-        if (!empty(glob("$directory/*"))) { // Check if the directory contains subdirectories
-            print("\nCalling createTree for: "); print_r($directory);
-            print("\n Tree state: ");print_r($tree);
-            $tree = array_merge($tree, createTree($directory)); // Recursively call createTree for subdirectories
-        }
-    }
-
-    return $tree; // Return the generated tree structure
-}
-
-
 function createTree_v1($directoryPath = './', $directoryRegex = '/^task-/')
 {
-    $tree = []; // Initialize an empty array to store the tree structure
+    $tree = [];  // Initialize an empty array to store the tree structure
 
-    $directoriesArray = array_filter(
-        glob($directoryPath . '/*'),
-        'is_dir'
-    );
+    $directoriesArray = array_filter( // Get all subdirectories within the given directory, If you give ./home as the directory path, then the glob function will return an array of all subdirectories within the home directory i.e [0] => ./home/cloud-certifications, [1] => ./home/cloud-providers etc. 
+                                    glob($directoryPath . '/*'), // The glob() function scans the directory specified by $directoryPath and returns an array of matching file and directory paths.
+                                    'is_dir' //  The returned array contains the paths of all subdirectories within the given directory because the is_dir parameter is used as the second argument of array_filter(). 
+                                    ); // This means that only the directory paths from the result of glob() will be included in the final filtered array.
 
-    sort($directoriesArray);
 
-    foreach ($directoriesArray as $directory) {
-        $dirName = trim(basename($directory));
+    sort($directoriesArray);   // Sort the directories in ascending order
+
+    foreach ($directoriesArray as $directory) { // directory: ./home/cloud-certifications/aws/taskset/task-001-aws-certified-solutions-architect-professional
+        $dirName = trim(basename($directory)); // Get the directory name, if $d is ./home/cloud-certifications, then the basename() function inside trim() will return cloud-certifications        
         if (preg_match($directoryRegex, $dirName)) {
-            $relativePath = realpath($directory);
+            $realPath = realpath($directory);
+            print("\ndirectory: "); print_r($directory);
+            print("\ndir name: "); print_r($dirName);
+            print("\nReal path: "); print_r($realPath);
             // trim everything until learn-devops from begining of relativePath
-            $relativePath = substr($relativePath, strpos($relativePath, 'home'));
+            $relativePath = substr($realPath, strpos($realPath, 'home'));
+            print("\nRelative path: "); print_r($relativePath);
             $pathParts = explode(DIRECTORY_SEPARATOR, $relativePath);
+            print("\nPath parts: "); print_r($pathParts);
             $parentDir = $pathParts[count($pathParts) - 2];
-
-            if (!isset($tree[$parentDir])) {
+            print("\nParent dir: "); print_r($parentDir);
+            print("\nTree: "); print_r($tree);
+            if (!isset($tree[$parentDir])) { 
+                // If the parent directory is not set in the tree array, then initialize it as an empty array
                 $tree[$parentDir] = [];
+                print("Tree for parentDir was not set");
+                // State of the tree
             }
 
             $tree[$parentDir][] = "- [$dirName]($relativePath)";
