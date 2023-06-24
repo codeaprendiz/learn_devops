@@ -84,7 +84,6 @@ function createTree_v1($directoryPath = './', $directoryRegex = '/^task-/')
         $dirName = trim(basename($directory));
         if (preg_match($directoryRegex, $dirName)) {
             $relativePath = realpath($directory);
-            $link = trim(str_replace(' ', '-', strtolower($relativePath)));
 
             $pathParts = explode(DIRECTORY_SEPARATOR, $relativePath);
             $parentDir = $pathParts[count($pathParts) - 2];
@@ -93,7 +92,7 @@ function createTree_v1($directoryPath = './', $directoryRegex = '/^task-/')
                 $tree[$parentDir] = [];
             }
 
-            $tree[$parentDir][] = "- [$dirName]($link)";
+            $tree[$parentDir][] = "- [$dirName]($relativePath)";
         }
 
         if (!empty(glob("$directory/*"))) {
@@ -111,5 +110,5 @@ function createTree_v1($directoryPath = './', $directoryRegex = '/^task-/')
 $tree = createTree_v1('.', '/^task-/'); // if first call is for ".", second call is for "./home" and so on as the function is recursive
 
 
-print_r($tree);
+
 ?>
