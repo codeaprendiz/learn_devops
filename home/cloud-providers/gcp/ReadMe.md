@@ -1,4 +1,4 @@
-# GCP Tasks
+# GCP Taskset
 
 - [task-001 : intro-console-projects-iam-apis](taskset/task-001-intro-console-projects-iam-apis)
 - [task-002 : getting-started-with-cloud-market-place](taskset/task-002-getting-started-with-cloud-market-place)
