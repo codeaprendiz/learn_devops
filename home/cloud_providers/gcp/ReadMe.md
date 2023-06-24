@@ -28,10 +28,9 @@
 - [task-026 : securing traffic through anthos service mesh](taskset/task-026-securing-traffic-through-anthos-service-mesh)
 - [task-027 : cloud source repositories overview](taskset/task-027-cloud-source-repositories-overview)
 
+References
 
-References 
-
--[docs/regions-zones](https://cloud.google.com/compute/docs/regions-zones)
+- [docs/regions-zones](https://cloud.google.com/compute/docs/regions-zones)
 - [https://cloud.google.com/about/locations](https://cloud.google.com/about/locations)
 - [docs/creating-managing-projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 - [docs/grant-role-console](https://cloud.google.com/iam/docs/grant-role-console)
