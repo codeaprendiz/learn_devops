@@ -1,35 +1,12 @@
 <?php
 
-// find . -name "batch-*" | tr "/" " " | awk '{print "\"### " $3 "\"" " => " "\"### " $3 " -- [Title](URL)\","}' | sort -n
-$batch_links = array(
-    "### batch-1--001-018" => "### batch-1--001-018 -- [LinkedIn - Learning Nodejs](https://www.linkedin.com/learning/learning-node-js-2017)",
-    "### batch-2--019-044" => "### batch-2--019-044 -- [LinkedIn - Node.js Essential Training](https://www.linkedin.com/learning/node-js-essential-training-14888164/learning-the-node-js-basics)",
-    "### batch-3--045-049" => "### batch-3--045-049 -- [LinkedIn - Learning npm, a package manager](https://www.linkedin.com/learning/learning-npm-a-package-manager)",
-    "### batch-4--050-076" => "### batch-4--050-076 -- [LinkedIn - Express Essential Training](https://www.linkedin.com/learning/express-essential-training-14539342)",
-    "### batch-5--077-093" => "### batch-5--077-093 -- [Not Revised Yet](URL)",
-    "### batch-6--094-104" => "### batch-6--094-104 -- [Not Revised Yet](URL)",
-    "### batch-7--105-110" => "### batch-7--105-110 -- [Not Revised Yet](URL)",
-);
-
-// find . -name "batch-*" | tr "/" " " | awk '{print "\"### " $3 "\"" ","}' | sort -n
-$batch_folders = array(
-    "### batch-1--001-018",
-    "### batch-2--019-044",
-    "### batch-3--045-049",
-    "### batch-4--050-076",
-    "### batch-5--077-093",
-    "### batch-6--094-104",
-);
-
-
-// Tested and works
 /**
  * Generates a tree structure of directories and subdirectories.The createTree function takes two arguments: $directoryPath and $directoryRegex. 
  * @param string $directoryPath represents the path of the directory for which the tree structure is generated. 
  * @param string $directoryRegex is an optional argument that defines the regular expression pattern used to include directories in the tree structure (default value is /^task-/)
  * @return string The tree structure as a string.
  */
-function createTree_v1($directoryPath = './', $directoryRegex = '/^task-/')
+function createTree_v1($directoryPath = './', $directoryRegex = '/^task_/')
 {
     $tree = [];  // Initialize an empty array to store the tree structure
 
@@ -37,48 +14,54 @@ function createTree_v1($directoryPath = './', $directoryRegex = '/^task-/')
                                     glob($directoryPath . '/*'), // The glob() function scans the directory specified by $directoryPath and returns an array of matching file and directory paths.
                                     'is_dir' //  The returned array contains the paths of all subdirectories within the given directory because the is_dir parameter is used as the second argument of array_filter(). 
                                     ); // This means that only the directory paths from the result of glob() will be included in the final filtered array.
+    // Result: $directoriesArray contains all directories within the given $directoryPath
 
 
     sort($directoriesArray);   // Sort the directories in ascending order
 
-    foreach ($directoriesArray as $directory) { // directory: ./home/cloud-certifications/aws/taskset/task-001-aws-certified-solutions-architect-professional
-        $dirName = trim(basename($directory)); // Get the directory name, if $d is ./home/cloud-certifications, then the basename() function inside trim() will return cloud-certifications        
-        if (preg_match($directoryRegex, $dirName)) {
-            $realPath = realpath($directory);
-            print("\ndirectory: "); print_r($directory);
-            print("\ndir name: "); print_r($dirName);
-            print("\nReal path: "); print_r($realPath);
-            // trim everything until learn-devops from begining of relativePath
+    foreach ($directoriesArray as $directory) {
+        $dirName = trim(  // $directory is the full path of the directory as returned by glob(). This could be something like ./home/cloud-certifications/aws/taskset_aws_cloud_certifications/task-001-aws-certified-solutions-architect-professional.
+            basename($directory) // basename($directory) is used to get the name of the actual directory (i.e., the last part of the path), without the preceding directory structure. So, from the above example, basename($directory) would return task-001-aws-certified-solutions-architect-professional.
+            ); // so if $directory is './home/cloud_certifications/aws/taskset_aws_cloud_certifications/task-001-aws-certified-solutions-architect-professional', then $dirName is 'task-001-aws-certified-solutions-architect-professional'
+
+        if (preg_match($directoryRegex, $dirName)) { // If the directory name starts with 'task_'
+            $realPath = realpath($directory); // Get the full, absolute path of the directory
+            // e.g. '/full/path/to/taskset_aws_cloud_certifications_aws_cloud_certifications'
+
+            // trim everything until 'home' from beginning of relativePath
             $relativePath = substr($realPath, strpos($realPath, 'home'));
-            print("\nRelative path: "); print_r($relativePath);
-            $pathParts = explode(DIRECTORY_SEPARATOR, $relativePath);
-            print("\nPath parts: "); print_r($pathParts);
-            $parentDir = $pathParts[count($pathParts) - 2];
-            print("\nParent dir: "); print_r($parentDir);
-            print("\nTree: "); print_r($tree);
-            if (!isset($tree[$parentDir])) { 
+            // e.g. 'home/cloud_certifications/aws/taskset_aws_cloud_certifications/task-001-aws-certified-solutions-architect-professional'
+
+            $pathParts = explode(DIRECTORY_SEPARATOR, $relativePath); // Split the path into parts
+            // e.g. ['home', 'cloud_certifications', 'aws', 'taskset_aws_cloud_certifications', 'task-001-aws-certified-solutions-architect-professional']
+
+            $parentDir = $pathParts[count($pathParts) - 2]; // The parent directory is the second last part
+            // e.g. 'taskset_aws_cloud_certifications'
+
+            if (!isset($tree[$parentDir])) {
                 // If the parent directory is not set in the tree array, then initialize it as an empty array
                 $tree[$parentDir] = [];
-                print("Tree for parentDir was not set");
-                // State of the tree
             }
 
             $tree[$parentDir][] = "- [$dirName]($relativePath)";
+            // Add a markdown link of the directory to the array of its parent directory in the tree array.
+            // e.g. 'taskset' => ['- [task-001-aws-certified-solutions-architect-professional](home/cloud_certifications/aws/taskset/task-001-aws-certified-solutions-architect-professional)']
         }
 
         if (!empty(glob("$directory/*"))) {
             $tree = array_merge($tree, createTree_v1($directory));
+            // If the directory has subdirectories, recursively add them to the tree.
         }
     }
 
-    return $tree;
+    return $tree; // Return the tree
 }
 
 
 
 
 // Usage
-$tree = createTree_v1('.', '/^task-/'); // if first call is for ".", second call is for "./home" and so on as the function is recursive
+$tree = createTree_v1('.', '/^task_/'); // if first call is for ".", second call is for "./home" and so on as the function is recursive
 
 print_r($tree);
 
