@@ -1,6 +1,7 @@
-## To execute any command in any image
+# To execute command inside image containers
 
 > docker run -it [image-name:tag] [command-to-execute]
+
 ```bash
 $ docker run -it ubuntu:latest bash
 Unable to find image 'ubuntu:latest' locally
