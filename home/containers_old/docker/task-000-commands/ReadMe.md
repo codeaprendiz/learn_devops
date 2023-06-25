@@ -1,18 +1,21 @@
-## Contents
+# docker commands
 
 More details at [Offical Guide](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
-- [image](#image)
-    - [rm](#rm-id-of-the-image)
-- [images](#images)
-- [run](#run)
+
+- [docker commands](#docker-commands)
+  - [image](#image)
+    - [rm \[id-of-the-image\]](#rm-id-of-the-image)
+  - [images](#images)
+  - [run](#run)
     - [interactive](#interactive)
     - [tty](#tty)
 
-
-
 ## image
+
 ### rm [id-of-the-image]
+
 To remove the image with specific ID
+
 ```bash
 $ sudo docker images | grep ubuntu
 Password:
@@ -29,7 +32,9 @@ Deleted: sha256:c8be1b8f4d60d99c281fc2db75e0f56df42a83ad2f0b091621ce19357e19d853
 ```
 
 ## images
+
 To show all the images present
+
 ```bash
 $ sudo docker images               
 Password:
@@ -39,10 +44,12 @@ busybox                              latest                     83aa35aa1c79    
 ```
 
 ## run
+
 ### interactive
 >--interactive , -i	
 >	
 >Keep STDIN open even if not attached 
+
 ```bash
 $ sudo docker run -i ubuntu:latest bash
 pwd
@@ -51,12 +58,15 @@ exit
 
 $
 ```
+
 ### tty
+
 >--tty , -t	
 >	
 >Allocate a pseudo-TTY
 
 You have to externally kill the container in this case
+
 ```bash
 $ sudo docker run -t ubuntu:latest bash
 root@b01ba82675f5:/# pwd
@@ -67,6 +77,7 @@ root@b01ba82675f5:/# exit
 ```
 
 When you combine -i and -t, you get a proper terminal like experience
+
 ```bash
 $ sudo docker run -i -t ubuntu:latest bash
 Unable to find image 'ubuntu:latest' locally
@@ -79,9 +90,3 @@ Digest: sha256:bec5a2727be7fff3d308193cfde3491f8fba1a2ba392b7546b43a051853a341d
 Status: Downloaded newer image for ubuntu:latest
 root@e421090e426a:/#
 ```
-
-
-
-
-
-
