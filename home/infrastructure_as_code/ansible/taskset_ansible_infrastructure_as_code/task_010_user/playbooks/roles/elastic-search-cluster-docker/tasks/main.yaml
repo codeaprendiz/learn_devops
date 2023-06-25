@@ -1,0 +1,6 @@
+---
+
+- name: install docker elastic search cluster
+  import_tasks: install-docker-elastic-search-cluster.yml
+  tags:
+    - elastic-search-cluster

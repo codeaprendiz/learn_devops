@@ -1,0 +1,19 @@
+# Managed by Ansible
+
+{% if datadog_site is defined
+   and datadog_config["site"] is not defined -%}
+site: {{ datadog_site }}
+{% endif %}
+
+{% if datadog_config["dd_url"] is not defined
+   and datadog_url is defined -%}
+dd_url: {{ datadog_url }}
+{% endif %}
+
+{% if datadog_config["api_key"] is not defined -%}
+api_key: {{ datadog_api_key | default('youshouldsetthis') }}
+{% endif %}
+
+{% if datadog_config is defined and datadog_config|length > 0 -%}
+{{ datadog_config | to_nice_yaml }}
+{% endif %}

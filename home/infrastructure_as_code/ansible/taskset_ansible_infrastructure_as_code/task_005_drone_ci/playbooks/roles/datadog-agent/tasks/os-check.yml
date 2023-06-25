@@ -1,0 +1,5 @@
+---
+- name: Fail if OS is not supported
+  fail:
+    msg: "The Datadog Ansible role does not support your OS yet. Please email support@datadoghq.com to open a feature request."
+  when: ansible_os_family not in ["RedHat", "Debian", "Suse", "Windows"]

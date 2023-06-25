@@ -1,0 +1,13 @@
+- name: Set DD Username Arg
+  set_fact:
+    win_install_args: "{{ win_install_args }} DDAGENTUSER_NAME={{ datadog_windows_ddagentuser_name }}"
+  when: datadog_windows_ddagentuser_name | length > 0
+
+- name: Set DD Password Arg
+  set_fact:
+    win_install_args: "{{ win_install_args }} DDAGENTUSER_PASSWORD={{ datadog_windows_ddagentuser_password }}"
+  when: datadog_windows_ddagentuser_password | length > 0
+
+- name: Set Test
+  set_fact:
+    win_install_args: "{{ win_install_args }}"

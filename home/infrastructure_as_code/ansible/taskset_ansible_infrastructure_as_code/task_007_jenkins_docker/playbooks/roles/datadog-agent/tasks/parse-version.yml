@@ -1,0 +1,43 @@
+---
+- name: Parse Agent version
+  set_fact:
+    agent_version: "{{ datadog_agent_version | regex_search(regexp, '\\g<epoch>', '\\g<major>', '\\g<minor>', '\\g<bugfix>', '\\g<suffix>', '\\g<release>') }}"
+  vars:
+    regexp: '(?:(?P<epoch>[0-9]+):)?(?P<major>[0-9]+)\.(?P<minor>[0-9]+)\.(?P<bugfix>[0-9]+)(?P<suffix>(?:~|-)[^0-9\s-]+[^-\s]*)?(?:-(?P<release>[0-9]+))?'
+
+- name: Set version vars
+  set_fact:
+    datadog_epoch: "{{ agent_version.0 }}"
+    datadog_major: "{{ agent_version.1 }}"
+    datadog_minor: "{{ agent_version.2 }}"
+    datadog_bugfix: "{{ agent_version.3 }}"
+    datadog_suffix: "{{ agent_version.4 }}"
+    datadog_release: "{{ agent_version.5 }}"
+
+- name: Fill empty version epoch with default
+  set_fact:
+    datadog_epoch: "1"
+  when: datadog_epoch | length == 0
+
+- name: Fill empty version release with default
+  set_fact:
+    datadog_release: "1"
+  when: datadog_release | length == 0
+
+- name: Stop play if datadog_agent_version and datadog_agent_major_version are not compatible
+  fail:
+    msg: "The provided major version {{ datadog_agent_major_version }} is not compatible with the
+      version {{ datadog_major }} deduced from datadog_agent_version ({{ datadog_agent_version }}).
+      Aborting play."
+  when: datadog_agent_major_version | length > 0 and datadog_major != datadog_agent_major_version
+
+- name: Set datadog_agent_major_version to deduced value from datadog_agent_version
+  set_fact:
+    datadog_agent_major_version: "{{ datadog_major }}"
+
+- name: Set OS-specific versions
+  set_fact:
+    datadog_agent_debian_version: "{{ datadog_epoch }}:{{ datadog_major }}.{{ datadog_minor }}.{{ datadog_bugfix }}{{ datadog_suffix }}-{{ datadog_release }}"
+    datadog_agent_redhat_version: "{{ datadog_major }}.{{ datadog_minor }}.{{ datadog_bugfix }}{{ datadog_suffix }}-{{ datadog_release }}"
+    datadog_agent_suse_version: "{{ datadog_epoch }}:{{ datadog_major }}.{{ datadog_minor }}.{{ datadog_bugfix }}{{ datadog_suffix }}-{{ datadog_release }}"
+    datadog_agent_windows_version: "{{ datadog_major }}.{{ datadog_minor }}.{{ datadog_bugfix }}{{ datadog_suffix }}"

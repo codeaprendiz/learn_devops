@@ -1,0 +1,37 @@
+################ SAMPLE USAGE #################################################################################
+# ansible-playbook playbook-install-kibana-docker.yaml --tags="vm-required,docker,set-user,create-dir,kibana"
+###############################################################################################################
+
+- name: install docker-elastic-search-cluster
+  hosts: gcp2
+  remote_user: codeaprendiz
+  become: true
+  vars:
+##### CREATING REQUIRED USERS ##############
+    user: "kibana"
+    group: "kibana"
+####### CREATING REQUIRED DIRECTORIES #####
+    mount_path: "/data"
+    kibana_log_dir: "{{ mount_path }}/var/log/kibana"
+    kibana_opt_dir: "{{ mount_path }}/opt/kibana"
+    kibana_config_dir: "{{ mount_path }}/opt/kibana/config"
+    var_list_dirs:
+      - "{{ mount_path }}"
+      - "{{ kibana_log_dir }}"
+      - "{{ kibana_opt_dir }}"
+      - "{{ kibana_config_dir }}"
+
+####### KIBANA VARIABLES ##########
+    env: "dev"
+    kibana_version: "7.8.1"
+    elastic_search_url: "http://35.226.68.74:9200"
+    kibana_port: "5601"
+
+
+
+  roles:
+    - { role: commons,                              tags: [ 'commons' ]}
+    - { role: docker,                              tags: [ 'docker' ]}
+    - { role: user,                                 tags: [ 'user'       ] }
+    - { role: directory,                            tags: [ 'directory'] }
+    - { role: kibana-docker,                            tags: [ 'kibana-docker'] }

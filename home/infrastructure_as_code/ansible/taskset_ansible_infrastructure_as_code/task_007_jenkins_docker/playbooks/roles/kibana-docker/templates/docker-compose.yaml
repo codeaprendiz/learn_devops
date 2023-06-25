@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  kibana_service:
+    image: docker.elastic.co/kibana/kibana:{{ kibana_version }}
+    container_name: kibana_{{ env }}
+    environment:
+      ELASTICSEARCH_URL: {{elastic_search_url}}
+      ELASTICSEARCH_HOSTS: {{elastic_search_url}}
+    volumes:
+      - {{ kibana_log_dir }}:/var/log/kibana
+      - {{ kibana_config_dir }}/kibana.yml:/usr/share/kibana/config/kibana.yml
+      - {{ kibana_config_dir }}/opt-data:/opt-data
+#    ports:
+#      - {{ kibana_port }}:{{ kibana_port }}
+    network_mode: host

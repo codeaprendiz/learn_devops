@@ -1,0 +1,21 @@
+---
+jenkins_version: "lts"
+
+jenkins_proxy_server_name: jenkins.acme.com
+jenkins_proxy_port: 8443
+
+
+jenkins_xmx: "{{ ( ansible_memtotal_mb * 0.20 ) | round(0, 'ceil') | int }}"
+jenkins_xms: "{{ ( ansible_memtotal_mb * 0.20 ) | round(0, 'ceil') | int }}"
+jenkins_user: jenkins
+jenkins_group: jenkins
+jenkins_hostname: localhost
+jenkins_port: "8080"
+jenkins_agent_port: "50001"
+jenkins_http_port: "6999"
+jenkins_jar_location: /opt/jenkins-cli.jar
+jenkins_connection_delay: 5
+jenkins_connection_retries: 60
+jenkins_plugins:
+  - git
+  - ssh

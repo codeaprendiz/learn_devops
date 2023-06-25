@@ -1,0 +1,28 @@
+---
+- name: create kibana configuration file
+  template:
+    dest="{{ kibana_config_dir }}/kibana.yml"
+    owner="{{ user }}"
+    group="{{ group }}"
+    mode=0777
+    src=kibana.yml
+  tags:
+    - kibana
+
+- name: copy kibana docker-compose file
+  template:
+    dest="{{ kibana_opt_dir }}/docker-compose.yaml"
+    owner="{{ user }}"
+    group="{{ group }}"
+    mode=0777
+    src=docker-compose.yaml
+  tags:
+    - kibana
+
+- name: start kibana docker-compose
+  become: true
+  docker_compose:
+    project_src: "{{ kibana_opt_dir }}"
+    state: present
+  tags:
+    - kibana

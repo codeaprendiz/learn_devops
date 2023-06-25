@@ -1,0 +1,78 @@
+##############################################################################################
+# LINKS - https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+##############################################################################################
+version: "2.2"
+services:
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:{{ elastic_search_version }}
+    container_name: es01_{{ env }}
+    environment:
+      - node.name=es01
+      - cluster.name="{{ elasticsearch_cluster_name | mandatory }}"
+      - discovery.seed_hosts=es02,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms{{ elasticsearch_xmx }}m -Xmx{{ elasticsearch_xmx }}m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - {{ elastic_search_data_dir_01 }}:/usr/share/elasticsearch/data
+#      - {{ elastic_search_backup_dir }}:/var/elasticsearch-backup
+#      - {{ elastic_search_config_dir }}/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - {{ elasticsearch_port }}:9200
+    networks:
+      - elastic
+  es02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:{{ elastic_search_version }}
+    container_name: es02_{{ env }}
+    environment:
+      - node.name=es02
+      - cluster.name="{{ elasticsearch_cluster_name | mandatory }}"
+      - discovery.seed_hosts=es01,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms{{ elasticsearch_xmx }}m -Xmx{{ elasticsearch_xmx }}m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - {{ elastic_search_data_dir_02 }}:/usr/share/elasticsearch/data
+#      - {{ elastic_search_backup_dir }}:/var/elasticsearch-backup
+#      - {{ elastic_search_config_dir }}/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    networks:
+      - elastic
+  es03:
+    image: docker.elastic.co/elasticsearch/elasticsearch:{{ elastic_search_version }}
+    container_name: es03
+    environment:
+      - node.name=es03
+      - cluster.name="{{ elasticsearch_cluster_name | mandatory }}"
+      - discovery.seed_hosts=es01,es02
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms{{ elasticsearch_xmx }}m -Xmx{{ elasticsearch_xmx }}m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - {{ elastic_search_data_dir_03 }}:/usr/share/elasticsearch/data
+#      - {{ elastic_search_backup_dir }}:/var/elasticsearch-backup
+#      - {{ elastic_search_config_dir }}/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    networks:
+      - elastic
+
+#volumes:
+#  {{ elastic_search_data_dir_01 }}:
+#    driver: local
+#  {{ elastic_search_data_dir_02 }}:
+#    driver: local
+#  {{ elastic_search_data_dir_03 }}:
+#    driver: local
+networks:
+  elastic:
+    driver: bridge

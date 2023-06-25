@@ -1,0 +1,17 @@
+---
+- name: setup group
+  group:
+    name: "{{ group }}"
+    system: no
+  tags:
+    - set-group
+    - set-user
+
+- name: setup user
+  user:
+    name: "{{ user }}"
+    system: no
+    group: "{{ group }}"
+  tags:
+    - set-user
+    - set-group

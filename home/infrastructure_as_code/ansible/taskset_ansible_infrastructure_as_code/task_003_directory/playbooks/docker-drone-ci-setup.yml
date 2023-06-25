@@ -1,0 +1,10 @@
+- name: drone-ci
+  hosts: gcp
+  remote_user: codeaprendiz
+  become: true
+  vars:
+    env: "local"
+  roles:
+    - { role: docker-drone-ci,                 tags: [ 'docker-drone-ci' ] }
+
+

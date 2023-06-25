@@ -1,0 +1,36 @@
+- name: Install required system packages
+  apt:
+    name={{ item }}
+    state=latest
+    update_cache=yes
+  loop:
+    - aptitude
+    - apt-transport-https
+    - jq
+    - ca-certificates
+    - curl
+    - software-properties-common
+    - python3-pip
+#    - python-pip
+    - virtualenv
+    - python3-setuptools
+    - vim
+  tags:
+    - all
+    - vm-required
+
+
+- name: install pip packages
+  pip: name="{{ item }}" state=latest
+  loop:
+    - "boto3"
+    - "docker"
+    - "docker-compose"
+  environment:
+    ansible_python_interpreter: "/usr/bin/python3"
+  tags:
+    - all
+    - vm-required
+
+
+

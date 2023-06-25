@@ -1,0 +1,9 @@
+---
+- name: Install latest datadog-agent package
+  yum:
+    name: datadog-agent
+    update_cache: yes
+    state: latest  # noqa 403
+  register: datadog_agent_install
+  when: not ansible_check_mode
+  notify: restart datadog-agent

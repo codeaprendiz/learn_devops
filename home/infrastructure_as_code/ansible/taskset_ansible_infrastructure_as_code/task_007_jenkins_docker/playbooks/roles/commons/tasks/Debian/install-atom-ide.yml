@@ -1,0 +1,31 @@
+- name: add required repositories
+  apt_repository:
+    repo: '{{ VAR_ATOM_REPOSITORY }}'
+    state: present
+  tags:
+    - all
+    - install-atom
+
+
+- name: Install required atom package
+  apt:
+    name={{ item }}
+    state=latest
+    update_cache=yes
+  loop:
+    - atom
+  tags:
+    - install-atom
+    - all
+
+- name: Install atom apm packages
+  shell: |
+    apm install "{{ item }}"
+  loop:
+#    - platformio-ide-terminal@{{ VAR_PLATFORMIO_IDE_TERMINAL_VERSION }}
+    - language-ansible
+    - language-terraform
+  tags:
+    - install-atom
+    - all
+

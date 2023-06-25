@@ -1,0 +1,28 @@
+---
+- name: enruse configuration files path existst
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: true
+    force: true
+    mode: 0777
+    owner: "{{ ansible_env.SUDO_USER | default(ansible_env.USER) }}"
+  with_items:
+    - "{{ CONF_FILES_DIR }}"
+
+- name: transfer the configuration scripts
+  template:
+    src: "{{ item }}"
+    dest: "{{ CONF_FILES_DIR }}/{{ item | basename }}"
+    mode: 0777
+  with_fileglob:
+    - ../templates/{{ TEMPLATE_FOLDER_CONF }}/*.*
+
+
+- name: transfer the systemd scripts
+  template:
+    src: "{{ item }}"
+    dest: "{{ SYSTEMD_FILES_DIR }}/{{ item | basename }}"
+    mode: 0777
+  with_fileglob:
+    - ../templates/{{ TEMPLATE_FOLDER_SYSTEM }}/*.*

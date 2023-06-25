@@ -1,0 +1,15 @@
+
+- name: ensure monit installed in debian
+  apt: name={{ packages }} state=present
+  vars:
+    packages:
+      - monit
+  environment:
+    RUNLEVEL: 1
+  tags:
+    - monit
+
+
+- name: install specific version of monit
+  include_tasks: pkg-debian/install-monit-specific.yml
+  when: VAR_INSTALL_SPECIFIC_VERSION == "True"

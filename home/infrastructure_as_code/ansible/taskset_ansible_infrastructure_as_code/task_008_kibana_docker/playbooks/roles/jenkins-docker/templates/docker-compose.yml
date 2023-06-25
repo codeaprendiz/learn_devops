@@ -1,0 +1,48 @@
+version: "3.7"
+services:
+  caddy_service:
+    # include base-docker-compose-vars
+    restart: unless-stopped
+
+    container_name: caddy_jenkins
+    image: caddy:2.2.1
+    volumes:
+      - {{ jenkins_config_dir }}/data:/data/caddy
+      - {{ jenkins_config_dir }}/Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - jenkins_service
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - jenkins_service
+
+  jenkins_service:
+    restart: unless-stopped
+    image: jenkins/jenkins:{{ jenkins_version }}
+    container_name: jenkins_{{ env }}
+    environment:
+      - "JAVA_OPTS=-Djava.awt.headless=true
+         -Dhudson.footerURL=https://acme.com
+         -Xmx{{ jenkins_xmx }}m
+         -Djava.io.tmpdir=/tmp/jenkins
+         -XX:+UseG1GC
+         -XX:MaxGCPauseMillis=400
+         -XX:+ParallelRefProcEnabled
+         -XX:+ExplicitGCInvokesConcurrentAndUnloadsClasses
+         -XX:+UnlockDiagnosticVMOptions
+         -XX:G1SummarizeRSetStatsPeriod=1
+         -XX:MaxMetaspaceExpansion=128M
+         -Dhudson.DNSMultiCast.disabled=true
+         -Dorg.eclipse.jetty.server.Request.maxFormContentSize=51000000"
+      - "JENKINS_HOME=/var/lib/jenkins"
+      - "JENKINS_SLAVE_AGENT_PORT={{ jenkins_agent_port }}"
+      - "JENKINS_OPTS=--httpPort={{ jenkins_http_port }}"
+# -Djava.util.logging.config.file=/var/config/jenkins/log.properties
+    volumes:
+      - {{ jenkins_tmp_dir }}:/tmp/jenkins
+      - {{ jenkins_config_dir }}:/var/config/jenkins
+      - {{ jenkins_data_dir }}:/var/lib/jenkins
+    ports:
+      - {{ jenkins_agent_port }}:{{ jenkins_agent_port }}
+#      - {{ jenkins_port }}:{{jenkins_port }}

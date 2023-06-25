@@ -1,0 +1,24 @@
+---
+- name: start docker-compose-jenkins
+  become: true
+  docker_compose:
+    project_src: "{{ jenkins_opt_dir }}"
+    state: present
+
+- name: restart docker-compose-jenkins
+  become: true
+  docker_compose:
+    project_src: "{{ jenkins_opt_dir }}"
+    state: present
+    restarted: yes
+
+- name: stop docker-compose-jenkins
+  become: true
+  docker_compose:
+    project_src: "{{ jenkins_opt_dir }}"
+    state: absent
+
+- name: ensure jenkins docker-compose started
+  shell: /bin/true
+  notify:
+    - start docker-compose-jenkins

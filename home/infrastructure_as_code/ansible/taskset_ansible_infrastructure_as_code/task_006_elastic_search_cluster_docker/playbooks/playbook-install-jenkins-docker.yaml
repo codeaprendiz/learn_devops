@@ -1,0 +1,41 @@
+################ SAMPLE USAGE #################################################################################
+# ansible-playbook playbook-install-jenkins-docker.yaml --tags="vm-required,docker,set-user,create-dir,jenkins"
+###############################################################################################################
+
+- name: install docker jenkins
+  hosts: jenkins
+  remote_user: ubuntu
+  become: true
+
+  vars:
+    ansible_ssh_private_key_file: "../../terraform/aws/task-029-ec2-jenkins-instance-and-slave-instance/jenkins.pem"
+##### CREATING REQUIRED USERS ##############
+    user: "jenkins"
+    group: "jenkins"
+####### CREATING REQUIRED DIRECTORIES #####
+#    mount_path: "/data"
+    mount_path: "/tmp"
+    jenkins_tmp_dir: "{{ mount_path }}/tmp/jenkins"
+    jenkins_log_dir: "{{ mount_path }}/var/log/jenkins"
+    jenkins_opt_dir: "{{ mount_path }}/opt/jenkins"
+    jenkins_config_dir: "{{ mount_path }}/opt/jenkins/config"
+    jenkins_data_dir: "{{ mount_path }}/lib/jenkins"
+    var_list_dirs:
+      - "{{ mount_path }}"
+      - "{{ jenkins_log_dir }}"
+      - "{{ jenkins_opt_dir }}"
+      - "{{ jenkins_config_dir }}"
+      - "{{ jenkins_tmp_dir }}"
+      - "{{ jenkins_data_dir }}"
+
+####### jenkins VARIABLES ##########
+    env: "dev"
+
+
+
+  roles:
+    - { role: commons,                              tags: [ 'commons' ]}
+    - { role: docker,                              tags: [ 'docker' ]}
+    - { role: user,                                 tags: [ 'user'       ] }
+    - { role: directory,                            tags: [ 'directory'] }
+    - { role: jenkins-docker,                            tags: [ 'jenkins-docker'] }

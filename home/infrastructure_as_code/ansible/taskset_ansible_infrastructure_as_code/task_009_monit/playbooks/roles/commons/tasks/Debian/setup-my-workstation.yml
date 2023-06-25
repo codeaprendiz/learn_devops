@@ -1,0 +1,35 @@
+#- name: add required repositories
+#  apt_repository:
+#    repo: 'ppa:snwh/pulp'
+#    state: present
+#  tags:
+#    - all
+#    - setup-my-workstation
+#
+#- name: Install required packages for workstation
+#  apt:
+#    name={{ item }}
+#    state=latest
+#    update_cache=yes
+#  loop:
+#    - gnome-tweak-tool
+##    - breeze-cursor-theme
+##    - paper-icon-theme
+##    - gnome-clocks
+##    - kazam
+##    - git
+##    - zsh
+##    - fonts-powerline
+#  tags:
+#    - all
+#    - setup-my-workstation
+
+- name: Making zsh changes
+  shell: |
+    sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    chsh -s $(which zsh) root
+    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+    source ~/.zshrc
+  tags:
+    - all
+    - setup-my-workstation

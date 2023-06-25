@@ -1,0 +1,5 @@
+---
+CONF_FILES_DIR: /etc/drone
+SYSTEMD_FILES_DIR: /etc/systemd/system
+TEMPLATE_FOLDER_CONF: conf
+TEMPLATE_FOLDER_SYSTEM: system

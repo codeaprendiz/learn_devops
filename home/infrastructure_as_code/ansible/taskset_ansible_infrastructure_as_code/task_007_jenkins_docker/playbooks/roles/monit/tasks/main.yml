@@ -1,0 +1,16 @@
+---
+
+- name: Check if OS is supported
+  include_tasks: os-check.yml
+
+- name: Debian Install Tasks
+  include_tasks: pkg-debian/install-monit.yml
+  when: ansible_os_family == "Debian"
+  register: VAR_IS_DEBIAN
+
+- name: RedHat Install Tasks
+  include_tasks: pkg-redhat/install-monit.yml
+  when: ansible_os_family == "RedHat"
+  register: VAR_IS_REDHAT
+
+

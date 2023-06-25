@@ -1,0 +1,15 @@
+# Managed by Ansible
+
+{% if system_probe_config is defined and system_probe_config|length > 0 -%}
+system_probe_config:
+{# The "first" option is only supported by jinja 2.10+
+  which is not present on older systems (CentOS 7, Debian 8, etc.)
+  Using the equivalent option "indentfirst" will work with
+  all currently existing jinja 2 versions (as of this comment, up to 2.10).
+  TODO: when future versions of Jinja are released, check that
+  indentfirst is still supported.
+ #}
+{% filter indent(width=2, indentfirst=True) %}
+{{ system_probe_config | to_nice_yaml }}
+{% endfilter %}
+{% endif %}

@@ -1,0 +1,9 @@
+jenkins.ankitrathi.info:443 {
+    root * /usr/share/caddy
+    reverse_proxy jenkins_service:6999 {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+        header_up X-Forwarded-For {remote}
+        header_up X-Forwarded-Proto {scheme}
+    }
+}

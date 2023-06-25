@@ -1,0 +1,37 @@
+---
+- name: copy jenkins docker-compose file
+  template:
+    dest="{{ jenkins_opt_dir }}/docker-compose.yml"
+    owner="{{ user }}"
+    group="{{ group }}"
+    mode=0777
+    src=docker-compose.yml
+  tags:
+    - jenkins
+    - install-jenkins
+
+- name: create jenkins caddy file
+  template:
+    dest: "{{ jenkins_config_dir }}/Caddyfile"
+    owner: "{{ jenkins_user }}"
+    group: "{{ jenkins_user }}"
+    mode: 0777
+    src: Caddyfile
+  tags:
+    - jenkins
+
+- name: start jenkins docker-compose
+  become: true
+  docker_compose:
+    project_src: "{{ jenkins_opt_dir }}"
+    state: present
+  tags:
+    - jenkins
+    - install-jenkins
+
+# Update Jenkins and install configured plugins.
+- import_tasks: plugins.yml
+  tags:
+    - jenkins
+    - jenkins-plugins
+    - jenkins-docker-jenkins

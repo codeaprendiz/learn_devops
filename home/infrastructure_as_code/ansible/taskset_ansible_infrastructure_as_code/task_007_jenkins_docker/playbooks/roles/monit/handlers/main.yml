@@ -1,0 +1,14 @@
+---
+## monit Handlers
+
+- name: start monit
+  service: name=monit state=started enabled=yes
+
+- name: reload monit
+  service: name=monit state=reloaded enabled=yes
+
+- name: restart monit
+  service: name=monit state=restarted enabled=yes
+
+- name: stop monit
+  service: name=monit state=stopped enabled=yes

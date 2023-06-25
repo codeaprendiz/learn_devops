@@ -1,0 +1,98 @@
+---
+- name: populate service facts
+  service_facts:
+
+- name: add "{{ datadog_user }}" user to additional groups
+  user: name="{{ datadog_user }}" groups="{{ datadog_additional_groups }}" append=yes
+  when: datadog_additional_groups is defined and (datadog_additional_groups | length != 0)
+  notify: restart datadog-agent
+
+- name: Create Datadog agent config directory
+  file:
+    dest: /etc/datadog-agent
+    state: directory
+
+- name: Create main Datadog agent configuration file
+  template:
+    src: datadog.yaml.j2
+    dest: /etc/datadog-agent/datadog.yaml
+    owner: "{{ datadog_user }}"
+    group: "{{ datadog_group }}"
+  notify: restart datadog-agent
+
+- name: Ensure configuration directories are present for each Datadog check
+  file:
+    dest: "/etc/datadog-agent/conf.d/{{ item }}.d"
+    state: directory
+    owner: "{{ datadog_user }}"
+    group: "{{ datadog_group }}"
+  with_items: '{{ datadog_checks|list }}'
+
+- name: Create a configuration file for each Datadog check
+  template:
+    src: checks.yaml.j2
+    dest: "/etc/datadog-agent/conf.d/{{ item }}.d/conf.yaml"
+    owner: "{{ datadog_user }}"
+    group: "{{ datadog_group }}"
+  with_items: "{{ datadog_checks|list }}"
+  notify: restart datadog-agent
+
+- name: Remove old configuration file for each Datadog check
+  file:
+    dest: "/etc/datadog-agent/conf.d/{{ item }}.yaml"
+    state: absent
+  with_items: "{{ datadog_checks|list }}"
+  notify: restart datadog-agent
+
+- name: Create system-probe configuration file
+  template:
+    src: system-probe.yaml.j2
+    dest: /etc/datadog-agent/system-probe.yaml
+    mode: 0640
+    owner: "root"
+    group: "{{ datadog_group }}"
+
+- name: Ensure datadog-agent is running
+  service:
+    name: datadog-agent
+    state: started
+    enabled: yes
+  when: not datadog_skip_running_check and datadog_enabled and not ansible_check_mode
+
+- name: set system probe installed
+  set_fact:
+    datadog_sysprobe_installed: "{{ ansible_facts.services['datadog-agent-sysprobe'] is defined
+      or ansible_facts.services['datadog-agent-sysprobe.service'] is defined }}"
+  when: not datadog_skip_running_check
+
+- name: set system probe enabled
+  set_fact:
+    datadog_sysprobe_enabled: "{{ system_probe_config is defined
+      and system_probe_config['enabled']
+      and datadog_sysprobe_installed }}"
+  when: not datadog_skip_running_check
+
+- name: Ensure datadog-agent-sysprobe is running if enabled and installed
+  service:
+    name: datadog-agent-sysprobe
+    state: started
+    enabled: yes
+  when: not datadog_skip_running_check and datadog_enabled and not ansible_check_mode and datadog_sysprobe_enabled
+
+- name: Ensure datadog-agent-sysprobe is stopped if disabled or not installed
+  service:
+    name: datadog-agent-sysprobe
+    state: stopped
+    enabled: no
+  when: not datadog_skip_running_check and (not datadog_enabled or not datadog_sysprobe_enabled) and datadog_sysprobe_installed
+
+- name: Ensure datadog-agent, datadog-agent-process and datadog-agent-trace are not running
+  service:
+    name: "{{ item }}"
+    state: stopped
+    enabled: no
+  when: not datadog_skip_running_check and not datadog_enabled
+  with_list:
+    - datadog-agent
+    - datadog-agent-process
+    - datadog-agent-trace

@@ -1,0 +1,26 @@
+---
+## https://stackoverflow.com/questions/51445846/elasticsearch-max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-inc
+- sysctl:
+    name: vm.max_map_count
+    value: '262144'
+    state: present
+    reload: yes
+
+
+- name: copy elastic search cluster docker-compose file
+  template:
+    dest="{{ elastic_search_opt_dir }}/docker-compose.yml"
+    owner="{{ user }}"
+    group="{{ group }}"
+    mode=777
+    src=docker-compose.yml
+  tags:
+    - elastic-search-cluster
+
+- name: start elastic search cluster docker-compose
+  become: true
+  docker_compose:
+    project_src: "{{ elastic_search_opt_dir }}"
+    state: present
+  tags:
+    - elastic-search-cluster

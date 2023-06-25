@@ -1,0 +1,83 @@
+---
+- name: Install apt-transport-https
+  apt:
+    name: apt-transport-https
+    state: present
+  when: not ansible_check_mode
+
+- name: Install ubuntu apt-key server
+  apt_key:
+    id: A2923DFF56EDA6E76E55E492D3A80E30382E94DE
+    keyserver: "{{ datadog_apt_backup_keyserver if use_apt_backup_keyserver else datadog_apt_keyserver }}"
+    state: present
+    # keyserver.ubuntu.com is a pool of server, we should retry if one of them is down
+  register: result
+  until: not result.failed is defined or not result.failed
+  retries: "{{ datadog_apt_key_retries }}"
+  when: datadog_apt_key_url_new is not defined
+
+- name: Install Datadog apt-key
+  apt_key:
+    id: A2923DFF56EDA6E76E55E492D3A80E30382E94DE
+    url: "{{ datadog_apt_key_url_new }}"
+    state: present
+  when: datadog_apt_key_url_new is defined
+
+- name: Ensure Datadog non-https repositories are deprecated
+  apt_repository:
+    repo: "{{ item }}"
+    state: "absent"
+    update_cache: yes
+  with_items:
+    - "deb http://apt.datadoghq.com/ stable main"
+    - "deb http://apt.datadoghq.com/ stable 6"
+    - "deb http://apt.datadoghq.com/ stable 7"
+  when: not ansible_check_mode
+
+- name: Ensure Datadog repository is up-to-date
+  apt_repository:
+    filename: "ansible_datadog_{{ item.key }}"
+    repo: "{{ item.value }}"
+    state: "{% if item.key == datadog_agent_major_version|int and datadog_apt_repo | length == 0 %}present{% else %}absent{% endif %}"
+    update_cache: yes
+  when: (not ansible_check_mode)
+  with_dict:
+    5: '{{ datadog_agent5_apt_repo }}'
+    6: '{{ datadog_agent6_apt_repo }}'
+    7: '{{ datadog_agent7_apt_repo }}'
+
+- name: Initialize custom repo file deletion flag to False
+  set_fact:
+    datadog_remove_custom_repo_file: "False"
+
+- name: Check if custom repository file exists
+  stat:
+    path: /etc/apt/sources.list.d/ansible_datadog_custom.list
+  register: datadog_custom_repo_file
+
+- name: Flag custom repository file for deletion if different from current repository config
+  set_fact:
+    datadog_remove_custom_repo_file: "{{ datadog_repo_file_contents != datadog_apt_repo }}"
+  vars:
+    datadog_repo_file_contents: "{{ lookup('file', '/etc/apt/sources.list.d/ansible_datadog_custom.list') }}"
+  when: datadog_custom_repo_file.stat.exists
+
+- name: (Custom) Remove Datadog custom repository file when not set or updated
+  file:
+    path: /etc/apt/sources.list.d/ansible_datadog_custom.list
+    state: absent
+  when: (datadog_apt_repo | length == 0) or datadog_remove_custom_repo_file and (not ansible_check_mode)
+
+- name: (Custom) Ensure Datadog repository is up-to-date
+  apt_repository:
+    filename: ansible_datadog_custom
+    repo: "{{ datadog_apt_repo }}"
+    state: present
+    update_cache: yes
+  when: (datadog_apt_repo | length > 0) and (not ansible_check_mode)
+
+- include_tasks: pkg-debian/install-pinned.yml
+  when: datadog_agent_debian_version is defined
+
+- include_tasks: pkg-debian/install-latest.yml
+  when: datadog_agent_debian_version is not defined

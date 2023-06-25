@@ -1,0 +1,9 @@
+---
+- name: Install pinned datadog-agent package
+  zypper:
+    name: "datadog-agent={{ datadog_agent_suse_version }}"
+    state: present
+    oldpackage: "{{ datadog_agent_allow_downgrade }}"
+  register: datadog_agent_install
+  when: not ansible_check_mode
+  notify: restart datadog-agent

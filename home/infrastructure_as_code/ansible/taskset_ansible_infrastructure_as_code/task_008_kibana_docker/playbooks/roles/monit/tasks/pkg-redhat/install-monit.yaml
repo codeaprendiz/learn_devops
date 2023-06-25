@@ -1,0 +1,28 @@
+
+- name: Download EPEL Repo for Redhat OS
+  yum_repository:
+    name: epel
+    description: EPEL YUM repo
+    baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+  environment:
+    RUNLEVEL: 1
+  tags:
+    - monit
+
+- name: ensure monit installed for Radhat OS
+  yum: name={{ packages }} state=present
+  vars:
+    packages:
+      - monit
+      - curl
+  tags:
+    - monit
+
+- name: /var/lib/monit/ dir
+  file: path={{ item }} state=directory
+  when: is_redhat == True
+  with_items:
+    - "{{ VAR_REDHAT_CONFIG_DIR }}"
+    - "{{ VAR_REDHAT_LIB_DIR }}"
+  tags:
+    - monit

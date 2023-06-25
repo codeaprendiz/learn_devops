@@ -1,0 +1,5 @@
+# https://www.elastic.co/guide/en/kibana/current/settings.html
+server.port: 5601
+server.host: "0.0.0.0"
+server.name: "kibana"
+#logging.verbose: true

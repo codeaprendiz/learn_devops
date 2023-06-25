@@ -1,0 +1,9 @@
+---
+- name: docker-install
+  hosts: gcp
+  become: true
+  roles:
+    - { role: docker,                   tags: [ 'docker'       ] }
+
+
+

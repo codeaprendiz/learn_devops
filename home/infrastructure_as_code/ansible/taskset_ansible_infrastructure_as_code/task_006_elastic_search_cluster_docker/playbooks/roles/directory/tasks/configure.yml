@@ -1,0 +1,15 @@
+---
+
+- name: create dirs
+  file:
+    path: "{{ item|safe|trim }}"
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: 0777
+    recurse: yes
+  with_items: "{{ var_list_dirs }}"
+  tags:
+    - create-dir
+
+

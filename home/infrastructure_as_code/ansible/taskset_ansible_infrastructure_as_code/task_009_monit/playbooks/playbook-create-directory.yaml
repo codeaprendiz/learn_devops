@@ -1,0 +1,29 @@
+################ SAMPLE USAGE #################################################################################
+#         ansible-playbook playbook-create-directory.yaml --tags="set-user,create-dir"
+###############################################################################################################
+
+- name: create directory
+  hosts: gcp
+  become: true
+  vars:
+### CREATE USERS
+    user: "test"
+    group: "test"
+### CREATE DIRECTORIES
+    var_context: "test"
+    mount_path: "/data"
+    context: "{{ var_context }}"
+    var_context_opt_dir: "/opt/{{ context }}"
+    var_context_config_dir: "{{ var_context_opt_dir }}/config"
+    var_context_log_dir: "{{ mount_path }}/log/{{ context }}"
+    var_context_data_dir: "{{ mount_path }}/var/lib/{{ context }}"
+    var_context_backup_dir: "{{ mount_path }}/var/{{ context }}-backup"
+    var_list_dirs:
+      - "{{ var_context_opt_dir }}"
+      - "{{ var_context_config_dir }}"
+      - "{{ var_context_log_dir }}"
+      - "{{ var_context_data_dir }}"
+      - "{{ var_context_backup_dir }}"
+  roles:
+    - { role: user,                        tags: [ 'user' ] }
+    - { role: directory,                   tags: [ 'directory'] }

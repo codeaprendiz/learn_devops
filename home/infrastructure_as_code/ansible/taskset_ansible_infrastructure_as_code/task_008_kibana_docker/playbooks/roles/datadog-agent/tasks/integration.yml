@@ -1,0 +1,68 @@
+---
+- name: set agent binary path (windows)
+  set_fact:
+    datadog_agent_binary_path: "{{ datadog_agent_binary_path_windows }}"
+  when: ansible_os_family == "Windows"
+
+- name: set agent binary path (unix)
+  set_fact:
+    datadog_agent_binary_path: "{{ datadog_agent_binary_path_linux }}"
+  when: ansible_os_family != "Windows"
+
+- name: set agent user for integration commmand (windows)
+  set_fact:
+    integration_command_user: "{{ integration_command_user_windows }}"
+  when: ansible_os_family == "Windows"
+
+- name: set agent agent binary path (unix)
+  set_fact:
+    integration_command_user: "{{ integration_command_user_linux }}"
+  when: ansible_os_family != "Windows"
+
+- name: Validate integrations actions
+  fail:
+    msg: "Unkown action '{{ item.value.action }}' for integration command ({{ item.key }}). Valid actions are 'install' and 'remove'"
+  when: item.value.action != "install" and item.value.action != "remove"
+  loop: "{{ datadog_integration|dict2items }}"
+
+# Remove Integrations
+
+- name: Removing integrations (Unix)
+  command:
+    argv:
+      - "{{ datadog_agent_binary_path }}"
+      - integration
+      - remove
+      - "{{ item.key }}"
+  become: yes
+  become_user: "{{ integration_command_user }}"
+  loop: "{{ datadog_integration|dict2items }}"
+  when: item.value.action == "remove" and ansible_os_family != "Windows"
+
+- name: Removing integrations (Windows)
+  win_command: "\"{{ datadog_agent_binary_path }}\" integration remove {{ item.key }}"
+  become: yes
+  become_user: "{{ integration_command_user }}"
+  loop: "{{ datadog_integration|dict2items }}"
+  when: item.value.action == "remove" and ansible_os_family == "Windows"
+
+# Install integrations
+
+- name: Install pinned version of integrations (Unix)
+  command:
+    argv:
+      - "{{ datadog_agent_binary_path }}"
+      - integration
+      - install
+      - "{{ item.key }}=={{ item.value.version }}"
+  become: yes
+  become_user: "{{ integration_command_user }}"
+  loop: "{{ datadog_integration|dict2items }}"
+  when: item.value.action == "install" and ansible_os_family != "Windows"
+
+- name: Install pinned version of integrations (Windows)
+  win_command: "\"{{ datadog_agent_binary_path }}\" integration install {{ item.key }}=={{ item.value.version }}"
+  become: yes
+  become_user: "{{ integration_command_user }}"
+  loop: "{{ datadog_integration|dict2items }}"
+  when: item.value.action == "install" and ansible_os_family == "Windows"

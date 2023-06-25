@@ -1,0 +1,10 @@
+---
+- name: Install pinned datadog-agent package
+  apt:
+    name: "datadog-agent={{ datadog_agent_debian_version }}"
+    state: present
+    force: "{{ datadog_agent_allow_downgrade }}"
+    update_cache: yes
+    cache_valid_time: "{{ datadog_apt_cache_valid_time }}"
+  register: datadog_agent_install
+  when: not ansible_check_mode

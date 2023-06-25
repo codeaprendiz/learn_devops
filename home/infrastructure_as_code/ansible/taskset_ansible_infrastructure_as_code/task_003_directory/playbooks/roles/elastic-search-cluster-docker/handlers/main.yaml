@@ -1,0 +1,19 @@
+---
+- name: start docker-compose-elasticsearch-cluster
+  become: true
+  docker_compose:
+    project_src: "{{ elastic_search_opt_dir }}"
+    state: present
+
+- name: restart docker-compose-elasticsearch-cluster
+  become: true
+  docker_compose:
+    project_src: "{{ elastic_search_opt_dir }}"
+    state: present
+    restarted: yes
+
+- name: stop docker-compose-elasticsearch-cluster
+  become: true
+  docker_compose:
+    project_src: "{{ elastic_search_opt_dir }}"
+    state: absent

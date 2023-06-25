@@ -1,0 +1,44 @@
+---
+- name: Download new RPM key
+  get_url:
+    url: "{{ datadog_yum_gpgkey_e09422b3 }}"
+    dest: /tmp/DATADOG_RPM_KEY_E09422B3.public
+    checksum: "sha256:{{ datadog_yum_gpgkey_e09422b3_sha256sum }}"
+
+- name: Import new RPM key
+  rpm_key:
+    key: /tmp/DATADOG_RPM_KEY_E09422B3.public
+    state: present
+  when: not ansible_check_mode
+
+- name: Install Datadog yum repo
+  yum_repository:
+    name: "ansible_datadog_{{ item.key }}"
+    description: Datadog, Inc.
+    baseurl: "{{ item.value }}"
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: "{% if datadog_agent_major_version|int == 7 %}{{ datadog_yum_gpgkey_e09422b3 }}{% else %}{{ datadog_yum_gpgkey }}{% endif %}"
+    state: "{% if item.key == datadog_agent_major_version|int and datadog_yum_repo | length == 0 %}present{% else %}absent{% endif %}"
+  when: (not ansible_check_mode)
+  with_dict:
+    5: '{{ datadog_agent5_yum_repo }}'
+    6: '{{ datadog_agent6_yum_repo }}'
+    7: '{{ datadog_agent7_yum_repo }}'
+
+- name: (Custom) Install Datadog yum repo
+  yum_repository:
+    name: ansible_datadog_custom
+    description: Datadog, Inc.
+    baseurl: "{{ datadog_yum_repo }}"
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: "{{ datadog_yum_gpgkey }}"
+    state: present
+  when: (datadog_yum_repo | length > 0) and (not ansible_check_mode)
+
+- include_tasks: pkg-redhat/install-pinned.yml
+  when: datadog_agent_redhat_version is defined
+
+- include_tasks: pkg-redhat/install-latest.yml
+  when: datadog_agent_redhat_version is not defined

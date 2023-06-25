@@ -1,0 +1,12 @@
+---
+
+- name: (Custom) Set agent download filename to latest
+  set_fact:
+    dd_download_url: "{{ datadog_windows_download_url }}"
+  when: datadog_windows_download_url | length > 0
+
+- name: Set agent download filename to latest
+  set_fact:
+    dd_download_url: "{% if datadog_agent_major_version|int == 7 %}{{ datadog_windows_agent7_latest_url }}
+      {% else %}{{ datadog_windows_agent6_latest_url }}{% endif %}"
+  when: datadog_windows_download_url | length == 0

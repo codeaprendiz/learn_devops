@@ -1,0 +1,7 @@
+---
+- name: docker-install
+  hosts: gcp
+  user: codeaprendiz
+  become: true
+  roles:
+    - { role: monit,                   tags: [ 'monit'       ] }

@@ -1,0 +1,19 @@
+{% if datadog_zypper_repo | length > 0 %}
+  {% set baseurl = datadog_zypper_repo %}
+{% elif datadog_agent_major_version|int == 5 %}
+  {% set baseurl = datadog_agent5_zypper_repo %}
+{% elif datadog_agent_major_version|int == 6 %}
+  {% set baseurl = datadog_agent6_zypper_repo %}
+{% elif datadog_agent_major_version|int == 7 %}
+  {% set baseurl = datadog_agent7_zypper_repo %}
+{% endif %}
+
+[datadog]
+name=Datadog, Inc.
+enabled=1
+autorefresh=1
+baseurl={{ baseurl }}
+
+type=rpm-md
+gpgcheck=1
+repo_gpgcheck=0

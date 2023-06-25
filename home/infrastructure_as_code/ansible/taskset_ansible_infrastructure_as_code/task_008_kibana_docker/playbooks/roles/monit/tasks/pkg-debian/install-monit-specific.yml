@@ -1,0 +1,94 @@
+---
+- name: get current monit version
+  shell: "monit --version | grep version | awk '{print $5}' | cut -d'-' -f1"
+  register: mv_rs_stdout
+  ignore_errors: True
+  tags:
+    - monit
+    - monit-version
+
+- name: set monit version
+  set_fact:
+    mv_rs: "{{ mv_rs_stdout.stdout }}"
+    cacheable: true
+  tags:
+    - monit
+    - monit-version
+
+- name: stop monit
+  service: name=monit state=stopped
+  ignore_errors: true
+  when: VAR_MONIT_VERSION != mv_rs
+
+- name: monit dirs
+  file: path={{ item }} state=directory
+  with_items:
+    - "{{ VAR_DEBIAN_DIR_VAR_MONIT }}"
+    - "{{ VAR_DEBIAN_DIR_VAR_LIB_MONIT }}"
+    - "{{ VAR_DEBIAN_DIR_ETC_MONIT }}"
+  tags:
+    - monit
+
+
+
+- name: download monit
+  get_url:
+    url: https://mmonit.com/monit/dist/binary/{{ VAR_MONIT_VERSION }}/monit-{{ VAR_MONIT_VERSION }}-linux-x64.tar.gz
+    dest: /var/monit
+    mode: 0755
+  when: VAR_MONIT_VERSION != mv_rs
+  tags:
+    - monit
+
+- name: unarchive the downloaded monit
+  unarchive:
+    src: /var/monit/monit-{{ VAR_MONIT_VERSION }}-linux-x64.tar.gz
+    dest: "{{ VAR_DEBIAN_DIR_VAR_MONIT }}"
+    copy: no
+  when: VAR_MONIT_VERSION != mv_rs
+  tags:
+    - monit
+
+- name: monit bin
+  command: cp -rfp {{ VAR_DEBIAN_DIR_VAR_MONIT }}/monit-{{ VAR_MONIT_VERSION }}/bin/monit /usr/bin/
+  when: VAR_MONIT_VERSION != mv_rs
+  tags:
+    - monit
+
+- name: transfer monit config /etc/monit/monitrc
+  template:
+    src: monit/monitrc.conf
+    dest: "{{ VAR_DEBIAN_DIR_ETC_MONIT }}/monitrc"
+    mode: 0700
+  tags:
+    - monit
+
+
+
+- name: transfer monit id /var/lib/monit/id
+  template:
+    src: monit/monit.id
+    dest: "{{  VAR_DEBIAN_DIR_VAR_LIB_MONIT }}/id"
+    mode: 0700
+  tags:
+    - monit
+
+- name: transfer monit-config configuration
+  template:
+    src: "{{ item }}"
+    dest: "{{ VAR_DEBIAN_DIR_ETC_MONIT }}/conf.d/{{ item | basename }}"
+    mode: 0777
+  with_fileglob:
+    - templates/monit/conf.d/*.*
+  tags:
+    - monit
+    - monit-config
+
+- name: ensure monit reloaded
+  shell: /bin/true
+  ignore_errors: true
+  notify:
+    - reload monit
+  tags:
+    - reload-service
+

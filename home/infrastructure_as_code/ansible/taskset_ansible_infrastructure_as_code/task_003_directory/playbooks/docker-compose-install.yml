@@ -1,0 +1,10 @@
+---
+- name: docker-install
+  hosts: local
+  become: true
+  roles:
+    - { role: commons,                   tags: [ 'commons'       ] }
+    - { role: docker,                   tags: [ 'docker'       ] }
+    - { role: docker-compose,                   tags: [ 'docker-compose'       ] }
+
+

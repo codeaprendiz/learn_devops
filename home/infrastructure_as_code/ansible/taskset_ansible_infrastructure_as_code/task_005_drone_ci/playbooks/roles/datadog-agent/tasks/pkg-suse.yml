@@ -1,0 +1,74 @@
+---
+# Do not import old key if installing Agent 7, as all Agent 7 packages are signed with the new key
+- block:  # Work around due to SNI check for SLES11
+  - name: Stat if RPM key already exists
+    stat:
+      path: /tmp/DATADOG_RPM_KEY.public
+    register: ddkey
+  - name: Download RPM key (SLES11)
+    get_url:
+      url: "{{ datadog_zypper_gpgkey }}"
+      dest: /tmp/DATADOG_RPM_KEY.public
+    when: not ddkey.stat.exists
+  when: datadog_agent_major_version|int < 7 and ansible_distribution_version|int == 11
+
+# Do not import old key if installing Agent 7, as all Agent 7 packages are signed with the new key
+- name: Download RPM key
+  get_url:
+    url: "{{ datadog_zypper_gpgkey }}"
+    dest: /tmp/DATADOG_RPM_KEY.public
+    checksum: "sha256:{{ datadog_zypper_gpgkey_sha256sum }}"
+  when: datadog_agent_major_version|int < 7 and ansible_distribution_version|int >= 12
+
+- name: Import RPM key
+  rpm_key:
+    key: /tmp/DATADOG_RPM_KEY.public
+    state: present
+  when: datadog_agent_major_version|int < 7 and not ansible_check_mode
+
+- block:  # Work around due to SNI check for SLES11
+  - name: Stat if new RPM key already exists
+    stat:
+      path: /tmp/DATADOG_RPM_KEY_E09422B3.public
+    register: ddnewkey
+  - name: Download new RPM key (SLES11)
+    get_url:
+      url: "{{ datadog_zypper_gpgkey_e09422b3 }}"
+      dest: /tmp/DATADOG_RPM_KEY_E09422B3.public
+    when: not ddnewkey.stat.exists
+  when: ansible_distribution_version|int == 11
+
+- name: Download new RPM key
+  get_url:
+    url: "{{ datadog_zypper_gpgkey_e09422b3 }}"
+    dest: /tmp/DATADOG_RPM_KEY_E09422B3.public
+    checksum: "sha256:{{ datadog_zypper_gpgkey_e09422b3_sha256sum }}"
+  when: ansible_distribution_version|int >= 12
+
+- name: Import new RPM key
+  rpm_key:
+    key: /tmp/DATADOG_RPM_KEY_E09422B3.public
+    state: present
+  when: not ansible_check_mode
+
+# ansible don't allow repo_gpgcheck to be set, we have to create the repo file manually
+- name: Install DataDog zypper repo
+  template:
+    src: zypper.repo.j2
+    dest: /etc/zypp/repos.d/datadog.repo
+    owner: "root"
+    group: "root"
+  register: datadog_zypper_repo
+
+# refresh zypper repos only if the template changed
+- name: refresh Datadog zypper_repos  # noqa 503
+  command: zypper refresh datadog
+  when: datadog_zypper_repo.changed and not ansible_check_mode
+  args:
+    warn: false  # silence warning about using zypper directly
+
+- include_tasks: pkg-suse/install-pinned.yml
+  when: datadog_agent_suse_version is defined
+
+- include_tasks: pkg-suse/install-latest.yml
+  when: datadog_agent_suse_version is not defined

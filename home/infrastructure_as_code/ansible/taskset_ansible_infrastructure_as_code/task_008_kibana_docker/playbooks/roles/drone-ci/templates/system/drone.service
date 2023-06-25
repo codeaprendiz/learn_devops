@@ -1,0 +1,11 @@
+[Unit]
+Description=Drone server
+After=docker.service nginx.service
+
+[Service]
+Restart=always
+ExecStart=/usr/local/bin/docker-compose -f /etc/drone/docker-compose.yml up
+ExecStop=/usr/local/bin/docker-compose -f /etc/drone/docker-compose.yml stop
+
+[Install]
+WantedBy=multi-user.target

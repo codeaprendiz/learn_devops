@@ -1,0 +1,47 @@
+---
+
+- name: Check if OS is supported
+  include_tasks: os-check.yml
+
+- name: Set Facts for Datadog Agent Major Version
+  include_tasks: set-parse-version.yml
+
+- name: Debian Install Tasks
+  include_tasks: pkg-debian.yml
+  when: ansible_os_family == "Debian"
+
+- name: RedHat Install Tasks
+  include_tasks: pkg-redhat.yml
+  when: ansible_os_family == "RedHat"
+
+- name: Suse Install Tasks
+  include_tasks: pkg-suse.yml
+  when: ansible_os_family == "Suse"
+
+- name: Windows Install Tasks
+  include_tasks: pkg-windows.yml
+  when: ansible_os_family == "Windows"
+
+- name: Linux Install Tasks (Agent 5)
+  include_tasks: agent5-linux.yml
+  when: datadog_agent_major_version|int == 5 and ansible_os_family != "Windows"
+
+- name: Linux Install Tasks
+  include_tasks: agent-linux.yml
+  when: datadog_agent_major_version|int > 5 and ansible_os_family != "Windows"
+
+- name: Agent6 Install Tasks (Windows)
+  include_tasks: agent-win.yml
+  when: datadog_agent_major_version|int > 5 and ansible_os_family == "Windows"
+
+- name: Integrations Tasks
+  include_tasks: integration.yml
+  when: datadog_integration is defined
+
+- name: Post Tasks
+  include_tasks: post_tasks/*.yml
+  when: post_tasks is defined
+
+- name: Pre Tasks
+  include_tasks: pre_tasks/*.yml
+  when: pre_tasks is defined

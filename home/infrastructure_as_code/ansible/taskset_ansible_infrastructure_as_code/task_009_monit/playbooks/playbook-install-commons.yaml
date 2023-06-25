@@ -1,0 +1,5 @@
+- name: install commons
+  hosts: local
+  become: true
+  roles:
+    - { role: commons,                   tags: [ 'commons'       ] }

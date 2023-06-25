@@ -1,0 +1,17 @@
+
+- include_tasks: Debian/setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+  tags:
+    - all
+    - vm-required
+
+
+- include_tasks: Debian/install-atom-ide.yml
+  tags:
+    - all
+    - install-atom
+
+- include_tasks: Debian/setup-my-workstation.yml
+  tags:
+    - all
+    - setup-my-workstation

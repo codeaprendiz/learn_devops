@@ -1,0 +1,9 @@
+- name: drone-ci
+  hosts: local
+  #  remote_user: ubuntu
+  become: true
+  vars:
+    env: "local"
+
+  roles:
+    - { role: drone-ci,                 tags: [ 'drone-ci' ] }

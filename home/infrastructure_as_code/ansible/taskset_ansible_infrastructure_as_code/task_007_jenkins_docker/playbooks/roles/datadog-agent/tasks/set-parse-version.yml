@@ -1,0 +1,12 @@
+---
+- name: Convert datadog_agent_major_version to string
+  set_fact:
+    datadog_agent_major_version: "{{ datadog_agent_major_version | string }}"
+
+- include_tasks: parse-version.yml
+  when: datadog_agent_version | length > 0
+
+- name: Set Agent default major version
+  set_fact:
+    datadog_agent_major_version: "7"
+  when: datadog_agent_major_version | length == 0

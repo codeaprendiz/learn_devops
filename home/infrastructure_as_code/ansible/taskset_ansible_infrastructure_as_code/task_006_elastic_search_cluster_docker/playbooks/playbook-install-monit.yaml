@@ -1,0 +1,10 @@
+- name: install monit
+  hosts: local
+  become: true
+  vars:
+    VAR_MONIT_VERSION: "5.26.0"
+    VAR_INSTALL_SPECIFIC_VERSION: "True"
+    VAR_IS_REDHAT: "False"
+    VAR_IS_DEBIAN: "False"
+  roles:
+    - { role: monit,                   tags: [ 'monit'       ] }

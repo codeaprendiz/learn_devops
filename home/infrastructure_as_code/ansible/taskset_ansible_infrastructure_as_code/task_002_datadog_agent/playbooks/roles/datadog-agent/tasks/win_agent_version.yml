@@ -1,0 +1,10 @@
+---
+
+- name: Check agent pinned version on Windows
+  fail:
+    msg: "The Agent versions you pinned (6.14.0 or 6.14.1) have been blacklisted, please use 6.14.2 instead. See http://dtdg.co/win-614-fix."
+  when: datadog_agent_version == "6.14.0" or datadog_agent_version == "6.14.1"
+
+- name: set agent download filename to a specific version
+  set_fact:
+    dd_download_url: "{{ datadog_windows_versioned_url }}-{{ datadog_agent_windows_version }}.msi"
