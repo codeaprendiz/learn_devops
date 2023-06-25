@@ -1,4 +1,0 @@
-- name: install docker kibana
-  import_tasks: install-kibana.yaml
-  tags:
-    - kibana
