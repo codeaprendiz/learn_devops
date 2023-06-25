@@ -1,8 +1,0 @@
-- name: create user
-  hosts: local
-  become: true
-  vars:
-    user: "test"
-    group: "test"
-  roles:
-    - { role: user,                   tags: [ 'user'       ] }
