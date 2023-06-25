@@ -58,12 +58,51 @@ function createTree_v1($directoryPath = './', $directoryRegex = '/^task_/')
 }
 
 
+// Function to create markdown in following format
+// ## Cloud Providers
+//
+// | AWS | OCI | GCP |
+// | --- | --- | --- |
+// | [Certification Digest](home/cloud-providers/aws/certifications-digest)<br> [Practice Tasks](home/cloud-providers/aws/practice-tasks) | [Practice Tasks](home/cloud-providers/oci/practice-tasks) | [Practice Tasks](home/cloud-providers/gcp/taskset) |
+//  When the  tree[][] contains
+//     [taskset_aws_cloud_providers] => Array
+//         (
+//             [0] => - [task_001_kms](home/cloud_providers/aws/taskset_aws_cloud_providers/task_001_kms)
+//             [1] => - [task_002_monitoring_msk](home/cloud_providers/aws/taskset_aws_cloud_providers/task_002_monitoring_msk)
+//             [2] => - [task_003_redirection_using_s3_cloudfront](home/cloud_providers/aws/taskset_aws_cloud_providers/task_003_redirection_using_s3_cloudfront)
+//         )
+
+function createMarkdown($tree)
+{
+    $markdown = '';
+    foreach ($tree as $key => $value) {
+        $markdown .= "## $key\n\n";
+        $markdown .= "| Task | Description |\n";
+        $markdown .= "| --- | --- |\n";
+        foreach ($value as $task) {
+            $task = str_replace('- ', '', $task);
+            $task = str_replace(']', '', $task);
+            $task = str_replace('[', '', $task);
+            $task = str_replace('(', '| [', $task);
+            $task = str_replace(')', ']', $task);
+            $markdown .= "| $task |\n";
+        }
+        $markdown .= "\n";
+    }
+    return $markdown;
+}
+
 
 
 // Usage
 $tree = createTree_v1('.', '/^task_/'); // if first call is for ".", second call is for "./home" and so on as the function is recursive
 
 print_r($tree);
+
+$markdown = createMarkdown($tree);
+
+// Put markdown in README-test.md file
+file_put_contents('README-test.md', $markdown);
 
 
 ?>
