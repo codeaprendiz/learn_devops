@@ -5,13 +5,13 @@ Steps
 
 - Create a VM on any cloud provider (like google cloud)
 
-![](../../../images/docker-compose-kitchen/task-001-traefik-letsEncrypt-tls-challenge/vm-created-gc.png)
+![img](./.images/vm-created-gc.png)
 
 - Install docker-compose
 
 - Create a DNS record like [here](https://www.noip.com/) and assing it to the public ip of the VM created.
 
-![](../../../images/docker-compose-kitchen/task-001-traefik-letsEncrypt-tls-challenge/dns-entry-for-vm.png)
+![img](./.images/dns-entry-for-vm.png)
 
 
 - The following is the `docker-compose` file
@@ -124,7 +124,7 @@ acme.json
 
 - Now visit the domain to check if certificate is being generated
 
-![](../../../images/docker-compose-kitchen/task-001-traefik-letsEncrypt-tls-challenge/https-browser-verification-cert.png)
+![img](./.images/https-browser-verification-cert.png)
 
 
 
