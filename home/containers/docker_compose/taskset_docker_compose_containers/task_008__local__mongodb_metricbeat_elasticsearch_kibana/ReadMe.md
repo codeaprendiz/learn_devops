@@ -256,5 +256,5 @@ metricbeat-mongodb       | {"t":{"$date":"2020-08-16T18:37:05.226+00:00"},"s":"I
 
 - MongoDB Dashboard
 
-![](../../../images/docker-compose-kitchen/task-008-mongodb-metricbeat-elasticsearch-kibana/mongodb_local.png)
+![img](./.images/mongodb_local.png)
 
