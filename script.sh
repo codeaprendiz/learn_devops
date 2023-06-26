@@ -2,7 +2,7 @@
 
 ## npm install markdown-table-formatter -g
 ## find . -name ReadMe.md | markdown-table-formatter
-php rename.php
+php generate-readme.php
 find . -name ReadMe.md | markdown-table-formatter
 # # Loop over all directories that match the regex
 # for olddir in $(find . -type d -name "task*"); do
