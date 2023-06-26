@@ -24,4 +24,4 @@ $ docker run --link dreamy_borg:elasticsearch -p 5601:5601 docker.elastic.co/kib
   You can verify the elastic search connection by checking Index Pattern settings page.
   
 
-![](../../../images/docker-kitchen/task-006-kibana/kibana-dashboard.png)
+![img](./.images/kibana-dashboard.png)
