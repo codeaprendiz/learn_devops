@@ -130,9 +130,9 @@ function createGlobalMarkdownTable($tree) {
     // for every value in topics array, print - [value](#value)
     foreach ($topics as $topic) {
         $view_text=$topic;
-        $topic = str_replace('_', ' ', $topic);
-        $topic = ucwords($topic);
-        $markdown .= "- [$topic](#$topic)\n";
+        $view_text = str_replace('_', ' ', $view_text);
+        $view_text = ucwords($view_text);
+        $markdown .= "- [$view_text](#$topic)\n";
     }
 
     $markdown .= "\n";

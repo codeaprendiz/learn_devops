@@ -1,18 +1,18 @@
 # Home 
 
-- [Cloud Certifications](#Cloud Certifications)
-- [Cloud Providers](#Cloud Providers)
-- [Containers](#Containers)
-- [Databases](#Databases)
-- [Devops Blogs](#Devops Blogs)
-- [Images](#Images)
-- [Infrastructure As Code](#Infrastructure As Code)
-- [Interview](#Interview)
-- [Observability](#Observability)
-- [OS And Concepts](#OS And Concepts)
-- [Productivity Tools](#Productivity Tools)
-- [Version Control](#Version Control)
-- [Web Servers](#Web Servers)
+- [Cloud Certifications](#cloud_certifications)
+- [Cloud Providers](#cloud_providers)
+- [Containers](#containers)
+- [Databases](#databases)
+- [Devops Blogs](#devops_blogs)
+- [Images](#images)
+- [Infrastructure As Code](#infrastructure_as_code)
+- [Interview](#interview)
+- [Observability](#observability)
+- [OS And Concepts](#os_and_concepts)
+- [Productivity Tools](#productivity_tools)
+- [Version Control](#version_control)
+- [Web Servers](#web_servers)
 
 ## Cloud Certifications
 
