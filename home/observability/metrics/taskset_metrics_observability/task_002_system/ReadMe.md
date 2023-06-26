@@ -5,14 +5,14 @@
 
 | Stats                                                         | Visualization                                 |
 |---------------------------------------------------------------|-----------------------------------------------|
-| [Number of hosts](#Number-of-hosts)                           | ![](.images/number-of-hosts.png)              | 
-| [CPU Usage Guage](#CPU-Usage-Gauge)                           | ![](.images/cpu-usage-guage.png)              | 
-| [Memory Usage Gauge](#Memory-Usage-Gauge)                     | ![](.images/memory-usage-guage.png)           | 
-| [Disk used](#Disk-used)                                       | ![](.images/disk-used.png)                    | 
-| [Inbound Traffic](#Inbound-Traffic)                           | ![](.images/inbound-traffic.png)              | 
-| [Outbound Traffic](#Outbound-Traffic)                         | ![](.images/outbound-traffic.png)             | 
-| [Top Hosts By CPU Realtime](#Top-Hosts-By-CPU-Realtime)       | ![](.images/top-hosts-by-cpu-realtime.png)    | 
-| [Top Hosts By Memory Realtime](#Top-Hosts-By-Memory-Realtime) | ![](.images/top-hosts-by-memory-realtime.png) | 
+| [Number of hosts](#Number-of-hosts)                           | ![](.images/number-of-hosts.png)              |
+| [CPU Usage Guage](#CPU-Usage-Gauge)                           | ![](.images/cpu-usage-guage.png)              |
+| [Memory Usage Gauge](#Memory-Usage-Gauge)                     | ![](.images/memory-usage-guage.png)           |
+| [Disk used](#Disk-used)                                       | ![](.images/disk-used.png)                    |
+| [Inbound Traffic](#Inbound-Traffic)                           | ![](.images/inbound-traffic.png)              |
+| [Outbound Traffic](#Outbound-Traffic)                         | ![](.images/outbound-traffic.png)             |
+| [Top Hosts By CPU Realtime](#Top-Hosts-By-CPU-Realtime)       | ![](.images/top-hosts-by-cpu-realtime.png)    |
+| [Top Hosts By Memory Realtime](#Top-Hosts-By-Memory-Realtime) | ![](.images/top-hosts-by-memory-realtime.png) |
 | [Host histogram by CPU usage](#Hosts-histogram-by-CPU-usage)  | ![](.images/host-histogram-by-cpu-usage.png)  |
 
 
@@ -72,11 +72,11 @@ GroupBy-Everything
 ```
 
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.7                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.7   |
+| RED    | : >= greater than or equal | 0.85  |
 
 ### Memory-Usage-Gauge
 
@@ -99,11 +99,11 @@ a = Avg(system.memory.actual.used.pct)
 GroupBy-Everything
 ```
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.7                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.7   |
+| RED    | : >= greater than or equal | 0.85  |
 
 
 ### Disk-used
@@ -137,11 +137,11 @@ GroupBy-Everything
 
 
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.7                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.7   |
+| RED    | : >= greater than or equal | 0.85  |
 
 
 ### Inbound-Traffic
@@ -299,11 +299,11 @@ Order by : a
 Desc
 ```
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.6                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.6   |
+| RED    | : >= greater than or equal | 0.85  |
 
 
 
@@ -330,11 +330,11 @@ Order by : a
 Desc
 ```
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.6                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.6   |
+| RED    | : >= greater than or equal | 0.85  |
 
 
 ### Hosts-histogram-by-CPU-usage

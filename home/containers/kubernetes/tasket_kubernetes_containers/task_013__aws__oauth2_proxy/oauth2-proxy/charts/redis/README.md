@@ -27,9 +27,9 @@ You can choose any of the two Redis&trade; Helm charts for deploying a Redis&tra
 The main features of each chart are the following:
 
 | Redis&trade;                                     | Redis&trade; Cluster                                             |
-|--------------------------------------------------------|------------------------------------------------------------------------|
-| Supports multiple databases                            | Supports only one database. Better if you have a big dataset           |
-| Single write point (single master)                     | Multiple write points (multiple masters)                               |
+|--------------------------------------------------|------------------------------------------------------------------|
+| Supports multiple databases                      | Supports only one database. Better if you have a big dataset     |
+| Single write point (single master)               | Multiple write points (multiple masters)                         |
 | ![Redis&trade; Topology](img/redis-topology.png) | ![Redis&trade; Cluster Topology](img/redis-cluster-topology.png) |
 
 ## Prerequisites
@@ -65,7 +65,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Global parameters
 
 | Name                      | Description                                              | Value |
-| ------------------------- | -------------------------------------------------------- | ----- |
+|---------------------------|----------------------------------------------------------|-------|
 | `global.imageRegistry`    | Global Docker image registry                             | `""`  |
 | `global.imagePullSecrets` | Global Docker registry secret names as an array          | `[]`  |
 | `global.storageClass`     | Global StorageClass for Persistent Volume(s)             | `""`  |
@@ -75,7 +75,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Common parameters
 
 | Name                     | Description                                                                             | Value           |
-| ------------------------ | --------------------------------------------------------------------------------------- | --------------- |
+|--------------------------|-----------------------------------------------------------------------------------------|-----------------|
 | `kubeVersion`            | Override Kubernetes version                                                             | `""`            |
 | `nameOverride`           | String to partially override common.names.fullname                                      | `""`            |
 | `fullnameOverride`       | String to fully override common.names.fullname                                          | `""`            |
@@ -91,7 +91,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Redis&trade; Image parameters
 
 | Name                | Description                                             | Value                 |
-| ------------------- | ------------------------------------------------------- | --------------------- |
+|---------------------|---------------------------------------------------------|-----------------------|
 | `image.registry`    | Redis&trade; image registry                             | `docker.io`           |
 | `image.repository`  | Redis&trade; image repository                           | `bitnami/redis`       |
 | `image.tag`         | Redis&trade; image tag (immutable tags are recommended) | `6.2.5-debian-10-r11` |
@@ -103,7 +103,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Redis&trade; common configuration parameters
 
 | Name                             | Description                                                                             | Value         |
-| -------------------------------- | --------------------------------------------------------------------------------------- | ------------- |
+|----------------------------------|-----------------------------------------------------------------------------------------|---------------|
 | `architecture`                   | Redis&trade; architecture. Allowed values: `standalone` or `replication`                | `replication` |
 | `auth.enabled`                   | Enable password authentication                                                          | `true`        |
 | `auth.sentinel`                  | Enable password authentication on sentinels too                                         | `true`        |
@@ -118,7 +118,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Redis&trade; master configuration parameters
 
 | Name                                        | Description                                                                                       | Value           |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------- |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------|-----------------|
 | `master.configuration`                      | Configuration for Redis&trade; master nodes                                                       | `""`            |
 | `master.disableCommands`                    | Array with Redis&trade; commands to disable on master nodes                                       | `[]`            |
 | `master.command`                            | Override default container command (useful when using custom images)                              | `[]`            |
@@ -193,7 +193,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Redis&trade; replicas configuration parameters
 
 | Name                                         | Description                                                                                         | Value           |
-| -------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------- |
+|----------------------------------------------|-----------------------------------------------------------------------------------------------------|-----------------|
 | `replica.replicaCount`                       | Number of Redis&trade; replicas to deploy                                                           | `3`             |
 | `replica.configuration`                      | Configuration for Redis&trade; replicas nodes                                                       | `""`            |
 | `replica.disableCommands`                    | Array with Redis&trade; commands to disable on replicas nodes                                       | `[]`            |
@@ -273,7 +273,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Redis&trade; Sentinel configuration parameters
 
 | Name                                          | Description                                                                                         | Value                    |
-| --------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------ |
+|-----------------------------------------------|-----------------------------------------------------------------------------------------------------|--------------------------|
 | `sentinel.enabled`                            | Use Redis&trade; Sentinel on Redis&trade; pods.                                                     | `false`                  |
 | `sentinel.image.registry`                     | Redis&trade; Sentinel image registry                                                                | `docker.io`              |
 | `sentinel.image.repository`                   | Redis&trade; Sentinel image repository                                                              | `bitnami/redis-sentinel` |
@@ -330,7 +330,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Other Parameters
 
 | Name                                          | Description                                                                                                      | Value   |
-| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------- |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------|---------|
 | `networkPolicy.enabled`                       | Enable creation of NetworkPolicy resources                                                                       | `false` |
 | `networkPolicy.allowExternal`                 | Don't require client label for connections                                                                       | `true`  |
 | `networkPolicy.extraIngress`                  | Add extra ingress rules to the NetworkPolicy                                                                     | `[]`    |
@@ -362,7 +362,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Metrics Parameters
 
 | Name                                         | Description                                                                                      | Value                    |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------ |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------|--------------------------|
 | `metrics.enabled`                            | Start a sidecar prometheus exporter to expose Redis&trade; metrics                               | `false`                  |
 | `metrics.image.registry`                     | Redis&trade; Exporter image registry                                                             | `docker.io`              |
 | `metrics.image.repository`                   | Redis&trade; Exporter image repository                                                           | `bitnami/redis-exporter` |
@@ -401,7 +401,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Init Container Parameters
 
 | Name                                                   | Description                                                                                     | Value                   |
-| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ----------------------- |
+|--------------------------------------------------------|-------------------------------------------------------------------------------------------------|-------------------------|
 | `volumePermissions.enabled`                            | Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup` | `false`                 |
 | `volumePermissions.image.registry`                     | Bitnami Shell image registry                                                                    | `docker.io`             |
 | `volumePermissions.image.repository`                   | Bitnami Shell image repository                                                                  | `bitnami/bitnami-shell` |

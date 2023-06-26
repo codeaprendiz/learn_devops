@@ -4,18 +4,18 @@
 | Stats                                                               | Visualization                                     |
 |---------------------------------------------------------------------|---------------------------------------------------|
 | [Nodes](#Nodes)                                                     | ![](.images/nodes.png)                            |
-| [Deployments](#Deployments)                                         | ![](.images/deployments.png)                      | 
-| [Available Pods Per Deployment](#Available-pods-per-deployment)     | ![](.images/available-pods-per-deployment1.png)   | 
-| [Desired-pods](#Desired-pods)                                       | ![](.images/desired-pods.png)                     | 
-| [Available pods](#Available-pods)                                   | ![](.images/available-pods.png)                   | 
-| [Unavailable pods](#Unavailable-pods)                               | ![](.images/unavailable-pods.png)                 | 
-| [Unavailable pods per deployment](#Unavailable-pods-per-deployment) | ![](.images/unavailable-pods-per-deployment1.png) | 
-| [CPU Usage by node](#CPU-usage-by-node)                             | ![](.images/cpu-usage-by-node.png)                | 
-| [Memory usage by node](#Memory-usage-by-node)                       | ![](.images/memory-usage-by-node.png)             | 
-| [Network out by node](#Network-out-by-node)                         | ![](.images/network-out-by-node.png)              | 
-| [Network in by node](#Network-in-by-node)                           | ![](.images/network-in-by-node.png)               | 
-| [Top CPU intensive pods](#Top-CPU-intensive-pods)                   | ![](.images/top-cpu-intensive-pods.png)           | 
-| [Top memory intensive pods](#Top-memory-intensive-pods)             | ![](.images/top-memory-intensive-pods.png)        | 
+| [Deployments](#Deployments)                                         | ![](.images/deployments.png)                      |
+| [Available Pods Per Deployment](#Available-pods-per-deployment)     | ![](.images/available-pods-per-deployment1.png)   |
+| [Desired-pods](#Desired-pods)                                       | ![](.images/desired-pods.png)                     |
+| [Available pods](#Available-pods)                                   | ![](.images/available-pods.png)                   |
+| [Unavailable pods](#Unavailable-pods)                               | ![](.images/unavailable-pods.png)                 |
+| [Unavailable pods per deployment](#Unavailable-pods-per-deployment) | ![](.images/unavailable-pods-per-deployment1.png) |
+| [CPU Usage by node](#CPU-usage-by-node)                             | ![](.images/cpu-usage-by-node.png)                |
+| [Memory usage by node](#Memory-usage-by-node)                       | ![](.images/memory-usage-by-node.png)             |
+| [Network out by node](#Network-out-by-node)                         | ![](.images/network-out-by-node.png)              |
+| [Network in by node](#Network-in-by-node)                           | ![](.images/network-in-by-node.png)               |
+| [Top CPU intensive pods](#Top-CPU-intensive-pods)                   | ![](.images/top-cpu-intensive-pods.png)           |
+| [Top memory intensive pods](#Top-memory-intensive-pods)             | ![](.images/top-memory-intensive-pods.png)        |
 
 
 

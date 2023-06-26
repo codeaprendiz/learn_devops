@@ -51,7 +51,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Global parameters
 
 | Name                      | Description                                     | Value |
-| ------------------------- | ----------------------------------------------- | ----- |
+|---------------------------|-------------------------------------------------|-------|
 | `global.imageRegistry`    | Global Docker image registry                    | `""`  |
 | `global.imagePullSecrets` | Global Docker registry secret names as an array | `[]`  |
 | `global.storageClass`     | Global StorageClass for Persistent Volume(s)    | `""`  |
@@ -60,7 +60,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Common parameters
 
 | Name                     | Description                                                                             | Value           |
-| ------------------------ | --------------------------------------------------------------------------------------- | --------------- |
+|--------------------------|-----------------------------------------------------------------------------------------|-----------------|
 | `kubeVersion`            | Override Kubernetes version                                                             | `""`            |
 | `nameOverride`           | String to partially override common.names.fullname                                      | `""`            |
 | `fullnameOverride`       | String to fully override common.names.fullname                                          | `""`            |
@@ -76,7 +76,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Traffic Exposure Parameters
 
 | Name                               | Description                                                                                           | Value                    |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------ |
+|------------------------------------|-------------------------------------------------------------------------------------------------------|--------------------------|
 | `service.type`                     | OAuth2 Proxy service type                                                                             | `ClusterIP`              |
 | `service.port`                     | OAuth2 Proxy service HTTP port                                                                        | `80`                     |
 | `service.nodePorts.http`           | Node port for HTTP                                                                                    | `""`                     |
@@ -101,7 +101,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### OAuth2 Proxy Image parameters
 
 | Name                | Description                                             | Value                  |
-| ------------------- | ------------------------------------------------------- | ---------------------- |
+|---------------------|---------------------------------------------------------|------------------------|
 | `image.registry`    | OAuth2 Proxy image registry                             | `docker.io`            |
 | `image.repository`  | OAuth2 Proxy image repository                           | `bitnami/oauth2-proxy` |
 | `image.tag`         | OAuth2 Proxy image tag (immutable tags are recommended) | `7.1.3-debian-10-r100` |
@@ -112,7 +112,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### OAuth2 Proxy configuration parameters
 
 | Name                                                   | Description                                         | Value              |
-| ------------------------------------------------------ | --------------------------------------------------- | ------------------ |
+|--------------------------------------------------------|-----------------------------------------------------|--------------------|
 | `configuration.clientID`                               | OAuth client ID                                     | `XXXXXXX`          |
 | `configuration.clientSecret`                           | OAuth client secret                                 | `XXXXXXXX`         |
 | `configuration.cookieSecret`                           | OAuth cookie secret                                 | `XXXXXXXXXXXXXXXX` |
@@ -134,7 +134,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### OAuth2 Proxy deployment parameters
 
 | Name                                 | Description                                                                                | Value           |
-| ------------------------------------ | ------------------------------------------------------------------------------------------ | --------------- |
+|--------------------------------------|--------------------------------------------------------------------------------------------|-----------------|
 | `containerPort`                      | OAuth2 Proxy port number                                                                   | `4180`          |
 | `replicaCount`                       | Number of OAuth2 Proxy replicas to deploy                                                  | `1`             |
 | `extraArgs`                          | add extra args to the default command                                                      | `[]`            |
@@ -191,7 +191,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### External Redis&trade; parameters
 
 | Name                           | Description                                                  | Value  |
-| ------------------------------ | ------------------------------------------------------------ | ------ |
+|--------------------------------|--------------------------------------------------------------|--------|
 | `externalRedis.host`           | External Redis&trade; server host                            | `""`   |
 | `externalRedis.password`       | External Redis&trade; user password                          | `""`   |
 | `externalRedis.port`           | External Redis&trade; server port                            | `6379` |
@@ -201,7 +201,7 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Redis&trade; sub-chart parameters
 
 | Name                                   | Description                                                  | Value        |
-| -------------------------------------- | ------------------------------------------------------------ | ------------ |
+|----------------------------------------|--------------------------------------------------------------|--------------|
 | `redis.enabled`                        | Deploy Redis&trade; sub-chart                                | `true`       |
 | `redis.architecture`                   | Redis&trade; architecture                                    | `standalone` |
 | `redis.master.service.port`            | Redis&trade; (without Sentinel) service port                 | `6379`       |

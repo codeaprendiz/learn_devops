@@ -17,9 +17,9 @@
 
 **Version Stack**
 
-| Stack  | Version   |
-|--------|-----------|
-| docker | 20.10.14  |
+| Stack  | Version  |
+|--------|----------|
+| docker | 20.10.14 |
 
 ## run nginx container
 

@@ -72,7 +72,7 @@ function createTree_v1($directoryPath = './', $directoryRegex = '/^task_/')
 //             [2] => - [task_003_redirection_using_s3_cloudfront](home/cloud_providers/aws/taskset_aws_cloud_providers/task_003_redirection_using_s3_cloudfront)
 //         )
 
-function createMarkdown($tree)
+function createIndividualSectionsMarkdown($tree)
 {
     foreach ($tree as $key => $value) {
         $markdown = '';
@@ -108,7 +108,7 @@ $tree = createTree_v1('.', '/^task_/'); // if first call is for ".", second call
 
 // print_r($tree);
 
-$markdown = createMarkdown($tree);
+$markdown = createIndividualSectionsMarkdown($tree);
 
 // Put markdown in README-test.md file
 file_put_contents('README-test.md', $markdown);

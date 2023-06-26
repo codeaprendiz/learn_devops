@@ -1,28 +1,28 @@
 ## Host Monitoring
 
-| Stats                                                             | Visualization                                   | 
+| Stats                                                             | Visualization                                   |
 |-------------------------------------------------------------------|-------------------------------------------------|
-| [CPU Usage Guage](#CPU-Usage-Gauge)                               | ![](.images/cpu-usage-guage.png)                | 
-| [Memroy Usage Guage](#Memory-Usage-Gauge)                         | ![](.images/memory-usage-guage.png)             | 
-| [Load Guage](#Load-Guage)                                         | ![](.images/load-guage.png)                     | 
-| [Inbound Traffic](#Inbound-Traffic)                               | ![](.images/inbound-traffic.png)                | 
-| [Outbound Traffic](#Outbound-Traffic)                             | ![](.images/outbound-traffic.png)               | 
-| [Packetloss](#Packetloss)                                         | ![](.images/packetloss.png)                     | 
-| [Swap Usage](#Swap-uage)                                          | ![](.images/swap-usage.png)                     | 
-| [Memory usage vs total](#Memory-usage-vs-total)                   | ![](.images/memory-usage-vs-total.png)          | 
-| [Number of processes](#Number-of-processes)                       | ![](.images/number-of-processes.png)            | 
-| [Disk Used](#Disk-used)                                           | ![](.images/disk-used.png)                      | 
-| [Disk Usage](#Disk-Usage)                                         | ![](.images/disk-usage.png)                     | 
-| [CPU Usage](#CPU-Usage)                                           | ![](.images/cpu-usage.png)                      | 
-| [System Load](#System-Load)                                       | ![](.images/system-load.png)                    | 
-| [Memory Usage](#Memory-Usage)                                     | ![](.images/memory-usage.png)                   | 
-| [Disk IO](#Disk-IO)                                               | ![](.images/disk-io.png)                        | 
-| [Network Traffic Packets](Network-Traffic-Packets#)               | ![](.images/network-traffic-packets.png)        | 
-| [Network Traffic Bytes](#Network-Traffic-Bytes)                   | ![](.images/network-traffic-bytes.png)          | 
-| [Processes By Memory](#Processes-By-Memory)                       | ![](.images/processes-by-memory.png)            | 
-| [Top Processes By CPU](#Top-Processes-By-CPU)                     | ![](.images/top-processes-by-cpu.png)           | 
-| [Interfaces By Incoming Traffic](#Interfaces-By-Incoming-Traffic) | ![](.images/interfaces-by-incoming-traffic.png) | 
-| [Interfaces By Outgoing Traffic](#Interfaces-By-Outgoing-Traffic) | ![](.images/interfaces-by-outgoing-traffic.png) | 
+| [CPU Usage Guage](#CPU-Usage-Gauge)                               | ![](.images/cpu-usage-guage.png)                |
+| [Memroy Usage Guage](#Memory-Usage-Gauge)                         | ![](.images/memory-usage-guage.png)             |
+| [Load Guage](#Load-Guage)                                         | ![](.images/load-guage.png)                     |
+| [Inbound Traffic](#Inbound-Traffic)                               | ![](.images/inbound-traffic.png)                |
+| [Outbound Traffic](#Outbound-Traffic)                             | ![](.images/outbound-traffic.png)               |
+| [Packetloss](#Packetloss)                                         | ![](.images/packetloss.png)                     |
+| [Swap Usage](#Swap-uage)                                          | ![](.images/swap-usage.png)                     |
+| [Memory usage vs total](#Memory-usage-vs-total)                   | ![](.images/memory-usage-vs-total.png)          |
+| [Number of processes](#Number-of-processes)                       | ![](.images/number-of-processes.png)            |
+| [Disk Used](#Disk-used)                                           | ![](.images/disk-used.png)                      |
+| [Disk Usage](#Disk-Usage)                                         | ![](.images/disk-usage.png)                     |
+| [CPU Usage](#CPU-Usage)                                           | ![](.images/cpu-usage.png)                      |
+| [System Load](#System-Load)                                       | ![](.images/system-load.png)                    |
+| [Memory Usage](#Memory-Usage)                                     | ![](.images/memory-usage.png)                   |
+| [Disk IO](#Disk-IO)                                               | ![](.images/disk-io.png)                        |
+| [Network Traffic Packets](Network-Traffic-Packets#)               | ![](.images/network-traffic-packets.png)        |
+| [Network Traffic Bytes](#Network-Traffic-Bytes)                   | ![](.images/network-traffic-bytes.png)          |
+| [Processes By Memory](#Processes-By-Memory)                       | ![](.images/processes-by-memory.png)            |
+| [Top Processes By CPU](#Top-Processes-By-CPU)                     | ![](.images/top-processes-by-cpu.png)           |
+| [Interfaces By Incoming Traffic](#Interfaces-By-Incoming-Traffic) | ![](.images/interfaces-by-incoming-traffic.png) |
+| [Interfaces By Outgoing Traffic](#Interfaces-By-Outgoing-Traffic) | ![](.images/interfaces-by-outgoing-traffic.png) |
 
 
 
@@ -66,11 +66,11 @@ GroupBy-Everything
 ```
 
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.7                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.7   |
+| RED    | : >= greater than or equal | 0.85  |
 
 ### Memory-Usage-Gauge
 
@@ -93,11 +93,11 @@ a = Avg(system.memory.actual.used.pct)
 GroupBy-Everything
 ```
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.7                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.7   |
+| RED    | : >= greater than or equal | 0.85  |
 
 
 ### Load-Guage
@@ -318,11 +318,11 @@ GroupBy-Everything
 ```
 
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.7                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.7   |
+| RED    | : >= greater than or equal | 0.85  |
 
 
 ### Memory-usage-vs-total
@@ -414,11 +414,11 @@ GroupBy-Everything
 
 
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.7                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.7   |
+| RED    | : >= greater than or equal | 0.85  |
 
 ### Disk-Usage
 
@@ -900,11 +900,11 @@ OrderBy : a
 Desc
 ```
 
-| COLOR          |EXPRESSION                     |VALUE                        |
-|----------------|-------------------------------|-----------------------------|
-|GREEN           |: >= greater than or equal     |0                            |
-|ORANGE          |: >= greater than or equal     |0.7                          |
-|RED             |: >= greater than or equal     |0.85                         |
+| COLOR  | EXPRESSION                 | VALUE |
+|--------|----------------------------|-------|
+| GREEN  | : >= greater than or equal | 0     |
+| ORANGE | : >= greater than or equal | 0.7   |
+| RED    | : >= greater than or equal | 0.85  |
 
 
 ### Top-Processes-By-CPU

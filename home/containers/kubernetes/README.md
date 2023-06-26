@@ -8,7 +8,7 @@
 | [task-local-002 :    Configure default memory requests and limits for a namespace](practice-tasks/task-local-002-configure-default-memory-requests-and-limits-for-a-namespace)            |
 | [task-local-003 :    Understanding k8s port forward](practice-tasks/task-local-003-understanding-k8s-port-forward)                                                                        |
 | [task-local-004 :    Expose svc via nodeport](practice-tasks/task-local-004-expose-svc-via-nodeport)                                                                                      |
-| [task-local-005 :    Access svc nodeport via ingress](practice-tasks/task-local-005-access-svc-nodeport-via-ingress)                                                                      |                                             
+| [task-local-005 :    Access svc nodeport via ingress](practice-tasks/task-local-005-access-svc-nodeport-via-ingress)                                                                      |
 | [task-local-006 :    Access svc clusterip via ingress](practice-tasks/task-local-006-access-svc-clusterip-via-ingress)                                                                    |
 | [task-local-007 :    Jenkins k8s](practice-tasks/task-local-007-jenkins-k8s)                                                                                                              |
 | [task-local-008 :    Kafka](practice-tasks/task-local-008-kafka)                                                                                                                          |
