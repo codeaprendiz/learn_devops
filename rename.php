@@ -43,7 +43,7 @@ function createTree_v1($directoryPath = './', $directoryRegex = '/^task_/')
                 $tree[$parentDir] = [];
             }
 
-            $tree[$parentDir][] = "- [$dirName]($relativePath)";
+            $tree[$parentDir][] = "$dirName $relativePath";
             // Add a markdown link of the directory to the array of its parent directory in the tree array.
             // e.g. 'taskset' => ['- [task-001-aws-certified-solutions-architect-professional](home/cloud_certifications/aws/taskset/task-001-aws-certified-solutions-architect-professional)']
         }
@@ -86,8 +86,13 @@ function createMarkdown($tree)
             $taskNumber = substr($task, strpos($task, 'task_'), 8);
             // remove the '-' from the task number
             $taskNumber = str_replace('-', '', $taskNumber);
-            $task = str_replace('-', ' ', $task);
-            $markdown .= "| $taskNumber | $task |\n";
+
+            
+            $columnLink=explode(' ', $task); // $task = task_007_show_grants_user home/databases/mysql/taskset_mysql_databases/task_007_show_grants_userArray; columnLink = Array ( [0] => task_007_show_grants_user [1] => home/databases/mysql/taskset_mysql_databases/task_007_show_grants_user )
+            $columnText=$columnLink[0]; // $columnText = task_007_show_grants_user
+            $columnLink = explode('/', $columnLink[1]); // $columnLink = Array ( [0] => home [1] => databases [2] => mysql [3] => taskset_mysql_databases [4] => task_007_show_grants_user
+            $columnLink=end($columnLink); // $columnLink = task_007_show_grants_user
+            $markdown .= "| $taskNumber | [$columnText]($columnLink) |\n";
         }
         $markdown .= "\n";
 
