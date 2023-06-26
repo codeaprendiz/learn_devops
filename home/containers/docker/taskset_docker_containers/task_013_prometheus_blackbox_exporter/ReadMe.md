@@ -67,4 +67,4 @@ level=info ts=2020-07-27T18:23:09.791Z caller=main.go:646 msg="Server is ready t
 If everything works fine, you can check the targets at [localhost:9090/targets](localhost:9090/targets)
 
 
-![](../../../images/docker-kitchen/task-004-prom-blackbox-exporter/localhost-targets-prometheus.png)
+![img](./.images/localhost-targets-prometheus.png)
