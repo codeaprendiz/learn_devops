@@ -4,8 +4,6 @@
 - [Cloud Providers](#Cloud_providers)
 - [Containers](#Containers)
 - [Databases](#Databases)
-- [Devops Blogs](#Devops_blogs)
-- [Images](#Images)
 - [Infrastructure As Code](#Infrastructure_as_code)
 - [Interview](#Interview)
 - [Observability](#Observability)
@@ -28,7 +26,7 @@
 
 ## Containers
 
-| Docker                                   | Docker                                           | Kubernetes                                   |
+| Docker                                   | Docker_compose                                   | Kubernetes                                   |
 |------------------------------------------|--------------------------------------------------|----------------------------------------------|
 | [Practice Tasks](home/containers/docker) | [Practice Tasks](home/containers/docker_compose) | [Practice Tasks](home/containers/kubernetes) |
 
@@ -40,13 +38,13 @@
 
 ## Infrastructure_as_code
 
-| Ansible                                               | AWS                                                         | GCP                                                         | OCI                                                         |
+| Ansible                                               | AWS_terraform                                               | GCP_terraform                                               | OCI_terraform                                               |
 |-------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
 | [Practice Tasks](home/infrastructure_as_code/ansible) | [Practice Tasks](home/infrastructure_as_code/terraform/aws) | [Practice Tasks](home/infrastructure_as_code/terraform/gcp) | [Practice Tasks](home/infrastructure_as_code/terraform/oci) |
 
 ## Interview
 
-| Coding                                              |
+| Coding_assignments                                  |
 |-----------------------------------------------------|
 | [Practice Tasks](home/interview/coding_assignments) |
 
@@ -64,7 +62,7 @@
 
 ## Productivity_tools
 
-| Productivity                              |
+| Productivity_tools                        |
 |-------------------------------------------|
 | [Practice Tasks](home/productivity_tools) |
 

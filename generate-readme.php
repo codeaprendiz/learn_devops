@@ -120,8 +120,6 @@ function createGlobalMarkdownTable($tree) {
         "cloud_providers",
         "containers",
         "databases",
-        "devops_blogs",
-        "images",
         "infrastructure_as_code",
         "interview",
         "observability",
@@ -162,10 +160,17 @@ function createGlobalMarkdownTable($tree) {
 
         $markdown .= "|";
         foreach ($matchingKeys as $matchingKey) {
-            // explode with _ and get the 2nd element, capitalize the first letter and append to markdown
-            $tableHeader = explode('_', $matchingKey)[1];
-            $tableHeader = ucwords($tableHeader);
-            $markdown .= " $tableHeader |";
+            // explode with _ and get from the 2nd element till last element, capitalize the first letter and append to markdown
+            
+            $matchingKey = explode('_', $matchingKey);
+            $matchingKey = array_slice($matchingKey, 1);
+            $matchingKey = implode('_', $matchingKey);
+            // remove _$topic from $matchingKey, make $topc lowercase before replacing
+            $topic = strtolower($topic);
+            $matchingKey = str_replace("_$topic", '', $matchingKey);
+            $matchingKey = ucwords($matchingKey);
+            $markdown .= " $matchingKey |";
+            
         }
         $markdown .= "\n";
         $markdown .= "|";
