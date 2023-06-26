@@ -1,39 +1,20 @@
-# docker-compose-kitchen
-docker-compose-kitchen
+## taskset_docker_compose_containers
 
-## gcp
-
-### Learning Tasks
-
-
-
-Domain | Tasks | 
----    | --- | 
-Traefik LetsEncrypt TLS Challenge | [To implement traefik letsEncrypt TLS challenge](gcp/task-001-traefik-letsEncrypt-tls-challenge) |
-Traefik LetsEncrypt HTTP Challenge | [To implement traefik letsEncrypt HTTP challenge](gcp/task-002-traefik-letsEncrypt-http-challenge) |
-Datadog | [To implement datadog docker-compose example](gcp/task-003-datadog)
-
-
-
-
-## local
-
-Domain | Tasks | 
----    | --- | 
-Set Memory and CPU Limit by container | [To set the memory and cpu limit used by contianer](local-mac/task-015-mem-and-cpu-limit-nginx-container) | 
-ElasticSearch Backup And Restore Sample Data | [To implement elasticsearch backup & restore on local with sample data](local-mac/task-004-elastic-search-backup-restore-local-with-sample-data) |
-ElasticSearch Single Node and Kibana | [To implement elastic-search and kibana using single docker-compose](local-mac/task-005-elastic-search-kibana) |
-Logstash Example | [To implement logstash docker-compose example](local-mac/task-006-logstash) |
-Monitoring Mongodb using Kibana  Dashboard | [To get monitoring dashboard for mongodb using mongodb, metricbeat (custom image), elasticsearch, kibana docker-compose](local-mac/task-008-mongodb-metricbeat-elasticsearch-kibana)
-Monitoring NATS-Streaming using Kibana Dashboard | [To get monitoring dashboard for NATS-Streaming using NATS-Streaming, metricbeat (custom image), elasticsearch, kibana docker-compose](local-mac/task-009-natsStreaming-metricbeat-elasticsearch-kibana)
-Monitoring MYSQL using Kibana Dashboard |[To get monitoring dashboard for MYSQL using MYSQL, metricbeat (custom image), elasticsearch, kibana docker-compose](local-mac/task-010-mysql-metricbeat-elasticsearch-kibana)
-Monitoring Alerts on Slack Using Prometheus Stack | [To send alerts to slack using prometheus, blackboxexporter, alertmanager docker-compose](local-mac/task-007-prometheus-blackboxexporter-alertmanager)
-Cert validation for a domain using Nginx | [To test whether the certs (*.domain.com) are valid by using nginx](gcp/task-011-nginx-https-domain-test)
-Cert validation for a domain using Caddy | [To test whether the certs (*.domain.com) are valid by using caddy](local-mac/task-012-caddy-https-domain-test-with-custom-certs)
-Download Certs Using ACME Challenge on Caddy on host for given domain | [ To download certs for *.domain.com using caddy and https-acme and save those certs on host](local-mac/task-013-caddy-https-acme-and-save-certs)
-Reverse Proxy nginx home using caddy | [To reverse-proxy nginx-home using caddy](local-mac/task-014-reverse-proxy-nginx-home-using-caddy)
-
-
-
-
+| Task | Description |
+| --- | --- |
+| task_001 |   [task_001__gcp__traefik_letsEncrypt_tls_challenge](home/containers/docker_compose/taskset_docker_compose_containers/task_001__gcp__traefik_letsEncrypt_tls_challenge) |
+| task_002 |   [task_002__gcp__traefik_letsEncrypt_http_challenge](home/containers/docker_compose/taskset_docker_compose_containers/task_002__gcp__traefik_letsEncrypt_http_challenge) |
+| task_003 |   [task_003__gcp__datadog](home/containers/docker_compose/taskset_docker_compose_containers/task_003__gcp__datadog) |
+| task_004 |   [task_004__local__elastic_search_backup_restore_local_with_sample_data](home/containers/docker_compose/taskset_docker_compose_containers/task_004__local__elastic_search_backup_restore_local_with_sample_data) |
+| task_005 |   [task_005__local__elastic_search_kibana](home/containers/docker_compose/taskset_docker_compose_containers/task_005__local__elastic_search_kibana) |
+| task_006 |   [task_006__local__logstash](home/containers/docker_compose/taskset_docker_compose_containers/task_006__local__logstash) |
+| task_007 |   [task_007__local__prometheus_blackboxexporter_alertmanager](home/containers/docker_compose/taskset_docker_compose_containers/task_007__local__prometheus_blackboxexporter_alertmanager) |
+| task_008 |   [task_008__local__mongodb_metricbeat_elasticsearch_kibana](home/containers/docker_compose/taskset_docker_compose_containers/task_008__local__mongodb_metricbeat_elasticsearch_kibana) |
+| task_009 |   [task_009__local__natsStreaming_metricbeat_elasticsearch_kibana](home/containers/docker_compose/taskset_docker_compose_containers/task_009__local__natsStreaming_metricbeat_elasticsearch_kibana) |
+| task_010 |   [task_010__local__mysql_metricbeat_elasticsearch_kibana](home/containers/docker_compose/taskset_docker_compose_containers/task_010__local__mysql_metricbeat_elasticsearch_kibana) |
+| task_011 |   [task_011__gcp__nginx_https_domain_test](home/containers/docker_compose/taskset_docker_compose_containers/task_011__gcp__nginx_https_domain_test) |
+| task_012 |   [task_012__local__caddy_https_domain_test_with_custom_certs](home/containers/docker_compose/taskset_docker_compose_containers/task_012__local__caddy_https_domain_test_with_custom_certs) |
+| task_013 |   [task_013__local__caddy_https_acme_and_save_certs](home/containers/docker_compose/taskset_docker_compose_containers/task_013__local__caddy_https_acme_and_save_certs) |
+| task_014 |   [task_014__local__reverse_proxy_nginx_home_using_caddy](home/containers/docker_compose/taskset_docker_compose_containers/task_014__local__reverse_proxy_nginx_home_using_caddy) |
+| task_015 |   [task_015__local__mem_and_cpu_limit_nginx_container](home/containers/docker_compose/taskset_docker_compose_containers/task_015__local__mem_and_cpu_limit_nginx_container) |
 
