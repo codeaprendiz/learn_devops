@@ -65,7 +65,9 @@ function createIndividualSectionsMarkdown($tree)
     foreach ($tree as $key => $value) {
         $markdown = '';
         preg_match('/home\/.*?(?=\/task_)/', $value[0], $matches); // home\/: This looks for the characters "home/" in the string. The backslash \ before the / is an escape character, because / is a special character in regex. .*?: The dot . matches any character except a newline. The * means "match zero or more of the preceding element". The ? after * makes the * "lazy", meaning it matches as few characters as possible. Without ?, * is "greedy" and matches as many characters as possible.   (?=\/task_): This is a positive lookahead. It checks that the characters "/task_" follow the match, but it doesn't include these characters in the match. So, overall, this regex starts matching at "home/", then matches as few characters as possible until it encounters "/task_", which it checks for but doesn't include in the match. A positive lookahead in regular expressions is a type of lookahead assertion that ensures certain characters exist after the current match point, without including those characters in the match itself. Here's the general syntax: (?=...), where the ellipsis is replaced with the pattern you're looking for. For example, in the regular expression John(?= Smith), (?= Smith) is a positive lookahead. This regular expression will match the string "John" only if it's followed by " Smith". However, " Smith" is not part of the overall regex match.
-        $readMeFileDir = $matches[0];  // 'home/containers/kubernetes/concepts'
+        $readMeFileDir = $matches[0];  // home/observability/metrics/taskset_metrics_observability
+        // trim the content after last '/' from the directory path
+        $readMeFileDir = substr($readMeFileDir, 0, strrpos($readMeFileDir, '/')); // home/observability/metrics
         $markdown .= "## $key\n\n";
         $markdown .= "| Task | Description |\n";
         $markdown .= "| --- | --- |\n";
