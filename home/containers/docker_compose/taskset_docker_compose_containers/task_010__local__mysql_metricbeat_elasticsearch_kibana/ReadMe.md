@@ -207,7 +207,7 @@ Attaching to metricbeat-mysql, es01, metricbeat-metricbeat-services, kibana-sand
 
 - Dashboard images
 
-![](../../../images/docker-compose-kitchen/task-010-mysql-metricbeat-elasticsearch-kibana/mysql_local.png)
+![img](./.images/mysql_local.png)
 
 
 
