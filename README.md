@@ -1,14 +1,28 @@
 # Home 
 
+- [Cloud Certifications](#Cloud Certifications)
+- [Cloud Providers](#Cloud Providers)
+- [Containers](#Containers)
+- [Databases](#Databases)
+- [Devops Blogs](#Devops Blogs)
+- [Images](#Images)
+- [Infrastructure As Code](#Infrastructure As Code)
+- [Interview](#Interview)
+- [Observability](#Observability)
+- [OS And Concepts](#OS And Concepts)
+- [Productivity Tools](#Productivity Tools)
+- [Version Control](#Version Control)
+- [Web Servers](#Web Servers)
+
 ## Cloud Certifications
 
-| Aws                                                                              |
+| AWS                                                                              |
 |----------------------------------------------------------------------------------|
 | [Practice Tasks](home/cloud_certifications/aws/taskset_aws_cloud_certifications) |
 
 ## Cloud Providers
 
-| Aws                                                                    | Gcp                                                                    | Oci                                                                    |
+| AWS                                                                    | GCP                                                                    | OCI                                                                    |
 |------------------------------------------------------------------------|------------------------------------------------------------------------|------------------------------------------------------------------------|
 | [Practice Tasks](home/cloud_providers/aws/taskset_aws_cloud_providers) | [Practice Tasks](home/cloud_providers/gcp/taskset_gcp_cloud_providers) | [Practice Tasks](home/cloud_providers/oci/taskset_oci_cloud_providers) |
 
@@ -26,7 +40,7 @@
 
 ## Infrastructure As Code
 
-| Ansible                                                                                      | Aws                                                                                                      | Gcp                                                                                                      | Oci                                                                                                      |
+| Ansible                                                                                      | AWS                                                                                                      | GCP                                                                                                      | OCI                                                                                                      |
 |----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
 | [Practice Tasks](home/infrastructure_as_code/ansible/taskset_ansible_infrastructure_as_code) | [Practice Tasks](home/infrastructure_as_code/terraform/aws/taskset_aws_terraform_infrastructure_as_code) | [Practice Tasks](home/infrastructure_as_code/terraform/gcp/taskset_gcp_terraform_infrastructure_as_code) | [Practice Tasks](home/infrastructure_as_code/terraform/oci/taskset_oci_terraform_infrastructure_as_code) |
 
@@ -42,7 +56,7 @@
 |----------------------------------------------------------------------------|
 | [Practice Tasks](home/observability/metrics/taskset_metrics_observability) |
 
-## Os And Concepts
+## OS And Concepts
 
 | Commands                                                                         |
 |----------------------------------------------------------------------------------|

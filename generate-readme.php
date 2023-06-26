@@ -107,6 +107,9 @@ Function to create markdown in following format
 */
 
 function createGlobalMarkdownTable($tree) {
+
+    $markdown = "# Home \n\n";
+
     // ls -ltrh home | egrep -v "total" | awk '{print "\"" $9 "\","}' | sort
     $topics = array(
         "cloud_certifications",
@@ -123,16 +126,16 @@ function createGlobalMarkdownTable($tree) {
         "version_control",
         "web_servers",
     );
-    // get all keys in tree array
-    $tree_keys = array_keys($tree);
-    // print_r($tree_keys);
-    // group the keys based on $topics array values
-
-    $concatenatedString = implode(' ', $tree_keys);
-    $substring = '_cloud_providers';
-    // iterate through $topics array and count the number of times each topic appears in $concatenatedString
     
-    $markdown = "# Home \n\n";
+    // for every value in topics array, print - [value](#value)
+    foreach ($topics as $topic) {
+        $view_text=$topic;
+        $topic = str_replace('_', ' ', $topic);
+        $topic = ucwords($topic);
+        $markdown .= "- [$topic](#$topic)\n";
+    }
+
+    $markdown .= "\n";
     
     foreach ($topics as $topic) {
         $matchingKeys = array_filter(
@@ -175,6 +178,12 @@ function createGlobalMarkdownTable($tree) {
         }
 
         $markdown .= "\n\n";
+
+        // All caps certain words in markdown like AWS, GCP, OS etc
+        $markdown = str_replace('Aws', 'AWS', $markdown);
+        $markdown = str_replace('Oci', 'OCI', $markdown);
+        $markdown = str_replace('Gcp', 'GCP', $markdown);
+        $markdown = str_replace('Os', 'OS', $markdown);
 
 
     }
