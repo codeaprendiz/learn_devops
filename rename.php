@@ -81,7 +81,7 @@ function createMarkdown($tree)
         $markdown .= "| --- | --- |\n";
         foreach ($value as $task) {
             // Get the task number i.e. task-001 from the task name i.e. task-001-aws-certified-solutions-architect-professional
-            $taskNumber = substr($task, strpos($task, 'task-'), 11);
+            $taskNumber = substr($task, strpos($task, 'task_'), 8);
             // remove the '-' from the task number
             $taskNumber = str_replace('-', '', $taskNumber);
             $task = str_replace('-', ' ', $task);
