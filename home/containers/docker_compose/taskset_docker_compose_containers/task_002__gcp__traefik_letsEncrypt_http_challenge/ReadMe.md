@@ -5,13 +5,11 @@ Steps
 
 - Create a VM on any cloud provider (like google cloud)
 
-![](../../../images/docker-compose-kitchen/task-001-traefik-letsEncrypt-tls-challenge/vm-created-gc.png)
-
 - Install docker-compose
 
 - Create a DNS record like [here](https://www.noip.com/) and assing it to the public ip of the VM created.
 
-![](../../../images/docker-compose-kitchen/task-002-traefik-letsEncrypt-http-challenge/dns-record-created.png)
+![img](./.images/dns-record-created.png)
 
 
 - Following is the `docker-compose.yaml`
@@ -118,7 +116,7 @@ acme.json
 
 - Now visit the domain to check if certificate is being generated
 
-![](../../../images/docker-compose-kitchen/task-002-traefik-letsEncrypt-http-challenge/browser-validation-of-cert.png)
+![img](./.images/browser-validation-of-cert.png)
 
 
 - Now even if you remove the letsEncrypt/acme.json, it will get fetched again
