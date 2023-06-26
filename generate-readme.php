@@ -81,7 +81,9 @@ function createIndividualSectionsMarkdown($tree)
             $columnLink=explode(' ', $task); // $task = task_007_show_grants_user home/databases/mysql/taskset_mysql_databases/task_007_show_grants_userArray; columnLink = Array ( [0] => task_007_show_grants_user [1] => home/databases/mysql/taskset_mysql_databases/task_007_show_grants_user )
             $columnText=$columnLink[0]; // $columnText = task_007_show_grants_user
             $columnLink = explode('/', $columnLink[1]); // $columnLink = Array ( [0] => home [1] => databases [2] => mysql [3] => taskset_mysql_databases [4] => task_007_show_grants_user
-            $columnLink=end($columnLink); // $columnLink = task_007_show_grants_user
+            $lastElement=end($columnLink); // $lastElement = task_007_show_grants_user
+            $secondLastElement = $columnLink[count($columnLink) - 2]; // $secondLastElement = taskset_mysql_databases
+            $columnLink = "$secondLastElement/$lastElement"; // $columnLink = "taskset_mysql_databases/task_007_show_grants_user    
             $markdown .= "| $taskNumber | [$columnText]($columnLink) |\n";
         }
         $markdown .= "\n";
