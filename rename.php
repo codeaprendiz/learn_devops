@@ -58,19 +58,7 @@ function createTree_v1($directoryPath = './', $directoryRegex = '/^task_/')
 }
 
 
-// Function to create markdown in following format
-// ## Cloud Providers
-//
-// | AWS | OCI | GCP |
-// | --- | --- | --- |
-// | [Certification Digest](home/cloud-providers/aws/certifications-digest)<br> [Practice Tasks](home/cloud-providers/aws/practice-tasks) | [Practice Tasks](home/cloud-providers/oci/practice-tasks) | [Practice Tasks](home/cloud-providers/gcp/taskset) |
-//  When the  tree[][] contains
-//     [taskset_aws_cloud_providers] => Array
-//         (
-//             [0] => - [task_001_kms](home/cloud_providers/aws/taskset_aws_cloud_providers/task_001_kms)
-//             [1] => - [task_002_monitoring_msk](home/cloud_providers/aws/taskset_aws_cloud_providers/task_002_monitoring_msk)
-//             [2] => - [task_003_redirection_using_s3_cloudfront](home/cloud_providers/aws/taskset_aws_cloud_providers/task_003_redirection_using_s3_cloudfront)
-//         )
+
 
 function createIndividualSectionsMarkdown($tree)
 {
@@ -102,16 +90,77 @@ function createIndividualSectionsMarkdown($tree)
 }
 
 
+// Function to create markdown in following format
+// ## Cloud Providers
+//
+// | AWS | OCI | GCP |
+// | --- | --- | --- |
+// | [Certification Digest](home/cloud-providers/aws/certifications-digest)<br> [Practice Tasks](home/cloud-providers/aws/practice-tasks) | [Practice Tasks](home/cloud-providers/oci/practice-tasks) | [Practice Tasks](home/cloud-providers/gcp/taskset) |
+//  When the  tree[][] contains
+//     [taskset_aws_cloud_providers] => Array
+//         (
+//             [0] => - [task_001_kms](home/cloud_providers/aws/taskset_aws_cloud_providers/task_001_kms)
+//             [1] => - [task_002_monitoring_msk](home/cloud_providers/aws/taskset_aws_cloud_providers/task_002_monitoring_msk)
+//             [2] => - [task_003_redirection_using_s3_cloudfront](home/cloud_providers/aws/taskset_aws_cloud_providers/task_003_redirection_using_s3_cloudfront)
+//         )
+
+function createGlobalMarkdownTable($tree) {
+    // ls -ltrh home | egrep -v "total" | awk '{print "\"" $9 "\","}'
+    $topics = array(
+        "cloud_providers",
+        "devops_blogs",
+        "observability",
+        "web_servers",
+        "cloud_certifications",
+        "containers",
+        "databases",
+        "os_and_concepts",
+        "infrastructure_as_code",
+        "interview",
+        "productivity_tools",
+        "version_control",
+    );
+    // get all keys in tree array
+    $tree_keys = array_keys($tree);
+    print_r($tree_keys);
+    // group the keys based on $topics array values
+
+    $concatenatedString = implode(' ', $tree_keys);
+    $substring = '_cloud_providers';
+    // iterate through $topics array and count the number of times each topic appears in $concatenatedString
+    
+    $markdown = '';
+    
+    foreach ($topics as $topic) {
+        $count = substr_count($concatenatedString, $topic);
+        echo $topic . $count . "\n"; 
+        $matchingKeys = array_filter(
+            array_keys($tree),
+            function ($key) use ($topic) {
+                return strpos($key, $topic) !== false;
+            }
+        );
+        print_r($matchingKeys);
+        $markdown .= "## $topic\n\n";
+        $markdown .= "| Task | Description |\n";
+        $markdown .= "| --- | --- |\n";
+    }
+
+
+
+}
+
+
 
 // Usage
 $tree = createTree_v1('.', '/^task_/'); // if first call is for ".", second call is for "./home" and so on as the function is recursive
 
 // print_r($tree);
 
-$markdown = createIndividualSectionsMarkdown($tree);
+createIndividualSectionsMarkdown($tree);
 
+createGlobalMarkdownTable($tree);
 // Put markdown in README-test.md file
-file_put_contents('README-test.md', $markdown);
 
 
 ?>
