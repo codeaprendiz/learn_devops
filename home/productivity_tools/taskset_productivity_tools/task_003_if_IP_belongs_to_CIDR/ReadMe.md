@@ -2,7 +2,7 @@ To check if the IP address belongs to given CIDR range
 
 [Link](https://tehnoblog.org/ip-tools/ip-address-in-cidr-range/)
 
-![](../../images/tools/task-003-if-IP-belongs-to-CIDR/if_ip_in_CIDR.png)
+![img](./.images/if_ip_in_CIDR.png)
 
 
 
