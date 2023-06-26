@@ -1,68 +1,68 @@
 # Home 
 
-## cloud_providers
+## Cloud Certifications
 
-| aws                                                             | gcp                                                             | oci                                                             |
-|-----------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------|
-| [taskset](home/cloud_providers/aws/taskset_aws_cloud_providers) | [taskset](home/cloud_providers/gcp/taskset_gcp_cloud_providers) | [taskset](home/cloud_providers/oci/taskset_oci_cloud_providers) |
+| Aws                                                                              |
+|----------------------------------------------------------------------------------|
+| [Practice Tasks](home/cloud_certifications/aws/taskset_aws_cloud_certifications) |
 
-## observability
+## Cloud Providers
 
-| metrics                                                             |
-|---------------------------------------------------------------------|
-| [taskset](home/observability/metrics/taskset_metrics_observability) |
+| Aws                                                                    | Gcp                                                                    | Oci                                                                    |
+|------------------------------------------------------------------------|------------------------------------------------------------------------|------------------------------------------------------------------------|
+| [Practice Tasks](home/cloud_providers/aws/taskset_aws_cloud_providers) | [Practice Tasks](home/cloud_providers/gcp/taskset_gcp_cloud_providers) | [Practice Tasks](home/cloud_providers/oci/taskset_oci_cloud_providers) |
 
-## web_servers
+## Containers
 
-| nginx                                                       |
-|-------------------------------------------------------------|
-| [taskset](home/web_servers/nginx/taskset_nginx_web_servers) |
+| Docker                                                             | Docker                                                                             | Kubernetes                                                                |
+|--------------------------------------------------------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| [Practice Tasks](home/containers/docker/taskset_docker_containers) | [Practice Tasks](home/containers/docker_compose/taskset_docker_compose_containers) | [Practice Tasks](home/containers/kubernetes/tasket_kubernetes_containers) |
 
-## cloud_certifications
+## Databases
 
-| aws                                                                       |
-|---------------------------------------------------------------------------|
-| [taskset](home/cloud_certifications/aws/taskset_aws_cloud_certifications) |
+| Mongo                                                          | Mysql                                                          | Oracle19c                                                              | PostgreSQL                                                               |
+|----------------------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| [Practice Tasks](home/databases/mongo/taskset_mongo_databases) | [Practice Tasks](home/databases/mysql/taskset_mysql_databases) | [Practice Tasks](home/databases/oracle19c/taskset_oracle19c_databases) | [Practice Tasks](home/databases/postgreSQL/taskset_postgreSQL_databases) |
 
-## containers
+## Infrastructure As Code
 
-| docker                                                      | docker                                                                      | kubernetes                                                         |
-|-------------------------------------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------|
-| [taskset](home/containers/docker/taskset_docker_containers) | [taskset](home/containers/docker_compose/taskset_docker_compose_containers) | [taskset](home/containers/kubernetes/tasket_kubernetes_containers) |
+| Ansible                                                                                      | Aws                                                                                                      | Gcp                                                                                                      | Oci                                                                                                      |
+|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| [Practice Tasks](home/infrastructure_as_code/ansible/taskset_ansible_infrastructure_as_code) | [Practice Tasks](home/infrastructure_as_code/terraform/aws/taskset_aws_terraform_infrastructure_as_code) | [Practice Tasks](home/infrastructure_as_code/terraform/gcp/taskset_gcp_terraform_infrastructure_as_code) | [Practice Tasks](home/infrastructure_as_code/terraform/oci/taskset_oci_terraform_infrastructure_as_code) |
 
-## databases
+## Interview
 
-| mongo                                                   | mysql                                                   | oracle19c                                                       | postgreSQL                                                        |
-|---------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------------------|-------------------------------------------------------------------|
-| [taskset](home/databases/mongo/taskset_mongo_databases) | [taskset](home/databases/mysql/taskset_mysql_databases) | [taskset](home/databases/oracle19c/taskset_oracle19c_databases) | [taskset](home/databases/postgreSQL/taskset_postgreSQL_databases) |
+| Coding                                                                                   |
+|------------------------------------------------------------------------------------------|
+| [Practice Tasks](home/interview/coding_assignments/taskset_coding_assignments_interview) |
 
-## os_and_concepts
+## Observability
 
-| commands                                                                  |
-|---------------------------------------------------------------------------|
-| [taskset](home/os_and_concepts/commands/taskset_commands_os_and_concepts) |
+| Metrics                                                                    |
+|----------------------------------------------------------------------------|
+| [Practice Tasks](home/observability/metrics/taskset_metrics_observability) |
 
-## infrastructure_as_code
+## Os And Concepts
 
-| ansible                                                                               | aws                                                                                               | gcp                                                                                               | oci                                                                                               |
-|---------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| [taskset](home/infrastructure_as_code/ansible/taskset_ansible_infrastructure_as_code) | [taskset](home/infrastructure_as_code/terraform/aws/taskset_aws_terraform_infrastructure_as_code) | [taskset](home/infrastructure_as_code/terraform/gcp/taskset_gcp_terraform_infrastructure_as_code) | [taskset](home/infrastructure_as_code/terraform/oci/taskset_oci_terraform_infrastructure_as_code) |
+| Commands                                                                         |
+|----------------------------------------------------------------------------------|
+| [Practice Tasks](home/os_and_concepts/commands/taskset_commands_os_and_concepts) |
 
-## interview
+## Productivity Tools
 
-| coding                                                                            |
-|-----------------------------------------------------------------------------------|
-| [taskset](home/interview/coding_assignments/taskset_coding_assignments_interview) |
+| Productivity                                                         |
+|----------------------------------------------------------------------|
+| [Practice Tasks](home/productivity_tools/taskset_productivity_tools) |
 
-## productivity_tools
+## Version Control
 
-| productivity                                                  |
-|---------------------------------------------------------------|
-| [taskset](home/productivity_tools/taskset_productivity_tools) |
+| Git                                                                    |
+|------------------------------------------------------------------------|
+| [Practice Tasks](home/version_control/git/taskset_git_version_control) |
 
-## version_control
+## Web Servers
 
-| git                                                             |
-|-----------------------------------------------------------------|
-| [taskset](home/version_control/git/taskset_git_version_control) |
+| Nginx                                                              |
+|--------------------------------------------------------------------|
+| [Practice Tasks](home/web_servers/nginx/taskset_nginx_web_servers) |
 

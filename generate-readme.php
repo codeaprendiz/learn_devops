@@ -107,20 +107,21 @@ Function to create markdown in following format
 */
 
 function createGlobalMarkdownTable($tree) {
-    // ls -ltrh home | egrep -v "total" | awk '{print "\"" $9 "\","}'
+    // ls -ltrh home | egrep -v "total" | awk '{print "\"" $9 "\","}' | sort
     $topics = array(
-        "cloud_providers",
-        "devops_blogs",
-        "observability",
-        "web_servers",
         "cloud_certifications",
+        "cloud_providers",
         "containers",
         "databases",
-        "os_and_concepts",
+        "devops_blogs",
+        "images",
         "infrastructure_as_code",
         "interview",
+        "observability",
+        "os_and_concepts",
         "productivity_tools",
         "version_control",
+        "web_servers",
     );
     // get all keys in tree array
     $tree_keys = array_keys($tree);
@@ -147,12 +148,16 @@ function createGlobalMarkdownTable($tree) {
         }
 
         // print_r($matchingKeys);
+        // replace _ with space and capitalize the first letter of each word
+        $topic = str_replace('_', ' ', $topic);
+        $topic = ucwords($topic);
         $markdown .= "## $topic\n\n";
 
         $markdown .= "|";
         foreach ($matchingKeys as $matchingKey) {
-            // explode with _ and get the 2nd element
+            // explode with _ and get the 2nd element, capitalize the first letter and append to markdown
             $matchingKey = explode('_', $matchingKey)[1];
+            $matchingKey = ucwords($matchingKey);
             $markdown .= " $matchingKey |";
         }
         $markdown .= "\n";
@@ -166,7 +171,7 @@ function createGlobalMarkdownTable($tree) {
         foreach ($matchingKeys as $matchingKey) {
             preg_match('/home\/.*?(?=\/task_)/', $tree[$matchingKey][0], $matches); // home\/: This looks for the characters "home/" in the string. The backslash \ before the / is an escape character, because / is a special character in regex. .*?: The dot . matches any character except a newline. The * means "match zero or more of the preceding element". The ? after * makes the * "lazy", meaning it matches as few characters as possible. Without ?, * is "greedy" and matches as many characters as possible.   (?=\/task_): This is a positive lookahead. It checks that the characters "/task_" follow the match, but it doesn't include these characters in the match. So, overall, this regex starts matching at "home/", then matches as few characters as possible until it encounters "/task_", which it checks for but doesn't include in the match. A positive lookahead in regular expressions is a type of lookahead assertion that ensures certain characters exist after the current match point, without including those characters in the match itself. Here's the general syntax: (?=...), where the ellipsis is replaced with the pattern you're looking for. For example, in the regular expression John(?= Smith), (?= Smith) is a positive lookahead. This regular expression will match the string "John" only if it's followed by " Smith". However, " Smith" is not part of the overall regex match.
             $table_data = $matches[0]; // home/observability/metrics/taskset_metrics_observability
-            $markdown .= " [taskset]($table_data) |";
+            $markdown .= " [Practice Tasks]($table_data) |";
         }
 
         $markdown .= "\n\n";
