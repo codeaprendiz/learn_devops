@@ -275,7 +275,7 @@ Creating alertmanager-sandbox ... done
 
 - Check the [http://localhost:9090/alerts](http://localhost:9090/alerts)
 
-![](../../images/task-007-prometheus-blackboxexporter-alertmanager/alerts-page.png)
+![](![img](./.images/alerts-page.png)
 
 
 - Wait for 1 min and check if the Alerts move to Pending state. After this wait for 1 mins and check if the
@@ -285,9 +285,9 @@ alert moves to Firing state.
 - You can also access the [http://localhost:9093/#/alerts](http://localhost:9093/#/alerts) and check the 
 alerts (after they moved to firing state)
 
-![](../../../images/docker-compose-kitchen/task-007-prometheus-blackboxexporter-alertmanager/alertmanager.png)
+![img](./.images/alertmanager.png)
 
 - Now you should receive a slack notification as shown below
 
-![](../../../images/docker-compose-kitchen/task-007-prometheus-blackboxexporter-alertmanager/slack-alert-snapshot.png)
+![img](./.images/slack-alert-snapshot.png)
 
