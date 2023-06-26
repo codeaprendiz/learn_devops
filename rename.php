@@ -122,31 +122,55 @@ function createGlobalMarkdownTable($tree) {
     );
     // get all keys in tree array
     $tree_keys = array_keys($tree);
-    print_r($tree_keys);
+    // print_r($tree_keys);
     // group the keys based on $topics array values
 
     $concatenatedString = implode(' ', $tree_keys);
     $substring = '_cloud_providers';
     // iterate through $topics array and count the number of times each topic appears in $concatenatedString
     
-    $markdown = '';
+    $markdown = '# Home \n\n';
     
     foreach ($topics as $topic) {
-        $count = substr_count($concatenatedString, $topic);
-        echo $topic . $count . "\n"; 
         $matchingKeys = array_filter(
             array_keys($tree),
             function ($key) use ($topic) {
                 return strpos($key, $topic) !== false;
             }
         );
-        print_r($matchingKeys);
+
+        // if matchingKeys is empty, continue to next iteration
+        if (empty($matchingKeys)) {
+            continue;
+        }
+
+        // print_r($matchingKeys);
         $markdown .= "## $topic\n\n";
-        $markdown .= "| Task | Description |\n";
-        $markdown .= "| --- | --- |\n";
+
+        $markdown .= "|";
+        foreach ($matchingKeys as $matchingKey) {
+            $markdown .= " $matchingKey |";
+        }
+        $markdown .= "\n";
+        $markdown .= "|";
+        foreach ($matchingKeys as $matchingKey) {
+            $markdown .= " --- |";
+        }
+
+        $markdown .= "\n";
+        $markdown .= "|";
+        foreach ($matchingKeys as $matchingKey) {
+            preg_match('/home\/.*?(?=\/task_)/', $tree[$matchingKey][0], $matches); // home\/: This looks for the characters "home/" in the string. The backslash \ before the / is an escape character, because / is a special character in regex. .*?: The dot . matches any character except a newline. The * means "match zero or more of the preceding element". The ? after * makes the * "lazy", meaning it matches as few characters as possible. Without ?, * is "greedy" and matches as many characters as possible.   (?=\/task_): This is a positive lookahead. It checks that the characters "/task_" follow the match, but it doesn't include these characters in the match. So, overall, this regex starts matching at "home/", then matches as few characters as possible until it encounters "/task_", which it checks for but doesn't include in the match. A positive lookahead in regular expressions is a type of lookahead assertion that ensures certain characters exist after the current match point, without including those characters in the match itself. Here's the general syntax: (?=...), where the ellipsis is replaced with the pattern you're looking for. For example, in the regular expression John(?= Smith), (?= Smith) is a positive lookahead. This regular expression will match the string "John" only if it's followed by " Smith". However, " Smith" is not part of the overall regex match.
+            $table_data = $matches[0]; // home/observability/metrics/taskset_metrics_observability
+            $markdown .= " [$matchingKey]($table_data) |";
+        }
+
+        $markdown .= "\n\n";
+
+
     }
 
-
+    return $markdown;
 
 }
 
@@ -159,8 +183,9 @@ $tree = createTree_v1('.', '/^task_/'); // if first call is for ".", second call
 
 createIndividualSectionsMarkdown($tree);
 
-createGlobalMarkdownTable($tree);
+$markdown=createGlobalMarkdownTable($tree);
 // Put markdown in README-test.md file
+file_put_contents('ReadMe.md', $markdown);
 
 
 ?>
