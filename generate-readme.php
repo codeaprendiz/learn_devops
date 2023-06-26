@@ -132,6 +132,7 @@ function createGlobalMarkdownTable($tree) {
         $view_text=$topic;
         $view_text = str_replace('_', ' ', $view_text);
         $view_text = ucwords($view_text);
+        $topic = ucwords($topic);
         $markdown .= "- [$view_text](#$topic)\n";
     }
 
@@ -152,16 +153,15 @@ function createGlobalMarkdownTable($tree) {
 
         // print_r($matchingKeys);
         // replace _ with space and capitalize the first letter of each word
-        $topic = str_replace('_', ' ', $topic);
         $topic = ucwords($topic);
         $markdown .= "## $topic\n\n";
 
         $markdown .= "|";
         foreach ($matchingKeys as $matchingKey) {
             // explode with _ and get the 2nd element, capitalize the first letter and append to markdown
-            $matchingKey = explode('_', $matchingKey)[1];
-            $matchingKey = ucwords($matchingKey);
-            $markdown .= " $matchingKey |";
+            $tableHeader = explode('_', $matchingKey)[1];
+            $tableHeader = ucwords($tableHeader);
+            $markdown .= " $tableHeader |";
         }
         $markdown .= "\n";
         $markdown .= "|";

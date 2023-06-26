@@ -1,26 +1,26 @@
 # Home 
 
-- [Cloud Certifications](#cloud_certifications)
-- [Cloud Providers](#cloud_providers)
-- [Containers](#containers)
-- [Databases](#databases)
-- [Devops Blogs](#devops_blogs)
-- [Images](#images)
-- [Infrastructure As Code](#infrastructure_as_code)
-- [Interview](#interview)
-- [Observability](#observability)
-- [OS And Concepts](#os_and_concepts)
-- [Productivity Tools](#productivity_tools)
-- [Version Control](#version_control)
-- [Web Servers](#web_servers)
+- [Cloud Certifications](#Cloud_certifications)
+- [Cloud Providers](#Cloud_providers)
+- [Containers](#Containers)
+- [Databases](#Databases)
+- [Devops Blogs](#Devops_blogs)
+- [Images](#Images)
+- [Infrastructure As Code](#Infrastructure_as_code)
+- [Interview](#Interview)
+- [Observability](#Observability)
+- [OS And Concepts](#OS_and_concepts)
+- [Productivity Tools](#Productivity_tools)
+- [Version Control](#Version_control)
+- [Web Servers](#Web_servers)
 
-## Cloud Certifications
+## Cloud_certifications
 
 | AWS                                                                              |
 |----------------------------------------------------------------------------------|
 | [Practice Tasks](home/cloud_certifications/aws/taskset_aws_cloud_certifications) |
 
-## Cloud Providers
+## Cloud_providers
 
 | AWS                                                                    | GCP                                                                    | OCI                                                                    |
 |------------------------------------------------------------------------|------------------------------------------------------------------------|------------------------------------------------------------------------|
@@ -38,7 +38,7 @@
 |----------------------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------|
 | [Practice Tasks](home/databases/mongo/taskset_mongo_databases) | [Practice Tasks](home/databases/mysql/taskset_mysql_databases) | [Practice Tasks](home/databases/oracle19c/taskset_oracle19c_databases) | [Practice Tasks](home/databases/postgreSQL/taskset_postgreSQL_databases) |
 
-## Infrastructure As Code
+## Infrastructure_as_code
 
 | Ansible                                                                                      | AWS                                                                                                      | GCP                                                                                                      | OCI                                                                                                      |
 |----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
@@ -56,25 +56,25 @@
 |----------------------------------------------------------------------------|
 | [Practice Tasks](home/observability/metrics/taskset_metrics_observability) |
 
-## OS And Concepts
+## OS_and_concepts
 
 | Commands                                                                         |
 |----------------------------------------------------------------------------------|
 | [Practice Tasks](home/os_and_concepts/commands/taskset_commands_os_and_concepts) |
 
-## Productivity Tools
+## Productivity_tools
 
 | Productivity                                                         |
 |----------------------------------------------------------------------|
 | [Practice Tasks](home/productivity_tools/taskset_productivity_tools) |
 
-## Version Control
+## Version_control
 
 | Git                                                                    |
 |------------------------------------------------------------------------|
 | [Practice Tasks](home/version_control/git/taskset_git_version_control) |
 
-## Web Servers
+## Web_servers
 
 | Nginx                                                              |
 |--------------------------------------------------------------------|
