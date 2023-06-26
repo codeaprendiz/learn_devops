@@ -280,8 +280,8 @@ Attaching to es01, task-009-natsstreaming-metricbeat-elasticsearch-kibana_nats-s
 
 - Dashboard images
 
-![](../../../images/docker-compose-kitchen/task-009-natsStreaming-metricbeat-elasticsearch-kibana/nats_streaming_local_part1.png)
+![img](./.images/nats_streaming_local_part1.png)
 
-![](../../../images/docker-compose-kitchen/task-009-natsStreaming-metricbeat-elasticsearch-kibana/nats_streaming_local_part2.png)
+![img](./.images/nats_streaming_local_part2.png)
 
 
