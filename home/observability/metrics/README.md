@@ -1,12 +1,8 @@
-# monitoring-kitchen
+## taskset_metrics_observability
 
-## Host
-[host - kibana, elasticsearch, metricbeat](task-001-host)
-
-## System
-[system - kibana, elasticsearch, metricbeat](task-002-system)
-
-
-## Kubernetes
-[kubernetes - kibana, elasticsearch, metricbeat](task-003-kubernetes)
+| Task     | Description                                |
+|----------|--------------------------------------------|
+| task_001 | [task_001_host](task_001_host)             |
+| task_002 | [task_002_system](task_002_system)         |
+| task_003 | [task_003_kubernetes](task_003_kubernetes) |
 

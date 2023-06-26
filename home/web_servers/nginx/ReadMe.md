@@ -1,10 +1,9 @@
-### Learning Nginx The Docker Way
+## taskset_nginx_web_servers
 
-- [running-nginx](task-001-running-nginx/running-nginx.md)
-- [Learn nginx conf.d and html directories](task-003-nginx-conf/ReadMe.md)
-- [Returning different status code in nginx for different endpoints](task-004-return-different-http-codes)
+| Task     | Description                                                                            |
+|----------|----------------------------------------------------------------------------------------|
+| task_001 | [task_001_running_nginx](task_001_running_nginx)                                       |
+| task_002 | [task_002_nginx_docker_compose_hello_world](task_002_nginx_docker_compose_hello_world) |
+| task_003 | [task_003_nginx_conf](task_003_nginx_conf)                                             |
+| task_004 | [task_004_return_different_http_codes](task_004_return_different_http_codes)           |
 
-
-### Learning Nginx The Docker-Compose Way
-
-- [task-002-nginx-docker-compose-hello-world](task-002-nginx-docker-compose-hello-world/nginx-docker-compose-hello-world.md)

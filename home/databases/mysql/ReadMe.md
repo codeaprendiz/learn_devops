@@ -1,8 +1,12 @@
+## taskset_mysql_databases
 
-- [connecting-to-db](task-001-connecting-to-db)
-- [mysqldump](task-002-mysqldump)
-- [user-specific-operations](task-003-create-user)
-- [show-databases](task-004-show-databases)
-- [readonly access to user](task-005-grant-readonly-access)
-- [alter user reset password](task-006-alter-user-reset-password)
-- [show grants of user](task-007-show-grants-user)
+| Task     | Description                                                              |
+|----------|--------------------------------------------------------------------------|
+| task_001 | [task_001_connecting_to_db](task_001_connecting_to_db)                   |
+| task_002 | [task_002_mysqldump](task_002_mysqldump)                                 |
+| task_003 | [task_003_create_user](task_003_create_user)                             |
+| task_004 | [task_004_show_databases](task_004_show_databases)                       |
+| task_005 | [task_005_grant_readonly_access](task_005_grant_readonly_access)         |
+| task_006 | [task_006_alter_user_reset_password](task_006_alter_user_reset_password) |
+| task_007 | [task_007_show_grants_user](task_007_show_grants_user)                   |
+

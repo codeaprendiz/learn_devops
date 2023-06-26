@@ -1,27 +1,15 @@
-# ansible-kitchen
+## taskset_ansible_infrastructure_as_code
 
-- To install `ansible` on ubuntu you can run the following
-```bash
-./install-ansible.sh
-```
+| Task     | Description                                                                      |
+|----------|----------------------------------------------------------------------------------|
+| task_001 | [task_001_commons](task_001_commons)                                             |
+| task_002 | [task_002_datadog_agent](task_002_datadog_agent)                                 |
+| task_003 | [task_003_user](task_003_user)                                                   |
+| task_004 | [task_004_directory](task_004_directory)                                         |
+| task_005 | [task_005_docker](task_005_docker)                                               |
+| task_005 | [task_005_drone_ci](task_005_drone_ci)                                           |
+| task_006 | [task_006_elastic_search_cluster_docker](task_006_elastic_search_cluster_docker) |
+| task_007 | [task_007_jenkins_docker](task_007_jenkins_docker)                               |
+| task_008 | [task_008_kibana_docker](task_008_kibana_docker)                                 |
+| task_009 | [task_009_monit](task_009_monit)                                                 |
 
-- [task-000-commands](task-000-commands)
-- playbooks-roles
-    - [commons](playbooks/roles/commons)
-    - [datadog-agent](playbooks/roles/datadog-agent)
-    - [directory](playbooks/roles/directory)
-    - [docker](playbooks/roles/docker)
-    - [drone-ci](playbooks/roles/drone-ci)
-    - [elastic-search-cluster-docker](playbooks/roles/elastic-search-cluster-docker)
-    - [jenkins-docker](playbooks/roles/jenkins-docker)
-    - [kibana-docker](playbooks/roles/kibana-docker)
-    - [monit](playbooks/roles/monit)
-    - [user-creation](playbooks/roles/user)
-    
-
-
-- Links to Usage of ansible modules in playbooks and official docs
-  - [action]()
-  - [sysctl](playbooks/roles/elastic-search-cluster-docker/tasks/install-docker-elastic-search-cluster.yml#L03) 
-
-    

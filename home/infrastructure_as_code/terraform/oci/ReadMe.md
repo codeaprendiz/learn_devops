@@ -1,19 +1,9 @@
-## Task List
+## taskset_oci_terraform_infrastructure_as_code
 
-- [Initialization](task-000-initialization-setup)
-- [Create a compartment](task-001-create-a-compartment)
-- [Create VCN with public and private subnet](task-002-create-vcn)
-- [Create a compute instance in public subnet and login](task-003-create-instance)
+| Task     | Description                                                    |
+|----------|----------------------------------------------------------------|
+| task_000 | [task_000_initialization_setup](task_000_initialization_setup) |
+| task_001 | [task_001_create_a_compartment](task_001_create_a_compartment) |
+| task_002 | [task_002_create_vcn](task_002_create_vcn)                     |
+| task_003 | [task_003_create_instance](task_003_create_instance)           |
 
-
-
-
-
-
-
-
-
-
-## Imp URLs
-
-[https://registry.terraform.io/](https://registry.terraform.io)
