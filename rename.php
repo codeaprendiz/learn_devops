@@ -80,12 +80,12 @@ function createMarkdown($tree)
         $markdown .= "| Task | Description |\n";
         $markdown .= "| --- | --- |\n";
         foreach ($value as $task) {
-            $task = str_replace('- ', '', $task);
-            $task = str_replace(']', '', $task);
-            $task = str_replace('[', '', $task);
-            $task = str_replace('(', '| [', $task);
-            $task = str_replace(')', ']', $task);
-            $markdown .= "| $task |\n";
+            // Get the task number i.e. task-001 from the task name i.e. task-001-aws-certified-solutions-architect-professional
+            $taskNumber = substr($task, strpos($task, 'task-'), 11);
+            // remove the '-' from the task number
+            $taskNumber = str_replace('-', '', $taskNumber);
+            $task = str_replace('-', ' ', $task);
+            $markdown .= "| $taskNumber | $task |\n";
         }
         $markdown .= "\n";
     }
