@@ -2,7 +2,6 @@
 
 | Task     | Description                                                                                                                                                                                 |
 |----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| task_000 | [task_000_commands](tasket_kubernetes_containers/task_000_commands)                                                                                                                         |
 | task_001 | [task_001__local__configure_default_CPU_requests_and_limits_for_a_namespace](tasket_kubernetes_containers/task_001__local__configure_default_CPU_requests_and_limits_for_a_namespace)       |
 | task_002 | [task_002__local__configure_default_memory_requests_and_limits_for_a_namespace](tasket_kubernetes_containers/task_002__local__configure_default_memory_requests_and_limits_for_a_namespace) |
 | task_003 | [task_003__local__understanding_k8s_port_forward](tasket_kubernetes_containers/task_003__local__understanding_k8s_port_forward)                                                             |

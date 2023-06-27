@@ -2,7 +2,6 @@
 
 | Task     | Description                                                                                                                                                                             |
 |----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| task_000 | [task_000_commands](taskset_aws_terraform_infrastructure_as_code/task_000_commands)                                                                                                     |
 | task_000 | [task_000_initialization_setup](taskset_aws_terraform_infrastructure_as_code/task_000_initialization_setup)                                                                             |
 | task_001 | [task_001_vars_provider_ec2_dataSources](taskset_aws_terraform_infrastructure_as_code/task_001_vars_provider_ec2_dataSources)                                                           |
 | task_002 | [task_002_defaultVPC_sbnt_sg_kp_ec2](taskset_aws_terraform_infrastructure_as_code/task_002_defaultVPC_sbnt_sg_kp_ec2)                                                                   |
