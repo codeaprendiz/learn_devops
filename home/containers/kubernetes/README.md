@@ -37,8 +37,8 @@
 | task_033 | [task_033__gcp__configuring_dns_with_static_IPs_k8_using_Service](tasket_kubernetes_containers/task_033__gcp__configuring_dns_with_static_IPs_k8_using_Service)                             |
 | task_034 | [task_034__gcp__metricbeat](tasket_kubernetes_containers/task_034__gcp__metricbeat)                                                                                                         |
 | task_035 | [task_035__gcp__journalbeat](tasket_kubernetes_containers/task_035__gcp__journalbeat)                                                                                                       |
-| task_036 | [task_036__gcp_vm__cert_manager_lets_encypt](tasket_kubernetes_containers/task_036__gcp_vm__cert_manager_lets_encypt)                                                                       |
-| task_037 | [task_037__gcp_k8s__cert_manager_lets_encypt](tasket_kubernetes_containers/task_037__gcp_k8s__cert_manager_lets_encypt)                                                                     |
+| task_036 | [task_036__gcp_vm__cert_manager_lets_encypt_http_validation](tasket_kubernetes_containers/task_036__gcp_vm__cert_manager_lets_encypt_http_validation)                                       |
+| task_037 | [task_037__gcp_k8s__cert_manager_lets_encypt_http_validation](tasket_kubernetes_containers/task_037__gcp_k8s__cert_manager_lets_encypt_http_validation)                                     |
 | task_038 | [task_038__local__learn_kind_cluster](tasket_kubernetes_containers/task_038__local__learn_kind_cluster)                                                                                     |
 | task_039 | [task_039__local__kind_kube_prometheus__grafana_alertmanager](tasket_kubernetes_containers/task_039__local__kind_kube_prometheus__grafana_alertmanager)                                     |
 | task_040 | [task_040__local__kind_kube_prometheus__grafana_alertmanager_loki](tasket_kubernetes_containers/task_040__local__kind_kube_prometheus__grafana_alertmanager_loki)                           |
