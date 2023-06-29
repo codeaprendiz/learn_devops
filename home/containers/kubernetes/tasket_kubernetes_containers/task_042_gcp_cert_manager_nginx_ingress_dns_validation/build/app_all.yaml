@@ -1,0 +1,148 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: echo
+  name: echo
+  namespace: default
+spec:
+  ports:
+  - name: high
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  - name: low
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: echo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami-service
+  namespace: default
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: whoami
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: echo
+  name: echo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: echo
+    spec:
+      containers:
+      - env:
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        image: gcr.io/kubernetes-e2e-test-images/echoserver:2.2
+        name: echo
+        ports:
+        - containerPort: 8080
+        resources: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: whoami
+  name: whoami
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: whoami
+  template:
+    metadata:
+      labels:
+        app: whoami
+    spec:
+      containers:
+      - image: containous/whoami
+        name: whoami
+        ports:
+        - containerPort: 80
+          name: web
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: echo-ingress
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: echoservice.DOMAIN_NAME
+    http:
+      paths:
+      - backend:
+          service:
+            name: echo
+            port:
+              number: 80
+        path: /echo
+        pathType: Prefix
+  tls:
+  - hosts:
+    - echoservice.DOMAIN_NAME
+    secretName: echo-service-tls
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: whoami-ingress
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: whoamiservice.DOMAIN_NAME
+    http:
+      paths:
+      - backend:
+          service:
+            name: whoami-service
+            port:
+              number: 80
+        path: /whoami
+        pathType: Prefix
+  tls:
+  - hosts:
+    - whoamiservice.DOMAIN_NAME
+    secretName: whoami-service-tls

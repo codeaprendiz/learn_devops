@@ -1,0 +1,47 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: ingress-nginx-ext
+
+resources:
+  - "namespace.yaml" # Add your own resources here
+  - ../../vendor/ingress-nginx  # Add manifests from the ingress-nginx
+
+# configmap_patch.yaml is required if you use the following depricated syntax
+# patchesStrategicMerge:
+#   - "configmap_patch.yaml"  # Over-ride the default configmap with our own
+
+patches:
+  - target:
+      kind: ConfigMap
+      name: ingress-nginx-ext-controller 
+      namespace: ingress-nginx-ext
+    patch: |-
+      # Over-ride the default configmap with our own
+      # Source: ingress-nginx/templates/controller-configmap.yaml
+      apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: ingress-nginx-ext-controller  # This should match the name of the resource being patched
+        namespace: ingress-nginx-ext
+      data:
+        # https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#access-log-params
+        # error-log-level: "debug"  # Log level for controller logs
+        # access-log-format: '{"time": "$time_iso8601", "remote_addr": "$remote_addr", "x-forwarded-for": "$proxy_add_x_forwarded_for", "request_id": "$req_id", "remote_user": "$remote_user", "bytes_sent": "$bytes_sent", "request_time": "$request_time", "status": "$status", "vhost": "$host", "request_proto": "$server_protocol", "path": "$uri", "request_query": "$args", "request_length": "$request_length", "duration": "$request_time", "method": "$request_method", "http_referrer": "$http_referer", "http_user_agent": "$http_user_agent"}'  # Log in JSON format
+        # use-forwarded-headers: "true"  # Use the X-Forwarded-* headers to determine the client address
+        enable-underscores-in-headers: "true"  # Allow underscores in headers
+        proxy-body-size: "0"  # Allow unlimited request body size
+        server-tokens: "false"  # Hide nginx version in error pages and Server header
+
+  - target:
+      kind: Service
+      name: ingress-nginx-ext-controller
+      namespace: ingress-nginx-ext
+    patch: |-
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: ingress-nginx-ext-controller
+        namespace: ingress-nginx-ext
+      spec:
+        externalTrafficPolicy: Local  # Use client IP address for load balancing

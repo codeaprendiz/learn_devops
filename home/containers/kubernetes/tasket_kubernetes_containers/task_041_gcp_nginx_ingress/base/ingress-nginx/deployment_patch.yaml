@@ -1,0 +1,30 @@
+# Source: ingress-nginx/templates/controller-deployment.yaml
+
+# Uncomment if required, taken from the Vendor folder
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: ingress-nginx-controller
+#   namespace: ingress-nginx
+# spec:
+#   selector:
+#     matchLabels:
+#       app.kubernetes.io/name: ingress-nginx
+#       app.kubernetes.io/instance: ingress-nginx
+#       app.kubernetes.io/component: controller
+#   template:
+#     spec:
+#       dnsPolicy: ClusterFirst
+#       containers:
+#         - name: controller
+#           args:
+#             - /nginx-ingress-controller
+#             - --publish-service=$(POD_NAMESPACE)/ingress-nginx-controller
+#             - --election-id=ingress-nginx-leader
+#             - --controller-class=k8s.io/ingress-nginx
+#             - --ingress-class=nginx
+#             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
+#             - --validating-webhook=:8443
+#             - --validating-webhook-certificate=/usr/local/certificates/cert
+#             - --validating-webhook-key=/usr/local/certificates/key

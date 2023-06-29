@@ -1,0 +1,17 @@
+# Over-ride the default configmap with our own
+# Source: ingress-nginx/templates/controller-configmap.yaml
+
+# Uncomment to use
+
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: ingress-nginx-ext-controller  # This should match the name of the resource being patched
+#   namespace: ingress-nginx-ext
+# data:
+#   allow-snippet-annotations: "true"  # Allow annotations to be used in the ingress to add custom nginx config
+#   enable-underscores-in-headers: "true"  # Allow underscores in headers
+#   use-forwarded-headers: "true"  # Use the X-Forwarded-* headers to determine the client address
+#   proxy-body-size: "0"  # Allow unlimited request body size
+#   server-tokens: "false"  # Hide nginx version in error pages and Server header
+#   access-log-format: '{"time": "$time_iso8601", "remote_addr": "$remote_addr", "x-forwarded-for": "$proxy_add_x_forwarded_for", "request_id": "$req_id", "remote_user": "$remote_user", "bytes_sent": "$bytes_sent", "request_time": "$request_time", "status": "$status", "vhost": "$host", "request_proto": "$server_protocol", "path": "$uri", "request_query": "$args", "request_length": "$request_length", "duration": "$request_time", "method": "$request_method", "http_referrer": "$http_referer", "http_user_agent": "$http_user_agent"}'  # Log in JSON format

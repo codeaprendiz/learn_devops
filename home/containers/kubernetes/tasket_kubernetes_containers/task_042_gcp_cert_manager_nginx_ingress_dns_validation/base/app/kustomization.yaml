@@ -1,0 +1,11 @@
+namespace: default
+
+resources:
+  - dep_whoami.yaml
+  - ingress_whoami.yaml
+  - svc_whoami.yaml
+  - dep_echo.yaml
+  - ingress_echo.yaml
+  - svc_echo.yaml
+
+

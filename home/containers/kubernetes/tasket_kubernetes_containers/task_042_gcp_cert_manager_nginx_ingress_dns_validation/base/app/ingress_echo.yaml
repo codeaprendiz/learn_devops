@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: echo-ingress
+  annotations:
+    # kubernetes.io/ingress.class: "nginx" # Warning: annotation "kubernetes.io/ingress.class" is deprecated, please use 'spec.ingressClassName' instead
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" 
+spec:
+  ingressClassName: "nginx"
+  tls:
+  - hosts:
+    - echoservice.DOMAIN_NAME # replace with your domain
+    secretName: echo-service-tls # This is the secret that will hold the SSL certificate
+  rules:
+  - host: echoservice.DOMAIN_NAME # replace with your domain
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/echo"
+        backend:
+          service:
+            name: echo
+            port:
+              number: 80

@@ -42,4 +42,6 @@
 | task_038 | [task_038__local__learn_kind_cluster](tasket_kubernetes_containers/task_038__local__learn_kind_cluster)                                                                                     |
 | task_039 | [task_039__local__kind_kube_prometheus__grafana_alertmanager](tasket_kubernetes_containers/task_039__local__kind_kube_prometheus__grafana_alertmanager)                                     |
 | task_040 | [task_040__local__kind_kube_prometheus__grafana_alertmanager_loki](tasket_kubernetes_containers/task_040__local__kind_kube_prometheus__grafana_alertmanager_loki)                           |
+| task_041 | [task_041_gcp_nginx_ingress](tasket_kubernetes_containers/task_041_gcp_nginx_ingress)                                                                                                       |
+| task_042 | [task_042_gcp_cert_manager_nginx_ingress_dns_validation](tasket_kubernetes_containers/task_042_gcp_cert_manager_nginx_ingress_dns_validation)                                               |
 
