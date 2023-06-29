@@ -47,8 +47,6 @@ $ tree -L 2
     ├── java_error_in_idea_63910.log
     └── jbr_err_pid63910.log
 $ zip -e -r -P somepassword file.zip zipfolder
-.
-$ zip -e -r -P somepassword file.zip zipfolder
   adding: zipfolder/ (stored 0%)
   adding: zipfolder/java_error_in_idea_63910.log (deflated 87%)
   adding: zipfolder/jbr_err_pid63910.log (deflated 72%)
