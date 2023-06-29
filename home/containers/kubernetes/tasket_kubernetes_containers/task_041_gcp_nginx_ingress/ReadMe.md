@@ -125,6 +125,5 @@ $ kubectl apply -f base/app/.
 ...
 124.253.250.102 - - [29/Jun/2023:07:23:40 +0000] "GET /whoami HTTP/2.0" 200 1051 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" 472 0.002 [default-whoami-service-80] [] 10.108.0.49:80 1051 0.001 200 f33404630d88104c8a703ee597bcff2a
 124.253.250.102 - - [29/Jun/2023:07:23:58 +0000] "GET /whoami HTTP/2.0" 200 1008 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" 450 0.001 [default-whoami-service-80] [] 10.108.0.49:80 1008 0.001 200 23bcd9d1533e4fd243a6d914ba2354d1
-I0629 07:24:10.382175    
 ... 
 ```
