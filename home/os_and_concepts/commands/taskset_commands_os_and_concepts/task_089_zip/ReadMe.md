@@ -37,3 +37,37 @@ or
 ```bash
 zip -d xx-xx-xx.war WEB-INF/lib/xx-xx-xx-5.4.2.0.jar
 ```
+
+* Zip with encryption
+
+```bash
+$ tree -L 2
+.
+└── zipfolder
+    ├── java_error_in_idea_63910.log
+    └── jbr_err_pid63910.log
+$ zip -e -r -P somepassword file.zip zipfolder
+.
+$ zip -e -r -P somepassword file.zip zipfolder
+  adding: zipfolder/ (stored 0%)
+  adding: zipfolder/java_error_in_idea_63910.log (deflated 87%)
+  adding: zipfolder/jbr_err_pid63910.log (deflated 72%)
+$ tree -L 2
+.
+├── file.zip
+└── zipfolder
+    ├── java_error_in_idea_63910.log
+    └── jbr_err_pid63910.log
+$ rm -rf zipfolder
+$ unzip -P somepassword file.zip
+Archive:  file.zip
+   creating: zipfolder/
+  inflating: zipfolder/java_error_in_idea_63910.log
+  inflating: zipfolder/jbr_err_pid63910.log
+$ tree -L 2
+.
+├── file.zip
+└── zipfolder
+    ├── java_error_in_idea_63910.log
+    └── jbr_err_pid63910.log
+```
