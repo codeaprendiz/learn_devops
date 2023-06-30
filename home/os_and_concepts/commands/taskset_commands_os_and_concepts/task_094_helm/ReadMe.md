@@ -79,3 +79,19 @@ $ helm template keycloak-db postgresql \
 --values ./keycloak-db-values.yaml \
 > keycloak-db-manifest-vendor.yaml
 ```
+
+- To list all the Helm releases
+
+```bash
+$ helm list --all-namespaces
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+keycloak-db     keycloak        1               2023-06-30 19:03:37.623113 +0530 IST    deployed        postgresql-12.6.0       15.3.0
+```
+
+- To uninstall a Helm release
+
+```bash
+$ helm uninstall keycloak-db --namespace keycloak
+.
+```
+
