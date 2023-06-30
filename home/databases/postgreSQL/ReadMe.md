@@ -2,6 +2,7 @@
 
 | Task     | Description                                                                                                   |
 |----------|---------------------------------------------------------------------------------------------------------------|
+| task_000 | [task_000_install_client](taskset_postgreSQL_databases/task_000_install_client)                               |
 | task_001 | [task_001_connecting_to_db](taskset_postgreSQL_databases/task_001_connecting_to_db)                           |
 | task_002 | [task_002_show_all_tables_in_a_database](taskset_postgreSQL_databases/task_002_show_all_tables_in_a_database) |
 | task_003 | [task_003_drop_table](taskset_postgreSQL_databases/task_003_drop_table)                                       |
