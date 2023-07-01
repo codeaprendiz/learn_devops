@@ -95,3 +95,11 @@ $ helm uninstall keycloak-db --namespace keycloak
 .
 ```
 
+- To list all releases from all namespaces regardless of their status [stackoverflow](https://stackoverflow.com/questions/71599858/upgrade-failed-another-operation-install-upgrade-rollback-is-in-progress)
+
+```bash
+$ helm ls -aA
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+keycloak        keycloak        1               2023-07-01 21:23:21.136805 +0530 IST    pending-install keycloakx-2.2.1 20.0.3   
+```
+
