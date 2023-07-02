@@ -43,3 +43,35 @@ success
 $ firewall-cmd --zone=public --list-services
 ssh
 ```
+
+- `rule family="ipv4" destination address="x.x.x.x/32" accept:` This rule states that for traffic in the IPv4 family, if the destination address matches "x.x.x.x" (you'd replace this with an actual IP), the firewall should accept the traffic. The "/32" means it's a single IP address you're specifying (in CIDR notation, /32 represents a single IPv4 address).
+
+```bash
+$ firewall-cmd --permanent --zone=public --add-rich-rule='
+   rule family="ipv4"
+   destination address="x.x.x.x/32"
+   accept'
+$ firewall-cmd --reload
+```
+
+- To remove the above rule (`rule family="ipv4" destination address="x.x.x.x/32" accept:`) from the firewall configuration, use the following commands:
+  - `--add-rich-rule`: This option allows you to add a rich rule, which is a rule that allows you more granular control over firewall decisions.
+
+```bash
+$ firewall-cmd --permanent --zone=public --remove-rich-rule='
+   rule family="ipv4"
+   destination address="x.x.x.x./32"
+   accept'
+$ firewall-cmd --reload
+```
+
+- `rule family="ipv4" source address="a.b.c.d/18" accept`: This is the rich rule you're adding. This rule states that for IPv4 traffic, if the source address falls within the "a.b.c.d/18" IP range, the firewall should accept the traffic. In CIDR notation, /18 represents a subnet mask of 255.255.192.0 and allows for 16,382 potential IP addresses.
+  - `--add-rich-rule`: This option allows you to add a rich rule, which is a rule that allows you more granular control over firewall decisions.
+
+```bash
+$ firewall-cmd --permanent --zone=public --add-rich-rule='
+   rule family="ipv4"
+   source address="a.b.c.d/18"
+   accept'
+$ firewall-cmd --reload
+```
