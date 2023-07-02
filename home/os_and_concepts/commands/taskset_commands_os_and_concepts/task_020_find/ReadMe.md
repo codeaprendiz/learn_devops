@@ -76,16 +76,16 @@ find $HOME/.BUILD_SCRIPTS_AREA/  -mmin -180 -name "*-bld.lock"|grep "$BLD_LOCK"|
 107M    ./tmp-02082016/.jenkins/plugins.zip 
 ```
 
-## Example usage with other commands
-
-Find all the files in current directory which are older than 1 month
+* Find all the files in current directory which are older than 1 month
 
 ```bash
-find ./ -maxdepth 1 -type f -mtime +30 -print 
-find ./ -maxdepth 1 -type f -mtime +30 
+$ find ./ -maxdepth 1 -type f -mtime +30 -print 
+.
+$ find ./ -maxdepth 1 -type f -mtime +30 
+.
 ```
 
-Move the files older than 30 days to a particular directory
+* Move the files older than 30 days to a particular directory
 
 ```bash
 $ mkdir tmp
@@ -94,4 +94,61 @@ $ find ./ -maxdepth 1 -type f -mtime +30 -exec mv -t ./tmp/ {} +
 .
 $ rm -rf tmp
 .
+```
+
+* To find specific pom files and zip them into a file
+
+```bash
+$ find . -name Build-2019-03-09-23-38-pom-090319.xls -o -name Build-2019-03-12-23-05-pom-120319.xls -o -name Build-2019-03-13-07-46-pom-130319.xls|xargs zip -r 123.zip
+.
+```
+
+* To find all the files of size greater than 1000M and print their sizes
+
+```bash
+find /apps/ -xdev -type f -size +1000M -exec du -sh {} + 
+.
+```
+
+* To print all the files with size greater than 1G
+
+```bash
+$ find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -size +1G -type f -print
+.
+```
+
+* To find all files with specific extension greater than 100MB, not been modified since last 3 days from current path
+
+```bash
+$ find . -size +100M -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \)
+.
+```
+
+* To print all *.pomxml files containing the keyword `<artifactId>ns-exports-interfaces</artifactId>`
+
+```bash
+$ find . -name "*pom.xml" -exec egrep -n -A 2 "<artifactId>ns-exports-interfaces</artifactId>" '{}' \; -print
+.
+```
+
+* To print all *.xml files containing keyword "insert into gen_mst_rpt" except the ones with "insert into gen_mst_rpt_param"
+
+```bash
+$ find . -name "*xml" -exec egrep -n -A 2 "*insert into gen_mst_rpt *" -v "*insert into gen_mst_rpt_param*" '{}' \; -print 
+.
+```
+
+* Example of customized case when we can check the SVN URLs
+
+```bash
+$ for i in `cat  ~/.BUILD_SCRIPTS_AREA/modules.full`; do svn info $i | grep URL; done | awk {'print $2'} 
+.
+```
+
+* To check and print all the log files in path /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ which have not been modified since last 3 days and can be of type `*.log OR *.txt`
+
+  * You can also remove all those files but BE VERY CAREFUL when you execute rm -rf instead of ls -ltrh
+
+```bash
+for j in `find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \)`;do echo $j; ls -ltrh $j; done;
 ```
