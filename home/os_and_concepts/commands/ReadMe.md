@@ -96,4 +96,6 @@
 | task_093 | [task_093_kustomize](taskset_commands_os_and_concepts/task_093_kustomize)       |
 | task_094 | [task_094_helm](taskset_commands_os_and_concepts/task_094_helm)                 |
 | task_095 | [task_095_7z](taskset_commands_os_and_concepts/task_095_7z)                     |
+| task_096 | [task_096_grep](taskset_commands_os_and_concepts/task_096_grep)                 |
+| task_097 | [task_097_egrep](taskset_commands_os_and_concepts/task_097_egrep)               |
 
