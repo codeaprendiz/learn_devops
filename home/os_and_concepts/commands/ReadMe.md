@@ -103,4 +103,7 @@
 | task_100 | [task_100_lsblk](taskset_commands_os_and_concepts/task_100_lsblk)               |
 | task_101 | [task_101_kops](taskset_commands_os_and_concepts/task_101_kops)                 |
 | task_102 | [task_102_mongo](taskset_commands_os_and_concepts/task_102_mongo)               |
+| task_103 | [task_103_mongorestore](taskset_commands_os_and_concepts/task_103_mongorestore) |
+| task_104 | [task_104_mysql](taskset_commands_os_and_concepts/task_104_mysql)               |
+| task_105 | [task_105_mysqldump](taskset_commands_os_and_concepts/task_105_mysqldump)       |
 
