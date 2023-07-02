@@ -125,9 +125,39 @@ Here's the properly formatted table:
 |                                                                                              | Mark node as schedulable.                                                                                                                                                                                                                                                                                                                 | kubectl uncordon node-01                                                                                                                                               |
 
 
+## Frequently Used
+
+- To get all resource types from all namespaces
+
 ```bash
 kubectl get all --all-namespaces
 kubectl  get ep
+```
+
+- The `cluster-info` outputs a lot of JSON formatted cluster information. The grep -m 1 cluster-cidr part of the command filters the 
+  output and returns the first line that contains the string cluster-cidr. This should be the network range used for the IP addresses 
+  within the Kubernetes cluster
+
+```bash
+$ kubectl cluster-info dump | grep -m 1 cluster-cidr
+                                    "kube-proxy --cluster-cidr=10.108.0.0/14 ......"
+$ kubectl cluster-info dump | grep -m 1 "podCIDR"            
+                "podCIDR": "10.108.1.0/24",
+
+```
+
+- This command is used to test DNS resolution within a Kubernetes cluster. 
+  This command runs a pod in Kubernetes using the busybox image, and executes the nslookup command for kubernetes.default in that pod. 
+  nslookup is a tool for querying the Domain Name System (DNS) to obtain domain name or IP address mapping or other DNS records.
+
+```bash
+$ kubectl run busybox --rm --image=busybox:1.28 --restart=Never --rm -it -- nslookup kubernetes.default
+Server:    10.112.0.10
+Address 1: 10.112.0.10 kube-dns.kube-system.svc.cluster.local
+
+Name:      kubernetes.default
+Address 1: 10.112.0.1 kubernetes.default.svc.cluster.local
+pod "busybox" deleted
 ```
 
 ### json path
@@ -146,6 +176,7 @@ nginx   1/1     Running   0          11m
 
 ```bash
 $ kubectl get pods -o json
+.
 ```
 
 - Get the type of object
