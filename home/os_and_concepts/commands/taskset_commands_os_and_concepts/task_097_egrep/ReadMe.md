@@ -26,4 +26,5 @@ To print all files containing keyword 'ns-exports-interfaces' except .svn, start
 
 ```bash
 $ egrep "ns-exports-interfaces*" `find . -type f -print` | egrep -v ".svn|^Binary file|^./out1.txt"
+.
 ```
