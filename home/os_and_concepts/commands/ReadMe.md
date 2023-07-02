@@ -95,4 +95,5 @@
 | task_092 | [task_092_kubectl](taskset_commands_os_and_concepts/task_092_kubectl)           |
 | task_093 | [task_093_kustomize](taskset_commands_os_and_concepts/task_093_kustomize)       |
 | task_094 | [task_094_helm](taskset_commands_os_and_concepts/task_094_helm)                 |
+| task_095 | [task_095_7z](taskset_commands_os_and_concepts/task_095_7z)                     |
 
