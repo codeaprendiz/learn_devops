@@ -98,4 +98,5 @@
 | task_095 | [task_095_7z](taskset_commands_os_and_concepts/task_095_7z)                     |
 | task_096 | [task_096_grep](taskset_commands_os_and_concepts/task_096_grep)                 |
 | task_097 | [task_097_egrep](taskset_commands_os_and_concepts/task_097_egrep)               |
+| task_098 | [task_098_growpart](taskset_commands_os_and_concepts/task_098_growpart)         |
 
