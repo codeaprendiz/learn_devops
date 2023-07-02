@@ -124,7 +124,6 @@ Here's the properly formatted table:
 | [uncordon](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#uncordon) |                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                        |
 |                                                                                              | Mark node as schedulable.                                                                                                                                                                                                                                                                                                                 | kubectl uncordon node-01                                                                                                                                               |
 
-
 ## Frequently Used
 
 - To get all resource types from all namespaces
