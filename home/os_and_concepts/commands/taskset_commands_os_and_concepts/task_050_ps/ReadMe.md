@@ -74,3 +74,14 @@ $ ps -p 14491 -o %cpu,%mem,cmd
 %CPU %MEM CMD
  0.0  0.4 /apps/resources/java/jdk1.7.0_15/bin/java -Xms512m -Xmx1024m -XX:MaxPermSize=1024m -jar slave.jar
 ```
+
+## Other Examples
+
+To check which all Oracle Databases are running in the DB server
+
+```bash
+[username@hostname ~]$ ps -ef | grep pmon | grep oracle
+oracle   23274     1  0 Aug19 ?        00:11:08 ora_pmon_db1
+oracle   23689     1  0 Aug19 ?        00:12:12 ora_pmon_db2
+```
+
