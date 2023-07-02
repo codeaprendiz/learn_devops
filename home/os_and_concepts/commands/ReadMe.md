@@ -99,4 +99,8 @@
 | task_096 | [task_096_grep](taskset_commands_os_and_concepts/task_096_grep)                 |
 | task_097 | [task_097_egrep](taskset_commands_os_and_concepts/task_097_egrep)               |
 | task_098 | [task_098_growpart](taskset_commands_os_and_concepts/task_098_growpart)         |
+| task_099 | [task_099_resize2fs](taskset_commands_os_and_concepts/task_099_resize2fs)       |
+| task_100 | [task_100_lsblk](taskset_commands_os_and_concepts/task_100_lsblk)               |
+| task_101 | [task_101_kops](taskset_commands_os_and_concepts/task_101_kops)                 |
+| task_102 | [task_102_mongo](taskset_commands_os_and_concepts/task_102_mongo)               |
 
