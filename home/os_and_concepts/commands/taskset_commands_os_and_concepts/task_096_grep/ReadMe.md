@@ -4,7 +4,13 @@
 
 ## NAME
 
-       grep - print lines that match patterns
+grep - print lines that match patterns
 
 ## EXAMPLES
 
+- The following command is used to search for lines in the firewalld.conf file that start with "LogDenied"
+
+```bash
+$ grep '^LogDenied' /etc/firewalld/firewalld.conf
+LogDenied=off
+```
