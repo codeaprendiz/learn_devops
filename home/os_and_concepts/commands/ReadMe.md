@@ -106,4 +106,5 @@
 | task_103 | [task_103_mongorestore](taskset_commands_os_and_concepts/task_103_mongorestore) |
 | task_104 | [task_104_mysql](taskset_commands_os_and_concepts/task_104_mysql)               |
 | task_105 | [task_105_mysqldump](taskset_commands_os_and_concepts/task_105_mysqldump)       |
+| task_106 | [task_106_ssh_keygen](taskset_commands_os_and_concepts/task_106_ssh_keygen)     |
 

@@ -30,7 +30,7 @@ To create your keys
 ```bash
 $ ssh-keygen -q -t rsa -f key.pem -C key -N ''
 $ ls
-key.pem     key.pem.pub
+key.pem     key.pem.pu####b
 
 ```
 
