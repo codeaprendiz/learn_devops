@@ -6,6 +6,10 @@
 - [tutorials/dns-validation](https://cert-manager.io/docs/tutorials/acme/dns-validation)
 - [configuration/acme/dns01/route53](https://cert-manager.io/docs/configuration/acme/dns01/route53/)
 
+Ensure that you have completed the [task_041__gcp_k8s__nginx_ingress](../task_041__gcp_k8s__nginx_ingress) and we will continue from there
+
+```bash
+
 ## Install
 
 ```bash
