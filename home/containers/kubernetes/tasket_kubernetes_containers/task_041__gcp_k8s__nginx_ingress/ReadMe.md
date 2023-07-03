@@ -6,6 +6,15 @@
 - Set up nginx ingress controller
 - Use kustomize to deploy nginx ingress controller
 
+## GKE Kubernetes Version
+
+```bash
+$ kubectl version --short
+Client Version: v1.27.3
+Kustomize Version: v5.0.1
+Server Version: v1.27.2-gke.1200
+```
+
 ## Set up GKE access on local machine
 
 ```bash
