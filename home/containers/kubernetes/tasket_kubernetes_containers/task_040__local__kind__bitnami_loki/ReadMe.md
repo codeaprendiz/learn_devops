@@ -3,7 +3,7 @@
 - [bitnami/grafana-loki](https://github.com/bitnami/charts/tree/main/bitnami/grafana-loki)
 - [bitnami.com/stack/grafana-loki/helm](https://bitnami.com/stack/grafana-loki/helm)
 
-- Ensure that you have completed the [task-local-040-kind-kube-prometheus--grafana-alertmanager-loki](../task-local-040-kind-kube-prometheus--grafana-alertmanager-loki) and we will continue from there
+- Ensure that you have completed the [task_039__local__kind__prometheus_operator__kube_prometheus_grafana_alertmanager](../task_039__local__kind__prometheus_operator__kube_prometheus_grafana_alertmanager) and we will continue from there
 
 ```bash
 ## Grafana should be up
