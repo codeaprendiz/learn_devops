@@ -36,7 +36,7 @@ Common uses include:
 
 ## EXAMPLE
 
-Open a TCP connection to port 42 of host.example.com, using port 31337 as the source port, with a
+* Open a TCP connection to port 42 of host.example.com, using port 31337 as the source port, with a
 timeout of 5 seconds:
 
 ```bash
@@ -44,30 +44,67 @@ $ nc -p 31337 -w 5 host.example.com 42 -v
 .
 ```
 
-Open a UDP connection to port 53 of host.example.com:
+* To validate whether a particual UDP port on a host is open or not [serverfault.com](https://serverfault.com/questions/416205/testing-udp-port-connectivity)
 
 ```bash
-# Seems to give false positive always https://serverfault.com/questions/416205/testing-udp-port-connectivity: 
-$ nc -u host.example.com 53 -v
-.
+########### Tested on ORACLE LINUX SERVER 8.7 ###################
+# Server Machine, this is were we need to test whether a particual port is open or not, let's say 6111
+user@server $  nc -ul 6111 -v
+Ncat: Version 7.70 ( https://nmap.org/ncat )
+Ncat: Listening on :::6111
+Ncat: Listening on 0.0.0.0:6111
+
+# Client Machine, from where we want to test the connectivity to server machine via UDP protocol
+user@client $ nc -u <server_ip_here> 6111 -v
+Ncat: Version 7.70 ( https://nmap.org/ncat )
+Ncat: Connected to <server_ip_here>:6111.
+
+# You type a message on the client machine and press enter, you should see the message on the server side
+# You might want to disable the OS firewall, see systemctl status firewalld, also you might want to ensure the the UDP protocol is allowed by any security groups or network security groups coming in between
+# Client Machine, from where we want to test the connectivity to server machine via UDP protocol
+user@client $ nc -u <server_ip_here> 6111 -v
+Ncat: Version 7.70 ( https://nmap.org/ncat )
+Ncat: Connected to <server_ip_here>:6111.
+hi, from the client
+
+################################ When you don't see the message on the server side ######################################################
+# Server machine, in case you don't see the message then the port may or maynot be open, we cannot be sure until we rule out security groups / network security groups are checked
+# So the following scenario
+user@server $  nc -ul 6111 -v
+Ncat: Version 7.70 ( https://nmap.org/ncat )
+Ncat: Listening on :::6111
+Ncat: Listening on 0.0.0.0:6111
+
+
+################################ When you see the message on the server side ######################################################
+# Incase the port is open, you should see the same message on the server side, also a msg saying that there was a connection from <client_ip>
+user@server $ nc -ul 6111 -v
+Ncat: Version 7.70 ( https://nmap.org/ncat )
+Ncat: Listening on :::6111
+Ncat: Listening on 0.0.0.0:6111
+Ncat: Connection from <client_ip_here>.
+hi, from the client
+
+
+##################################### In ALL cases nc -uz <server_ip> <port> seems to give a FASLE positive, i.e. true even when the port is not open ######
+# The following is example of FALSE POSITIVE, i.e. when the PORT CONNECTIVITY ISN"T ACTUALLY ALLOWED
+$ user@client $ nc -uz <server_ip_here> 6111 -v
+Ncat: Version 7.70 ( https://nmap.org/ncat )
+Ncat: Connected to <server_ip_here>:6111.
+Ncat: UDP packet sent successfully
+Ncat: 1 bytes sent, 0 bytes received in 2.01 seconds.
 ```
 
-Open a TCP connection to port 42 of host.example.com using 10.1.2.3 as the IP for the local end of the connection:
+* Open a TCP connection to port 42 of host.example.com using 10.1.2.3 as the IP for the local end of the connection:
 
 ```bash
 $ nc -s 10.1.2.3 host.example.com 42 
 .
 ```
 
-Open a TCP connection to port 1521 of 127.0.0.1 :
+* Open a TCP connection to port 1521 of 127.0.0.1 :
 
 ```bash
 $ nc -w 3 127.0.0.1 1521 -v
 .
-```
-
-Testing nc [serverfault.com](https://serverfault.com/questions/416205/testing-udp-port-connectivity)
-
-```bash
-# Testing NC connection
 ```
