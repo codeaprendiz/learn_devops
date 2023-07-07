@@ -40,27 +40,34 @@ Open a TCP connection to port 42 of host.example.com, using port 31337 as the so
 timeout of 5 seconds:
 
 ```bash
-$ nc -p 31337 -w 5 host.example.com 42
+$ nc -p 31337 -w 5 host.example.com 42 -v
 .
 ```
 
 Open a UDP connection to port 53 of host.example.com:
 
 ```bash
-$ nc -u host.example.com 53
+# Seems to give false positive always https://serverfault.com/questions/416205/testing-udp-port-connectivity: 
+$ nc -u host.example.com 53 -v
 .
 ```
 
 Open a TCP connection to port 42 of host.example.com using 10.1.2.3 as the IP for the local end of the connection:
 
 ```bash
-$ nc -s 10.1.2.3 host.example.com 42
+$ nc -s 10.1.2.3 host.example.com 42 
 .
 ```
 
 Open a TCP connection to port 1521 of 127.0.0.1 :
 
 ```bash
-$ nc -w 3 -v 127.0.0.1 1521
+$ nc -w 3 127.0.0.1 1521 -v
 .
+```
+
+Testing nc [serverfault.com](https://serverfault.com/questions/416205/testing-udp-port-connectivity)
+
+```bash
+# Testing NC connection
 ```
