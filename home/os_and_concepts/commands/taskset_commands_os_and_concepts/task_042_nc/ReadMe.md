@@ -86,7 +86,7 @@ Ncat: Connection from <client_ip_here>.
 hi, from the client
 
 
-##################################### In ALL cases nc -uz <server_ip> <port> seems to give a FASLE positive, i.e. true even when the port is not open ######
+#####################################  nc -uz <server_ip> <port> seems to give a FASLE positive, i.e. true even when the port is not open ######
 # The following is example of FALSE POSITIVE, i.e. when the PORT CONNECTIVITY ISN"T ACTUALLY ALLOWED
 $ user@client $ nc -uz <server_ip_here> 6111 -v
 Ncat: Version 7.70 ( https://nmap.org/ncat )
