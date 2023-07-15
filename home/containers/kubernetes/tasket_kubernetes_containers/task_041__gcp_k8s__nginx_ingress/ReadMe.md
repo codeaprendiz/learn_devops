@@ -6,6 +6,10 @@
 - Set up nginx ingress controller
 - Use kustomize to deploy nginx ingress controller
 
+## Links
+
+- [Custom Logging](https://stackoverflow.com/questions/55799584/how-do-i-add-the-x-forwarded-for-field-to-my-access-logs-for-the-nginx-ingress-c)
+
 ## GKE Kubernetes Version
 
 ```bash
