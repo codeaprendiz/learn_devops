@@ -10,7 +10,7 @@
 
 ### Free Ebooks
 
-[building_secure_and_reliable_systems](https://static.googleusercontent.com/media/sre.google/en//static/pdf/building_secure_and_reliable_systems.pdf)
+[building_secure_and_reliable_systems](https://sre.google/books/building-secure-reliable-systems)
 
 [SRE Workbook](https://sre.google/workbook/table-of-contents/)
 
