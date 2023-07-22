@@ -3,24 +3,24 @@
 kind: ServiceAccount
 apiVersion: v1
 metadata:
-  name: treafik-helm-template-traefik
+  name: traefik-helm-template-traefik
   labels:
     app.kubernetes.io/name: traefik
     helm.sh/chart: traefik-9.19.1
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/instance: treafik-helm-template
+    app.kubernetes.io/instance: traefik-helm-template
   annotations:
 ---
 # Source: traefik/templates/rbac/clusterrole.yaml
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: treafik-helm-template-traefik
+  name: traefik-helm-template-traefik
   labels:
     app.kubernetes.io/name: traefik
     helm.sh/chart: traefik-9.19.1
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/instance: treafik-helm-template
+    app.kubernetes.io/instance: traefik-helm-template
 rules:
   - apiGroups:
       - ""
@@ -69,38 +69,38 @@ rules:
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: treafik-helm-template-traefik
+  name: traefik-helm-template-traefik
   labels:
     app.kubernetes.io/name: traefik
     helm.sh/chart: traefik-9.19.1
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/instance: treafik-helm-template
+    app.kubernetes.io/instance: traefik-helm-template
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: treafik-helm-template-traefik
+  name: traefik-helm-template-traefik
 subjects:
   - kind: ServiceAccount
-    name: treafik-helm-template-traefik
+    name: traefik-helm-template-traefik
     namespace: default
 ---
 # Source: traefik/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: treafik-helm-template-traefik
+  name: traefik-helm-template-traefik
   labels:
     app.kubernetes.io/name: traefik
     helm.sh/chart: traefik-9.19.1
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/instance: treafik-helm-template
+    app.kubernetes.io/instance: traefik-helm-template
   annotations:
 spec:
   replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: traefik
-      app.kubernetes.io/instance: treafik-helm-template
+      app.kubernetes.io/instance: traefik-helm-template
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -113,15 +113,15 @@ spec:
         app.kubernetes.io/name: traefik
         helm.sh/chart: traefik-9.19.1
         app.kubernetes.io/managed-by: Helm
-        app.kubernetes.io/instance: treafik-helm-template
+        app.kubernetes.io/instance: traefik-helm-template
     spec:
-      serviceAccountName: treafik-helm-template-traefik
+      serviceAccountName: traefik-helm-template-traefik
       terminationGracePeriodSeconds: 60
       hostNetwork: false
       containers:
       - image: "traefik:2.4.8"
         imagePullPolicy: IfNotPresent
-        name: treafik-helm-template-traefik
+        name: traefik-helm-template-traefik
         resources:
         readinessProbe:
           httpGet:
@@ -189,18 +189,18 @@ items:
   - apiVersion: v1
     kind: Service
     metadata:
-      name: treafik-helm-template-traefik
+      name: traefik-helm-template-traefik
       labels:
         app.kubernetes.io/name: traefik
         helm.sh/chart: traefik-9.19.1
         app.kubernetes.io/managed-by: Helm
-        app.kubernetes.io/instance: treafik-helm-template
+        app.kubernetes.io/instance: traefik-helm-template
       annotations:
     spec:
       type: LoadBalancer
       selector:
         app.kubernetes.io/name: traefik
-        app.kubernetes.io/instance: treafik-helm-template
+        app.kubernetes.io/instance: traefik-helm-template
       ports:
       - port: 80
         name: web
@@ -215,14 +215,14 @@ items:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: treafik-helm-template-traefik-dashboard
+  name: traefik-helm-template-traefik-dashboard
   annotations:
     helm.sh/hook: "post-install,post-upgrade"
   labels:
     app.kubernetes.io/name: traefik
     helm.sh/chart: traefik-9.19.1
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/instance: treafik-helm-template
+    app.kubernetes.io/instance: traefik-helm-template
 spec:
   entryPoints:
     - traefik

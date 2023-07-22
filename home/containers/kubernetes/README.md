@@ -11,9 +11,9 @@
 | task_007 | [task_007__local__jenkins_k8s](tasket_kubernetes_containers/task_007__local__jenkins_k8s)                                                                                                         |
 | task_008 | [task_008__local__kafka](tasket_kubernetes_containers/task_008__local__kafka)                                                                                                                     |
 | task_009 | [task_009__local__kafdrop](tasket_kubernetes_containers/task_009__local__kafdrop)                                                                                                                 |
-| task_010 | [task_010__aws__deploy_treafik_kops_k8s_helm](tasket_kubernetes_containers/task_010__aws__deploy_treafik_kops_k8s_helm)                                                                           |
-| task_011 | [task_011__aws__treafik_kops_whoami](tasket_kubernetes_containers/task_011__aws__treafik_kops_whoami)                                                                                             |
-| task_012 | [task_012__aws__kops_with_treafik_customization](tasket_kubernetes_containers/task_012__aws__kops_with_treafik_customization)                                                                     |
+| task_010 | [task_010__aws__deploy_traefik_kops_k8s_helm](tasket_kubernetes_containers/task_010__aws__deploy_traefik_kops_k8s_helm)                                                                           |
+| task_011 | [task_011__aws__traefik_kops_whoami](tasket_kubernetes_containers/task_011__aws__traefik_kops_whoami)                                                                                             |
+| task_012 | [task_012__aws__kops_with_traefik_customization](tasket_kubernetes_containers/task_012__aws__kops_with_traefik_customization)                                                                     |
 | task_013 | [task_013__aws__oauth2_proxy](tasket_kubernetes_containers/task_013__aws__oauth2_proxy)                                                                                                           |
 | task_014 | [task_014__aws__traefik_kops_whoami_middleware](tasket_kubernetes_containers/task_014__aws__traefik_kops_whoami_middleware)                                                                       |
 | task_015 | [task_015__aws__lets_encrypt_kops_cluster](tasket_kubernetes_containers/task_015__aws__lets_encrypt_kops_cluster)                                                                                 |

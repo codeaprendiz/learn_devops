@@ -109,7 +109,7 @@ spec:
 - Apply the new middleware
 
 ```bash
-$ kubectl apply -f treafik-custom-image/middleware/.
+$ kubectl apply -f traefik-custom-image/middleware/.
 middleware.traefik.containo.us/traceid created
 ```
 

@@ -8,7 +8,7 @@ custom resources take some time to get created)
 kubectl apply -f .
 ```
 
-- Get the public IP of Treafik-Service
+- Get the public IP of traefik-Service
 ```bash
 $ kubectl get service
 NAME         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                                     AGE
