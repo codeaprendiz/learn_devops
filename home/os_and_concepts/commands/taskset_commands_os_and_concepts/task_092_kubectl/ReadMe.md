@@ -49,6 +49,12 @@ $ kubectl cluster-info dump | grep -m 1 cluster-cidr
 $ kubectl cluster-info dump | grep -m 1 "podCIDR"            
                 "podCIDR": "10.108.1.0/24",
 
+# You can also get podCIDR using
+$ kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}'   # Will give podCIDR for every node
+.
+# Get service-cluster-ip-range
+$ kubectl cluster-info dump | grep -m 1 service-cluster-ip-range
+.
 ```
 
 - This command is used to test DNS resolution within a Kubernetes cluster. 
@@ -69,6 +75,20 @@ pod "busybox" deleted
 
 ```bash
 $ kubectl run ubuntu --image=<IP_OF_NEXUS>:<EXPOSED_PORT>/ubuntu:latest --restart=Always -it -- bash
+.
+```
+
+- To get all the available contexts
+
+```bash
+$ kubectl config get-contexts
+.
+```
+
+- To rename the current set context
+
+```bash
+$ kubectl config rename-context <current-context-name> <new-name-of-the-context>
 .
 ```
 
