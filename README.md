@@ -1,6 +1,6 @@
 # Home 
 
-> Total Number of Tasks :      352
+> Total Number of Tasks :      354
 
 - [Cloud Certifications](#Cloud_certifications)
 - [Cloud Providers](#Cloud_providers)
@@ -34,9 +34,9 @@
 
 ## Databases
 
-| Mongo                                  | Mysql                                  | Oracle19c                                  | PostgreSQL                                  |
-|----------------------------------------|----------------------------------------|--------------------------------------------|---------------------------------------------|
-| [Practice Tasks](home/databases/mongo) | [Practice Tasks](home/databases/mysql) | [Practice Tasks](home/databases/oracle19c) | [Practice Tasks](home/databases/postgreSQL) |
+| Mongo                                  | Mssql                                  | Mysql                                  | Oracle19c                                  | PostgreSQL                                  |
+|----------------------------------------|----------------------------------------|----------------------------------------|--------------------------------------------|---------------------------------------------|
+| [Practice Tasks](home/databases/mongo) | [Practice Tasks](home/databases/mssql) | [Practice Tasks](home/databases/mysql) | [Practice Tasks](home/databases/oracle19c) | [Practice Tasks](home/databases/postgreSQL) |
 
 ## Infrastructure_as_code
 

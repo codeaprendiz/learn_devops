@@ -38,7 +38,7 @@ Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "bitnami" chart repository
 Update Complete. ⎈Happy Helming!⎈
 
-$ helm template treafik-helm-template -f traefik/values.yaml traefik/traefik > ../treafik-resources.yaml
+$ helm template traefik-helm-template -f traefik/values.yaml traefik/traefik > ../traefik-resources.yaml
 $ cp -rfp traefik/values.yaml ../                         
 $ cd ..
 $ rm -rf traefik-helm-chart    
@@ -55,13 +55,13 @@ ip-172-20-62-14.ec2.internal    Ready    node     27m   v1.19.11
 
 - Try deploying traefik. Looks like CRDs didn't get installed. 
 ```
-$ kubectl apply -f treafik-resources.yaml
-serviceaccount/treafik-helm-template-traefik unchanged
-clusterrole.rbac.authorization.k8s.io/treafik-helm-template-traefik unchanged
-clusterrolebinding.rbac.authorization.k8s.io/treafik-helm-template-traefik unchanged
-deployment.apps/treafik-helm-template-traefik configured
-service/treafik-helm-template-traefik unchanged
-error: unable to recognize "treafik-resources.yaml": no matches for kind "IngressRoute" in version "traefik.containo.us/v1alpha1"
+$ kubectl apply -f traefik-resources.yaml
+serviceaccount/traefik-helm-template-traefik unchanged
+clusterrole.rbac.authorization.k8s.io/traefik-helm-template-traefik unchanged
+clusterrolebinding.rbac.authorization.k8s.io/traefik-helm-template-traefik unchanged
+deployment.apps/traefik-helm-template-traefik configured
+service/traefik-helm-template-traefik unchanged
+error: unable to recognize "traefik-resources.yaml": no matches for kind "IngressRoute" in version "traefik.containo.us/v1alpha1"
 
 $ git clone https://github.com/traefik/traefik-helm-chart.git
 $ ls                      
@@ -82,25 +82,25 @@ customresourcedefinition.apiextensions.k8s.io/traefikservices.traefik.containo.u
 $ rm -rf traefik-helm-chart                 
 
 
-$ kubectl apply -f treafik-resources.yaml            
-serviceaccount/treafik-helm-template-traefik unchanged
-clusterrole.rbac.authorization.k8s.io/treafik-helm-template-traefik unchanged
-clusterrolebinding.rbac.authorization.k8s.io/treafik-helm-template-traefik unchanged
-deployment.apps/treafik-helm-template-traefik configured
-service/treafik-helm-template-traefik unchanged
-ingressroute.traefik.containo.us/treafik-helm-template-traefik-dashboard created
+$ kubectl apply -f traefik-resources.yaml            
+serviceaccount/traefik-helm-template-traefik unchanged
+clusterrole.rbac.authorization.k8s.io/traefik-helm-template-traefik unchanged
+clusterrolebinding.rbac.authorization.k8s.io/traefik-helm-template-traefik unchanged
+deployment.apps/traefik-helm-template-traefik configured
+service/traefik-helm-template-traefik unchanged
+ingressroute.traefik.containo.us/traefik-helm-template-traefik-dashboard created
 
 
 $ kubectl get svc                        
 NAME                            TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
 kubernetes                      ClusterIP      100.64.0.1      <none>        443/TCP                      37m
-treafik-helm-template-traefik   LoadBalancer   100.66.189.36   <pending>     80:32127/TCP,443:30552/TCP   6m44s
+traefik-helm-template-traefik   LoadBalancer   100.66.189.36   <pending>     80:32127/TCP,443:30552/TCP   6m44s
 ```
 
 - Its in Pending state duo to the following error
 
 ```bash
-$ kubectl describe svc treafik-helm-template-traefik                            
+$ kubectl describe svc traefik-helm-template-traefik                            
 .
 .
 Error syncing load balancer: failed to ensure load balancer: AccessDenied
@@ -112,7 +112,7 @@ Error syncing load balancer: failed to ensure load balancer: AccessDenied
 $ kubectl get svc
 NAME                            TYPE           CLUSTER-IP      EXTERNAL-IP                                                              PORT(S)                      AGE
 kubernetes                      ClusterIP      100.64.0.1      <none>                                                                   443/TCP                      16m
-treafik-helm-template-traefik   LoadBalancer   100.65.168.87   a93259cfe3e6840489e86a2b80b5f26d-546301547.us-east-1.elb.amazonaws.com   80:32444/TCP,443:32481/TCP   7m38s
+traefik-helm-template-traefik   LoadBalancer   100.65.168.87   a93259cfe3e6840489e86a2b80b5f26d-546301547.us-east-1.elb.amazonaws.com   80:32444/TCP,443:32481/TCP   7m38s
 ```
 
 You will get the following Load Balancer on AWS
@@ -144,56 +144,3 @@ $ curl -v a93259cfe3e6840489e86a2b80b5f26d-546301547.us-east-1.elb.amazonaws.com
 ```
 
 In the next tasks we will try deploying some app behind load balancer and test routes.
-
-```bash
-$ kubectl apply -f whoami.yaml 
-deployment.apps/whoami unchanged
-service/whoami unchanged
-ingressroute.traefik.containo.us/whoami-whoami unchanged
-
-
-$ curl http://ad639fc8779704f558f7f3132f112d96-330009778.us-east-1.elb.amazonaws.com/whoami-app-api
-Hostname: whoami-658d568b94-gwvcl
-IP: 127.0.0.1
-IP: 100.96.1.7
-RemoteAddr: 100.96.1.5:58624
-GET /whoami-app-api HTTP/1.1
-Host: ad639fc8779704f558f7f3132f112d96-330009778.us-east-1.elb.amazonaws.com
-User-Agent: curl/7.64.1
-Accept: */*
-Accept-Encoding: gzip
-X-Forwarded-For: 100.96.1.1
-X-Forwarded-Host: ad639fc8779704f558f7f3132f112d96-330009778.us-east-1.elb.amazonaws.com
-X-Forwarded-Port: 80
-X-Forwarded-Proto: http
-X-Forwarded-Server: treafik-helm-template-traefik-bf8f77bfc-jznxx
-X-Real-Ip: 100.96.1.1
-```
-
-
-- Let's deploy the dashboard
-
-```bash
-$ kubectl port-forward $(kubectl get pods --selector "app.kubernetes.io/name=traefik" --output=name) 9000:9000
-
-Forwarding from 127.0.0.1:9000 -> 9000
-Forwarding from [::1]:9000 -> 9000
-Handling connection for 9000
-Handling connection for 9000
-Handling connection for 9000
-Handling connection for 9000
-```
-
-![](.images/treafik-dashboard.png)
-
-
-- Can we make this https ?  We can do that using following 
-
-  - Create a certificate for your domain `*.domain.com` using AWS Certificate manager and using 
-    domain verification if you have access to domain as well.
-  - Change the Loadbalancer protocol from TCP to HTTPS with the same load balancer port. Change the
-    Instance Port from HTTP to HTTPS. Ensure that the `Node Port` value remains same it was before the change. 
-    You can also modify the NodePort using the values.yaml file. Now use the arn value fo the certiciate
-    created in previous step to install the SSL certificate.
-  - Finally go to route53 record and create an `ALIAS` record for `domain.com` routing all requests
-    to the new load balancer created by traefik.

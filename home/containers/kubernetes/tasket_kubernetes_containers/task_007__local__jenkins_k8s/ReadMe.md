@@ -187,7 +187,7 @@ jenkins-0       2/2     Running       0          23m
 Amazing! It works :)
 
 - Next steps, you have add your custom agent file with all the requirements installed
-- You can add an ingress like treafik use classic load balancer in AWS
+- You can add an ingress like traefik use classic load balancer in AWS
 - You can assign the alias record in AWS route53 and point it to the classic load balancer so 
   that your jenkins server is accessable on your custom domain name.
 - The load balancer PROTOCOLs you might need to change. What worked for me

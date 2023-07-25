@@ -19,7 +19,7 @@ MongoDB replicaset | Ensure that you are using mongodb replicaset for high avail
 Persistence Volume Claim | Ensure that you are using persistent volume claim in k8s for the mongodb database | Done
 Use Helm to create template | Use helm charts for node and mongo | Done
 Use Load Balancer as Ingress | Use load balancer as ingress | Done
-Use Nginx/Treafik as Ingress if not Load Balancer |  | 
+Use Nginx/traefik as Ingress if not Load Balancer |  | 
 Security | Removing unnecessary binaries/permissions to improve container security is a huge plus. |  
 
 ### Nodejs Mongo App
