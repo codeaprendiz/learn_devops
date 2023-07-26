@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: alertmanager-ingress
+  namespace: monitoring 
+  annotations:
+    # kubernetes.io/ingress.class: "nginx" # Warning: annotation "kubernetes.io/ingress.class" is deprecated, please use 'spec.ingressClassName' instead
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" 
+spec:
+  ingressClassName: "nginx"
+  tls:
+  - hosts:
+    - alertmanager.DOMAIN_NAME # replace with your domain
+    secretName: alertmanager-tls # This is the secret that will hold the SSL certificate
+  rules:
+  - host: alertmanager.DOMAIN_NAME # replace with your domain
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: alertmanager-main
+            port:
+              number: 9093

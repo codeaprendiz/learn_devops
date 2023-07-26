@@ -1,0 +1,51 @@
+# This is an example configuration, for production grade configuration see the Keycloak documentation.
+# See https://www.keycloak.org/server/configuration
+# See https://www.keycloak.org/server/all-config
+# See https://github.com/codecentric/helm-charts/blob/master/charts/keycloakx/examples/postgresql/keycloak-server-values.yaml
+command:
+  - "/opt/keycloak/bin/kc.sh"
+  - "--verbose"
+  - "start"
+  - "--http-enabled=true"
+  - "--http-port=8080"
+  - "--hostname-strict=false"
+  - "--hostname-strict-https=false"
+  - "--spi-events-listener-jboss-logging-success-level=info"
+  - "--spi-events-listener-jboss-logging-error-level=warn"
+
+extraEnv: |
+  - name: KEYCLOAK_ADMIN
+    valueFrom:
+      secretKeyRef:
+        name: {{ include "keycloak.fullname" . }}-admin-creds
+        key: user
+  - name: KEYCLOAK_ADMIN_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: {{ include "keycloak.fullname" . }}-admin-creds
+        key: password
+  - name: JAVA_OPTS_APPEND
+    value: >-
+      -XX:+UseContainerSupport
+      -XX:MaxRAMPercentage=50.0
+      -Djava.awt.headless=true
+      -Djgroups.dns.query={{ include "keycloak.fullname" . }}-headless
+
+dbchecker:
+  enabled: true
+
+database:
+  vendor: postgres
+  hostname: keycloak-db-postgresql
+  port: 5432
+  username: keycloak
+  password: keycloakpassword
+  database: keycloak_db
+
+secrets:
+  admin-creds:
+    annotations:
+      my-test-annotation: Test secret for {{ include "keycloak.fullname" . }}
+    stringData:
+      user: admin
+      password: secret123

@@ -1,0 +1,5 @@
+namespace: keycloak
+
+resources:
+  - ingress_keycloak.yaml
+  - ../../vendor/keycloakx

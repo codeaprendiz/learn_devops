@@ -1,0 +1,301 @@
+apiVersion: v1
+automountServiceAccountToken: true
+imagePullSecrets: []
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: keycloakx
+    app.kubernetes.io/version: 20.0.3
+    helm.sh/chart: keycloakx-2.2.1
+  name: keycloak-keycloakx
+  namespace: keycloak
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  annotations:
+    my-test-annotation: Test secret for keycloak-keycloakx
+  labels:
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: keycloakx
+    app.kubernetes.io/version: 20.0.3
+    helm.sh/chart: keycloakx-2.2.1
+  name: keycloak-keycloakx-admin-creds
+  namespace: keycloak
+stringData:
+  password: secret123
+  user: admin
+type: Opaque
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: keycloakx
+    app.kubernetes.io/version: 20.0.3
+    helm.sh/chart: keycloakx-2.2.1
+  name: keycloak-keycloakx-database
+  namespace: keycloak
+stringData:
+  password: keycloakpassword
+type: Opaque
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/component: headless
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: keycloakx
+    app.kubernetes.io/version: 20.0.3
+    helm.sh/chart: keycloakx-2.2.1
+  name: keycloak-keycloakx-headless
+  namespace: keycloak
+spec:
+  clusterIP: None
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/name: keycloakx
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/component: http
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: keycloakx
+    app.kubernetes.io/version: 20.0.3
+    helm.sh/chart: keycloakx-2.2.1
+  name: keycloak-keycloakx-http
+  namespace: keycloak
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  - name: https
+    port: 8443
+    protocol: TCP
+    targetPort: https
+  selector:
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/name: keycloakx
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: keycloakx
+    app.kubernetes.io/version: 20.0.3
+    helm.sh/chart: keycloakx-2.2.1
+  name: keycloak-keycloakx
+  namespace: keycloak
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: keycloak
+      app.kubernetes.io/name: keycloakx
+  serviceName: keycloak-keycloakx-headless
+  template:
+    metadata:
+      annotations:
+        checksum/config-startup: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+        checksum/secrets: b2466d2981a74c44b000743be38b8b8d83b467daecd0dfae8b486927d8e6649a
+      labels:
+        app.kubernetes.io/instance: keycloak
+        app.kubernetes.io/name: keycloakx
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app.kubernetes.io/component
+                  operator: NotIn
+                  values:
+                  - test
+                matchLabels:
+                  app.kubernetes.io/instance: keycloak
+                  app.kubernetes.io/name: keycloakx
+              topologyKey: topology.kubernetes.io/zone
+            weight: 100
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/component
+                operator: NotIn
+                values:
+                - test
+              matchLabels:
+                app.kubernetes.io/instance: keycloak
+                app.kubernetes.io/name: keycloakx
+            topologyKey: kubernetes.io/hostname
+      containers:
+      - command:
+        - /opt/keycloak/bin/kc.sh
+        - --verbose
+        - start
+        - --http-enabled=true
+        - --http-port=8080
+        - --hostname-strict=false
+        - --hostname-strict-https=false
+        - --spi-events-listener-jboss-logging-success-level=info
+        - --spi-events-listener-jboss-logging-error-level=warn
+        env:
+        - name: KC_HTTP_RELATIVE_PATH
+          value: /auth
+        - name: KC_CACHE
+          value: ispn
+        - name: KC_CACHE_STACK
+          value: kubernetes
+        - name: KC_PROXY
+          value: edge
+        - name: KC_DB
+          value: postgres
+        - name: KC_DB_URL_HOST
+          value: keycloak-db-postgresql
+        - name: KC_DB_URL_PORT
+          value: "5432"
+        - name: KC_DB_URL_DATABASE
+          value: keycloak_db
+        - name: KC_DB_USERNAME
+          value: keycloak
+        - name: KC_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: keycloak-keycloakx-database
+        - name: KC_METRICS_ENABLED
+          value: "true"
+        - name: KC_HEALTH_ENABLED
+          value: "true"
+        - name: KEYCLOAK_ADMIN
+          valueFrom:
+            secretKeyRef:
+              key: user
+              name: keycloak-keycloakx-admin-creds
+        - name: KEYCLOAK_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: keycloak-keycloakx-admin-creds
+        - name: JAVA_OPTS_APPEND
+          value: -XX:+UseContainerSupport -XX:MaxRAMPercentage=50.0 -Djava.awt.headless=true
+            -Djgroups.dns.query=keycloak-keycloakx-headless
+        envFrom: null
+        image: quay.io/keycloak/keycloak:20.0.3
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /auth/health/live
+            port: http
+          initialDelaySeconds: 0
+          timeoutSeconds: 5
+        name: keycloak
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        - containerPort: 8443
+          name: https
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /auth/health/ready
+            port: http
+          initialDelaySeconds: 10
+          timeoutSeconds: 1
+        resources: {}
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 1000
+        startupProbe:
+          failureThreshold: 60
+          httpGet:
+            path: /auth/health
+            port: http
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          timeoutSeconds: 1
+        volumeMounts: null
+      enableServiceLinks: true
+      initContainers:
+      - command:
+        - sh
+        - -c
+        - |
+          echo 'Waiting for Database to become ready...'
+
+          until printf "." && nc -z -w 2 keycloak-db-postgresql 5432; do
+              sleep 2;
+          done;
+
+          echo 'Database OK ✓'
+        image: docker.io/busybox:1.32
+        imagePullPolicy: IfNotPresent
+        name: dbchecker
+        resources:
+          limits:
+            cpu: 20m
+            memory: 32Mi
+          requests:
+            cpu: 20m
+            memory: 32Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsGroup: 1000
+          runAsNonRoot: true
+          runAsUser: 1000
+      restartPolicy: Always
+      securityContext:
+        fsGroup: 1000
+      serviceAccountName: keycloak-keycloakx
+      terminationGracePeriodSeconds: 60
+      volumes: null
+  updateStrategy:
+    type: RollingUpdate
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: keycloak-ingress
+  namespace: keycloak
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: keycloak.DOMAIN_NAME
+    http:
+      paths:
+      - backend:
+          service:
+            name: keycloak-keycloakx-http
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - keycloak.DOMAIN_NAME
+    secretName: keycloak-tls

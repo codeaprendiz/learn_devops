@@ -1,0 +1,7 @@
+
+# $ find . -type f | awk {'print "  - " $1'}
+resources:
+  - ./alertmanager_ingress.yaml
+  - ./prometheus_ingress.yaml
+  - ./grafana_ingress.yaml
+  - ../../vendor/kube_prometheus

@@ -1,0 +1,4 @@
+namespace: keycloak
+
+resources:
+  - keycloak-server-manifest-vendor.yaml
