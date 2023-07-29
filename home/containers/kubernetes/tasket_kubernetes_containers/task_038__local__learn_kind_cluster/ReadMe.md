@@ -175,6 +175,8 @@ spec:
 
 - Apply
 
+[Empty reply from server](https://github.com/kubernetes-sigs/kind/issues/1618)
+
 ```bash
 kubectl apply -f pod.yaml
 pod/foo created
