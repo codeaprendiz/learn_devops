@@ -1,8 +1,8 @@
 # Kind Cluster
 
-## Validate Persistent Volume Set Up
+## Validate Persistent Volume Set Up using [ExtraMounts](https://kind.sigs.k8s.io/docs/user/configuration/#extra-mounts)
 
-[kind.sigs.k8s.io/docs/user/configuration](https://kind.sigs.k8s.io/docs/user/configuration/)
+Extra mounts can be used to pass through storage on the host to a kind node for persisting data, mounting through code etc.
 
 ```bash
 mkdir /tmp/kindpath
@@ -25,10 +25,19 @@ nodes:
 - Create Cluster
 
 ```bash
-kind create cluster --config  config.yaml
+kind create cluster --config - <<EOF
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  # add a mount from /path/to/my/files on the host to /files on the node
+  extraMounts:
+  - hostPath: /tmp/kindpath
+    containerPath: /files
+EOF
 ```
 
-- pv.yaml
+- pv.yaml : To create a persistent volume
 
 ```yaml
 apiVersion: v1
@@ -44,7 +53,7 @@ spec:
     path: "/tmp/kindpath"
 ```
 
-- pvc.yaml
+- pvc.yaml : To create persistent volume claim
 
 ```yaml
 apiVersion: v1
@@ -59,7 +68,7 @@ spec:
       storage: 1Gi
 ```
 
-- dep.yaml
+- pod.yaml : To create a pod
 
 ```yaml
 apiVersion: v1
@@ -82,7 +91,7 @@ spec:
 - Apply
 
 ```bash
-$ kubectl apply -f pv.yaml,pvc.yaml,dep.yaml                 
+$ kubectl apply -f pv.yaml,pvc.yaml,pod.yaml                 
 persistentvolume/local-pv created
 persistentvolumeclaim/local-pvc created
 pod/local-pod created
@@ -148,7 +157,7 @@ nodes:
 kind create cluster --config  config.yaml
 ```
 
-- Dep.yaml
+- pod.yaml
 
 ```yaml
 kind: Pod
@@ -167,7 +176,7 @@ spec:
 - Apply
 
 ```bash
-kubectl apply -f dep.yaml
+kubectl apply -f pod.yaml
 pod/foo created
 
 # hit localhost:8080
@@ -176,7 +185,7 @@ curl --silent localhost:8080 | egrep "Welcome"
 <h1>Welcome to nginx!</h1>
 ```
 
-## NodePort with Port Mappings
+## [NodePort with Port Mappings](https://kind.sigs.k8s.io/docs/user/configuration/#nodeport-with-port-mappings)
 
 To use port mappings with NodePort, the kind node containerPort and the service nodePort needs to be equal.
 
