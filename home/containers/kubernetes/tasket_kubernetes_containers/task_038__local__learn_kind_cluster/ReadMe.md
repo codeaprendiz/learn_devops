@@ -413,7 +413,6 @@ spec:
 ---
 ```
 
-
 - Apply
 
 ```yaml
