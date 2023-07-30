@@ -126,7 +126,7 @@ Forwarding from [::1]:8081 -> 8081
   - [Github Issues: Empty reply from server" when using Ingress](https://github.com/kubernetes-sigs/kind/issues/1618#issuecomment-1166358484)
   - [Github Issues: ingress is not listening on port 80](https://github.com/kubernetes/ingress-nginx/issues/4799#issuecomment-560406420)
   - [Github Issues: ingress is not listening on port 80](https://github.com/kubernetes/ingress-nginx/issues/4799#issuecomment-560132322)
-
+  
 > If that's empty I assume you are trying to use the ingress controller in bare-metal (or docker in docker)
 > In that case you cannot use a service type=LoadBalancer.
 > We are using docker in docker
@@ -139,7 +139,7 @@ $ kubectl get deployment -n ingress-nginx
 NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
 ingress-nginx-controller   1/1     1            1           8m6s
 
-
+# https://github.com/kubernetes/ingress-nginx/issues/4799#issuecomment-560406420
 $ kubectl patch deployment ingress-nginx-controller -p '{"spec":{"template":{"spec":{"hostNetwork":true}}}}' -n ingress-nginx
 
 $ kubectl wait --namespace ingress-nginx \
