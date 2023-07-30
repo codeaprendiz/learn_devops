@@ -157,7 +157,7 @@ ingress.networking.k8s.io/hubble-ui created
 
 - Now we can visit [http://localhost](http://localhost)
 
-> Note: We are using nginx ingress and not cilium ingress, so we do not need the things mentioned here - [Service Mesh » Kubernetes Ingress Support
+> Note: We are using nginx ingress and not cilium ingress, so we don't yet need the things mentioned here - [Service Mesh » Kubernetes Ingress Support
 ](https://docs.cilium.io/en/stable/network/servicemesh/ingress/#gs-ingress)
 
 ![img](.images/image-2023-07-30-16-30-16.png)
