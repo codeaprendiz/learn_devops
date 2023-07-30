@@ -49,4 +49,5 @@
 | task_045 | [task_045__local__kind__extra_port_mappings](tasket_kubernetes_containers/task_045__local__kind__extra_port_mappings)                                                                                                     |
 | task_046 | [task_046__local__kind__nodeport_with_port_mapping](tasket_kubernetes_containers/task_046__local__kind__nodeport_with_port_mapping)                                                                                       |
 | task_047 | [task_047__local__kind__ingress_nginx](tasket_kubernetes_containers/task_047__local__kind__ingress_nginx)                                                                                                                 |
+| task_048 | [task_048__local__kind__cilium__hubble_ui__nginx_ingress](tasket_kubernetes_containers/task_048__local__kind__cilium__hubble_ui__nginx_ingress)                                                                           |
 
