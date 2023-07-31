@@ -138,7 +138,9 @@ ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-### Port Forwarding :  connections to localhost:8081 ---are--->--forwared-to-the--->---remote-host----- PUBLIC-IP:8081
+### Port Forwarding
+
+connections to localhost:8081 --------------->------------are--forwared-to-the-remote-host------------------------>---- PUBLIC-IP:8081
 
 Let's say you want to access a service running on remote server at port 8081 on your localhost at port 8081
 
@@ -174,7 +176,9 @@ $ ssh -i /Users/<username>/workspace/_ssh/id_rsa_dest -L 6443:localhost:6443 -o 
 .
 ```
 
-### Reverse ssh tunnel :          localhost:8081  <-----reverse-ssh-tunnel-------- public_ip:8080          ( forward any incoming traffic on port 8080 from the remote server (34.135.214.178) back to the local machine's port 8081)
+### Reverse ssh tunnel
+
+localhost:8081  <--------------------------------------reverse-ssh-tunnel------------------------------------ public_ip:8080          ( forward any incoming traffic on port 8080 from the remote server (34.135.214.178) back to the local machine's port 8081)
 
 - [how-to-forward-local-port-80-to-another-machine](https://askubuntu.com/questions/361426/how-to-forward-local-port-80-to-another-machine)
 
