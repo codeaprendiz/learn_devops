@@ -181,6 +181,8 @@ $ ssh -i /Users/<username>/workspace/_ssh/id_rsa_dest -L 6443:localhost:6443 -o 
 localhost:8081  <--------------------------------------reverse-ssh-tunnel------------------------------------ public_ip:8080          ( forward any incoming traffic on port 8080 from the remote server (34.135.214.178) back to the local machine's port 8081)
 
 - [how-to-forward-local-port-80-to-another-machine](https://askubuntu.com/questions/361426/how-to-forward-local-port-80-to-another-machine)
+- [How to make SSH remote port forward that listens 0.0.0.0](https://stackoverflow.com/questions/23781488/how-to-make-ssh-remote-port-forward-that-listens-0-0-0-0)
+- [Reverse port tunnelling](https://askubuntu.com/questions/50064/reverse-port-tunnelling/50075#50075)
 - [usecase for website](https://www.reddit.com/r/selfhosted/comments/ftqbar/how_reliable_are_ssh_tunnels_for_web_hosting)
 
 - Let's say we are running nginx service on port 8081 locally. We want this nginx service to be accessible on remote host with public IP 34.135.214.178 on port 8080.
@@ -198,6 +200,13 @@ $ ssh -R 8080:localhost:8081 34.135.214.178 -v
 .
 username@public-instance-1:~$ $ curl -s ifconfig.me
 34.135.214.178
+
+# edit /etc/ssh/sshd_config and set GatewayPorts to yes 
+username@public-instance-1:~$ cat /etc/ssh/sshd_config
+GatewayPorts yes
+
+# Restart sshd for changes to take effect
+username@public-instance-1:~$ sudo systemctl reload sshd
 
 ## Accessing this IP from internet
 $ curl -s 34.135.214.178:8080 | grep title
