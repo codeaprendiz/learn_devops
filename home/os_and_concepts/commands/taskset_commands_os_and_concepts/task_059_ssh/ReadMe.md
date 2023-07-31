@@ -181,6 +181,7 @@ $ ssh -i /Users/<username>/workspace/_ssh/id_rsa_dest -L 6443:localhost:6443 -o 
 localhost:8081  <--------------------------------------reverse-ssh-tunnel------------------------------------ public_ip:8080          ( forward any incoming traffic on port 8080 from the remote server (34.135.214.178) back to the local machine's port 8081)
 
 - [how-to-forward-local-port-80-to-another-machine](https://askubuntu.com/questions/361426/how-to-forward-local-port-80-to-another-machine)
+- [usecase for website](https://www.reddit.com/r/selfhosted/comments/ftqbar/how_reliable_are_ssh_tunnels_for_web_hosting)
 
 - Let's say we are running nginx service on port 8081 locally. We want this nginx service to be accessible on remote host with public IP 34.135.214.178 on port 8080.
 
