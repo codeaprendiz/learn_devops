@@ -38,41 +38,47 @@ The options are as follows:
 
 ## EXAMPLES
 
+### Basic Login commands
+
+- SSH login command
+
 ```bash
 $ssh app@10.111.123.23
 .
 ```
 
-If you want to use a different key file then
+- If you want to use a different key file then
 
 ```bash
 $ ssh -i keyFileName app@10.111.123.23
 .
 ```
 
--o
+- Using `-o` to set options
 
 ```bash
 $ ssh -o StrictHostKeyChecking=no app@$newHostname
 .
 ```
 
-Port - Specifies the port number to connect on the remote host.  The default is 22.
+- `Port` - Specifies the port number to connect on the remote host.  The default is 22.
 
 ```bash
 $ ssh -v -o Port=2222 oracle@127.0.0.1
 .
 ```
 
-To login into remote host with X11 forwarding enabled use the following command. For more details see xclock
+### X11 forwarding
+
+- To login into remote host with X11 forwarding enabled use the following command. For more details see xclock
 
 ```bash
 localUser@DESKTOP:~$ ssh remoteUser@35.238.65.79 -X
 ```
 
-- Setting up ssh login between local and remote vm
+### Setting up ssh login between local and remote vm
 
-Local
+- Local
 
 ```bash
 localUser@DESKTOP:~$ uname -a
@@ -80,7 +86,7 @@ Linux DESKTOP 4.4.0-18362-Microsoft #1-Microsoft Mon Mar 18 12:02:00 PST 2019 x8
 localUser@DESKTOP~$ ssh-keygen
 ```
 
-Remote
+- Remote
 
 ```bash
 remoteUser@test-instance:~$ uname -a
@@ -88,32 +94,36 @@ Linux test-instance 4.9.0-11-amd64 #1 SMP Debian 4.9.189-3 (2019-09-02) x86_64 G
 remoteUser@test-instance:~$ ssh-keygen
 ```
 
-Copy the ~/.ssh/id_rsa.pub of localUser to ~/.ssh/authorized_keys of remoteUser with permission 600
+- Copy the ~/.ssh/id_rsa.pub of localUser to ~/.ssh/authorized_keys of remoteUser with permission 600
 
-Remote
+- Remote
 
 ```bash
 remoteUser@test-instance:~/.ssh$ vi authorized_keys
 remoteUser@test-instance:~/.ssh$ chmod 600 ~/.ssh/authorized_keys
 ```
 
-Try logging in to the remote machine using ssh from the local machine
+- Try logging in to the remote machine using ssh from the local machine
 
-Local
+- Local
 
 ```bash
 localUser@DESKTOP:~$ ssh remoteUser@35.238.65.79
 remoteUser@test-instance:~$
 ```
 
-To login using the bastion server
+### Logging via bastion server
+
+- To login using the bastion server
 
 ```bash
 $ ssh -o ProxyCommand="ssh -i private_key_to_login.pem -W %h:%p ubuntu@bastion.host.link" -i private_key_to_login.pem ubuntu@172.126.146.224 -vvvvv
 .
 ```
 
-To run a command on another machine (like node01) from local (say controlplane)
+### Running commands on remote server
+
+- To run a command on another machine (like node01) from local (say controlplane)
 
 ```bash
 controlplane $ ssh node01 ifconfig ens3
@@ -128,19 +138,17 @@ ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-- Port Forwarding                  localhost:8000 <-------------------- PUBLIC-IP:80
+### Port Forwarding :  connections to localhost:8081 ---are--->--forwared-to-the--->---remote-host----- PUBLIC-IP:8081
 
-Let's say you want to forward the service running on public-ip:80 to your localhost:8000
-
-[how-to-forward-local-port-80-to-another-machine](https://askubuntu.com/questions/361426/how-to-forward-local-port-80-to-another-machine)
+Let's say you want to access a service running on remote server at port 8081 on your localhost at port 8081
 
 ```bash
 ## Assuming you have SSH access to the machine
-$ ssh -L 8000:localhost:80 opc@PUBLIC-IP
+$ ssh -L 8081:localhost:8081 opc@PUBLIC-IP
 .
 ```
 
-- Port forwarding via a Jump Server         localhost:8081 <-------------------- PUBLIC-IP <------------------------- PRIVATE-IP:8081
+- Port forwarding via a Jump Server    connections to localhost:8081 -----are-forwarded-to--->-- PUBLIC-IP --> are-forwarded-to->---remote-private-host----->-------- PRIVATE-IP:8081
 
   - `ssh`: This command starts the SSH client program that allows secure connection to the SSH server on a remote machine.
 
@@ -165,3 +173,36 @@ $ ssh -L 8081:localhost:8081 -J <jump_server_username>@<jump_server_public_ip> <
 $ ssh -i /Users/<username>/workspace/_ssh/id_rsa_dest -L 6443:localhost:6443 -o ProxyCommand="ssh -i /Users/<username>/workspace/_ssh/id_rsa_jump  -W %h:%p <jump_login_user>@<jump_public_ip>" <dest_login_user>@<dest_private_ip> -N -f -q          # -v
 .
 ```
+
+### Reverse ssh tunnel :          localhost:8081  <-----reverse-ssh-tunnel-------- public_ip:8080          ( forward any incoming traffic on port 8080 from the remote server (34.135.214.178) back to the local machine's port 8081)
+
+- [how-to-forward-local-port-80-to-another-machine](https://askubuntu.com/questions/361426/how-to-forward-local-port-80-to-another-machine)
+
+- Let's say we are running nginx service on port 8081 locally. We want this nginx service to be accessible on remote host with public IP 34.135.214.178 on port 8080.
+
+> Note: Only root can bind ports numbered under 1024.
+
+```bash
+$ docker run -it --rm -d -p 8081:80 --name web nginx
+a637bfd7fc075b751ad5245c034b27a6afbf3509d47e73383b1af4e50688800f
+$ curl -s  localhost:8081 | grep title  
+<title>Welcome to nginx!</title>
+
+# Now we want this nginx to be accessible via the public ip on port 8080
+$ ssh -R 8080:localhost:8081 34.135.214.178 -v
+.
+username@public-instance-1:~$ $ curl -s ifconfig.me
+34.135.214.178
+
+## Accessing this IP from internet
+$ curl -s 34.135.214.178:8080 | grep title
+<title>Welcome to nginx!</title>
+```
+
+1. `-R 8080:localhost:8081`: This is an option for the SSH command that specifies a remote port forwarding. It tells SSH to forward any incoming traffic on port 8080 from the remote server (34.135.214.178) back to the local machine's port 8081. The syntax is `-R [remote_port]:[destination]:[local_port]`.
+
+2. `34.135.214.178`: This is the IP address (or hostname) of the remote server to which you want to connect using SSH.
+
+3. `-v`: This is an optional flag that stands for "verbose" mode. When this flag is used, the SSH client will produce more detailed output during the connection process, which can be helpful for debugging and understanding what's happening behind the scenes.
+
+Overall, this command is setting up a reverse SSH tunnel from the remote server at IP address 34.135.214.178 to the local machine, forwarding any incoming traffic on port 8080 of the remote server back to port 8081 on the local machine. The `-v` flag provides verbose output to show what's happening during the connection process. This can be useful for troubleshooting and monitoring the connection.
