@@ -35,6 +35,12 @@ CMD+SHIFT+H
 CMD+SHIFT+.
 ```
 
+- To print character `»`
+
+```bash
+OPTION + SHIFT + \
+```
+
 ## Chrome Shortcuts
 
 [support.google.com/chrome/answer/157179](https://support.google.com/chrome/answer/157179)

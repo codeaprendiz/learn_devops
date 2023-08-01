@@ -103,3 +103,11 @@ NAME            NAMESPACE       REVISION        UPDATED                         
 keycloak        keycloak        1               2023-07-01 21:23:21.136805 +0530 IST    pending-install keycloakx-2.2.1 20.0.3   
 ```
 
+- The following command searches for Helm charts with the keyword "cilium" in Helm repositories and displays the results in a detailed list format.
+
+```bash
+$ helm search repo -l cilium
+NAME            CHART VERSION   APP VERSION     DESCRIPTION                                       
+cilium/cilium   1.14.0          1.14.0          eBPF-based Networking, Security, and Observability
+cilium/cilium   1.13.5          1.13.5          eBPF-based Networking, Security, and Observability
+```
