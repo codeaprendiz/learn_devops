@@ -1,10 +1,10 @@
 # Cert Manager
 
-- [github.com/cert-manager/cert-manager/releases/tag/v1.12.2](https://github.com/cert-manager/cert-manager/releases/tag/v1.12.2)
-- [cert-manager.io/docs/installation/helm](https://cert-manager.io/docs/installation/helm/)
-- [tutorials/getting-started-with-cert-manager-on-google-kubernetes-engine-using-lets-encrypt-for-ingress-ssl](https://cert-manager.io/docs/tutorials/getting-started-with-cert-manager-on-google-kubernetes-engine-using-lets-encrypt-for-ingress-ssl/)
-- [tutorials/dns-validation](https://cert-manager.io/docs/tutorials/acme/dns-validation)
-- [configuration/acme/dns01/route53](https://cert-manager.io/docs/configuration/acme/dns01/route53/)
+- [Github » CertManager » Releases](https://github.com/cert-manager/cert-manager/releases)
+- [CertManager » Docs » Installation » helm](https://cert-manager.io/docs/installation/helm/)
+- [CertManager » Docs » Tutorials » Getting started with cert manager on google kubernetes engine using lets encrypt for ingress ssl](https://cert-manager.io/docs/tutorials/getting-started-with-cert-manager-on-google-kubernetes-engine-using-lets-encrypt-for-ingress-ssl/)
+- [CertManager » Docs » Tutorials » dns-validation](https://cert-manager.io/docs/tutorials/acme/dns-validation)
+- [CertManager » Docs » Configuration » Acme » dns01 » route53](https://cert-manager.io/docs/configuration/acme/dns01/route53/)
 
 Ensure that you have completed the [task_041__gcp_k8s__nginx_ingress](../task_041__gcp_k8s__nginx_ingress) and we will continue from there
 
