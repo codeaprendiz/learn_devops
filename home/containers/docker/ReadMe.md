@@ -29,4 +29,5 @@
 | task_022 | [task_022_sample_app](taskset_docker_containers/task_022_sample_app)                                                                                                                                       |
 | task_023 | [task_023_update_sample_app](taskset_docker_containers/task_023_update_sample_app)                                                                                                                         |
 | task_024 | [task_024_sample_app_persist_db](taskset_docker_containers/task_024_sample_app_persist_db)                                                                                                                 |
+| task_025 | [task_025_sonarqube__keycloak__saml](taskset_docker_containers/task_025_sonarqube__keycloak__saml)                                                                                                         |
 
