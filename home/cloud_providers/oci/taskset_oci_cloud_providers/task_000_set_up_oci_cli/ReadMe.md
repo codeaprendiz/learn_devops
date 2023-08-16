@@ -1,6 +1,7 @@
 # Set up OCI Cli
 
-[Setup oci cli](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
+[docs.oracle.com » Developer Resources » Required Keys and OCIDs](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
+[docs.oracle.com » Developer Resources » Working with CLI » Configuring the CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliconfigure.htm)
 
 - Login to oracle cloud
 
@@ -10,7 +11,7 @@
 
 - Create the OCI directory
 
-```
+```bash
 ╰─ mkdir -p ~/.oci/
 ╰─ touch ~/.oci/config
 ```
@@ -43,4 +44,7 @@ key_file=~/.oci/oci-private.pem
 
 ```bash
 ╰─ oci os bucket list --compartment-id <compartment-id> | jq '.data[] | {name} '
+## Alternatively you can pass the config file as argument as well
+╰─ oci os bucket list --compartment-id <compartment-id> --config-file </path/to/file> | jq '.data[] | {name} '
+.
 ```
