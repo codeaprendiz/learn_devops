@@ -108,4 +108,7 @@
 | task_105 | [task_105_mysqldump](taskset_commands_os_and_concepts/task_105_mysqldump)       |
 | task_106 | [task_106_ssh_keygen](taskset_commands_os_and_concepts/task_106_ssh_keygen)     |
 | task_107 | [task_107_iptables](taskset_commands_os_and_concepts/task_107_iptables)         |
+| task_108 | [task_108_adduser](taskset_commands_os_and_concepts/task_108_adduser)           |
+| task_109 | [task_109_chgrp](taskset_commands_os_and_concepts/task_109_chgrp)               |
+| task_110 | [task_110_sqlcmd](taskset_commands_os_and_concepts/task_110_sqlcmd)             |
 
