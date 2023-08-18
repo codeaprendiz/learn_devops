@@ -1,14 +1,12 @@
-### Resources
+# Learning Resources
 
-[sre.google](https://sre.google/)
+## Learn SRE
 
-[system-monitoring-and-troubleshooting](https://www.rapid7.com/fundamentals/system-monitoring-and-troubleshooting/)
+- [sre.google](https://sre.google/)
 
-[What is blue green deployment?](https://semaphoreci.com/blog/blue-green-deployment)
+- [system-monitoring-and-troubleshooting](https://www.rapid7.com/fundamentals/system-monitoring-and-troubleshooting/)
 
-[what-happens-when-you-type-an-url-in-the-browser-and-press-enter](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
-
-### Free Ebooks
+## Free Ebooks
 
 [building_secure_and_reliable_systems](https://sre.google/books/building-secure-reliable-systems)
 
@@ -16,8 +14,6 @@
 
 [SRE Book](https://sre.google/sre-book/table-of-contents/)
 
+## Kubernetes
 
-### Train Your Mind
-
-[from-engineer-to-tech-lead-doubts-and-challenges](https://dev.to/dvddpl/from-engineer-to-tech-lead-doubts-and-challenges-4n9e)
-[how-to-break-the-senior-engineer-career-ceiling](https://theburningmonk.com/2019/11/how-to-break-the-senior-engineer-career-ceiling)
+- [Openshift » developers.redhat.com » developer-sandbox](https://developers.redhat.com/developer-sandbox)

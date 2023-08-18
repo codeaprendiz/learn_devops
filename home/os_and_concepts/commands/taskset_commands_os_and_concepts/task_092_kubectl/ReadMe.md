@@ -67,7 +67,7 @@ $ kubectl cluster-info dump | grep -m 1 service-cluster-ip-range
   nslookup is a tool for querying the Domain Name System (DNS) to obtain domain name or IP address mapping or other DNS records.
 
 ```bash
-$ kubectl run busybox --rm --image=busybox:1.28 --restart=Never --rm -it -- nslookup kubernetes.default
+$ kubectl run busybox --rm --image=busybox:1.28 --restart=Never -it -- nslookup kubernetes.default
 Server:    10.112.0.10
 Address 1: 10.112.0.10 kube-dns.kube-system.svc.cluster.local
 
