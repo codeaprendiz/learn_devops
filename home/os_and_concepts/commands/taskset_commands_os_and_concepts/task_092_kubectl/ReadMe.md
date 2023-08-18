@@ -30,7 +30,12 @@ NOTES:
 
 - Editing a replicaset, don't forget to delete the pods so that the new ones get crated with the new changes.
 
-## Frequently Used
+## Frequently used links
+
+- [https://kubectl.docs.kubernetes.io » kubectl](https://kubectl.docs.kubernetes.io/references/kubectl)
+- [kubectl.docs.kubernetes.io » Kustomize](https://kubectl.docs.kubernetes.io/references/kustomize)
+
+## Frequently Used Commands
 
 - To get all resource types from all namespaces
 
@@ -90,6 +95,13 @@ $ kubectl config get-contexts
 ```bash
 $ kubectl config rename-context <current-context-name> <new-name-of-the-context>
 .
+```
+
+- To copy file from pod to local [stackoverflow](https://stackoverflow.com/questions/67624630/unable-to-copy-data-from-pod-to-local-using-kubectl-cp-command)
+
+```bash
+# kubectl cp <namespace>/<pod-name>:<path-in-pod> <local-path>
+$ kubectl cp --retries=-1 mynamespace/mypod:/etc/config/config.txt ~/mylocaldir/
 ```
 
 ## kubectl
