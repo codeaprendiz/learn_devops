@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: quotes
+    sandbox: learn-kubernetes
+    learn-kubernetes: quotes
+  name: quotes
+spec:
+  port:
+    targetPort: 10000-tcp
+  to:
+    kind: Service
+    name: quotes

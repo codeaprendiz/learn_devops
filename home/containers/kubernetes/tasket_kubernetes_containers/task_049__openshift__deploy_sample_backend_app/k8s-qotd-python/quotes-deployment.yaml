@@ -1,0 +1,25 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: quotes
+  labels:
+    app: quotes
+    sandbox: learn-kubernetes
+    learn-kubernetes: quotes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quotes
+  template:
+    metadata:
+      labels:
+        app: quotes
+    spec:
+      containers:
+        - name: quotes
+          image: quay.io/donschenck/quotes:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 10000
+              protocol: TCP

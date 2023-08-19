@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: quotes
+    sandbox: learn-kubernetes
+    learn-kubernetes: quotes
+  name: quotes
+spec:
+  ports:
+  - name: 10000-tcp
+    port: 10000
+    protocol: TCP
+    targetPort: 10000
+  - name: 8443-tcp
+    port: 8443
+    protocol: TCP
+    targetPort: 8443
+  - name: 8778-tcp
+    port: 8778
+    protocol: TCP
+    targetPort: 8778
+  selector:
+    app: quotes
+  sessionAffinity: None
+  type: ClusterIP
