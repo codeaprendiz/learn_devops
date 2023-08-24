@@ -6,6 +6,8 @@
 
 - [system-monitoring-and-troubleshooting](https://www.rapid7.com/fundamentals/system-monitoring-and-troubleshooting/)
 
+- [Google Cloud infrastructure reliability guide](https://cloud.google.com/architecture/infra-reliability-guide)
+
 ## Free Ebooks
 
 [building_secure_and_reliable_systems](https://sre.google/books/building-secure-reliable-systems)
