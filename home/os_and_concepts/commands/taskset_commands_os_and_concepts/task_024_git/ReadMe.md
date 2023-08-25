@@ -306,3 +306,20 @@ $ du -sh tmp.bundle
 $ rm tmp.bundle
 .
 ```
+
+[github.blog » easier-builds-and-deployments-using-git-over-https-and-oauth](https://github.blog/2012-09-21-easier-builds-and-deployments-using-git-over-https-and-oauth/)
+
+- To replace any instance of `https://github.com/` with `https://$PAT:x-oauth-basic@github.com/` whenever you interact with a repository.
+- This can be particularly useful if you want to use HTTPS authentication with a PAT.
+
+```bash
+$ git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+.
+```
+
+- To configures Git to replace any instance of the SSH URL `ssh://git@github.com/` with the HTTPS URL containing your PAT `(https://$PAT:x-oauth-basic@github.com/)` whenever you interact with a repository.
+
+```bash
+$ git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "ssh://git@github.com/"
+.
+```

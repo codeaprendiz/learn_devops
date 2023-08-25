@@ -8,6 +8,10 @@
 
 - [Google Cloud infrastructure reliability guide](https://cloud.google.com/architecture/infra-reliability-guide)
 
+## AWS
+
+- [Configuring client IP address preservation with a Network Load Balancer in AWS Global Accelerator](https://aws.amazon.com/blogs/networking-and-content-delivery/configuring-client-ip-address-preservation-with-a-network-load-balancer-in-aws-global-accelerator/)
+
 ## Free Ebooks
 
 [building_secure_and_reliable_systems](https://sre.google/books/building-secure-reliable-systems)
