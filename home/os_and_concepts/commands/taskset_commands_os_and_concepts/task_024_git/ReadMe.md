@@ -323,3 +323,10 @@ $ git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "ht
 $ git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "ssh://git@github.com/"
 .
 ```
+
+- To delete all branches `locally` that have been merged [stackoverflow](https://stackoverflow.com/questions/6127328/how-do-i-delete-all-git-branches-which-have-been-merged)
+
+```bash
+$ git --no-pager branch --merged  | egrep -v "master" | xargs git branch -d
+.
+```

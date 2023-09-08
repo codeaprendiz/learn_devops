@@ -165,33 +165,35 @@ $ docker run --rm --name keycloak -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLO
 
 ### Setting up Keycloak
 
-- Access at [http://localhost:8080](http://localhost:8080)
-- Clients » Create client »
-  - Client type : SAML
-  - Client ID : sonarqube
-  - Valid redirect URLs : `http://localhost:9000/oauth2/callback/saml`
-- Clients » Client details »
-  - Keys » Client signature required » On
-  - Keys » Certificate » Import Key » Select `Certificate PEM` and import the `cert.pem` file and import
-  - Encrypt Assertions » On
+> Ensure that you are doing 3.3 before 3.2 otherwise it leads to erroneaus state.
+
+- 1. Access at [http://localhost:8080](http://localhost:8080)
+- 2. Clients » Create client »
+  - 2.1. Client type : SAML
+  - 2.2 Client ID : sonarqube
+  - 2.3 Valid redirect URLs : `http://localhost:9000/oauth2/callback/saml`
+- 3. Clients » Client details »
+  - 3.1 Keys » Client signature required » On
+  - 3.3 Encrypt Assertions » On
     - Import : JKS
     - Import the keystore.p12
     - Key alias : `myalias` which you gave in the command
     - Store Password : `pass123` which you gave in the command
-  - Client scopes » Delete `role_list`
-  - Client scopes » sonarqube-dedicated »
-    - Configure a new mapper » User Property
-      - Name : `Login`
-      - Property : `Username`
-      - SAML Attribute Name : `login` and Save
-    - Configure a new mapper » User Property
-      - Name: `Name`
-      - Property : `Username`
-      - SAML Attribute Name : `name` and Save
-    - Configure a new mapper » User Property
-      - Name: `Email`
-      - Property: `Email`
-      - SAML Attribute Name: `email` and Save
+  - 3.2 Keys » Certificate » Import Key » Select `Certificate PEM` and import the `cert.pem` file and import
+- 4. Client scopes » Delete `role_list`
+- 5. Client scopes » sonarqube-dedicated »
+  - Configure a new mapper » User Property
+    - Name : `Login`
+    - Property : `Username`
+    - SAML Attribute Name : `login` and Save
+  - Configure a new mapper » User Property
+    - Name: `Name`
+    - Property : `Username`
+    - SAML Attribute Name : `name` and Save
+  - Configure a new mapper » User Property
+    - Name: `Email`
+    - Property: `Email`
+    - SAML Attribute Name: `email` and Save
 
 - Realm Setting » SAML 2.0 Identity Provider Metadata » `http://localhost:8080/realms/master/protocol/saml/descriptor` , we will use this later
 
