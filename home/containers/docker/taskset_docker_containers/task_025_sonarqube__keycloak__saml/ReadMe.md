@@ -74,7 +74,7 @@ In a SAML-based authentication flow, the Identity Provider is responsible for au
 
 ### 3. Detailed Workflow
 
-![img](.images/image-2023-08-06-16-26-08.png)
+![img.png](.images/img.png)
 
 1. **User Initiates Login**: The user clicks on the 'Login with SAML' button on the SonarQube web page.
 
