@@ -303,9 +303,9 @@ Your browser you go to this 172.16.104.21  IP address first to get the response.
 172.16.104.21   test.oms.qa.domain.com
 ```
 
-### /etc/reslov.conf
+### /etc/resolv.conf
 
-Path on mac : /etc/reslov.conf
+Path on mac : /etc/resolv.conf
 
 Each entry can be called as additional search domain.
 
