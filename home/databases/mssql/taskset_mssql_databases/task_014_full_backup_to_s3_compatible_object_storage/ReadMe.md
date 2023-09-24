@@ -40,3 +40,11 @@ WITH    FORMAT /* overwrite any existing backup sets */
 ```
 
 > Note: You have to add BACKUP_OPTIONS which is not given explicitly in the documentation example.
+
+---
+
+## Validate Backup on s3
+
+```bash
+AWS_ACCESS_KEY_ID=<your_key_id> AWS_SECRET_ACCESS_KEY=<your_secret_key> aws s3 ls  s3://backup-bucket --endpoint-url https://abcdefghikjlm.compat.objectstorage.ap-mumbai-1.oraclecloud.com --region ap-mumbai-1 
+```
