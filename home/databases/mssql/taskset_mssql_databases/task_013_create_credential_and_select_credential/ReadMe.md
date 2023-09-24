@@ -2,6 +2,8 @@
 
 - [Create Credential UseCase](https://learn.microsoft.com/en-us/sql/relational-databases/tutorial-sql-server-backup-and-restore-to-s3?view=sql-server-ver16&tabs=tsql#create-credential)
 
+## Create credential for OCI object storage
+
 In SQL Server, a `CREDENTIAL` is a record that contains the authentication information (like username and password or access key and secret key) required to connect to a resource outside of SQL Server. This can be a remote data source, a web service, a file system, or, in this case, an S3-compatible storage service.
 
 The `CREATE CREDENTIAL` statement is used to store these details securely within SQL Server so that they can be used by SQL Server to authenticate against external services without exposing sensitive information in scripts or queries.
