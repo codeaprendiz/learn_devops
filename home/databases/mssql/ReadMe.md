@@ -15,5 +15,7 @@
 | task_011 | [task_011_insert_records__if_not_exists](taskset_mssql_databases/task_011_insert_records__if_not_exists)                               |
 | task_012 | [task_012_select_all_from_table](taskset_mssql_databases/task_012_select_all_from_table)                                               |
 | task_013 | [task_013_create_credential_and_select_credential](taskset_mssql_databases/task_013_create_credential_and_select_credential)           |
-| task_014 | [task_014_backup_to_s3_compatible_object_storage](taskset_mssql_databases/task_014_backup_to_s3_compatible_object_storage)             |
+| task_014 | [task_014_full_backup_to_s3_compatible_object_storage](taskset_mssql_databases/task_014_full_backup_to_s3_compatible_object_storage)   |
+| task_015 | [task_015_get_connection_info__kill](taskset_mssql_databases/task_015_get_connection_info__kill)                                       |
+| task_016 | [task_016_full_backup_to_disk](taskset_mssql_databases/task_016_full_backup_to_disk)                                                   |
 

@@ -36,10 +36,10 @@ The script is used to first identify all the processes connected to the `SQLTest
 
 Imagine the `SELECT` query returned the following table:
 
-| spid | status  | loginame | hostname       | blocked | database_name |
-|------|---------|----------|----------------|---------|---------------|
-| 58   | running | sa       | X-MacBook-Pro  | 0       | SQLTestDB     |
-| 69   | running | user2    | PC2            | 58      | SQLTestDB     |
+| spid | status  | loginame | hostname      | blocked | database_name |
+|------|---------|----------|---------------|---------|---------------|
+| 58   | running | sa       | X-MacBook-Pro | 0       | SQLTestDB     |
+| 69   | running | user2    | PC2           | 58      | SQLTestDB     |
 
 From the table:
 
