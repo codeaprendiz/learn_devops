@@ -10,6 +10,6 @@ SELECT @@VERSION;
 
 - Output
 
-| # | (No column name)                             |
-|---|----------------------------------------------|
-| 1 | Microsoft SQL Server 2022 ...                |
+| # | (No column name)              |
+|---|-------------------------------|
+| 1 | Microsoft SQL Server 2022 ... |
