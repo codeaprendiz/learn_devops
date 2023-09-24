@@ -5,6 +5,17 @@
 
 ---
 
+## Start the database locally
+
+```bash
+# Press cntr+c to stop, data would get deleted and container would get removed
+docker run --rm -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<your_password>" \
+   -p 1433:1433 --name sql1 --hostname sql1 \
+   mcr.microsoft.com/mssql/server:2022-latest
+```
+
+---
+
 ## Backup to OCI object storage
 
 - Create credential using task_013 first.
