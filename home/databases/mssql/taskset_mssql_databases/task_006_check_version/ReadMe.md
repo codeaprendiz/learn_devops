@@ -5,7 +5,7 @@
 - To check the mssql version.
 
 ```sql
-Select @@version
+SELECT @@VERSION;
 ```
 
 - Output
