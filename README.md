@@ -1,6 +1,6 @@
 # Home 
 
-> Total Number of Tasks :      371
+> Total Number of Tasks :      378
 
 - [Cloud Certifications](#Cloud_certifications)
 - [Cloud Providers](#Cloud_providers)
