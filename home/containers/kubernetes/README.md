@@ -51,4 +51,5 @@
 | task_047 | [task_047__local__kind__ingress_nginx](tasket_kubernetes_containers/task_047__local__kind__ingress_nginx)                                                                                                                 |
 | task_048 | [task_048__local__kind__cilium__hubble_ui__nginx_ingress](tasket_kubernetes_containers/task_048__local__kind__cilium__hubble_ui__nginx_ingress)                                                                           |
 | task_049 | [task_049__openshift__deploy_sample_backend_app](tasket_kubernetes_containers/task_049__openshift__deploy_sample_backend_app)                                                                                             |
+| task_050 | [task_050__local__kind__headless_svc](tasket_kubernetes_containers/task_050__local__kind__headless_svc)                                                                                                                   |
 

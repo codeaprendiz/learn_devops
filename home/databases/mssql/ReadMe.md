@@ -18,4 +18,5 @@
 | task_014 | [task_014_full_backup_to_s3_compatible_object_storage](taskset_mssql_databases/task_014_full_backup_to_s3_compatible_object_storage)   |
 | task_015 | [task_015_get_connection_info__kill](taskset_mssql_databases/task_015_get_connection_info__kill)                                       |
 | task_016 | [task_016_full_backup_to_disk](taskset_mssql_databases/task_016_full_backup_to_disk)                                                   |
+| task_017 | [task_017_show_all_tables_in_specific_database](taskset_mssql_databases/task_017_show_all_tables_in_specific_database)                 |
 
