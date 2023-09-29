@@ -110,6 +110,18 @@ $ kubectl config rename-context <current-context-name> <new-name-of-the-context>
 .
 ```
 
+- To create kubernetes secret from env_file
+
+```bash
+kubectl create secret generic <name_of_secret> \
+--from-env-file=secret.properties \
+--dry-run=client -o yaml -n <namespace>
+
+## Secret.properties file
+ENV1=valueone
+ENV2=data source=something, user=something; options=something
+```
+
 - To copy file from pod to local [stackoverflow](https://stackoverflow.com/questions/67624630/unable-to-copy-data-from-pod-to-local-using-kubectl-cp-command)
 
 ```bash
