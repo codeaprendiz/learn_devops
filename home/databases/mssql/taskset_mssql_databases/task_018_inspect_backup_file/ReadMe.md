@@ -50,7 +50,7 @@ RESTORE HEADERONLY
 FROM DISK = 'SQLTestDB.bak';
 ```
 
-Output
+- Output
 
 | Backup Name                       | Backup Description                                      | Username | Password | Database Name | Position |
 |-----------------------------------|---------------------------------------------------------|----------|----------|---------------|----------|
@@ -58,3 +58,14 @@ Output
 | Differential Backup of SQLTestDB  | This is a differential backup of the SQLTestDB database | sa       | sql1     | SQLTestDB     | 2        |
 | Differential Backup of SQLTestDB  | This is a differential backup of the SQLTestDB database | sa       | sql1     | SQLTestDB     | 3        |
 
+```sql
+RESTORE FILELISTONLY 
+FROM DISK = 'SQLTestDB.bak';
+```
+
+- Output
+
+| Logical Name   | PhysicalName                             |
+|----------------|------------------------------------------|
+| SQLTestDB      | /var/opt/mssql/data/SQLTestDB.mdf        |
+| SQLTestDB_log  | /var/opt/mssql/data/SQLTestDB_log.ldf    |
