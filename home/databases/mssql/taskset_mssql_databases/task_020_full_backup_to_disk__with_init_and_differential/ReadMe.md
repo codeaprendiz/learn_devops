@@ -99,3 +99,5 @@ FROM DISK = 'SQLTestDB.bak';
 | Full Backup of SQLTestDB | This is a full backup of the SQLTestDB database          |
 | Diff-1 of SQLTestDB      | This diff-1 should include id 7 row                      |
 | Diff-2 of SQLTestDB      | This diff-2 should include id 8 row                      |
+
+- You can copy this backup to the required location.
