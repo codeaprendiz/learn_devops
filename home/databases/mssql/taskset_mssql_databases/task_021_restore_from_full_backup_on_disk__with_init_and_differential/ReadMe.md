@@ -38,6 +38,11 @@ GO
 
 - You can inspect the backup file as well
 
+```sql
+RESTORE HEADERONLY 
+FROM DISK = '/var/opt/mssql/backup/SQLTestDB.bak';
+```
+
 - Output
 
 | Backup Name              | Backup Description                                       |
