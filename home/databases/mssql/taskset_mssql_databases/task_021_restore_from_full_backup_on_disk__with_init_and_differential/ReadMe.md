@@ -45,11 +45,11 @@ FROM DISK = '/var/opt/mssql/backup/SQLTestDB.bak';
 
 - Output
 
-| Backup Name              | Backup Description                                       |
-|--------------------------|----------------------------------------------------------|
-| Full Backup of SQLTestDB | This is a full backup of the SQLTestDB database          |
-| Diff-1 of SQLTestDB      | This diff-1 should include id 7 row                      |
-| Diff-2 of SQLTestDB      | This diff-2 should include id 8 row                      |
+| Backup Name              | Backup Description                              |
+|--------------------------|-------------------------------------------------|
+| Full Backup of SQLTestDB | This is a full backup of the SQLTestDB database |
+| Diff-1 of SQLTestDB      | This diff-1 should include id 7 row             |
+| Diff-2 of SQLTestDB      | This diff-2 should include id 8 row             |
 
 - Let's first restore the first i.e. `Full Backup of SQLTestDB`
 

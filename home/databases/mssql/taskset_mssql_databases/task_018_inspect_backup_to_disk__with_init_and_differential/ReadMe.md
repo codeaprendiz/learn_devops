@@ -52,11 +52,11 @@ FROM DISK = 'SQLTestDB.bak';
 
 - Output
 
-| Backup Name                       | Backup Description                                      | Username | Password | Database Name | Position |
-|-----------------------------------|---------------------------------------------------------|----------|----------|---------------|----------|
-| Full Backup of SQLTestDB          | This is a full backup of the SQLTestDB database         | sa       | sql1     | SQLTestDB     | 1        |
-| Differential Backup of SQLTestDB  | This is a differential backup of the SQLTestDB database | sa       | sql1     | SQLTestDB     | 2        |
-| Differential Backup of SQLTestDB  | This is a differential backup of the SQLTestDB database | sa       | sql1     | SQLTestDB     | 3        |
+| Backup Name                      | Backup Description                                      | Username | Password | Database Name | Position |
+|----------------------------------|---------------------------------------------------------|----------|----------|---------------|----------|
+| Full Backup of SQLTestDB         | This is a full backup of the SQLTestDB database         | sa       | sql1     | SQLTestDB     | 1        |
+| Differential Backup of SQLTestDB | This is a differential backup of the SQLTestDB database | sa       | sql1     | SQLTestDB     | 2        |
+| Differential Backup of SQLTestDB | This is a differential backup of the SQLTestDB database | sa       | sql1     | SQLTestDB     | 3        |
 
 ```sql
 RESTORE FILELISTONLY 
@@ -65,7 +65,7 @@ FROM DISK = 'SQLTestDB.bak';
 
 - Output
 
-| Logical Name   | PhysicalName                             |
-|----------------|------------------------------------------|
-| SQLTestDB      | /var/opt/mssql/data/SQLTestDB.mdf        |
-| SQLTestDB_log  | /var/opt/mssql/data/SQLTestDB_log.ldf    |
+| Logical Name  | PhysicalName                          |
+|---------------|---------------------------------------|
+| SQLTestDB     | /var/opt/mssql/data/SQLTestDB.mdf     |
+| SQLTestDB_log | /var/opt/mssql/data/SQLTestDB_log.ldf |

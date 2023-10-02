@@ -26,12 +26,12 @@ GO
 
 - Output
 
-| Name          |
-|---------------|
-| master        |
-| tempdb        |
-| model         |
-| msdb          |
+| Name   |
+|--------|
+| master |
+| tempdb |
+| model  |
+| msdb   |
 
 ```sql
 RESTORE DATABASE [SQLTestDB]
@@ -64,13 +64,13 @@ GO
 
 - Output
 
-| Name          |
-|---------------|
-| master        |
-| tempdb        |
-| model         |
-| msdb          |
-| SQLTestDB     |
+| Name      |
+|-----------|
+| master    |
+| tempdb    |
+| model     |
+| msdb      |
+| SQLTestDB |
 
 - Validate data
 
