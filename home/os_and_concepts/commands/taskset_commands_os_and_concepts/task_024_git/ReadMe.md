@@ -330,3 +330,17 @@ $ git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "ss
 $ git --no-pager branch --merged  | egrep -v "master" | xargs git branch -d
 .
 ```
+
+- To merge master to your current branch
+
+```bash
+# Let's you are on branch branch1, and you want to merge master latest changes to branch1
+# If you want to merge via rebase
+# $ git config pull.rebase true
+# If you want to merge without rebase
+$ git config pull.rebase false
+$ git pull origin master
+# you will be asked to give a commit for the changes in your default editor, save and close the file
+# Push your changes to origin/branch1
+$ ggpush  # zsh alias | git push -u origin branch1
+```
