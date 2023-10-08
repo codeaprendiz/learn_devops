@@ -50,3 +50,15 @@ $ cat ~/.zshrc | grep "plugins="
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 ```
+
+## NPM packages
+
+```bash
+# For pdf generation of ReadMe.md
+npm install -g markdown-pdf
+```
+
+```bash
+# For table formatting in ReadMe.md
+npm install -g markdown-table-formatter
+```
