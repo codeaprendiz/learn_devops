@@ -4,22 +4,6 @@
 
 vim - Vi IMproved, a programmers text editor
 
-## SYNOPSIS
-
-> vim [options] [file ..]
-
-> vim [options] - 
-
-> vim [options] -t tag 
-
-> vim [options] -q [errorfile] 
-
-> ex gex view 
-
-> gvim gview vimx evim eview 
-
-> rvim rview rgvim rgview
-
 ## DESCRIPTION
 
 Vim is a text editor that is upwards compatible to Vi.  It can be used to edit all kinds of plain text.  It is especially useful for editing programs.
@@ -79,3 +63,21 @@ How to paste yaml in vi
 ```
 
 - You can turn it back on
+
+---
+
+- Copy single character on which cursor rests [vi.stackexchange.com](https://vi.stackexchange.com/questions/5806/how-can-i-yank-copy-the-single-character-on-which-the-cursor-rests)
+
+```bash
+# yiw = yank in current word
+# yaw = yank all word (includes a trailing space)
+# yy = yank the current line
+# 3yy = yank three lines starting at the current one
+# yap = yank all paragraph (includes trailing newline)
+
+# To copy two characters from where the cursor is residing
+2yl
+# let's say it copies *a
+# To paste at the begining of the line press
+(capital)P
+```
