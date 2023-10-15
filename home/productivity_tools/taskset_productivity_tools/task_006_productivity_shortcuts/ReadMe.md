@@ -41,6 +41,12 @@ CMD+SHIFT+.
 OPTION + SHIFT + \
 ```
 
+- New folder via right click
+
+```bash
+FUNCTION + SHIFT + F10
+```
+
 ## Chrome Shortcuts
 
 [support.google.com/chrome/answer/157179](https://support.google.com/chrome/answer/157179)
