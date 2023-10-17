@@ -162,6 +162,18 @@ CMD + SHIFT + V
 CMD + W
 ```
 
+- If you want to select all occurrences of the same word or character across the entire file in the editor, you can use the following shortcut
+
+```bash
+CMD + SHIFT + L
+```
+
+- If you wish to add the next occurrence of a word or character to your selection
+
+```bash
+CMD + D
+```
+
 ### Side Panel Shortcuts
 
 - To open the sidebar `Explorer`, you should be in terminal
