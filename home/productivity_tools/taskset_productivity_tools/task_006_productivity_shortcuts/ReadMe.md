@@ -2,257 +2,81 @@
 
 ## MAC Shortcuts
 
-- Make the bottom icons on Desktop toggle
-
-```bash
-## Ensure that you have clicked on the empty are on desktop
- CMD+OPTIONS+D
-```
-
-- Switch between different apps in one desktop
-
-```bash
-## You can arrow keys left and right for faster navigation
-CMD+TAB 
-```
-
-- Switch between different windows of the same app (say two window of chrome) in one desktop
-
-```bash
-## Tilde is the key on left side of 1 with ~ printed on top ` below
-CMD+TILDE
-```
-
-- Open Home in Finder
-
-```bash
-CMD+SHIFT+H
-```
-
-- Toggle Finder hidden files and folder
-
-```bash
-CMD+SHIFT+.
-```
-
-- To print character `»`
-
-```bash
-OPTION + SHIFT + \
-```
-
-- New folder via right click
-
-```bash
-FUNCTION + SHIFT + F10
-```
+| Action                                                  | Shortcut                   | Notes                                                                   |
+|---------------------------------------------------------|----------------------------|-------------------------------------------------------------------------|
+| Make the bottom icons on Desktop toggle                 | `CMD+OPTIONS+D`            | Ensure that you have clicked on the empty area on the desktop           |
+| Switch between different apps in one desktop            | `CMD+TAB`                  | You can use arrow keys left and right for faster navigation             |
+| Switch between windows of the same app                  | `CMD+TILDE`                | Tilde is the key on the left side of 1 with ~ printed on top and ` below |
+| Open Home in Finder                                     | `CMD+SHIFT+H`              | -                                                                       |
+| Toggle Finder hidden files and folder                   | `CMD+SHIFT+.`              | -                                                                       |
+| Print character `»`                                     | `OPTION + SHIFT + \`       | -                                                                       |
+| New folder via right click                              | `FUNCTION + SHIFT + F10`   | -                                                                       |
 
 ## Chrome Shortcuts
 
-[support.google.com/chrome/answer/157179](https://support.google.com/chrome/answer/157179)
+[Chrome Keyboard Shortcuts Official Documentation](https://support.google.com/chrome/answer/157179)
 
-- New Tab
+| Action                                   | Shortcut                       | Notes                                    |
+|------------------------------------------|--------------------------------|------------------------------------------|
+| New Tab                                  | `CMD+T`                        | -                                        |
+| Navigate between tabs                    | `CMD + OPTION + LEFT/RIGHT`    | Alternate: `CMD + SHIFT + [`             |
+| Go to the address bar                    | `CMD+L`                        | -                                        |
+| Open the last closed tab                 | `CMD+SHIFT+T`                  | -                                        |
+| Go to search bar                         | `/`                            | -                                        |
+| Go to previous page                      | `CMD + ←`                      | Use the left arrow key with the command  |
 
-```bash
-CMD+T
-```
+## VS Code (Mac) Shortcuts
 
-- Navigate between tabs
-
-```bash
-CMD + OPTION + LEFT/RIGHT
-# OR
-CMD + SHIFT + [
-```
-
-- Go to the address bar
-
-```bash
-CMD+L
-```
-
-- Open the last closed tab
-
-```bash
-CMD+SHIFT+T
-```
-
-- Go to search bar using `/`
-
-- Go to previous page using
-
-```bash
-CMD + 
-```
-
-## VS Code (Mac)
-
-- Open terminal
-
-```bash
-CNTR + ~
-```
-
-- Open new terminal
-
-```bash
-CNTR + SHIFT + ~
-```
-
-- Command Pellete
-
-```bash
-CMD + SHIFT + P
-```
-
-- Open recently used files
-
-```bash
-CMD + P
-```
-
-- Navigate between terminals (once you are in one terminal)
-
-```bash
-CMD + SHIFT + [
-```
-
-- Open first opened file in editor
-
-```bash
-CMD + 1
-```
-
-- Navigate between files (once you are in any one file)
-
-```bash
-CMD + SHIFT + [
-```
-
-- Hide the sidebar containing the directories (you should be in terminal)
-
-```bash
-# While editing a file the following combination actually producess ****
-CMD + B
-
-## If you want to do it while editing a file, open command pellete and type Toggle Primary Sidebar Visibility
-```
-
-- To close only the current VS code window
-
-```bash
-CMD + SHIFT + W
-```
-
-- To toggle VS code between full screen and previous screen configuration
-
-```bash
-CNTR + CMD + F
-```
-
-- To open the ReadMe mode file in VS code
-
-```bash
-CMD + SHIFT + V
-```
-
-- To close a file
-
-```bash
-CMD + W
-```
-
-- If you want to select all occurrences of the same word or character across the entire file in the editor, you can use the following shortcut
-
-```bash
-CMD + SHIFT + L
-```
-
-- If you wish to add the next occurrence of a word or character to your selection
-
-```bash
-CMD + D
-```
+| Action                                                                                 | Shortcut                    | Notes                                                        |
+|----------------------------------------------------------------------------------------|-----------------------------|--------------------------------------------------------------|
+| Open terminal                                                                          | `CNTR + ~`                  | -                                                            |
+| Open new terminal                                                                      | `CNTR + SHIFT + ~`          | -                                                            |
+| Command Palette                                                                        | `CMD + SHIFT + P`           | -                                                            |
+| Open recently used files                                                               | `CMD + P`                   | -                                                            |
+| Navigate between terminals                                                             | `CMD + SHIFT + [`           | Ensure you're in a terminal                                   |
+| Open first opened file in editor                                                       | `CMD + 1`                   | -                                                            |
+| Navigate between files                                                                 | `CMD + SHIFT + [`           | Ensure you're in a file                                       |
+| Hide the sidebar containing the directories                                            | `CMD + B`                   | Note: Opens command palette to type "Toggle Primary Sidebar Visibility" when editing a file |
+| Close the current VS code window                                                       | `CMD + SHIFT + W`           | -                                                            |
+| Toggle VS code between full screen and previous configuration                          | `CNTR + CMD + F`            | -                                                            |
+| Open the ReadMe mode file in VS code                                                   | `CMD + SHIFT + V`           | -                                                            |
+| Close a file                                                                           | `CMD + W`                   | -                                                            |
+| Select all occurrences of the same word or character across the entire file in editor  | `CMD + SHIFT + L`           | -                                                            |
+| Add the next occurrence of a word or character to your selection                       | `CMD + D`                   | -                                                            |
 
 ### Side Panel Shortcuts
 
-- To open the sidebar `Explorer`, you should be in terminal
+| Action                                                           | Shortcut            | Notes                      |
+|------------------------------------------------------------------|---------------------|----------------------------|
+| Open the sidebar `Explorer`                                      | `CMD + SHIFT + E`   | Alternate: `CMD + 0`       |
+| Open `Source Control`                                            | `CNTR + SHIFT + G`  | -                          |
+| Navigate with `j` and `k` and `l` to enter commit box            | `j`, `k`, `l`       |                            |
 
-```bash
-CMD + SHIFT + E
-## OR
-CMD + 0
-```
-
-- To open `Source Control`
-
-```bash
-CNTR + SHIFT + G
-```
 
 #### Navigate Folders (When in Explorer)
 
-- Folder navigation using `j` and `k`
-- Toggle open folder using `o`
-- Open file in currently open file using `o` and new file using `l`
-- Open all selected files at once in the editor
+| Action                                                                       | Shortcut             | Notes                            |
+|------------------------------------------------------------------------------|----------------------|----------------------------------|
+| Folder navigation                                                            | `j` and `k`          | -                                |
+| Toggle open folder                                                           | `o`                  | -                                |
+| Open file in currently open file or new file                                 | `o` and `l`          | -                                |
+| Open all selected files at once in the editor                                | `SHIFT + DOWN_ARROW` | Followed by pressing `SPACEBAR`  |
+| Open `Finder`                                                                | `CMD + SHIFT + F`    | -                                |
+| Open `Search and Replace`                                                    | `CMD + SHIFT + H`    | -                                |
 
-```bash
-# Select all files
-SHIFT + DOWN_ARROR
-## Press
-SPACEBAR
-```
+### Other Shortcuts
 
-- To open `Finder`
-
-```bash
-CMD + SHIFT + F
-```
-
-- To open `Search and Replace`
-
-```bash
-CMD + SHIFT + H
-```
-
-### Others
-
-- To toggle `Zen Mode` (You should be editing a file)
-
-```bash
-CMD+K (together) + Z
-```
+| Action                                                                       | Shortcut             | Notes                             |
+|------------------------------------------------------------------------------|----------------------|-----------------------------------|
+| Toggle `Zen Mode` (Ensure you're editing a file)                             | `CMD+K` then `Z`     | Press keys together               |
 
 ## Miro
 
-- To move the icon under
+| Action                               | Shortcut             |
+|--------------------------------------|----------------------|
+| Move the icon down                   | `Function + Down_arrow`|
+| Select all icons for movement        | `SHIFT + hover mouse in the area`|
+| Zoom in                              | `CMD + +`            |
+| Zoom out                             | `CMD + -`            |
+| Enter edit mode in text              | `ENTER (with section selected)`|
 
-```bash
-Function + Down_arrow
-```
-
-- To select all icons you might want to move
-
-```bash
-SHIFT + hover mouse in the area
-```
-
-- To zoom in
-
-```bash
-CMD + +(Plus)
-```
-
-- To zoom out
-
-```bash
-CMD + -(minus)
-```
-
-- To enter edit more in text
-
-```bash
-# Ensure that the section (like table cell) is selected
-ENTER
-```
