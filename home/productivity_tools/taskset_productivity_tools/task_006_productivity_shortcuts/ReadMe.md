@@ -11,7 +11,7 @@
 | Toggle Finder hidden files and folder                   | `CMD+SHIFT+.`              | -                                                                       |
 | Print character `»`                                     | `OPTION + SHIFT + \`       | -                                                                       |
 | New folder via right click                              | `FUNCTION + SHIFT + F10`   | -                                                                       |
-| Take a screenshot and copy to clipboard                 | `CMD + CNRT + SHIFT + 4`   | -                                                                       |
+| Take a screenshot and copy to clipboard                 | `CMD + CTRL + SHIFT + 4`   | -                                                                       |
 
 ## Chrome Shortcuts
 
