@@ -58,8 +58,7 @@ func main() {
 
 	// Push using default options
 	err = r.Push(&git.PushOptions{
-		Auth: &http.BasicAuth{Username: "artemkupryuhin", Password: "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"},
+		Auth: &http.BasicAuth{Username: "artemkupryuhin", Password: "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"},
 	})
 	check_error(err)
-
 }
