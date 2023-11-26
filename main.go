@@ -9,6 +9,7 @@ import (
 
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"
+	"github.com/go-git/go-git/v5/plumbing/transport/http"
 )
 
 func check_error(e error) {
@@ -56,7 +57,9 @@ func main() {
 	fmt.Println(obj)
 
 	// Push using default options
-	err = r.Push(&git.PushOptions{})
+	err = r.Push(&git.PushOptions{
+		Auth: &http.BasicAuth{Username: "artemkupryuhin", Password: "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"},
+	})
 	check_error(err)
 
 }
