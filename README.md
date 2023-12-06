@@ -1,6 +1,6 @@
 # Home 
 
-> Total Number of Tasks :      388
+> Total Number of Tasks :      389
 
 > Auto generated ReadMe
 
@@ -24,9 +24,9 @@
 
 ## Cloud_providers
 
-| AWS                                        | GCP                                        | OCI                                        |
-|--------------------------------------------|--------------------------------------------|--------------------------------------------|
-| [Practice Tasks](home/cloud_providers/aws) | [Practice Tasks](home/cloud_providers/gcp) | [Practice Tasks](home/cloud_providers/oci) |
+| AWS                                        | Azure                                        | GCP                                        | OCI                                        |
+|--------------------------------------------|----------------------------------------------|--------------------------------------------|--------------------------------------------|
+| [Practice Tasks](home/cloud_providers/aws) | [Practice Tasks](home/cloud_providers/azure) | [Practice Tasks](home/cloud_providers/gcp) | [Practice Tasks](home/cloud_providers/oci) |
 
 ## Containers
 
