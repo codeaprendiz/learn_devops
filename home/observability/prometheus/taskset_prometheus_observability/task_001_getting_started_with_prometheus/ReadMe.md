@@ -1,6 +1,8 @@
-# [prometheus.io » Getting started with prometheus](https://prometheus.io/docs/tutorials/getting_started)
+# [Getting started with prometheus](https://prometheus.io/docs/tutorials/getting_started)
 
-- [prometheus.io » Getting started with prometheus](#prometheusio--getting-started-with-prometheus)
+[prometheus.io » Getting started with prometheus](https://prometheus.io/docs/tutorials/getting_started)
+
+- [Getting started with prometheus](#getting-started-with-prometheus)
   - [Running Using Docker](#running-using-docker)
   - [Accessing metrics via curl](#accessing-metrics-via-curl)
   - [Prometheus UI](#prometheus-ui)
