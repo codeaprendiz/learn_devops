@@ -164,18 +164,7 @@ $ curl -s -G 'http://localhost:9090/api/v1/query' --data-urlencode 'query=promet
 | 0.1s                                            | 3                  |
 | 0.2s                                            | 3                  |
 
-> HTTP Request Durations for /graph Handler
-
- Y Axis : Number of Requests
- X Axis : Bucket (Request Duration Less than or equal to)
-
-3 |   ███    ███   ███
-2 |   ███    ███   ███
-1 |   ███    ███   ███
-+------------------------
-      +Inf   0.1s  0.2s
-
-- The following shows that the 90th percentile is 0.09
+The following shows that the 90th percentile is 0.09
 
 ```bash
 $ curl --silent -G 'http://localhost:9090/api/v1/query' --data-urlencode 'query=histogram_quantile(0.9, prometheus_http_request_duration_seconds_bucket{handler="/graph"})' | jq
