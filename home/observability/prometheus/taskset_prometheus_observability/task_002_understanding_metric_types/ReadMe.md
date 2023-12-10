@@ -100,3 +100,9 @@ $ curl -s -G 'http://localhost:9090/api/v1/query' --data-urlencode 'query=avg_ov
   "value": "24582261.6"
 }
 ```
+
+## Histogram
+
+Histogram is a more complex metric type when compared to the previous two. Histogram can be used for any calculated value which is counted based on bucket values. Bucket boundaries can be configured by the developer. A common example would be the time it takes to reply to a request, called latency.
+
+Example: Let's assume we want to observe the time taken to process API requests. Instead of storing the request time for each request, histograms allow us to store them in buckets. We define buckets for time taken, for example lower or equal 0.3, le 0.5, le 0.7, le 1, and le 1.2. So these are our buckets and once the time taken for a request is calculated it is added to the count of all the buckets whose bucket boundaries are higher than the measured value.
