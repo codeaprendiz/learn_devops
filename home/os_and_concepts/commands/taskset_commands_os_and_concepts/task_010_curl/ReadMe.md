@@ -84,3 +84,12 @@ curl -v -u $TOMCAT_USER:$TOMCAT_PASSWORD -T $DEPLOY_SOURCE_DIR/artifact.war http
 $ curl ifconfig.me
 .
 ```
+
+To test a request to a server as if it came from the browser with the same Host header
+
+```bash
+# let's say you have port-forwarded a service to your local on port 8080 using kubectl port-forward
+# This is the actual service responsible for responding to the user's request from browser when user hits http://test.example.com/svc_path_1
+# -k is to allow insecure request
+curl -H 'Host: test.example.com' http://localhost:svc_path_1 -kv
+```
