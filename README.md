@@ -1,6 +1,6 @@
 # Home 
 
-> Total Number of Tasks :      391
+> Total Number of Tasks :      389
 
 > Auto generated ReadMe
 
@@ -13,7 +13,6 @@
 - [Observability](#Observability)
 - [OS And Concepts](#OS_and_concepts)
 - [Productivity Tools](#Productivity_tools)
-- [Version Control](#Version_control)
 - [Web Servers](#Web_servers)
 
 ## Cloud_certifications
@@ -69,12 +68,6 @@
 | Productivity_tools                        |
 |-------------------------------------------|
 | [Practice Tasks](home/productivity_tools) |
-
-## Version_control
-
-| Git                                        |
-|--------------------------------------------|
-| [Practice Tasks](home/version_control/git) |
 
 ## Web_servers
 

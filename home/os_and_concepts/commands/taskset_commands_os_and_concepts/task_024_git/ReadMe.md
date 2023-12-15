@@ -4,38 +4,28 @@
 
 git - the content tracker
 
-## SYNOPSIS
-
-> git [--version] [--help] [-C <path>] [-c <name>=<value>] [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path][-p|--paginate|--no-pager] [--no-replace-objects][--bare][--git-dir=<path>] [--work-tree=<path>][--namespace=<name>][--super-prefix=<path>] <command> [<args>]
-
 ## DESCRIPTION
 
 Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
 
-## EXAMPLES BASICS
+## EXAMPLES
 
-Create a new repository using the command line
-
-- Create a directory using mkdir command or manually
-- Go inside that directory using the terminal
-- Execute the following set of commands for following set of functions
-- To clone a repository
+### Regularly Used
 
 ```bash
+# initialize local repo
 git init
-git clone https://repository-url
 ```
 
-- To pull the latest changes  (when you are already inside the directory containing the .git file which is generated when you execute the git init command for the first time)
+- To pull the latest changes from `master`
 
 ```bash
-git pull origin <branch-name>
+## git pull origin <branch-name>
+## --ff-only : This option stands for "fast-forward only." When you use this option, git pull will only complete if the changes can be merged into your local branch using a fast-forward merge. A fast-forward merge happens when there are no divergent commits between the local and remote branches, meaning your local branch can just be "fast-forwarded" to match the remote branch
+git pull origin master --ff-only
 ```
 
-- To push the changes to the master branch. Points worth noting here
-  - git add -A stages All
-  - git add . stages new and modified, without deleted
-  - git add -u stages modified and deleted, without new
+- To push all the changes to the `master` branch.
 
 ```bash
 git remote show origin
@@ -45,17 +35,7 @@ git commit -m "Name-for-this-commit"
 git push -u origin master
 ```
 
-- Incase you want to change the origin url then you can use the command
-
-```bash
-git remote show origin
-git remote set-url origin https://repository-url
-git remote add origin https://repository-url
-```
-
-### EXAMPLES
-
-#### Configuring Git
+### Configuring Git Examples
 
 - Tell Git who you are
 
@@ -94,25 +74,20 @@ $ git config --global commit.gpgsign true
 .
 ```
 
-#### Others
+### Other Examples
+
+- Incase you want to change the origin url then you can use the command
+
+```bash
+git remote show origin
+git remote set-url origin https://repository-url
+git remote add origin https://repository-url
+```
 
 - Create a new local repository
 
 ```bash
 git init
-```
-
-- Checkout a repository
-  - Create a working copy of a local repository:
-
-```bash
-git clone /path/to/repository
-```
-
-- For a remote server, use:
-
-```bash
-git clone username@host:/path/to/repository
 ```
 
 - Add one or more files to staging (index):
@@ -127,12 +102,6 @@ git add .
 
 ```bash
 git commit -m "Commit message"
-```
-
-- Commit any files you've added with git add, and also commit any files you've changed since then:
-
-```bash
-git commit -a
 ```
 
 - Send changes to the master branch of your remote repository:
@@ -162,19 +131,31 @@ git remote -v
 - Create a new branch and switch to it:
 
 ```bash
-git checkout -b <branchname>
+# git checkout -b <branchname>
+$ git checkout -b feature/branch1
 ```
 
-- Switch from one branch to another:
+- To checkout a given branch
 
 ```bash
-git checkout <branchname>
+# git checkout <branchname>
+
+# To checkout master
+$ git checkout master
+# To checkout feature/branch1
+$ git checkout feature/branch1
 ```
 
 - List all the branches in your repo, and also tell you what branch you're currently in:
 
 ```bash
 git branch
+
+# OR
+$ git --no-pager branch
+
+# for ZSH
+gb
 ```
 
 - Delete the feature branch:
@@ -187,12 +168,6 @@ git branch -d <branchname>
 
 ```bash
 git push origin <branchname>
-```
-
-- Push all branches to your remote repository:
-
-```bash
-git push --all origin
 ```
 
 - Fetch and merge changes on the remote server to your working directory:
@@ -213,48 +188,10 @@ git merge <branchname>
 git diff
 ```
 
-- View the conflicts against the base file:
-
-```bash
-git diff --base <filename>
-```
-
-- Preview changes, before merging:
-
-```bash
-git diff <sourcebranch> <targetbranch>
-```
-
-- After you have manually resolved any conflicts, you mark the changed file:
-
-```bash
-git add <filename>
-```
-
-- You can use tagging to mark a significant changeset, such as a release:
-
-```bash
-git tag 1.0.0 <commitID>
-```
-
-- CommitId is the leading characters of the changeset ID, up to 10, but must be unique. Get the ID using: 
+- To check previous commit history
 
 ```bash
 git log
-```
-
-- Push all tags to remote repository:
-
-```bash
-git push --tags origin
-```
-
-- If you mess up, you can replace the changes in your working tree with the last content in head:
-
-- Changes already added to the index, as well as new files, will be kept.
-
-```bash
-git checkout -- <filename>
 ```
 
 - Instead, to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it, do this:
@@ -262,6 +199,8 @@ git checkout -- <filename>
 ```bash
 git fetch origin
 git reset --hard origin/master
+# or if already updated with origin
+git reset --hard
 ```
 
 - Search the working directory for foo():
@@ -284,6 +223,17 @@ $ du -sh tmp.bundle
  19M    tmp.bundle
 ```
 
+- To find the size of github repository locally [stackoverflow](https://stackoverflow.com/questions/8185276/find-size-of-git-repository)
+
+```bash
+$ git bundle create tmp.bundle --all
+.
+$ du -sh tmp.bundle
+.
+$ rm tmp.bundle
+.
+```
+
 - To permanently remove few commits from remote branch (USE WITH CAUTION) [stackoverflow link](https://stackoverflow.com/questions/3293531/how-to-permanently-remove-few-commits-from-remote-branch)
   - Let's say the remote commits are in this order (D <- C <- B <- A)
     - `B` is the last working commit
@@ -294,17 +244,6 @@ $ du -sh tmp.bundle
 # This will make the remote to.           B <- A
 git reset --hard B
 git push --force
-```
-
-- To find the size of github repository locally [stackoverflow](https://stackoverflow.com/questions/8185276/find-size-of-git-repository)
-
-```bash
-$ git bundle create tmp.bundle --all
-.
-$ du -sh tmp.bundle
-.
-$ rm tmp.bundle
-.
 ```
 
 [github.blog » easier-builds-and-deployments-using-git-over-https-and-oauth](https://github.blog/2012-09-21-easier-builds-and-deployments-using-git-over-https-and-oauth/)
@@ -343,4 +282,13 @@ $ git pull origin master
 # you will be asked to give a commit for the changes in your default editor, save and close the file
 # Push your changes to origin/branch1
 $ ggpush  # zsh alias | git push -u origin branch1
+```
+
+- To create a new tag and push to remote. You should be able to see the `tags` in `Releases` section of repository
+
+```bash
+# Creates a new tag named v1.0.0 at our current commit, typically used to mark a release.
+$ git tag v1.0.0
+#  Pushes all of our local tags to the remote repository named origin.
+$ git push origin --tags
 ```

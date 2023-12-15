@@ -125,7 +125,6 @@ function createGlobalMarkdownTable($tree) {
         "observability",
         "os_and_concepts",
         "productivity_tools",
-        "version_control",
         "web_servers",
     );
     
