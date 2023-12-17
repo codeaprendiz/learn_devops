@@ -4,6 +4,8 @@
 
 ### To capture and display network packets transmitted from the source IP address `192.168.1.130` to the destination IP address `142.250.181.78` on any network interface, without resolving hostnames.
 
+> Note: 192.168.1.130 is the internal IP of the machine where the command is run. Basically we want to capture all the network packets going from local mac machine to destination IP 142.250.181.78
+
 ```bash
 # Terminal 1
 $ nslookup google.com
