@@ -23,4 +23,11 @@ $ curl --silent localhost:8090/metrics | egrep "ping_request_count"
 ping_request_count 2
 ```
 
+## Running Prometheus
 
+```bash
+docker run --rm \
+    -p 9090:9090 \
+    -v ./prometheus_2.yml:/etc/prometheus/prometheus.yml \
+    prom/prometheus
+```

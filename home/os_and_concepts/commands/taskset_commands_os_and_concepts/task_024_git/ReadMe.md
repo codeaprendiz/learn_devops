@@ -292,3 +292,9 @@ $ git tag v1.0.0
 #  Pushes all of our local tags to the remote repository named origin.
 $ git push origin --tags
 ```
+
+- To do a git commit on a particular date say 11th Dec 2023
+
+```bash
+GIT_AUTHOR_DATE="2023-12-11 21:00:56" GIT_COMMITTER_DATE="2023-12-11 21:00:56" git commit -m "Commit for December 11th"
+```
