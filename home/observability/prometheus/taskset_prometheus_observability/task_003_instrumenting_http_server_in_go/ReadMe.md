@@ -28,6 +28,31 @@ ping_request_count 2
 ```bash
 docker run --rm \
     -p 9090:9090 \
-    -v ./prometheus_2.yml:/etc/prometheus/prometheus.yml \
+    -v ./prometheus.yml:/etc/prometheus/prometheus.yml \
     prom/prometheus
+```
+
+## Check the status of targets
+
+```bash
+$ curl -s http://localhost:9090/api/v1/targets | jq '.data.activeTargets[] | {target: .labels.instance, status: .health}'
+{
+  "target": "localhost:9090",
+  "status": "up"
+}
+{
+  "target": "host.docker.internal:8090",
+  "status": "up"
+}
+```
+
+## Check the value of our metric
+
+```bash
+$ curl -s -G 'http://localhost:9090/api/v1/query' --data-urlencode 'query=ping_request_count' | \
+  jq -r '.data.result[] | {instance: .metric.instance, value: .value[1]}'
+{
+  "instance": "host.docker.internal:8090",
+  "value": "2"
+}
 ```
