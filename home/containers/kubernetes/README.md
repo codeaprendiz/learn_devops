@@ -55,4 +55,7 @@
 | task_049 | [task_049__openshift__deploy_sample_backend_app](tasket_kubernetes_containers/task_049__openshift__deploy_sample_backend_app)                                                                                             |
 | task_050 | [task_050__local__kind__headless_svc](tasket_kubernetes_containers/task_050__local__kind__headless_svc)                                                                                                                   |
 | task_051 | [task_051__local__kind__linkerd](tasket_kubernetes_containers/task_051__local__kind__linkerd)                                                                                                                             |
+| task_052 | [task_052__local__kind__linkerd_with_custom_certs](tasket_kubernetes_containers/task_052__local__kind__linkerd_with_custom_certs)                                                                                         |
+| task_053 | [task_053__local__kind__linkerd_auto_rotate_control_plane_TLS_credentials](tasket_kubernetes_containers/task_053__local__kind__linkerd_auto_rotate_control_plane_TLS_credentials)                                         |
+| task_054 | [task_054__local__kind__linkerd_auto_rotate_webhook_tls_credentials](tasket_kubernetes_containers/task_054__local__kind__linkerd_auto_rotate_webhook_tls_credentials)                                                     |
 

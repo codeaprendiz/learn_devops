@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: linkerd-policy-validator
+  namespace: linkerd
+spec:
+  secretName: linkerd-policy-validator-k8s-tls
+  duration: 24h
+  renewBefore: 1h
+  issuerRef:
+    name: webhook-issuer
+    kind: Issuer
+  commonName: linkerd-policy-validator.linkerd.svc
+  dnsNames:
+  - linkerd-policy-validator.linkerd.svc
+  isCA: false
+  privateKey:
+    algorithm: ECDSA
+    encoding: PKCS8
+  usages:
+  - server auth

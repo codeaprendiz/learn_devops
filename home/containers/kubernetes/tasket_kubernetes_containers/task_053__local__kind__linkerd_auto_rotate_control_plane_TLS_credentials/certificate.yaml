@@ -1,0 +1,26 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: linkerd-identity-issuer
+  namespace: linkerd
+spec:
+  secretName: linkerd-identity-issuer
+  # Error from server (NotAcceptable): error when creating "certificate.yaml": admission webhook "webhook.cert-manager.io" denied the request: [spec.duration: Invalid value: 3m0s: certificate duration must be greater than 1h0m0s, spec.renewBefore: Invalid value: 1m0s: certificate renewBefore must be greater than 5m0s]
+  duration: 1h
+  # duration: 48h
+  # renewBefore: 25h
+  renewBefore: 5m  
+  issuerRef:
+    name: linkerd-trust-anchor
+    kind: Issuer
+  commonName: identity.linkerd.cluster.local
+  dnsNames:
+  - identity.linkerd.cluster.local
+  isCA: true
+  privateKey:
+    algorithm: ECDSA
+  usages:
+  - cert sign
+  - crl sign
+  - server auth
+  - client auth
