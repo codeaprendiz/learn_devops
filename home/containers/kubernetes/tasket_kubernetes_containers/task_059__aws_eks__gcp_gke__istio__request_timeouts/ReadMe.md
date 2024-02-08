@@ -8,6 +8,12 @@ Setup Istio by following the instructions in the Installation guide.
 
 Deploy the Bookinfo sample application including the service versions.
 
+```bash
+kubectl apply -f destination-rule-all.yaml
+```
+
+## [Request Timeouts](https://istio.io/latest/docs/tasks/traffic-management/request-timeouts/#request-timeouts)
+
 Route requests to v2 of the reviews service, i.e., a version that calls the ratings service:
 
 ```bash
