@@ -60,3 +60,6 @@ home/infrastructure-as-code/terraform/oci/task-005-set-up-resource-discovery/
 
 ## tmp
 tmp
+
+## Private
+.private
