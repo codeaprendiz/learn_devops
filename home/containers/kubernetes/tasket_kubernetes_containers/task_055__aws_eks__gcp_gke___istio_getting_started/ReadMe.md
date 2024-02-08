@@ -104,11 +104,18 @@ Follow these instructions to set the INGRESS_HOST and INGRESS_PORT variables for
 kubectl get svc istio-ingressgateway -n istio-system
 ```
 
+Choose the right command as per the provider
+
+```bash
+## For AWS LB
+export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+## For GCP
+export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+```
+
 Set the ingress IP and ports:
 
 ```bash
-export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
-# export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}')
 export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].port}')
 ```
@@ -143,9 +150,14 @@ x-envoy-upstream-service-time: 122
 ## [View the dashboard](https://istio.io/latest/docs/setup/getting-started/#dashboard)
 
 ```bash
+# Check OPTIONAL part if yu get any error
 # https://stackoverflow.com/questions/75758115/persistentvolumeclaim-is-stuck-waiting-for-a-volume-to-be-created-either-by-ex
 kubectl apply -f $HOME/Downloads/istio-1.20.2/samples/addons
 ```
+
+### (OPTIONAL) AWS Specific
+
+[stackoverflow.com » PersistentVolumeClaim is stuck 'waiting for a volume to be created, either by external provisioner "ebs.csi.aws.com"' on new AWS EKS cluster](https://stackoverflow.com/questions/75758115/persistentvolumeclaim-is-stuck-waiting-for-a-volume-to-be-created-either-by-ex)
 
 ```bash
  eksctl utils associate-iam-oidc-provider --region=<region_code> --cluster=eks --approve 
@@ -165,7 +177,6 @@ eksctl create iamserviceaccount \
   --role-only \
   --role-name AmazonEKS_EBS_CSI_DriverRole
 
----
 
 eksctl create addon --name aws-ebs-csi-driver --cluster eks --service-account-role-arn arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):role/AmazonEKS_EBS_CSI_DriverRole --force
 
@@ -181,4 +192,12 @@ for i in $(seq 1 100); do curl -s -o /dev/null "http://$GATEWAY_URL/productpage"
 
 ```bash
 istioctl dashboard kiali
+```
+
+## [Uninstall](https://istio.io/latest/docs/setup/additional-setup/getting-started/#uninstall)
+
+```bash
+kubectl delete -f $HOME/Downloads/istio-1.20.2/samples/addons
+# istioctl uninstall -y --purge # you might want to keep this for using in other tasks
+# For bookinfo cleanup refer - https://istio.io/latest/docs/examples/bookinfo/#cleanup
 ```
