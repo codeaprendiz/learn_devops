@@ -7,7 +7,7 @@
 ```bash
 kubectl apply -f destination-rule-all.yaml
 kubectl apply -f  virtual-service-all-v1.yaml
-kubectl apply -f virtual-service-reviews-test-v2.yam
+kubectl apply -f virtual-service-reviews-test-v2.yaml
 ```
 
 With the above configuration, this is how requests flow:

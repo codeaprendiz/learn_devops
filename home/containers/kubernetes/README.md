@@ -60,7 +60,7 @@
 | task_054 | [task_054__local__kind__linkerd_auto_rotate_webhook_tls_credentials](tasket_kubernetes_containers/task_054__local__kind__linkerd_auto_rotate_webhook_tls_credentials)                                                     |
 | task_055 | [task_055__aws_eks__gcp_gke___istio_getting_started](tasket_kubernetes_containers/task_055__aws_eks__gcp_gke___istio_getting_started)                                                                                     |
 | task_056 | [task_056__aws_eks__gcp_gke__istio__request_routing](tasket_kubernetes_containers/task_056__aws_eks__gcp_gke__istio__request_routing)                                                                                     |
-| task_057 | [task_057__aws_eks__istio__fault_injection__http_delay__http_abort](tasket_kubernetes_containers/task_057__aws_eks__istio__fault_injection__http_delay__http_abort)                                                       |
+| task_057 | [task_057__aws_eks__gcp_gke__istio__fault_injection__http_delay__http_abort](tasket_kubernetes_containers/task_057__aws_eks__gcp_gke__istio__fault_injection__http_delay__http_abort)                                     |
 | task_058 | [task_058__aws_eks__istio__traffic_shifting](tasket_kubernetes_containers/task_058__aws_eks__istio__traffic_shifting)                                                                                                     |
 | task_059 | [task_059__aws_eks__istio__request_timeouts](tasket_kubernetes_containers/task_059__aws_eks__istio__request_timeouts)                                                                                                     |
 
