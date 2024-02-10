@@ -104,3 +104,12 @@ Send an HTTPS request to access the httpbin service through HTTPS:
 curl -v -HHost:httpbin.example.com --resolve "httpbin.example.com:$SECURE_INGRESS_PORT:$INGRESS_HOST" \
   --cacert example_certs1/example.com.crt "https://httpbin.example.com:$SECURE_INGRESS_PORT/status/418"
 ```
+
+Pass a client certificate and private key to curl. Pass your client’s certificate with the --cert flag and your private key with the --key flag to curl:
+
+```bash
+# https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/
+curl -v -HHost:httpbin.example.com --resolve "httpbin.example.com:$SECURE_INGRESS_PORT:$INGRESS_HOST" \
+  --cacert example_certs1/example.com.crt --cert example_certs1/client.example.com.crt --key example_certs1/client.example.com.key \
+  "https://httpbin.example.com:$SECURE_INGRESS_PORT/status/418"
+```
