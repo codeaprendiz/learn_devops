@@ -4,10 +4,6 @@
 
 curl - transfer a URL
 
-## SYNOPSIS
-
-> curl [options] [URL...]
-
 ## DESCRIPTION
 
 curl  is a tool to transfer data from or to a server, using one of the supported protocols (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP).
@@ -92,4 +88,19 @@ To test a request to a server as if it came from the browser with the same Host 
 # This is the actual service responsible for responding to the user's request from browser when user hits http://test.example.com/svc_path_1
 # -k is to allow insecure request
 curl -H 'Host: test.example.com' http://localhost:svc_path_1 -kv
+```
+
+Send an HTTPS request to access the httpbin service through HTTPS:
+
+```bash
+## https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/#configure-a-tls-ingress-gateway-for-a-single-host
+
+# This command uses curl to send a verbose HTTPS request to the httpbin service, specifically to the /status/418 endpoint. It manually sets the Host header to httpbin.example.com to mimic requests to this domain. The --resolve option forces curl to resolve httpbin.example.com to the specified $INGRESS_HOST IP address at the $SECURE_INGRESS_PORT, effectively directing the request to the Istio ingress gateway. The --cacert option specifies the root CA certificate (example.com.crt), allowing curl to trust the self-signed certificate used by the ingress gateway. This command is crucial for testing secure HTTPS access to services managed by Istio, ensuring the routing and SSL/TLS configuration works as expected.
+
+# The --cacert option is used to specify the CA certificate that curl should trust, enabling it to verify the self-signed certificate presented by the server during the SSL/TLS handshake.
+
+# You have the CA certificate locally present
+
+curl -v -HHost:httpbin.example.com --resolve "httpbin.example.com:$SECURE_INGRESS_PORT:$INGRESS_HOST" \
+  --cacert example_certs1/example.com.crt "https://httpbin.example.com:$SECURE_INGRESS_PORT/status/418"
 ```
