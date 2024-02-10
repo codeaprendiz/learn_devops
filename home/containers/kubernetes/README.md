@@ -63,4 +63,8 @@
 | task_057 | [task_057__aws_eks__gcp_gke__istio__fault_injection__http_delay__http_abort](tasket_kubernetes_containers/task_057__aws_eks__gcp_gke__istio__fault_injection__http_delay__http_abort)                                     |
 | task_058 | [task_058__aws_eks__gcp_gke__istio__traffic_shifting](tasket_kubernetes_containers/task_058__aws_eks__gcp_gke__istio__traffic_shifting)                                                                                   |
 | task_059 | [task_059__aws_eks__gcp_gke__istio__request_timeouts](tasket_kubernetes_containers/task_059__aws_eks__gcp_gke__istio__request_timeouts)                                                                                   |
+| task_060 | [task_060__gcp_gke__istio__tcp_traffic_shifting](tasket_kubernetes_containers/task_060__gcp_gke__istio__tcp_traffic_shifting)                                                                                             |
+| task_061 | [task_061__gcp_gke__istio__circuit_breaking](tasket_kubernetes_containers/task_061__gcp_gke__istio__circuit_breaking)                                                                                                     |
+| task_062 | [task_062__gcp_gke__istio__mirroring](tasket_kubernetes_containers/task_062__gcp_gke__istio__mirroring)                                                                                                                   |
+| task_063 | [task_063__gcp_gke__istio__ingress__ingress_gateways](tasket_kubernetes_containers/task_063__gcp_gke__istio__ingress__ingress_gateways)                                                                                   |
 
