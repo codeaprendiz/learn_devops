@@ -69,4 +69,5 @@
 | task_063 | [task_063__gcp_gke__istio__ingress__ingress_gateways](taskset_kubernetes_containers/task_063__gcp_gke__istio__ingress__ingress_gateways)                                                                                   |
 | task_064 | [task_064__gcp_gke__istio__ingres__secure_gateways__TLS__mTLS](taskset_kubernetes_containers/task_064__gcp_gke__istio__ingres__secure_gateways__TLS__mTLS)                                                                 |
 | task_065 | [task_065__gcp_gke__ingress_gateway_without_TLS_Termination](taskset_kubernetes_containers/task_065__gcp_gke__ingress_gateway_without_TLS_Termination)                                                                     |
+| task_066 | [task_066__gcp_gke__ingress_kubernetes_ingress](taskset_kubernetes_containers/task_066__gcp_gke__ingress_kubernetes_ingress)                                                                                               |
 
