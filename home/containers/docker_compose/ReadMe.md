@@ -19,4 +19,5 @@
 | task_013 | [task_013__local__caddy_https_acme_and_save_certs](taskset_docker_compose_containers/task_013__local__caddy_https_acme_and_save_certs)                                           |
 | task_014 | [task_014__local__reverse_proxy_nginx_home_using_caddy](taskset_docker_compose_containers/task_014__local__reverse_proxy_nginx_home_using_caddy)                                 |
 | task_015 | [task_015__local__mem_and_cpu_limit_nginx_container](taskset_docker_compose_containers/task_015__local__mem_and_cpu_limit_nginx_container)                                       |
+| task_016 | [task_016__gcp_local__grafana__tempo__prometheus__xk6_client_tracing](taskset_docker_compose_containers/task_016__gcp_local__grafana__tempo__prometheus__xk6_client_tracing)     |
 
