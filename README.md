@@ -1,6 +1,6 @@
 # Home 
 
-> Total Number of Tasks :      410
+> Total Number of Tasks :      411
 
 > Auto generated ReadMe
 
@@ -53,9 +53,9 @@
 
 ## Observability
 
-| Metrics                                      | Prometheus                                      |
-|----------------------------------------------|-------------------------------------------------|
-| [Practice Tasks](home/observability/metrics) | [Practice Tasks](home/observability/prometheus) |
+| Metrics                                      | Opentelemetry                                      | Prometheus                                      |
+|----------------------------------------------|----------------------------------------------------|-------------------------------------------------|
+| [Practice Tasks](home/observability/metrics) | [Practice Tasks](home/observability/opentelemetry) | [Practice Tasks](home/observability/prometheus) |
 
 ## OS_and_concepts
 
