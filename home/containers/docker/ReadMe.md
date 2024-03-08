@@ -33,4 +33,5 @@
 | task_024 | [task_024_sample_app_persist_db](taskset_docker_containers/task_024_sample_app_persist_db)                                                                                                                 |
 | task_025 | [task_025_sonarqube__keycloak__saml](taskset_docker_containers/task_025_sonarqube__keycloak__saml)                                                                                                         |
 | task_026 | [task_026_mssql](taskset_docker_containers/task_026_mssql)                                                                                                                                                 |
+| task_027 | [task_027_docker_openvpn](taskset_docker_containers/task_027_docker_openvpn)                                                                                                                               |
 
