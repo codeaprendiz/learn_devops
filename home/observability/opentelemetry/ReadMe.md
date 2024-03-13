@@ -2,7 +2,7 @@
 
 > Auto generated ReadMe
 
-| Task     | Description                                                                                          |
-|----------|------------------------------------------------------------------------------------------------------|
-| task_001 | [task_001_opentelemetry_go_dice](taskset_opentelemetry_observability/task_001_opentelemetry_go_dice) |
+| Task     | Description                                                                                                                                                        |
+|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| task_001 | [task_001_opentelemetry_go_dice__traces_and_metrics_to_console](taskset_opentelemetry_observability/task_001_opentelemetry_go_dice__traces_and_metrics_to_console) |
 
