@@ -1,10 +1,25 @@
 # [openssl](https://www.openssl.org/docs/manpages.html)
 
+- [openssl](#openssl)
+  - [NAME](#name)
+    - [DESCRIPTION](#description)
+    - [COMMANDS](#commands)
+      - [enc](#enc)
+        - [EXAMPLES for enc](#examples-for-enc)
+      - [pkcs12](#pkcs12)
+        - [Examples for pkcs12](#examples-for-pkcs12)
+      - [rsa](#rsa)
+        - [EXAMPLES for rsa](#examples-for-rsa)
+      - [s\_client](#s_client)
+        - [EXAMPLES for s\_client](#examples-for-s_client)
+      - [x509](#x509)
+        - [EXAMPLES for x509](#examples-for-x509)
+
 ## NAME
 
 openssl - OpenSSL command line tool
 
-## DESCRIPTION
+### DESCRIPTION
 
 OpenSSL is a cryptography toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) network protocols and related cryptography standards required by them.
 
@@ -17,9 +32,7 @@ The openssl program is a command line tool for using the various cryptography fu
 - SSL/TLS Client and Server Tests
 - Handling of S/MIME signed or encrypted mail
 
-## EXAMPLES
-
-### COMMAND
+### COMMANDS
 
 #### enc
 
@@ -31,7 +44,7 @@ DESCRIPTION
 
 The symmetric cipher commands allow data to be encrypted or decrypted using various block and stream ciphers using keys based on passwords or explicitly provided. Base64 encoding or decoding can also be performed either by itself or in addition to the encryption or decryption.
   
-### EXAMPLES for enc
+##### EXAMPLES for enc
 
 Just base64 encode a binary file:
 
@@ -99,7 +112,9 @@ s_client - SSL/TLS client program
 DESCRIPTION
 
 The s_client command implements a generic SSL/TLS client which connects to a remote host using SSL/TLS. It is a very useful diagnostic tool for SSL servers.
-  
+
+##### EXAMPLES for s_client
+
 ```bash
 # -connect host:port » This specifies the host and optional port to connect to. If not specified then an attempt is made to connect to the local host on port 4433.
 $ openssl s_client -connect www.company.com:443
@@ -194,7 +209,7 @@ DESCRIPTION
 
 The x509 command is a multi purpose certificate utility. It can be used to display certificate information, convert certificates to various forms, sign certificate requests like a "mini CA" or edit certificate trust settings.
   
-### EXAMPLES for x509
+##### EXAMPLES for x509
 
 To get the certificate expiry dates
 
