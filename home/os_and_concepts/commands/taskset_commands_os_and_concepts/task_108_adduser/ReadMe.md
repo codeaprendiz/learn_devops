@@ -1,6 +1,6 @@
 # adduser
 
-- [adduser](https://linux.die.net/man/8/adduser)
+- [adduser](https://TBD/man/8/adduser)
 
 useradd - create a new user or update default new user information
 

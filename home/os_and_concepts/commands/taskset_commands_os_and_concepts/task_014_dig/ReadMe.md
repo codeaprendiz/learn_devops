@@ -1,6 +1,6 @@
 # dig
 
-[dig](https://linux.die.net/man/1/dig)
+[dig](https://TBD/man/1/dig)
 
 ## NAME
 

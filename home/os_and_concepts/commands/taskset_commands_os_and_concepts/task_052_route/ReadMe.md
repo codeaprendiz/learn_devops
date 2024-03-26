@@ -1,6 +1,6 @@
 # route
 
-[route](https://linux.die.net/man/8/route)
+[route](https://TBD/man/8/route)
 
 ## NAME
 

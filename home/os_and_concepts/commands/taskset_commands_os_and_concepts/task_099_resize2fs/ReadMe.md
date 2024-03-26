@@ -1,6 +1,6 @@
 # resize2fs
 
-- [resize2fs](https://linux.die.net/man/8/resize2fs)
+- [resize2fs](https://TBD/man/8/resize2fs)
 
 ## NAME
 

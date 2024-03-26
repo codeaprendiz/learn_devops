@@ -1,6 +1,6 @@
 # ip
 
-[ip](https://linux.die.net/man/8/ip)
+[ip](https://TBD/man/8/ip)
 
 ## NAME
 
