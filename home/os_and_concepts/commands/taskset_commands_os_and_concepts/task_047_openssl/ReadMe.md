@@ -15,7 +15,7 @@
       - [x509](#x509)
         - [EXAMPLES for x509](#examples-for-x509)
       - [req](#req)
-      - [EXAMPLES for req](#examples-for-req)
+        - [EXAMPLES for req](#examples-for-req)
 
 ## NAME
 
@@ -231,8 +231,101 @@ To get detailed information
 $ openssl x509 -in georgebackend.oms.prod.company.com.pem -text -noout                                                                                     . 
 ```
 
-#### req 
+#### req
 
 RSA Key Management
 
-#### EXAMPLES for req
+##### EXAMPLES for req
+
+- To create RootCA
+
+```bash
+openssl \
+    req \
+    -new \
+    -newkey rsa:4096 \
+    -days 1024 \
+    -nodes \
+    -x509 \
+    -subj "/C=US/ST=CA/O=MyOrg/CN=myOrgCA" \
+    -keyout confs/rootCA.key \
+    -out confs/rootCA.crt
+```
+
+| Option  | Value                                    | Description                                                            |
+|---------|------------------------------------------|------------------------------------------------------------------------|
+| req     |                                          | X.509 Certificate Signing Request (CSR) management command.            |
+| -new    |                                          | Specifies that a new CSR is being requested.                           |
+| -newkey | rsa:4096                                 | Creates a new RSA private key of 4096 bits.                            |
+| -days   | 1024                                     | The certificate will be valid for 1024 days.                           |
+| -nodes  |                                          | No DES; Specifies that the private key should not be encrypted.        |
+| -x509   |                                          | Produces a self-signed certificate instead of a CSR.                   |
+| -subj   | "/C=US/ST=CA<br>/O=MyOrg/<br>CN=myOrgCA" | Sets the subject field for the certificate using the specified format. |
+| -keyout | confs/rootCA.key                         | The file to write the newly created private key to.                    |
+| -out    | confs/rootCA.crt                         | The file to write the newly created certificate to.                    |
+
+- To create server certificate
+
+```bash
+openssl \
+    req \
+    -new \
+    -newkey rsa:2048 \
+    -days 372 \
+    -nodes \
+    -x509 \
+    -subj "/C=US/ST=CA/O=MyOrg/CN=myOrgCA" \
+    -addext "subjectAltName=DNS:example.com,DNS:example.net,DNS:otel_collector,DNS:localhost" \
+    -CA confs/rootCA.crt \
+    -CAkey confs/rootCA.key  \
+    -keyout confs/server.key \
+    -out confs/server.crt
+```
+
+| Option  | Value                                                                                             | Description                                                              |
+|---------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| req     |                                                                                                   | X.509 Certificate Signing Request (CSR) management command.              |
+| -new    |                                                                                                   | Specifies that a new CSR is being requested.                             |
+| -newkey | rsa:2048                                                                                          | Creates a new RSA private key of 2048 bits.                              |
+| -days   | 372                                                                                               | The certificate will be valid for 372 days.                              |
+| -nodes  |                                                                                                   | No DES; Specifies that the private key should not be encrypted.          |
+| -x509   |                                                                                                   | Produces a self-signed certificate instead of a CSR.                     |
+| -subj   | "/C=US/ST<br>=CA/O=MyOrg<br>/CN=myOrgCA"                                                          | Sets the subject field for the certificate using the specified format.   |
+| -addext | "subjectAltName<br>=DNS:example.com,<br>DNS:example.net,DNS<br>:otel_collector,<br>DNS:localhost" | Specifies additional extensions to be added to the certificate.          |
+| -CA     | confs/rootCA.crt                                                                                  | Specifies the CA certificate to be used for signing the new certificate. |
+| -CAkey  | confs/rootCA.key                                                                                  | Specifies the private key of the CA used for signing.                    |
+| -keyout | confs/server.key                                                                                  | The file to write the newly created private key to.                      |
+| -out    | confs/server.crt                                                                                  | The file to write the newly created certificate to.                      |
+
+- To create client certs
+
+```bash
+openssl \
+    req \
+    -new \
+    -newkey rsa:2048 \
+    -days 372 \
+    -nodes \
+    -x509 \
+    -subj "/C=US/ST=CA/O=MyOrg/CN=myOrgCA" \
+    -addext "subjectAltName=DNS:example.com,DNS:example.net,DNS:otel_collector,DNS:localhost" \
+    -CA confs/rootCA.crt \
+    -CAkey confs/rootCA.key  \
+    -keyout confs/client.key \
+    -out confs/client.crt
+```
+
+| Option  | Value                                                                                         | Description                                                              |
+|---------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| req     |                                                                                               | X.509 Certificate Signing Request (CSR) management command.              |
+| -new    |                                                                                               | Specifies that a new CSR is being requested.                             |
+| -newkey | rsa:2048                                                                                      | Creates a new RSA private key of 2048 bits.                              |
+| -days   | 372                                                                                           | The certificate will be valid for 372 days.                              |
+| -nodes  |                                                                                               | Specifies that the private key should not be encrypted.                  |
+| -x509   |                                                                                               | Produces a self-signed certificate instead of a CSR.                     |
+| -subj   | "/C=US/ST=CA<br>/O=MyOrg/CN=<br>myOrgCA"                                                      | Sets the subject field for the certificate using the specified format.   |
+| -addext | "subjectAltName=DNS<br>:example.com,DNS:<br>example.net,DNS:otel_collector,<br>DNS:localhost" | Specifies additional extensions to be added to the certificate.          |
+| -CA     | confs/rootCA.crt                                                                              | Specifies the CA certificate to be used for signing the new certificate. |
+| -CAkey  | confs/rootCA.key                                                                              | Specifies the private key of the CA used for signing.                    |
+| -keyout | confs/server.key                                                                              | The file to write the newly created private key to.                      |
+| -out    | confs/server.crt                                                                              | The file to write the newly created certificate to.                      |
