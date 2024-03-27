@@ -79,9 +79,10 @@ $ git config --global commit.gpgsign true
 - Incase you want to change the origin url then you can use the command
 
 ```bash
-git remote show origin
-git remote set-url origin https://repository-url
-git remote add origin https://repository-url
+# To Check the existing origin
+$ git remote show origin
+# To set the origin to a new remote, let's say the new origin is git@github.com:codeaprendiz/devops_prv.git 
+$ git remote set-url origin git@github.com:codeaprendiz/devops_prv.git
 ```
 
 - Create a new local repository

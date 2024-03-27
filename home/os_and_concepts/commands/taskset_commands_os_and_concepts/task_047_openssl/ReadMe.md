@@ -14,6 +14,8 @@
         - [EXAMPLES for s\_client](#examples-for-s_client)
       - [x509](#x509)
         - [EXAMPLES for x509](#examples-for-x509)
+      - [req](#req)
+      - [EXAMPLES for req](#examples-for-req)
 
 ## NAME
 
@@ -228,3 +230,9 @@ To get detailed information
 # -text : prints out the certificate in text form. Full details are output including the public key, signature algorithms, issuer and subject names, serial number any extensions present and any trust settings.
 $ openssl x509 -in georgebackend.oms.prod.company.com.pem -text -noout                                                                                     . 
 ```
+
+#### req 
+
+RSA Key Management
+
+#### EXAMPLES for req
