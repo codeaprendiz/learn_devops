@@ -299,3 +299,13 @@ $ git push origin --tags
 ```bash
 GIT_AUTHOR_DATE="2023-12-11 21:00:56" GIT_COMMITTER_DATE="2023-12-11 21:00:56" git commit -m "Commit for December 11th"
 ```
+
+- To list all remote branches and checkout
+
+```bash
+# list all remote branches
+$ git branch -r
+origin/branch1
+# to checkout branch1
+$ git checkout branch1
+```
