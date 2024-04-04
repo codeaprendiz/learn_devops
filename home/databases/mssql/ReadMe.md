@@ -4,6 +4,7 @@
 
 | Task     | Description                                                                                                                                                            |
 |----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| task_000 | [task_000_docs_and_vscode_setup](taskset_mssql_databases/task_000_docs_and_vscode_setup)                                                                               |
 | task_001 | [task_001_connecting_to_db](taskset_mssql_databases/task_001_connecting_to_db)                                                                                         |
 | task_002 | [task_002_show_databases](taskset_mssql_databases/task_002_show_databases)                                                                                             |
 | task_003 | [task_003_drop_database](taskset_mssql_databases/task_003_drop_database)                                                                                               |
@@ -27,4 +28,17 @@
 | task_021 | [task_021_restore_from_full_backup_on_disk__with_init_and_differential](taskset_mssql_databases/task_021_restore_from_full_backup_on_disk__with_init_and_differential) |
 | task_022 | [task_022_full_base_and_differential_backup_to_s3](taskset_mssql_databases/task_022_full_base_and_differential_backup_to_s3)                                           |
 | task_023 | [task_023_restore_full_base_and_differential_backup_to_s3](taskset_mssql_databases/task_023_restore_full_base_and_differential_backup_to_s3)                           |
+| task_024 | [task_024_get_current_date_and_time](taskset_mssql_databases/task_024_get_current_date_and_time)                                                                       |
+| task_025 | [task_025_licence_and_version](taskset_mssql_databases/task_025_licence_and_version)                                                                                   |
+| task_026 | [task_026_check_default_schema](taskset_mssql_databases/task_026_check_default_schema)                                                                                 |
+| task_027 | [task_027_stored_procedures](taskset_mssql_databases/task_027_stored_procedures)                                                                                       |
+| task_028 | [task_028_create_and_validate_jobs](taskset_mssql_databases/task_028_create_and_validate_jobs)                                                                         |
+| task_029 | [task_029_add_jobstep_and_validate](taskset_mssql_databases/task_029_add_jobstep_and_validate)                                                                         |
+| task_030 | [task_030_add_job_schedule_and_validate](taskset_mssql_databases/task_030_add_job_schedule_and_validate)                                                               |
+| task_031 | [task_031_attach_schedule_to_job_and_validate](taskset_mssql_databases/task_031_attach_schedule_to_job_and_validate)                                                   |
+| task_032 | [task_032_add_job_to_server_and_validate](taskset_mssql_databases/task_032_add_job_to_server_and_validate)                                                             |
+| task_033 | [task_033_logical_backup](taskset_mssql_databases/task_033_logical_backup)                                                                                             |
+| task_034 | [task_034_check_when_tables_in_given_database_were_last_updated](taskset_mssql_databases/task_034_check_when_tables_in_given_database_were_last_updated)               |
+| task_035 | [task_035_slow_queries](taskset_mssql_databases/task_035_slow_queries)                                                                                                 |
+| task_036 | [task_036_monitoring_using_influxdb_telegraf_grafana](taskset_mssql_databases/task_036_monitoring_using_influxdb_telegraf_grafana)                                     |
 

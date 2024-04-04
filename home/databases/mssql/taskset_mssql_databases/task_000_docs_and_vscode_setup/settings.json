@@ -1,0 +1,15 @@
+{
+    "workbench.editorAssociations": {
+        "*.{sqlplan}": "workbench.editor.executionplan"
+    },
+    "workbench.enablePreviewFeatures": true,
+    "workbench.colorTheme": "Visual Studio Dark",
+
+    // Terminal Setting
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.scrollback": 100000,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+
+    "files.autoSave": "onFocusChange"
+}

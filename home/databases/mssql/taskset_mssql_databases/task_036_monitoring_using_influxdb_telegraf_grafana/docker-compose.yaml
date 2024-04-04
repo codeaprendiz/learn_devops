@@ -1,0 +1,59 @@
+version: '3'
+services:
+
+  sqlEnterprise:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlEnterprise
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password12345
+      - MSSQL_PID=Enterprise
+      - MSSQL_AGENT_ENABLED=1
+    ports:
+      - "1433:1433"
+    networks:
+      - monitoring-net
+
+  telegraf:
+    image: telegraf:1.28.3 # https://hub.docker.com/_/telegraf/tags
+    container_name: telegraf
+    volumes:
+      - ./telegraph_conf/telegraf.conf:/etc/telegraf/telegraf.conf
+    networks:
+      - monitoring-net
+
+  influxdb:
+    image: influxdb:2.7.3   # https://hub.docker.com/_/influxdb/tags
+    container_name: influxdb
+    volumes:
+      - ./influx_data:/var/lib/influxdb2
+      # - ./config:/etc/influxdb2
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=my-user
+      - DOCKER_INFLUXDB_INIT_PASSWORD=my-password
+      - DOCKER_INFLUXDB_INIT_ORG=my-org
+      - DOCKER_INFLUXDB_INIT_BUCKET=my-bucket
+      # Optional environment variables
+      - DOCKER_INFLUXDB_INIT_RETENTION=1w
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-auth-token
+    networks:
+      - monitoring-net
+    ports:
+      - "8086:8086"
+
+  grafana:
+    image: grafana/grafana:10.2.0  # https://hub.docker.com/r/grafana/grafana/tags
+    container_name: grafana
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel,savantly-heatmap-panel
+    volumes:
+      - ./grafana:/var/lib/grafana
+    networks:
+      - monitoring-net
+    ports:
+      - "3001:3000"
+
+networks:
+  monitoring-net:
+    driver: bridge
