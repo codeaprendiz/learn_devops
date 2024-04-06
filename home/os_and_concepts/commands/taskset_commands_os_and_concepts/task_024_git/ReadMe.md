@@ -322,3 +322,14 @@ git rm --cached **/mvnw
 # Then add the following to .gitignore
 # **/mvnw
 ```
+
+- To ingnore all occurance of a folder `.mvn` from git (assuming it was commited previously and version controlled)
+
+```bash
+# To untrack everything under '.mvn'
+# Note, the -r that is required for recursive operation
+git rm --cached **/.mvn -r
+
+# Then add the following to .gitignore
+# **/.mvn
+```
