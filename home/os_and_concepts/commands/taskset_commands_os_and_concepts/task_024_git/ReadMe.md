@@ -309,3 +309,16 @@ origin/branch1
 # to checkout branch1
 $ git checkout branch1
 ```
+
+- To ignore all occurance of a file say `mvnw` from git (assuming it was commited previously and version tracked)
+
+```bash
+# To untrack a specific file without deleting it
+git rm --cached <file-path>
+
+# Example for 'mvnw' files
+git rm --cached **/mvnw
+
+# Then add the following to .gitignore
+# **/mvnw
+```
