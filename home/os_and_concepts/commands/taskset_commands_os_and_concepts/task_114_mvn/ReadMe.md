@@ -51,14 +51,34 @@ mvn install
 
 [Publish third party artifacts](https://docs.aws.amazon.com/codeartifact/latest/ug/maven-mvn.html)
 
+[stackoverflow.com » why-cant-i-deploy-from-my-local-repository-to-a-remote-maven-repositor](https://stackoverflow.com/questions/14223221/why-cant-i-deploy-from-my-local-repository-to-a-remote-maven-repository)
+
+Let's say we want to upload junit dependency with following structure
+
 ```bash
-mvn deploy:deploy-file -DgroupId=commons-cli          \
--DartifactId=commons-cli       \
--Dversion=1.4                  \
--Dfile=./commons-cli-1.4.jar   \
--Dpackaging=jar                \
--DrepositoryId=codeartifact    \
--Durl=https://my_domain-111122223333.d.codeartifact.region.amazonaws.com/maven/repo-name/             
+$ tree ~/.m2/repository/junit/junit/4.12 
+~/.m2/repository/junit/junit/4.12
+├── _remote.repositories
+├── junit-4.12.jar
+├── junit-4.12.jar.sha1
+├── junit-4.12.pom
+└── junit-4.12.pom.sha1
+```
+
+```bash
+# The remote repository is AWS codeartifact
+# Get the <repository_id> and Durl from AWS codeartifact
+# https://docs.aws.amazon.com/codeartifact/latest/ug/maven-mvn.html
+# https://stackoverflow.com/questions/14223221/why-cant-i-deploy-from-my-local-repository-to-a-remote-maven-repository, jar and pom should be present in another folder say tmp
+ mvn deploy:deploy-file \
+-DgroupId=junit \
+-DartifactId=junit \
+-Dversion=4.12 \
+-Dpackaging=jar \
+-Dfile=./tmp/junit-4.12.jar \
+-DpomFile=./tmp/junit-4.12.pom \
+-DrepositoryId=<repository_id> \
+-Durl=<https://my_domain-111122223333.d.codeartifact.region.amazonaws.com/maven/repo-name/>
 ```
 
 Executes Maven build phase called 'Compile' in quiet (no output except errors) and offline mode (using local repo cache).
