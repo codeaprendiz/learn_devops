@@ -96,3 +96,9 @@ This command generates the dependency tree of the Maven project:
 ```bash
 mvn dependency:tree
 ```
+
+To get basic information about your project is execute the following command
+
+```bash
+mvn site
+```
