@@ -74,6 +74,14 @@ $ git config --global commit.gpgsign true
 .
 ```
 
+- If you mac crashes, you might get errors like `gpg: Note: database_open xxxx waiting for lock (held by xxxx) ...`, [superuser.com » GPG stops doing anything on Mac](https://superuser.com/questions/1811518/gpg-stops-doing-anything-on-mac)
+
+```bash
+$ ls ~/.gnupg/public-keys.d/*.lock
+.
+$ mv /Users/<username>/.gnupg/public-keys.d/pubring.db.lock /Users/<username>/.gnupg/public-keys.d/pubring.db.lock_bkp
+```
+
 ### Other Examples
 
 - Incase you want to change the origin url then you can use the command
