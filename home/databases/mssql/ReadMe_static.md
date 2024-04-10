@@ -25,7 +25,6 @@ Plugins
 - [NOUNLOAD](https://learn.microsoft.com/en-us/sql/t-sql/statements/restore-statements-arguments-transact-sql?view=sql-server-ver16#-unload--nounload-) : Specifies that after the RESTORE operation the tape remains loaded on the tape drive.
 - [STATS](https://learn.microsoft.com/en-us/sql/t-sql/statements/restore-statements-arguments-transact-sql?view=sql-server-ver16#stats---percentage-) : Displays a message each time another percentage completes, and is used to gauge progress
 
-
 ## Blogs
 
 - [aws.amazon.com » Backup SQL Server databases to Amazon S3](https://aws.amazon.com/blogs/modernizing-with-aws/backup-sql-server-to-amazon-s3/)

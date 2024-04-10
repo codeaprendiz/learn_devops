@@ -1,3 +1,5 @@
+# Connecting to PostgreSQL Database
+
 - Use the following command
 
 ```bash

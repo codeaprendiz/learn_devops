@@ -1,4 +1,6 @@
 
+# Connect to required database
+
 - First see all databases
 
 ```bash
@@ -12,7 +14,6 @@ postgres=# \l
  template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
            |          |          |            |            | postgres=CTc/postgres
 ```
-
 
 - To connect to right db
 

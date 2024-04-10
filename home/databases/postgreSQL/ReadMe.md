@@ -21,4 +21,5 @@
 | task_014 | [task_014_restore_database](taskset_postgreSQL_databases/task_014_restore_database)                           |
 | task_015 | [task_015_drop_database](taskset_postgreSQL_databases/task_015_drop_database)                                 |
 | task_016 | [task_016_list_schemas](taskset_postgreSQL_databases/task_016_list_schemas)                                   |
+| task_017 | [task_017_checking_deadlock](taskset_postgreSQL_databases/task_017_checking_deadlock)                         |
 
