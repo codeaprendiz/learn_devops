@@ -1,5 +1,9 @@
 # show grants of current and specific user
 
+- [show grants of current and specific user](#show-grants-of-current-and-specific-user)
+  - [To show the grants you can use](#to-show-the-grants-you-can-use)
+  - [To show the grants of current user](#to-show-the-grants-of-current-user)
+
 ## To show the grants you can use
 
 ```sql

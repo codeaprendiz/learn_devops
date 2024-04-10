@@ -1,6 +1,11 @@
 # Transaction Isolation Levels
 
-Check the current transaction isolation level
+- [Transaction Isolation Levels](#transaction-isolation-levels)
+  - [Check the current transaction isolation level](#check-the-current-transaction-isolation-level)
+  - [Check global transaction isolation levels](#check-global-transaction-isolation-levels)
+  - [Set the transaction isolation level for the current session](#set-the-transaction-isolation-level-for-the-current-session)
+
+## Check the current transaction isolation level
 
 ```sql
 select @@transaction_isolation;
@@ -20,7 +25,7 @@ mysql> select @@transaction_isolation;
 mysql> 
 ```
 
-Check global transaction isolation levels
+## Check global transaction isolation levels
 
 ```sql
 select @@global.transaction_isolation;
@@ -38,7 +43,7 @@ mysql> select @@global.transaction_isolation;
 mysql>
 ```
 
-Set the transaction isolation level for the current session
+## Set the transaction isolation level for the current session
 
 ```sql
 set session transaction isolation level read uncommitted;
@@ -60,4 +65,3 @@ mysql> select @@transaction_isolation;
 
 mysql> 
 ```
-
