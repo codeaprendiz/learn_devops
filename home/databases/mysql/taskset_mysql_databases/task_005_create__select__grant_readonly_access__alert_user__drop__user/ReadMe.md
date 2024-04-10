@@ -5,6 +5,7 @@
   - [Get the list of users and corresponding hosts allowed to login](#get-the-list-of-users-and-corresponding-hosts-allowed-to-login)
   - [Give READONLY priviledge to login](#give-readonly-priviledge-to-login)
   - [Drop the user](#drop-the-user)
+  - [Alter user](#alter-user)
 
 ## Create User
 
@@ -59,4 +60,26 @@ DROP USER 'app_user'@'%';
 ```sql
 mysql> DROP USER 'app_user'@'%';
 Query OK, 0 rows affected (0.07 sec)
+```
+
+## Alter user
+
+First check the users
+
+```sql
+mysql> select user,host from mysql.user;
++-------------------+-----------+
+| user              | host      |
++-------------------+-----------+
+| test1             | %         |
+```
+
+Alter the user password
+
+```sql
+ALTER USER 'test1'@'%' IDENTIFIED WITH 
+```
+
+```sql
+mysql> ALTER USER 'test1'@'%' IDENTIFIED WITH mysql_native_password BY 'somepassword';
 ```
