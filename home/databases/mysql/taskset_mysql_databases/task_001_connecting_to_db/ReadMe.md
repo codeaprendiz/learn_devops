@@ -1,7 +1,7 @@
-### mysql
+# Connecting to mysql
 
 Connecting to mysql db
 
 ```bash
-$ mysql -h<hostname> -u<username> -p<password> 
+ mysql -h<hostname> -u<username> -p<password> 
 ```

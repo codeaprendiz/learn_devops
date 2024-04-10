@@ -1,5 +1,12 @@
 
-- Create a user
+# Create a user
+
+## Create a user
+
+```sql
+CREATE USER 'app_user'@'%' IDENTIFIED BY 'somepassword';
+```
+
 ```sql
 mysql> CREATE USER 'app_user'@'%' IDENTIFIED BY 'somepassword';
 Query OK, 0 rows affected (0.07 sec)

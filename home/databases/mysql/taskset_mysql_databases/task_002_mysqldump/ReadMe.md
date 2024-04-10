@@ -1,4 +1,4 @@
-### mysqldump
+# mysqldump
 
 Taking the mysqldump
 
