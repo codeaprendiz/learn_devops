@@ -1,5 +1,11 @@
 # CREATE -- SHOW -- Databases
 
+- [CREATE -- SHOW -- Databases](#create----show----databases)
+  - [Create Database- CREATE -- SHOW -- Databases](#create-database--create----show----databases)
+  - [Show Databases](#show-databases)
+
+## Create Database- [CREATE -- SHOW -- Databases](#create----show----databases)
+
 ```sql
 CREATE DATABASE student_db;
 ```
@@ -9,7 +15,15 @@ Output
 ```sql
 mysql> CREATE DATABASE student_db;
 Query OK, 1 row affected (0.01 sec)
+```
 
+## Show Databases
+
+```sql
+show databases;
+```
+
+```sql
 mysql> show databases;
 +--------------------+
 | Database           |
