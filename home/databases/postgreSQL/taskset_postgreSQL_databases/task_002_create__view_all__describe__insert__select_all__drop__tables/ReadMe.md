@@ -4,6 +4,8 @@
   - [Create](#create)
   - [Select all tables](#select-all-tables)
   - [Describe](#describe)
+  - [Insert into table](#insert-into-table)
+  - [Select all from table](#select-all-from-table)
   - [Drop](#drop)
 
 ## Create
@@ -112,6 +114,46 @@ postgres=# \d products
  price  | numeric(10,2) |           | not null | 0.00
 Indexes:
     "products_pkey" PRIMARY KEY, btree (id)
+```
+
+## Insert into table
+
+- To insert into a table you can use
+
+```sql
+-- \d products to see the schema
+postgres-# \d products
+                               Table "public.products"
+ Column |     Type      | Collation | Nullable |               Default                
+--------+---------------+-----------+----------+--------------------------------------
+ id     | integer       |           | not null | nextval('products_id_seq'::regclass)
+ name   | text          |           | not null | 
+ price  | numeric(10,2) |           | not null | 0.00
+Indexes:
+    "products_pkey" PRIMARY KEY, btree (id)
+```
+
+```sql
+INSERT INTO products(name, price) VALUES('green ball', 24);
+INSERT 0 1
+```
+
+## Select all from table
+
+To view the inserted data in `products` table
+
+```sql
+select * from products;
+```
+
+Output
+
+```bash
+postgres=# select * from products;
+ id |    name    | price 
+----+------------+-------
+  1 | green ball | 24.00
+(1 row)
 ```
 
 ## Drop
