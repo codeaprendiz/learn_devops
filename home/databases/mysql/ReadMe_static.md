@@ -8,10 +8,7 @@ Start the MySQL database locally with the following command:
 
 ```bash
 # Start the MySQL database locally
-docker run --rm --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -d mysql:8
-```
-
-```bash
+docker run --rm -it --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -d mysql:8
 # Execute a bash shell in the container
 docker exec -it mysql8 bash
 ```
