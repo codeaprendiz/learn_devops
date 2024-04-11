@@ -9,5 +9,6 @@
 | task_003 | [task_003_create__show_all__grant__users](taskset_postgreSQL_databases/task_003_create__show_all__grant__users)                                                             |
 | task_004 | [task_004_create__show_all__connect_to__drop__dump__restore__database](taskset_postgreSQL_databases/task_004_create__show_all__connect_to__drop__dump__restore__database)   |
 | task_005 | [task_005_list_schemas](taskset_postgreSQL_databases/task_005_list_schemas)                                                                                                 |
-| task_016 | [task_016_checking_deadlock](taskset_postgreSQL_databases/task_016_checking_deadlock)                                                                                       |
+| task_006 | [task_006_checking_deadlock](taskset_postgreSQL_databases/task_006_checking_deadlock)                                                                                       |
+| task_007 | [task_007_set__show__transaction_isolation_levels](taskset_postgreSQL_databases/task_007_set__show__transaction_isolation_levels)                                           |
 
