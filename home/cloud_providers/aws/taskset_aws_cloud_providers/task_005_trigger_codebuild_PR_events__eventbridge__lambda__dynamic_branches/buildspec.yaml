@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies"
+
+  pre_build:
+    commands:
+      - echo "Pre-build step"
+
+  build:
+    commands:
+      - echo "Build phase"
+      - ls -ltrh
+
+  post_build:
+    commands:
+      - echo "Post-build step"
+
