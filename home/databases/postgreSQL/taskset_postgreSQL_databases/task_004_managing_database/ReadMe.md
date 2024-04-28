@@ -1,6 +1,6 @@
-# Create -- show all -- Database
+# Managing Database
 
-- [Create -- show all -- Database](#create----show-all----database)
+- [Managing Database](#managing-database)
   - [Create](#create)
   - [Show all databases](#show-all-databases)
   - [Connect to required database](#connect-to-required-database)

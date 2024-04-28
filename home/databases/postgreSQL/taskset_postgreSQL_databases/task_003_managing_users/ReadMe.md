@@ -1,6 +1,6 @@
-# Create -- Show all -- Grant Priviledges -- Users
+# Managing Users
 
-- [Create -- Show all -- Grant Priviledges -- Users](#create----show-all----grant-priviledges----users)
+- [Managing Users](#managing-users)
   - [Create a User](#create-a-user)
   - [Grant Priviledges to user `app_user_microservice` on Database `student`](#grant-priviledges-to-user-app_user_microservice-on-database-student)
   - [Validate Priviledges for user `app_user_microservice` on Database](#validate-priviledges-for-user-app_user_microservice-on-database)

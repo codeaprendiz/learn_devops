@@ -2,13 +2,13 @@
 
 > Auto generated ReadMe
 
-| Task     | Description                                                                                                                                                                 |
-|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| task_001 | [task_001_connecting_to_db](taskset_postgreSQL_databases/task_001_connecting_to_db)                                                                                         |
-| task_002 | [task_002_create__view_all__describe__insert__select_all__drop__tables](taskset_postgreSQL_databases/task_002_create__view_all__describe__insert__select_all__drop__tables) |
-| task_003 | [task_003_create__show_all__grant__users](taskset_postgreSQL_databases/task_003_create__show_all__grant__users)                                                             |
-| task_004 | [task_004_create__show_all__connect_to__drop__dump__restore__database](taskset_postgreSQL_databases/task_004_create__show_all__connect_to__drop__dump__restore__database)   |
-| task_005 | [task_005_list_schemas](taskset_postgreSQL_databases/task_005_list_schemas)                                                                                                 |
-| task_006 | [task_006_checking_deadlock](taskset_postgreSQL_databases/task_006_checking_deadlock)                                                                                       |
-| task_007 | [task_007_set__show__transaction_isolation_levels](taskset_postgreSQL_databases/task_007_set__show__transaction_isolation_levels)                                           |
+| Task     | Description                                                                                                                       |
+|----------|-----------------------------------------------------------------------------------------------------------------------------------|
+| task_001 | [task_001_connecting_to_db](taskset_postgreSQL_databases/task_001_connecting_to_db)                                               |
+| task_002 | [task_002_managing_tables](taskset_postgreSQL_databases/task_002_managing_tables)                                                 |
+| task_003 | [task_003_managing_users](taskset_postgreSQL_databases/task_003_managing_users)                                                   |
+| task_004 | [task_004_managing_database](taskset_postgreSQL_databases/task_004_managing_database)                                             |
+| task_005 | [task_005_managing_schemas](taskset_postgreSQL_databases/task_005_managing_schemas)                                               |
+| task_006 | [task_006_checking_deadlock](taskset_postgreSQL_databases/task_006_checking_deadlock)                                             |
+| task_007 | [task_007_set__show__transaction_isolation_levels](taskset_postgreSQL_databases/task_007_set__show__transaction_isolation_levels) |
 

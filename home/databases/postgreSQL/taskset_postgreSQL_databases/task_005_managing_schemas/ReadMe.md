@@ -1,6 +1,6 @@
-# List -- Schemas
+# Managing Schemas
 
-- [List -- Schemas](#list----schemas)
+- [Managing Schemas](#managing-schemas)
   - [List all Schemas](#list-all-schemas)
 
 ## List all Schemas

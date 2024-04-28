@@ -1,6 +1,6 @@
-# Create -- Select all -- Drop -- Tables
+# Managing Tables
 
-- [Create -- Select all -- Drop -- Tables](#create----select-all----drop----tables)
+- [Managing Tables](#managing-tables)
   - [Create](#create)
   - [Select all tables except ones in `pg_catalog` and `information_schema`](#select-all-tables-except-ones-in-pg_catalog-and-information_schema)
   - [Check tables and corresponding schema](#check-tables-and-corresponding-schema)
