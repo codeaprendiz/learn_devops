@@ -1,5 +1,10 @@
 # List -- Schemas
 
+- [List -- Schemas](#list----schemas)
+  - [List all Schemas](#list-all-schemas)
+
+## List all Schemas
+
 To list all the schemas you can use
 
 ```sql

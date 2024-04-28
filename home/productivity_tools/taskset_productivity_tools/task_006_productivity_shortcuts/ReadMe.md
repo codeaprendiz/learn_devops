@@ -44,6 +44,7 @@
 | Close a file                                                                          | `CMD + W`          | -                                                                                           |
 | Select all occurrences of the same word or character across the entire file in editor | `CMD + SHIFT + L`  | -                                                                                           |
 | Add the next occurrence of a word or character to your selection                      | `CMD + D`          | -                                                                                           |
+| Toggle line wrap on any open file or integrated terminal                              | `OPTION + Z`       | -                                                                                           |
 
 ### Side Panel Shortcuts
 

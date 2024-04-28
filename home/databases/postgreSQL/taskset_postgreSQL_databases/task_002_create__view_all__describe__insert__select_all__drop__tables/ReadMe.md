@@ -2,7 +2,8 @@
 
 - [Create -- Select all -- Drop -- Tables](#create----select-all----drop----tables)
   - [Create](#create)
-  - [Select all tables](#select-all-tables)
+  - [Select all tables except ones in `pg_catalog` and `information_schema`](#select-all-tables-except-ones-in-pg_catalog-and-information_schema)
+  - [Check tables and corresponding schema](#check-tables-and-corresponding-schema)
   - [Describe](#describe)
   - [Insert into table](#insert-into-table)
   - [Select all from table](#select-all-from-table)
@@ -22,7 +23,7 @@ CREATE TABLE IF NOT EXISTS products
 );
 ```
 
-## Select all tables
+## Select all tables except ones in `pg_catalog` and `information_schema`
 
 ```sql
 SELECT table_schema || '.' || table_name 
@@ -56,6 +57,25 @@ postgres=# \d
  public | products        | table    | root
  public | products_id_seq | sequence | root
 (2 rows)
+```
+
+## Check tables and corresponding schema
+
+```sql
+SELECT schemaname, tablename FROM pg_tables;
+```
+
+Output
+
+```bash
+bank=# SELECT schemaname, tablename FROM pg_tables LIMIT 5;
+ schemaname |     tablename     
+------------+-------------------
+ public     | accounts
+ public     | entries
+ public     | transfers
+ public     | schema_migrations
+ pg_catalog | pg_statistic
 ```
 
 ## Describe
