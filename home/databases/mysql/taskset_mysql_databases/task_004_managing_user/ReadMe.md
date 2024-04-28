@@ -7,7 +7,7 @@
   - [Get the list of users and corresponding hosts allowed to login](#get-the-list-of-users-and-corresponding-hosts-allowed-to-login)
   - [Give READONLY priviledge to login](#give-readonly-priviledge-to-login)
   - [Drop the user](#drop-the-user)
-  - [Alter user](#alter-user)
+  - [Alter user, change password](#alter-user-change-password)
   - [Check when the password was last changed](#check-when-the-password-was-last-changed)
 
 ## Create User
@@ -95,7 +95,7 @@ mysql> DROP USER 'app_user'@'%';
 Query OK, 0 rows affected (0.07 sec)
 ```
 
-## Alter user
+## Alter user, change password
 
 First check the users
 
