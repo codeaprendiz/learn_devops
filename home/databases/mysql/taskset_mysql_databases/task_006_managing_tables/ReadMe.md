@@ -1,6 +1,6 @@
-# Create Table -- Show Tables -- Insert Into -- Tables
+# Manage Tables
 
-- [Create Table -- Show Tables -- Insert Into -- Tables](#create-table----show-tables----insert-into----tables)
+- [Manage Tables](#manage-tables)
   - [Create a table named `students` in the `student_db` database](#create-a-table-named-students-in-the-student_db-database)
   - [Show tables](#show-tables)
   - [Insert into table](#insert-into-table)

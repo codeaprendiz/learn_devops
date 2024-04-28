@@ -1,6 +1,6 @@
-# Create -- Select -- Grant READONLY access -- Drop -- User
+# Manage User
 
-- [Create -- Select -- Grant READONLY access -- Drop -- User](#create----select----grant-readonly-access----drop----user)
+- [Manage User](#manage-user)
   - [Create User](#create-user)
   - [Show the grants for user `app_user` at any host](#show-the-grants-for-user-app_user-at-any-host)
   - [Show the grants of current user](#show-the-grants-of-current-user)

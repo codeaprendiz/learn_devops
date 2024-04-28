@@ -1,6 +1,6 @@
-# CREATE -- SHOW -- Databases
+# Manage Databases
 
-- [CREATE -- SHOW -- Databases](#create----show----databases)
+- [Manage Databases](#manage-databases)
   - [Create Database- CREATE -- SHOW -- Databases](#create-database--create----show----databases)
   - [Show Databases](#show-databases)
 
