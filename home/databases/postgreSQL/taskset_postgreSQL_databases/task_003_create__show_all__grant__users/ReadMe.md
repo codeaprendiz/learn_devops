@@ -6,7 +6,7 @@
   - [Validate Priviledges for user `app_user_microservice` on Database](#validate-priviledges-for-user-app_user_microservice-on-database)
     - [Database level priviledges](#database-level-priviledges)
     - [Schema level priviledges](#schema-level-priviledges)
-  - [Grant Priviledges to user `app_user_microservice` on ALL Tables in `public` schema for `simple_bank` database](#grant-priviledges-to-user-app_user_microservice-on-all-tables-in-public-schema-for-simple_bank-database)
+  - [Grant Priviledges to user `app_user_microservice` on ALL Tables in `public` schema for `bank` database](#grant-priviledges-to-user-app_user_microservice-on-all-tables-in-public-schema-for-bank-database)
     - [Validate Priviledges for user `app_user_microservice` on Tables](#validate-priviledges-for-user-app_user_microservice-on-tables)
     - [Table level priviledges](#table-level-priviledges)
   - [Show all Users](#show-all-users)
@@ -60,7 +60,7 @@ postgres-# FROM pg_database;
  root        | t
  template1   | t
  template0   | t
- simple_bank | t
+ bank | t
 (5 rows)
 ```
 
@@ -83,12 +83,12 @@ postgres-# FROM pg_catalog.pg_namespace;
 (4 rows)
 ```
 
-## Grant Priviledges to user `app_user_microservice` on ALL Tables in `public` schema for `simple_bank` database
+## Grant Priviledges to user `app_user_microservice` on ALL Tables in `public` schema for `bank` database
 
-Make sure you are connected to the database `simple_bank`
+Make sure you are connected to the database `bank`
 
 ```bash
-\c simple_bank
+\c bank
 ```
 
 ```sql
@@ -96,8 +96,8 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO app_user_microservice;
 ```
 
 ```bash
-postgres=# \c simple_bank
-You are now connected to database "simple_bank" as user "root".
+postgres=# \c bank
+You are now connected to database "bank" as user "root".
 postgres=# GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO app_user_microservice;
 GRANT
 ```
@@ -113,9 +113,9 @@ WHERE schemaname = 'public';
 ```
 
 ```bash
-simple_bank=# SELECT tablename, has_table_privilege('app_user_microservice', tablename, 'SELECT') 
-simple_bank-# FROM pg_tables
-simple_bank-# WHERE schemaname = 'public';
+bank=# SELECT tablename, has_table_privilege('app_user_microservice', tablename, 'SELECT') 
+bank-# FROM pg_tables
+bank-# WHERE schemaname = 'public';
      tablename     | has_table_privilege 
 -------------------+---------------------
  accounts          | t
