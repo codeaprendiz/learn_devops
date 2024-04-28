@@ -5,7 +5,7 @@
   - [Show the grants for user `app_user` at any host](#show-the-grants-for-user-app_user-at-any-host)
   - [Show the grants of current user](#show-the-grants-of-current-user)
   - [Get the list of users and corresponding hosts allowed to login](#get-the-list-of-users-and-corresponding-hosts-allowed-to-login)
-  - [Give READONLY priviledge to login `app_user` from any host](#give-readonly-priviledge-to-login-app_user-from-any-host)
+  - [Grant READONLY priviledge to login `app_user` from any host](#grant-readonly-priviledge-to-login-app_user-from-any-host)
   - [Drop the user](#drop-the-user)
   - [Alter user, change password](#alter-user-change-password)
   - [Check when the password was last changed](#check-when-the-password-was-last-changed)
@@ -73,15 +73,20 @@ mysql> select user,host from mysql.user;
 5 rows in set (0.06 sec)
 ```
 
-## Give READONLY priviledge to login `app_user` from any host
+## Grant READONLY priviledge to login `app_user` from any host
 
 ```sql
 GRANT SELECT, SHOW VIEW ON *.* TO 'app_user'@'%';
 ```
 
 ```sql
+FLUSH PRIVILEGES
+```
+
+```sql
 mysql> GRANT SELECT, SHOW VIEW ON *.* TO 'app_user'@'%';
 Query OK, 0 rows affected (0.09 sec)
+mysql> FLUSH PRIVILEGES;
 ```
 
 ## Drop the user
