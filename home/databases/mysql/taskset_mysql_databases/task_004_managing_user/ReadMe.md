@@ -2,8 +2,8 @@
 
 - [Create -- Select -- Grant READONLY access -- Drop -- User](#create----select----grant-readonly-access----drop----user)
   - [Create User](#create-user)
-  - [To show the grants you can use](#to-show-the-grants-you-can-use)
-  - [To show the grants of current user](#to-show-the-grants-of-current-user)
+  - [Show the grants for user `app_user` at any host](#show-the-grants-for-user-app_user-at-any-host)
+  - [Show the grants of current user](#show-the-grants-of-current-user)
   - [Get the list of users and corresponding hosts allowed to login](#get-the-list-of-users-and-corresponding-hosts-allowed-to-login)
   - [Give READONLY priviledge to login](#give-readonly-priviledge-to-login)
   - [Drop the user](#drop-the-user)
@@ -24,7 +24,7 @@ mysql> CREATE USER 'app_user'@'%' IDENTIFIED BY 'somepassword';
 Query OK, 0 rows affected (0.07 sec)
 ```
 
-## To show the grants you can use
+## Show the grants for user `app_user` at any host
 
 ```sql
 show grants for 'app_user'@'%';
@@ -40,7 +40,7 @@ mysql> show grants for 'app_user'@'%';
 +--------------------------------------------------------------------------------------------------+
 ```
 
-## To show the grants of current user
+## Show the grants of current user
 
 ```sql
 mysql> show grants;
