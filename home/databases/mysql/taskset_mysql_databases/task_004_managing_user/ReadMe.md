@@ -8,6 +8,7 @@
   - [Give READONLY priviledge to login](#give-readonly-priviledge-to-login)
   - [Drop the user](#drop-the-user)
   - [Alter user](#alter-user)
+  - [Check when the password was last changed](#check-when-the-password-was-last-changed)
 
 ## Create User
 
@@ -115,4 +116,22 @@ ALTER USER 'app_user'@'%' IDENTIFIED BY 'newpassword';
 ```sql
 -- https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html
 mysql> ALTER USER 'app_user'@'%' IDENTIFIED BY 'newpassword'; 
+```
+
+## Check when the password was last changed
+
+```sql
+SELECT user, host, password_last_changed 
+FROM mysql.user 
+WHERE user = 'app_user';
+```
+
+```sql
+mysql> SELECT user, host, password_last_changed FROM mysql.user WHERE user = 'app_user';
++----------+------+-----------------------+
+| user     | host | password_last_changed |
++----------+------+-----------------------+
+| app_user | %    | 2024-04-28 10:57:45   |
++----------+------+-----------------------+
+1 row in set (0.01 sec)
 ```
