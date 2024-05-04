@@ -114,7 +114,7 @@ postgres-#   table_name = 'products';
 (3 rows)
 ```
 
-You can also do it using the following command
+You can also do it using the following command [stackoverflow » PostgreSQL "DESCRIBE TABLE"](https://stackoverflow.com/questions/109325/postgresql-describe-table)
 
 ```bash
 \d <tableName>
