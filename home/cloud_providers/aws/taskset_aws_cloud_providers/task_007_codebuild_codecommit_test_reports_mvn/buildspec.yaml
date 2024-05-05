@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21  # Assuming corretto21 is available, replace with the specific version available in AWS CodeBuild
+    commands:
+      - echo "Checking Java version..."
+      - java -version
+      - echo "Checking mvn version..."
+      - mvn -v
+  build:
+    commands:
+      - java -version
+      - echo Build started on `date`
+      - mvn surefire-report:report #Running this task to execute unit tests and generate report.
+reports: #New
+  SurefireReports: # CodeBuild will create a report group called "SurefireReports".
+    files: #Store all of the files
+      - '**/*'
+    base-directory: 'target/surefire-reports' # Location of the report
