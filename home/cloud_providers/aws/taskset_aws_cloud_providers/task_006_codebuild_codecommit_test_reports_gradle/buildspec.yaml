@@ -1,0 +1,36 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21  # Assuming corretto21 is available, replace with the specific version available in AWS CodeBuild
+    commands:
+      - echo "Checking Java version..."
+      - java -version
+      - echo "Checking Gradle version..."
+      - gradle -v
+
+  pre_build:
+    commands:
+      - echo "Preparing build..."
+      - echo "Setting up JAVA_HOME..."
+      - export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac))))
+      - echo $JAVA_HOME
+
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - echo "Running Gradle tasks..."
+      - gradle clean build
+      - gradle test
+
+  post_build:
+    commands:
+      - echo "Build and test steps completed"
+
+
+reports:
+  GradleReports:
+    files:
+      - '**/*.xml'
+    base-directory: 'build/test-results'
