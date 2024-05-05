@@ -19,9 +19,18 @@
 
 ## Create a codebuild project : repo-d
 
-Use the `buildspec.yml` file in the root of the project.
+Use the `buildspec.yml` file in the root of the project. Make sure you give the right path to the test reports in the `buildspec.yml` file.
+The files get generated in the project in directory `build/test-results`.
 
 Trigger build manually using `Start build` button.
+
+```yaml
+reports:
+  GradleReports:
+    files:
+      - '**/*.xml'
+    base-directory: 'build/test-results'
+```
 
 ## Go to the Report Groups section
 

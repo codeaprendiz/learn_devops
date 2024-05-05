@@ -122,3 +122,9 @@ To get basic information about your project is execute the following command
 ```bash
 mvn site
 ```
+
+To generate reports
+
+```bash
+mvn surefire-report:report
+```

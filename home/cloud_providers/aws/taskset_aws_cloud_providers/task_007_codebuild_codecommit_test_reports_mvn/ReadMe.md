@@ -20,7 +20,16 @@
 
 ## Create a codebuild project : repo-d
 
-Use the `buildspec.yml` file in the root of the project.
+Use the `buildspec.yml` file in the root of the project. Make sure you give the right path to the test reports in the `buildspec.yml` file.
+The files get generated in the project in directory `target/surefire-reports`.
+
+```yaml
+reports: #New
+  SurefireReports: # CodeBuild will create a report group called "SurefireReports".
+    files: #Store all of the files
+      - '**/*'
+    base-directory: 'target/surefire-reports' # Location of the report
+```
 
 Trigger build manually using `Start build` button.
 
