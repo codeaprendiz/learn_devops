@@ -3,6 +3,7 @@
 - [Manage Databases](#manage-databases)
   - [Create Database- CREATE -- SHOW -- Databases](#create-database--create----show----databases)
   - [Show Databases](#show-databases)
+  - [Drop Database](#drop-database)
 
 ## Create Database- [CREATE -- SHOW -- Databases](#create----show----databases)
 
@@ -35,4 +36,17 @@ mysql> show databases;
 | sys                |
 +--------------------+
 5 rows in set (0.01 sec)
+```
+
+## Drop Database
+
+```sql
+DROP DATABASE student_db;
+```
+
+Output
+
+```sql
+mysql> DROP DATABASE student_db;
+Query OK, 0 rows affected (0.02 sec)
 ```

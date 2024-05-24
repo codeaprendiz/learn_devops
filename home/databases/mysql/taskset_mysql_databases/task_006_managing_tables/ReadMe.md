@@ -4,6 +4,7 @@
   - [Create a table named `students` in the `student_db` database](#create-a-table-named-students-in-the-student_db-database)
   - [Show tables](#show-tables)
   - [Insert into table](#insert-into-table)
+  - [Drop Table (if exists)](#drop-table-if-exists)
 
 ## Create a table named `students` in the `student_db` database
 
@@ -68,4 +69,17 @@ mysql> select * from students;
 3 rows in set (0.00 sec)
 
 mysql>
+```
+
+## Drop Table (if exists)
+
+```sql
+DROP TABLE IF EXISTS students;
+```
+
+Output
+
+```sql
+mysql> DROP TABLE IF EXISTS students;
+Query OK, 0 rows affected (0.03 sec)
 ```
