@@ -43,6 +43,7 @@ alias lc="git --no-pager log | head -n 1 | cut -c 8-15"
 alias jj="gaa;gcmsg 'chore: update'; ggpush;"
 alias ht="git --no-pager tag --points-at HEAD"
 alias devtags="git --no-pager ls-remote --tags | egrep "refs/tags/dev" | awk {'print $2'} | sort -V | tail -n 2"
+alias dlocal="git --no-pager branch --merged  | egrep -v master | xargs git branch -d"
 ```
 
 ## EXAMPLES
