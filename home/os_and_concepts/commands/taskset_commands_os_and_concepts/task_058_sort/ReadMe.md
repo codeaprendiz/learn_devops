@@ -4,10 +4,6 @@
 
 sort - sort lines of text file
 
-## SYNOPSIS
-
-sort [OPTION]... [FILE]...
-
 ## DESCRIPTION
 
 Write sorted concatenation of all FILE(s) to standard output.
@@ -30,23 +26,13 @@ Write sorted concatenation of all FILE(s) to standard output.
   * compare according to string numerical value
 * -r, --reverse
   * reverse the result of comparisons
+* -V --version-sort
+  * natural sort of (version) numbers within text
   
 ## EXAMPLES
 
 ```bash
-$ cat num alpha alphaNum
-2
-1
-b
-a
-z 1
-y 2
-$ sort num alpha alphaNum
-1
-2
-a
-b
-y 2 
-z 1
-$
+$ ls sort* | sort -V
+sort-1.022.tgz
+sort-1.23.tgz
 ```
