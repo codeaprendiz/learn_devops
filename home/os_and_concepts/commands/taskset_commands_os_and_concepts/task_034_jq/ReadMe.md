@@ -7,7 +7,7 @@ jq - Command-line JSON processor
   - [EXAMPLES](#examples)
     - [getting started](#getting-started)
     - [. -- pretty print](#----pretty-print)
-  - [-c -- compact output](#-c----compact-output)
+    - [-c -- compact output](#-c----compact-output)
     - [.key -- get value of key](#key----get-value-of-key)
     - [sort\_by(.\[num\]) -- sort by key](#sort_bynum----sort-by-key)
     - [split()](#split)
@@ -60,7 +60,7 @@ $ echo $json | jq '.'
 }
 ```
 
-## -c -- compact output
+### -c -- compact output
 
 ```bash
 cat example1.json | jq -c
