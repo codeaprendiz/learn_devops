@@ -26,8 +26,6 @@ jq - Command-line JSON processor
 
 ### getting started
 
-Let the json be
-
 ```bash
 cat example1.json | jq
 ```
