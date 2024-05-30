@@ -159,7 +159,5 @@ Output
 3. **Selecting the Last Element (`| last`)**:
    - `| last` simply selects the last element from the sorted array, which is the one with the highest value from the sorted criterion.
 
-Corrected Understanding
-
 - The expression `. [1]` inside `sort_by` is not returning the "first element of the array" but rather the second element of each sub-array, which is then processed further.
 - `split("-")` does not appear at the level of sorting the whole array by itself; it's applied to the string that `. [1]` retrieves from each sub-array, helping in extracting a specific part for numeric comparison.
