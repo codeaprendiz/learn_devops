@@ -44,8 +44,7 @@ Also you can actually get your public IP by running following command
 
 ```bash
 # Tested on mac
-$ curl ifconfig.me
-.
+curl ifconfig.me
 ```
 
 ### To test a request to a server as if it came from the browser with the same Host header | -H | -k
