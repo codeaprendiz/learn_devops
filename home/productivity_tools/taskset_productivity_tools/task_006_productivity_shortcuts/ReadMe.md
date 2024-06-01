@@ -2,23 +2,23 @@
 
 ## MAC Shortcuts
 
-| Action                                       | Shortcut        | Notes                                                         |
-|----------------------------------------------|-----------------|---------------------------------------------------------------|
-| Make the bottom icons on Desktop toggle      | `CMD+OPTIONS+D` | Ensure that you have clicked on the empty area on the desktop |
-| Switch between different apps in one desktop | `CMD+TAB`       | You can use arrow keys left and right for faster navigation   |
-| Switch between windows of the same app                  | `CMD+TILDE`                | Tilde is the key on the left side of 1 with ~ printed on top and ` below |
-| Open Home in Finder                                     | `CMD+SHIFT+H`              | -                                                                       |
-| Toggle Finder hidden files and folder                   | `CMD+SHIFT+.`              | -                                                                       |
-| Print character `»`                                     | `OPTION + SHIFT + \`       | -                                                                       |
-| New folder via right click                              | `FUNCTION + SHIFT + F10`   | -                                                                       |
-| Take a screenshot and copy to clipboard                 | `CMD + CTRL + SHIFT + 4`   | -                                                                       |
+| Action                                       | Shortcut                 | Notes                                                                    |
+| -------------------------------------------- | ------------------------ | ------------------------------------------------------------------------ |
+| Make the bottom icons on Desktop toggle      | `CMD+OPTIONS+D`          | Ensure that you have clicked on the empty area on the desktop            |
+| Switch between different apps in one desktop | `CMD+TAB`                | You can use arrow keys left and right for faster navigation              |
+| Switch between windows of the same app       | `CMD+TILDE`              | Tilde is the key on the left side of 1 with ~ printed on top and ` below |
+| Open Home in Finder                          | `CMD+SHIFT+H`            | -                                                                        |
+| Toggle Finder hidden files and folder        | `CMD+SHIFT+.`            | -                                                                        |
+| Print character `»`                          | `OPTION + SHIFT + \`     | -                                                                        |
+| New folder via right click                   | `FUNCTION + SHIFT + F10` | -                                                                        |
+| Take a screenshot and copy to clipboard      | `CMD + CTRL + SHIFT + 4` | -                                                                        |
 
 ## Chrome Shortcuts
 
 [Chrome Keyboard Shortcuts Official Documentation](https://support.google.com/chrome/answer/157179)
 
 | Action                   | Shortcut                    | Notes                                   |
-|--------------------------|-----------------------------|-----------------------------------------|
+| ------------------------ | --------------------------- | --------------------------------------- |
 | New Tab                  | `CMD+T`                     | -                                       |
 | Navigate between tabs    | `CMD + OPTION + LEFT/RIGHT` | Alternate: `CMD + SHIFT + [`            |
 | Go to the address bar    | `CMD+L`                     | -                                       |
@@ -29,7 +29,7 @@
 ## VS Code (Mac) Shortcuts
 
 | Action                                                                                | Shortcut           | Notes                                                                                       |
-|---------------------------------------------------------------------------------------|--------------------|---------------------------------------------------------------------------------------------|
+| ------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------- |
 | Open terminal                                                                         | `CNTR + ~`         | -                                                                                           |
 | Open new terminal                                                                     | `CNTR + SHIFT + ~` | -                                                                                           |
 | Command Palette                                                                       | `CMD + SHIFT + P`  | -                                                                                           |
@@ -45,20 +45,20 @@
 | Select all occurrences of the same word or character across the entire file in editor | `CMD + SHIFT + L`  | -                                                                                           |
 | Add the next occurrence of a word or character to your selection                      | `CMD + D`          | -                                                                                           |
 | Toggle line wrap on any open file or integrated terminal                              | `OPTION + Z`       | -                                                                                           |
+| To open files with full name / partial name                                           | `CMD + P`          | -                                                                                           |
 
 ### Side Panel Shortcuts
 
 | Action                                                | Shortcut           | Notes                |
-|-------------------------------------------------------|--------------------|----------------------|
+| ----------------------------------------------------- | ------------------ | -------------------- |
 | Open the sidebar `Explorer`                           | `CMD + SHIFT + E`  | Alternate: `CMD + 0` |
 | Open `Source Control`                                 | `CNTR + SHIFT + G` | -                    |
 | Navigate with `j` and `k` and `l` to enter commit box | `j`, `k`, `l`      |                      |
 
-
 #### Navigate Folders (When in Explorer)
 
 | Action                                        | Shortcut             | Notes                           |
-|-----------------------------------------------|----------------------|---------------------------------|
+| --------------------------------------------- | -------------------- | ------------------------------- |
 | Folder navigation                             | `j` and `k`          | -                               |
 | Toggle open folder                            | `o`                  | -                               |
 | Open file in currently open file or new file  | `o` and `l`          | -                               |
@@ -69,13 +69,13 @@
 ### Other Shortcuts
 
 | Action                                           | Shortcut         | Notes               |
-|--------------------------------------------------|------------------|---------------------|
+| ------------------------------------------------ | ---------------- | ------------------- |
 | Toggle `Zen Mode` (Ensure you're editing a file) | `CMD+K` then `Z` | Press keys together |
 
 ## Miro
 
 | Action                        | Shortcut                          |
-|-------------------------------|-----------------------------------|
+| ----------------------------- | --------------------------------- |
 | Move the icon down            | `Function + Down_arrow`           |
 | Select all icons for movement | `SHIFT + hover mouse in the area` |
 | Zoom in                       | `CMD + +`                         |
