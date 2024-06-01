@@ -4,88 +4,86 @@
 
 find -- walk a file hierarchy
 
-## DESCRIPTION
-
-GNU find searches the directory tree rooted at each given starting-point by evaluating the given expression from left to right, according to the rules of precedence, until the outcome is known (the left hand side is false for and operations, true for or), at which point find moves on to the next file name.  
-If no starting point is specified, `.' is assumed.
-
-## OPTIONS
-
-* -mtime n
-  * File's data was last modified n*24 hours ago.  
-    All primaries which take a numeric argument allow the number to be preceded by a plus sign (``+'') or a minus sign (``-'').  
-    A preceding plus sign means `more than n'', a preceding minus sign means` less than n'' and neither means ``exactly n''.
-* -mmin n
-  * File as data was last modified n minutes ago.
-* -size n[cwbkMG]
-  * File uses n units of space.  The following suffixes can be used:
-    * b
-      * for 512-byte blocks (this is the default if no suffix is used)
-    * c
-      * for bytes
-    * w
-      * for two-byte words
-    * k
-      * for Kilobytes (units of 1024 bytes)
-    * M
-      * for Megabytes (units of 1048576 bytes)
-    * G    f
-      * or Gigabytes (units of 1073741824 bytes)
-
-* -type c
-  * File is of type c:
-    * b      block (buffered) special
-    * c      character (unbuffered) special
-    * d      directory
-    * p      named pipe (FIFO)
-    * f      regular file
-    * l      symbolic link
-    * s      socket
-    * D      door (Solaris)
-
-* -xdev
-  * Do not descend directories on other filesystems.
+- [find](#find)
+  - [NAME](#name)
+  - [EXAMPLES](#examples)
+    - [All files in a directory that have not been updated since last 300 days | -mtime](#all-files-in-a-directory-that-have-not-been-updated-since-last-300-days---mtime)
+    - [files that were last modified in last 180 mins | -mmin | names match the pattern | -name](#files-that-were-last-modified-in-last-180-mins---mmin--names-match-the-pattern---name)
+    - [files greater than 100M size | -size](#files-greater-than-100m-size---size)
+    - [find all files greater than 100MB and print their sizes | -size | -exec | -type f | -xdev](#find-all-files-greater-than-100mb-and-print-their-sizes---size---exec---type-f---xdev)
+    - [find files older than 1 month | -mtime | -print | -maxdepth](#find-files-older-than-1-month---mtime---print---maxdepth)
+    - [Move the files older than 30 days to a particular directory](#move-the-files-older-than-30-days-to-a-particular-directory)
 
 ## EXAMPLES
 
-* For example to show all the files in /app/endeca/PlatformServices/workspace/logs directory that have not been updated since last 25 days do
+### All files in a directory that have not been updated since last 300 days | -mtime
+
+`-mtime` in the `find` command is used to search for files based on the number of days since they were last modified; `-mtime +300` finds files modified more than 300 days ago.
 
 ```bash
-find /app/endeca/PlatformServices/workspace/logs -mtime +25 -exec ls -ltr {} \;
+find home/os_and_concepts/commands/taskset_commands_os_and_concepts -mtime +300 -exec ls  {} \; | tail -n 2
 ```
 
-* For mmin
+Output
 
 ```bash
-find $HOME/.BUILD_SCRIPTS_AREA/  -mmin -180 -name "*-bld.lock"|grep "$BLD_LOCK"|wc -l
+ReadMe.md
+home/os_and_concepts/commands/taskset_commands_os_and_concepts/task_016_dos2unix/ReadMe.md
 ```
 
-* To find all the files which are greater than 100M size in $HOME path
+### files that were last modified in last 180 mins | -mmin | names match the pattern | -name
+
+For mmin
 
 ```bash
-[username@hostname admin-scripts]$ find $HOME -size +100M|grep "/logs/" 
+find $HOME/.BUILD_SCRIPTS_AREA/  -mmin -180 -name "*-bld.lock" | grep "$BLD_LOCK" | wc -l
+```
+
+### files greater than 100M size | -size
+
+To find all the files which are greater than 100M size in $HOME path
+
+```bash
+find $HOME -size +100M | grep "/logs/" 
+```
+
+Output
+
+```bash
 /username/domains/test.prd.webDomain/servers/test/logs/test.out00006 
 ```
 
-* To find the size of all files present in current directory which are greater than 100MB 
+### find all files greater than 100MB and print their sizes | -size | -exec | -type f | -xdev
+
+To find the size of all files present in current directory which are greater than 100MB
 
 ```bash
--bash-3.2$ find . -xdev -type f -size +100M -exec du -sh {} + 
+find . -xdev -type f -size +100M -exec du -sh {} +
+```
+
+Output
+
+```bash
 374M    ./apache-tomcat-7.0.34/logs/catalina.out 
 113M    ./sonar/sonarqube-5.5.zip 
 107M    ./tmp-02082016/.jenkins/plugins.zip 
 ```
 
-* Find all the files in current directory which are older than 1 month
+### find files older than 1 month | -mtime | -print | -maxdepth
+
+Find all the files in current directory which are older than 1 month
 
 ```bash
-$ find ./ -maxdepth 1 -type f -mtime +30 -print 
-.
-$ find ./ -maxdepth 1 -type f -mtime +30 
-.
+find ./ -maxdepth 1 -type f -mtime +30 -print 
 ```
 
-* Move the files older than 30 days to a particular directory
+```bash
+find ./ -maxdepth 1 -type f -mtime +30 
+```
+
+### Move the files older than 30 days to a particular directory 
+
+Move the files older than 30 days to a particular directory
 
 ```bash
 $ mkdir tmp
@@ -99,7 +97,7 @@ $ rm -rf tmp
 * To find specific pom files and zip them into a file
 
 ```bash
-$ find . -name Build-2019-03-09-23-38-pom-090319.xls -o -name Build-2019-03-12-23-05-pom-120319.xls -o -name Build-2019-03-13-07-46-pom-130319.xls|xargs zip -r 123.zip
+$ find . -name Build-2019-03-09-23-38-pom-090319.xls -o -name Build-2019-03-12-23-05-pom-120319.xls -o -name Build-2019-03-13-07-46-pom-130319.xls | xargs zip -r 123.zip
 .
 ```
 
