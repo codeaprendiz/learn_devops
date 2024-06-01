@@ -2,16 +2,16 @@
 
 ## MAC Shortcuts
 
-| Action                                       | Shortcut        | Notes                                                         |
-|----------------------------------------------|-----------------|---------------------------------------------------------------|
-| Make the bottom icons on Desktop toggle      | `CMD+OPTIONS+D` | Ensure that you have clicked on the empty area on the desktop |
-| Switch between different apps in one desktop | `CMD+TAB`       | You can use arrow keys left and right for faster navigation   |
-| Switch between windows of the same app       | `CMD+TILDE`              | Tilde is the key on the left side of 1 with ~ printed on top and ` below |
-| Open Home in Finder                          | `CMD+SHIFT+H`            | -                                                                        |
-| Toggle Finder hidden files and folder        | `CMD+SHIFT+.`            | -                                                                        |
-| Print character `»`                          | `OPTION + SHIFT + \`     | -                                                                        |
-| New folder via right click                   | `FUNCTION + SHIFT + F10` | -                                                                        |
-| Take a screenshot and copy to clipboard      | `CMD + CTRL + SHIFT + 4` | -                                                                        |
+| Action                                       | Shortcut                 | Notes                                                         |
+|----------------------------------------------|--------------------------|---------------------------------------------------------------|
+| Make the bottom icons on Desktop toggle      | `CMD+OPTIONS+D`          | Ensure that you have clicked on the empty area on the desktop |
+| Switch between different apps in one desktop | `CMD+TAB`                | You can use arrow keys left and right for faster navigation   |
+| Switch between windows of the same app       | `CMD+TILDE`              | Tilde key : `~`                                               |
+| Open Home in Finder                          | `CMD+SHIFT+H`            | -                                                             |
+| Toggle Finder hidden files and folder        | `CMD+SHIFT+.`            | -                                                             |
+| Print character `»`                          | `OPTION + SHIFT + \`     | -                                                             |
+| New folder via right click                   | `FUNCTION + SHIFT + F10` | -                                                             |
+| Take a screenshot and copy to clipboard      | `CMD + CTRL + SHIFT + 4` | -                                                             |
 
 ## Chrome Shortcuts
 
