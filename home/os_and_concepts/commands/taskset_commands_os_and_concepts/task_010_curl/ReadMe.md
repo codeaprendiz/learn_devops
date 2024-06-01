@@ -1,65 +1,30 @@
 # curl
 
+- [curl](#curl)
+  - [NAME](#name)
+  - [EXAMPLES](#examples)
+    - [vkso | -H options | verbose | insecure | silent | output | headers](#vkso---h-options--verbose--insecure--silent--output--headers)
+    - [-u -T | user | upload](#-u--t--user--upload)
+    - [Get your public IP](#get-your-public-ip)
+    - [To test a request to a server as if it came from the browser with the same Host header | -H | -k](#to-test-a-request-to-a-server-as-if-it-came-from-the-browser-with-the-same-host-header---h---k)
+    - [--resolve | force resolve to IP | -H | --cacert | Root CA | --cert | --key](#--resolve--force-resolve-to-ip---h----cacert--root-ca----cert----key)
+    - [To get only the status code using curl](#to-get-only-the-status-code-using-curl)
+    - [-L | --location | follow redirect | -I | --head | Fetch headers only](#-l----location--follow-redirect---i----head--fetch-headers-only)
+
 ## NAME
 
 curl - transfer a URL
 
-## DESCRIPTION
+## EXAMPLES
 
-curl  is a tool to transfer data from or to a server, using one of the supported protocols (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP).
-The command is designed to work without user interaction.
-
-## OPTIONS
-
-* -H, --header \<header\>
-  * (HTTP) Extra header to include in the request when sending HTTP to a server.
-* -k, --insecure
-  * (TLS)  By default, every SSL connection curl makes is verified to be secure.
-      This option allows curl to proceed and operate even for server connections otherwise considered insecure.
-      The server connection is verified by making sure the server's certificate contains the right name and verifies successfully using the cert store.
-* -o, --output \<file\>
-  * Write output to \<file\> instead of stdout.
-* -S, --show-error
-  * When used with -s it makes curl show error message if it fails.
-* -s, --silent
-  * Silent  or quiet mode.
-      Don't show progress meter or error messages.  
-      Makes Curl mute.
-      It will still output the data you ask for, potentially even to the terminal/stdout unless you redirect it.
-* -T, --upload-file \<file\>
-  * This transfers the specified local file to the remote URL. If there is no file part in the specified URL, Curl will append the local file name. NOTE that you must use a  trailing like
-
-```bash
-$ curl -T "{file1,file2}" http://www.uploadtothissite.com
-.
-```
-
-* -u, --user <user:password>
-  * Specify the user name and password to use for server authentication.
-* -v, --verbose
-  * Makes curl verbose during the operation.
-      A line starting with '>' means "header data" sent by curl, '<' means "header data" received by curl that is hidden in normal cases, and a line starting with '*' means additional info provided by curl.
-* -w, --write-out \<format\>
-  * Make curl display information on stdout after a completed transfer.
-
-### EXAMPLES
+### vkso | -H options | verbose | insecure | silent | output | headers
 
 ```bash
 $ curl -vkso /dev/null 'https://121.170.212.70/healthcheck/healthcheck.htm' -H'X-test-Debug: 1' -H'Host: test.groceries.org.com'
 .
 ```
 
-* `curl google.com`
-
-```bash
-$ curl goole.com
-<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
-<TITLE>301 Moved</TITLE></HEAD><BODY>
-<H1>301 Moved</H1>
-The document has moved
-<A HREF="http://www.google.com/">here</A>.
-</BODY></HTML>
-```
+### -u -T | user | upload
 
 Using curl to deploy the artifact in tomcat
 
@@ -73,6 +38,8 @@ export TOMCAT_PORT=9090
 curl -v -u $TOMCAT_USER:$TOMCAT_PASSWORD -T $DEPLOY_SOURCE_DIR/artifact.war http://$TOMCAT_HOST:$TOMCAT_PORT/manager/text/deploy?path=/offer
 ```
 
+### Get your public IP
+
 * Also you can actually get your public IP by running following command
 
 ```bash
@@ -80,6 +47,8 @@ curl -v -u $TOMCAT_USER:$TOMCAT_PASSWORD -T $DEPLOY_SOURCE_DIR/artifact.war http
 $ curl ifconfig.me
 .
 ```
+
+### To test a request to a server as if it came from the browser with the same Host header | -H | -k
 
 To test a request to a server as if it came from the browser with the same Host header
 
@@ -89,6 +58,8 @@ To test a request to a server as if it came from the browser with the same Host 
 # -k is to allow insecure request
 curl -H 'Host: test.example.com' http://localhost:svc_path_1 -kv
 ```
+
+### --resolve | force resolve to IP | -H | --cacert | Root CA | --cert | --key
 
 Send an HTTPS request to access the httpbin service through HTTPS:
 
@@ -112,4 +83,31 @@ Pass a client certificate and private key to curl. Pass your client’s certific
 curl -v -HHost:httpbin.example.com --resolve "httpbin.example.com:$SECURE_INGRESS_PORT:$INGRESS_HOST" \
   --cacert example_certs1/example.com.crt --cert example_certs1/client.example.com.crt --key example_certs1/client.example.com.key \
   "https://httpbin.example.com:$SECURE_INGRESS_PORT/status/418"
+```
+
+### To get only the status code using curl
+
+```bash
+curl -s -o /dev/null -w "%{http_code}" http://google.com
+```
+
+Output
+
+```bash
+301
+```
+
+### -L | --location | follow redirect | -I | --head | Fetch headers only
+
+```bash
+curl http://google.com -L -I
+```
+
+Output
+
+```bash
+HTTP/1.1 301 Moved Permanently
+..
+..
+HTTP/1.1 200 OK
 ```
