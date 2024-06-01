@@ -8,7 +8,7 @@
     - [Get your public IP](#get-your-public-ip)
     - [To test a request to a server as if it came from the browser with the same Host header | -H | -k](#to-test-a-request-to-a-server-as-if-it-came-from-the-browser-with-the-same-host-header---h---k)
     - [--resolve | force resolve to IP | -H | --cacert | Root CA | --cert | --key](#--resolve--force-resolve-to-ip---h----cacert--root-ca----cert----key)
-    - [To get only the status code using curl](#to-get-only-the-status-code-using-curl)
+    - [To get only the status code using curl | -s | silent | -o | output | -w | write out | http\_code](#to-get-only-the-status-code-using-curl---s--silent---o--output---w--write-out--http_code)
     - [-L | --location | follow redirect | -I | --head | Fetch headers only](#-l----location--follow-redirect---i----head--fetch-headers-only)
 
 ## NAME
@@ -40,7 +40,7 @@ curl -v -u $TOMCAT_USER:$TOMCAT_PASSWORD -T $DEPLOY_SOURCE_DIR/artifact.war http
 
 ### Get your public IP
 
-* Also you can actually get your public IP by running following command
+Also you can actually get your public IP by running following command
 
 ```bash
 # Tested on mac
@@ -85,7 +85,7 @@ curl -v -HHost:httpbin.example.com --resolve "httpbin.example.com:$SECURE_INGRES
   "https://httpbin.example.com:$SECURE_INGRESS_PORT/status/418"
 ```
 
-### To get only the status code using curl
+### To get only the status code using curl | -s | silent | -o | output | -w | write out | http_code
 
 ```bash
 curl -s -o /dev/null -w "%{http_code}" http://google.com
