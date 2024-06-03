@@ -117,4 +117,8 @@
 | task_112 | [task_112_step](taskset_commands_os_and_concepts/task_112_step)                 |
 | task_113 | [task_113_set](taskset_commands_os_and_concepts/task_113_set)                   |
 | task_114 | [task_114_mvn](taskset_commands_os_and_concepts/task_114_mvn)                   |
+| task_115 | [task_115_source](taskset_commands_os_and_concepts/task_115_source)             |
+| task_116 | [task_116_whoami](taskset_commands_os_and_concepts/task_116_whoami)             |
+| task_117 | [task_117_who](taskset_commands_os_and_concepts/task_117_who)                   |
+| task_118 | [task_118_last](taskset_commands_os_and_concepts/task_118_last)                 |
 

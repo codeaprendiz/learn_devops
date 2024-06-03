@@ -1,6 +1,10 @@
 # grep
 
-- [grep](https://man7.org/linux/man-pages/man1/grep.1.html)
+- [grep](#grep)
+  - [NAME](#name)
+  - [EXAMPLES](#examples)
+    - [To search for a pattern in a file](#to-search-for-a-pattern-in-a-file)
+    - [To get user home directory | -i](#to-get-user-home-directory---i)
 
 ## NAME
 
@@ -8,9 +12,28 @@ grep - print lines that match patterns
 
 ## EXAMPLES
 
+### To search for a pattern in a file
+
 - The following command is used to search for lines in the firewalld.conf file that start with "LogDenied"
 
 ```bash
-$ grep '^LogDenied' /etc/firewalld/firewalld.conf
+grep '^LogDenied' /etc/firewalld/firewalld.conf
+```
+
+Output
+
+```bash
 LogDenied=off
+```
+
+### To get user home directory | -i
+
+```bash
+grep -i ubuntu /etc/passwd
+```
+
+Output
+
+```bash
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
 ```
