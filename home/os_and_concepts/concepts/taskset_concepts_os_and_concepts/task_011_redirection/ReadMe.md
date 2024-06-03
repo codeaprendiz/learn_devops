@@ -1,16 +1,16 @@
 # Redirection
 
 - [Redirection](#redirection)
-  - [output-redirection](#output-redirection)
-  - [input-redirection](#input-redirection)
-  - [dev-null-and-others-usually-used-in-redirection](#dev-null-and-others-usually-used-in-redirection)
+  - [**output-redirection**](#output-redirection)
+  - [**input-redirection**](#input-redirection)
+  - [**dev-null-and-others-usually-used-in-redirection**](#dev-null-and-others-usually-used-in-redirection)
     - [**\>/dev/null 2\>\&1 meaning**](#devnull-21-meaning)
     - [**\>, 1\>, 2\> meaning**](#-1-2-meaning)
     - [**3\>\&1 1\>\&2 2\>\&3 meaning**](#31-12-23-meaning)
     - [**Difference between \< and \<\< in shell command**](#difference-between--and--in-shell-command)
     - [**Difference between single and double quotes in Bash ( "" and '')**](#difference-between-single-and-double-quotes-in-bash---and-)
 
-## output-redirection
+## **output-redirection**
 
 The output from a command normally intended for standard output can be easily diverted to a file instead. This capability is known as output redirection.
 
@@ -33,7 +33,7 @@ If a command has its output redirected to a file and the file already contains s
 
 You can use >> operator to append the output in an existing file
 
-## input-redirection
+## **input-redirection**
 
 The commands that normally take their input from the standard input can have their input redirected from a file in this manner. For example, to count the number of lines in the file users generated above, you can execute the command as follows −
 
@@ -53,7 +53,7 @@ $
 
 In the first case, wc knows that it is reading its input from the file users. In the second case, it only knows that it is reading its input from standard input so it does not display file name.
 
-## dev-null-and-others-usually-used-in-redirection
+## **dev-null-and-others-usually-used-in-redirection**
 
 ### **>/dev/null 2>&1 meaning**
 
