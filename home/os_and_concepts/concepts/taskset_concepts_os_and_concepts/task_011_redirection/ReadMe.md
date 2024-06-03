@@ -1,6 +1,6 @@
-# Essentials
+# Redirection
 
-- [Essentials](#essentials)
+- [Redirection](#redirection)
   - [output-redirection](#output-redirection)
   - [input-redirection](#input-redirection)
   - [dev-null-and-others-usually-used-in-redirection](#dev-null-and-others-usually-used-in-redirection)
