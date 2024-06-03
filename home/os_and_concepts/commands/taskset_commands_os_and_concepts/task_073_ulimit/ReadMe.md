@@ -63,3 +63,18 @@ virtual memory          (kbytes, -v) unlimited
 file locks                      (-x) unlimited
 [username@hostname ~]$
 ```
+
+### /proc/sys/fs/file-max vs ulimit
+
+file-max is the maximum File Descriptors (FD) enforced on a kernel level, which cannot be surpassed by all processes without increasing.
+
+The ulimit is enforced on a process level, which can be less than the file-max. If some user has launched 4 processes and the ulimit configuration for FDs is 1024, each process may open 1024 FDs. The user is not going to be limited to 1024 FDs but the processes which are launched by that user.
+
+```bash
+me@superme:~$ ulimit -n 
+1024 
+me@superme:~$ lsof | grep $USER | wc -l 
+8145
+```
+
+How do I know if I’m getting close to hitting this limit on my server? Run the command: cat /proc/sys/fs/file-nr. This will return three values, denote the number of allocated file handles, the number of allocated but unused file handles, and the maximum number of file handles. Note that file-nr IS NOT a tunable parameter. It is informational only. On my server, this returns: 3488 0 793759. This means that currently, my server has only allocated 3488 of the 793,759 allocation limit and is in no danger of hitting this limit at this time.
