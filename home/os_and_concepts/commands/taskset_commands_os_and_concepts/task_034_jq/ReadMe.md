@@ -16,6 +16,8 @@ jq - Command-line JSON processor
       - [with map on all array elements](#with-map-on-all-array-elements)
     - [split() | tonumber | first](#split--tonumber--first)
       - [Explaining jq Operations](#explaining-jq-operations)
+    - [contains() | and |-- Check if a string contains a substring](#contains--and----check-if-a-string-contains-a-substring)
+    - [fromjson | When value of a key is a JSON string](#fromjson--when-value-of-a-key-is-a-json-string)
 
 ## Docs
 
@@ -161,3 +163,27 @@ Output
 
 - The expression `. [1]` inside `sort_by` is not returning the "first element of the array" but rather the second element of each sub-array, which is then processed further.
 - `split("-")` does not appear at the level of sorting the whole array by itself; it's applied to the string that `. [1]` retrieves from each sub-array, helping in extracting a specific part for numeric comparison.
+
+### contains() | and |-- Check if a string contains a substring
+
+```bash
+echo '{
+  "message": "This is a sample message containing keyword1 and keyword2.",
+  "description": "This is another field that contains keyword1 and keyword2.",
+  "details": "Here we have keyword1 but not the other keyword."
+}' | jq -r '(.message | contains("keyword1") and contains("keyword2")) and (.description | contains("keyword1") and contains("keyword2"))' 
+```
+
+Output
+
+```bash
+true
+```
+
+### fromjson | When value of a key is a JSON string
+
+```bash
+echo '{
+  "test": "{\"key\":\"value\",\"anotherKey\":\"anotherValue\"}"
+}' | jq -e '.test | fromjson | .key'
+```

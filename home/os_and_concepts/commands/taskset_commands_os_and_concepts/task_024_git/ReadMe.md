@@ -27,6 +27,7 @@
     - [ls-remote](#ls-remote)
     - [To do a commit on particual date](#to-do-a-commit-on-particual-date)
     - [rm](#rm)
+    - [rev-list | To get the commit-id associated with a git tag](#rev-list--to-get-the-commit-id-associated-with-a-git-tag)
 
 ## NAME
 
@@ -520,4 +521,14 @@ git rm --cached **/.mvn -r
 
 # Then add the following to .gitignore
 # **/.mvn
+```
+
+### rev-list | To get the commit-id associated with a git tag
+
+[stackoverflow.com » How to tell which commit a tag points to in Git](https://stackoverflow.com/questions/1862423/how-to-tell-which-commit-a-tag-points-to-in-git)
+
+If you want to find the commit associated with `dev-1.1` tag, you can use the following command
+
+```bash
+git rev-list  -n 1 dev-1.1
 ```
