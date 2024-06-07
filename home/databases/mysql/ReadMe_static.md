@@ -25,7 +25,6 @@ docker exec -it mysql_lts bash
 
 ```bash
 # Start the MySQL database locally in persistent mode
-# Start the MySQL database locally in persistent mode with a bind mount
 docker run --name mysql_lts -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -v $(pwd)/mysql_data:/var/lib/mysql -d mysql:lts
 
 # Execute a bash shell in the container
