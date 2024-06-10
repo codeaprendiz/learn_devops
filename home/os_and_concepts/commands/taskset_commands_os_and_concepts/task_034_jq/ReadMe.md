@@ -6,19 +6,19 @@ jq - Command-line JSON processor
   - [Docs](#docs)
   - [EXAMPLES](#examples)
     - [getting started](#getting-started)
-    - [. -- pretty print](#----pretty-print)
-    - [-c -- compact output](#-c----compact-output)
-    - [.key -- get value of key](#key----get-value-of-key)
-    - [sort\_by(.\[num\]) -- sort by key](#sort_bynum----sort-by-key)
-    - [split()](#split)
+    - [`.` -- pretty print](#----pretty-print)
+    - [`-c` -- compact output](#-c----compact-output)
+    - [`.key` -- get value of key](#key----get-value-of-key)
+    - [`sort_by(.[num])` -- sort by key](#sort_bynum----sort-by-key)
+    - [`split()`](#split)
       - [with keys](#with-keys)
       - [with specific array element](#with-specific-array-element)
       - [with map on all array elements](#with-map-on-all-array-elements)
-    - [split() | tonumber | first](#split--tonumber--first)
+    - [`split()` | `tonumber` | `first`](#split--tonumber--first)
       - [Explaining jq Operations](#explaining-jq-operations)
-    - [contains() | and |-- Check if a string contains a substring](#contains--and----check-if-a-string-contains-a-substring)
-    - [fromjson | When value of a key is a JSON string](#fromjson--when-value-of-a-key-is-a-json-string)
-    - [max\_by() | Get the maximum value of a key in an array of objects and array of arrays](#max_by--get-the-maximum-value-of-a-key-in-an-array-of-objects-and-array-of-arrays)
+    - [`contains()` | `and` | Check if a string contains a substring](#contains--and--check-if-a-string-contains-a-substring)
+    - [`fromjson` | When value of a key is a JSON string](#fromjson--when-value-of-a-key-is-a-json-string)
+    - [`max_by()` | Get the maximum value of a key in an array of objects and array of arrays](#max_by--get-the-maximum-value-of-a-key-in-an-array-of-objects-and-array-of-arrays)
 
 ## Docs
 
@@ -46,7 +46,7 @@ Output
 }
 ```
 
-### . -- pretty print
+### `.` -- pretty print
 
 ```bash
 
@@ -61,7 +61,7 @@ $ echo $json | jq '.'
 }
 ```
 
-### -c -- compact output
+### `-c` -- compact output
 
 ```bash
 cat example1.json | jq -c
@@ -73,7 +73,7 @@ Output
 {"commit_id":"b8f2b8b","environment":"test","tags_at_commit":"sometags","project":"someproject","current_date":"09/10/2014","version":"someversion"}
 ```
 
-### .key -- get value of key
+### `.key` -- get value of key
 
 ```bash
 cat example1.json | jq '.commit_id'
@@ -85,7 +85,7 @@ Output
 "b8f2b8b"
 ```
 
-### sort_by(.[num]) -- sort by key
+### `sort_by(.[num])` -- sort by key
 
 ```bash
 $ cat example2.json| jq -c                
@@ -102,7 +102,7 @@ Output
 [["data2","info2",4],["data3","info3",5],["data4","info4",9],["data1","info1",10]]
 ```
 
-### split()
+### `split()`
 
 #### with keys
 
@@ -125,7 +125,7 @@ $ echo '{"dataArray": ["one-two-three", "four-five-six", "seven-eight-nine"]}' |
 [["one","two","three"],["four","five","six"],["seven","eight","nine"]]
 ```
 
-### split() | tonumber | first
+### `split()` | `tonumber` | `first`
 
 ```bash
 $ cat example4.json| jq -c                                                      
@@ -165,7 +165,7 @@ Output
 - The expression `. [1]` inside `sort_by` is not returning the "first element of the array" but rather the second element of each sub-array, which is then processed further.
 - `split("-")` does not appear at the level of sorting the whole array by itself; it's applied to the string that `. [1]` retrieves from each sub-array, helping in extracting a specific part for numeric comparison.
 
-### contains() | and |-- Check if a string contains a substring
+### `contains()` | `and` | Check if a string contains a substring
 
 ```bash
 echo '{
@@ -181,7 +181,7 @@ Output
 true
 ```
 
-### fromjson | When value of a key is a JSON string
+### `fromjson` | When value of a key is a JSON string
 
 ```bash
 echo '{
@@ -189,7 +189,7 @@ echo '{
 }' | jq -e '.test | fromjson | .key'
 ```
 
-### max_by() | Get the maximum value of a key in an array of objects and array of arrays
+### `max_by()` | Get the maximum value of a key in an array of objects and array of arrays
 
 Array of objects
 
