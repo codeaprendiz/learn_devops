@@ -224,11 +224,13 @@ notBefore=Nov  8 23:47:37 2017 GMT
 notAfter=Nov  9 23:47:37 2019 GMT
 ```
 
-To get detailed information
+To get detailed information.
+
+> Note: This will also validate if the certificate is tampered with or not.
 
 ```bash
 # -text : prints out the certificate in text form. Full details are output including the public key, signature algorithms, issuer and subject names, serial number any extensions present and any trust settings.
-$ openssl x509 -in georgebackend.oms.prod.company.com.pem -text -noout                                                                                     . 
+openssl x509 -in georgebackend.oms.prod.company.com.pem -text -noout                                                                                     . 
 ```
 
 #### req
@@ -253,7 +255,7 @@ openssl \
 ```
 
 | Option  | Value                                    | Description                                                            |
-|---------|------------------------------------------|------------------------------------------------------------------------|
+| ------- | ---------------------------------------- | ---------------------------------------------------------------------- |
 | req     |                                          | X.509 Certificate Signing Request (CSR) management command.            |
 | -new    |                                          | Specifies that a new CSR is being requested.                           |
 | -newkey | rsa:4096                                 | Creates a new RSA private key of 4096 bits.                            |
@@ -283,7 +285,7 @@ openssl \
 ```
 
 | Option  | Value                                                                                             | Description                                                              |
-|---------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| ------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | req     |                                                                                                   | X.509 Certificate Signing Request (CSR) management command.              |
 | -new    |                                                                                                   | Specifies that a new CSR is being requested.                             |
 | -newkey | rsa:2048                                                                                          | Creates a new RSA private key of 2048 bits.                              |
@@ -316,7 +318,7 @@ openssl \
 ```
 
 | Option  | Value                                                                                         | Description                                                              |
-|---------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| ------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | req     |                                                                                               | X.509 Certificate Signing Request (CSR) management command.              |
 | -new    |                                                                                               | Specifies that a new CSR is being requested.                             |
 | -newkey | rsa:2048                                                                                      | Creates a new RSA private key of 2048 bits.                              |

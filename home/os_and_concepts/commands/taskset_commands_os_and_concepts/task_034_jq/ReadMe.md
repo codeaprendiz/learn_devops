@@ -18,6 +18,7 @@ jq - Command-line JSON processor
       - [Explaining jq Operations](#explaining-jq-operations)
     - [contains() | and |-- Check if a string contains a substring](#contains--and----check-if-a-string-contains-a-substring)
     - [fromjson | When value of a key is a JSON string](#fromjson--when-value-of-a-key-is-a-json-string)
+    - [max\_by() | Get the maximum value of a key in an array of objects and array of arrays](#max_by--get-the-maximum-value-of-a-key-in-an-array-of-objects-and-array-of-arrays)
 
 ## Docs
 
@@ -186,4 +187,30 @@ true
 echo '{
   "test": "{\"key\":\"value\",\"anotherKey\":\"anotherValue\"}"
 }' | jq -e '.test | fromjson | .key'
+```
+
+### max_by() | Get the maximum value of a key in an array of objects and array of arrays
+
+Array of objects
+
+```bash
+echo '[{"name":"Alice","age":25},{"name":"Bob","age":30},{"name":"Charlie","age":20}] '| jq -c 'max_by(.age)'
+```
+
+Output
+
+```bash
+{"name":"Bob","age":30}
+```
+
+Array of arrays
+
+```bash
+echo '[[1,2,3],[4,5,6],[7,8,9]]' | jq -c 'max_by(.[2])'
+```
+
+Output
+
+```bash
+[7,8,9]
 ```
