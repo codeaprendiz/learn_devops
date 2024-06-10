@@ -49,8 +49,12 @@ Output
 ### `.` -- pretty print
 
 ```bash
+echo $json | jq '.'         
+```
 
-$ echo $json | jq '.'         
+Output
+
+```bash
 {
   "commit_id": "b8f2b8b",
   "environment": "test",
@@ -88,7 +92,12 @@ Output
 ### `sort_by(.[num])` -- sort by key
 
 ```bash
-$ cat example2.json| jq -c                
+cat example2.json| jq -c                
+```
+
+Output
+
+```bash
 [["data4","info4",9],["data2","info2",4],["data1","info1",10],["data3","info3",5]]
 ```
 
@@ -107,14 +116,24 @@ Output
 #### with keys
 
 ```bash
-$ echo '{"data": "one-two-three-four-five"}' | jq -c '.data | split("-")'
+echo '{"data": "one-two-three-four-five"}' | jq -c '.data | split("-")'
+```
+
+Output
+
+```bash
 ["one","two","three","four","five"]
 ```
 
 #### with specific array element
 
 ```bash
-$ echo '{"dataArray": ["one-two-three", "four-five-six", "seven-eight-nine"]}' | jq -c '.dataArray[0] | split("-")' 
+echo '{"dataArray": ["one-two-three", "four-five-six", "seven-eight-nine"]}' | jq -c '.dataArray[0] | split("-")' 
+```
+
+Output
+
+```bash
 ["one","two","three"]
 ```
 
@@ -128,12 +147,22 @@ $ echo '{"dataArray": ["one-two-three", "four-five-six", "seven-eight-nine"]}' |
 ### `split()` | `tonumber` | `first`
 
 ```bash
-$ cat example4.json| jq -c                                                      
+cat example4.json| jq -c                                                      
+```
+
+Output
+
+```bash
 [["item1","partA-123-100"],["item4","partD-456-400"],["item3","partC-345-300"],["item2","partB-234-200"]]
 ```
 
 ```bash
-$ cat example4.json | jq -c 'sort_by(.[1])'                                      
+cat example4.json | jq -c 'sort_by(.[1])'                                      
+```
+
+Output
+
+```bash
 [["item1","partA-123-100"],["item2","partB-234-200"],["item3","partC-345-300"],["item4","partD-456-400"]]
 ```
 
