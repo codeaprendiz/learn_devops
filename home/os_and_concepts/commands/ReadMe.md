@@ -121,4 +121,5 @@
 | task_116 | [task_116_whoami](taskset_commands_os_and_concepts/task_116_whoami)             |
 | task_117 | [task_117_who](taskset_commands_os_and_concepts/task_117_who)                   |
 | task_118 | [task_118_last](taskset_commands_os_and_concepts/task_118_last)                 |
+| task_119 | [task_119_az](taskset_commands_os_and_concepts/task_119_az)                     |
 
