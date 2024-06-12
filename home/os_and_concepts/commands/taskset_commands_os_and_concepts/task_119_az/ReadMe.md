@@ -2,7 +2,6 @@
 
 - [az | azure cli](#az--azure-cli)
   - [Install](#install)
-  - [Saving secrets in a directory that is not version controlled](#saving-secrets-in-a-directory-that-is-not-version-controlled)
   - [group list | List resouce group names](#group-list--list-resouce-group-names)
   - [resources list | To list all resources in `<resource_group_name>` resourcegroup](#resources-list--to-list-all-resources-in-resource_group_name-resourcegroup)
   - [network | List vnet | List subnets](#network--list-vnet--list-subnets)
@@ -16,18 +15,6 @@
 ## Install
 
 [learn.microsoft.com » Install Azure CLI on macOS](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos)
-
-## Saving secrets in a directory that is not version controlled
-
-```bash
-$ touch $HOME/workspace/secrets/azure/terraform.tfvars
-.
-$ cat $HOME/workspace/secrets/azure/terraform.tfvars
-client_id = ..
-client_secret = ..
-tenant_id = ..
-subscription_id = ..
-```
 
 ## group list | List resouce group names
 
