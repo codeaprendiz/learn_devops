@@ -1,13 +1,39 @@
 # OpenVPN
 
+- [OpenVPN](#openvpn)
+  - [Install via script](#install-via-script)
+  - [Openvpn steps (Install manually)](#openvpn-steps-install-manually)
+    - [System settings](#system-settings)
+    - [Install Docker](#install-docker)
+    - [Install VPN](#install-vpn)
+  - [Create profiles using openvpn](#create-profiles-using-openvpn)
+  - [Download the profile locally for openvpn](#download-the-profile-locally-for-openvpn)
+  - [Download and install OpenVPN client](#download-and-install-openvpn-client)
+  - [Revoke the profile from openvpn](#revoke-the-profile-from-openvpn)
+  - [list the profiles](#list-the-profiles)
+
 [github.com » kylemanna/docker-openvpn (last commit around 4 years back)](https://github.com/kylemanna/docker-openvpn)
 
 [digitalocean.com » How To Run OpenVPN in a Docker Container on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04)
+
+[github.com » dockovpn/dockovpn](https://github.com/dockovpn/dockovpn)
+
+[dockovpn.io](https://dockovpn.io)
 
 ## Install via script
 
 ```bash
 sudo bash setup_vpn.sh
+
+# Set an environment variable OVPN_DATA to be used as the name for a Docker volume that will store OpenVPN configuration and data.
+export OVPN_DATA=ovpn-data
+
+# Run a temporary Docker container with the OpenVPN image to export the configuration for the VPN client named "client-laptop".
+# This command retrieves the complete client configuration and certificates necessary for a VPN connection, formatted as an .ovpn file.
+# The output from this command should be manually copied and saved on the client device as "client-personal.ovpn".
+sudo docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient client-laptop
+
+# Download and save the file as client-laptop.ovpn and import it in the OpenVPN client
 ```
 
 ## Openvpn steps (Install manually)
