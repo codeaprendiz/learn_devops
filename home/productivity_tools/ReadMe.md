@@ -1,6 +1,6 @@
-## taskset_productivity_tools
+# taskset_productivity_tools
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 7
 
 | Task     | Description                                                                                                     |
 |----------|-----------------------------------------------------------------------------------------------------------------|
@@ -11,4 +11,3 @@
 | task_004 | [task_004_setting_up_visual_studio_python](taskset_productivity_tools/task_004_setting_up_visual_studio_python) |
 | task_005 | [task_005_virtual_box](taskset_productivity_tools/task_005_virtual_box)                                         |
 | task_006 | [task_006_productivity_shortcuts](taskset_productivity_tools/task_006_productivity_shortcuts)                   |
-

@@ -1,6 +1,6 @@
-## taskset_docker_containers
+# taskset_docker_containers
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 30
 
 | Task     | Description                                                                                                                                                                                                |
 |----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,4 +34,3 @@
 | task_025 | [task_025_sonarqube__keycloak__saml](taskset_docker_containers/task_025_sonarqube__keycloak__saml)                                                                                                         |
 | task_026 | [task_026_mssql](taskset_docker_containers/task_026_mssql)                                                                                                                                                 |
 | task_027 | [task_027_docker_openvpn](taskset_docker_containers/task_027_docker_openvpn)                                                                                                                               |
-

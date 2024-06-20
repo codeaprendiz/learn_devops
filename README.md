@@ -1,77 +1,90 @@
 # Home
 
-> Total Number of Tasks :      440
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 440
 
-- [Home](#home)
-  - [Cloud\_certifications](#cloud_certifications)
-  - [Cloud\_providers](#cloud_providers)
-  - [Containers](#containers)
-  - [Databases](#databases)
-  - [Infrastructure\_as\_code](#infrastructure_as_code)
-  - [Interview](#interview)
-  - [Observability](#observability)
-  - [OS\_and\_concepts](#os_and_concepts)
-  - [Productivity\_tools](#productivity_tools)
-  - [Web\_servers](#web_servers)
+- [cloud certifications](#cloud_certifications)
+- [cloud providers](#cloud_providers)
+- [containers](#containers)
+- [databases](#databases)
+- [devops blogs](#devops_blogs)
+- [infrastructure as code](#infrastructure_as_code)
+- [interview](#interview)
+- [observability](#observability)
+- [os and concepts](#os_and_concepts)
+- [productivity tools](#productivity_tools)
+- [web servers](#web_servers)
 
-## Cloud_certifications
+## cloud_certifications
 
-| AWS                                             |
-| ----------------------------------------------- |
-| [Practice Tasks](home/cloud_certifications/aws) |
+| aws                                       |
+|-------------------------------------------|
+| [Tasks: 1](home/cloud_certifications/aws) |
 
-## Cloud_providers
+## cloud_providers
 
-| AWS                                        | Azure                                        | GCP                                        | OCI                                        |
-| ------------------------------------------ | -------------------------------------------- | ------------------------------------------ | ------------------------------------------ |
-| [Practice Tasks](home/cloud_providers/aws) | [Practice Tasks](home/cloud_providers/azure) | [Practice Tasks](home/cloud_providers/gcp) | [Practice Tasks](home/cloud_providers/oci) |
+| aws                                  | azure                                  | gcp                                   |
+|--------------------------------------|----------------------------------------|---------------------------------------|
+| [Tasks: 9](home/cloud_providers/aws) | [Tasks: 1](home/cloud_providers/azure) | [Tasks: 42](home/cloud_providers/gcp) |
 
-## Containers
+| oci                                  |
+|--------------------------------------|
+| [Tasks: 3](home/cloud_providers/oci) |
 
-| Docker                                   | Docker_compose                                   | Kubernetes                                   |
-| ---------------------------------------- | ------------------------------------------------ | -------------------------------------------- |
-| [Practice Tasks](home/containers/docker) | [Practice Tasks](home/containers/docker_compose) | [Practice Tasks](home/containers/kubernetes) |
+## containers
 
-## Databases
+| docker                              | docker_compose                              | kubernetes                              |
+|-------------------------------------|---------------------------------------------|-----------------------------------------|
+| [Tasks: 30](home/containers/docker) | [Tasks: 16](home/containers/docker_compose) | [Tasks: 67](home/containers/kubernetes) |
 
-| Mongo                                  | Mssql                                  | Mysql                                  | Oracle19c                                  | PostgreSQL                                  |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- | ------------------------------------------ | ------------------------------------------- |
-| [Practice Tasks](home/databases/mongo) | [Practice Tasks](home/databases/mssql) | [Practice Tasks](home/databases/mysql) | [Practice Tasks](home/databases/oracle19c) | [Practice Tasks](home/databases/postgreSQL) |
+## databases
 
-## Infrastructure_as_code
+| mongo                            | mssql                             | mysql                            |
+|----------------------------------|-----------------------------------|----------------------------------|
+| [Tasks: 4](home/databases/mongo) | [Tasks: 38](home/databases/mssql) | [Tasks: 6](home/databases/mysql) |
 
-| Ansible                                               | AWS_terraform                                               | GCP_terraform                                               | OCI_terraform                                               |
-| ----------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| [Practice Tasks](home/infrastructure_as_code/ansible) | [Practice Tasks](home/infrastructure_as_code/terraform/aws) | [Practice Tasks](home/infrastructure_as_code/terraform/gcp) | [Practice Tasks](home/infrastructure_as_code/terraform/oci) |
+| oracle19c                            | postgreSQL                            |
+|--------------------------------------|---------------------------------------|
+| [Tasks: 1](home/databases/oracle19c) | [Tasks: 7](home/databases/postgreSQL) |
 
-## Interview
+## devops_blogs
 
-| Coding_assignments                                  |
-| --------------------------------------------------- |
-| [Practice Tasks](home/interview/coding_assignments) |
 
-## Observability
+## infrastructure_as_code
 
-| Metrics                                      | Opentelemetry                                      | Prometheus                                      |
-| -------------------------------------------- | -------------------------------------------------- | ----------------------------------------------- |
-| [Practice Tasks](home/observability/metrics) | [Practice Tasks](home/observability/opentelemetry) | [Practice Tasks](home/observability/prometheus) |
+| ansible                                          | aws_terraform                                          | gcp_terraform                                         |
+|--------------------------------------------------|--------------------------------------------------------|-------------------------------------------------------|
+| [Tasks: 10](home/infrastructure_as_code/ansible) | [Tasks: 31](home/infrastructure_as_code/terraform/aws) | [Tasks: 8](home/infrastructure_as_code/terraform/gcp) |
 
-## OS_and_concepts
+| oci_terraform                                         |
+|-------------------------------------------------------|
+| [Tasks: 4](home/infrastructure_as_code/terraform/oci) |
 
-| Commands                                        | Concepts                                        |
-| ----------------------------------------------- | ----------------------------------------------- |
-| [Practice Tasks](home/os_and_concepts/commands) | [Practice Tasks](home/os_and_concepts/concepts) |
+## interview
 
-## Productivity_tools
+| coding_assignments                             |
+|------------------------------------------------|
+| [Tasks: 11](home/interview/coding_assignments) |
 
-| Productivity_tools                        |
-| ----------------------------------------- |
-| [Practice Tasks](home/productivity_tools) |
+## observability
 
-## Web_servers
+| metrics                                | opentelemetry                                | prometheus                                |
+|----------------------------------------|----------------------------------------------|-------------------------------------------|
+| [Tasks: 3](home/observability/metrics) | [Tasks: 2](home/observability/opentelemetry) | [Tasks: 3](home/observability/prometheus) |
 
-| Nginx                                    |
-| ---------------------------------------- |
-| [Practice Tasks](home/web_servers/nginx) |
+## os_and_concepts
 
+| commands                                    | concepts                                   |
+|---------------------------------------------|--------------------------------------------|
+| [Tasks: 118](home/os_and_concepts/commands) | [Tasks: 14](home/os_and_concepts/concepts) |
+
+## productivity_tools
+
+|                                     |
+|-------------------------------------|
+| [Tasks: 7](home/productivity_tools) |
+
+## web_servers
+
+| nginx                              |
+|------------------------------------|
+| [Tasks: 4](home/web_servers/nginx) |

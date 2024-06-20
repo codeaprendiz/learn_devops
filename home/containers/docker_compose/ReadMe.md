@@ -1,6 +1,6 @@
-## taskset_docker_compose_containers
+# taskset_docker_compose_containers
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 16
 
 | Task     | Description                                                                                                                                                                      |
 |----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -20,4 +20,3 @@
 | task_014 | [task_014__local__reverse_proxy_nginx_home_using_caddy](taskset_docker_compose_containers/task_014__local__reverse_proxy_nginx_home_using_caddy)                                 |
 | task_015 | [task_015__local__mem_and_cpu_limit_nginx_container](taskset_docker_compose_containers/task_015__local__mem_and_cpu_limit_nginx_container)                                       |
 | task_016 | [task_016__gcp_local__grafana__tempo__prometheus__xk6_client_tracing](taskset_docker_compose_containers/task_016__gcp_local__grafana__tempo__prometheus__xk6_client_tracing)     |
-

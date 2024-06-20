@@ -1,6 +1,6 @@
-## taskset_aws_terraform_infrastructure_as_code
+# taskset_aws_terraform_infrastructure_as_code
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 31
 
 | Task     | Description                                                                                                                                                                             |
 |----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -35,4 +35,3 @@
 | task_029 | [task_029_ec2_jenkins_instance_and_slave_instance](taskset_aws_terraform_infrastructure_as_code/task_029_ec2_jenkins_instance_and_slave_instance)                                       |
 | task_030 | [task_030_creating_eks](taskset_aws_terraform_infrastructure_as_code/task_030_creating_eks)                                                                                             |
 | task_031 | [task_031_creating_eks_spot](taskset_aws_terraform_infrastructure_as_code/task_031_creating_eks_spot)                                                                                   |
-
