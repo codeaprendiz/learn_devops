@@ -1,6 +1,6 @@
 # Home
 
-> Auto generated ReadMe. Number of tasks: 440
+> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 440
 
 - [cloud certifications](#cloud_certifications)
 - [cloud providers](#cloud_providers)
@@ -22,13 +22,9 @@
 
 ## cloud_providers
 
-| aws                                  | azure                                  | gcp                                   |
-|--------------------------------------|----------------------------------------|---------------------------------------|
-| [Tasks: 9](home/cloud_providers/aws) | [Tasks: 1](home/cloud_providers/azure) | [Tasks: 42](home/cloud_providers/gcp) |
-
-| oci                                  |
-|--------------------------------------|
-| [Tasks: 3](home/cloud_providers/oci) |
+| aws                                  | azure                                  | gcp                                   | oci                                  |
+|--------------------------------------|----------------------------------------|---------------------------------------|--------------------------------------|
+| [Tasks: 9](home/cloud_providers/aws) | [Tasks: 1](home/cloud_providers/azure) | [Tasks: 42](home/cloud_providers/gcp) | [Tasks: 3](home/cloud_providers/oci) |
 
 ## containers
 
@@ -38,26 +34,18 @@
 
 ## databases
 
-| mongo                            | mssql                             | mysql                            |
-|----------------------------------|-----------------------------------|----------------------------------|
-| [Tasks: 4](home/databases/mongo) | [Tasks: 38](home/databases/mssql) | [Tasks: 6](home/databases/mysql) |
-
-| oracle19c                            | postgreSQL                            |
-|--------------------------------------|---------------------------------------|
-| [Tasks: 1](home/databases/oracle19c) | [Tasks: 7](home/databases/postgreSQL) |
+| mongo                            | mssql                             | mysql                            | oracle19c                            | postgreSQL                            |
+|----------------------------------|-----------------------------------|----------------------------------|--------------------------------------|---------------------------------------|
+| [Tasks: 4](home/databases/mongo) | [Tasks: 38](home/databases/mssql) | [Tasks: 6](home/databases/mysql) | [Tasks: 1](home/databases/oracle19c) | [Tasks: 7](home/databases/postgreSQL) |
 
 ## devops_blogs
 
 
 ## infrastructure_as_code
 
-| ansible                                          | aws_terraform                                          | gcp_terraform                                         |
-|--------------------------------------------------|--------------------------------------------------------|-------------------------------------------------------|
-| [Tasks: 10](home/infrastructure_as_code/ansible) | [Tasks: 31](home/infrastructure_as_code/terraform/aws) | [Tasks: 8](home/infrastructure_as_code/terraform/gcp) |
-
-| oci_terraform                                         |
-|-------------------------------------------------------|
-| [Tasks: 4](home/infrastructure_as_code/terraform/oci) |
+| ansible                                          | aws_terraform                                          | gcp_terraform                                         | oci_terraform                                         |
+|--------------------------------------------------|--------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
+| [Tasks: 10](home/infrastructure_as_code/ansible) | [Tasks: 31](home/infrastructure_as_code/terraform/aws) | [Tasks: 8](home/infrastructure_as_code/terraform/gcp) | [Tasks: 4](home/infrastructure_as_code/terraform/oci) |
 
 ## interview
 
