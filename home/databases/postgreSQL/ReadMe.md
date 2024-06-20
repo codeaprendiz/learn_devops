@@ -1,6 +1,6 @@
-## taskset_postgreSQL_databases
+# taskset_postgreSQL_databases
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 7
 
 | Task     | Description                                                                                                                       |
 |----------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -11,4 +11,3 @@
 | task_005 | [task_005_managing_schemas](taskset_postgreSQL_databases/task_005_managing_schemas)                                               |
 | task_006 | [task_006_checking_deadlock](taskset_postgreSQL_databases/task_006_checking_deadlock)                                             |
 | task_007 | [task_007_set__show__transaction_isolation_levels](taskset_postgreSQL_databases/task_007_set__show__transaction_isolation_levels) |
-

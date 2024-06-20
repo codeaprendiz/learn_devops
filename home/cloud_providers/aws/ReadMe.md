@@ -1,6 +1,6 @@
-## taskset_aws_cloud_providers
+# taskset_aws_cloud_providers
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 9
 
 | Task     | Description                                                                                                                                                                            |
 |----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -13,4 +13,3 @@
 | task_007 | [task_007_codebuild_codecommit_test_reports_mvn](taskset_aws_cloud_providers/task_007_codebuild_codecommit_test_reports_mvn)                                                           |
 | task_008 | [task_008_trigger_lambda_from_codecommit_using_event_bridge](taskset_aws_cloud_providers/task_008_trigger_lambda_from_codecommit_using_event_bridge)                                   |
 | task_009 | [task_009_pass_vars_dynamically_from_codebuild_to_codepipeline](taskset_aws_cloud_providers/task_009_pass_vars_dynamically_from_codebuild_to_codepipeline)                             |
-

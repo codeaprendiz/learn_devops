@@ -1,6 +1,6 @@
-## taskset_coding_assignments_interview
+# taskset_coding_assignments_interview
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 10
 
 | Task     | Description                                                                                                       |
 |----------|-------------------------------------------------------------------------------------------------------------------|
@@ -14,4 +14,3 @@
 | task_008 | [task_008_k8s_nginx](taskset_coding_assignments_interview/task_008_k8s_nginx)                                     |
 | task_009 | [task_009_eks_spot_and_on_demand](taskset_coding_assignments_interview/task_009_eks_spot_and_on_demand)           |
 | task_010 | [task_010_logging_and_monitoring](taskset_coding_assignments_interview/task_010_logging_and_monitoring)           |
-

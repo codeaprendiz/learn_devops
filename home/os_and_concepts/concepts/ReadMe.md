@@ -1,6 +1,6 @@
-## taskset_concepts_os_and_concepts
+# taskset_concepts_os_and_concepts
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 14
 
 | Task     | Description                                                                                                     |
 |----------|-----------------------------------------------------------------------------------------------------------------|
@@ -18,4 +18,3 @@
 | task_011 | [task_011_redirection](taskset_concepts_os_and_concepts/task_011_redirection)                                   |
 | task_012 | [task_012_eof_here_doc](taskset_concepts_os_and_concepts/task_012_eof_here_doc)                                 |
 | task_013 | [task_013_referring_documentation](taskset_concepts_os_and_concepts/task_013_referring_documentation)           |
-

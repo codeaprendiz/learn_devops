@@ -1,6 +1,6 @@
-## taskset_ansible_infrastructure_as_code
+# taskset_ansible_infrastructure_as_code
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 10
 
 | Task     | Description                                                                                                             |
 |----------|-------------------------------------------------------------------------------------------------------------------------|
@@ -14,4 +14,3 @@
 | task_007 | [task_007_jenkins_docker](taskset_ansible_infrastructure_as_code/task_007_jenkins_docker)                               |
 | task_008 | [task_008_kibana_docker](taskset_ansible_infrastructure_as_code/task_008_kibana_docker)                                 |
 | task_009 | [task_009_monit](taskset_ansible_infrastructure_as_code/task_009_monit)                                                 |
-

@@ -1,6 +1,6 @@
-## taskset_gcp_cloud_providers
+# taskset_gcp_cloud_providers
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 42
 
 | Task     | Description                                                                                                                                                                                                |
 |----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,4 +46,3 @@
 | task_031 | [task_031_hello_node_kubernetes__node](taskset_gcp_cloud_providers/task_031_hello_node_kubernetes__node)                                                                                                   |
 | task_032 | [task_032_setting_up_jenkins_on_kubernetes_engine](taskset_gcp_cloud_providers/task_032_setting_up_jenkins_on_kubernetes_engine)                                                                           |
 | task_033 | [task_033_continuous_delivery_with_jenkins_in_kubernetes_engine](taskset_gcp_cloud_providers/task_033_continuous_delivery_with_jenkins_in_kubernetes_engine)                                               |
-

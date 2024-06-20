@@ -1,6 +1,6 @@
-## taskset_gcp_terraform_infrastructure_as_code
+# taskset_gcp_terraform_infrastructure_as_code
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 8
 
 | Task     | Description                                                                                                                                                   |
 |----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -12,4 +12,3 @@
 | task_006 | [task_006_modular_load_balancing_regional_load_balancer](taskset_gcp_terraform_infrastructure_as_code/task_006_modular_load_balancing_regional_load_balancer) |
 | task_007 | [task_007_cloud_sql](taskset_gcp_terraform_infrastructure_as_code/task_007_cloud_sql)                                                                         |
 | task_008 | [task_008_building_a_vpn_between_gcp_and_aws](taskset_gcp_terraform_infrastructure_as_code/task_008_building_a_vpn_between_gcp_and_aws)                       |
-

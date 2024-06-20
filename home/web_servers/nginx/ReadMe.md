@@ -1,6 +1,6 @@
-## taskset_nginx_web_servers
+# taskset_nginx_web_servers
 
-> Auto generated ReadMe
+> Auto generated ReadMe. Number of tasks: 4
 
 | Task     | Description                                                                                                      |
 |----------|------------------------------------------------------------------------------------------------------------------|
@@ -8,4 +8,3 @@
 | task_002 | [task_002_nginx_docker_compose_hello_world](taskset_nginx_web_servers/task_002_nginx_docker_compose_hello_world) |
 | task_003 | [task_003_nginx_conf](taskset_nginx_web_servers/task_003_nginx_conf)                                             |
 | task_004 | [task_004_return_different_http_codes](taskset_nginx_web_servers/task_004_return_different_http_codes)           |
-
