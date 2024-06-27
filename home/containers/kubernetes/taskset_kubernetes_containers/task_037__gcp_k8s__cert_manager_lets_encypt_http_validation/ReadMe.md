@@ -43,9 +43,7 @@ replicaset.apps/cert-manager-cainjector-69d4647c6   1         1         1       
 replicaset.apps/cert-manager-webhook-75f77865c8     1         1         1       7m57s
 
 
-<br>
-
-## Okay it did
+# Okay it did
 ```
 
 
