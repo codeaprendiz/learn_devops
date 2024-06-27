@@ -21,9 +21,7 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.20/samp
 Display the defined routes with the following command:
 
 ```bash
-<br>
-
-## Make sure you have applied the destination rules before this
+# Make sure you have applied the destination rules before this
 $ kubectl get virtualservices -o yaml
 - apiVersion: networking.istio.io/v1beta1
   kind: VirtualService
