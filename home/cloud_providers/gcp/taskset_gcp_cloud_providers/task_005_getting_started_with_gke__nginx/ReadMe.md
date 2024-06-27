@@ -38,14 +38,10 @@
 - Run the following commands in cloudshell
 
 ```bash
-<br>
-
-## Set the zone
+# Set the zone
 export MY_ZONE=us-central1-a
 
-<br>
-
-## Create k8s cluster
+# Create k8s cluster
 gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 2
 ```
 
