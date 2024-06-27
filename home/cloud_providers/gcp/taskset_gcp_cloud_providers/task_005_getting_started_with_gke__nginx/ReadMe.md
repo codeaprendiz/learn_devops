@@ -56,30 +56,19 @@ kubectl get nodes
 ## Run and deploy a container
 
 ```bash
-<br>
-
-## Deploy nginx container
+# Deploy nginx container
 kubectl create deploy nginx --image=nginx:1.17.10
 
-<br>
-
-## Check the pods
+# Check the pods
 kubectl get pods
 
-<br>
-
-## Expose the deployment to the internet by creating the LoadBalancer type of Service
+# Expose the deployment to the internet by creating the LoadBalancer type of Service
 kubectl expose deployment nginx --port 80 --type LoadBalancer
 
-<br>
-
-## Check the services
+# Check the services
 kubectl get services
 
-<br>
-
-## Note no external IP is created yet.
+# Note no external IP is created yet.
 ```
 
 - Once the external IP is created, visit the pubic IP. You should see the nginx page.
-
