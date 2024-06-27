@@ -8,9 +8,7 @@
 [cert-manager/releases/tag/v1.10.0](https://github.com/cert-manager/cert-manager/releases/tag/v1.10.0)
 
 ```bash
-<br>
-
-## Download the yaml
+# Download the yaml
 ╰─ wget https://github.com/cert-manager/cert-manager/releases/download/v1.10.0/cert-manager.yaml
 ╰─ ls
 ReadMe.md         cert-manager.yaml
@@ -23,9 +21,7 @@ ReadMe.md         cert-manager.yaml
 ```bash
 ╰─ kubectl apply -f cert-manager.yaml
 
-<br>
-
-## Did it work or what ?
+# Did it work or what ?
 ╰─ kubectl get all -n cert-manager
 NAME                                          READY   STATUS    RESTARTS   AGE
 pod/cert-manager-6dc4964c9-jd6mq              1/1     Running   0          7m57s
