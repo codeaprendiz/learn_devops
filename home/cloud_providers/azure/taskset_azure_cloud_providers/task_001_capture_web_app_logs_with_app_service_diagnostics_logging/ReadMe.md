@@ -76,9 +76,8 @@ az webapp log tail  --resource-group learn-73039af5-5f45-4665-837f-e4523655e6cd 
 2023-12-06T08:34:47  Welcome, you are now connected to log-streaming service. The default timeout is 2 hours. Change the timeout with the App Setting SCM_LOGSTREAM_TIMEOUT (in seconds). 
 2023-12-06T08:35:16  PID[8672] Error       Error message, in the Page_Load method for About.aspx
 2023-12-06T08:35:34  PID[8672] Error       Error message, in the Page_Load method for Default.aspx
-<br>
 
-## expetect logs
+# expetect logs
 ```
 
 <br>
