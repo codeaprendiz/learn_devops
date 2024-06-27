@@ -1,5 +1,7 @@
 # Shebang character
 
+<br>
+
 ## #! /Shebang character
 
 In computing, a shebang is the character sequence consisting of the characters number sign and exclamation mark (#!) at the beginning of a script.

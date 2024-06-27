@@ -4,6 +4,8 @@
 
 useradd - create a new user or update default new user information
 
+<br>
+
 ## Examples
 
 - To create a new user named `username` with user ID 1030 and assigns it to the `root`` group, without setting a password or creating a home directory.

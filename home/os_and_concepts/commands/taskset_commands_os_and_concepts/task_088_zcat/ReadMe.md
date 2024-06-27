@@ -1,14 +1,20 @@
 # zcat
 
+<br>
+
 ## DESCRIPTION
 
 zcat – Expands a compressed file to standard output
 
 zcat uncompresses either a list of files on the command line or its standard input and writes the uncompressed data on standard output. zcat will uncompress files whether they have a .gz suffix or not.  
 
+<br>
+
 ## SYNOPSIS
 
 > zcat [ -f ] [ File … ]
+
+<br>
 
 ## EXAMPLES
 

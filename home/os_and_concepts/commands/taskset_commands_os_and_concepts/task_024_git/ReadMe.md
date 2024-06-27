@@ -29,13 +29,19 @@
     - [rm](#rm)
     - [rev-list | To get the commit-id associated with a git tag](#rev-list--to-get-the-commit-id-associated-with-a-git-tag)
 
+<br>
+
 ## NAME
 
 git - the content tracker
 
+<br>
+
 ## DESCRIPTION
 
 Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
+
+<br>
 
 ## Useful aliases
 
@@ -47,7 +53,11 @@ alias devtags="git --no-pager ls-remote --tags | egrep "refs/tags/dev" | awk {'p
 alias dlocal="git --no-pager branch --merged  | egrep -v master | xargs git branch -d"
 ```
 
+<br>
+
 ## EXAMPLES
+
+<br>
 
 ### init
 
@@ -340,6 +350,8 @@ git merge <branchname>
 - To merge master to your current branch without rebasing
 
 ```bash
+<br>
+
 ## This will fetch the latest changes from master and merge them into your current branch. If there are conflicts, you will be prompted to resolve them, and you will be asked to provide a commit message for the merge commit
 git config pull.rebase false
 ```
@@ -357,6 +369,8 @@ git push -u origin branch1 # zsh alias | ggpush
 - To merge master to your current branch with rebasing
 
 ```bash
+<br>
+
 ## This will fetch the latest changes from master and reapply your local commits on top of these changes. It helps to maintain a linear project history.
 git config pull.rebase true
 ```

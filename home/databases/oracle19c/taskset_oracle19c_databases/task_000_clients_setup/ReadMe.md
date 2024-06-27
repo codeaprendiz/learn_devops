@@ -1,9 +1,13 @@
 # Clients
 
+<br>
+
 ## Docs Referred
 
 - [autonomous-database/doc/connect-dedicated-adb.html](https://docs.oracle.com/en-us/iaas/autonomous-database/doc/connect-dedicated-adb.html)
 
+
+<br>
 
 ## Prerequisite installation required
 
@@ -16,6 +20,8 @@ OpenJDK Runtime Environment Homebrew (build 19)
 OpenJDK 64-Bit Server VM Homebrew (build 19, mixed mode, sharing)
 ```
 
+
+<br>
 
 ### Using SQL Developer
 
@@ -45,6 +51,8 @@ OpenJDK 64-Bit Server VM Homebrew (build 19, mixed mode, sharing)
   - Config zip file which you downloaded
 
 ![img.png](.images/sql-developer-connect.png)
+
+<br>
 
 ### Using SQLPlus
 
@@ -82,9 +90,13 @@ Version 19.8.0.0.0
 README                cwallet.sso           ewallet.pem           ojdbc.properties      tnsnames.ora
 Wallet_deletemedb.zip ewallet.p12           keystore.jks          sqlnet.ora            truststore.jks
 
+<br>
+
 ## Only ZSH users ## https://unix.stackexchange.com/questions/706227/how-can-i-use-the-sed-command-to-replace-home-user-with
 ╰─ print -P '%~'
 ~/workspace/codeaprendiz/devops-essentials/home/databases/oracle19c/task-000-clients-setup/wallet-unzipped
+
+<br>
 
 ## Make changes in sqlnet.ora, 
 ╰─ cat sqlnet.ora    
@@ -107,6 +119,8 @@ SQL>
 
 
 
+
+<br>
 
 ### SQLCL
 
@@ -143,6 +157,8 @@ SQL> connect admin/qWert1234567@deletemedb_high
 Connected.
 ```
 
+
+<br>
 
 ### Dbeaver
 

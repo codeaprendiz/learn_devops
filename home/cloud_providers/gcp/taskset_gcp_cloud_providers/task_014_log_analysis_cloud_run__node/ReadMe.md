@@ -19,6 +19,8 @@
 - nodejs
 - logs-based metrics
 
+<br>
+
 ### Set up and deploy a test application.
 
 - Enable APIs
@@ -70,10 +72,14 @@ do curl -s $URL/random-error \
 ```
 
 
+<br>
+
 ### Explore the log files for a test application
 
 - Cloud Run Revision > hello-logging
 
+
+<br>
 
 ### Create and use a logs-based metric
 
@@ -128,6 +134,8 @@ do curl -s $URL/score \
 - Create a score logs-based metric using field `jsonPayload.score`
 - Create Dashboard using this metric
 
+
+<br>
 
 ### Export application logs to BigQuery
 

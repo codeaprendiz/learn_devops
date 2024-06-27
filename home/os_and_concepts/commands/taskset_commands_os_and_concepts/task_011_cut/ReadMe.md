@@ -2,17 +2,25 @@
 
 - [cut](https://man7.org/linux/man-pages/man1/cut.1.html)
 
+<br>
+
 ## NAME
 
 cut - remove sections from each line of files
+
+<br>
 
 ## SYNOPSIS
 
 > cut [OPTION]... [FILE]...
 
+<br>
+
 ## DESCRIPTION
 
 Print selected parts of lines from each FILE to standard output. 
+
+<br>
 
 ## OPTIONS
 
@@ -37,6 +45,8 @@ Print selected parts of lines from each FILE to standard output.
   - display this help and exit
 - --version
   - output version information and exit
+
+<br>
 
 ## EXAMPLES
 

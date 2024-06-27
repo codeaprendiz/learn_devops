@@ -2,6 +2,8 @@
 
 This task shows you how to set up request timeouts in Envoy using Istio.
 
+<br>
+
 ## [Pre-requisite](https://istio.io/latest/docs/tasks/traffic-management/request-timeouts/#before-you-begin)
 
 Setup Istio by following the instructions in the Installation guide.
@@ -11,6 +13,8 @@ Deploy the Bookinfo sample application including the service versions.
 ```bash
 kubectl apply -f destination-rule-all.yaml
 ```
+
+<br>
 
 ## [Request Timeouts](https://istio.io/latest/docs/tasks/traffic-management/request-timeouts/#request-timeouts)
 
@@ -82,6 +86,8 @@ EOF
 You should now see that it returns in about 1 second, instead of 2, and the reviews are unavailable.
 
 > The reason that the response takes 1 second, even though the timeout is configured at half a second, is because there is a hard-coded retry in the productpage service, so it calls the timing out reviews service twice before returning.
+
+<br>
 
 ## Cleanup
 

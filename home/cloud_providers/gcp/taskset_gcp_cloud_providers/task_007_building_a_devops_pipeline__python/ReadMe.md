@@ -33,6 +33,8 @@
 
 
 
+<br>
+
 ### Create a Git repository
 
 - Use service `Source Repositories`
@@ -47,6 +49,8 @@ cd gcp-course
 gcloud source repos clone devops-repo
 cd devops-repo
 ```
+
+<br>
 
 ### Create a simple Python application
 
@@ -67,6 +71,8 @@ git push origin master
 ```
 
 - Create Dockerfile
+
+<br>
 
 ### Manage Docker images with Cloud Build and Container Registry
 
@@ -96,6 +102,8 @@ git push origin master
 - Visit the public IP now
 
 
+<br>
+
 ### Automate builds with triggers
 
 - Go to the CloudBuild
@@ -113,6 +121,8 @@ cd ~/gcp-course/devops-repo
 git commit -a -m "Testing Build Trigger"
 git push origin master
 ```
+
+<br>
 
 ###  Test your build changes
 

@@ -14,6 +14,8 @@ Docs and Links referred
 
 [youtube](https://www.youtube.com/watch?v=f3APF1dP8w0&t=604s&ab_channel=EnlearAcademy)
 
+<br>
+
 #### Step 1
 
 Configure the AWS account using the right region and correct access keys
@@ -26,6 +28,8 @@ Default region name [ap-south-1]:
 Default output format [None]: 
 ```
 
+<br>
+
 #### Step 2
 
 Let's list the aliases first to validate
@@ -34,6 +38,8 @@ Let's list the aliases first to validate
 $ aws kms list-aliases | grep master | grep -v "arn"
             "AliasName": "alias/master",
 ```
+
+<br>
 
 #### Step 3
 
@@ -49,6 +55,8 @@ $ aws kms generate-data-key --key-id alias/master --key-spec AES_256 --region ap
 }
 ```
 
+<br>
+
 #### Step 4
 
 Decode you keys and save them in files
@@ -58,6 +66,8 @@ $ echo "your_key_in_cipher_text" | base64 --decode > ciphertextblob
 
 $ echo "your_key_in_plain_text" | base64 --decode > plaintext
 ```
+
+<br>
 
 #### Step 5
 
@@ -70,6 +80,8 @@ please do not copy
 copying the data is strictly prohibited
 okay you can copy the data.
 ```
+
+<br>
 
 #### Step 6
 
@@ -87,6 +99,8 @@ $ mv sensitivedatafile.txt /tmp/
 ```
 
 Okay, I moved it to `/tmp` just in case. But we need to remove! Very Important!
+
+<br>
 
 #### Step 7
 
@@ -109,6 +123,8 @@ Decode the key
 ```bash
 $ echo "your_plaintext_key" | base64 --decode > plaintext
 ```
+
+<br>
 
 #### Step 8
  

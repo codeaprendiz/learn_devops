@@ -1,8 +1,12 @@
 # mail
 
+<br>
+
 ## NAME
 
 - mail - send and receive mail
+
+<br>
 
 ## SYNOPSIS
 
@@ -12,9 +16,13 @@
 
 > mail [-iInNv] [-u user]
 
+<br>
+
 ## Description
 
 Mail is an intelligent mail processing system, which has a command syntax reminiscent of ed(1) with lines replaced by messages.
+
+<br>
 
 ## OPTIONS
 
@@ -34,6 +42,8 @@ Mail is an intelligent mail processing system, which has a command syntax remini
   - Send carbon copies to list of users.
 -b
   - Send blind carbon copies to list.  List should be a comma-separated list of names.
+
+<br>
 
 ## EXAMPLE
 

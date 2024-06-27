@@ -28,6 +28,8 @@
 
 
 
+<br>
+
 ### Initialize Terraform
 
 ```bash
@@ -59,6 +61,8 @@ gcloud config list --format 'value(core.project)'
 ```bash
 terraform init
 ```
+
+<br>
 
 ### View Implicit Resource Dependency
 
@@ -161,6 +165,8 @@ terraform apply
 
 - Verify on Cloud Console
 
+<br>
+
 ### Create Explicit Dependency
 
 ```bash
@@ -214,6 +220,8 @@ terraform apply
 
 - Validate on console
 
+
+<br>
 
 ### View Dependency Graph
 

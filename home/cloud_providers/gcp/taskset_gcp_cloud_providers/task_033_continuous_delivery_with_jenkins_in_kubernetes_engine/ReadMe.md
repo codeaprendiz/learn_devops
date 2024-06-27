@@ -8,6 +8,8 @@
 - gcp
 
 
+<br>
+
 ## Download the source code
 
 - run the following command to set your zone us-east1-c:
@@ -22,6 +24,8 @@ unzip continuous-deployment-on-kubernetes.zip
 
 cd continuous-deployment-on-kubernetes
 ```
+
+<br>
 
 ## Provisioning Jenkins
 
@@ -44,6 +48,8 @@ kubectl cluster-info
 ```
 
 
+<br>
+
 ## Setup Helm
 
 ```bash
@@ -54,6 +60,8 @@ helm repo add jenkins https://charts.jenkins.io
 helm repo update
 
 ```
+
+<br>
 
 ## Configure and Install Jenkins
 
@@ -86,6 +94,8 @@ kubectl get svc
 
 ```
 
+<br>
+
 ## Connect to Jenkins
 
 ```bash
@@ -95,8 +105,12 @@ printf $(kubectl get secret cd-jenkins -o jsonpath="{.data.jenkins-admin-passwor
 # If asked, log in with username admin and your auto-generated password.
 ```
 
+<br>
+
 ## Understanding the Application
 
+
+<br>
 
 ## Deploying the Application
 
@@ -108,6 +122,8 @@ You will deploy the application into two different environments:
 
 ```bash
 cd sample-app
+
+<br>
 
 ## Create the Kubernetes namespace to logically isolate the deployment:
 kubectl create ns production
@@ -139,6 +155,8 @@ export FRONTEND_SERVICE_IP=$(kubectl get -o jsonpath="{.status.loadBalancer.ingr
 # Check the version output of the service by running the following command (it should read 1.0.0):
 curl http://$FRONTEND_SERVICE_IP/version
 ```
+
+<br>
 
 ## Creating the Jenkins Pipeline
 
@@ -184,6 +202,8 @@ git push origin master
 ```
 
 
+<br>
+
 ## Creating the development environment
 
 ```bash
@@ -201,6 +221,8 @@ git checkout -b new-feature
 - Change the two instances of <div class="card blue"> with <div class="card orange"> in the html.go file.
 - main.go change the version to 2.0.0
 
+
+<br>
 
 ## Kick off Deployment
 
@@ -228,6 +250,8 @@ http://localhost:8001/api/v1/namespaces/new-feature/services/gceme-frontend:80/p
 # You should see it respond with 2.0.0, which is the version that is now running.
 
 ```
+
+<br>
 
 ## Deploying a canary release
 
@@ -259,6 +283,8 @@ while true; do curl http://$FRONTEND_SERVICE_IP/version; sleep 1; done
 1.0.0
 1.0.0
 ```
+
+<br>
 
 ## Deploying to production
 

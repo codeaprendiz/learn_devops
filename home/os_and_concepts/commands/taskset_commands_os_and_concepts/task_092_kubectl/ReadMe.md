@@ -1,5 +1,7 @@
 # kubectl
 
+<br>
+
 ## Examples
 
 - To get all resource types from all namespaces
@@ -69,6 +71,8 @@ kubectl create secret generic <name_of_secret> \
 --from-env-file=secret.properties \
 --dry-run=client -o yaml -n <namespace>
 
+<br>
+
 ## Secret.properties file
 ENV1=valueone
 ENV2=data source=something, user=something; options=something
@@ -81,6 +85,8 @@ ENV2=data source=something, user=something; options=something
 $ kubectl cp --retries=-1 mynamespace/mypod:/etc/config/config.txt ~/mylocaldir/
 ```
 
+
+<br>
 
 ## json path
 

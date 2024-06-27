@@ -4,6 +4,8 @@
 
 [developer-tutorials/tutorials/tf-compute](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-compute/01-summary.htm)
 
+<br>
+
 ## Key tasks include how to:
 
 - Create SSH keys.
@@ -11,6 +13,8 @@
 - Use Oracle Cloud Infrastructure Terraform provider to create a compute instance in the network.
 - Connect to your instance.
 
+
+<br>
 
 ### Begin
 

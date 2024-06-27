@@ -27,6 +27,8 @@ CONTAINER ID   IMAGE     COMMAND   CREATED              STATUS                  
 4a94928d6520   debian    "bash"    About a minute ago   Exited (13) 54 seconds ago             test
 ```
 
+<br>
+
 ## Capture container ID
 
 [capture-container-id---cidfile](https://docs.docker.com/engine/reference/commandline/run/#capture-container-id---cidfile)

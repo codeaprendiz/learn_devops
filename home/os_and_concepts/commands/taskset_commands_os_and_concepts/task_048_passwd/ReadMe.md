@@ -1,18 +1,26 @@
 # passwd
 
+<br>
+
 ## NAME
 
 passwd - update userâs authentication tokens
 
+<br>
+
 ## SYNOPSIS
 
 > passwd  [-k] [-l]  [-u [-f]] [-d] [-n mindays] [-x maxdays] [-w warndays] [-i inactivedays] [-S] [--stdin] [username]
+
+<br>
 
 ## DESCRIPTION
 
 The passwd utility is used to update userâs authentication token(s).
 
 This task is achieved through calls to the Linux-PAM and Libuser API.   Essentially, it initializes itself as a "passwd" service with Linux-PAM and utilizes configured password modules to authenticate and  then update a userâs password.
+
+<br>
 
 ## EXAMPLES
 

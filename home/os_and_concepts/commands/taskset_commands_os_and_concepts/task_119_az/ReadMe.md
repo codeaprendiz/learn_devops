@@ -12,9 +12,13 @@
   - [aks](#aks)
   - [storage](#storage)
 
+<br>
+
 ## Install
 
 [learn.microsoft.com » Install Azure CLI on macOS](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos)
+
+<br>
 
 ## group list | List resouce group names
 
@@ -22,11 +26,15 @@
 az group list -o table
 ```
 
+<br>
+
 ## resources list | To list all resources in `<resource_group_name>` resourcegroup
 
 ```bash
 az resource list --resource-group <resource_group_name> -o table
 ```
+
+<br>
 
 ## network | List vnet | List subnets
 
@@ -69,12 +77,16 @@ To list public IP addresses in a resource group:
 az network public-ip list --resource-group test-dev-rg -o table
 ```
 
+<br>
+
 ## vm list | To list virtual machines in a resource group
 
 ```bash
 # az vm list --resource-group <RESOURCE_GROUP_NAME> -o table
 az vm list --resource-group test-dev-rg -o table
 ```
+
+<br>
 
 ## ad | To list AD users | servicePrincipals
 
@@ -96,6 +108,8 @@ To creat a servicePrincipal
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
 ```
 
+<br>
+
 ## login
 
 To Login
@@ -103,6 +117,8 @@ To Login
 ```bash
 az login
 ```
+
+<br>
 
 ## account
 
@@ -125,6 +141,8 @@ To login using this servicePrincipal
 az login --service-principal -u <CLIENT_ID> -p <CLIENT_SECRET> --tenant <TENANT_ID>
 ```
 
+<br>
+
 ## aks
 
 To configure `kubectl` to use the credentials for the Azure Kubernetes Service (AKS) cluster named `test-dev-aks` in the `test-dev-rg` resource group, enabling you to run `kubectl` commands against that cluster.
@@ -138,6 +156,8 @@ To run the `kubectl get pods -A` command directly on the AKS cluster named `test
 ```bash
 az aks command invoke -n test-dev-aks -g test-dev-rg -c "kubectl get pods -A"
 ```
+
+<br>
 
 ## storage
 

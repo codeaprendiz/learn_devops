@@ -132,6 +132,8 @@ Now let's try to get the admin password
 $ kubectl exec --namespace default -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
 QWaGfBkvTSLCoBaGSfWjBu
 
+<br>
+
 #### How I  know this ? Actually if we install via helm it gives this information
 $ helm install jenkins helm-charts/charts/jenkins                                                                
 NAME: jenkins

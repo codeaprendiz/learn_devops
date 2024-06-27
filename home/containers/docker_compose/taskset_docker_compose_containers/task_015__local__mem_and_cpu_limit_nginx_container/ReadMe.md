@@ -1,4 +1,6 @@
 
+<br>
+
 ### To set memory and cpu limit in version 3 of docker-compose
 
 [issue-on-linux](https://stackoverflow.com/questions/42345235/how-to-specify-memory-cpu-limit-in-docker-compose-version-3)
@@ -28,6 +30,8 @@ CONTAINER ID   NAME                                                   CPU %     
 69bacb168f51   task-015-mem-and-cpu-limit-nginx-container_service_1   0.00%     2.133MiB / 512MiB   0.42%     1.17kB / 0B   0B / 8.19kB   2
 ```
 
+
+<br>
 
 ### To set memory and cpu limit in version 2 of docker-compose
 

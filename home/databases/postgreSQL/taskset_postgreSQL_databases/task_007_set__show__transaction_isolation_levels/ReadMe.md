@@ -1,5 +1,7 @@
 # Show -- Transaction Isolation Level
 
+<br>
+
 ## Show
 
 To show the current transaction isolation level you can run
@@ -17,6 +19,8 @@ postgres=# show transaction isolation level;
  read committed
 (1 row)
 ```
+
+<br>
 
 ## Set
 

@@ -15,6 +15,8 @@ $ git clone https://github.com/traefik/traefik-helm-chart.git
 $ ls                      
 ReadMe.md          traefik-helm-chart
 
+<br>
+
 ## Create the CRDs
 $ kubectl apply -f traefik-helm-chart/traefik/crds/.                     
 Warning: apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
@@ -66,6 +68,8 @@ error: unable to recognize "traefik-resources.yaml": no matches for kind "Ingres
 $ git clone https://github.com/traefik/traefik-helm-chart.git
 $ ls                      
 ReadMe.md          traefik-helm-chart
+
+<br>
 
 ## Create the CRDs
 $ kubectl apply -f traefik-helm-chart/traefik/crds/.                     

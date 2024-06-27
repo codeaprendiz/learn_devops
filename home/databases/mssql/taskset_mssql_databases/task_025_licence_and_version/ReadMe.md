@@ -32,6 +32,8 @@ GO
 - [serverfault.com » Can you help me with my software licensing issue?](https://serverfault.com/questions/215405/can-you-help-me-with-my-software-licensing-issue)
 - [reddit.com » Is there a way to verify the number of CALs on my SQL Server Standard 2019?](https://www.reddit.com/r/SQLServer/comments/tzvudl/is_there_a_way_to_verify_the_number_of_cals_on_my/)
 
+<br>
+
 ## Reddit Threads
 
 - [reddit.com » SQL Server Developer Edition Question](https://www.reddit.com/r/SQLServer/comments/f58ppw/sql_server_developer_edition_question/)
@@ -40,15 +42,21 @@ GO
 - [reddit.com » MS Sql Server - What is "production" data?](https://www.reddit.com/r/SQLServer/comments/15ncbns/ms_sql_server_what_is_production_data/)
 - [reddit.com » Developer Edition Time Limit?](https://www.reddit.com/r/SQLServer/comments/i9hcvo/developer_edition_time_limit/)
 
+<br>
+
 ## Other Threads
 
 - [learn.microsoft.com » How To Check SQL Server Activation With Valid Key](https://learn.microsoft.com/en-us/answers/questions/1151391/how-to-check-sql-server-activation-with-valid-key)
 - [quora.com » How do I check if the MS SQL server licenses are valid?](https://www.quora.com/How-do-I-check-if-the-MS-SQL-server-licenses-are-valid)
 
 
+<br>
+
 ## Docker Commands
 
 The Docker run command for SQL Server involves specifying the edition you want to use through the `MSSQL_PID` environment variable. Below are the Docker run commands for various editions of SQL Server:
+
+<br>
 
 ## 1. Enterprise Edition
 
@@ -62,6 +70,8 @@ docker run --rm \
 -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
+<br>
+
 ## 2. Standard Edition
 
 ```bash
@@ -73,6 +83,8 @@ docker run --rm \
 -p 1433:1433 --name sqlStandard --hostname sqlStandard \
 -d mcr.microsoft.com/mssql/server:2022-latest
 ```
+
+<br>
 
 ## 3. Express Edition
 
@@ -86,6 +98,8 @@ docker run --rm \
 -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
+<br>
+
 ## 4. Developer Edition
 
 ```bash
@@ -97,6 +111,8 @@ docker run --rm \
 -p 1433:1433 --name sqlDeveloper --hostname sqlDeveloper \
 -d mcr.microsoft.com/mssql/server:2022-latest
 ```
+
+<br>
 
 ### Notes
 

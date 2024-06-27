@@ -36,6 +36,8 @@ Anthos Service Mesh’s traffic management model relies on the following two com
 ![img.png](.images/img.png)
 
 
+<br>
+
 ## Review Traffic Management use cases
 
 > In Istio, when an incoming request arrives at a Kubernetes cluster, it first reaches the Gateway resource,
@@ -50,6 +52,8 @@ Anthos Service Mesh’s traffic management model relies on the following two com
 - Example: fault injection: inserting aborts
 - Example: conditional routing: based on request headers
 
+
+<br>
 
 ## Setup
 
@@ -90,6 +94,8 @@ kubectl get services
 
 ```
 
+
+<br>
 
 ## Install Gateways to enable ingress
 
@@ -239,6 +245,8 @@ echo http://${GATEWAY_URL}/productpage
 
 ```
 
+<br>
+
 ## Use the Anthos Service Mesh dashboard view routing to multiple versions
 
 - Navigation > Anthos > Service Mesh.
@@ -255,6 +263,8 @@ echo http://${GATEWAY_URL}/productpage
    - The productpage service going to productpage deployment
    - The productpage deployment going to reviews service
    - The reviews service going to three version of reviews
+
+<br>
 
 ## Apply default destination rules, for all available versions
 
@@ -288,6 +298,8 @@ kubectl get destinationrules -o yaml
 - Wait for 1-2 minutes, then return to the Anthos Service Mesh dashboard.
 - Look in both the table and topology views and confirm that the traffic continues to be evenly distributed across the three backend versions.
 
+<br>
+
 ## Apply virtual services to route by default to only one version
 
 - Review the configuration found in [Github](https://github.com/istio/istio/blob/master/samples/bookinfo/networking/virtual-service-all-v1.yaml). This configuration defines 4 VirtualService resources, 1 for each service.
@@ -309,6 +321,8 @@ echo $GATEWAY_URL
 - Select SHOW TIMELINE and focus the chart on the last 5 minutes of traffic. You should see that the traffic goes from being evenly distributed to being routed to the version 1 workload 100% of the time.
 - You can also see the new traffic distribution by looking at the Traffic tab or the topology view - though these both take a couple extra minutes before the data is shown.
 
+
+<br>
 
 ## Route to a specific version of a service based on user identity
 
@@ -349,6 +363,8 @@ kubectl delete -f https://raw.githubusercontent.com/istio/istio/master/samples/b
 
 - You can wait for 1-2 minutes, refresh the Anthos Service Mesh dashboard, adjust the timeline to show the current time, and confirm that traffic is once again evenly balanced across versions.
 
+
+<br>
 
 ## Shift traffic gradually from one version of a microservice to another
 
@@ -393,6 +409,8 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/bo
 ```bash
 kubectl delete -f https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/networking/virtual-service-all-v1.yaml
 ```
+
+<br>
 
 ## Add timeouts to avoid waiting indefinitelly for service replies
 
@@ -493,6 +511,8 @@ EOF
 ```bash
 kubectl delete -f https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/networking/virtual-service-all-v1.yaml 
 ```
+
+<br>
 
 ## Add circuit breakers to enhance your microservices' resiliency
 

@@ -1,5 +1,7 @@
 ## Metadata, Network and Attach to stdout/stdin/stderr
 
+<br>
+
 ### Set metadata on container
 
 [set-metadata-on-container--l---label---label-file](https://docs.docker.com/engine/reference/commandline/run/#set-metadata-on-container--l---label---label-file)
@@ -23,6 +25,8 @@ root@877169a9c393:/# exit
 exit
 ❯ 
 ```
+
+<br>
 
 ### Connect to network
 
@@ -49,6 +53,8 @@ d94bd0d8c825   bridge    bridge    local
 # Terminal session 2
 ❯ docker run --rm --name=a2 -it --network=mynet busybox
 
+<br>
+
 ## Note they are able to ping each other with just container names
 / # ping a1
 PING a1 (172.18.0.2): 56 data bytes
@@ -58,6 +64,8 @@ PING a1 (172.18.0.2): 56 data bytes
 / # exit
 ❯ 
 ```
+
+<br>
 
 ## Attach to stdout
 

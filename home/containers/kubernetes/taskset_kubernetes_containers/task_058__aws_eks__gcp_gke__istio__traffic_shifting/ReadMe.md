@@ -4,6 +4,8 @@ This task shows you how to shift traffic from one version of a microservice to a
 
 In this task, you will use send 50% of traffic to reviews:v1 and 50% to reviews:v3. Then, you will complete the migration by sending 100% of traffic to reviews:v3.
 
+<br>
+
 ## [Apply weight-based routing](https://istio.io/latest/docs/tasks/traffic-management/traffic-shifting/#apply-weight-based-routing)
 
 ```bash
@@ -27,6 +29,8 @@ kubectl apply -f virtual-service-reviews-v3.yaml
 ```
 
 Refresh the /productpage several times. Now you will always see book reviews with red colored star ratings for each review.
+
+<br>
 
 ## Cleanup
 

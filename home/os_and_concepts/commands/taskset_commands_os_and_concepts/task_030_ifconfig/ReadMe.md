@@ -2,15 +2,21 @@
 
 [ifconfig](https://www.man7.org/linux/man-pages/man8/ifconfig.8.html)
 
+<br>
+
 ## NAME
 
 ifconfig - configure a network interface
+
+<br>
 
 ## OPTIONS
 
 - -a
   - display all interfaces which are currently available, even
     if down
+
+<br>
 
 ## EXAMPLES
 

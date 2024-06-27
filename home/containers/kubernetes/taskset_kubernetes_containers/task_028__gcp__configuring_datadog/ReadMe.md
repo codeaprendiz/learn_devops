@@ -55,6 +55,8 @@ $ kubectl exec -it datadog-cluster-agent-67588d6f7b-znkxm agent status | egrep "
 
 - Now login to datadog and let's see what we have achieved so far
 
+<br>
+
 ### Logs 
 
 - Live Tail
@@ -67,6 +69,8 @@ $ kubectl exec -it datadog-cluster-agent-67588d6f7b-znkxm agent status | egrep "
 ![](.images/logs-dasboard-page.png)
 
 
+<br>
+
 ### Dashboard
 
 - k8s dashboard
@@ -78,6 +82,8 @@ $ kubectl exec -it datadog-cluster-agent-67588d6f7b-znkxm agent status | egrep "
 
 
 ![](.images/k8s-dashboard-pic3.png)
+
+<br>
 
 ### Events
 

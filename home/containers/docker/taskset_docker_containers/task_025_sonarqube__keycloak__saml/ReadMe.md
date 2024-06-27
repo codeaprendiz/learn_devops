@@ -2,29 +2,41 @@
 
 - [Sonarqube » v10.1 » Instance administration » Authentication and provisioning » SAML » How to set up Keycloak](https://docs.sonarsource.com/sonarqube/latest/instance-administration/authentication/saml/how-to-set-up-keycloak/)
 
+<br>
+
 ## High Level Objectives
 
 - Setup SAML-based Authentication
 - Generate Keys and Certificates
 - Configure Identity Provider (Keycloak) and Service Provider (Sonarqube)
 
+<br>
+
 ## Theory
 
 The integration of SonarQube with Keycloak using SAML (Security Assertion Markup Language) forms a unified authentication system that allows users to be authenticated by a single identity provider (Keycloak) and gain access to a service provider (SonarQube). Here's an overview of the architecture and a detailed explanation of how the different pieces fit together.
+
+<br>
 
 ### Identity Provider and Service Provider
 
 In the context of authentication using Security Assertion Markup Language (SAML), the terms "Identity Provider" (IdP) and "Service Provider" (SP) refer to specific roles within the authentication process. Let's look at the definitions and responsibilities of each:
 
+<br>
+
 #### Identity Provider (IdP)
 
 The Identity Provider, often abbreviated as IdP, is a system that creates, maintains, and manages identity information for principals (i.e., users) while providing authentication services to relying applications within a federation.
+
+<br>
 
 ##### What is Federation
 
 Federation, in this context, refers to the establishment of trust and communication between multiple independent systems (or identity domains). In a federation, different organizations or entities (such as companies, universities, government agencies, etc.) maintain their own identity systems, known as Identity Providers (IdPs). These IdPs can communicate and share identity information with each other securely.
 
 For example, consider two organizations, A and B, each having their own IdP. They can establish a federation between their IdPs, allowing users from organization A to access services provided by organization B without needing separate credentials for each domain. When a user from organization A tries to access a service in organization B, they are redirected to their own IdP (IdP of organization A) for authentication. Once authenticated, the user's IdP generates a token (like a SAML assertion) containing identity information, and this token is sent to the service provider (organization B) to grant access.
+
+<br>
 
 ##### Responsibilities of IdP
 
@@ -35,9 +47,13 @@ For example, consider two organizations, A and B, each having their own IdP. The
 
 In the given configuration, Keycloak is playing the role of the Identity Provider.
 
+<br>
+
 #### Service Provider (SP)
 
 The Service Provider, or SP, refers to the entity that provides services, such as a web application, to the user. It relies on the Identity Provider to authenticate users.
+
+<br>
 
 ##### Responsibilities of SP
 
@@ -48,9 +64,13 @@ The Service Provider, or SP, refers to the entity that provides services, such a
 
 In the given configuration, SonarQube is acting as the Service Provider.
 
+<br>
+
 #### Conclusion
 
 In a SAML-based authentication flow, the Identity Provider is responsible for authenticating users and issuing SAML assertions, while the Service Provider relies on those assertions to grant access to its services. The separation of these roles enables Single Sign-On (SSO) capabilities, allowing users to authenticate once with the IdP and gain access to multiple SPs without re-entering their credentials. It also facilitates the integration of various applications and services within an organization, as they can all rely on a central IdP for authentication.
+
+<br>
 
 ### 1. High-level Architecture of our local setup
 
@@ -59,6 +79,8 @@ In a SAML-based authentication flow, the Identity Provider is responsible for au
 **1.2 Keycloak**: An open-source Identity and Access Management (IAM) tool that provides SAML-based authentication and authorization services.
 
 **1.3 SAML**: A standard for exchanging authentication and authorization data between parties, particularly between an identity provider (Keycloak) and a service provider (SonarQube).
+
+<br>
 
 ### 2. Key Parts of the Configuration
 
@@ -71,6 +93,8 @@ In a SAML-based authentication flow, the Identity Provider is responsible for au
 **2.4 SonarQube Configuration**: This part involves configuring SonarQube to recognize Keycloak as the SAML identity provider and mapping user attributes.
 
 **2.5 User Management**: Creating users in Keycloak, which can be authenticated to access SonarQube.
+
+<br>
 
 ### 3. Detailed Workflow
 
@@ -92,15 +116,23 @@ In a SAML-based authentication flow, the Identity Provider is responsible for au
 
 8. **Admin Interaction**: Administrators can manage user permissions in SonarQube, and those permissions will reflect in the user's session.
 
+<br>
+
 ### How and where are we using the keys and certificates?
 
 In the context of SAML authentication between SonarQube (Service Provider, SP) and Keycloak (Identity Provider, IdP), certificates and private keys play crucial roles in ensuring the integrity, authenticity, and confidentiality of the information exchanged. Here's how and when they are used in this task:
+
+<br>
 
 #### 1. Generation of Private Key and Certificate
 
 The private key and the corresponding public key certificate are generated using OpenSSL commands. The private key is kept secret, and the corresponding public key is encapsulated within the certificate.
 
+<br>
+
 #### 2. Usage in Keycloak (Identity Provider)
+
+<br>
 
 ##### 2.1 Signing SAML Assertions
 
@@ -108,21 +140,31 @@ The private key and the corresponding public key certificate are generated using
 
 - **Certificate**: When configuring Keycloak, the certificate (containing the public key) is imported. This certificate may be shared with the Service Provider or made publicly available, enabling the SP to verify the signature on the SAML assertions.
 
+<br>
+
 ##### 2.2 Encrypting SAML Assertions
 
 - **Private Key**: If encryption is enabled, the IdP might use the private key for encryption-related processes, such as key exchange mechanisms.
 
 - **Certificate**: The certificate can also be used in encryption mechanisms, allowing the SP to securely communicate encryption keys or encrypt data in a way that only the corresponding private key can decrypt.
 
+<br>
+
 #### 3. Usage in SonarQube (Service Provider)
+
+<br>
 
 ##### 3.1 Verifying SAML Assertions
 
 - **Certificate**: SonarQube uses the certificate (specifically, the public key within it) to verify the signature on the SAML assertions received from Keycloak. By verifying the signature, SonarQube ensures that the assertion is authentic and hasn't been altered.
 
+<br>
+
 ##### 3.2 Decrypting SAML Assertions
 
 - **Private Key**: If the SAML assertions are encrypted by Keycloak, SonarQube will need the corresponding private key to decrypt them. This ensures that only SonarQube can read the encrypted information.
+
+<br>
 
 #### 4. Packaging and Conversion
 
@@ -131,11 +173,17 @@ During the task, you'll notice the private key is converted to PKCS#8 format, an
 - **PKCS#8**: This is a standard for private key information, providing a consistent way to store and transport private keys.
 - **PKCS#12**: This is a standard for storing multiple cryptography objects (such as a private key and certificate) in a single, password-protected file. It's used in the task to create a keystore containing both the certificate and the private key.
 
+<br>
+
 #### Conclusion
 
 The certificates and private keys generated in this task are central to the secure operation of SAML authentication between SonarQube and Keycloak. They are used for signing and verifying SAML assertions, potentially encrypting and decrypting data, and ensuring that the information exchanged is both authentic and confidential. By properly managing these keys and certificates, the integrity and security of the entire authentication process are maintained.
 
+<br>
+
 ## Task
+
+<br>
 
 ### Generate Private Key
 
@@ -156,12 +204,16 @@ $ ls
 ReadMe.md             cert.pem              keystore.p12          private_key.pem       private_key_pkcs8.pem
 ```
 
+<br>
+
 ### Start Keycloak using docker
 
 ```bash
 $ docker run --rm --name keycloak -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:22.0.1 start-dev
 .
 ```
+
+<br>
 
 ### Setting up Keycloak
 
@@ -206,6 +258,8 @@ $ docker run --rm --name keycloak -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLO
    - Click on `Create`
    - Go to `Credentials` and click on `Set Password` and set the password for the user as `test` and set Temporary to Off
 
+<br>
+
 ### Sonarqube
 
 ```bash
@@ -230,7 +284,11 @@ You will need the following settings
 - Click on Test Configuration and you should see a success message.
 - Now you can click on `Enable configuration`
 
+<br>
+
 ## Validation
+
+<br>
 
 ### Login as user `test`
 
@@ -246,6 +304,8 @@ You will need the following settings
 
 ![img](.images/image-2023-08-06-11-48-13.png)
 
+<br>
+
 ### Login as user `admin`
 
 - You can login as admin user and check the priviledges of the new user
@@ -255,6 +315,8 @@ You will need the following settings
 ![img](.images/image-2023-08-06-11-57-09.png)
 
 - You can give me additional permissions and if you do, the login of the user would change accordingly
+
+<br>
 
 ### Login as user `test` after giving admin priviledges
 

@@ -1,12 +1,18 @@
 # tee
 
+<br>
+
 ## NAME
 
 tee - read from standard input and write to standard output and files
 
+<br>
+
 ## SYNOPSIS
 
 > tee [OPTION]... [FILE]..
+
+<br>
 
 ## DESCRIPTION
 

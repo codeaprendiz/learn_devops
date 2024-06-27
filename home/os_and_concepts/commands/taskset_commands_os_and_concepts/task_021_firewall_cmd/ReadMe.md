@@ -4,6 +4,8 @@
 
 firewall-cmd is the command line client of the firewalld daemon. It provides an interface to manage the runtime and permanent configurations.
 
+<br>
+
 ## Examples
 
 - To list all the configuration settings for the public zone in your firewall. This can be useful to see what rules are currently in place and to help troubleshoot any issues with your firewall configuration.

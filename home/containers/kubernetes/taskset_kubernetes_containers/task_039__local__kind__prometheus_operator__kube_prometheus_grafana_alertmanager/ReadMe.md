@@ -3,6 +3,8 @@
 - [prometheus-operator.dev](https://prometheus-operator.dev/docs/prologue/quick-start)
 - [prometheus-operator/kube-prometheus](https://github.com/prometheus-operator/kube-prometheus)
 
+<br>
+
 ## Create a kind cluster
 
 ```bash
@@ -13,6 +15,8 @@ NAME                 STATUS   ROLES           AGE     VERSION
 kind-control-plane   Ready    control-plane   2m13s   v1.24.0
 
 ```
+
+<br>
 
 ## Clone the repo
 
@@ -30,10 +34,14 @@ ReadMe.md        kind-config.yaml kube-prometheus  manifests
 $ rm -rf kube-prometheus 
 ```
 
+<br>
+
 ## Deploy kube-prometheus 
 
 ```bash
 $ kubectl create -f manifests/setup
+
+<br>
 
 ## Wait till you see following is met
 $ kubectl wait \
@@ -59,6 +67,8 @@ prometheus-k8s-0                       2/2     Running   0               6m21s
 prometheus-k8s-1                       2/2     Running   0               6m21s
 ```
 
+<br>
+
 ## Access Prometheus
 
 ```bash
@@ -73,6 +83,8 @@ Forwarding from [::1]:9090 -> 9090
 
 ![img.png](.images/promethues-alerts.png)
 
+<br>
+
 ## Access Alertmanager
 
 ```bash
@@ -86,6 +98,8 @@ Forwarding from [::1]:9093 -> 9093
 
 ![img.png](.images/alertmanager.png)
 
+
+<br>
 
 ## Access Grafana 
 

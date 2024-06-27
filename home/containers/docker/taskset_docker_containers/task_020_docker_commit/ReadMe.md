@@ -40,6 +40,8 @@ file.txt
 root@4d74a15a73eb:/home#
 
 
+<br>
+
 ## New Terminal session t2
 ❯ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
@@ -52,6 +54,8 @@ sha256:9fec4fd33de4966790bb4b2920abeefc4d33513c8c2bbb3641d6609caab2086f
 REPOSITORY        TAG       IMAGE ID       CREATED             SIZE
 my-ubuntu         v1        9fec4fd33de4   12 seconds ago      69.2MB
 
+
+<br>
 
 ## terminal session t1
 root@4d74a15a73eb:/home#

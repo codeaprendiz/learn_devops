@@ -1,8 +1,12 @@
 # history
 
+<br>
+
 ## NAME
 
 To check the history
+
+<br>
 
 ## DESCRIPTION
 
@@ -21,6 +25,8 @@ When the history file is read, lines beginning with the history comment characte
 The return value is 0 unless an invalid option is encountered, an error occurs while reading or writing the history file, an invalid offset is supplied as an argument to -d, or the history expansion supplied as an argument to -p fails.
 
 No intervening blank is printed between the formatted timestamp and the history line.  If filename is supplied, it is used as the name of the history file; if not, the value of HISTFILE is used.  Options, if supplied, have the following meanings:
+
+<br>
 
 ## OPTIONS
 

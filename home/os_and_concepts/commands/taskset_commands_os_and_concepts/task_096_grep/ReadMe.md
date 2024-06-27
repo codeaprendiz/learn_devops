@@ -6,11 +6,17 @@
     - [To search for a pattern in a file](#to-search-for-a-pattern-in-a-file)
     - [To get user home directory | -i](#to-get-user-home-directory---i)
 
+<br>
+
 ## NAME
 
 grep - print lines that match patterns
 
+<br>
+
 ## EXAMPLES
+
+<br>
 
 ### To search for a pattern in a file
 
@@ -25,6 +31,8 @@ Output
 ```bash
 LogDenied=off
 ```
+
+<br>
 
 ### To get user home directory | -i
 

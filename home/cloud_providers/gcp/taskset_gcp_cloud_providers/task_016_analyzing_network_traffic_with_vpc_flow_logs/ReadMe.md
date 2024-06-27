@@ -20,6 +20,8 @@
 - vpc flow logs aggregation
 - export to bigquery
 
+<br>
+
 ### Configure a custom network with VPC flow logs
 
 - In the Cloud Console, in the Navigation menu (Navigation menu icon), select VPC network > VPC networks.  `vpc-net`
@@ -51,6 +53,8 @@
 | Source filter       | IPv4 Ranges                                                     |
 | Source IPv4 ranges  | 0.0.0.0/0                                                       |
 | Protocols and ports | Specified protocols and ports, and then check tcp, type: 80, 22 |
+
+<br>
 
 ### Create an Apache web server
 
@@ -87,11 +91,15 @@ sudo apt-get install apache2 -y
 echo '<!doctype html><html><body><h1>Hello World!</h1></body></html>' | sudo tee /var/www/html/index.html
 ```
 
+<br>
+
 ### Verify that network traffic is logged
 
 - Find your IP address
 - In the Cloud Console, go to Navigation menu > Logging > Logs Explorer.
 
+
+<br>
 
 ### Export the network traffic to BigQuery to further analyze the logs
 
@@ -164,6 +172,8 @@ LIMIT
 ```
 
 
+
+<br>
 
 ### Add VPC flow log aggregation
 

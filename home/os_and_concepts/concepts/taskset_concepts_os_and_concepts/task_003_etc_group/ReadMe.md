@@ -1,5 +1,7 @@
 # /etc/group
 
+<br>
+
 ## Group information
 
 ```bash

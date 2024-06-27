@@ -6,14 +6,20 @@ Job control is nothing but the ability to stop/suspend the execution of processe
 This is done using your operating system and shell such as bash/ksh or POSIX shell.
 Your shell keeps a table of currently executing jobs and can be displayed with jobs command.
 
+<br>
+
 ## DESCRIPTION
 
 It's a shell builtin
 Shell builtin commands are commands that can be executed within the running shell's process.
 
+<br>
+
 ## PURPOSE
 
 Displays status of jobs in the current shell session.
+
+<br>
 
 ## OPTIONS
 
@@ -29,6 +35,8 @@ Displays status of jobs in the current shell session.
   * Restrict output to stopped jobs only.
 * -x
   * COMMAND is run after all job specifications that appear in ARGS have been replaced with the process ID of that job’s process group leader.
+
+<br>
 
 ## EXAMPLES
 

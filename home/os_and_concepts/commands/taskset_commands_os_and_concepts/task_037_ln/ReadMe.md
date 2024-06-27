@@ -2,9 +2,13 @@
 
 - [ln](https://man7.org/linux/man-pages/man1/ln.1.html)
   
+<br>
+
 ## NAME
 
 link, ln -- make links
+
+<br>
 
 ## DESCRIPTION
 
@@ -14,15 +18,23 @@ If you want to create a new symbolic link then you can use the following command
 
 You can check where a symbolic link points to using the ls -l fileName command
 
+<br>
+
 ## OPTIONS
 
 - -s
   - Create a symbolic link.
 
+<br>
+
 ## EXAMPLES
 
 ```bash
+<br>
+
 ## let's say you created a new binary at /Users/username/aws-cli/bin/aws. So /Users/username/aws-cli/bin/aws --version works. 
+<br>
+
 ## Now you want to add this to /usr/local/bin/ i.e. aws --version should work assuming /usr/local/bin is in $PATH
 # ln -s /path/to/existing/file /path/to/new/that/should/be/created
 $ ln -s /Users/username/aws-cli/bin/aws /usr/local/bin/aws 

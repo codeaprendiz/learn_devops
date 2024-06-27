@@ -8,6 +8,8 @@ go mod tidy
 go run server.go
 ```
 
+<br>
+
 ## Validation
 
 ```bash
@@ -23,6 +25,8 @@ $ curl --silent localhost:8090/metrics | egrep "ping_request_count"
 ping_request_count 2
 ```
 
+<br>
+
 ## Running Prometheus
 
 ```bash
@@ -31,6 +35,8 @@ docker run --rm \
     -v ./prometheus.yml:/etc/prometheus/prometheus.yml \
     prom/prometheus
 ```
+
+<br>
 
 ## Check the status of targets
 
@@ -45,6 +51,8 @@ $ curl -s http://localhost:9090/api/v1/targets | jq '.data.activeTargets[] | {ta
   "status": "up"
 }
 ```
+
+<br>
 
 ## Check the value of our metric
 

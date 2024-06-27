@@ -1,12 +1,18 @@
 # sort
 
+<br>
+
 ## NAME
 
 sort - sort lines of text file
 
+<br>
+
 ## DESCRIPTION
 
 Write sorted concatenation of all FILE(s) to standard output.
+
+<br>
 
 ## OPTIONS
 
@@ -29,6 +35,8 @@ Write sorted concatenation of all FILE(s) to standard output.
 * -V --version-sort
   * natural sort of (version) numbers within text
   
+<br>
+
 ## EXAMPLES
 
 ```bash

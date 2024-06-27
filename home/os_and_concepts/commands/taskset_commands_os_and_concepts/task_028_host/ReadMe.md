@@ -1,12 +1,18 @@
 # host
 
+<br>
+
 ## NAME
 
 host - DNS lookup utility
 
+<br>
+
 ## SYNOPSIS
 
 > host [-aCdlnrsTwv] [-c class] [-N ndots] [-R number] [-t type] [-W wait] [-m flag] [-4] [-6] [-v] [-V] {name} [server]
+
+<br>
 
 ## DESCRIPTION
 
@@ -15,6 +21,8 @@ host is a simple utility for performing DNS lookups. It is normally used to conv
 name
 
 is the domain name that is to be looked up. It can also be a dotted-decimal IPv4 address or a colon-delimited IPv6 address, in which case host will by default perform a reverse lookup for that address.  server is an optional argument which is either the name or IP address of the name server that host should query instead of the server or servers listed in /etc/resolv.conf.
+
+<br>
 
 ## OPTIONS
 

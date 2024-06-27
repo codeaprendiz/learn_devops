@@ -1,5 +1,7 @@
 # Golang Example: Sending Traces to jaeger via grpc
 
+<br>
+
 ## [opentelemetry.io » jaeger reference](https://opentelemetry.io/docs/languages/go/exporters/#jaeger)
 
 - To try out the OTLP exporter, since v1.35.0 you can run Jaeger as an OTLP endpoint and for trace visualization in a Docker container:
@@ -13,9 +15,13 @@ docker run -d --name jaeger \
   jaegertracing/all-in-one:latest
 ```
 
+<br>
+
 ## [opentelemetry.io » oltp](https://opentelemetry.io/docs/languages/go/exporters/#otlp)
 
 [otel-collector example](https://github.com/open-telemetry/opentelemetry-go/tree/main/example/otel-collector)
+
+<br>
 
 ## How to run this?
 
@@ -44,7 +50,11 @@ $ go run .
 2024/03/11 13:34:53 Done!
 ```
 
+<br>
+
 ## Access the jaeger dashboard [http://localhost:16686](http://localhost:16686)
+
+<br>
 
 ## Flow
 

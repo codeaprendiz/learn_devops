@@ -21,6 +21,8 @@
 - gcp-cli
 - gcp-service-accounts
 
+<br>
+
 ### Use the Cloud Console and Cloud Shell to create buckets and VMs and service accounts
 
 - Create a bucket with the same name as your project ID. (Choose how to control access to objects and uncheck Enforce public access prevention on this bucket, now select Fine-grained)
@@ -28,6 +30,8 @@
 - Create an IAM service account `test-service-account`
 - On the Grant this service account access to project page, specify the role as `Basic > Editor`.
 - Manage keys - Download JSON key
+
+<br>
 
 ### Explore Cloud Shell
 
@@ -85,6 +89,8 @@ gcloud iam service-accounts create test-service-account2 --display-name "test-se
 gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT --member serviceAccount:test-service-account2@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/viewer
 
 ```
+
+<br>
 
 ### Work with Cloud Storage in Cloud Shell
 
@@ -148,6 +154,8 @@ gsutil iam ch allUsers:objectViewer gs://$MY_BUCKET_NAME_1
 
 # Get the public URL of the object
 ```
+
+<br>
 
 ### Explore the Cloud Shell code editor
 

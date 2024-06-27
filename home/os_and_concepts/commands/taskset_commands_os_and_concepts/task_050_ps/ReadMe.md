@@ -1,14 +1,20 @@
 # ps
 
+<br>
+
 ## NAME
 
 ps -- process status
+
+<br>
 
 ## SYNOPSIS
 
 > ps [-AaCcEefhjlMmrSTvwXx] [-O fmt | -o fmt] [-G gid[,gid...]] [-g grp[,grp...]] [-u uid[,uid...]] [-p pid[,pid...]] [-t tty[,tty...]] [-U user[,user...]]
 
 > ps [-L]
+
+<br>
 
 ## DESCRIPTION
 
@@ -19,6 +25,8 @@ A different set of processes can be selected for display by using any combinatio
 For the processes which have been selected for display, ps will usually display one line per process.  The -M option may result in multiple output lines (one line per thread) for some processes. By default all of these output lines are sorted first by controlling terminal, then by process ID.  The -m, -r, and -v options will change the sort order. If more than one sorting option was given, then the selected processes will be sorted by the last sorting option which was specified.
 
 For the processes which have been selected for display, the information to display is selected based on a set of keywords (see the -L, -O, and -o options).  The default output format includes, for each process, the process' ID, controlling terminal, CPU time (including both user and system time), state, and associated command.
+
+<br>
 
 ## OPTIONS
 
@@ -38,6 +46,8 @@ For the processes which have been selected for display, the information to displ
   
 * -p pidlist      Select by PID.
   * This selects the processes whose process ID numbers appear in pidlist. Identical to p and --pid.
+
+<br>
 
 ## EXAMPLES
 
@@ -74,6 +84,8 @@ $ ps -p 14491 -o %cpu,%mem,cmd
 %CPU %MEM CMD
  0.0  0.4 /apps/resources/java/jdk1.7.0_15/bin/java -Xms512m -Xmx1024m -XX:MaxPermSize=1024m -jar slave.jar
 ```
+
+<br>
 
 ## Other Examples
 

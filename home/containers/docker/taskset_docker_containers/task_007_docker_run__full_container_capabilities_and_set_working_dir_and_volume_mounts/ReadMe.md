@@ -6,6 +6,8 @@ Version Stack
 |--------|----------|
 | Docker | 20.10.14 |
 
+<br>
+
 ### Full container capabilities
 
 [full-container-capabilities---privileged](https://docs.docker.com/engine/reference/commandline/run/#full-container-capabilities---privileged)
@@ -26,6 +28,8 @@ tmpfs            64M     0   64M   0% /dev
 ```
 
 
+<br>
+
 ### Set working directory
 
 [set-working-directory--w](https://docs.docker.com/engine/reference/commandline/run/#set-working-directory--w)
@@ -36,11 +40,15 @@ tmpfs            64M     0   64M   0% /dev
 ```
 
 
+<br>
+
 ### Mount Volumes
 
 [mount-volume](https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v---read-only)
 
 ```bash
+<br>
+
 ## Terminal session 1
 ❯ ls
 ReadMe.md
@@ -48,6 +56,8 @@ ReadMe.md
 # Note that the container also see the file ReadMe.md as we have mounted the same using pwd
 ❯ docker  run  -v `pwd`:`pwd` -w `pwd` -i -t  ubuntu ls
 ReadMe.md
+
+<br>
 
 ## Terminal session 2
 # Let's create another directory and see
@@ -63,6 +73,8 @@ root@0e19af311731:/foo# ls
 test.txt
 root@0e19af311731:/foo# exit
 exit
+
+<br>
 
 ## The same can also be achieved using mount flag
 ❯ docker run -t -i -w /foo --mount type=bind,src=/tmp/test,dst=/foo busybox sh

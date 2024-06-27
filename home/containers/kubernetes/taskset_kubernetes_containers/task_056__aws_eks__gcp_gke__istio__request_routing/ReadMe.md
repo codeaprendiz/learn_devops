@@ -1,5 +1,7 @@
 # [Request Routing](https://istio.io/latest/docs/tasks/traffic-management/request-routing/)
 
+<br>
+
 ## [Prequisite](https://istio.io/latest/docs/tasks/traffic-management/request-routing/#before-you-begin)
 
 [Deploying Bookinfo Application](https://istio.io/latest/docs/examples/bookinfo)
@@ -19,6 +21,8 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.20/samp
 Display the defined routes with the following command:
 
 ```bash
+<br>
+
 ## Make sure you have applied the destination rules before this
 $ kubectl get virtualservices -o yaml
 - apiVersion: networking.istio.io/v1beta1
@@ -78,6 +82,8 @@ Next, you will change the route configuration so that all traffic from a specifi
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.20/samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml
 ```
+
+<br>
 
 ## Cleanup
 

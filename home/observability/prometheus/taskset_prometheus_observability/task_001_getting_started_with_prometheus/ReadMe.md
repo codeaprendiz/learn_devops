@@ -9,6 +9,8 @@
   - [Download node exporter for scraping machine metrics](#download-node-exporter-for-scraping-machine-metrics)
   - [Scraping additional metrics](#scraping-additional-metrics)
 
+<br>
+
 ## Running Using Docker
 
 [prometheus.io » Using Docker](https://prometheus.io/docs/prometheus/latest/installation)
@@ -20,6 +22,8 @@ docker run --rm \
     prom/prometheus
 ```
 
+<br>
+
 ## Accessing metrics via curl
 
 ```bash
@@ -30,9 +34,13 @@ go_gc_duration_seconds{quantile="0.5"} 0.000225082
 go_gc_duration_seconds{quantile="0.75"} 0.000323459
 ```
 
+<br>
+
 ## Prometheus UI
 
 [http://localhost:9090](http://localhost:9090)
+
+<br>
 
 ## Download node exporter for scraping machine metrics
 
@@ -41,6 +49,8 @@ go_gc_duration_seconds{quantile="0.75"} 0.000323459
 ```bash
 ./node_exporter
 ```
+
+<br>
 
 ## Scraping additional metrics
 

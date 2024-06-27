@@ -1,6 +1,10 @@
 # who
 
+<br>
+
 ## Examples
+
+<br>
 
 ### To check all users currently logged in
 

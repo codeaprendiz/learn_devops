@@ -1,12 +1,18 @@
 # nmap
 
+<br>
+
 ## NAME
 
 nmap - Network exploration tool and security / port scanner
 
+<br>
+
 ## SYNOPSIS
 
 > nmap [Scan Type...] [Options] {target specification}
+
+<br>
 
 ## DESCRIPTION
 
@@ -35,6 +41,8 @@ The port table may also include software version details when version detection 
 
 Nmap can provide further information on targets, including reverse DNS names, operating system guesses, device types, and MAC addresses.
 
+<br>
+
 ### OPTIONS
 
 - -sU (UDP scans)
@@ -48,6 +56,8 @@ Nmap can provide further information on targets, including reverse DNS names, op
   - TCP connect scan is the default TCP scan type when SYN scan is not an option. This is the case when a user does not have raw packet privileges. Instead of writing raw packets as most other scan types do, Nmap asks the underlying operating system to establish a connection with the target machine and port by issuing the connect system call. This is the same high-level system call that web browsers, P2P clients, and most other network-enabled applications use to establish a connection. It is part of a programming interface known as the Berkeley Sockets API. Rather than read raw packet responses off the wire, Nmap uses this API to obtain status information on each connection attempt.
   - When SYN scan is available, it is usually a better choice. Nmap has less control over the high level connect call than with raw packets, making it less efficient. The system call completes connections to open target ports rather than performing the half-open reset that SYN scan does. Not only does this take longer and require more packets to obtain the same information, but target machines are more likely to log the connection. A decent IDS will catch either, but most machines have no such alarm system. Many services on your average Unix system will add a note to syslog, and sometimes a cryptic error message, when Nmap connects and then closes the connection without sending data. Truly pathetic services crash when this happens, though that is uncommon. An administrator who sees a bunch of connection attempts in her logs from a single system should know that she has been connect scanned.
   
+<br>
+
 ## EXAMPLES
 
 The syntax is

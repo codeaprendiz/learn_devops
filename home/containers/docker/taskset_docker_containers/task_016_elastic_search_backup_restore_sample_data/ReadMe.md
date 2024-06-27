@@ -4,6 +4,8 @@
     - [opendistro](https://opendistro.github.io/for-elasticsearch-docs/docs/elasticsearch/snapshot-restore/#amazon-s3)
     - [elasticsearch](https://www.elastic.co/guide/en/kibana/7.7/tutorial-build-dashboard.html#load-dataset)
 
+<br>
+
 ### Build image and deploy
 
 - Build new image
@@ -19,6 +21,8 @@ docker build  \
 docker run -p 9200:9200 -p 9600:9600  codeaprendiz/elasticsearch
 ```
 
+<br>
+
 ### Register
 - Register your repo at S3
 
@@ -28,6 +32,8 @@ $ curl -X PUT -H "Content-Type: application/json" -d @register.json "http://loca
 ```
 
 
+<br>
+
 ### Download data
 ```bash
 curl -O https://download.elastic.co/demos/kibana/gettingstarted/8.x/shakespeare.json
@@ -35,6 +41,8 @@ curl -O https://download.elastic.co/demos/kibana/gettingstarted/8.x/accounts.zip
 curl -O https://download.elastic.co/demos/kibana/gettingstarted/8.x/logs.jsonl.gz
 ```
 
+
+<br>
 
 ### Set Up Mapping
 
@@ -121,6 +129,8 @@ curl -X PUT "localhost:9200/logstash-2015.05.20?pretty" -H 'Content-Type: applic
 ```
 
 
+<br>
+
 ### Load the dataset
 
 - accounts.json
@@ -182,6 +192,8 @@ yellow open   logstash-2015.05.18 sg3cCzaVQyunHmwDpWK7gQ   1   1       4631     
 yellow open   logstash-2015.05.19 BOvYmnU6QB-Wp0ITC0wN1g   1   1       4624            0     13.8mb         13.8mb
 ```
 
+<br>
+
 ### Index Mapping before restore
 
 ```bash
@@ -194,6 +206,8 @@ $ curl -X GET "http://localhost:9200/shakespeare/_mapping"
 {"shakespeare":{"mappings":{"properties":{"line_id":{"type":"integer"},"line_number":{"type":"text","fields":{"keyword":{"type":"keyword","ignore_above":256}}},"play_name":{"type":"keyword"},"speaker":{"type":"keyword"},"speech_number":{"type":"integer"},"text_entry":{"type":"text","fields":{"keyword":{"type":"keyword","ignore_above":256}}},"type":{"type":"text","fields":{"keyword":{"type":"keyword","ignore_above":256}}}}}}}
 ```
 
+
+<br>
 
 ### Taking Snapshots
 
@@ -235,6 +249,8 @@ $ curl -X GET "http://localhost:9200/_snapshot/my-s3-repository/_all"
 ```
 
 
+<br>
+
 ### Restore your snapshot after creating a new docker container
 
 - Kill the previous(ctr+D) docker container and start a new container. You will need to register you S3 bucket again. See the command given at the begining.
@@ -262,6 +278,8 @@ yellow open   logstash-2015.05.18 i8P-GUM_S_CYMwBh-nO4pQ   1   1       4631     
 yellow open   logstash-2015.05.19 XStCeqfgRSSxbNEo9Gdy9w   1   1       4624            0     13.8mb         13.8mb
 
 ```
+
+<br>
 
 ### Index Mapping after restore
 

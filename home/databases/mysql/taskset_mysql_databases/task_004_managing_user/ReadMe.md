@@ -10,6 +10,8 @@
   - [Alter user, change password](#alter-user-change-password)
   - [Check when the password was last changed](#check-when-the-password-was-last-changed)
 
+<br>
+
 ## Create User
 
 Create a user
@@ -23,6 +25,8 @@ CREATE USER 'app_user'@'%' IDENTIFIED BY 'somepassword';
 mysql> CREATE USER 'app_user'@'%' IDENTIFIED BY 'somepassword';
 Query OK, 0 rows affected (0.07 sec)
 ```
+
+<br>
 
 ## Show the grants for user `app_user` at any host
 
@@ -40,6 +44,8 @@ mysql> show grants for 'app_user'@'%';
 +--------------------------------------------------------------------------------------------------+
 ```
 
+<br>
+
 ## Show the grants of current user
 
 ```sql
@@ -52,6 +58,8 @@ mysql> show grants;
 +--------------------------------------------------------------------------------------------------+
 2 rows in set (0.05 sec)
 ```
+
+<br>
 
 ## Get the list of users and corresponding hosts allowed to login
 
@@ -73,6 +81,8 @@ mysql> select user,host from mysql.user;
 5 rows in set (0.06 sec)
 ```
 
+<br>
+
 ## Grant READONLY priviledge to login `app_user` from any host
 
 ```sql
@@ -89,6 +99,8 @@ Query OK, 0 rows affected (0.09 sec)
 mysql> FLUSH PRIVILEGES;
 ```
 
+<br>
+
 ## Drop the user
 
 ```sql
@@ -99,6 +111,8 @@ DROP USER 'app_user'@'%';
 mysql> DROP USER 'app_user'@'%';
 Query OK, 0 rows affected (0.07 sec)
 ```
+
+<br>
 
 ## Alter user, change password
 
@@ -122,6 +136,8 @@ ALTER USER 'app_user'@'%' IDENTIFIED BY 'newpassword';
 -- https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html
 mysql> ALTER USER 'app_user'@'%' IDENTIFIED BY 'newpassword'; 
 ```
+
+<br>
 
 ## Check when the password was last changed
 

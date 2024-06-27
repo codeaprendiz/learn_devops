@@ -20,12 +20,18 @@ jq - Command-line JSON processor
     - [`fromjson` | When value of a key is a JSON string](#fromjson--when-value-of-a-key-is-a-json-string)
     - [`max_by()` | Get the maximum value of a key in an array of objects and array of arrays](#max_by--get-the-maximum-value-of-a-key-in-an-array-of-objects-and-array-of-arrays)
 
+<br>
+
 ## Docs
 
 - [jq](http://manpages.ubuntu.com/manpages/bionic/man1/jq.1.html)
 - [learn-jq](https://lzone.de/cheat-sheet/jq)
 
+<br>
+
 ## EXAMPLES
+
+<br>
 
 ### getting started
 
@@ -46,6 +52,8 @@ Output
 }
 ```
 
+<br>
+
 ### `.` -- pretty print
 
 ```bash
@@ -65,6 +73,8 @@ Output
 }
 ```
 
+<br>
+
 ### `-c` -- compact output
 
 ```bash
@@ -77,6 +87,8 @@ Output
 {"commit_id":"b8f2b8b","environment":"test","tags_at_commit":"sometags","project":"someproject","current_date":"09/10/2014","version":"someversion"}
 ```
 
+<br>
+
 ### `.key` -- get value of key
 
 ```bash
@@ -88,6 +100,8 @@ Output
 ```bash
 "b8f2b8b"
 ```
+
+<br>
 
 ### `sort_by(.[num])` -- sort by key
 
@@ -111,7 +125,11 @@ Output
 [["data2","info2",4],["data3","info3",5],["data4","info4",9],["data1","info1",10]]
 ```
 
+<br>
+
 ### `split()`
+
+<br>
 
 #### with keys
 
@@ -125,6 +143,8 @@ Output
 ["one","two","three","four","five"]
 ```
 
+<br>
+
 #### with specific array element
 
 ```bash
@@ -137,12 +157,16 @@ Output
 ["one","two","three"]
 ```
 
+<br>
+
 #### with map on all array elements
 
 ```bash
 $ echo '{"dataArray": ["one-two-three", "four-five-six", "seven-eight-nine"]}' | jq -c '.dataArray | map(split("-"))'
 [["one","two","three"],["four","five","six"],["seven","eight","nine"]]
 ```
+
+<br>
 
 ### `split()` | `tonumber` | `first`
 
@@ -176,6 +200,8 @@ Output
 ["item4","partD-456-400"]
 ```
 
+<br>
+
 #### Explaining jq Operations
 
 1. **Sorting by the First Element in Each Sub-Array (`sort_by(.[1])`)**:
@@ -194,6 +220,8 @@ Output
 - The expression `. [1]` inside `sort_by` is not returning the "first element of the array" but rather the second element of each sub-array, which is then processed further.
 - `split("-")` does not appear at the level of sorting the whole array by itself; it's applied to the string that `. [1]` retrieves from each sub-array, helping in extracting a specific part for numeric comparison.
 
+<br>
+
 ### `contains()` | `and` | Check if a string contains a substring
 
 ```bash
@@ -210,6 +238,8 @@ Output
 true
 ```
 
+<br>
+
 ### `fromjson` | When value of a key is a JSON string
 
 ```bash
@@ -217,6 +247,8 @@ echo '{
   "test": "{\"key\":\"value\",\"anotherKey\":\"anotherValue\"}"
 }' | jq -e '.test | fromjson | .key'
 ```
+
+<br>
 
 ### `max_by()` | Get the maximum value of a key in an array of objects and array of arrays
 

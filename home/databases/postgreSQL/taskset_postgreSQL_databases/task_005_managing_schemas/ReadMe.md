@@ -3,6 +3,8 @@
 - [Managing Schemas](#managing-schemas)
   - [List all Schemas](#list-all-schemas)
 
+<br>
+
 ## List all Schemas
 
 To list all the schemas you can use

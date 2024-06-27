@@ -27,6 +27,8 @@
 | Terraform | v1.4.1  |
 
 
+<br>
+
 ## Download necessary files
 
 
@@ -39,9 +41,13 @@ gsutil cp -r gs://spls/gsp234/gsp234.zip .
 unzip gsp234.zip
 ```
 
+<br>
+
 ## Understand the code
 
 
+
+<br>
 
 ## Run Terraform
 
@@ -54,6 +60,8 @@ terraform plan -out=tfplan
 
 terraform apply tfplan
 ```
+
+<br>
 
 ## Cloud SQL Proxy
 
@@ -68,6 +76,8 @@ terraform apply tfplan
 ![img.png](.images/cloud-sql-proxy-workings.png)
 
 
+<br>
+
 ## Installing the Cloud SQL Proxy
 
 
@@ -79,6 +89,8 @@ chmod +x cloud_sql_proxy
 
 ```
 
+
+<br>
 
 ## Test connection to the database
 

@@ -27,11 +27,15 @@
 
 
 
+<br>
+
 ## Navigating Google Kubernetes Engine (GKE) resource pages
 
 - In Cloud Console, from the Navigation menu go to Kubernetes Engine > Clusters.
 - Confirm that you see the following Kubernetes cluster available: cloud-ops-sandbox. Validate that each cluster has a green checkbox next to it to indicate it is up and running.
 - Click on the cloud-ops-sandbox link under the Name column to navigate to the cluster's Details tab.
+
+<br>
 
 ## Accessing operational data through GKE Dashboards
 
@@ -52,13 +56,19 @@ git clone --depth 1 --branch csb_1220 https://github.com/GoogleCloudPlatform/clo
 
 cd cloud-ops-sandbox/sre-recipes
 
+<br>
+
 ## Connect to cluster
 
 ./sandboxctl sre-recipes restore "recipe3"
 
 
+<br>
+
 ## Check the service back again
 ```
+
+<br>
 
 ## Proactive monitoring with logs-based metrics
 
@@ -74,6 +84,8 @@ cd cloud-ops-sandbox/sre-recipes
 resource.labels.cluster_name="cloud-ops-sandbox" AND resource.labels.namespace_name="default" AND resource.type="k8s_container" AND labels.k8s-pod/app="recommendationservice" AND severity>=ERROR
 ```
 
+<br>
+
 ## Creating a SLO
 
 - Navigate to Navigation menu > Monitoring > Services. The resulting page will display a list of all services deployed to GKE for the application workload.
@@ -88,6 +100,8 @@ resource.labels.cluster_name="cloud-ops-sandbox" AND resource.labels.namespace_n
 - Period length: Calendar month
 - Performance Goal: 99%
 
+
+<br>
 
 ## Define an alert on the SLO
 

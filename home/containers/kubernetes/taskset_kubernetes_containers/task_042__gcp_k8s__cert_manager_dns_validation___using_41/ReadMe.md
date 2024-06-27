@@ -8,6 +8,8 @@
 
 Ensure that you have completed the [task_041__gcp_k8s__nginx_ingress](../task_041__gcp_k8s__nginx_ingress) and we will continue from there
 
+<br>
+
 ## GKE Kubernetes Version
 
 ```bash
@@ -19,6 +21,8 @@ Server Version: v1.27.2-gke.1200
 
 ```bash
 
+<br>
+
 ## Install
 
 ```bash
@@ -27,6 +31,8 @@ $ helm repo add jetstack https://charts.jetstack.io
 $ helm repo update
 .
 ```
+
+<br>
 
 ## Create manifest using helm template command
 
@@ -161,6 +167,8 @@ curl -k -H "Content-Type: application/json" -X PUT --data-binary @temp.json 127.
 $ kubectl delete secret ankit-info-tls
 .
 
+<br>
+
 ## Start again
 
 $ kubectl create ns cert-manager
@@ -214,6 +222,8 @@ Address: 35.232.7.154
 ```bash
 $ kustomize build base/app -o build/app_all.yaml
 .
+<br>
+
 ## apply
 $ sed -e "s/DNS_ZONE/$DNS_ZONE/g" -e "s/DOMAIN_NAME/$DOMAIN_NAME/g" build/app_all.yaml | kubectl apply -f -
 .
@@ -272,6 +282,8 @@ NAME                 TYPE                DATA   AGE
 echo-service-tls     kubernetes.io/tls   2      30m
 whoami-service-tls   kubernetes.io/tls   2      29m
 
+<br>
+
 ## For secret echo-service-tls
 $ pbpaste | openssl x509 -text -noout | egrep "Not|DNS"
             Not Before: Jun 29 07:03:45 2023 GMT
@@ -328,6 +340,8 @@ X-Real-Ip: 124.253.250.102
 X-Request-Id: 90c67372dc645e17c1ae97fb614a2792
 X-Scheme: https
 
+
+<br>
 
 ## Let's validate for echo service
 $ curl -v https://echoservice.<DOMAIN_NAME>/echo   

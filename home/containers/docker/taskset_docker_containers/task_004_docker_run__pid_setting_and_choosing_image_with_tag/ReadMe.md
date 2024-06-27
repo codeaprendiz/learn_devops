@@ -7,6 +7,8 @@ Version Stack
 | Docker | 20.10.14 |
 
 
+<br>
+
 ### ImageTag
 
 [imagetag](https://docs.docker.com/engine/reference/run/#imagetag)
@@ -20,6 +22,8 @@ Version Stack
 CONTAINER ID   IMAGE          COMMAND   CREATED         STATUS         PORTS     NAMES
 32bd86340d47   ubuntu:14.04   "sh"      5 seconds ago   Up 4 seconds             practical_ishizaka
 ```
+
+<br>
 
 ### PID
 

@@ -4,7 +4,11 @@ This task shows you how to shift TCP traffic from one version of a microservice 
 
 In this task, you will send 100% of the TCP traffic to tcp-echo:v1. Then, you will route 20% of the TCP traffic to tcp-echo:v2 using Istio’s weighted routing feature.
 
+<br>
+
 ## [Before you begin](https://istio.io/latest/docs/tasks/traffic-management/tcp-traffic-shifting/#before-you-begin)
+
+<br>
 
 ## [Set up the test environment](https://istio.io/latest/docs/tasks/traffic-management/tcp-traffic-shifting/#set-up-the-test-environment)
 
@@ -25,6 +29,8 @@ Deploy the v1 and v2 versions of the tcp-echo microservice.
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.20/samples/tcp-echo/tcp-echo-services.yaml -n istio-io-tcp-traffic-shifting
 ```
+
+<br>
 
 ## [Apply weight-based TCP routing](https://istio.io/latest/docs/tasks/traffic-management/tcp-traffic-shifting/#apply-weight-based-tcp-routing)
 
@@ -51,6 +57,8 @@ export SLEEP=$(kubectl get pod -l app=sleep -n istio-io-tcp-traffic-shifting -o 
 for i in {1..20}; do \
 kubectl exec "$SLEEP" -c sleep -n istio-io-tcp-traffic-shifting -- sh -c "(date; sleep 1) | nc $INGRESS_HOST $TCP_INGRESS_PORT"; \
 done
+<br>
+
 ## Output
 # one Thu Feb  8 15:29:09 UTC 2024
 # one Thu Feb  8 15:29:15 UTC 2024
@@ -74,6 +82,8 @@ export SLEEP=$(kubectl get pod -l app=sleep -n istio-io-tcp-traffic-shifting -o 
 for i in {1..20}; do \
 kubectl exec "$SLEEP" -c sleep -n istio-io-tcp-traffic-shifting -- sh -c "(date; sleep 1) | nc $INGRESS_HOST $TCP_INGRESS_PORT"; \
 done
+<br>
+
 ##  Output
 # one Thu Feb  8 15:41:20 UTC 2024
 # one Thu Feb  8 15:41:26 UTC 2024
@@ -87,7 +97,11 @@ done
 # one Thu Feb  8 15:42:08 UTC 2024
 ```
 
+<br>
+
 ## [Understanding what happened](https://istio.io/latest/docs/tasks/traffic-management/tcp-traffic-shifting/#understanding-what-happened)
+
+<br>
 
 ## [Cleanup](https://istio.io/latest/docs/tasks/traffic-management/tcp-traffic-shifting/#cleanup)
 

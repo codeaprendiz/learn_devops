@@ -12,6 +12,8 @@ which is more than enough
 
 [kafka-lag-monitoring-and-metrics-at-appsflyer](https://www.confluent.io/blog/kafka-lag-monitoring-and-metrics-at-appsflyer/)
 
+<br>
+
 #### What metrics we need to monitor
 
 [metrics-details.html#default-metric](https://docs.aws.amazon.com/msk/latest/developerguide/metrics-details.html#default-metrics)
@@ -23,6 +25,8 @@ which is more than enough
 - Number of Offline Partitions : Should always be zero
 
 
+
+<br>
 
 #### Why does lag matter?
 Why does lag matter and why does it need to be treated differently than other metrics in the system?

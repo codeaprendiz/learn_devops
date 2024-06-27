@@ -27,6 +27,8 @@
 - cloud dashboards
 
 
+<br>
+
 ### Deploy and test the python app locally on gcp console
 
 
@@ -67,6 +69,8 @@ docker run --rm -p 8080:8080 test-python
 ```
 
 
+<br>
+
 ### Deploy an application to App Engine and examine the Cloud logs
 
 
@@ -81,6 +85,8 @@ gcloud app deploy --version=one --quiet
 - Check the App Engine URL
 - Go to `Tools` and check the `Logs`. Logs should indicate that Profiler has started and profiles are being generated
 
+
+<br>
 
 ### View the Profiler Information
 
@@ -98,6 +104,8 @@ nohup ab -n 1000 -c 10 https://<your-project-id>.appspot.com/ > nohup3.out &
 
 - Now go back to `Profiler` and check again
 
+<br>
+
 ### Explore Cloud Trace
 
 - Go to `Trace`
@@ -109,12 +117,16 @@ nohup ab -n 1000 -c 10 https://<your-project-id>.appspot.com/ > nohup5.out &
 nohup ab -n 1000 -c 10 https://<your-project-id>.appspot.com/ > nohup6.out &
 ```
 
+<br>
+
 ### Monitor resources using Dashboards
 
 - Go to `Monitoring` -> `Dashboards`
 - Check `App Engine` dashboard
 - Check `VM Instances` dashboard
 - Click on `Create Dashboard`
+
+<br>
 
 ### Create uptime checks and alerts
 

@@ -23,6 +23,8 @@
 
 
 
+<br>
+
 ### Run the app locally on gcp console
 
 ```bash
@@ -31,6 +33,8 @@ python3 main.py
 ```
 
 - Web Preview
+
+<br>
 
 ### Deploy to App Engine
 
@@ -48,11 +52,17 @@ gcloud app deploy --version=one --quiet
 - Click on the URL
 
 
+<br>
+
 ### Examine the App Engine Logs
 
 - `Tools` -> `Logs`
 
+<br>
+
 ### Create an App Engine latency alert
+
+<br>
 
 #### Check current application latency in Metrics explorer
 
@@ -64,6 +74,8 @@ gcloud app deploy --version=one --quiet
 
 This show the average time it took our application to return a response to the fastest 99% of requests, cutting off 1% of anomalies.
 
+
+<br>
 
 #### Create an alert based on the same metric
 
@@ -86,6 +98,8 @@ while true; do curl -s https://$DEVSHELL_PROJECT_ID.appspot.com/sleepy200 | grep
 - Check temp email. 
 - `Acknowledge Incident` and see the difference
 
+
+<br>
 
 ### Creating an Alerting Policy with the CLI
 
