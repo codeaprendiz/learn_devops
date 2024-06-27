@@ -15,7 +15,7 @@ $ git clone https://github.com/traefik/traefik-helm-chart.git
 $ ls                      
 ReadMe.md          traefik-helm-chart
 
-## Create the CRDs
+# Create the CRDs
 $ kubectl apply -f traefik-helm-chart/traefik/crds/.                     
 Warning: apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
 customresourcedefinition.apiextensions.k8s.io/ingressroutes.traefik.containo.us created
@@ -67,7 +67,7 @@ $ git clone https://github.com/traefik/traefik-helm-chart.git
 $ ls                      
 ReadMe.md          traefik-helm-chart
 
-## Create the CRDs
+# Create the CRDs
 $ kubectl apply -f traefik-helm-chart/traefik/crds/.                     
 Warning: apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
 customresourcedefinition.apiextensions.k8s.io/ingressroutes.traefik.containo.us created

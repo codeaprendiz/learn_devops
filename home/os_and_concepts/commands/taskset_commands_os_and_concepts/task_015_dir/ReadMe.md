@@ -1,8 +1,12 @@
 # dir
 
+<br>
+
 ## NAME
 
 basename, dirname -- return filename or directory portion of pathname
+
+<br>
 
 ## DESCRIPTION
 
@@ -13,6 +17,8 @@ The suffix is not stripped if it is identical to the remaining characters in str
 The resulting filename is written to the standard output.
 
 The dirname utility deletes the filename portion, beginning with the last slash `/` character to the end of string (after first stripping trailing slashes), and writes the result to the standard output.
+
+<br>
 
 ## EXAMPLES
 

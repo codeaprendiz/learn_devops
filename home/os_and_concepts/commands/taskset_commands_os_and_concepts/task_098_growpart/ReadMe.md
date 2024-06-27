@@ -2,9 +2,13 @@
 
 - [growpart](https://manpages.ubuntu.com/manpages/xenial/en/man1/growpart.1.html)
 
+<br>
+
 ## Name
 
 growpart -- grow a partition
+
+<br>
 
 ## Examples
 

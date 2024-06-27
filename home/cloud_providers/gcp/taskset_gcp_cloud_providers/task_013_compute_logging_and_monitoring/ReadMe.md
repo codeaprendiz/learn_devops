@@ -18,6 +18,8 @@
 - logs and metrics
 
 
+<br>
+
 ### Set up a VM and a GKE cluster
 
 Create VM
@@ -37,53 +39,57 @@ URL=URL_to_your_server
 while true; do curl -s $URL | grep -oP "<title>.*</title>"; \
 sleep .1s;done
 
-## Check to make sure you have the requisite scopes to perform logging and monitoring.
-## We need logging.write and monitoring.write
+# Check to make sure you have the requisite scopes to perform logging and monitoring.
+
+# We need logging.write and monitoring.write
 curl --silent --connect-timeout 1 -f -H "Metadata-Flavor: Google" \
 http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/scopes
 
-## Download the script, add the monitoring agent repo to apt, and install the agent.
+# Download the script, add the monitoring agent repo to apt, and install the agent.
 curl -sSO https://dl.google.com/cloudagents/add-monitoring-agent-repo.sh
 sudo bash add-monitoring-agent-repo.sh --also-install
 
-## Start the monitoring agent:
+# Start the monitoring agent:
 sudo service stackdriver-agent start
 
-## Install the logging agent:
+# Install the logging agent:
 curl -sSO https://dl.google.com/cloudagents/add-logging-agent-repo.sh
 sudo bash add-logging-agent-repo.sh --also-install
 
-## Check status of both
+# Check status of both
 sudo service google-fluentd status
 sudo service stackdriver-agent status
 
-## To fully integrate the server, you enable the status information handler in 
-## Nginx by adding a configuration file to the Nginx configuration directory:
+# To fully integrate the server, you enable the status information handler in 
+
+# Nginx by adding a configuration file to the Nginx configuration directory:
 (cd /etc/nginx/conf.d/ && sudo curl -O https://raw.githubusercontent.com/Stackdriver/stackdriver-agent-service-configs/master/etc/nginx/conf.d/status.conf)
 
-## Reload nginx service
+# Reload nginx service
 sudo service nginx reload
 
-## Enable the Nginx monitoring plugin:
+# Enable the Nginx monitoring plugin:
 (cd /opt/stackdriver/collectd/etc/collectd.d/ && sudo curl -O https://raw.githubusercontent.com/Stackdriver/stackdriver-agent-service-configs/master/etc/collectd.d/nginx.conf)
 
-## Restart the monitoring agent
+# Restart the monitoring agent
 sudo service stackdriver-agent restart
-
 ```
 
 Create GKE Cluster
 
 - Name : `gke-cluster`
 
+<br>
 
 ### Use the logging and monitoring agents for Compute Engine
 
 - Monitoring > Metrics Explorer
 - Resource & Metric : VM Instance > Instance > CPU utilization
-    - Filter instance_name = web-server-vm       : Apply
+  - Filter instance_name = web-server-vm       : Apply
 
 - Resource & Metric : VM Instance > nginx > Requests : Apply
+
+<br>
 
 ### Add a service to the GKE cluster and examine its logs and metrics
 

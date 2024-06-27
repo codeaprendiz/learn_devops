@@ -5,6 +5,8 @@
 
 ---
 
+<br>
+
 ## Start the database locally
 
 ```bash
@@ -15,6 +17,8 @@ docker run --rm -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<your_password>" \
 ```
 
 ---
+
+<br>
 
 ## Backup to OCI object storage
 
@@ -42,6 +46,8 @@ WITH    FORMAT /* overwrite any existing backup sets */
 > Note: You have to add BACKUP_OPTIONS which is not given explicitly in the documentation example.
 
 ---
+
+<br>
 
 ## Validate Backup on s3
 

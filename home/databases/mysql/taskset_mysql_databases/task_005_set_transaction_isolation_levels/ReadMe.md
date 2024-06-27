@@ -5,6 +5,8 @@
   - [Check global transaction isolation levels](#check-global-transaction-isolation-levels)
   - [Set the transaction isolation level for the current session](#set-the-transaction-isolation-level-for-the-current-session)
 
+<br>
+
 ## Check the current transaction isolation level
 
 ```sql
@@ -25,6 +27,8 @@ mysql> select @@transaction_isolation;
 mysql> 
 ```
 
+<br>
+
 ## Check global transaction isolation levels
 
 ```sql
@@ -42,6 +46,8 @@ mysql> select @@global.transaction_isolation;
 
 mysql>
 ```
+
+<br>
 
 ## Set the transaction isolation level for the current session
 

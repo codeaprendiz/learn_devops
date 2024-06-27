@@ -7,12 +7,16 @@
 - Install nginx via `script.sh` execution. Visit the public of instance and check if nginx is installed.
 
 
+<br>
+
 ### Initialization
 
 ```bash
 $ terraform init                                    
 ...
 ```
+
+<br>
 
 ### Plan
 ```bash
@@ -22,6 +26,8 @@ Refreshing Terraform state in-memory prior to plan..
 Plan: 5 to add, 0 to change, 0 to destroy.
 ...
 ```
+
+<br>
 
 ### Apply
 
@@ -59,6 +65,8 @@ aws_instance.web (remote-exec):   nginx-core
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
 ```
 
+<br>
+
 ### Login into console and Verifying
 
 - EC2 instance screen
@@ -82,6 +90,8 @@ www-data  2145  2143  0 21:24 ?        00:00:00 nginx: worker process
 www-data  2146  2143  0 21:24 ?        00:00:00 nginx: worker process
 www-data  2147  2143  0 21:24 ?        00:00:00 nginx: worker process
 ```
+
+<br>
 
 ### Destroying resources
 ```bash

@@ -24,20 +24,24 @@
 - external ip
 
 
+<br>
+
 ## Check if the APIs are enabled
 
 - Kubernetes Engine API
 - Container Registry API
+
+<br>
 
 ## Start a Kubernetes Engine cluster 
 
 - Run the following commands in cloudshell
 
 ```bash
-## Set the zone
+# Set the zone
 export MY_ZONE=us-central1-a
 
-## Create k8s cluster
+# Create k8s cluster
 gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 2
 ```
 
@@ -47,23 +51,24 @@ gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 2
 kubectl get nodes
 ```
 
+<br>
+
 ## Run and deploy a container
 
 ```bash
-## Deploy nginx container
+# Deploy nginx container
 kubectl create deploy nginx --image=nginx:1.17.10
 
-## Check the pods
+# Check the pods
 kubectl get pods
 
-## Expose the deployment to the internet by creating the LoadBalancer type of Service
+# Expose the deployment to the internet by creating the LoadBalancer type of Service
 kubectl expose deployment nginx --port 80 --type LoadBalancer
 
-## Check the services
+# Check the services
 kubectl get services
 
-## Note no external IP is created yet.
+# Note no external IP is created yet.
 ```
 
 - Once the external IP is created, visit the pubic IP. You should see the nginx page.
-

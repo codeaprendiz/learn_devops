@@ -1,8 +1,12 @@
 # top
 
+<br>
+
 ## NAME
 
 top - display and update sorted information about processes
+
+<br>
 
 ## SYNOPSIS
 
@@ -38,9 +42,13 @@ top - display and update sorted information about processes
 
 > top   [-u]
 
+<br>
+
 ## DESCRIPTION
 
 The top program periodically displays a sorted list of system processes.  The default sorting key is pid, but other keys can be used instead. Various output options are available.
+
+<br>
 
 ### OUTPUT INTERPRETATION
 
@@ -126,6 +134,8 @@ PID USER      PR NI VIRT RES  SHR S %CPU %MEM TIME+  COMMAND
 
 * COMMAND – And this is the name of the process (javal)
 
+<br>
+
 ### OPTIONS
 
 Command line option specifications are processed from left to right.  Options can be specified more than once. If conflicting options are specified, later specifications override  earlier ones. This makes it viable to create a shell alias for top with preferred defaults specified, then override those preferred defaults as desired on the command line.
@@ -139,6 +149,8 @@ Command line option specifications are processed from left to right.  Options ca
 * -M : Detect memory units
   * Show memory units (k/M/G) and display floating point values in the memory summary.
   
+<br>
+
 ### EXAMPLES
 
 ```bash

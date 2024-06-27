@@ -27,6 +27,8 @@
 
 
 
+<br>
+
 ### CPU-Usage-Gauge
 
 - system.cpu.user.pct: 
@@ -50,14 +52,22 @@
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Average ##
 user = Avg(system.cpu.user.pct)
+
+<br>
 
 ## Average ##
 system = Avg(system.cpu.system.pct)
 
+<br>
+
 ## Average ##
 n = Avg(system.cpu.cores)
+
+<br>
 
 ## Bucket Script ##
 params.n > 0 ? (params.user+params.system)/params.n : null
@@ -71,6 +81,8 @@ GroupBy-Everything
 | GREEN  | : >= greater than or equal | 0     |
 | ORANGE | : >= greater than or equal | 0.7   |
 | RED    | : >= greater than or equal | 0.85  |
+
+<br>
 
 ### Memory-Usage-Gauge
 
@@ -87,6 +99,8 @@ GroupBy-Everything
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.memory.actual.used.pct)
 
@@ -99,6 +113,8 @@ GroupBy-Everything
 | ORANGE | : >= greater than or equal | 0.7   |
 | RED    | : >= greater than or equal | 0.85  |
 
+
+<br>
 
 ### Load-Guage
 
@@ -113,12 +129,16 @@ GroupBy-Everything
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.load.5)
 
 GroupBy-Everything
 ```
     
+<br>
+
 ### Inbound-Traffic
 
 *network*  network contains network IO metrics for a single network interface.
@@ -138,14 +158,22 @@ GroupBy-Everything
 - Data timerange mode : last value
   
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.network.in.bytes)
+
+<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
+<br>
+
 ## PositiveOnly ##
 c = PositiveOnly(b)
+
+<br>
 
 ## Series Agg ##
 Function : Sum             # c1 + c2 + c3 ....
@@ -159,6 +187,8 @@ Decending
 
 
   
+<br>
+
 #### Total Transferred
 
 **Aggregation**
@@ -168,14 +198,22 @@ Decending
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.network.in.bytes)
+
+<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
+<br>
+
 ## PositiveOnly ##
 c = PositiveOnly(b)
+
+<br>
 
 ## Series Agg ##
 Function : Overall Sum             # c1 + c2 + c3 ....
@@ -187,6 +225,8 @@ Decending
 ```
 
 
+
+<br>
 
 ### Outbound-Traffic
 
@@ -203,14 +243,22 @@ Decending
 - Data timerange mode : last value
   
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.network.out.bytes)
+
+<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
+<br>
+
 ## PositiveOnly ##
 c = PositiveOnly(b)
+
+<br>
 
 ## Series Agg ##
 Function : Sum             # c1 + c2 + c3 ....
@@ -220,6 +268,8 @@ Top : 10
 OrderBy : Doc Count (default)
 Decending
 ```
+
+<br>
 
 #### Total Transferred
 
@@ -235,14 +285,22 @@ Decending
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.network.out.bytes)
+
+<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
+<br>
+
 ## PositiveOnly ##
 c = PositiveOnly(b)
+
+<br>
 
 ## Series Agg ##
 Function : Overall Sum             # c1 + c2 + c3 ....
@@ -254,9 +312,13 @@ Decending
 ```
 
 
+<br>
+
 ### Packetloss
 
 
+
+<br>
 
 #### In Packetloss
 
@@ -271,12 +333,16 @@ Decending
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.network.in.dropped)
 
 GroupBy-Everything
 ```
 
+
+<br>
 
 #### Out Packetloss
 
@@ -291,11 +357,15 @@ GroupBy-Everything
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.network.out.dropped)
 
 GroupBy-Everything
 ```
+
+<br>
 
 ### Swap-usage
 
@@ -311,6 +381,8 @@ GroupBy-Everything
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.memory.swap.used.pct)
 
@@ -324,6 +396,8 @@ GroupBy-Everything
 | ORANGE | : >= greater than or equal | 0.7   |
 | RED    | : >= greater than or equal | 0.85  |
 
+
+<br>
 
 ### Memory-usage-vs-total
 
@@ -345,6 +419,8 @@ GroupBy-Everything
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.memory.actual.used.bytes)
 
@@ -362,6 +438,8 @@ GroupBy-Everything
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.memory.total)
 
@@ -369,6 +447,8 @@ GroupBy-Everything
 ```
 
 
+
+<br>
 
 ### Number-of-processes
 
@@ -382,6 +462,8 @@ Metrics
 a = UniqueCount(process.pid)
 ```
 
+
+<br>
 
 ### Disk-used
 
@@ -401,8 +483,12 @@ a = UniqueCount(process.pid)
 - Data timerange mode : last value
 
 ```bash
+<br>
+
 ## TopHit ##
 a = TopHit(system.fsstat.total_size.used)         # Size=1, Aggregate with Avg, Order By : @timastamp, Desc
+
+<br>
 
 ## TopHit ##
 b = TopHit(system.fsstat.total_size.total)        # Size=1, Aggregate with Avg, Order By : @timastamp, Desc
@@ -420,6 +506,8 @@ GroupBy-Everything
 | ORANGE | : >= greater than or equal | 0.7   |
 | RED    | : >= greater than or equal | 0.85  |
 
+<br>
+
 ### Disk-Usage
 
 - system.filesystem.used.pct
@@ -436,6 +524,8 @@ GroupBy-Everything
 - Timefield : @timestamp
 
 ```bash
+<br>
+
 ## TopHit ##
 a = TopHit(system.filesystem.used.pct)   # Size=1, Aggregate with Avg, Order By : @timastamp
 
@@ -448,6 +538,8 @@ Desc
 
 
 
+
+<br>
 
 ### CPU-Usage
 
@@ -462,6 +554,8 @@ Desc
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.cpu.user.pct)
 
@@ -480,6 +574,8 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.cpu.system.pct)
 
@@ -499,6 +595,8 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.cpu.nice.pct)
 
@@ -516,6 +614,8 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.cpu.irq.pct)
 
@@ -533,6 +633,8 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.cpu.softirq.pct)
 
@@ -549,12 +651,16 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.cpu.iowait.pct)
 
 GroupBy-Everything
 ```
 
+
+<br>
 
 ### System-Load
 
@@ -568,6 +674,8 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.load.1)
 
@@ -584,6 +692,8 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.load.5)
 
@@ -600,12 +710,16 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.load.15)
 
 GroupBy-Everything
 ```
 
+
+<br>
 
 ### Memory-Usage
 
@@ -622,6 +736,8 @@ Used Memory
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.memory.actual.used.bytes)
 
@@ -641,6 +757,8 @@ Free Momory
 - Inverval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.memory.free)
 
@@ -656,6 +774,8 @@ Cache
 
 **Aggregation**
 ```bash
+<br>
+
 ## Bucket Script ##
 actual = Avg(system.memory.actual.used.bytes)
 used   = Avg(system.memory.used.bytes)
@@ -665,6 +785,8 @@ params.actual != null && params.used != null ? params.used - params.actual : nul
 GroupBy(everything)
 ```
 
+
+<br>
 
 ### Disk-IO
 
@@ -681,11 +803,17 @@ Reads
 - Chart type: Line
 
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.diskio.read.bytes)
 
+<br>
+
 ## Derivative ##
 b = Derivative(a)/1s   
+
+<br>
 
 ## PositiveOnly ##
 c = PositiveOnly(b)
@@ -708,11 +836,17 @@ Writes
 - Chart type: Line
 
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.diskio.write.bytes)
 
+<br>
+
 ## Derivative ##
 rate = Derivative(a)/1s   
+
+<br>
 
 ## Bucket Script ##
 params.rate > 0 ? params.rate * -1 : 0
@@ -729,6 +863,8 @@ Aggregation
 > params.rate > 0 ? params.rate * -1 : 0
 
 GroupBy(Everything)
+
+<br>
 
 ### Network-Traffic-Packets
 
@@ -750,14 +886,22 @@ Inbound
 - Chart type: Line
 
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.network.in.packets)
+
+<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
+<br>
+
 ## PositiveOnly ##
 c = PositiveOnly(b)
+
+<br>
 
 ## Series Agg ##
 Function : Sum         # c1 + c2 + ...
@@ -784,14 +928,22 @@ Outbound
 - Chart type: Line
 
 ```bash
+<br>
+
 ## Max ## 
 a = Max(system.network.out.packets)
+
+<br>
 
 ## Derivative ##
 rate = Derivative(system.network.out.packets)/1s
 
+<br>
+
 ## Bucket Script ##
 params.rate != null && params.rate > 0 ? params.rate * -1 : null
+
+<br>
 
 ## Serives Agg ##
 Function : Sum            # params.rate1 + params.rate2 + ...
@@ -801,6 +953,8 @@ Top : 10
 Order By : Doc Count(default) 
 Desc
 ```
+
+<br>
 
 ### Network-Traffic-Bytes
 
@@ -824,14 +978,22 @@ Inbound
 - Template : {{value}}/s
 
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.network.in.bytes)
+
+<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
+<br>
+
 ## PositiveOnly ##
 c = PositiveOnly(b)
+
+<br>
 
 ## Series Agg ##
 Function : Sum                  #  c1 + c2 + c3 + c4
@@ -859,14 +1021,22 @@ Outbound
 
 
 ```bash
+<br>
+
 ## Max ##
 a = Max(system.network.out.bytes)
+
+<br>
 
 ## Derivative ##
 rate = Derivative(a)/1s
 
+<br>
+
 ## Bucket Script ## 
 params.rate != null && params.rate > 0 ? params.rate * -1 : null
+
+<br>
 
 ## Series Agg ##
 Function : Sum                  #  params.rate1 + params.rate2 ...
@@ -876,6 +1046,8 @@ Top : 10
 OrderBy : DocCount(default)
 Desc
 ```
+
+<br>
 
 ### Processes-By-Memory
 
@@ -891,6 +1063,8 @@ Desc
 - Interval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.process.memory.rss.pct)
 
@@ -907,6 +1081,8 @@ Desc
 | RED    | : >= greater than or equal | 0.85  |
 
 
+<br>
+
 ### Top-Processes-By-CPU
 
 
@@ -922,6 +1098,8 @@ Desc
 - Interval : auto
 
 ```bash
+<br>
+
 ## Avegage ##
 a = Avg(system.process.cpu.total.pct)
 
@@ -930,6 +1108,8 @@ Top : 10
 OrderBy : a
 Descending
 ```
+
+<br>
 
 ### Interfaces-By-Incoming-Traffic
 
@@ -951,6 +1131,8 @@ Descending
 - Interval : auto
 
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.network.in.bytes)
 
@@ -959,6 +1141,8 @@ Top : 10
 OrderBy : a
 Descending
 ```
+
+<br>
 
 ### Interfaces-By-Outgoing-Traffic
 
@@ -969,6 +1153,8 @@ Descending
 
 Aggregation
 ```bash
+<br>
+
 ## Average ##
 a = Avg(system.network.out.bytes)
 

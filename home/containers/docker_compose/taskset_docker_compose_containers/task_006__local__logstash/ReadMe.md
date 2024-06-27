@@ -4,6 +4,8 @@
 - filter logs using grok filter (allowed everything)
 - output to stdout
 
+<br>
+
 ### Director structure
 
 ```bash

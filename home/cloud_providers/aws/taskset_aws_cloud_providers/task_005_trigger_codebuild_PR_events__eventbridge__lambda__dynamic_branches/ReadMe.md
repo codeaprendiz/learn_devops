@@ -17,10 +17,14 @@
   - [Create a rule for repo-b in EventBridge to trigger the lambda function](#create-a-rule-for-repo-b-in-eventbridge-to-trigger-the-lambda-function)
   - [Create PR for repo-b](#create-pr-for-repo-b)
 
+<br>
+
 ## Objective
 
 - The PR in codebuild get's raised always with the branch hardcoded in build project.
 - We want to trigger codebuild with PR branches which requires involvement of lambda function.
+
+<br>
 
 ## Reasearch Links and docs with relevant information
 
@@ -40,17 +44,31 @@ Trigger lambda using nodejs
 
 You can use environment variables in the buildspec.yaml file to get the source branch and use it in the buildspec.yaml file
 
+<br>
+
 ## Create repo-a in Codecommit
+
+<br>
 
 ## Create repo-b in Codecommit
 
+<br>
+
 ## Create a codebuild project for repo-a - codebuild-repo-a
+
+<br>
 
 ## Create a codebuild project for repo-b - codebuild-repo-b
 
+<br>
+
 ## Create codepipeline for repo-a - codepipeline-repo-a
 
+<br>
+
 ## Create codepipeline for repo-b - codepipeline-repo-b
+
+<br>
 
 ## Create a lambda function to trigger respetive codebuilds
 
@@ -76,6 +94,8 @@ Add the permissions w.r.t to lambda_service_role (`codebuild-dynamic-communicato
         }
 ```
 
+<br>
+
 ## Create a rule for repo-a in EventBridge to trigger the lambda function
 
 Select default event bus and create rule
@@ -85,6 +105,8 @@ Give the arn of codecommit repo-a as source with events as PR_STATUS_CHANGE
 Select the target as lambda function
 
 Create rule
+
+<br>
 
 ## Create PR for repo-a
 
@@ -101,7 +123,11 @@ Untracked files:
 
 Create the pull request
 
+<br>
+
 ### Check logs for lambda in cloudwatch when PR is created
+
+<br>
 
 ### Logs in codebuild-repo-a
 
@@ -132,7 +158,11 @@ total 4.0K
 
 > Note: The branch name is refs/heads/feat_pr_from_repo_a
 
+<br>
+
 ## Create a rule for repo-b in EventBridge to trigger the lambda function
+
+<br>
 
 ## Create PR for repo-b
 

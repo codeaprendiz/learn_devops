@@ -1,18 +1,26 @@
 # free
 
+<br>
+
 ## NAME
 
 free - Display amount of free and used memory in the system
 
+<br>
+
 ## SYNOPSIS
 
 > free [-b | -k | -m] [-o] [-s delay ] [-t] [-V]
+
+<br>
 
 ## DESCRIPTION
 
 free displays the total amount of free and used physical and swap memory in the system, as well as the buffers used by the  kernel.
 
 The shared memory column should be ignored; it is obsolete.
+
+<br>
 
 ## OPTIONS
 

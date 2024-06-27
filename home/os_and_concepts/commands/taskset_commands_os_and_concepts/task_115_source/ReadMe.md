@@ -1,10 +1,16 @@
 # source
 
+<br>
+
 ## Description
 
 Execute commands from a file in the current shell.
 
+<br>
+
 ## EXAMPLES
+
+<br>
 
 ### Source a file
 

@@ -4,6 +4,8 @@
 - [how-to/pod-security-policy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies)
 
 
+<br>
+
 ### Enabling PodSecurityPolicy controller
 To use the PodSecurityPolicy admission controller, you must create a new cluster or update an existing cluster with the --enable-pod-security-policy flag
 
@@ -16,6 +18,8 @@ gcloud beta container clusters update cluster-2 --enable-pod-security-policy --z
 Updating cluster-2...done.
 ```
 
+
+<br>
 
 ### Set up
 - Set up a namespace and a service account to act as for this example. We’ll use this service account to mock a non-admin user.

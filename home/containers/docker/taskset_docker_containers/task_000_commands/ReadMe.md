@@ -10,7 +10,11 @@ More details at [Offical Guide](https://kubernetes.io/docs/reference/generated/k
     - [interactive](#interactive)
     - [tty](#tty)
 
+<br>
+
 ## image
+
+<br>
 
 ### rm [id-of-the-image]
 
@@ -31,6 +35,8 @@ Deleted: sha256:1e1aa31289fdca521c403edd6b37317bf0a349a941c7f19b6d9d311f59347502
 Deleted: sha256:c8be1b8f4d60d99c281fc2db75e0f56df42a83ad2f0b091621ce19357e19d853
 ```
 
+<br>
+
 ## images
 
 To show all the images present
@@ -43,7 +49,11 @@ ubuntu                               latest                     4e5021d210f6    
 busybox                              latest                     83aa35aa1c79        3 weeks ago         1.22MB
 ```
 
+<br>
+
 ## run
+
+<br>
 
 ### interactive
 >--interactive , -i	
@@ -58,6 +68,8 @@ exit
 
 $
 ```
+
+<br>
 
 ### tty
 

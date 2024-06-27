@@ -2,6 +2,8 @@
 
 [Generating your own mTLS root certificates](https://linkerd.io/2.14/tasks/generate-certificates/)
 
+<br>
+
 ## Pre-Requisite
 
 In Linkerd's architecture:
@@ -10,11 +12,15 @@ In Linkerd's architecture:
 
 - **Issuer Certificate**: Specific to each cluster, this certificate issues and manages the per-proxy TLS certificates. It plays a key role in automating certificate management and ensuring security within the mesh.
 
+<br>
+
 ## Create cluster
 
 ```bash
 kind create cluster
 ```
+
+<br>
 
 ## [Generating your own mTLS root certificates](https://linkerd.io/2.14/tasks/generate-certificates/)
 
@@ -28,6 +34,8 @@ step certificate create root.linkerd.cluster.local ca.crt ca.key \
 --insecure
 ```
 
+<br>
+
 ## [Issuer certificate and key](https://linkerd.io/2.14/tasks/generate-certificates/#issuer-certificate-and-key)
 
 ```bash
@@ -39,6 +47,8 @@ step certificate create identity.linkerd.cluster.local issuer.crt issuer.key \
 --ca ca.crt \
 --ca-key ca.key
 ```
+
+<br>
 
 ## [Passing the certificates to Linkerd](https://linkerd.io/2.14/tasks/generate-certificates/#passing-the-certificates-to-linkerd)
 
@@ -92,6 +102,8 @@ $ linkerd check
 .
 Status check results are √
 ```
+
+<br>
 
 ## Install Demo App
 

@@ -5,6 +5,8 @@
 [getting_started/install](https://kops.sigs.k8s.io/getting_started/install/)
 
 
+<br>
+
 #### Pre-requisite
 
 You should own a domain for example in this case I own `devopsk8.com`
@@ -35,6 +37,8 @@ Version 1.19.1
 
 ```
 
+
+<br>
 
 #### Set IAM User
 

@@ -1,10 +1,14 @@
 # [Circuit Breaking](https://istio.io/latest/docs/tasks/traffic-management/circuit-breaking)
 
+<br>
+
 ## [Before you begin](https://istio.io/latest/docs/tasks/traffic-management/circuit-breaking/#before-you-begin)
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.20/samples/httpbin/httpbin.yaml           
 ```
+
+<br>
 
 ## [Configuring the circuit breaker](https://istio.io/latest/docs/tasks/traffic-management/circuit-breaking/#configuring-the-circuit-breaker)
 
@@ -33,6 +37,8 @@ spec:
 EOF
 ```
 
+<br>
+
 ## [Adding a client](https://istio.io/latest/docs/tasks/traffic-management/circuit-breaking/#adding-a-client)
 
 Create a client to send traffic to the httpbin service. The client is a simple load-testing client called fortio. Fortio lets you control the number of connections, concurrency, and delays for outgoing HTTP calls. You will use this client to “trip” the circuit breaker policies you set in the DestinationRule. 
@@ -51,6 +57,8 @@ kubectl exec "$FORTIO_POD" -c fortio -- /usr/bin/fortio curl -quiet http://httpb
 ```
 
 You can see the request succeeded! Now, it’s time to break something.
+
+<br>
 
 ## [Tripping the circuit breaker](https://istio.io/latest/docs/tasks/traffic-management/circuit-breaking/#tripping-the-circuit-breaker)
 
@@ -88,8 +96,12 @@ kubectl exec "$FORTIO_POD" -c istio-proxy -- pilot-agent request GET stats | gre
 # cluster.outbound|8000||httpbin.default.svc.cluster.local.upstream_rq_pending_failure_eject: 0
 # cluster.outbound|8000||httpbin.default.svc.cluster.local.upstream_rq_pending_overflow: 50
 # cluster.outbound|8000||httpbin.default.svc.cluster.local.upstream_rq_pending_total: 51
+<br>
+
 ## You can see 50 for the upstream_rq_pending_overflow value which means 50 calls so far have been flagged for circuit breaking.
 ```
+
+<br>
 
 ## [Cleanup](https://istio.io/latest/docs/tasks/traffic-management/circuit-breaking/#cleaning-up)
 

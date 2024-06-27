@@ -14,12 +14,16 @@ Documents Referred
 [stackoverflow](https://stackoverflow.com/questions/10115799/set-up-dns-based-url-forwarding-in-amazon-route53/14289082#14289082)
 
 
+<br>
+
 #### S3 configuraton
 
 - Name of the bucket : firstdomain.com
 - Enable the static website hosting and Redirect requests for an object and set the `Hostname` to `sub.seconddomain.com`. Protocol should be `https`
 - Keep a copy of the website endpoint `http://firstdomain.com.s3-website.ap-south-1.amazonaws.com`
 
+
+<br>
 
 ### CloudFront configuration
 
@@ -33,11 +37,15 @@ Documents Referred
 - Make a not of the distribution domain name `https://something.cloudfront.net`
 
 
+<br>
+
 ### Route53 configuration
 
 - Go to the hosted zone `firstdomain.com` 
 - Create an `Alias A IPv4` record for `firstdomain.com` pointing to `something.cloudfront.net`
 
+
+<br>
 
 ### Validation
 
@@ -110,6 +118,8 @@ X-Content-Type-Options: nosniff
 Connection: keep-alive
 ```
 
+
+<br>
 
 ### Issues you might face
 

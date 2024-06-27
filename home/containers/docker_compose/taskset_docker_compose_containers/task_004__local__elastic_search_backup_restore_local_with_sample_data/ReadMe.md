@@ -1,12 +1,16 @@
 ## Objective
 - To be able to backup elastic search indexes on locally mounted folder.
 
+<br>
+
 ### Docs Referred
 
 - [ELK docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-register-repository.html)
     - Check out the next pages as well
 - [Load Data](https://www.elastic.co/guide/en/kibana/7.7/tutorial-build-dashboard.html#load-dataset)
 
+
+<br>
 
 ### Dir structure
 
@@ -86,6 +90,8 @@ path.repo: ["/var/elasticsearch-backup"]
 }
 ```
 
+<br>
+
 ### Thought Process
 
 - Create `data` and `elasticsearch-backup` dirs. 
@@ -96,6 +102,8 @@ path.repo: ["/var/elasticsearch-backup"]
 - Start the container again
 - Restore the data from the snapshot on locally available `elasticsearch-backup`
 - Check the consistency of this data restored.
+
+<br>
 
 ### Directory creation 
 
@@ -109,6 +117,8 @@ $ mkdir elasticsearch-backup
 ```
 
 
+<br>
+
 ### Start the Elastic Search
 
 - start elastic search container
@@ -116,6 +126,8 @@ $ mkdir elasticsearch-backup
 ```bash
 $ docker-compose up -d
 ```
+
+<br>
 
 ### Register 
 
@@ -133,6 +145,8 @@ $ curl -X PUT "http://localhost:9200/_snapshot/my_backup?pretty" -H 'Content-Typ
 
 ```
 
+<br>
+
 ### Get Info
 
 - Get info about indices
@@ -149,6 +163,8 @@ $ curl -X GET "http://localhost:9200/_snapshot/my_backup"
 ```
 
 
+<br>
+
 ### Download data and unzip accordingly
 
 ```bash
@@ -157,6 +173,8 @@ curl -O https://download.elastic.co/demos/kibana/gettingstarted/8.x/accounts.zip
 curl -O https://download.elastic.co/demos/kibana/gettingstarted/8.x/logs.jsonl.gz
 ```
 
+
+<br>
 
 ### Set Up Mapping
 
@@ -242,6 +260,8 @@ curl -X PUT "localhost:9200/logstash-2015.05.20?pretty" -H 'Content-Type: applic
 ```
 
 
+<br>
+
 ### Load the dataset
 
 - accounts.json
@@ -296,6 +316,8 @@ yellow open   logstash-2015.05.19 JvLJJPm0R0GKbwkKeiLxPw   1   1       4624     
 
 ```
 
+<br>
+
 ### Index Mapping before restore
 
 ```bash
@@ -308,6 +330,8 @@ $ curl -X GET "http://localhost:9200/shakespeare/_mapping"
 {"shakespeare":{"mappings":{"properties":{"line_id":{"type":"integer"},"line_number":{"type":"text","fields":{"keyword":{"type":"keyword","ignore_above":256}}},"play_name":{"type":"keyword"},"speaker":{"type":"keyword"},"speech_number":{"type":"integer"},"text_entry":{"type":"text","fields":{"keyword":{"type":"keyword","ignore_above":256}}},"type":{"type":"text","fields":{"keyword":{"type":"keyword","ignore_above":256}}}}}}}
 ```
 
+
+<br>
 
 ### Taking Snapshots
 
@@ -351,6 +375,8 @@ $ curl -X GET "http://localhost:9200/_snapshot/my_backup/_all"
 
 
 
+<br>
+
 ### Restore your snapshot after creating a new docker container
 
 - Stop the previous container using `docker-compose down`
@@ -385,6 +411,8 @@ yellow open   logstash-2015.05.18 UENDZ4XYRXGK9uOA9jQkdg   1   1       4631     
 yellow open   logstash-2015.05.19 ytH8HF_GRnuu6vV3B4apnw   1   1       4624            0     13.8mb         13.8mb
 
 ```
+
+<br>
 
 ### Index Mapping after restore
 

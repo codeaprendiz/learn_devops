@@ -2,7 +2,11 @@
 
 - [chgrp](https://man7.org/linux/man-pages/man1/chgrp.1.html)
 
+<br>
+
 ## Examples
+
+<br>
 
 ### To change the group ownership of `/some/directory` and everything inside it to the root group
 

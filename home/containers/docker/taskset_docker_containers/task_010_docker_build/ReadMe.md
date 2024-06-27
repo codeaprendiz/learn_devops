@@ -21,6 +21,8 @@
 |--------|----------|
 | docker | 20.10.14 |
 
+<br>
+
 ## run nginx container
 
 ```bash
@@ -86,7 +88,11 @@ Commercial support is available at
 </html>
 ```
 
+<br>
+
 ## Create Dockerfile and index.html
+
+<br>
 
 ## Build
 
@@ -95,6 +101,8 @@ Commercial support is available at
 
 
 ```
+
+<br>
 
 ## Check images
 
@@ -107,6 +115,8 @@ REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
 
 ```
 
+<br>
+
 ## Tag 
 
 ```bash
@@ -116,6 +126,8 @@ REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
 REPOSITORY        TAG       IMAGE ID       CREATED              SIZE
 my-docker-image   latest    9a69d38ae721   About a minute ago   135MB
 ```
+
+<br>
 
 ## Run image with new container
 

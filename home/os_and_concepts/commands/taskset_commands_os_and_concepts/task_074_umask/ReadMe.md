@@ -1,5 +1,7 @@
 # umask
 
+<br>
+
 ## DESCRIPTION
 
 Its a shell built-in
@@ -17,6 +19,8 @@ The umask masks permissions by restricting them by a certain value.Essentially, 
 In Linux, the default permissions value is 666 for a regular file, and 777 for a directory. When creating a new file or directory, the kernel takes this default value, "subtracts" the umask value, and gives the new files the resulting permissions.
 
 So if our umask value is 022, then any new files will, by default, have the permissions 644 (666 - 022). Likewise, any new directories will, by default, be created with the permissions 755 (777 - 022).
+
+<br>
 
 ## EXAMPLES
 

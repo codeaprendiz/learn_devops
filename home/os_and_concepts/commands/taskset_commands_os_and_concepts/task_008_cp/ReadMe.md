@@ -1,13 +1,19 @@
 # cp
 
+<br>
+
 ## NAME
 
 cp -- copy files
+
+<br>
 
 ## DESCRIPTION
 
 - In the first synopsis form, the cp utility copies the contents of the source_file to the target_file.  
 - In the second synopsis form, the contents of each named source_file is copied to the destination target_directory.  The names of the files themselves are not changed. 
+
+<br>
 
 ## OPTIONS
 
@@ -26,6 +32,8 @@ The following options are available:
   - preserve the specified attributes (default: mode,ownership,timestamps), if possible additional attributes: context, links, xattr, all
 - -f, --force
   - if an existing destination file cannot be opened, remove it and try again
+
+<br>
 
 ## EXAMPLES
 

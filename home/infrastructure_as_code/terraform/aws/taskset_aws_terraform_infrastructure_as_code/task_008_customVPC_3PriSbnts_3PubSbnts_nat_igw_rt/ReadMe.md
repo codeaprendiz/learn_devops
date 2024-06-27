@@ -9,6 +9,8 @@
 7) To create a private route table to have a route to internet (0.0.0.0/0) via the NAT gateway. Associate this private route table to all the 3 private subnets.
 
 
+<br>
+
 ## Lets Begin
 
 

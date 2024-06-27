@@ -1,21 +1,31 @@
 # unzip
 
+<br>
+
 ## NAME
 
 unzip - list, test and extract compressed files in a ZIP archive
+
+<br>
 
 ## SYNOPSIS
 
 > unzip [-Z] [-cflptTuvz[abjnoqsCDKLMUVWX$/:^]] file[.zip] [file(s) ...]  [-x xfile(s) ...] [-d exdir]
 
+<br>
+
 ## DESCRIPTION
 
 unzip  will list, test, or extract files from a ZIP archive, commonly found on MS-DOS systems.  The default behavior (with no options) is to extract into the current directory (and subdirectories below it) all files from the specified ZIP archive.
+
+<br>
 
 ## OPTIONS
 
 * [-d exdir]
   * An  optional directory to which to extract files.  By default, all files and subdirectories are recreated in the current directory; the -d option allows extraction in an arbitrary directory (always assuming one has permission to write to the directory).
+
+<br>
 
 ## EXAMPLES
 

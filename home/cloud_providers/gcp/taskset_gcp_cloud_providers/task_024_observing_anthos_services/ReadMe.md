@@ -29,6 +29,8 @@
 
 Anthos Service Mesh (ASM) on Google Kubernetes Engine. Anthos Service Mesh is a managed service based on Istio, the leading open source service mesh
 
+<br>
+
 ### Install Anthos Service Mesh with tracing enabled
 
 - Set ENV
@@ -93,6 +95,8 @@ metadata:
 EOF
 ```
 
+<br>
+
 ### Install the microservices-demo application on the cluster
 
 - Online Boutique is a cloud-native microservices demo application. Online Boutique consists of a 10-tier microservices application. The application is a web-based ecommerce app where users can browse items, add them to the cart, and purchase them.
@@ -136,9 +140,13 @@ kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/microserv
 
 - Look on the Services & Ingress page within the console.
 
+<br>
+
 ### Review Google Cloud's operations suite functionality
 
 - On the Navigation menu, click Trace > Trace List.
+
+<br>
 
 ### Deploy a canary release that has high latency
 
@@ -153,6 +161,8 @@ kubectl apply -f ~/istio-samples/istio-canary-gke/canary/productcatalog-v2.yaml
 kubectl apply -f ~/istio-samples/istio-canary-gke/canary/vs-split-traffic.yaml  
 ```
 
+<br>
+
 ### Define your service level objective
 
 - Navigation menu, click Anthos
@@ -166,6 +176,8 @@ kubectl apply -f ~/istio-samples/istio-canary-gke/canary/vs-split-traffic.yaml
 - Set Period length to Calendar day.
 - Performance goal to 99.5%.
 
+<br>
+
 ### Diagnose the problem
 
 - Click on your SLO entry in the SLO list.
@@ -175,6 +187,8 @@ kubectl apply -f ~/istio-samples/istio-canary-gke/canary/vs-split-traffic.yaml
 - In the Google Cloud Console, on the Navigation menu, click Trace > Trace List.
 - Click on a dot that charts at around 3000ms; it should represent one of the requests to the product catalog service.
 
+
+<br>
 
 ### Roll back the release and verify an improvement
 
@@ -188,6 +202,8 @@ kubectl delete -f ~/istio-samples/istio-canary-gke/canary/vs-split-traffic.yaml
 
 - Click on productcatalogservice, and then in the menu pane, click Health.
 - Compare the current compliance metric with the one you saw earlier. It should be higher now, reflecting the fact that you are no longer seeing high-latency requests.
+
+<br>
 
 ### Visualize your mesh with the Anthos Service Mesh dashboard
 

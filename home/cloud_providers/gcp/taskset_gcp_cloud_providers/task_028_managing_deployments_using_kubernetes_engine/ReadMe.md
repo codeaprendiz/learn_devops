@@ -23,11 +23,15 @@
 
 
 
+<br>
+
 ## Set the zone
 
 ```bash
 gcloud config set compute/zone us-east5-b
 ```
+
+<br>
 
 ## Get sample code for this lab
 
@@ -43,6 +47,8 @@ gcloud container clusters create bootcamp \
 ```
 
 
+<br>
+
 ## Learn about the deployment object
 
 ```bash
@@ -54,6 +60,8 @@ kubectl explain deployment --recursive
 # We can also see the documentation for a specific field:
 kubectl explain deployment.spec.replicas
 ```
+
+<br>
 
 ## Create a deployment
 
@@ -122,6 +130,8 @@ kubectl scale deployment hello --replicas=3
 kubectl get pods | grep hello- | wc -l
 ```
 
+<br>
+
 ## Rolling update
 
 ![img.png](.images/rolling-update.png)
@@ -172,6 +182,8 @@ kubectl rollout history deployment hello
 kubectl get pods -o jsonpath --template='{range .items[*]}{.metadata.name}{"\t"}{"\t"}{.spec.containers[0].image}{"\n"}{end}'
 ```
 
+<br>
+
 ## Canary deployments
 
 ![img.png](.images/canary-deployments.png)
@@ -213,6 +225,8 @@ spec:
       port: 80
       targetPort: 80
 ```
+
+<br>
 
 ## Blue-green deployments
 

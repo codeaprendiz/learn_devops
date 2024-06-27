@@ -1,5 +1,7 @@
 # find
 
+<br>
+
 ## NAME
 
 find -- walk a file hierarchy
@@ -20,7 +22,11 @@ find -- walk a file hierarchy
     - [-mtime | -type f | -name | -o || for | do](#-mtime---type-f---name---o--for--do)
     - [Replace currentstring with newstring in all regular files in the current directory](#replace-currentstring-with-newstring-in-all-regular-files-in-the-current-directory)
 
+<br>
+
 ## EXAMPLES
+
+<br>
 
 ### All files in a directory that have not been updated since last 300 days | -mtime || tail
 
@@ -37,6 +43,8 @@ ReadMe.md
 home/os_and_concepts/commands/taskset_commands_os_and_concepts/task_016_dos2unix/ReadMe.md
 ```
 
+<br>
+
 ### files that were last modified in last 180 mins | -mmin | names match the pattern | -name || grep | wc
 
 For mmin
@@ -44,6 +52,8 @@ For mmin
 ```bash
 find $HOME/.BUILD_SCRIPTS_AREA/  -mmin -180 -name "*-bld.lock" | grep "$BLD_LOCK" | wc -l
 ```
+
+<br>
 
 ### files greater than 100M size | -size
 
@@ -58,6 +68,8 @@ Output
 ```bash
 /username/domains/test.prd.webDomain/servers/test/logs/test.out00006 
 ```
+
+<br>
 
 ### find all files greater than 100MB and print their sizes | -size | -exec | -type f | -xdev || du
 
@@ -79,6 +91,8 @@ Output
 107M    ./tmp-02082016/.jenkins/plugins.zip 
 ```
 
+<br>
+
 ### find files older than 1 month | -mtime | -print | -maxdepth
 
 Find all the files in current directory which are older than 1 month
@@ -91,6 +105,8 @@ Find all the files in current directory which are older than 1 month
 ```bash
 find ./ -maxdepth 1 -type f -mtime +30 -print 
 ```
+
+<br>
 
 ### Move the files older than 30 days to a particular directory | -t | -exec | -maxdepth | -type f || mv
 
@@ -107,6 +123,8 @@ $ rm -rf tmp
 .
 ```
 
+<br>
+
 ### To find specific pom files and zip them into a file | -o -name | logicl OR || xargs | zip
 
 - `-name Build-2019-03-09-23-38-pom-090319.xls -o -name Build-2019-03-12-23-05-pom-120319.xls -o -name Build-2019-03-13-07-46-pom-130319.xls`: Searches for files matching any of these specified names, with `-o` (logical OR) separating each name.
@@ -115,6 +133,8 @@ $ rm -rf tmp
 ```bash
 find . -name Build-2019-03-09-23-38-pom-090319.xls -o -name Build-2019-03-12-23-05-pom-120319.xls -o -name Build-2019-03-13-07-46-pom-130319.xls | xargs zip -r 123.zip
 ```
+
+<br>
 
 ### To find all files with specific extension greater than 100MB, not been modified since last 3 days from current path | -size | -mtime | -type f | -name | -o
 
@@ -127,11 +147,15 @@ find . -name Build-2019-03-09-23-38-pom-090319.xls -o -name Build-2019-03-12-23-
 find . -size +100M -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \)
 ```
 
+<br>
+
 ### To print all *.pom.xml files containing the keyword | -exec | -print | -name | -exec || egrep
 
 ```bash
 find . -name "*pom.xml" -exec egrep -n -A 2 "<artifactId>ns-exports-interfaces</artifactId>" '{}' \; -print
 ```
+
+<br>
 
 ### To print all *.xml files containing keyword "insert into gen_mst_rpt" except the ones with "insert into gen_mst_rpt_param" || egrep
 
@@ -142,6 +166,8 @@ find . -name "*pom.xml" -exec egrep -n -A 2 "<artifactId>ns-exports-interfaces</
 ```bash
 find . -name "*xml" -exec egrep -n -A 2 "*insert into gen_mst_rpt *" -v "*insert into gen_mst_rpt_param*" '{}' \; -print 
 ```
+
+<br>
 
 ### -mtime | -type f | -name | -o || for | do
 
@@ -156,6 +182,8 @@ This command prints the filenames and their details for each file found that mat
 ```bash
 for j in $( find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \) );do echo $j; ls -ltrh $j; done;
 ```
+
+<br>
 
 ### Replace currentstring with newstring in all regular files in the current directory
 

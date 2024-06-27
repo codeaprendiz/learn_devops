@@ -1,5 +1,9 @@
 
+<br>
+
 ### Blue Green Deployment
+
+<br>
 
 #### Step1
 
@@ -8,6 +12,8 @@ Note that there is also a public service endpoint which the users are currently 
 
 ![](.images/step1.png)
 
+<br>
+
 #### Step2
 
 Create Green Deployment and Services
@@ -15,12 +21,16 @@ Create Green Deployment and Services
 ![](.images/step2.png)
 
 
+<br>
+
 #### Step3
 
 Test Green Pods
 
 ![](.images/step3.png)
 
+
+<br>
 
 #### Step4
 

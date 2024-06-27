@@ -12,6 +12,8 @@
   - [Show all Users](#show-all-users)
   - [Reset Password for a User](#reset-password-for-a-user)
 
+<br>
+
 ## Create a User
 
 To create a user you can run
@@ -26,6 +28,8 @@ postgres=> CREATE USER app_user_microservice WITH PASSWORD 'somepassword';
 CREATE ROLE
 
 ```
+
+<br>
 
 ## Grant Priviledges to user `app_user_microservice` on Database `student`
 
@@ -42,7 +46,11 @@ postgres=> GRANT ALL PRIVILEGES ON DATABASE <dbname> to <username>;
 GRANT
 ```
 
+<br>
+
 ## Validate Priviledges for user `app_user_microservice` on Database
+
+<br>
 
 ### Database level priviledges
 
@@ -64,6 +72,8 @@ postgres-# FROM pg_database;
 (5 rows)
 ```
 
+<br>
+
 ### Schema level priviledges
 
 ```sql
@@ -82,6 +92,8 @@ postgres-# FROM pg_catalog.pg_namespace;
  information_schema | t
 (4 rows)
 ```
+
+<br>
 
 ## Grant Priviledges to user `app_user_microservice` on ALL Tables in `public` schema for `bank` database
 
@@ -102,7 +114,11 @@ postgres=# GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO app_user_micro
 GRANT
 ```
 
+<br>
+
 ### Validate Priviledges for user `app_user_microservice` on Tables
+
+<br>
 
 ### Table level priviledges
 
@@ -125,6 +141,8 @@ bank-# WHERE schemaname = 'public';
 (4 rows)
 ```
 
+<br>
+
 ## Show all Users
 
 Run the following
@@ -143,6 +161,8 @@ postgres=# \du
  root      | Superuser, Create role, Create DB, Replication, Bypass RLS
 ```
 
+<br>
+
 ## Reset Password for a User
 
 [postgresql.org/docs » ALTER USER](https://www.postgresql.org/docs/8.0/sql-alteruser.html)
@@ -154,6 +174,8 @@ ALTER USER app_user_microservice WITH PASSWORD 'secret';
 Output
 
 ```bash
+<br>
+
 ## Username : app_user_microservice, new password : secret
 postgres=# ALTER USER app_user_microservice WITH PASSWORD 'secret';
 ```

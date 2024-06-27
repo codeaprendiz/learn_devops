@@ -22,7 +22,11 @@
 - Istio
 - Service Mesh
 
+<br>
+
 ## Confirm Anthos Service Mesh setup
+
+<br>
 
 ### Configure cluster access for kubectl
 
@@ -54,6 +58,8 @@ kubectl get pods -n istio-system
  
 ```
 
+
+<br>
 
 ### Deploy sleep and httpbin services
 
@@ -149,12 +155,14 @@ for from in "mtls-client" "legacy-client"; do
   done
 done
 
-## Output
+# Output
 sleep.mtls-client to httpbin.mtls-service: 200
 sleep.mtls-client to httpbin.legacy-service: 200
 sleep.legacy-client to httpbin.mtls-service: 200
 sleep.legacy-client to httpbin.legacy-service: 200
 ```
+
+<br>
 
 ### Understand authentication and enable service to service authentication with mTLS
 
@@ -223,7 +231,7 @@ for from in "mtls-client" "legacy-client"; do
   done
 done
 
-## Output
+# Output
 sleep.mtls-client to httpbin.mtls-service: 200
 sleep.mtls-client to httpbin.legacy-service: 200
 sleep.legacy-client to httpbin.mtls-service: 000
@@ -276,21 +284,23 @@ EOF
 # Verify that the httpbin service in the mtls-service namespace still accepts plaintext traffic:
 kubectl exec $(kubectl get pod -l app=sleep -n legacy-client -o jsonpath={.items..metadata.name}) -c sleep -n legacy-client -- curl "http://httpbin.mtls-service:8000/ip" -s -o /dev/null -w "sleep.legacy-client to httpbin.mtls-service: %{http_code}\n"
 
-## Output
+# Output
 sleep.legacy-client to httpbin.mtls-service: 200
 
 # Now check to see that the strict-mtls-service namespace httpbin service does not accept plaintext traffic:
 kubectl exec $(kubectl get pod -l app=sleep -n legacy-client -o jsonpath={.items..metadata.name}) -c sleep -n legacy-client -- curl "http://httpbin.strict-mtls-service:8000/ip" -s -o /dev/null -w "sleep.legacy-client to httpbin.strict-mtls-service: %{http_code}\n"
 
-## Output
+# Output
 sleep.legacy-client to httpbin.strict-mtls-service: 000
 command terminated with exit code 56
+
+<br>
 
 ## Verify that the httpbin service in the strict-mtls-service namespace does accept mTLS traffic:
 kubectl exec $(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items..metadata.name}) -c sleep -n mtls-client -- curl "http://httpbin.strict-mtls-service:8000/ip" -s -o /dev/null -w "sleep.mtls-client to httpbin.strict-mtls-service: %{http_code}\n"
 
 
-## Output
+# Output
 sleep.mtls-client to httpbin.strict-mtls-service: 200
 
 ```
@@ -308,6 +318,8 @@ sleep.mtls-client to httpbin.strict-mtls-service: 200
 ```bash
 kubectl delete pa restricted-mtls -n strict-mtls-service
 ```
+
+<br>
 
 ### Leverage RequestAuthentication and AuthorizationPolicy resources
 
@@ -333,10 +345,12 @@ spec:
     jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.8/security/tools/jwt/samples/jwks.json"
 EOF
 
+<br>
+
 ## Verify that a request with an invalid JWT is denied:
 kubectl exec "$(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items..metadata.name})" -c sleep -n mtls-client -- curl "http://httpbin.mtls-service:8000/headers" -s -o /dev/null -H "Authorization: Bearer invalidToken" -w "%{http_code}\n"
 
-## Output
+# Output
 401
 
 # Verify that a request without any JWT is allowed:
@@ -375,7 +389,7 @@ EOF
 ```bash
 TOKEN=$(curl https://raw.githubusercontent.com/istio/istio/release-1.8/security/tools/jwt/samples/demo.jwt -s) && echo "$TOKEN" | cut -d '.' -f2 - | base64 --decode -
 
-## Output
+# Output
 {"exp":4685989700,"foo":"bar","iat":1532389700,"iss":"testing@secure.istio.io","sub":"testing@secure.istio.io"}
 
 # Note that the iss and sub keys are set to testing@secure.istio.io. This causes Istio to generate the attribute requestPrincipal with the value testing@secure.istio.io/testing@secure.istio.io:
@@ -389,17 +403,21 @@ TOKEN=$(curl https://raw.githubusercontent.com/istio/istio/release-1.8/security/
 ```bash
 kubectl exec "$(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items..metadata.name})" -c sleep -n mtls-client -- curl "http://httpbin.mtls-service:8000/headers" -s -o /dev/null -H "Authorization: Bearer $TOKEN" -w "%{http_code}\n"
 
-## Output
+# Output
 200
+
+<br>
 
 ## Verify that a request without a JWT is denied:
 kubectl exec "$(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items..metadata.name})" -c sleep -n mtls-client -- curl "http://httpbin.mtls-service:8000/headers" -s -o /dev/null -w "%{http_code}\n"
 
-## Output
+# Output
 403
 ```
 
 
+
+<br>
 
 ### Authorizing requests based on method and path
 
@@ -435,13 +453,13 @@ EOF
 ```bash
 kubectl exec "$(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items..metadata.name})" -c sleep -n mtls-client -- curl "http://httpbin.mtls-service:8000/ip" -s -o /dev/null -H "Authorization: Bearer $TOKEN" -w "%{http_code}\n"
 
-## Output
+# Output
 200
 
 # Verify that a request to the httpbin's /headers endpoint is denied:
 kubectl exec "$(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items..metadata.name})" -c sleep -n mtls-client -- curl "http://httpbin.mtls-service:8000/headers" -s -o /dev/null -H "Authorization: Bearer $TOKEN" -w "%{http_code}\n"
 
-## Output
+# Output
 403
 
 # Remove the require-jwt authorization policy by running this command:

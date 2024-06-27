@@ -1,5 +1,7 @@
 # Let's Encrypt And Cert-Manager
 
+<br>
+
 ## Create Cluster
 
 ```bash
@@ -9,12 +11,15 @@ NAME                 STATUS   ROLES           AGE    VERSION
 kind-control-plane   Ready    control-plane   117s   v1.25.3
 ```
 
+<br>
+
 ## Cert-Manager Releases
 
 [cert-manager/releases/tag/v1.10.0](https://github.com/cert-manager/cert-manager/releases/tag/v1.10.0)
 
 ```bash
-## Download the yaml
+
+# Download the yaml
 ╰─ wget https://github.com/cert-manager/cert-manager/releases/download/v1.10.0/cert-manager.yaml
 ╰─ ls
 ReadMe.md         cert-manager.yaml
@@ -27,7 +32,8 @@ ReadMe.md         cert-manager.yaml
 ```bash
 ╰─ kubectl apply -f cert-manager.yaml
 
-## Did it work or what ?
+
+# Did it work or what ?
 ╰─ kubectl get all -n cert-manager
 NAME                                          READY   STATUS    RESTARTS   AGE
 pod/cert-manager-6dc4964c9-jd6mq              1/1     Running   0          7m57s
@@ -49,9 +55,10 @@ replicaset.apps/cert-manager-cainjector-69d4647c6   1         1         1       
 replicaset.apps/cert-manager-webhook-75f77865c8     1         1         1       7m57s
 
 
-## Okay it did
+# Okay it did
 ```
 
+<br>
 
 ## Let's deploy ingress-controller
 
@@ -68,6 +75,8 @@ ReadMe.md                           cert-manager.yaml                   ingress-
 # The same file is also available as raw content https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.4.0/deploy/static/provider/cloud/deploy.yaml
 ╰─ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.4.0/deploy/static/provider/cloud/deploy.yaml                 
 
+
+<br>
 
 ## See if its working
 ╰─ kubectl get all -n ingress-nginx
@@ -94,15 +103,15 @@ job.batch/ingress-nginx-admission-patch    1/1           19s        2m18s
 - The EXTERNAL IP is not binded as we are working locally, so let's bind using port-forward in different terminals
 
 ```bash
-## Terminal 2
+# Terminal 2
 ╰─ nohup kubectl -n ingress-nginx --address 0.0.0.0 port-forward svc/ingress-nginx-controller 443 > 443.log &
 Forwarding from 0.0.0.0:443 -> 443
 
-## Terminal 3
+# Terminal 3
 ╰─ nohup kubectl -n ingress-nginx --address 0.0.0.0 port-forward svc/ingress-nginx-controller 80 > 80.log &
 Forwarding from 0.0.0.0:80 -> 80
 
-## Terminal 1
+# Terminal 1
 ╰─ curl http://localhost -I
 HTTP/1.1 404 Not Found
 
@@ -114,11 +123,13 @@ HTTP/1.1 404 Not Found
 ╰─ curl http://5.194.32.235/ -I
 HTTP/1.1 404 Not Found
 
-## Now using AWS Route53, you can map the public IP with a domain name that you own
+# Now using AWS Route53, you can map the public IP with a domain name that you own
 ╰─ curl http://testcertmanager.mydomain.com -I                     
 HTTP/1.1 404 Not Found
 
 ```
+
+<br>
 
 ## Let's add a cluster-isser.yaml
 
@@ -136,7 +147,7 @@ clusterissuer.cert-manager.io/letsencrypt-staging created
 NAME                  READY   AGE
 letsencrypt-staging   False   53s
 
-## Make sure you change with a valid email address
+# Make sure you change with a valid email address
 ╰─ cat cluster-issuer.yaml| grep email
     # You must replace this email address with your own.
     email: kedesom362@corylan.com
@@ -170,11 +181,11 @@ NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
 kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   3h17m
 whoami       ClusterIP   10.96.80.3   <none>        80/TCP    11s
 
-## Terminal n
+# Terminal n
 ╰─ kubectl port-forward --namespace default pod/whoami-5dfdf459f4-4nzcd 8081:80
 Forwarding from 127.0.0.1:8081 -> 80
 
-## Terminal 1
+# Terminal 1
 ╰─ curl http://localhost:8081 -I                                       
 HTTP/1.1 200 OK
 ```
@@ -205,6 +216,8 @@ curl: (60) SSL certificate problem: unable to get local issuer certificate
 
 ```
 
+<br>
+
 ## Let's create a certificate.yaml
 
 [cert-manager.io/docs/concepts/certificate](https://cert-manager.io/docs/concepts/certificate/)
@@ -214,6 +227,8 @@ curl: (60) SSL certificate problem: unable to get local issuer certificate
 ```bash
 $ kubectl apply -f certificate.yaml 
 ```
+
+<br>
 
 ## Seeing what actually happens
 
@@ -306,6 +321,8 @@ root@cert-manager-k8s:/home/testgcply01# kubectl logs -f ingress-nginx-controlle
 127.0.0.1 - - [06/Nov/2022:09:30:05 +0000] "GET /test HTTP/2.0" 200 1045 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" 460 0.002 [default-whoami-80] [] 10.244.0.11:80 1045 0.000 200 79d26974d442bb5c89db7ef4c19aab4b
 ```
 
+
+<br>
 
 ## Let's test the certificate
 

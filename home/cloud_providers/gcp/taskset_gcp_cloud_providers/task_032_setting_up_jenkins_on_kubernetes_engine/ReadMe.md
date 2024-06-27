@@ -20,6 +20,8 @@
 - services
 
 
+<br>
+
 ## Prepare the environment
 
 
@@ -59,6 +61,8 @@ kubectl cluster-info
 ```
 
 
+<br>
+
 ## Configure Helm
 
 - Add Helm's jenkins chart repository:
@@ -69,6 +73,8 @@ helm repo add jenkins https://charts.jenkins.io
 # Update the repo to ensure you get the latest list of charts:
 helm repo update
 ```
+
+<br>
 
 ## Configure and install Jenkins
 
@@ -95,6 +101,8 @@ kubectl --namespace default port-forward svc/myjenkins 8080:8080 >> /dev/null &
 ```bash
 kubectl get svc
 ```
+
+<br>
 
 ## Connect to Jenkins
 

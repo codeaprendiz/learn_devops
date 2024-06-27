@@ -21,6 +21,8 @@
 |-----------|---------|
 | Terraform | 1.3.9   |
 
+<br>
+
 ## Clone the sample code
 
 ```bash
@@ -30,8 +32,12 @@ cd tf-gke-k8s-service-lb
 ```
 
 
+<br>
+
 ## Understand the code
 
+
+<br>
 
 ## Initialize and install dependencies
 

@@ -25,12 +25,16 @@
 
 Anthos Service Mesh (ASM) on Google Kubernetes Engine. Anthos Service Mesh is a managed service based on Istio, the leading open source service mesh
 
+<br>
+
 ### Intro
 
 Two GKE clusters called gke-central and gke-west have been provisioned in us-centra1 and us-west2. Anthos Service Mesh has been configured across these clusters to provide cross-cluster service discoverability and secure routing so that a microservice pod running on gke-central can seemlessly communicate with a pod on gke-west. Additionally, the Bank of Anthos application has been deployed across these two clusters as shown in the following diagram.
 
 ![img.png](.images/arch-img.png)
 
+
+<br>
 
 ### Explore the app deployed in Anthos clusters
 
@@ -43,6 +47,8 @@ Two GKE clusters called gke-central and gke-west have been provisioned in us-cen
 > Notice that even though all services are replicated across clusters, they are both using the same database because the ledger-db is only deployed on one cluster. Anthos Service Mesh routes requests to the available pods regardless of the cluster you are ingressing from. This is called east-west routing.
 
 
+<br>
+
 ###  Force cross-cluster traffic routing
 
 - To open the dashboard, click on the frontend deployment in the gke-central cluster.
@@ -50,6 +56,8 @@ Two GKE clusters called gke-central and gke-west have been provisioned in us-cen
 - Enter 0 replicas, and click Scale.
 - Return to the istio-ingressgateways IP addresses that you opened before. The application should continue to work.
 - Return to your frontend deployment and scale it back to 1 replica.
+
+<br>
 
 ### Observe distributed services
 
@@ -64,6 +72,8 @@ Two GKE clusters called gke-central and gke-west have been provisioned in us-cen
 - Select Latency as the metric, and click Continue.
 - Set the latency threshhold to 350 ms, and click Continue.
 - Set the Period length to Calendar day, and set the Goal to 99.5%.
+
+<br>
 
 ### Verify service mesh security
 

@@ -44,7 +44,8 @@ key_file=~/.oci/oci-private.pem
 
 ```bash
 ╰─ oci os bucket list --compartment-id <compartment-id> | jq '.data[] | {name} '
-## Alternatively you can pass the config file as argument as well
+
+# Alternatively you can pass the config file as argument as well
 ╰─ oci os bucket list --compartment-id <compartment-id> --config-file </path/to/file> | jq '.data[] | {name} '
 .
 ```

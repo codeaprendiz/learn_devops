@@ -9,10 +9,14 @@ This tutorial demonstrates the following steps:
 - Update DNS records of your domain name to point to your application
 
 
+<br>
+
 ## Step 0:
 GKE Cluster created `us-central1-c	`
 
 
+
+<br>
 
 ## Step 1: 
 
@@ -23,9 +27,13 @@ $ kubectl apply -f helloweb-deployment.yaml
 deployment.apps/helloweb created
 ```
 
+<br>
+
 ## Step 2: 
 
 Expose your application
+
+<br>
 
 ### Use a Service
 - Use a Service, which creates a TCP Network Load Balancer that works with regional IP addresses.
@@ -77,6 +85,8 @@ helloweb     LoadBalancer   10.127.11.151   34.67.51.160   80:30354/TCP   99s
 kubernetes   ClusterIP      10.127.0.1      <none>         443/TCP        74m
 ```
 
+<br>
+
 ### Step 3: 
 
 Visit your reserved static IP address
@@ -87,6 +97,8 @@ Hello, world!
 Version: 1.0.0
 Hostname: helloweb-7f7f7474fc-ghncd
 ```
+
+<br>
 
 ### Step 4:
 
@@ -101,6 +113,8 @@ Name:   testservicek8s.gotdns.ch
 Address: 34.67.51.160
 ```
 
+<br>
+
 ### Step 5:
 Visit the domain
 
@@ -110,6 +124,8 @@ Hello, world!
 Version: 1.0.0
 Hostname: helloweb-7f7f7474fc-ghncd
 ```
+
+<br>
 
 ## Cleaning up
 

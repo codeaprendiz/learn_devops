@@ -23,7 +23,7 @@ This allows you to debug a container by running an interactive shell, or to expo
 **Version Stack**
 
 | Stack  | Version  |
-|--------|----------|
+| ------ | -------- |
 | docker | 20.10.14 |
 
 
@@ -40,6 +40,8 @@ file.txt
 root@4d74a15a73eb:/home#
 
 
+<br>
+
 ## New Terminal session t2
 ❯ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
@@ -53,7 +55,7 @@ REPOSITORY        TAG       IMAGE ID       CREATED             SIZE
 my-ubuntu         v1        9fec4fd33de4   12 seconds ago      69.2MB
 
 
-## terminal session t1
+# terminal session t1
 root@4d74a15a73eb:/home#
 root@4d74a15a73eb:/home# exit
 exit

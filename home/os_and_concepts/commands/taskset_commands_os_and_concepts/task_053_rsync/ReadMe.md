@@ -10,11 +10,17 @@
     - [`--remove-source-files` | delete source files](#--remove-source-files--delete-source-files)
     - [`--include` | `--exclude` | `--filter`](#--include----exclude----filter)
 
+<br>
+
 ## NAME
 
 rsync - faster, flexible replacement for rcp
 
+<br>
+
 ## EXAMPLES
+
+<br>
 
 ### `-z` | compress | `-v` | verbose | `-h` | human-readable
 

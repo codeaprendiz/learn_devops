@@ -1,16 +1,24 @@
 # tty
 
+<br>
+
 ## NAME
 
 tty - print the file name of the terminal connected to standard input
+
+<br>
 
 ### SYNOPSIS
 
 > tty [OPTION]...
 
+<br>
+
 ## DESCRIPTION
 
 Print the file name of the terminal connected to standard input.
+
+<br>
 
 ## OPTIONS
 

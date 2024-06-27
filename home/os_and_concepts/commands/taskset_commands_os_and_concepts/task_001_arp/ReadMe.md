@@ -2,9 +2,13 @@
 
 [arp](https://man7.org/linux/man-pages/man8/arp.8.html)
 
+<br>
+
 ## NAME
 
 arp - manipulate the system ARP cache
+
+<br>
 
 ## DESCRIPTION
 
@@ -16,6 +20,8 @@ ARP stands for Address Resolution Protocol, which is used to find
 the media access control address of a network neighbour for a
 given IPv4 Address.
 
+<br>
+
 ## MODES
 
 - arp
@@ -23,6 +29,8 @@ given IPv4 Address.
     table. It is possible to limit the number of entries printed, by
     specifying an hardware address type, interface name or host
     address.
+
+<br>
 
 ## EXAMPLES
 

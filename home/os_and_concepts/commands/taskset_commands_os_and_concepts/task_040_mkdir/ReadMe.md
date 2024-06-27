@@ -1,16 +1,24 @@
 # mkdir
 
+<br>
+
 ## NAME
 
 mkdir -- make directories
+
+<br>
 
 ## SYNOPSIS
 
 > mkdir [-pv] [-m mode] directory_name …
 
+<br>
+
 ## DESCRIPTION
 
 The mkdir utility creates the directories named as operands, in the order specified, using mode rwxrwxrwx (0777) as modified by the current umask(2).
+
+<br>
 
 ## OPTIONS
 

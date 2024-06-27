@@ -8,6 +8,8 @@
   - [Dump](#dump)
   - [Restore](#restore)
 
+<br>
+
 ## Create
 
 [sql-createdatabase](https://www.postgresql.org/docs/9.0/sql-createdatabase.html)
@@ -18,6 +20,8 @@ To create a database with owner as `admin`
 CREATE DATABASE sales OWNER admin
 CREATE DATABASE
 ```
+
+<br>
 
 ## Show all databases
 
@@ -34,6 +38,8 @@ You can also use
 ```bash
 SELECT datname FROM pg_database;
 ```
+
+<br>
 
 ## Connect to required database
 
@@ -59,6 +65,8 @@ psql (13.2, server 13.3 (Debian 13.3-1.pgdg100+1))
 You are now connected to database "postgres" as user "postgres".
 ```
 
+<br>
+
 ## Drop a database
 
 [Docs](https://www.postgresql.org/docs/8.2/sql-dropdatabase.html)
@@ -69,6 +77,8 @@ You are now connected to database "postgres" as user "postgres".
 DROP DATABASE <database_name>
 ```
 
+<br>
+
 ## Dump
 
 [Docs](https://www.postgresql.org/docs/9.1/backup-dump.html)
@@ -78,6 +88,8 @@ To dump the database you can use
 ```bash
 pg_dump -h <hostname> -p 5432 --username=<username> --db <databasename> > outputfile.sql 
 ```
+
+<br>
 
 ## Restore
 

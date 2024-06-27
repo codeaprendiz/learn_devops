@@ -15,7 +15,11 @@
 
 [docs.gradle.org » Test reporting](https://docs.gradle.org/current/userguide/java_testing.html#test_reporting)
 
+<br>
+
 ## Create a repository in CodeCommit : repo-d
+
+<br>
 
 ## Create a codebuild project : repo-d
 
@@ -31,6 +35,8 @@ reports:
       - '**/*.xml'
     base-directory: 'build/test-results'
 ```
+
+<br>
 
 ## Go to the Report Groups section
 

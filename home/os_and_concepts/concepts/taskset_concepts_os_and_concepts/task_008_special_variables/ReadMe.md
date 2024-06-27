@@ -1,5 +1,7 @@
 # Special Variables in Shell Scripts
 
+<br>
+
 ## Special Variables
 
 The following table shows a number of special variables that you can use in your shell scripts:
@@ -16,6 +18,8 @@ The following table shows a number of special variables that you can use in your
 | `$!`     | The process ID of the last background command executed.                                                                                                                                                                                     |
 | `$1`     | The first argument to the shell script                                                                                                                                                                                                      |
 | `$2`     | The second argument to the shell script                                                                                                                                                                                                     |
+
+<br>
 
 ### Command line Arguments
 

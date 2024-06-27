@@ -5,6 +5,8 @@
 Once you are attached to a container using docker attach
 - To stop a container, use CTRL-c. This key sequence sends SIGKILL to the container.
 - If the container was run with -i and -t, you can detach from a container and leave it running using the CTRL-p CTRL-q key sequence.
+<br>
+
 ## Attach to and detach from a running container
 
 ```bash
@@ -29,6 +31,8 @@ Once you are attached to a container using docker attach
 ❯ docker ps -a 
 ```
 
+
+<br>
 
 ## Get the exit code of the container’s command
 

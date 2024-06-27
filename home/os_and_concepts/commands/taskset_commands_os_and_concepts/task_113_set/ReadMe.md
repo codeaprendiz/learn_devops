@@ -9,7 +9,11 @@
       - [Example With `set -o pipefail`](#example-with-set--o-pipefail)
       - [Combining with Other Options | -e | -u | -o pipefail](#combining-with-other-options---e---u---o-pipefail)
 
+<br>
+
 ## Examples
+
+<br>
 
 ### -x | Debugging
 
@@ -17,6 +21,8 @@
 # Enable printing of each command to stdout before execution, for debugging
 set -x
 ```
+
+<br>
 
 ### -e | Exit immediately || source
 
@@ -34,11 +40,15 @@ Caller script: before calling the called script
 Called script: inside the called script. Before failing
 ```
 
+<br>
+
 ### set -o pipefail
 
 By default, in a pipeline (a series of commands connected by `|`), the exit status of the pipeline is the exit status of the last command. This can mask errors in earlier commands in the pipeline.
 
 When you enable `set -o pipefail`, the pipeline's return status is the exit status of the last command that had a non-zero exit status. If all commands in the pipeline succeed (return a zero exit status), the pipeline's exit status is zero.
+
+<br>
 
 #### Example Without `set -o pipefail`
 
@@ -50,6 +60,8 @@ This will still be printed
 
 In this example, the `test` (non existent command) and `false` command fails, but because the exit status of the pipeline is determined `true` command the script does not exit immediately.
 
+<br>
+
 #### Example With `set -o pipefail`
 
 ```bash
@@ -58,6 +70,8 @@ hello
 ```
 
 In this example, with `set -o pipefail`, the script exits immediately because the `test` (non existent) and `false` command failed, even though the `true` command's exit status would be the last command in the pipeline.
+
+<br>
 
 #### Combining with Other Options | -e | -u | -o pipefail
 

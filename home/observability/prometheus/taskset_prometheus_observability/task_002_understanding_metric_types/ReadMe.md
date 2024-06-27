@@ -2,6 +2,8 @@
 
 [prometheus.io » Understanding metric types](https://prometheus.io/docs/tutorials/understanding_metric_types/)
 
+<br>
+
 ## Counter
 
 Counter is a metric value that can only increase or reset i.e. the value cannot reduce than the previous value. It can be used for metrics like the number of requests, no of errors, etc.
@@ -39,6 +41,8 @@ $ curl -s -G 'http://localhost:9090/api/v1/query' --data-urlencode 'query=rate(g
   "value": "0.007017716224609026"
 }
 ```
+
+<br>
 
 ## Gauge
 
@@ -100,6 +104,8 @@ $ curl -s -G 'http://localhost:9090/api/v1/query' --data-urlencode 'query=avg_ov
   "value": "24582261.6"
 }
 ```
+
+<br>
 
 ## Histogram
 

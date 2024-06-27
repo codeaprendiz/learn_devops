@@ -4,6 +4,8 @@
 - [learn.microsoft.com » dbo.sysjobsteps](https://learn.microsoft.com/en-us/sql/relational-databases/system-tables/dbo-sysjobsteps-transact-sql?view=sql-server-ver16)
 - [learn.microsoft.com » sp_add_jobstep](https://learn.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-add-jobstep-transact-sql?view=sql-server-ver16)
 
+<br>
+
 ## Background
 
 | Object Name            | Type             | Description                                                                                                                                                                                                                                              |
@@ -13,6 +15,8 @@
 | `msdb.dbo.sysjobsteps` | Table            | The `sysjobsteps` table, also in the `msdb` database, contains details about each step in a SQL Server Agent job. This includes the command to be executed, the order of the step within its job, the database context, and more.                        |
 | `sp_add_jobstep`       | Stored Procedure | `sp_add_jobstep` is a system stored procedure that is used to create a step in a SQL Server Agent job. It allows you to specify various parameters like the step name, command, database context, and more to define the actions and flow of a job step. |
 
+
+<br>
 
 ## Constructing unique name for the backupfile
 
@@ -24,6 +28,8 @@ Each `REPLACE()` function is nested inside the next, meaning that the innermost 
 
 Let's break down the nested `REPLACE()` functions and construct the statement step by step:
 
+<br>
+
 ### Step 1: Convert Date and Time to String
 
 ```sql
@@ -31,6 +37,8 @@ SELECT CONVERT(NVARCHAR, GETDATE(), 120) AS FormattedDateTime;
 ```
 
 This converts the current date and time into a string format `YYYY-MM-DD HH:MI:SS`.
+
+<br>
 
 ### Step 2: Remove Colons from the Time
 
@@ -40,6 +48,8 @@ SELECT REPLACE(CONVERT(NVARCHAR, GETDATE(), 120), ':', '') AS FormattedDateTime;
 
 This removes the colons `:` from the time portion, resulting in a string like `YYYY-MM-DD HHMISS`.
 
+<br>
+
 ### Step 3: Remove Hyphens from the Date
 
 ```sql
@@ -47,6 +57,8 @@ SELECT REPLACE(REPLACE(CONVERT(NVARCHAR, GETDATE(), 120), ':', ''), '-', '') AS 
 ```
 
 This removes the hyphens `-` from the date portion, resulting in a string like `YYYYMMDD HHMISS`.
+
+<br>
 
 ### Step 4: Remove Space between Date and Time
 
@@ -57,6 +69,8 @@ SELECT REPLACE(REPLACE(REPLACE(CONVERT(NVARCHAR, GETDATE(), 120), ':', ''), '-',
 This removes the space ` ` between the date and time portions, resulting in a string like `YYYYMMDDHHMISS`.
 
 ---
+
+<br>
 
 ## Add a new job step to existing job
 
@@ -88,6 +102,8 @@ EXEC sp_add_jobstep
 GO  -- Execute the batch of statements.
 
 ```
+
+<br>
 
 ## Validate the job step created
 

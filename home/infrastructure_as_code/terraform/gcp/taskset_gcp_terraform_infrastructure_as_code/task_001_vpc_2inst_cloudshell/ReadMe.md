@@ -48,6 +48,8 @@ terraform apply
 ```bash
 ping google.com  # So we have internet access
 
+<br>
+
 ## SSH into one instance and
 
 ping <OTHER_SERVER_EXTERNAL_IP

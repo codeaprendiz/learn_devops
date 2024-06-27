@@ -4,6 +4,8 @@
 
 [Select - DevOps Engineer, SRE Learning Path](https://www.cloudskillsboost.google/paths)
 
+<br>
+
 ## Objective
 
 ![img.png](.images/arch-objective.png)
@@ -15,6 +17,8 @@ docker run --rm -p 8080:8080 test-python
 ```
 
 - Web Preview
+
+<br>
 
 ## Deploy to App Engine
 
@@ -33,7 +37,7 @@ gcloud app deploy --version=one --quiet
 - Make changes in the `main.py` and run the following
 
 ```bash
-## The --no-promote parameter tells App Engine to continue serving requests with the old version
+# The --no-promote parameter tells App Engine to continue serving requests with the old version
 gcloud app deploy --version=two --no-promote --quiet
 ```
 
@@ -43,6 +47,8 @@ gcloud app deploy --version=two --no-promote --quiet
 
 - Select split traffic and change to version 2 and save
 - Visit the URL again and refresh
+
+<br>
 
 ## Deploy the Kubernetes
 
@@ -58,11 +64,12 @@ kubectl get nodes
 - Create the k8s-manifests.yaml file
 
 - Enter the following commands to use Cloud Build to create the image and store it in Container Registry
+
 ```bash
-## Check the image tag created in the output
+# Check the image tag created in the output
 gcloud builds submit --tag gcr.io/$DEVSHELL_PROJECT_ID/devops-image:v0.2 .
 
-## Replace this tag in the k8s-manifests.yaml
+# Replace this tag in the k8s-manifests.yaml
 ```
 
 - Apply the changes
@@ -76,6 +83,8 @@ kubectl get svc
 ```
 
 - Visit the external IP created by the service
+
+<br>
 
 ## Deploy to CloudRun
 

@@ -2,9 +2,13 @@
 
 - [7z](https://manpages.ubuntu.com/manpages/focal/en/man1/7z.1.html)
 
+<br>
+
 ## NAME
 
 7z - A file archiver with high compression ratio format
+
+<br>
 
 ## EXAMPLES
 

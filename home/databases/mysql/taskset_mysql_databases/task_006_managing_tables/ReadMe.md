@@ -6,6 +6,8 @@
   - [Insert into table](#insert-into-table)
   - [Drop Table (if exists)](#drop-table-if-exists)
 
+<br>
+
 ## Create a table named `students` in the `student_db` database
 
 ```sql
@@ -24,6 +26,8 @@ Output
 ```sql
 Query OK, 0 rows affected (0.03 sec)
 ```
+
+<br>
 
 ## Show tables
 
@@ -44,6 +48,8 @@ mysql> show tables;
 
 mysql> 
 ```
+
+<br>
 
 ## Insert into table
 
@@ -70,6 +76,8 @@ mysql> select * from students;
 
 mysql>
 ```
+
+<br>
 
 ## Drop Table (if exists)
 

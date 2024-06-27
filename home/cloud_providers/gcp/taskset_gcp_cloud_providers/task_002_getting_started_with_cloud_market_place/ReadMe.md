@@ -7,6 +7,8 @@
 
 > Task :  We will use the Cloud MarketPlace to deploy a LAMP stack
 
+<br>
+
 ## High Level Tasks
 
 - Search for "LAMP Packaged by Bitnami" in the Marketplace

@@ -1,5 +1,7 @@
 # /etc/fstab
 
+<br>
+
 ## /etc/fstab file
 
 [http://www.linfo.org/etc_fstab.html](http://www.linfo.org/etc_fstab.html)

@@ -2,13 +2,19 @@
 
 - [ssh](https://www.unix.com/man-page/redhat/1/ssh/)
 
+<br>
+
 ## NAME
 
 ssh -- OpenSSH SSH client (remote login program)
 
+<br>
+
 ## SYNOPSIS
 
 > ssh [-1246AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec] [-D [bind_address:]port] [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file] [-J [user@]host[:port]] [-L address] [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port] [-Q query_option] [-R address] [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]] [user@]hostname [command][-w local_tun[:remote_tun]] [user@]hostname [command]
+
+<br>
 
 ## DESCRIPTION
 
@@ -36,7 +42,11 @@ The options are as follows:
 - -X
   - Enables X11 forwarding.  This can also be specified on a per-host basis in a configuration file.
 
+<br>
+
 ## EXAMPLES
+
+<br>
 
 ### Basic Login commands
 
@@ -68,6 +78,8 @@ $ ssh -v -o Port=2222 oracle@127.0.0.1
 .
 ```
 
+<br>
+
 ### X11 forwarding
 
 - To login into remote host with X11 forwarding enabled use the following command. For more details see xclock
@@ -75,6 +87,8 @@ $ ssh -v -o Port=2222 oracle@127.0.0.1
 ```bash
 localUser@DESKTOP:~$ ssh remoteUser@35.238.65.79 -X
 ```
+
+<br>
 
 ### Setting up ssh login between local and remote vm
 
@@ -112,6 +126,8 @@ localUser@DESKTOP:~$ ssh remoteUser@35.238.65.79
 remoteUser@test-instance:~$
 ```
 
+<br>
+
 ### Logging via bastion server
 
 - To login using the bastion server
@@ -120,6 +136,8 @@ remoteUser@test-instance:~$
 $ ssh -o ProxyCommand="ssh -i private_key_to_login.pem -W %h:%p ubuntu@bastion.host.link" -i private_key_to_login.pem ubuntu@172.126.146.224 -vvvvv
 .
 ```
+
+<br>
 
 ### Running commands on remote server
 
@@ -138,6 +156,8 @@ ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
+<br>
+
 ### Port Forwarding
 
 connections to localhost:8081 --------------->------------are--forwared-to-the-remote-host------------------------>---- PUBLIC-IP:8081
@@ -145,6 +165,8 @@ connections to localhost:8081 --------------->------------are--forwared-to-the-r
 Let's say you want to access a service running on remote server at port 8081 on your localhost at port 8081
 
 ```bash
+<br>
+
 ## Assuming you have SSH access to the machine
 $ ssh -L 8081:localhost:8081 opc@PUBLIC-IP
 .
@@ -175,6 +197,8 @@ $ ssh -L 8081:localhost:8081 -J <jump_server_username>@<jump_server_public_ip> <
 $ ssh -i /Users/<username>/workspace/_ssh/id_rsa_dest -L 6443:localhost:6443 -o ProxyCommand="ssh -i /Users/<username>/workspace/_ssh/id_rsa_jump  -W %h:%p <jump_login_user>@<jump_public_ip>" <dest_login_user>@<dest_private_ip> -N -f -q          # -v
 .
 ```
+
+<br>
 
 ### Reverse ssh tunnel
 
@@ -207,6 +231,8 @@ GatewayPorts yes
 
 # Restart sshd for changes to take effect
 username@public-instance-1:~$ sudo systemctl reload sshd
+
+<br>
 
 ## Accessing this IP from internet
 $ curl -s 34.135.214.178:8080 | grep title

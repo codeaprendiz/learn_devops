@@ -1,7 +1,11 @@
 [Article](https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-networking-guide-beginners.html)
 
+<br>
+
 ### Networking
 
+
+<br>
 
 #### Communication between containers in the same pod
 
@@ -16,6 +20,8 @@ It’s a collection of network interfaces (connections between two pieces of equ
 - There’s a secret container that runs on every pod in Kubernetes. This container’s #1 job is to keep the namespace open in case all the other containers on the pod die. It’s called the `pause` container.
 
 - you can talk between containers via localhost
+
+<br>
 
 #### Communication between pods on the same node
 
@@ -44,6 +50,8 @@ If one of the devices does, the bridge will store this information and also forw
 In Kubernetes, this bridge is called cbr0. Every pod on a node is part of the bridge, and the bridge connects all pods on the same node together.
 
 
+<br>
+
 #### Communication between pods on different nodes
 
 - the bridge falls back to the default gateway. This goes up to the cluster level and looks for the IP address.
@@ -54,12 +62,16 @@ In Kubernetes, this bridge is called cbr0. Every pod on a node is part of the br
 
 - Then this table will store the fact that IP addresses that look like 100.96.1.xxx should go to node 1, and addresses like 100.96.2.xxx need to go to node 2.
 
+<br>
+
 #### Communication between pods and services
 
 - In Kubernetes, a service lets you map a single IP address to a set of pods. You make requests to one endpoint (domain name/IP address) and the service proxies requests to a pod in that service.
 
 - This happens via kube-proxy a small process that Kubernetes runs inside every node.
 
+
+<br>
 
 #### How does DNS work? How do we discover IP addresses?
 

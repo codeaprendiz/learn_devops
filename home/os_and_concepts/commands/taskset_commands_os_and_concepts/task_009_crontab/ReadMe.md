@@ -1,5 +1,7 @@
 # crontab
 
+<br>
+
 ## NAME
 
 crontab -- maintain crontab files for individual users (V3)
@@ -7,6 +9,8 @@ crontab -- maintain crontab files for individual users (V3)
 NOTE
 
 You should have a empty line at the end of crontab to work on Red Hat linux boxes.
+
+<br>
 
 ## DESCRIPTION
 
@@ -29,6 +33,8 @@ Where,
 /path/to/command – Script or command name to schedule
 ```
 
+<br>
+
 ## OPTIONS
 
 - -e
@@ -36,6 +42,8 @@ Where,
 
 - -l
   - The current crontab will be displayed on standard output.
+
+<br>
 
 ## EXAMPLES
 

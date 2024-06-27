@@ -1,5 +1,7 @@
 # [Automatically Rotating Webhook TLS Credentials](https://linkerd.io/2.14/tasks/automatically-rotating-webhook-tls-credentials)
 
+<br>
+
 ## Create cluster using kind
 
 - Create cluster using kind
@@ -8,11 +10,15 @@
 kind create cluster
 ```
 
+<br>
+
 ## [Install cert-manager](https://cert-manager.io/docs/installation/)
 
 ```bash
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.13.3/cert-manager.yaml
 ```
+
+<br>
 
 ## Create namespace for linkerd
 
@@ -34,6 +40,8 @@ kubectl create namespace linkerd-viz
 kubectl label namespace linkerd-viz linkerd.io/extension=viz
 ```
 
+<br>
+
 ## [Save the signing key pair as a Secret](https://linkerd.io/2.14/tasks/automatically-rotating-webhook-tls-credentials/index.html#save-the-signing-key-pair-as-a-secret)
 
 ```bash
@@ -46,12 +54,16 @@ kubectl create secret tls webhook-issuer-tls --cert=ca.crt --key=ca.key --namesp
 kubectl create secret tls webhook-issuer-tls --cert=ca.crt --key=ca.key --namespace=linkerd-viz
 ```
 
+<br>
+
 ## [Create Issuers referencing the secrets](https://linkerd.io/2.14/tasks/automatically-rotating-webhook-tls-credentials/index.html#create-issuers-referencing-the-secrets)
 
 ```bash
 kubectl apply -f webhook-issuer.yaml 
 kubectl apply -f webhook-issuer-viz.yaml 
 ```
+
+<br>
 
 ## [Issuing certificates and writing them to secrets](https://linkerd.io/2.14/tasks/automatically-rotating-webhook-tls-credentials/index.html#issuing-certificates-and-writing-them-to-secrets)
 
@@ -62,6 +74,8 @@ kubectl apply -f certificate-tap.yaml
 kubectl apply -f certificate-linkerd-proxy-validator.yaml
 kubectl apply -f certificate-linkerd-tap-injector.yaml
 ```
+
+<br>
 
 ## [Using these credentials with CLI installation](https://linkerd.io/2.14/tasks/automatically-rotating-webhook-tls-credentials/index.html#using-these-credentials-with-cli-installation)
 
@@ -89,6 +103,8 @@ linkerd viz install \
   | kubectl apply -f -
 ```
 
+<br>
+
 ## Validation
 
 ```bash
@@ -97,6 +113,8 @@ $ linkerd check
 .
 Status check results are √
 ```
+
+<br>
 
 ## Install Demo App
 

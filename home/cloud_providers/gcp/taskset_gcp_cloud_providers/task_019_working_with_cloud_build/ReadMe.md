@@ -19,10 +19,14 @@
 - docker
 - dockerfile
 
+<br>
+
 ### Confirm that needed APIs are enabled
 
 - Cloud Build
 - Container Registry
+
+<br>
 
 ### Building containers with DockerFile and Cloud Build
 
@@ -56,6 +60,8 @@ gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/quickstart-image .
 
 - In the Google Cloud Console, on the Navigation menu (Navigation menu icon), click Container Registry > Images.
 
+<br>
+
 ### Building containers with a build configuration file and Cloud Build
 
 - In Cloud Shell enter the following command to clone the repository to the lab Cloud Shell:
@@ -77,6 +83,8 @@ gcloud builds submit --config cloudbuild.yaml .
 
 - Container Registry > Images and then click quickstart-image.
 - Navigation menu (Navigation menu icon), click Cloud Build > History.
+
+<br>
 
 ### Building and testing containers with a build configuration file and Cloud Build
 

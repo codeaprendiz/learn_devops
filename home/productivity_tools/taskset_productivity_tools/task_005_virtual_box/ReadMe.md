@@ -1,6 +1,8 @@
 
 # Virtualization Tools
 
+<br>
+
 ## Virtual Box
 
 - [Download Virtual Box](https://www.virtualbox.org/wiki/Downloads)
@@ -17,6 +19,8 @@ $ vagrant --version
 Vagrant 2.2.14
 
 ```
+
+<br>
 
 ## Running only ubuntu server locally
 
