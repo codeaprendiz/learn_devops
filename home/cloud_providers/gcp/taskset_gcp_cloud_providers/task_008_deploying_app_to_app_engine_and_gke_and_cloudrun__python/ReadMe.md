@@ -51,9 +51,7 @@ gcloud app deploy --version=one --quiet
 - Make changes in the `main.py` and run the following
 
 ```bash
-<br>
-
-## The --no-promote parameter tells App Engine to continue serving requests with the old version
+# The --no-promote parameter tells App Engine to continue serving requests with the old version
 gcloud app deploy --version=two --no-promote --quiet
 ```
 
