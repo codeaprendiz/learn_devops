@@ -37,9 +37,7 @@ gcloud source repos create REPO_DEMO
 gcloud source repos clone REPO_DEMO
 ```
 
-<br>
-
-## Push to the Cloud Source Repository
+# Push to the Cloud Source Repository
 
 ```bash
 # Go into the local repository you created:

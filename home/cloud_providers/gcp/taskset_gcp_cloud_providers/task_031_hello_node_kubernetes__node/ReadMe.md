@@ -80,23 +80,16 @@ docker run -d -p 8080:8080 gcr.io/$PROJECT_ID/hello-node:v1
 curl http://localhost:8080
 
 
-<br>
-
-## Check running containers
+# Check running containers
 docker ps
 
-<br>
-
-## Stop the container
+# Stop the container
 docker stop <container-id>
 
 
-<br>
+# Push
 
-## Push
-<br>
-
-## Run this command, replacing PROJECT_ID with your Project ID,
+# Run this command, replacing PROJECT_ID with your Project ID,
 
 gcloud auth configure-docker
 docker push gcr.io/$PROJECT_ID/hello-node:v1
