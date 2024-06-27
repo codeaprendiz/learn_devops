@@ -61,8 +61,8 @@ git init
 ### pull - To pull the latest changes from `master`
 
 ```bash
-## git pull origin <branch-name>
-## --ff-only : This option stands for "fast-forward only." When you use this option, git pull will only complete if the changes can be merged into your local branch using a fast-forward merge. A fast-forward merge happens when there are no divergent commits between the local and remote branches, meaning your local branch can just be "fast-forwarded" to match the remote branch
+# git pull origin <branch-name>
+# --ff-only : This option stands for "fast-forward only." When you use this option, git pull will only complete if the changes can be merged into your local branch using a fast-forward merge. A fast-forward merge happens when there are no divergent commits between the local and remote branches, meaning your local branch can just be "fast-forwarded" to match the remote branch
 git pull origin master --ff-only
 ```
 
@@ -132,7 +132,7 @@ git config user.email
 - To list the current `git config`, like the `user.name` and `user.email`
 
 ```bash
-## For --no-pager output
+# For --no-pager output
 GIT_PAGER= git config --list
 ```
 
