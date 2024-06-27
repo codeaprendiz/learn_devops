@@ -65,8 +65,6 @@ test.domain.com {
     }
 }
 
-<br>
-
 ###
 #    root * /usr/share/caddy
 #    file_server
