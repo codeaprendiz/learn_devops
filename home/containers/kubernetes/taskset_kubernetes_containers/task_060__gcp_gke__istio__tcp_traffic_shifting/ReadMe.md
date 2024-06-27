@@ -57,9 +57,7 @@ export SLEEP=$(kubectl get pod -l app=sleep -n istio-io-tcp-traffic-shifting -o 
 for i in {1..20}; do \
 kubectl exec "$SLEEP" -c sleep -n istio-io-tcp-traffic-shifting -- sh -c "(date; sleep 1) | nc $INGRESS_HOST $TCP_INGRESS_PORT"; \
 done
-<br>
-
-## Output
+# Output
 # one Thu Feb  8 15:29:09 UTC 2024
 # one Thu Feb  8 15:29:15 UTC 2024
 # one Thu Feb  8 15:29:20 UTC 2024

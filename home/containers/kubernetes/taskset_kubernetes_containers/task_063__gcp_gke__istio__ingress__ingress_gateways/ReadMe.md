@@ -122,9 +122,7 @@ Access any other URL that has not been explicitly exposed. You should see an HTT
 
 ```bash
 curl -s -I -HHost:httpbin.example.com "http://$INGRESS_HOST:$INGRESS_PORT/headers"
-<br>
-
-## Output
+# Output
 # HTTP/1.1 404 Not Found
 # date: Fri, 09 Feb 2024 16:47:19 GMT
 # server: istio-envoy
