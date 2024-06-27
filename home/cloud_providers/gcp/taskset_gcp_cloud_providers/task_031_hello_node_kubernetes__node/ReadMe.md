@@ -76,9 +76,7 @@ docker build -t gcr.io/$PROJECT_ID/hello-node:v1 .
 # Run the following command replacing PROJECT_ID with your Project ID
 docker run -d -p 8080:8080 gcr.io/$PROJECT_ID/hello-node:v1
 
-<br>
-
-## Test
+# Test
 curl http://localhost:8080
 
 

@@ -23,7 +23,7 @@
 **Version Stack**
 
 | Stack     | Version |
-|-----------|---------|
+| --------- | ------- |
 | Terraform | v1.4.1  |
 
 
@@ -90,9 +90,7 @@ chmod +x cloud_sql_proxy
 ```
 
 
-<br>
-
-## Test connection to the database
+# Test connection to the database
 
 ```bash
 # Start by running the Cloud SQL proxy for the Cloud SQL instance:
