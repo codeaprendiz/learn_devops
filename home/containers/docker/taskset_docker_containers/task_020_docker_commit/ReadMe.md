@@ -23,7 +23,7 @@ This allows you to debug a container by running an interactive shell, or to expo
 **Version Stack**
 
 | Stack  | Version  |
-| ------ | -------- |
+|--------|----------|
 | docker | 20.10.14 |
 
 

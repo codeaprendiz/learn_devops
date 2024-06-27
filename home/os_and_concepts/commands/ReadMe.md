@@ -1,6 +1,6 @@
 # taskset_commands_os_and_concepts
 
-> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 118
+> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 119
 
 | Task     | Description                                                                     |
 |----------|---------------------------------------------------------------------------------|
@@ -10,7 +10,7 @@
 | task_004 | [task_004_chmod](taskset_commands_os_and_concepts/task_004_chmod)               |
 | task_005 | [task_005_chown](taskset_commands_os_and_concepts/task_005_chown)               |
 | task_006 | [task_006_cksum](taskset_commands_os_and_concepts/task_006_cksum)               |
-| task_006 | [task_006_clear](taskset_commands_os_and_concepts/task_006_clear)               |
+| task_007 | [task_007_clear](taskset_commands_os_and_concepts/task_007_clear)               |
 | task_008 | [task_008_cp](taskset_commands_os_and_concepts/task_008_cp)                     |
 | task_009 | [task_009_crontab](taskset_commands_os_and_concepts/task_009_crontab)           |
 | task_010 | [task_010_curl](taskset_commands_os_and_concepts/task_010_curl)                 |
@@ -71,6 +71,7 @@
 | task_065 | [task_065_tar](taskset_commands_os_and_concepts/task_065_tar)                   |
 | task_066 | [task_066_tee](taskset_commands_os_and_concepts/task_066_tee)                   |
 | task_067 | [task_067_telnet](taskset_commands_os_and_concepts/task_067_telnet)             |
+| task_068 | [task_068_gradle](taskset_commands_os_and_concepts/task_068_gradle)             |
 | task_069 | [task_069_tr](taskset_commands_os_and_concepts/task_069_tr)                     |
 | task_070 | [task_070_traceroute](taskset_commands_os_and_concepts/task_070_traceroute)     |
 | task_071 | [task_071_top](taskset_commands_os_and_concepts/task_071_top)                   |

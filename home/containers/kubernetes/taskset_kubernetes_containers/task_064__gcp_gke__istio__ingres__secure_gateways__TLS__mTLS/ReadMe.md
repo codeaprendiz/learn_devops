@@ -24,7 +24,7 @@ curl 7.54.0 (x86_64-apple-darwin17.0) libcurl/7.54.0 LibreSSL/2.0.20 zlib/1.2.11
 Create a root certificate and private key to sign the certificates for your services:
 
 | Option                                   | Description                                                                                                                         |
-| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+|------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | `req`                                    | OpenSSL command to create and process certificate signing requests (CSR). In this context, it's used to generate a new certificate. |
 | `-x509`                                  | This option outputs a self-signed certificate instead of a certificate request. This is used for generating a root certificate.     |
 | `-sha256`                                | Specifies the hash algorithm to use for signing the certificate. SHA-256 is a secure, widely used algorithm.                        |
@@ -54,7 +54,7 @@ example.com.crt example.com.key
 Generate a certificate and a private key for httpbin.example.com:
 
 | Option                                                   | Description                                                                                                                                                                                              |
-| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req`                                                    | OpenSSL command to create and process certificate signing requests (CSR). It's used here to generate a new CSR.                                                                                          |
 | `-out`                                                   | Specifies the output file for the CSR. In this case, `example_certs1/httpbin.example.com.csr` is the file where the CSR will be saved.                                                                   |
 | `-newkey rsa:2048`                                       | Generates a new private key using RSA encryption with a 2048-bit key size. This key size is recommended for good security.                                                                               |
@@ -77,7 +77,7 @@ example.com.crt         example.com.key         httpbin.example.com.csr httpbin.
 ---
 
 | Option          | Description                                                                                                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `x509`          | OpenSSL command to create X.509 certificates, certificate signing requests (CSRs), and to manage the public key infrastructure. Used here for certificate generation.                             |
 | `-req`          | Indicates that the input is a CSR. This option specifies that the command should process a CSR and generate a certificate.                                                                        |
 | `-sha256`       | Specifies the SHA-256 hash algorithm for signing the certificate, ensuring a high level of security.                                                                                              |

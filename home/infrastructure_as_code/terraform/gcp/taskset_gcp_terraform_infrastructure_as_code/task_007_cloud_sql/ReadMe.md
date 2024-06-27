@@ -23,7 +23,7 @@
 **Version Stack**
 
 | Stack     | Version |
-| --------- | ------- |
+|-----------|---------|
 | Terraform | v1.4.1  |
 
 
