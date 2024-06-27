@@ -56,16 +56,10 @@ git clone --depth 1 --branch csb_1220 https://github.com/GoogleCloudPlatform/clo
 
 cd cloud-ops-sandbox/sre-recipes
 
-<br>
-
-## Connect to cluster
-
+# Connect to cluster
 ./sandboxctl sre-recipes restore "recipe3"
 
-
-<br>
-
-## Check the service back again
+# Check the service back again
 ```
 
 <br>

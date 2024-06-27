@@ -64,15 +64,12 @@ kubectl get nodes
 - Create the k8s-manifests.yaml file
 
 - Enter the following commands to use Cloud Build to create the image and store it in Container Registry
-```bash
-<br>
 
-## Check the image tag created in the output
+```bash
+# Check the image tag created in the output
 gcloud builds submit --tag gcr.io/$DEVSHELL_PROJECT_ID/devops-image:v0.2 .
 
-<br>
-
-## Replace this tag in the k8s-manifests.yaml
+# Replace this tag in the k8s-manifests.yaml
 ```
 
 - Apply the changes

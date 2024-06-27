@@ -122,9 +122,7 @@ gcloud container clusters create hello-world \
                 --machine-type n1-standard-1 \
                 --zone us-central1-a
                 
-<br>
-
-## Check the cluster in the Cloud Console
+# Check the cluster in the Cloud Console
 ```
 
 <br>
