@@ -3,8 +3,6 @@
 1) To create a DNS "A" record which is pointing to the EC2 instance created in default VPC default subnet.
 2) When we do nslookup to the "A" record like `server1.codeaprendiz.tk`, it should resolve the public IP of the instance.
 
-<br>
-
 ### PRE-REQUISITE
 1) First we need to own a domain. So go to the link [https://my.freenom.com/](https://my.freenom.com/) and register a domain.
    I registered `codeaprendiz.tk`

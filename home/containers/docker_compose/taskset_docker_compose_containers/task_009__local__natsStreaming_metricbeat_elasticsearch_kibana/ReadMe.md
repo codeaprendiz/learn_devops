@@ -2,8 +2,6 @@
 
 To get NATS-Streaming Dashboard on Kibana using NATS-Streaming, Elasticsearch, Kibana, Metricbeat (custom image) in docker-compose
 
-<br>
-
 #### Dir structure
 
 ```bash
@@ -256,8 +254,6 @@ wait_all_hosts
 #echo ""
 #echo "Cluster is YELLOW. Fine ! (But you could maybe try to have it GREEN ;))"
 #echo ""
-
-<br>
 
 ## to wait to http://kibana:5601/api/status to be up
 sleep 60

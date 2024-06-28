@@ -74,13 +74,9 @@ $ docker push codeaprendiz/nginx
 ```bash
 $ kubectl run nginx-pod --image=codeaprendiz/nginx:latest 
 
-<br>
-
 ## PORT FORWARD and test yoour changes
 $ kubectl port-forward pod/nginx-pod 8080:80 
 
-
-<br>
 
 ## in another terminal
 $ curl localhost:8080/check.txt

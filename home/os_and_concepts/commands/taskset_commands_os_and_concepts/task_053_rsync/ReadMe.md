@@ -10,17 +10,11 @@
     - [`--remove-source-files` | delete source files](#--remove-source-files--delete-source-files)
     - [`--include` | `--exclude` | `--filter`](#--include----exclude----filter)
 
-<br>
-
 ## NAME
 
 rsync - faster, flexible replacement for rcp
 
-<br>
-
 ## EXAMPLES
-
-<br>
 
 ### `-z` | compress | `-v` | verbose | `-h` | human-readable
 
@@ -41,8 +35,6 @@ backup.tar
 sent 14.71M bytes  received 31 bytes 3.27M bytes/sec
 total size is 16.18M  speedup is 1.10
 ```
-
-<br>
 
 ### `-a` | archive | remote server
 
@@ -68,8 +60,6 @@ sent 4993369 bytes  received 91 bytes 399476.80 bytes/sec
 total size is 4991313  speedup is 1.00
 ```
 
-<br>
-
 ### `-e` | specify protocol | ssh | remote server
 
 To specify a protocol with rsync you need to give “-e” option with protocol name you want to use. Here in this example, We will be using “ssh” with “-e” option and perform data transfer.
@@ -88,8 +78,6 @@ sent 30 bytes  received 8.12K bytes  1.48K bytes/sec
 total size is 30.74K  speedup is 3.77
 ```
 
-<br>
-
 ### `--progress` | show progress | remote server
 
 To show the progress while transferring the data from one machine to a different machine, we can use ‘–progress’ option for it. It displays the files and the time remaining to complete the transfer.
@@ -98,8 +86,6 @@ To show the progress while transferring the data from one machine to a different
 rsync -avzhe ssh --progress /home/rpmpkgs root@192.168.0.100:/root/rpmpkgs
 ```
 
-<br>
-
 ### `--remove-source-files` | delete source files
 
 Automatically delete source files after complete successfull transfer.
@@ -107,8 +93,6 @@ Automatically delete source files after complete successfull transfer.
 ```bash
 rsync --remove-source-files -zvh backup.tar /tmp/backups/
 ```
-
-<br>
 
 ### `--include` | `--exclude` | `--filter`
 

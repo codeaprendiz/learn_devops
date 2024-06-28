@@ -9,8 +9,6 @@
   - [Select all from table](#select-all-from-table)
   - [Drop](#drop)
 
-<br>
-
 ## Create
 
 To create a table
@@ -24,8 +22,6 @@ CREATE TABLE IF NOT EXISTS products
     CONSTRAINT products_pkey PRIMARY KEY (id)
 );
 ```
-
-<br>
 
 ## Select all tables except ones in `pg_catalog` and `information_schema`
 
@@ -63,8 +59,6 @@ postgres=# \d
 (2 rows)
 ```
 
-<br>
-
 ## Check tables and corresponding schema
 
 ```sql
@@ -83,8 +77,6 @@ bank=# SELECT schemaname, tablename FROM pg_tables LIMIT 5;
  public     | schema_migrations
  pg_catalog | pg_statistic
 ```
-
-<br>
 
 ## Describe
 
@@ -129,8 +121,6 @@ You can also do it using the following command [stackoverflow » PostgreSQL "DES
 ```
 
 ```bash
-<br>
-
 ## Switch to right database
 postgres=# \c postgres
 psql (13.2, server 13.3 (Debian 13.3-1.pgdg100+1))
@@ -145,8 +135,6 @@ postgres=# \d products
 Indexes:
     "products_pkey" PRIMARY KEY, btree (id)
 ```
-
-<br>
 
 ## Insert into table
 
@@ -170,8 +158,6 @@ INSERT INTO products(name, price) VALUES('green ball', 24);
 INSERT 0 1
 ```
 
-<br>
-
 ## Select all from table
 
 To view the inserted data in `products` table
@@ -189,8 +175,6 @@ postgres=# select * from products;
   1 | green ball | 24.00
 (1 row)
 ```
-
-<br>
 
 ## Drop
 

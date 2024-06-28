@@ -1,7 +1,5 @@
 ## To deploy journalbeat on k8s to ship logs to elastic-search
 
-<br>
-
 #### Pre-requisites
 
 - elastic-search-docker: 

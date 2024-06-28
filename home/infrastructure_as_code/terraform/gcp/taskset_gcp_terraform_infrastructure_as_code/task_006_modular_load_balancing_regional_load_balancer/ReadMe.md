@@ -33,8 +33,6 @@
 |-----------|---------|
 | Terraform | 1.3.9   |
 
-<br>
-
 ## Clone the examples repository
 
 ```bash
@@ -42,8 +40,6 @@ git clone https://github.com/GoogleCloudPlatform/terraform-google-lb
 cd ~/terraform-google-lb/examples/basic
 ```
 
-
-<br>
 
 ## TCP load balancer with regional forwarding rule
 
@@ -62,8 +58,6 @@ EXTERNAL_IP=$(terraform output | grep load_balancer_default_ip | cut -d = -f2 | 
 
 echo "http://${EXTERNAL_IP}"
 ```
-
-<br>
 
 ## Screenshots
 - Service Account

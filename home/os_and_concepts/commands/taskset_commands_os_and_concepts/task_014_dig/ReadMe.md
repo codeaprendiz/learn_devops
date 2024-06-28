@@ -2,13 +2,9 @@
 
 [dig](https://TBD/man/1/dig)
 
-<br>
-
 ## NAME
 
 dig - DNS lookup utility
-
-<br>
 
 ## DESCRIPTION
 
@@ -29,8 +25,6 @@ type
 Indicates what type of query is required -- ANY, A, MX, SIG, etc.  
 Type can be any valid query type.
 If no type argument is supplied, dig will perform a lookup for an A record.
-
-<br>
 
 ## OPTIONS
 
@@ -125,8 +119,6 @@ We see that example.com, with a TTL of 19727 seconds has an A record - 93.184.21
 Query time shows how long it took to get the DNS response back from the server, which is listed on the next line.
 
 You can also see the exact moment in time that I requested this information, and how many bytes the response contained.
-
-<br>
 
 ## EXAMPLE
 

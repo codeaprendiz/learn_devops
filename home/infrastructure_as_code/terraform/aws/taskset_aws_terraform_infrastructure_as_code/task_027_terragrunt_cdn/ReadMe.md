@@ -1,7 +1,5 @@
 ### Objective : Create a CDN using cloudposse module and ensure that sensitive variables are hidden
 
-<br>
-
 #### Pre-requisite
 
 - Update values of in `secret.tfvars` as per your configuration (take reference from secret.tfvars.example)
@@ -9,8 +7,6 @@
 - You should own a domain (like in this case I own `ankitrathi.info`)
 - [Create a private Certificate for your domain](../task-024-certificate-manager)
 
-
-<br>
 
 #### Let's Begin
 
@@ -65,8 +61,6 @@ s3-user-test-access-id = <sensitive>
 s3-user-test-secret-key = <sensitive>
 s3-user-test-username = "backend-dev-test"
 ```
-
-<br>
 
 ### Screenshots
 

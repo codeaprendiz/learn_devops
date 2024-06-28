@@ -1,12 +1,8 @@
 # cksum
 
-<br>
-
 ## NAME
 
 cksum, sum -- display file checksums and block counts
-
-<br>
 
 ## DESCRIPTION
 

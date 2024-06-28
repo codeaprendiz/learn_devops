@@ -3,8 +3,6 @@
 - Using a [module](https://www.terraform.io/docs/configuration/modules.html) in terraform. 
 The module will take some inputs and achieve some functionality. 
 
-<br>
-
 ## Steps
 
 - Generate the keys (the ones commited are for sample only)

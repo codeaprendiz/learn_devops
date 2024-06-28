@@ -24,14 +24,10 @@
 - external ip
 
 
-<br>
-
 ## Check if the APIs are enabled
 
 - Kubernetes Engine API
 - Container Registry API
-
-<br>
 
 ## Start a Kubernetes Engine cluster 
 
@@ -50,8 +46,6 @@ gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 2
 ```bash
 kubectl get nodes
 ```
-
-<br>
 
 ## Run and deploy a container
 

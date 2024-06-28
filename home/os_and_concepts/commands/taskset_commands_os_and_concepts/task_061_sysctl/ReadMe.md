@@ -2,13 +2,9 @@
 
 [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html)
 
-<br>
-
 ## NAME
 
 sysctl - configure kernel parameters at runtime
-
-<br>
 
 ## SYNOPSIS
 
@@ -16,16 +12,12 @@ sysctl - configure kernel parameters at runtime
 
 > sysctl -p [file or regexp] [...]
 
-<br>
-
 ## DESCRIPTION
 
 sysctl is used to modify kernel parameters at runtime.  The
 parameters available are those listed under /proc/sys/.  Procfs
 is required for sysctl support in Linux.  You can use sysctl to
 both read and write sysctl data.
-
-<br>
 
 ## OPTIONS
 
@@ -37,8 +29,6 @@ both read and write sysctl data.
   - Load settings from all system configuration files. Files
     are read from directories in the following list in given
     order from top to bottom
-
-<br>
 
 ## EXAMPLES
 

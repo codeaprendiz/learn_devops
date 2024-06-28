@@ -22,11 +22,7 @@
 - Istio
 - Service Mesh
 
-<br>
-
 ## Confirm Anthos Service Mesh setup
-
-<br>
 
 ### Configure cluster access for kubectl
 
@@ -58,8 +54,6 @@ kubectl get pods -n istio-system
  
 ```
 
-
-<br>
 
 ### Deploy sleep and httpbin services
 
@@ -161,8 +155,6 @@ sleep.mtls-client to httpbin.legacy-service: 200
 sleep.legacy-client to httpbin.mtls-service: 200
 sleep.legacy-client to httpbin.legacy-service: 200
 ```
-
-<br>
 
 ### Understand authentication and enable service to service authentication with mTLS
 
@@ -294,8 +286,6 @@ kubectl exec $(kubectl get pod -l app=sleep -n legacy-client -o jsonpath={.items
 sleep.legacy-client to httpbin.strict-mtls-service: 000
 command terminated with exit code 56
 
-<br>
-
 ## Verify that the httpbin service in the strict-mtls-service namespace does accept mTLS traffic:
 kubectl exec $(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items..metadata.name}) -c sleep -n mtls-client -- curl "http://httpbin.strict-mtls-service:8000/ip" -s -o /dev/null -w "sleep.mtls-client to httpbin.strict-mtls-service: %{http_code}\n"
 
@@ -318,8 +308,6 @@ sleep.mtls-client to httpbin.strict-mtls-service: 200
 ```bash
 kubectl delete pa restricted-mtls -n strict-mtls-service
 ```
-
-<br>
 
 ### Leverage RequestAuthentication and AuthorizationPolicy resources
 
@@ -344,8 +332,6 @@ spec:
   - issuer: "testing@secure.istio.io"
     jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.8/security/tools/jwt/samples/jwks.json"
 EOF
-
-<br>
 
 ## Verify that a request with an invalid JWT is denied:
 kubectl exec "$(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items..metadata.name})" -c sleep -n mtls-client -- curl "http://httpbin.mtls-service:8000/headers" -s -o /dev/null -H "Authorization: Bearer invalidToken" -w "%{http_code}\n"
@@ -406,8 +392,6 @@ kubectl exec "$(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items.
 # Output
 200
 
-<br>
-
 ## Verify that a request without a JWT is denied:
 kubectl exec "$(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items..metadata.name})" -c sleep -n mtls-client -- curl "http://httpbin.mtls-service:8000/headers" -s -o /dev/null -w "%{http_code}\n"
 
@@ -416,8 +400,6 @@ kubectl exec "$(kubectl get pod -l app=sleep -n mtls-client -o jsonpath={.items.
 ```
 
 
-
-<br>
 
 ### Authorizing requests based on method and path
 

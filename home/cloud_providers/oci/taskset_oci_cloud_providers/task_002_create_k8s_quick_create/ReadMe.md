@@ -2,13 +2,9 @@
 
 We can later use this to create our own cluster using terraform
 
-<br>
-
 ## K8S created
 
 ![](.images/k8s.png)
-
-<br>
 
 ## The VCN Created
 
@@ -21,8 +17,6 @@ oke-vcn-quick-sandbox-k8s-a4bf5e044
 
 
 
-<br>
-
 ## Subnets
 
 ![](.images/subnets.png)
@@ -32,13 +26,9 @@ oke-nodesubnet-quick-sandbox-k8s-a4bf5e044-regional
 - CIDR `10.0.10.0/24`
 - Private
 
-<br>
-
 ### Security List
 
 oke-nodeseclist-quick-sandbox-k8s-a4bf5e044
-
-<br>
 
 #### Ingress
 
@@ -54,8 +44,6 @@ oke-nodeseclist-quick-sandbox-k8s-a4bf5e044
 > TCP access from Kubernetes Control Plane. Anything coming from API endpoint subnet can communicate over TCP, all source ports to all destination ports
 - 0.0.0.0/0 All Ports ---------------TCP-----------------------> 22 
 > TCP traffic for ports: 22 SSH Remote Login Protocol. Inbound SSH traffic to worker nodes. Anything coming from Internet can communicate over TCP 22 for SSH access
-
-<br>
 
 #### Egress
 
@@ -76,8 +64,6 @@ oke-nodeseclist-quick-sandbox-k8s-a4bf5e044
 - All ports  ----------------All protocols---------------> 0.0.0.0/0, All ports
 > Worker Nodes access to Internet
 
-<br>
-
 ### RouteTable
 
 oke-private-routetable-sandbox-k8s-a4bf5e044
@@ -95,13 +81,9 @@ oke-k8sApiEndpoint-subnet-quick-sandbox-k8s-a4bf5e044-regional
 - CIDR `10.0.0.0/28`
 - Public
 
-<br>
-
 ### Security List
 
 oke-k8sApiEndpoint-quick-sandbox-k8s-a4bf5e044
-
-<br>
 
 #### Ingress
 
@@ -122,8 +104,6 @@ oke-k8sApiEndpoint-quick-sandbox-k8s-a4bf5e044
 - 10.0.10.0/24           -----------ICMP-------------------> 
 > Path Discovery
 
-<br>
-
 #### Egress
 
 ![img.png](.images/egress-api-subnet.png)
@@ -140,8 +120,6 @@ oke-k8sApiEndpoint-quick-sandbox-k8s-a4bf5e044
 > Path discovery
 
 
-<br>
-
 ### Route Table
 
 
@@ -155,26 +133,18 @@ oke-svclbsubnet-quick-sandbox-k8s-a4bf5e044-regional
 - CIDR `10.0.20.0/24`
 - Public
 
-<br>
-
 ### Security List
 
 oke-svclbseclist-quick-sandbox-k8s-a4bf5e044
-
-<br>
 
 #### Ingress
 
 ![img.png](.images/ingress-lb-sec.png)
 
-<br>
-
 #### Egress
 
 ![img.png](.images/eggress-lb-sec.png)
 
-
-<br>
 
 ### Route Table
 

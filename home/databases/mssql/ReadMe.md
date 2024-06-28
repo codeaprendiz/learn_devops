@@ -3,8 +3,6 @@
 > [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 37
 # MS-SQL
 
-<br>
-
 ## [IDE](https://learn.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver16&tabs=redhat-install%2Credhat-uninstall#download-azure-data-studio)
 
 Plugins
@@ -16,8 +14,6 @@ Plugins
 - SQL Server Schema Compare
 - Visual Studio IntelliCode
 
-<br>
-
 ## [Backup](https://learn.microsoft.com/en-us/sql/t-sql/statements/backup-transact-sql?view=sql-server-ver16)
 
 - [COMPRESSION](https://learn.microsoft.com/en-us/sql/t-sql/statements/backup-transact-sql?view=sql-server-ver16#compression) : Explicitly enables backup compression.
@@ -26,21 +22,15 @@ Plugins
 - [NORECOVERY](https://learn.microsoft.com/en-us/sql/t-sql/statements/backup-transact-sql?view=sql-server-ver16#-norecovery--standby--undo_file_name-) : Backs up the tail of the log and leaves the database in the RESTORING state
 - [STATS](https://learn.microsoft.com/en-us/sql/t-sql/statements/backup-transact-sql?view=sql-server-ver16#stats---percentage-) : Displays a message each time another percentage completes, and is used to gauge progress
 
-<br>
-
 ## [Restore](https://learn.microsoft.com/en-us/sql/t-sql/statements/restore-statements-arguments-transact-sql?view=sql-server-ver16)
 
 - [FILE](https://learn.microsoft.com/en-us/sql/t-sql/statements/restore-statements-arguments-transact-sql?view=sql-server-ver16#file---logical_file_name_in_backup-logical_file_name_in_backup_var) : Names a file to include in the database restore.
 - [NOUNLOAD](https://learn.microsoft.com/en-us/sql/t-sql/statements/restore-statements-arguments-transact-sql?view=sql-server-ver16#-unload--nounload-) : Specifies that after the RESTORE operation the tape remains loaded on the tape drive.
 - [STATS](https://learn.microsoft.com/en-us/sql/t-sql/statements/restore-statements-arguments-transact-sql?view=sql-server-ver16#stats---percentage-) : Displays a message each time another percentage completes, and is used to gauge progress
 
-<br>
-
 ## Blogs
 
 - [aws.amazon.com » Backup SQL Server databases to Amazon S3](https://aws.amazon.com/blogs/modernizing-with-aws/backup-sql-server-to-amazon-s3/)
-
-<br>
 
 ## Upgrade Considerations
 

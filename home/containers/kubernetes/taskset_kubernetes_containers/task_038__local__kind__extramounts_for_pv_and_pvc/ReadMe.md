@@ -1,7 +1,5 @@
 # Learn Kind Cluster
 
-<br>
-
 ## Validate Persistent Volume Set Up using [ExtraMounts](https://kind.sigs.k8s.io/docs/user/configuration/#extra-mounts)
 
 Extra mounts can be used to pass through storage on the host to a kind node for persisting data, mounting through code etc.
@@ -110,8 +108,6 @@ root@local-pod:/mnt/data# cat test.log
 hello
 root@local-pod:/mnt/data# exit
 exit
-
-<br>
 
 ## get and delete
 $ kubectl get pods                  

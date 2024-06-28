@@ -26,8 +26,6 @@
 
 
 
-<br>
-
 ### Check Terraform Installation
 
 ```bash
@@ -72,8 +70,6 @@ resource "google_compute_instance" "terraform" {
 
 ```bash
 terraform plan
-<br>
-
 ## The configuration fails with the following error. This is because you cannot configure a compute engine without a network.
 ```
 
@@ -94,8 +90,6 @@ terraform apply
 ```
 
 - Validate on console
-
-<br>
 
 ### Change the infrastructure
 
@@ -144,8 +138,6 @@ terraform apply
 ```
 
 - Validate
-
-<br>
 
 ### Destroy the Infrastructure
 

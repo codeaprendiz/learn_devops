@@ -1,7 +1,5 @@
 # sysctl.conf
 
-<br>
-
 ## /etc/sysctl.conf
 
 [sysctl.conf](https://man7.org/linux/man-pages/man5/sysctl.conf.5.html)

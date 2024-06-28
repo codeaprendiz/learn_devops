@@ -1,26 +1,18 @@
 # tail
 
-<br>
-
 ## NAME
 
 tail -- display the last part of a file
 
-<br>
-
 ## SYNOPSIS
 
 > tail [-F | -f | -r] [-q] [-b number | -c number | -n number] [file ...]
-
-<br>
 
 ## DESCRIPTION
 
 The tail utility displays the contents of file or, by default, its standard input, to the standard output.
 
 The display begins at a byte, line or 512-byte block location in the input.  Numbers having a leading plus (`+') sign are relative to the beginning of the input, for example, ``-c +2'' starts the display at the second byte of the input.  Numbers having a leading minus (`-') sign or no explicit sign are relative to the end of the input, for example, ``-n 2'' displays the last two lines of the input.  The default starting location is``-n 10'', or the last 10 lines of the input.
-
-<br>
 
 ### OPTIONS
 

@@ -4,8 +4,6 @@
 
 [Git Repo](https://github.com/poseidon/typhoon/)
 
-<br>
-
 ### Steps
 
 - Create a DNS zone using [task-011-route53](../task-011-route53) and get the zone name and zone_id. The zone I created was `k118.tk`. Also I created the domain `k118.tk`

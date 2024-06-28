@@ -25,8 +25,6 @@
 - cloudshelleditor
 
 
-<br>
-
 ## Enable the Cloud Run API and configure your Shell environment
 
 - Run the following in cloud shell
@@ -34,19 +32,13 @@
 ```bash
 gcloud services enable run.googleapis.com
 
-<br>
-
 ## Set the compute region
 gcloud config set compute/region us-central1
-
-<br>
 
 ## Set the LOCATION ENV variable
 LOCATION="us-central1"
 ```
 
-
-<br>
 
 ## Write the sample node application
 
@@ -95,8 +87,6 @@ app.listen(port, () => {
 });
 ```
 
-<br>
-
 ## Containerize your app using CloudBuild and upload it to Artifact Registry
 
 - Create a docker file
@@ -129,8 +119,6 @@ CMD [ "npm", "start" ]
 ```bash
 gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/helloworld
 
-<br>
-
 ## List the images
 gcloud container images list
 ```
@@ -144,8 +132,6 @@ docker run -d -p 8080:8080 gcr.io/$GOOGLE_CLOUD_PROJECT/helloworld
 ```
 
 - Preview the same in the WebPreview
-
-<br>
 
 ## Deploy to Cloud Run
 
@@ -161,8 +147,6 @@ gcloud run deploy --image gcr.io/$GOOGLE_CLOUD_PROJECT/helloworld --allow-unauth
 
 - You can now visit your deployed container by opening the service URL in any browser window.
 
-
-<br>
 
 ## Clean up
 

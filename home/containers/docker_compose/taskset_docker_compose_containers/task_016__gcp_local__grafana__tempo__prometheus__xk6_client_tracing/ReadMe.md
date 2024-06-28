@@ -1,7 +1,5 @@
 # [grafana / tempo](https://github.com/grafana/tempo/blob/main/example/docker-compose/local/readme.md)
 
-<br>
-
 ## What is [grafana/tempo](https://github.com/grafana/tempo)
 
 - Grafana Tempo is a high volume, minimal dependency distributed tracing backend.
@@ -9,8 +7,6 @@
 - is Jaeger, Zipkin, Kafka, OpenCensus and OpenTelemetry compatible.
 - It ingests batches in different formats, buffers them and then writes them to Azure, GCS, S3 or local disk
 - implements TraceQL, a traces-first query language inspired by LogQL and PromQL. 
-
-<br>
 
 ## Task
 
@@ -28,8 +24,6 @@ Start up the local stack.
 ```bash
 docker compose up -d
 ```
-
-<br>
 
 ## Accessing Grafana Tempo Service Graph
 

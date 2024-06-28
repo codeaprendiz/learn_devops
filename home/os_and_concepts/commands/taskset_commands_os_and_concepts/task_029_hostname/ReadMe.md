@@ -1,24 +1,16 @@
 # hostname
 
-<br>
-
 ## NAME
 
 hostname -- set or print name of current host system
-
-<br>
 
 ## SYNOPSIS
 
 > hostname [-fs] [name-of-host]
 
-<br>
-
 ## DESCRIPTION
 
 The hostname utility prints the name of the current host.  The super-user can set the hostname by supplying an argument.  To keep the hostname between reboots, run `scutil --set HostName name-of-host'.
-
-<br>
 
 ## OPTIONS
 
@@ -28,8 +20,6 @@ The hostname utility prints the name of the current host.  The super-user can se
   * Include the IP of the host
 -s
   * Trim off any domain information from the printed name.
-
-<br>
 
 ## EXAMPLE
 

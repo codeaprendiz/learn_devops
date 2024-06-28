@@ -19,8 +19,6 @@
 
 
 
-<br>
-
 ### Nodes
 
 - kubernetes.node.name
@@ -30,15 +28,11 @@
 **Aggregation**
   
 ```bash
-<br>
-
 ## Cardinality ##
 a = Cardinality(kubernetes.node.name)
 
 GroupBy-Everything
 ```
-
-<br>
 
 ### Deployments
 
@@ -49,15 +43,11 @@ GroupBy-Everything
 **Aggregation**
   
 ```bash
-<br>
-
 ## Cardinality ##
 a = Cardinality(kubernetes.deployment.name)
 
 GroupBy-Everything
 ``` 
-
-<br>
 
 ### Available-pods-per-deployment
 
@@ -75,8 +65,6 @@ GroupBy-Everything
 - Interval : auto
 
 ```bash
-<br>
-
 ## Average ##
 a = Avg(kubernetes.deployment.replicas.available)
 
@@ -85,8 +73,6 @@ Top - 10000
 OrderBy - Doc Count(default)
 Desc
 ```
-
-<br>
 
 ### Desired-pods
 
@@ -101,16 +87,12 @@ Desc
 - Inverval : auto
 
 ```bash
-<br>
-
 ## Sum ##
 a = Sum(kubernetes.deployment.replicas.desired)
 
 GroupBy-Everything
 ```
  
-<br>
-
 ### Available-pods
 
 - kubernetes.deployment.replicas.available
@@ -124,15 +106,11 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
-<br>
-
 ## Sum ##
 a = Sum(kubernetes.deployment.replicas.available)
 
 GroupBy-Everything
 ```
-
-<br>
 
 ### Unavailable-pods
 
@@ -147,16 +125,12 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
-<br>
-
 ## Sum ##
 a = Sum(kubernetes.deployment.replicas.unavailable)
 
 GroupBy-Everything
 ``` 
  
-<br>
-
 ### Unavailable-pods-per-deployment
 
 - kubernetes.deployment.replicas.unavailable
@@ -169,8 +143,6 @@ GroupBy-Everything
 - Inverval : auto
 
 ```bash
-<br>
-
 ## Average ##
 a = Avg(kubernetes.deployment.replicas.unavailable)
 
@@ -179,8 +151,6 @@ Top : 10000
 OrderBy : Doc Count(default)
 Desc
 ``` 
-
-<br>
 
 ### CPU-usage-by-node
 
@@ -199,8 +169,6 @@ Desc
 - Chart type : Line
 
 ```bash
-<br>
-
 ## Sum ##
 a = Sum(kubernetes.container.cpu.usage.nanocores)
 
@@ -224,12 +192,8 @@ Desc
 - Chart type : Line
 
 ```bash
-<br>
-
 ## Average ##
 cores = Average(kubernetes.node.cpu.capacity.cores)
-
-<br>
 
 ## Bucket Script ##
 expression = params.cores * 1000000000
@@ -240,8 +204,6 @@ OrderBy : cores
 Desc
 ``` 
 
-
-<br>
 
 ### Memory-usage-by-node
 
@@ -260,17 +222,11 @@ Desc
 
 
 ```bash
-<br>
-
 ## Sum ##
 a = Sum(kubernetes.container.memory.usage.bytes)
 
-<br>
-
 ## CumulativeSum ##
 b = CumulativeSum(a)
-
-<br>
 
 ## Derivative ##
 c = Derivative(b)/10s
@@ -292,17 +248,11 @@ Desc
 **Aggregation**
 
 ```bash
-<br>
-
 ## Sum ##
 a = Sum(kubernetes.node.memory.capacity.bytes)
 
-<br>
-
 ## CumulativeSum ##
 b = CumulativeSum(a)
-
-<br>
 
 ## Derivative ##
 c = Derivative(b)/10s
@@ -313,8 +263,6 @@ Top : 10000
 OrderBy : a
 Desc
 ```
-
-<br>
 
 ### Network-out-by-node
 
@@ -336,17 +284,11 @@ Desc
 - Chart type : Line
 
 ```bash
-<br>
-
 ## Max ##
 a = Max(kubernetes.pod.network.tx.bytes)
 
-<br>
-
 ## Derivative ##
 b = Derivative(a)
-
-<br>
 
 ## Positive Only ##
 c = PositiveOnly(b)
@@ -358,8 +300,6 @@ Desc
 ```
 
 
-
-<br>
 
 ### Network-in-by-node
 
@@ -377,17 +317,11 @@ Desc
 - Chart type : Line
 
 ```bash
-<br>
-
 ## Max ##
 a = Max(kubernetes.pod.network.rx.bytes)
 
-<br>
-
 ## Derivative ##
 b = Derivative(a)
-
-<br>
 
 ## Positive Only ##
 c = PositiveOnly(b)
@@ -414,17 +348,11 @@ Desc
 - Template : {{value}} ns
 
 ```bash
-<br>
-
 ## Max ##
 a = Max(kubernetes.container.cpu.usage.core.ns)
 
-<br>
-
 ## Derivative ##
 b = Derivative(a)/1s
-
-<br>
 
 ## Positive Only ##
 c = PositiveOnly(b)
@@ -435,8 +363,6 @@ OrderBy : a
 Desc
 ```
 
-
-<br>
 
 ### Top-memory-intensive-pods
 
@@ -454,17 +380,11 @@ Desc
 - Data Formatter : Bytes    
 
 ```bash
-<br>
-
 ## Sum ##
 a = Sum(kubernetes.container.memory.usage.bytes)
 
-<br>
-
 ## Cumulative Sum ##
 b = CumulativeSum(a)
-
-<br>
 
 ## Derivative ##
 c = Derivative(b)/10s

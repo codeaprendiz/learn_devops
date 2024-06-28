@@ -13,8 +13,6 @@
 
 > Delete the PV and PVC if you are getting the error: "psql: error: could not connect to server: FATAL: password authentication failed for user "keycloak". Spent hours trying to debug the issue. It should be highlighted in the documentation more clearly.
 
-<br>
-
 ## GKE Kubernetes Version
 
 ```bash
@@ -23,8 +21,6 @@ Client Version: v1.27.3
 Kustomize Version: v5.0.1
 Server Version: v1.27.2-gke.1200
 ```
-
-<br>
 
 ## Keycloak.X with PostgreSQL
 
@@ -75,8 +71,6 @@ helm template keycloak-db postgresql \
 --set global.postgresql.auth.password="$KEYCLOAK_USER_PASSWORD" \
 --set global.postgresql.auth.database="keycloak_db" > keycloak-db-manifest-vendor.yaml
 
-<br>
-
 ############# OR ############## Install directlry using helm install
 
 $ helm install keycloak-db postgresql \
@@ -119,8 +113,6 @@ To connect to your database from outside the cluster execute the following comma
 
 WARNING: The configured password will be ignored on new installation in case when previous Posgresql release was deleted through the helm command. In that case, old PVC will have an old password, and setting it through helm won't take effect. Deleting persistent volumes (PVs) will solve the issue.    
 ```
-
-<br>
 
 ## Apply manifest
 
@@ -183,8 +175,6 @@ Create a port-forwarding with the following commands:
 export POD_NAME=$(kubectl get pods --namespace keycloak -l "app.kubernetes.io/name=keycloakx,app.kubernetes.io/instance=keycloak" -o name)
 echo "Visit http://127.0.0.1:8080 to use your application"
 kubectl --namespace keycloak port-forward "$POD_NAME" 8080
-
-<br>
 
 #####################################################
 #         OR use helm template command              #

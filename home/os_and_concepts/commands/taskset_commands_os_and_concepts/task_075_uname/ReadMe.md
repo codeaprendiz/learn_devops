@@ -1,18 +1,12 @@
 # uname
 
-<br>
-
 ## NAME
 
 uname - print system information
 
-<br>
-
 ## SYNOPSIS
 
 > uname [OPTION]...
-
-<br>
 
 ## DESCRIPTION
 
@@ -39,8 +33,6 @@ Print certain system information.  With no OPTION, same as -s.
 - --help display this help and exit
   - --version
 - output version information and exit
-
-<br>
 
 ## Examples
 

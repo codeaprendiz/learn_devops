@@ -40,8 +40,6 @@ file.txt
 root@4d74a15a73eb:/home#
 
 
-<br>
-
 ## New Terminal session t2
 ❯ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES

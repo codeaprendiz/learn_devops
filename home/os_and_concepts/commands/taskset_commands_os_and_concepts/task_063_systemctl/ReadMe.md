@@ -2,8 +2,6 @@
 
 - [systemctl](https://man7.org/linux/man-pages/man1/systemctl.1.html)
 
-<br>
-
 ## Examples
 
 ```bash

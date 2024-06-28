@@ -2,8 +2,6 @@
 
 [Create a Virtual Cloud Network](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-vcn/01-summary.htm)
 
-<br>
-
 ## Key tasks include how to:
 
 - Set up a basic virtual cloud network.

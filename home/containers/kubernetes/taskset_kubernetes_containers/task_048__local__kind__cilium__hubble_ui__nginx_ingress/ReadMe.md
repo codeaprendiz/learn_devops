@@ -5,21 +5,15 @@
 - [Kind : Ingress](https://kind.sigs.k8s.io/docs/user/ingress/)
 - [Cilium : hubble-setup](https://docs.cilium.io/en/stable/gettingstarted/hubble_setup/#hubble-setup)
 
-<br>
-
 ## [What is Cilium](https://docs.cilium.io/en/stable/overview/intro/#what-is-cilium)?
 
 Cilium is open source software for transparently securing the network connectivity between application services deployed using Linux container management platforms like Docker and Kubernetes.
 
 At the foundation of Cilium is a new Linux kernel technology called eBPF, which enables the dynamic insertion of powerful security visibility and control logic within Linux itself. Because eBPF runs inside the Linux kernel, Cilium security policies can be applied and updated without any changes to the application code or container configuration.
 
-<br>
-
 ## [What is Hubble?](https://docs.cilium.io/en/stable/overview/intro/#what-is-hubble)
 
 Hubble is a fully distributed networking and security observability platform. It is built on top of Cilium and eBPF to enable deep visibility into the communication and behavior of services as well as the networking infrastructure in a completely transparent manner.
-
-<br>
 
 ## [Cilium component overview](https://docs.cilium.io/en/stable/overview/component-overview/#cilium)
 

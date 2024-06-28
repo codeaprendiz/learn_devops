@@ -21,8 +21,6 @@ export SECURE_INGRESS_PORT=$(kubectl -n "$INGRESS_NS" get service "$INGRESS_NAME
 export TCP_INGRESS_PORT=$(kubectl -n "$INGRESS_NS" get service "$INGRESS_NAME" -o jsonpath='{.spec.ports[?(@.name=="tcp")].port}')
 ```
 
-<br>
-
 ## [Configuring ingress using an Ingress resource](https://istio.io/latest/docs/tasks/traffic-management/ingress/kubernetes-ingress/#configuring-ingress-using-an-ingress-resource)
 
 Create an Ingress resource:
@@ -88,11 +86,7 @@ server: istio-envoy
 transfer-encoding: chunked
 ```
 
-<br>
-
 ## [Specifying Ingressclass](https://istio.io/latest/docs/tasks/traffic-management/ingress/kubernetes-ingress/#specifying-ingressclass)
-
-<br>
 
 ## Cleanup
 

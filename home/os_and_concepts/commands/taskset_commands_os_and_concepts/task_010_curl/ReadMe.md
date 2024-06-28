@@ -11,17 +11,11 @@
     - [To get only the status code using curl | -s | silent | -o | output | -w | write out | http\_code](#to-get-only-the-status-code-using-curl---s--silent---o--output---w--write-out--http_code)
     - [-L | --location | follow redirect | -I | --head | Fetch headers only](#-l----location--follow-redirect---i----head--fetch-headers-only)
 
-<br>
-
 ## NAME
 
 curl - transfer a URL
 
-<br>
-
 ## EXAMPLES
-
-<br>
 
 ### vkso | -H options | verbose | insecure | silent | output | headers
 
@@ -29,8 +23,6 @@ curl - transfer a URL
 $ curl -vkso /dev/null 'https://121.170.212.70/healthcheck/healthcheck.htm' -H'X-test-Debug: 1' -H'Host: test.groceries.org.com'
 .
 ```
-
-<br>
 
 ### -u -T | user | upload
 
@@ -46,8 +38,6 @@ export TOMCAT_PORT=9090
 curl -v -u $TOMCAT_USER:$TOMCAT_PASSWORD -T $DEPLOY_SOURCE_DIR/artifact.war http://$TOMCAT_HOST:$TOMCAT_PORT/manager/text/deploy?path=/offer
 ```
 
-<br>
-
 ### Get your public IP
 
 Also you can actually get your public IP by running following command
@@ -56,8 +46,6 @@ Also you can actually get your public IP by running following command
 # Tested on mac
 curl ifconfig.me
 ```
-
-<br>
 
 ### To test a request to a server as if it came from the browser with the same Host header | -H | -k
 
@@ -70,15 +58,11 @@ To test a request to a server as if it came from the browser with the same Host 
 curl -H 'Host: test.example.com' http://localhost:svc_path_1 -kv
 ```
 
-<br>
-
 ### --resolve | force resolve to IP | -H | --cacert | Root CA | --cert | --key
 
 Send an HTTPS request to access the httpbin service through HTTPS:
 
 ```bash
-<br>
-
 ## https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/#configure-a-tls-ingress-gateway-for-a-single-host
 
 # This command uses curl to send a verbose HTTPS request to the httpbin service, specifically to the /status/418 endpoint. It manually sets the Host header to httpbin.example.com to mimic requests to this domain. The --resolve option forces curl to resolve httpbin.example.com to the specified $INGRESS_HOST IP address at the $SECURE_INGRESS_PORT, effectively directing the request to the Istio ingress gateway. The --cacert option specifies the root CA certificate (example.com.crt), allowing curl to trust the self-signed certificate used by the ingress gateway. This command is crucial for testing secure HTTPS access to services managed by Istio, ensuring the routing and SSL/TLS configuration works as expected.
@@ -100,8 +84,6 @@ curl -v -HHost:httpbin.example.com --resolve "httpbin.example.com:$SECURE_INGRES
   "https://httpbin.example.com:$SECURE_INGRESS_PORT/status/418"
 ```
 
-<br>
-
 ### To get only the status code using curl | -s | silent | -o | output | -w | write out | http_code
 
 ```bash
@@ -113,8 +95,6 @@ Output
 ```bash
 301
 ```
-
-<br>
 
 ### -L | --location | follow redirect | -I | --head | Fetch headers only
 

@@ -1,7 +1,5 @@
 # [Ingress Gateways](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control)
 
-<br>
-
 ## [Before you begin](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/#before-you-begin)
 
 Start the httpbin sample, which will serve as the target service for ingress traffic:
@@ -9,8 +7,6 @@ Start the httpbin sample, which will serve as the target service for ingress tra
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.20/samples/httpbin/httpbin.yaml
 ```
-
-<br>
 
 ## [Configuring ingress using a gateway](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/#configuring-ingress-using-a-gateway)
 
@@ -72,8 +68,6 @@ You have now created a virtual service configuration for the httpbin service con
 
 The gateways list specifies that only requests through your httpbin-gateway are allowed. All other external requests will be rejected with a 404 response.
 
-<br>
-
 ## [Determining the ingress IP and ports](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/#configuring-ingress-using-a-gateway)
 
 Every Gateway is backed by a service of type LoadBalancer. The external load balancer IP and ports for this service are used to access the gateway
@@ -96,8 +90,6 @@ export SECURE_INGRESS_PORT=$(kubectl -n "$INGRESS_NS" get service "$INGRESS_NAME
 export TCP_INGRESS_PORT=$(kubectl -n "$INGRESS_NS" get service "$INGRESS_NAME" -o jsonpath='{.spec.ports[?(@.name=="tcp")].port}')
 
 ```
-
-<br>
 
 ## [Accessing ingress services](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/#accessing-ingress-services)
 
@@ -129,8 +121,6 @@ curl -s -I -HHost:httpbin.example.com "http://$INGRESS_HOST:$INGRESS_PORT/header
 # transfer-encoding: chunked
 
 ```
-
-<br>
 
 ## [Accessing ingress services using a browser](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/#accessing-ingress-services-using-a-browser)
 
@@ -178,8 +168,6 @@ EOF
 ```
 
 You can then use $INGRESS_HOST:$INGRESS_PORT in the browser URL. For example, http://$INGRESS_HOST:$INGRESS_PORT/headers will display all the headers that your browser sends.
-
-<br>
 
 ## Cleanup
 

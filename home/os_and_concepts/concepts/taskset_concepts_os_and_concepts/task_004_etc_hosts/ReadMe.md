@@ -1,7 +1,5 @@
 # /etc/hosts
 
-<br>
-
 ## /etc/hosts file
 
 The computer file hosts is an operating system file that maps hostnames to IP addresses. It is a plain text file. Originally a file named HOSTS.TXT was manually maintained and made available via file sharing by Stanford Research Institute for the ARPANET membership, containing the hostnames and address of hosts as contributed for inclusion by member organizations. The Domain Name System, first described in 1983 and implemented in 1984, automated the publication process and provided instantaneous and dynamic hostname resolution in the rapidly growing network. In modern operating systems, the hosts file remains an alternative name resolution mechanism, configurable often as part of facilities such as the Name Service Switch as either the primary method or as a fallback method.
@@ -25,15 +23,11 @@ This example only contains entries for the loopback addresses of the system and 
 Your browser you go to this 172.16.104.21  IP address first to get the response.
 
 ```bash
-<br>
-
 ##
 # Host Database
 #
 # localhost is used to configure the loopback interface
 # when the system is booting.  Do not change this entry.
-<br>
-
 ##
 127.0.0.1 localhost
 255.255.255.255 broadcasthost

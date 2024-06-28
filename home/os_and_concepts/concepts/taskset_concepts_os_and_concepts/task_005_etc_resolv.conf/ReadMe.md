@@ -1,7 +1,5 @@
 # /etc/resolv.conf
 
-<br>
-
 ## /etc/resolv.conf file
 
 Path on mac : /etc/resolv.conf

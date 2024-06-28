@@ -1,12 +1,8 @@
 # jstack
 
-<br>
-
 ## NAME
 
 jstack - stack trace
-
-<br>
 
 ### SYNOPSIS
 
@@ -16,13 +12,9 @@ jstack - stack trace
 
 > jstack [ option ] [server-id@]remote-hostname-or-IP
 
-<br>
-
 ## DESCRIPTION
 
 jstack  prints Java  stack traces of Java threads for a given Java process or core file or a remote debug server. For each Java frame, the full class name, method name, 'bci' (byte code index) and line number, if available, are printed.
-
-<br>
 
 ## PARAMETERS
 
@@ -40,8 +32,6 @@ jstack  prints Java  stack traces of Java threads for a given Java process or co
 
 * server-id
   * optional unique id, if multiple debug servers are running on the same remote host.
-
-<br>
 
 ## OPTIONS
 

@@ -4,8 +4,6 @@
 
 [Select - DevOps Engineer, SRE Learning Path](https://www.cloudskillsboost.google/paths)
 
-<br>
-
 ## High Level Objectives
 
 - Download a pair of sample apps from GitHub
@@ -17,8 +15,6 @@
 - Examine a default and custom trace span
 
 
-<br>
-
 ### Download a pair of sample apps from GitHub
 
 - Enable APIs
@@ -27,8 +23,6 @@
 gcloud services enable cloudbuild.googleapis.com
 gcloud services enable containerregistry.googleapis.com
 gcloud services enable run.googleapis.com
-
-<br>
 
 ## Clone
 cd ~/
@@ -50,8 +44,6 @@ python3 main.py
 
 - Web Preview (Web preview button) in the Cloud Shell toolbar, and then select Preview on port 8080.
 
-<br>
-
 ### Deploy the converter application to App Engine
 
 - App Engine needs an application created before it can be used. This is done just once using the gcloud app create command and specifying the region where you want the app to be created. This command takes a minute or so. Please wait for it to complete before moving on:
@@ -69,22 +61,16 @@ gcloud app deploy --version=one --quiet
 - Visit App Engine URL
 
 
-<br>
-
 ### Debug the application
 
 - Navigation menu to navigate to Debugger.
 - Authorize
 - CREATE SNAPSHOT
 
-<br>
-
 ### Adding log data
 
 - Logpoint
 
-
-<br>
 
 ### Fix the bug and deploy a new version
 
@@ -105,8 +91,6 @@ gcloud app deploy --version=one --quiet
 cd ~/gcp-debugging
 gcloud app deploy --version=two --quiet
 ```
-
-<br>
 
 ### Examine an error report coming out of Cloud Run in Error Reporting
 
@@ -131,8 +115,6 @@ gcloud source repos create hello-world
 git push --mirror \
 https://source.developers.google.com/p/$GOOGLE_CLOUD_PROJECT/r/hello-world
 ```
-
-<br>
 
 ### Examine a default and custom trace span
 

@@ -6,8 +6,6 @@
   - [Create a codebuild project : repo-d](#create-a-codebuild-project--repo-d)
   - [Go to the Report Groups section](#go-to-the-report-groups-section)
 
-<br>
-
 ## Docs
 
 [stackoverflow.com » Viewing Unit Test and Coverage Reports Generated in AWS CodeBuild](https://stackoverflow.com/questions/49664524/viewing-unit-test-and-coverage-reports-generated-in-aws-codebuild)
@@ -18,11 +16,7 @@
 
 [aws.amazon.com » Test Reports with AWS CodeBuild](https://aws.amazon.com/blogs/devops/test-reports-with-aws-codebuild/)
 
-<br>
-
 ## Create a repository in CodeCommit : repo-d
-
-<br>
 
 ## Create a codebuild project : repo-d
 
@@ -38,8 +32,6 @@ reports: #New
 ```
 
 Trigger build manually using `Start build` button.
-
-<br>
 
 ## Go to the Report Groups section
 

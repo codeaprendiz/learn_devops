@@ -1,24 +1,16 @@
 # dos2unix
 
-<br>
-
 ## NAME
 
 dos2unix - DOS/MAC to UNIX text file format converter 
-
-<br>
 
 ## OPTIONS
 
 > [-hkqV] [--help] [--keepdate] [--quiet] [--version]
 
-<br>
-
 ## DESCRIPTION
 
 the program that converts plain text files in DOS/MAC format to UNIX format. 
-
-<br>
 
 ## EXAMPLE
 

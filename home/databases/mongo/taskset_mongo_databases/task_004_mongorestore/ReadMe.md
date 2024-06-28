@@ -1,7 +1,5 @@
 ### mongorestore
 
-<br>
-
 #### Restoring the mongodump back into mongodb database
 
 - `standalone-complete-host-1616062771.gzip` includes the complete backup including all the databases.
@@ -17,8 +15,6 @@ $ uri_complete=mongodb://username:password@mongodbhost.company.com:27017/admin:2
 $ mongorestore --uri=$uri_complete -v --gzip --archive=standalone-complete-host-1616062771.gzip --nsInclude="module-*" --nsInclude="cli*" --numInsertionWorkersPerCollection=15 --bypassDocumentValidation --drop --preserveUUID --convertLegacyIndexes
 ```
 
-
-<br>
 
 #### Restoring dump of single database
 - Note the protocol here is `mongodb+srv`

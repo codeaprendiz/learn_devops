@@ -1,7 +1,5 @@
 # /etc/passwd
 
-<br>
-
 ## Information about the user-id
 
 ```bash

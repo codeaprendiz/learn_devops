@@ -1,7 +1,5 @@
 ### Objective : Create a private certificate for your Domain using AWS Certificate Manager
 
-<br>
-
 #### PRE-REQUISITE
 - You own a domain for example in following case I own - `ankitrathi.info`
 ![](.images/route53_dashboard.png)
@@ -12,15 +10,11 @@
 ![](.images/route53_hosted_zones.png)
 
 
-<br>
-
 #### Let's Begin
 - Go to AWS Certificate Manager
 
 - Choose the region as `us-east-1`
 ```bash
-<br>
-
 ### WHY
 Error: error creating CloudFront Distribution: InvalidViewerCertificate: The specified SSL certificate doesn't exist, isn't in us-east-1 region, isn't valid, or doesn't include a valid certificate chain.
         status code: 400, request id: *****

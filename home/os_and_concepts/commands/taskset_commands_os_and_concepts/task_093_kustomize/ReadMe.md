@@ -2,8 +2,6 @@
 
 - [docs](https://kustomize.io/)
 
-<br>
-
 ## Examples
 
 ```bash

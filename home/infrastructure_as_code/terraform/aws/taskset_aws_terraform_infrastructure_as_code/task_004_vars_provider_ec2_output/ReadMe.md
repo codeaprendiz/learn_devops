@@ -5,8 +5,6 @@
 
 
 
-<br>
-
 ## The following commands will be executed.
 
 - Initialization

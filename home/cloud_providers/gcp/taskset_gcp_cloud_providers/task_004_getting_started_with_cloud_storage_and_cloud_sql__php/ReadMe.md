@@ -21,8 +21,6 @@
 - cloud storage object
 - vm instance
 
-<br>
-
 ## Deploy a WebServer VM instance
 
 - Create instance `bloghost` with `Debian GNU/Linux 11 (bullseye)` image and ensure that you allow `http` traffic
@@ -34,8 +32,6 @@ apt-get install apache2 php php-mysql -y
 service apache2 restart
 ```
 
-<br>
-
 ## Create a Cloud Storage bucket using the gsutil command line
 
 - Use cloudshell for the following
@@ -45,28 +41,18 @@ export LOCATION=US
 
 echo $DEVSHELL_PROJECT_ID 
 
-<br>
-
 ## Create bucket
 gsutil mb -l $LOCATION gs://$DEVSHELL_PROJECT_ID
-
-<br>
 
 ## Copy image from public bucket to your local i.e. cloudshell
 gsutil cp gs://cloud-training/gcpfci/my-excellent-blog.png my-excellent-blog.png
 
-<br>
-
 ## Copy from cloudshell to new bucket
 gsutil cp my-excellent-blog.png gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
-
-<br>
 
 ## Modify the Access Control List of the object you just created so that it is readable by everyone
 gsutil acl ch -u allUsers:R gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
 ```
-
-<br>
 
 ## Create the Cloud SQL instance
 
@@ -76,8 +62,6 @@ gsutil acl ch -u allUsers:R gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
 - Go to `Users` and add user `blogdbuser` and give password as `blogdbuserpassword`
 - Go to `Connections`. Give name as `web front end`. For external IP give `bloghostVM_public_ip/32`
 
-
-<br>
 
 ## Configure an application in a Compute Engine instance to use Cloud SQL
 
@@ -121,8 +105,6 @@ sudo service apache2 restart
 - Visit `bloghostVM_publicIP/index.php`
 - Edit the file and add `CLOUDSQLIP` and `DBPASSWORD`
 - Restart and visit again
-
-<br>
 
 ## Configure an application in a Compute Engine instance to use a Cloud Storage object
 

@@ -4,8 +4,6 @@
 
 [Select - DevOps Engineer, SRE Learning Path](https://www.cloudskillsboost.google/paths)
 
-<br>
-
 ## Objective
 
 ![img.png](.images/arch-objective.png)
@@ -17,8 +15,6 @@ docker run --rm -p 8080:8080 test-python
 ```
 
 - Web Preview
-
-<br>
 
 ## Deploy to App Engine
 
@@ -47,8 +43,6 @@ gcloud app deploy --version=two --no-promote --quiet
 
 - Select split traffic and change to version 2 and save
 - Visit the URL again and refresh
-
-<br>
 
 ## Deploy the Kubernetes
 
@@ -83,8 +77,6 @@ kubectl get svc
 ```
 
 - Visit the external IP created by the service
-
-<br>
 
 ## Deploy to CloudRun
 

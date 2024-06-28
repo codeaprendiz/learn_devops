@@ -2,19 +2,13 @@
 
 [setenforce](https://man7.org/linux/man-pages/man8/setenforce.8.html)
 
-<br>
-
 ## NAME
 
 setenforce - modify the mode SELinux is running in
 
-<br>
-
 ## SYNOPSIS
 
 > setenforce [Enforcing|Permissive|1|0]
-
-<br>
 
 ## DESCRIPTION
 
@@ -23,8 +17,6 @@ Use Permissive or 0 to put SELinux in permissive mode.
 
 If SELinux is disabled and you want to enable it, or SELinux is
 enabled and you want to disable it, please see selinux(8).
-
-<br>
 
 ## EXAMPLES
 

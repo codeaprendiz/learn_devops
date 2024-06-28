@@ -2,16 +2,12 @@
 - To create an EC2 instance.
 - Save the remote state in an S3 bucket created manually.
 
-<br>
-
 ## First manually create an S3 bucket by following steps
 
 - Step1)
 
 ![](.ReadMe_images/s3-bucket-creation-screen.png)
 
-
-<br>
 
 ## The following commands will be executed.
 

@@ -5,8 +5,6 @@
 - [learn.microsoft.com » sp_add_job](https://learn.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-add-job-transact-sql?view=sql-server-ver16)
 - [learn.microsoft.com » dbo.sysjobs](https://learn.microsoft.com/en-us/sql/relational-databases/system-tables/dbo-sysjobs-transact-sql?view=sql-server-ver16)
 
-<br>
-
 ## Background
 
 | Name          | Type             | Description                                                                                                                                                                                                                                                                                                                                                  |
@@ -14,8 +12,6 @@
 | `msdb`        | Database         | The `msdb` database is a system database that is used by SQL Server Agent for scheduling alerts and jobs, and recording operators. It stores data for SQL Server Agent configurations, job information, job steps, job schedules, etc. It plays a crucial role in SQL Server jobs and alerts management.                                                     |
 | `dbo.sysjobs` | Table            | The `dbo.sysjobs` table is located in the `msdb` database and is part of SQL Server Agent. It stores information about each job that is registered with SQL Server Agent, such as the job name, description, enabled status, date created, date modified, etc. It is often queried directly or joined with other tables to retrieve job-related information. |
 | `sp_add_job`  | Stored Procedure | `sp_add_job` is a system stored procedure that is used to create a job in SQL Server Agent. It allows you to specify various properties of the job, such as the job name, owner, description, etc. It is located in the `msdb` database and is commonly used in scripts and applications to automate and manage job creation in SQL Server.                  |
-
-<br>
 
 ## Creating a job
 
@@ -34,8 +30,6 @@ GO  -- Execute the batch of statements.
 ```
 
 ---
-
-<br>
 
 ## Validate the job
 

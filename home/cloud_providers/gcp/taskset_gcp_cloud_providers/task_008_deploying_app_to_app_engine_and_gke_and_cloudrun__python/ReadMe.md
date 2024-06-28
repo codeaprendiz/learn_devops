@@ -32,8 +32,6 @@ docker run --rm -p 8080:8080 test-python
 
 - Web Preview
 
-<br>
-
 ## Deploy to App Engine
 
 - Create file app.yaml
@@ -61,8 +59,6 @@ gcloud app deploy --version=two --no-promote --quiet
 
 - Select split traffic and change to version 2 and save
 - Visit the URL again and refresh
-
-<br>
 
 ## Deploy the Kubernetes
 
@@ -97,8 +93,6 @@ kubectl get svc
 ```
 
 - Visit the external IP created by the service
-
-<br>
 
 ## Deploy to CloudRun
 

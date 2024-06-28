@@ -2,8 +2,6 @@
 
 Traffic mirroring, also called shadowing, is a powerful concept that allows feature teams to bring changes to production with as little risk as possible. Mirroring sends a copy of live traffic to a mirrored service. The mirrored traffic happens out of band of the critical request path for the primary service.
 
-<br>
-
 ## [Before you begin](https://istio.io/latest/docs/tasks/traffic-management/mirroring/#before-you-begin)
 
 Start by deploying two versions of the httpbin service that have access logging enabled:
@@ -116,8 +114,6 @@ spec:
 EOF
 ```
 
-<br>
-
 ## [Creating a default routing policy](https://istio.io/latest/docs/tasks/traffic-management/mirroring/#creating-a-default-routing-policy)
 
 By default Kubernetes load balances across both versions of the httpbin service. In this step, you will change that behavior so that all traffic goes to v1.
@@ -182,8 +178,6 @@ kubectl logs "$V2_POD" -c httpbin
 # <none>
 ```
 
-<br>
-
 ## [Mirroring traffic to v2](https://istio.io/latest/docs/tasks/traffic-management/mirroring/#mirroring-traffic-to-v2)
 
 ```bash
@@ -233,8 +227,6 @@ kubectl logs "$V1_POD" -c httpbin
 kubectl logs "$V2_POD" -c httpbin
 # 127.0.0.6 - - [09/Feb/2024:11:31:25 +0000] "GET /headers HTTP/1.1" 200 564 "-" "curl/8.6.0"
 ```
-
-<br>
 
 ## [Cleanup](https://istio.io/latest/docs/tasks/traffic-management/mirroring/#cleaning-up)
 

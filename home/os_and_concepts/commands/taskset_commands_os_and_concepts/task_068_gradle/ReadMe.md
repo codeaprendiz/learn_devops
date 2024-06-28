@@ -1,10 +1,6 @@
 # gradle
 
-<br>
-
 ## Examples
-
-<br>
 
 ### build | build the application
 
@@ -19,8 +15,6 @@ Debug mode
 ./gradlew build --debug
 ```
 
-<br>
-
 ### unitTest | run the unit tests
 
 ```bash
@@ -30,8 +24,6 @@ Debug mode
 # To force Gradle to rerun the tests, you can use the --rerun-tasks option
 ./gradlew test --rerun-tasks
 ```
-
-<br>
 
 ### bootRun | run the application
 

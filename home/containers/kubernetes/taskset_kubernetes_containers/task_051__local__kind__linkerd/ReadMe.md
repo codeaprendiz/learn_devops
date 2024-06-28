@@ -1,18 +1,12 @@
 # Kind Linkerd
 
-<br>
-
 ## [linkerd.io » Getting Started](https://linkerd.io/2.14/getting-started/)
-
-<br>
 
 ### Create Cluster Create cluster
 
 ```bash
 kind create cluster
 ```
-
-<br>
 
 ### Install CLI
 
@@ -25,8 +19,6 @@ curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh
 ```bash
 linkerd check --pre                     # validate that Linkerd can be installed
 ```
-
-<br>
 
 ### Install Linkerd
 
@@ -49,8 +41,6 @@ linkerd install | kubectl apply -f -
 ```bash
 linkerd check
 ```
-
-<br>
 
 ### Install Demo App
 
@@ -103,8 +93,6 @@ $ linkerd -n emojivoto check --proxy
 .
 Status check results are √
 ```
-
-<br>
 
 ### Explore more
 

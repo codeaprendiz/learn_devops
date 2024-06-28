@@ -1,7 +1,5 @@
 # How to use the documentation
 
-<br>
-
 ## Use the --help flag
 
 ```$ ls --help
@@ -11,16 +9,12 @@ List information about the FILEs (the current directory by default).
 .
 ```
 
-<br>
-
 ## Refer the man page
 
 ```bash
 $ man ls --no-pager
 ```
 
-
-<br>
 
 ## apropos
 

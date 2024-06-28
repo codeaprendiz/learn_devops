@@ -27,8 +27,6 @@
 | Terraform | v1.4.1  |
 
 
-<br>
-
 ## Download necessary files
 
 
@@ -41,13 +39,9 @@ gsutil cp -r gs://spls/gsp234/gsp234.zip .
 unzip gsp234.zip
 ```
 
-<br>
-
 ## Understand the code
 
 
-
-<br>
 
 ## Run Terraform
 
@@ -61,8 +55,6 @@ terraform plan -out=tfplan
 terraform apply tfplan
 ```
 
-<br>
-
 ## Cloud SQL Proxy
 
 - The Cloud SQL Proxy provides secure access to your Cloud SQL Second Generation instances 
@@ -75,8 +67,6 @@ terraform apply tfplan
 
 ![img.png](.images/cloud-sql-proxy-workings.png)
 
-
-<br>
 
 ## Installing the Cloud SQL Proxy
 

@@ -4,8 +4,6 @@ The Securing Gateways with HTTPS task describes how to configure HTTPS ingress a
 
 The example HTTPS service used for this task is a simple NGINX server. In the following steps you first deploy the NGINX service in your Kubernetes cluster. Then you configure a gateway to provide ingress access to the service via host nginx.example.com.
 
-<br>
-
 ## [Generate client and server certificates and keys](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-sni-passthrough/#generate-client-and-server-certificates-and-keys)
 
 Create a root certificate and private key to sign the certificate for your services:
@@ -21,8 +19,6 @@ Create a certificate and a private key for nginx.example.com:
 openssl req -out example_certs/nginx.example.com.csr -newkey rsa:2048 -nodes -keyout example_certs/nginx.example.com.key -subj "/CN=nginx.example.com/O=some organization"
 openssl x509 -req -sha256 -days 365 -CA example_certs/example.com.crt -CAkey example_certs/example.com.key -set_serial 0 -in example_certs/nginx.example.com.csr -out example_certs/nginx.example.com.crt
 ```
-
-<br>
 
 ## [Deploy nginx server](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-sni-passthrough/#deploy-an-nginx-server)
 
@@ -133,8 +129,6 @@ kubectl exec "$(kubectl get pod  -l run=my-nginx -o jsonpath={.items..metadata.n
 
 ```
 
-<br>
-
 ## [Configure an ingress gateway](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-sni-passthrough/#configure-an-ingress-gateway)
 
 Define a Gateway exposing port 443 with passthrough TLS mode. This instructs the gateway to pass the ingress traffic “as is”, without terminating TLS:
@@ -220,8 +214,6 @@ Output
 <head>
 <title>Welcome to nginx!</title>
 ```
-
-<br>
 
 ## Cleanup
 

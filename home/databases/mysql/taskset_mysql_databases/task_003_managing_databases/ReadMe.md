@@ -5,8 +5,6 @@
   - [Show Databases](#show-databases)
   - [Drop Database](#drop-database)
 
-<br>
-
 ## Create Database- [CREATE -- SHOW -- Databases](#create----show----databases)
 
 ```sql
@@ -19,8 +17,6 @@ Output
 mysql> CREATE DATABASE student_db;
 Query OK, 1 row affected (0.01 sec)
 ```
-
-<br>
 
 ## Show Databases
 
@@ -41,8 +37,6 @@ mysql> show databases;
 +--------------------+
 5 rows in set (0.01 sec)
 ```
-
-<br>
 
 ## Drop Database
 

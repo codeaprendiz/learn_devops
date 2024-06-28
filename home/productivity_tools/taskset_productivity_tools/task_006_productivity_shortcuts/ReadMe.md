@@ -9,8 +9,6 @@
     - [Other Shortcuts](#other-shortcuts)
   - [Miro](#miro)
 
-<br>
-
 ## MAC Shortcuts
 
 | Action                                       | Shortcut                 | Notes                                                         |
@@ -24,8 +22,6 @@
 | New folder via right click                   | `FUNCTION + SHIFT + F10` | -                                                             |
 | Take a screenshot and copy to clipboard      | `CMD + CTRL + SHIFT + 4` | -                                                             |
 
-<br>
-
 ## Chrome Shortcuts
 
 [Chrome Keyboard Shortcuts Official Documentation](https://support.google.com/chrome/answer/157179)
@@ -38,8 +34,6 @@
 | Open the last closed tab | `CMD+SHIFT+T`               | -                                       |
 | Go to search bar         | `/`                         | -                                       |
 | Go to previous page      | `CMD + ←`                   | Use the left arrow key with the command |
-
-<br>
 
 ## VS Code (Mac) Shortcuts
 
@@ -62,8 +56,6 @@
 | Toggle line wrap on any open file or integrated terminal                              | `OPTION + Z`       | -                                                                                           |
 | To open files with full name / partial name                                           | `CMD + P`          | -                                                                                           |
 
-<br>
-
 ### Side Panel Shortcuts
 
 | Action                                                | Shortcut           | Notes                |
@@ -71,8 +63,6 @@
 | Open the sidebar `Explorer`                           | `CMD + SHIFT + E`  | Alternate: `CMD + 0` |
 | Open `Source Control`                                 | `CNTR + SHIFT + G` | -                    |
 | Navigate with `j` and `k` and `l` to enter commit box | `j`, `k`, `l`      |                      |
-
-<br>
 
 #### Navigate Folders (When in Explorer)
 
@@ -85,15 +75,11 @@
 | Open `Finder`                                 | `CMD + SHIFT + F`    | -                               |
 | Open `Search and Replace`                     | `CMD + SHIFT + H`    | -                               |
 
-<br>
-
 ### Other Shortcuts
 
 | Action                                           | Shortcut         | Notes               |
 |--------------------------------------------------|------------------|---------------------|
 | Toggle `Zen Mode` (Ensure you're editing a file) | `CMD+K` then `Z` | Press keys together |
-
-<br>
 
 ## Miro
 

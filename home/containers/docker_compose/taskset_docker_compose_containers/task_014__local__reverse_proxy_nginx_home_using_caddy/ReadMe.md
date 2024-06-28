@@ -16,8 +16,6 @@ $ cat /etc/hosts | grep test.domain.com
 ```
 
 
-<br>
-
 #### Directory structure
 
 ```bash
@@ -65,20 +63,14 @@ test.domain.com {
     }
 }
 
-<br>
-
 ###
 #    root * /usr/share/caddy
 #    file_server
-
-<br>
 
 ### USERS CREATED
 # username/username
 # username2/username2
 
-
-<br>
 
 ###### DEFAULT CADDY FILE - https://caddyserver.com/docs/caddyfile
 # :80

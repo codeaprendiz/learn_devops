@@ -1,12 +1,8 @@
 # netstat
 
-<br>
-
 ## NAME
 
 netstat -- show network status
-
-<br>
 
 ## SYNOPSIS
 
@@ -25,8 +21,6 @@ netstat -- show network status
 > netstat -r [-Aaln] [-f address_family]
 
 > netstat -rs [-s]
-
-<br>
 
 ## DESCRIPTION
 
@@ -79,8 +73,6 @@ Consider two programs attempting a socket connection (call them a and b). Both s
 * a wishes to close the connection, and enters FIN_WAIT1. b receives the FIN request, sends an ACK (then a enters FIN_WAIT2), enters CLOSE_WAIT, tells a it is closing down and the enters LAST_ACK. Once a acknowledges this (and enters TIME_WAIT), b enters CLOSE. a waits a bit to see if anythings is left, then enters CLOSE.
 * a and b have finished their business and decide to close the connection (simultaneous closing). When a is in FIN_WAIT, and instead of receiving an ACK from b, it receives a FIN (as b wishes to close it as well), a enters CLOSING. But there are still some messages to send (the ACK that a is supposed to get for its original FIN), and once this ACK arrives, a enters TIME_WAIT as usual.
 
-<br>
-
 ## OPTIONS
 
 * -a
@@ -94,8 +86,6 @@ Consider two programs attempting a socket connection (call them a and b). Both s
 * -p protocol
   * Show statistics about protocol, which is either a well-known name for a protocol or an alias for it.  Some protocol names and aliases are listed in the file /etc/protocols. The special protocol name ``bdg'' is used to show bridging statistics.  A null response typically means that there are no interesting numbers to report. The program will complain if protocol is unknown or if there is no statistics routine for it.
   
-<br>
-
 ## EXAMPLES
 
 Linux netstat syntax

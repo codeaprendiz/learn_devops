@@ -2,8 +2,6 @@
 
 - [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)
 
-<br>
-
 ## EXAMPLES
 
 Taking the mysqldump

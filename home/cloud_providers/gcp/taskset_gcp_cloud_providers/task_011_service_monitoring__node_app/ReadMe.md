@@ -7,16 +7,12 @@
 
 [haggman/HelloLoggingNodeJS.git](https://github.com/haggman/HelloLoggingNodeJS.git)
 
-<br>
-
 ## High Level Objectives
 
 - Deploy the test nodejs app 
 - Use Service Monitoring to create an availability SLO
 - Create an alert tied to your SLO
 - Trigger the alert
-
-<br>
 
 ### Deploy the test nodejs app
 
@@ -40,8 +36,6 @@ gcloud app deploy
 ```
 
 - Test the URL
-
-<br>
 
 ### Use Service Monitoring to create an availability SLO, Create an alert tied to your SLO
 
@@ -67,8 +61,6 @@ do curl -s https://$DEVSHELL_PROJECT_ID.appspot.com/random-error \
 
 
 
-<br>
-
 ### Create an alert tied to your SLO
 
 - Expand the new SLO and investigate the information it displays
@@ -80,8 +72,6 @@ do curl -s https://$DEVSHELL_PROJECT_ID.appspot.com/random-error \
 - Next and create
 
 
-
-<br>
 
 ### Trigger the alert
 

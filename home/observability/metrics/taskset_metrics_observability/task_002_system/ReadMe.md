@@ -24,20 +24,14 @@
 
 
 
-<br>
-
 ### Number-of-hosts
 
 Metrics
 
 ```bash
-<br>
-
 ## UniqueCount ##
 a = UniqueCount(host.name)
 ```
-
-<br>
 
 ### CPU-Usage-Gauge
 
@@ -62,22 +56,14 @@ a = UniqueCount(host.name)
 - Data timerange mode : last value
 
 ```bash
-<br>
-
 ## Average ##
 user = Avg(system.cpu.user.pct)
-
-<br>
 
 ## Average ##
 system = Avg(system.cpu.system.pct)
 
-<br>
-
 ## Average ##
 n = Avg(system.cpu.cores)
-
-<br>
 
 ## Bucket Script ##
 params.n > 0 ? (params.user+params.system)/params.n : null
@@ -91,8 +77,6 @@ GroupBy-Everything
 | GREEN  | : >= greater than or equal | 0     |
 | ORANGE | : >= greater than or equal | 0.7   |
 | RED    | : >= greater than or equal | 0.85  |
-
-<br>
 
 ### Memory-Usage-Gauge
 
@@ -109,8 +93,6 @@ GroupBy-Everything
 - Data timerange mode : last value
 
 ```bash
-<br>
-
 ## Average ##
 a = Avg(system.memory.actual.used.pct)
 
@@ -123,8 +105,6 @@ GroupBy-Everything
 | ORANGE | : >= greater than or equal | 0.7   |
 | RED    | : >= greater than or equal | 0.85  |
 
-
-<br>
 
 ### Disk-used
 
@@ -144,12 +124,8 @@ GroupBy-Everything
 - Data timerange mode : last value
 
 ```bash
-<br>
-
 ## TopHit ##
 a = TopHit(system.fsstat.total_size.used)         # Size=1, Aggregate with Avg, Order By : @timastamp, Desc
-
-<br>
 
 ## TopHit ##
 b = TopHit(system.fsstat.total_size.total)        # Size=1, Aggregate with Avg, Order By : @timastamp, Desc
@@ -167,8 +143,6 @@ GroupBy-Everything
 | ORANGE | : >= greater than or equal | 0.7   |
 | RED    | : >= greater than or equal | 0.85  |
 
-
-<br>
 
 ### Inbound-Traffic
 
@@ -189,22 +163,14 @@ GroupBy-Everything
 - Data timerange mode : last value
   
 ```bash
-<br>
-
 ## Max ##
 a = Max(system.network.in.bytes)
-
-<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
-<br>
-
 ## PositiveOnly ##
 c = PositiveOnly(b)
-
-<br>
 
 ## Series Agg ##
 Function : Sum             # c1 + c2 + c3 ....
@@ -218,8 +184,6 @@ Decending
 
 
   
-<br>
-
 #### Total Transferred
 
 **Aggregation**
@@ -229,22 +193,14 @@ Decending
 - Data timerange mode : last value
 
 ```bash
-<br>
-
 ## Max ##
 a = Max(system.network.in.bytes)
-
-<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
-<br>
-
 ## PositiveOnly ##
 c = PositiveOnly(b)
-
-<br>
 
 ## Series Agg ##
 Function : Overall Sum             # c1 + c2 + c3 ....
@@ -254,8 +210,6 @@ Top : 10
 OrderBy : Doc Count (default)
 Decending
 ```
-
-<br>
 
 ### Outbound-Traffic
 
@@ -272,22 +226,14 @@ Decending
 - Data timerange mode : last value
   
 ```bash
-<br>
-
 ## Max ##
 a = Max(system.network.out.bytes)
-
-<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
-<br>
-
 ## PositiveOnly ##
 c = PositiveOnly(b)
-
-<br>
 
 ## Series Agg ##
 Function : Sum             # c1 + c2 + c3 ....
@@ -297,8 +243,6 @@ Top : 10
 OrderBy : Doc Count (default)
 Decending
 ```
-
-<br>
 
 #### Total Transferred
 
@@ -314,22 +258,14 @@ Decending
 - Data timerange mode : last value
 
 ```bash
-<br>
-
 ## Max ##
 a = Max(system.network.out.bytes)
-
-<br>
 
 ## Derivative ##
 b = Derivative(a)/1s
 
-<br>
-
 ## PositiveOnly ##
 c = PositiveOnly(b)
-
-<br>
 
 ## Series Agg ##
 Function : Overall Sum             # c1 + c2 + c3 ....
@@ -339,8 +275,6 @@ Top : 10
 OrderBy : Doc Count (default)
 Decending
 ```
-
-<br>
 
 ### Top-Hosts-By-CPU-Realtime
 
@@ -356,8 +290,6 @@ Decending
 - Data timerange mode : last value
 
 ```bash
-<br>
-
 ## Average ##
 a = Avg(system.cpu.user.pct)
 
@@ -375,8 +307,6 @@ Desc
 
 
 
-<br>
-
 ### Top-Hosts-By-Memory-Realtime
 
 - system.memory.actual.used.pct
@@ -391,8 +321,6 @@ Desc
 - Data timerange mode : last value
 
 ```bash
-<br>
-
 ## Average ##
 a = Avg(system.memory.actual.used.pct)
 
@@ -409,8 +337,6 @@ Desc
 | RED    | : >= greater than or equal | 0.85  |
 
 
-<br>
-
 ### Hosts-histogram-by-CPU-usage
 
 - system.cpu.user.pct
@@ -425,12 +351,8 @@ Value Average(system.cpu.user.pct)
 
 **Buckets**
 ```bash
-<br>
-
 ## X-axis ##
 @timestamp per 30 seconds
-
-<br>
 
 ## Y-axis ##
 host.name: Descending

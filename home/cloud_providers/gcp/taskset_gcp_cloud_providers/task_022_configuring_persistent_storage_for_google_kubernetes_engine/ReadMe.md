@@ -20,8 +20,6 @@
 - persistent volume claims
 - statefulsets
 
-<br>
-
 ### Create PVCs
 
 ```bash
@@ -57,8 +55,6 @@ kubectl apply -f pvc-demo.yaml
 kubectl get persistentvolumeclaim
 ```
 
-
-<br>
 
 ### Mount and verify Google Cloud persistent disk PVCs in Pods
 
@@ -106,8 +102,6 @@ cat /var/www/html/index.html
 ```
 
 
-<br>
-
 ### Create StatefulSets with PVCs
 
 
@@ -134,8 +128,6 @@ kubectl get pvc
 # Use "kubectl describe" to view the details of the first PVC in the StatefulSet:
 kubectl describe pvc hello-web-disk-statefulset-demo-0
 ```
-
-<br>
 
 ### Verify the persistence of Persistent Volume connections to Pods managed by StatefulSets
 

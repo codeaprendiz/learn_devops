@@ -1,18 +1,12 @@
 # keytool 
 
-<br>
-
 ## NAME
 
 keytool - key and certificate management tool
 
-<br>
-
 ## SYNOPSIS
 
 > keytool [ commands ]
-
-<br>
 
 ## DESCRIPTION
 
@@ -100,8 +94,6 @@ For example, if you have a provider package that supplies a keystore implementat
 
 keystore.type=pkcs12
 
-<br>
-
 ## OPTIONS
 
 - -delete
@@ -156,8 +148,6 @@ keystore.type=pkcs12
 
   - The -v option can appear for all subcommands except -help.  If it appears, it signifies "verbose" mode; detailed certificate information will be output.
   
-<br>
-
 ## EXAMPLES
 
 - -import

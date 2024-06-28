@@ -1,8 +1,6 @@
 # Let's Encrypt And Cert-Manager
 
 
-<br>
-
 ## Cert-Manager Releases
 
 [cert-manager/releases/tag/v1.10.0](https://github.com/cert-manager/cert-manager/releases/tag/v1.10.0)
@@ -47,8 +45,6 @@ replicaset.apps/cert-manager-webhook-75f77865c8     1         1         1       
 ```
 
 
-<br>
-
 ## Let's deploy ingress-controller
 
 You can download the ingress controller from [ingress-nginx/releases/tag/controller-v1.4.0](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.4.0)
@@ -64,8 +60,6 @@ ReadMe.md                           cert-manager.yaml                   ingress-
 # The same file is also available as raw content https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.4.0/deploy/static/provider/cloud/deploy.yaml
 ╰─ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.4.0/deploy/static/provider/cloud/deploy.yaml                 
 
-
-<br>
 
 ## See if its working
 ╰─ kubectl get all -n ingress-nginx
@@ -89,8 +83,6 @@ job.batch/ingress-nginx-admission-create   1/1           18s        2m18s
 job.batch/ingress-nginx-admission-patch    1/1           19s        2m18s
 ```
 
-<br>
-
 ## Nginx will create a external IP svc. This svc is the one which you should attach to your DNS
 
 ```bash
@@ -109,8 +101,6 @@ Name:   testcertmanager.ankitrathi.info
 Address: 34.66.238.103
 ```
 
-<br>
-
 ## Let's add a cluster-isser.yaml
 
 [cert-manager.io/docs/configuration/acme/](https://cert-manager.io/docs/configuration/acme/)
@@ -126,8 +116,6 @@ clusterissuer.cert-manager.io/letsencrypt-staging created
 ╰─ kubectl get ClusterIssuer              
 NAME                  READY   AGE
 letsencrypt-staging   False   53s
-
-<br>
 
 ## Make sure you change with a valid email address
 ╰─ cat cluster-issuer.yaml| grep email
@@ -177,8 +165,6 @@ $ kubectl apply -f ingress.yaml
 ingress.networking.k8s.io/whoami-ingress created
 ```
 
-<br>
-
 ## Let's create a certificate.yaml
 
 [cert-manager.io/docs/concepts/certificate](https://cert-manager.io/docs/concepts/certificate/)
@@ -188,8 +174,6 @@ ingress.networking.k8s.io/whoami-ingress created
 ```bash
 $ kubectl apply -f certificate.yaml 
 ``` 
-
-<br>
 
 ## Seeing the changes
 
@@ -231,8 +215,6 @@ acme-crt   True    tls-secret   48s
 ```
 
 
-
-<br>
 
 ## HTTPS
 

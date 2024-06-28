@@ -2,19 +2,13 @@
 
 [route](https://TBD/man/8/route)
 
-<br>
-
 ## NAME
 
 route - show / manipulate the IP routing table
 
-<br>
-
 ## SYNOPSIS
 
 > route [-CFvnee]
-
-<br>
 
 ## OPTIONS
 

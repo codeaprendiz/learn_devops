@@ -1,12 +1,8 @@
 # rm
 
-<br>
-
 ## NAME
 
 rm, unlink -- remove directory entries
-
-<br>
 
 ## SYNOPSIS
 
@@ -14,13 +10,9 @@ rm, unlink -- remove directory entries
 
 > unlink file
 
-<br>
-
 ## DESCRIPTION
 
 The rm utility attempts to remove the non-directory type files specified on the command line.  If the permissions of the file do not permit writing, and the standard input device is a terminal, the user is prompted (on the standard error output) for confirmation.
-
-<br>
 
 ## OPTIONS
 

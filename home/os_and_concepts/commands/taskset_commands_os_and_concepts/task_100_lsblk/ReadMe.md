@@ -2,13 +2,9 @@
 
 - [lsblk](https://man7.org/linux/man-pages/man8/lsblk.8.html)
 
-<br>
-
 ## NAME
 
 lsblk - list block devices
-
-<br>
 
 ## EXAMPLES
 

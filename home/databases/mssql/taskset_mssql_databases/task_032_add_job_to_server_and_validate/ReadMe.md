@@ -5,8 +5,6 @@
 - [learn.microsoft.com » sys.servers](https://learn.microsoft.com/en-us/sql/relational-databases/system-compatibility-views/sys-sysservers-transact-sql?view=sql-server-ver16)
 - [learn.microsoft.com » dbo.sysjobservers](https://learn.microsoft.com/en-us/sql/relational-databases/system-tables/dbo-sysjobservers-transact-sql?view=sql-server-ver16)
 
-<br>
-
 ## Add job to the server
 
 This script is ensuring that the SQL Server Agent job named `'Daily SQLTestDB backup'` is targeted to run on the local server (since no specific server is provided). This is a necessary step after creating a job and before it can be run, as SQL Server needs to know where the job should be executed. If you're in a multi-server environment and you want the job to run on a different server, you would specify that server in the `sp_add_jobserver` procedure.
@@ -19,8 +17,6 @@ EXEC dbo.sp_add_jobserver  -- Execute the stored procedure to target the job to 
     @job_name = N'Daily SQLTestDB backup';  -- Specify the name of the job to be targeted to run on the server.
 GO  -- 
 ```
-
-<br>
 
 ## Validate
 

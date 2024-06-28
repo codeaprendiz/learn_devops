@@ -19,8 +19,6 @@
 
 
 
-<br>
-
 ## Create a new repository
 
 ```bash
@@ -28,8 +26,6 @@ gcloud source repos create REPO_DEMO
 ```
 
 
-
-<br>
 
 ## Clone the new repository into your Cloud Shell session
 
@@ -59,15 +55,11 @@ git commit -m "First file using Cloud Source Repositories" myfile.txt
 git push origin master
 ```
 
-<br>
-
 ## Browse files in the Google Cloud Source Repository
 
 ```bash
 gcloud source repos list
 ```
-
-<br>
 
 ## View a file in the Google Cloud repository
 

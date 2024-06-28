@@ -6,8 +6,6 @@
     - [To export and add new executable in PATH](#to-export-and-add-new-executable-in-path)
     - [Exporting to child process](#exporting-to-child-process)
 
-<br>
-
 ## DESCRIPTION
 
 Shell builtin commands are commands that can be executed within the running shell's process.
@@ -16,19 +14,13 @@ The export command is one of the bash shell BUILTINS commands, which means it is
 
 In general, the export command marks an environment variable to be exported with any newly forked child processes and thus it allows a child process to inherit all marked variables.
 
-<br>
-
 ## EXAMPLES
-
-<br>
 
 ### To export and add new executable in PATH
 
 ```bash
 unzip /app/apache-maven-3.5.3.zip -d /app; chown -R app:app /app; export PATH=$PATH:/app/apache-maven-3.5.3/bin 
 ```
-
-<br>
 
 ### Exporting to child process
 

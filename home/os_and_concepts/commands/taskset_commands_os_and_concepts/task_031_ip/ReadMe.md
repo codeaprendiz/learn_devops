@@ -2,17 +2,11 @@
 
 [ip](https://TBD/man/8/ip)
 
-<br>
-
 ## NAME
 
 ip - show / manipulate routing, devices, policy routing and tunnels
 
-<br>
-
 ## OBJECT
-
-<br>
 
 ### address or addr
 
@@ -20,35 +14,23 @@ protocol (IP or IPv6) address on a device.
 
 protocol (IP or IPv6) address on a device.
   
-<br>
-
 ### address add
 
 add new protocol address.
-
-<br>
 
 ### link
 
 network device
 
-<br>
-
 #### link add
-
-<br>
 
 ### netns
 
 network namespace
 
-<br>
-
 #### route
 
 Manipulate route entries in the kernel routing tables keep information about paths to other networked nodes.
-
-<br>
 
 ## EXAMPLES
 
@@ -154,8 +136,6 @@ Destination  Gateway      Genmask         Flags     Metric  Ref  Use   Iface
   
 ```bash
 $ ip route add default via 192.168.1.1  
-<br>
-
 ## OR 
 $ ip route add 0.0.0.0 via 192.168.1.1  
 ```
@@ -203,8 +183,6 @@ $ ip netns exec red ip link
 1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 
-<br>
-
 ### OR
 
 $ ip -n red  link
@@ -215,14 +193,10 @@ $ ip -n red  link
 - Similarly you can run the arp command on the host and inside the network namespace
 
 ```bash
-<br>
-
 ### On the host
 $ arp
 Address                  HWtype  HWaddress           Flags Mask            Iface
 _gateway                 ether   42:01:0a:80:00:01   C                     ens4
-
-<br>
 
 ## inside the namespace
 $ ip netns exec red arp

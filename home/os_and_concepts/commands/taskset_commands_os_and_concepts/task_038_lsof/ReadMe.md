@@ -1,13 +1,9 @@
 # lsof
 
-<br>
-
 ## NAME
 
 lsof - list open files
   
-<br>
-
 ## EXAMPLES on macOS
 
 To check which process is using port 8080 use the following command

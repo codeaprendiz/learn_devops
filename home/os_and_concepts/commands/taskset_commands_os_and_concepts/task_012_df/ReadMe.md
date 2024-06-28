@@ -1,12 +1,8 @@
 # df
 
-<br>
-
 ## NAME
 
 df -- display free disk space
-
-<br>
 
 ## SYNOPSIS
 
@@ -17,8 +13,6 @@ DESCRIPTION
 The df utility displays statistics about the amount of free disk space on the specified filesystem or on the filesystem of which file is a part.  
 Values are displayed in 512-byte per block counts. 
 If neither a file or a filesystem operand is specified, statistics for all mounted filesystems are displayed (subject to the -t option below).
-
-<br>
 
 ## OPTIONS
 
@@ -35,8 +29,6 @@ The following options are available:
       Use 1024-byte (1-Kbyte) blocks, rather than the default.
 * -m
       Use 1048576-byte (1-Mbyte) blocks rather than the default.
-
-<br>
 
 ## EXAMPLES
 

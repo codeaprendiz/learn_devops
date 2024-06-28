@@ -26,22 +26,16 @@
 
 
 
-<br>
-
 ### Verify Terraform is installed
 
 ```bash
 terraform --version
 ```
 
-<br>
-
 ### Add a local backend
 
 ```bash
 touch main.tf
-
-<br>
 
 ## Get project ID
 gcloud config list --format 'value(core.project)'
@@ -80,8 +74,6 @@ terraform apply
 terraform show
 ```
 
-<br>
-
 ### Add a Cloud Storage backend
 
 - Add cloud storage backend, comment the previous one
@@ -104,8 +96,6 @@ terraform init -migrate-state
 
 - Go the the bucket. Click on your bucket and navigate to the file terraform/state/default.tfstate.
 
-<br>
-
 ### Refresh the state
 
 - Add labels to the bucket
@@ -113,8 +103,6 @@ terraform init -migrate-state
 ```bash
 terraform refresh
 ```
-
-<br>
 
 ### Clean up the workspace
 

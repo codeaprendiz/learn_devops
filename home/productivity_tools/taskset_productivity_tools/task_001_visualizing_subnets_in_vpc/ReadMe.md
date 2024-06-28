@@ -10,8 +10,6 @@ If the VPC CIDR is 10.0.0.0/24
 
 
 
-<br>
-
 ### You can also use the following subnet creator 
 
 [IPv4SubnetCreator](https://network00.com/NetworkTools/IPv4SubnetCreator/)

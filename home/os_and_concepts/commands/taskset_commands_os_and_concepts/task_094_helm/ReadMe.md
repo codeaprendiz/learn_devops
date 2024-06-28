@@ -2,8 +2,6 @@
 
 - [helm](https://helm.sh/docs/helm/)
 
-<br>
-
 ## Examples
 
 - To add a new Helm chart repository to your Helm installation. A Helm chart repository is a location where packaged charts can be stored and shared

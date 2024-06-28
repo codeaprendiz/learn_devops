@@ -29,19 +29,13 @@
     - [rm](#rm)
     - [rev-list | To get the commit-id associated with a git tag](#rev-list--to-get-the-commit-id-associated-with-a-git-tag)
 
-<br>
-
 ## NAME
 
 git - the content tracker
 
-<br>
-
 ## DESCRIPTION
 
 Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
-
-<br>
 
 ## Useful aliases
 
@@ -53,11 +47,7 @@ alias devtags="git --no-pager ls-remote --tags | egrep "refs/tags/dev" | awk {'p
 alias dlocal="git --no-pager branch --merged  | egrep -v master | xargs git branch -d"
 ```
 
-<br>
-
 ## EXAMPLES
-
-<br>
 
 ### init
 
@@ -65,8 +55,6 @@ alias dlocal="git --no-pager branch --merged  | egrep -v master | xargs git bran
 # initialize local repo
 git init
 ```
-
-<br>
 
 ### pull - To pull the latest changes from `master`
 
@@ -81,8 +69,6 @@ git pull origin master --ff-only
 ```bash
 git pull
 ```
-
-<br>
 
 ### push -- To push all the changes to the `master` branch
 
@@ -114,8 +100,6 @@ git push origin --tags
 # Push the tag to the remote repository named origin.
 git push origin v1.0.0
 ```
-
-<br>
 
 ### config -- Configuring Git Examples -- GIT_PAGER
 
@@ -187,8 +171,6 @@ git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "http
 git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "ssh://git@github.com/"
 ```
 
-<br>
-
 ### remote -- origin
 
 - Incase you want to change the origin url then you can use the command
@@ -215,8 +197,6 @@ git remote add origin <server>
 git remote -v
 ```
 
-<br>
-
 ### add -- To add a file to the staging area
 
 - Add one or more files to staging (index):
@@ -227,8 +207,6 @@ git add *
 git add .
 ```
 
-<br>
-
 ### commit -- To commit the changes to the repository
 
 - Commit changes to head (but not yet to the remote repository)
@@ -236,8 +214,6 @@ git add .
 ```bash
 git commit -m "Commit message"
 ```
-
-<br>
 
 ### push -- To push the changes to the remote repository
 
@@ -253,8 +229,6 @@ git push origin master
 git push origin <branchname>
 ```
 
-<br>
-
 ### status -- To check the status of the repository
 
 - List the files you've changed and those you still need to add or commit:
@@ -262,8 +236,6 @@ git push origin <branchname>
 ```bash
 git status
 ```
-
-<br>
 
 ### checkout -- To checkout a branch
 
@@ -286,8 +258,6 @@ git checkout master
 # To checkout feature/branch1
 git checkout feature/branch1
 ```
-
-<br>
 
 ### branch
 
@@ -330,8 +300,6 @@ git branch -r
 git checkout branch1
 ```
 
-<br>
-
 ### merge
 
 - Merge local `master` branch to local `branch1`
@@ -350,8 +318,6 @@ git merge <branchname>
 - To merge master to your current branch without rebasing
 
 ```bash
-<br>
-
 ## This will fetch the latest changes from master and merge them into your current branch. If there are conflicts, you will be prompted to resolve them, and you will be asked to provide a commit message for the merge commit
 git config pull.rebase false
 ```
@@ -369,8 +335,6 @@ git push -u origin branch1 # zsh alias | ggpush
 - To merge master to your current branch with rebasing
 
 ```bash
-<br>
-
 ## This will fetch the latest changes from master and reapply your local commits on top of these changes. It helps to maintain a linear project history.
 git config pull.rebase true
 ```
@@ -384,8 +348,6 @@ $ git pull origin master
 $ git push -u origin branch1 # zsh alias | ggpush
 ```
 
-<br>
-
 ### diff
 
 - View all the merge conflicts:
@@ -393,8 +355,6 @@ $ git push -u origin branch1 # zsh alias | ggpush
 ```bash
 git diff
 ```
-
-<br>
 
 ### log
 
@@ -406,15 +366,11 @@ git log
 
 - , fetch the latest history from the server and point your local master branch at it, do this:
 
-<br>
-
 ### fetch -- To fetch the latest changes from the remote repository
 
 ```bash
 git fetch origin
 ```
-
-<br>
 
 ### reset -- To reset the changes
 
@@ -450,8 +406,6 @@ git reset --hard B
 git push --force
 ```
 
-<br>
-
 ### grep
 
 - Search the working directory for foo():
@@ -459,8 +413,6 @@ git push --force
 ```bash
 git grep "foo()"
 ```
-
-<br>
 
 ### bundle
 
@@ -484,8 +436,6 @@ git bundle create tmp.bundle --all
 ```bash
 du -sh tmp.bundle
 ```
-
-<br>
 
 ### tag
 
@@ -531,16 +481,12 @@ git tag -d v1.0.0
 $ git push origin :refs/tags/v1.0.0
 ```
 
-<br>
-
 ### ls-remote
 
 ```bash
 # To list all the tags in the repository
 git ls-remote --tags
 ```
-
-<br>
 
 ### To do a commit on particual date
 
@@ -549,8 +495,6 @@ git ls-remote --tags
 ```bash
 GIT_AUTHOR_DATE="2023-12-11 21:00:56" GIT_COMMITTER_DATE="2023-12-11 21:00:56" git commit -m "Commit for December 11th"
 ```
-
-<br>
 
 ### rm
 
@@ -578,8 +522,6 @@ git rm --cached **/.mvn -r
 # Then add the following to .gitignore
 # **/.mvn
 ```
-
-<br>
 
 ### rev-list | To get the commit-id associated with a git tag
 

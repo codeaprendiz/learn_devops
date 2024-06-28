@@ -1,7 +1,5 @@
 # [Getting Started with Istio and Kubernetes Gateway API](https://istio.io/latest/docs/setup/additional-setup/getting-started/)
 
-<br>
-
 ## Objective
 
 Follow these steps to get started with Istio on AWS EKS cluster:
@@ -11,15 +9,11 @@ Follow these steps to get started with Istio on AWS EKS cluster:
 - Open the application to outside traffic
 - View the dashboard
 
-<br>
-
 ## PRE-REQUISITES
 
 ```bash
 brew install eksctl
 ```
-
-<br>
 
 ## [Download](https://istio.io/latest/docs/setup/getting-started/#download)
 
@@ -32,8 +26,6 @@ $ ls istio-1.20.2
 LICENSE       README.md     bin           manifest.yaml manifests     samples       tools
 
 $ cat ~/.zshrc | grep istio         
-<br>
-
 ## For istioctl
 export PATH="$PATH:$HOME/Downloads/istio-1.20.2/bin"
 
@@ -42,8 +34,6 @@ client version: 1.20.2
 control plane version: 1.20.2
 data plane version: 1.20.2 (2 proxies)
 ```
-
-<br>
 
 ## [Install istio](https://istio.io/latest/docs/setup/getting-started/#install)
 
@@ -57,8 +47,6 @@ Add a namespace label to instruct Istio to automatically inject Envoy sidecar pr
 ```bash
 kubectl label namespace default istio-injection=enabled
 ```
-
-<br>
 
 ## [Deploy sample application](https://istio.io/latest/docs/setup/getting-started/#bookinfo)
 
@@ -96,8 +84,6 @@ $ kubectl exec "$(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadat
 <title>Simple Bookstore App</title>
 ```
 
-<br>
-
 ## [Open the application to outside traffic](https://istio.io/latest/docs/setup/getting-started/#ip)
 
 ```bash
@@ -110,8 +96,6 @@ $ istioctl analyze
 ✔ No validation issues found when analyzing namespace: default.
 ```
 
-<br>
-
 ## [Determining the ingress IP and ports](https://istio.io/latest/docs/setup/getting-started/#determining-the-ingress-ip-and-ports)
 
 Follow these instructions to set the INGRESS_HOST and INGRESS_PORT variables for accessing the gateway
@@ -123,12 +107,8 @@ kubectl get svc istio-ingressgateway -n istio-system
 Choose the right command as per the provider
 
 ```bash
-<br>
-
 ## For AWS LB
 export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
-<br>
-
 ## For GCP
 export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 ```
@@ -167,8 +147,6 @@ content-length: 5289
 x-envoy-upstream-service-time: 122
 ```
 
-<br>
-
 ## [View the dashboard](https://istio.io/latest/docs/setup/getting-started/#dashboard)
 
 ```bash
@@ -176,8 +154,6 @@ x-envoy-upstream-service-time: 122
 # https://stackoverflow.com/questions/75758115/persistentvolumeclaim-is-stuck-waiting-for-a-volume-to-be-created-either-by-ex
 kubectl apply -f $HOME/Downloads/istio-1.20.2/samples/addons
 ```
-
-<br>
 
 ### (OPTIONAL) AWS Specific
 
@@ -217,8 +193,6 @@ for i in $(seq 1 100); do curl -s -o /dev/null "http://$GATEWAY_URL/productpage"
 ```bash
 istioctl dashboard kiali
 ```
-
-<br>
 
 ## [Uninstall](https://istio.io/latest/docs/setup/additional-setup/getting-started/#uninstall)
 

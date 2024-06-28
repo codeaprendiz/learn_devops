@@ -5,8 +5,6 @@ of the instance we want to create
 
 
 
-<br>
-
 ## The following commands will be executed.
 
 - Initialization

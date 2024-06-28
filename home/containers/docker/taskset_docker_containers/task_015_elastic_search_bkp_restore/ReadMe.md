@@ -4,8 +4,6 @@
     - [opendistro](https://opendistro.github.io/for-elasticsearch-docs/docs/elasticsearch/snapshot-restore/#amazon-s3)
 
 
-<br>
-
 ### Build image and deploy
 
 
@@ -28,8 +26,6 @@ codeaprendiz/elasticsearch                      latest              f06a06d5fd8a
 docker run -p 9200:9200 -p 9600:9600  codeaprendiz/elasticsearch
 ```
 
-<br>
-
 ### Register
 - Register your repo at S3
 
@@ -38,8 +34,6 @@ $ curl -X PUT -H "Content-Type: application/json" -d @register.json "http://loca
 {"acknowledged":true}
 ```
 
-
-<br>
 
 ### Taking Snapshots
 
@@ -83,8 +77,6 @@ $ curl -X GET "http://localhost:9200/_snapshot/my-s3-repository/_all"
 {"snapshots":[{"snapshot":"firstsnap","uuid":"VwFvTv3nSKOD5K8J3EBE2A","version_id":7060299,"version":"7.6.2","indices":[],"include_global_state":false,"state":"SUCCESS","start_time":"2020-05-14T14:45:46.358Z","start_time_in_millis":1589467546358,"end_time":"2020-05-14T14:45:46.561Z","end_time_in_millis":1589467546561,"duration_in_millis":203,"failures":[],"shards":{"total":0,"failed":0,"successful":0}}]}
 ```
 
-
-<br>
 
 ### Restore your snapshot
 
