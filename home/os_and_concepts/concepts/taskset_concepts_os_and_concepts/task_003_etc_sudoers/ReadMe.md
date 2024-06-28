@@ -1,7 +1,5 @@
 # /etc/sudoers
 
-<br>
-
 ## Get the default configuration for sudo
 
 > %admin ALL=(ALL) ALL

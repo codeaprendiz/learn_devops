@@ -1,12 +1,8 @@
 # mount
 
-<br>
-
 ## NAME
 
 mount -- mount file systems
-
-<br>
 
 ## SYNOPSIS
 
@@ -16,15 +12,11 @@ mount -- mount file systems
 
 > mount [-dfruvw] [-o options] [-t lfs | external_type] special mount_point
 
-<br>
-
 ## DESCRIPTION
 
 The mount command calls the mount(2) system call to prepare and graft a special device or the remote node (rhost:path) on to the file system tree at the point mount_point, which must be a directory.  If either special or mount_point are not provided, the appropriate information is obtained via the getfsent(3) library routines.
 
 The system maintains a list of currently mounted file systems.  If no arguments are given to mount, this list is printed.
-
-<br>
 
 ## OPTIONS
 
@@ -52,8 +44,6 @@ The system maintains a list of currently mounted file systems.  If no arguments 
   * server is the fqdn of the server used for nfs shared
   * path is the ‘dir path’ in the server which will be mounted
   * directory is the ‘dir path’ in the local system which will be mounted to the remote path.
-
-<br>
 
 ## EXAMPLES
 

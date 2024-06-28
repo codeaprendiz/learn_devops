@@ -1,7 +1,5 @@
 # Learning Resources
 
-<br>
-
 ## Learn SRE
 
 - [sre.google](https://sre.google/)
@@ -10,13 +8,9 @@
 
 - [Google Cloud infrastructure reliability guide](https://cloud.google.com/architecture/infra-reliability-guide)
 
-<br>
-
 ## AWS
 
 - [Configuring client IP address preservation with a Network Load Balancer in AWS Global Accelerator](https://aws.amazon.com/blogs/networking-and-content-delivery/configuring-client-ip-address-preservation-with-a-network-load-balancer-in-aws-global-accelerator/)
-
-<br>
 
 ## Free Ebooks
 
@@ -25,8 +19,6 @@
 [SRE Workbook](https://sre.google/workbook/table-of-contents/)
 
 [SRE Book](https://sre.google/sre-book/table-of-contents/)
-
-<br>
 
 ## Kubernetes
 

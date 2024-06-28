@@ -1,18 +1,12 @@
 # whereis
 
-<br>
-
 ## NAME
 
 whereis -- locate programs
 
-<br>
-
 ## SYNOPSIS
 
 > whereis [program ...]
-
-<br>
 
 ## DESCRIPTION
 

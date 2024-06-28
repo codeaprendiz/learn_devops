@@ -2,13 +2,9 @@
 
 - [resize2fs](https://TBD/man/8/resize2fs)
 
-<br>
-
 ## NAME
 
 resize2fs - ext2/ext3/ext4 file system resizer
-
-<br>
 
 ## EXAMPLES
 

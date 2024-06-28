@@ -17,8 +17,6 @@
     - It should only respond to traffic which it receives on port 80 from the load balancer.
     
     
-<br>
-
 ### Let's Begin
 
 

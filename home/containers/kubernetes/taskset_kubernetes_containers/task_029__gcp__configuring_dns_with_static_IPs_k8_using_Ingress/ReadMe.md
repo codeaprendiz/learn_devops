@@ -9,14 +9,10 @@ This tutorial demonstrates the following steps:
 - Update DNS records of your domain name to point to your application
 
 
-<br>
-
 ## Step 0:
 GKE Cluster created `us-central1-c	`
 
 ![](.images/GKE_cluster_created.png)
-
-<br>
 
 ## Step 1: 
 
@@ -27,13 +23,9 @@ $ kubectl apply -f helloweb-deployment.yaml
 deployment.apps/helloweb created
 ```
 
-<br>
-
 ## Step 2: 
 
 Expose your application
-
-<br>
 
 ### Using an Ingress
 - If you choose to expose your application using an Ingress, 
@@ -88,8 +80,6 @@ NAME       HOSTS   ADDRESS         PORTS   AGE
 helloweb   *       35.190.35.174   80      49s
 ```
 
-<br>
-
 ### Step 3: 
 
 Visit your reserved static IP address
@@ -110,8 +100,6 @@ $ curl http://35.190.35.174
 ```
 
 
-<br>
-
 ### TDB:
 
 Configure your domain name records
@@ -125,8 +113,6 @@ Name:   testservicek8s.gotdns.ch
 Address: 34.67.51.160
 ```
 
-<br>
-
 ### Step 5:
 Visit the domain
 
@@ -136,8 +122,6 @@ Hello, world!
 Version: 1.0.0
 Hostname: helloweb-7f7f7474fc-ghncd
 ```
-
-<br>
 
 ## Cleaning up
 

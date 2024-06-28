@@ -2,8 +2,6 @@
 
 - [ssh-keygen](https://www.man7.org/linux/man-pages/man1/ssh-keygen.1.html)
 
-<br>
-
 ## Examples
 
 These following commands are related to creating an SSH key pair, which consists of a private key and a corresponding public key. Here is what each part of the command does:

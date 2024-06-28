@@ -22,8 +22,6 @@
 
 
 
-<br>
-
 ### Create deployment manifests and deploy to the cluster
 
 - Connect
@@ -86,8 +84,6 @@ kubectl apply -f ./nginx-deployment.yaml
 kubectl get deployments
 ```
 
-<br>
-
 ### Manually scale up and down the number of Pods in deployments
 
 - Navigation menu ( Navigation menu icon), click Kubernetes Engine > Workloads.
@@ -105,8 +101,6 @@ kubectl scale --replicas=3 deployment nginx-deployment
 kubectl get deployments
 
 ```
-
-<br>
 
 ### Trigger a deployment rollout and a deployment rollback
 
@@ -141,8 +135,6 @@ kubectl rollout history deployment/nginx-deployment --revision=3
 ```
 
 
-<br>
-
 ### Define the service type in the manifest
 
 - Define service types in the manifest
@@ -175,8 +167,6 @@ kubectl get service nginx
 
 - When the external IP appears, open http://[EXTERNAL_IP]:60000/ in a new browser tab to see the server being served through network load balancing.
 
-
-<br>
 
 ### Perform a canary deployment
 

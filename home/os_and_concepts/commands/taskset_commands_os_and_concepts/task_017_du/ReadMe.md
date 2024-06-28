@@ -1,26 +1,18 @@
 # du
 
-<br>
-
 ## NAME
 
 du -- display disk usage statistics
 
-<br>
-
 ## SYNOPSIS
 
 > du [-H | -L | -P] [-a | -s | -d depth] [-c] [-h | -k | -m | -g] [-x] [-I mask] [file ...]
-
-<br>
 
 ## DESCRIPTION
 
 The du utility displays the file system block usage for each file argument and for each directory in the file hierarchy rooted in each directory argument.  
 
 If no file is specified, the block usage of the hierarchy rooted in the current directory is displayed.
-
-<br>
 
 ### OPTIONS
 
@@ -34,8 +26,6 @@ If no file is specified, the block usage of the hierarchy rooted in the current 
   * Display an entry for each file in a file hierarchy.
 * -h, --human-readable
   * print sizes in human readable format (e.g., 1K 234M 2G)
-
-<br>
 
 ## EXAMPLE
 
@@ -66,8 +56,6 @@ du -a Certificates/
 2216 Certificates//UC-SNGUC41Q.pdf
 6656 Certificates/
 ```
-
-<br>
 
 ## Examples usage with other commands
 

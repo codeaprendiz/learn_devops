@@ -4,8 +4,6 @@
 
 [Select - DevOps Engineer, SRE Learning Path](https://www.cloudskillsboost.google/paths)
 
-<br>
-
 ## High Level Objectives
 
 - Configure Resource Projects
@@ -20,8 +18,6 @@ Projects ID 2 and ID 3 will be the monitored/resource projects.
 Per Google's recommended best practices, the project we use to host the monitoring workspace will not be one of the projects actually housing monitored resources.
 
 
-<br>
-
 ### Configure Resource Projects
 
 - Label Project ID 1 as Monitoring Project.
@@ -30,8 +26,6 @@ Per Google's recommended best practices, the project we use to host the monitori
 
 - Launch `NGINX Open Source Packaged by Bitnami` from `Marketplace` in `Worker 1` and `Worker 2` projects
 
-<br>
-
 ### Create a Monitoring Workspace and link the two worker projects into it
 
 - Go to `Monitoring Project`
@@ -39,8 +33,6 @@ Per Google's recommended best practices, the project we use to host the monitori
 - Add `Worker 1` and `Worker 2`
 - Choose `Use this project as the scoping project`
 - Save and go to `Dashboards`. Take few minutes for explore.
-
-<br>
 
 ### Create and configure Monitoring groups
 - Go to each `Worker` Project
@@ -54,15 +46,11 @@ Per Google's recommended best practices, the project we use to host the monitori
 - Create a `Sub Group`, Keep the first criteria as same. Give second as `stage` = `dev`
 - Check the UI when done
 
-<br>
-
 ### Create and test an uptime check
 
 - Create an uptime check for the Frontend Servers group
 - Check out how an uptime check handles failure
 - What can Cloud Monitoring, Logging, and Alerting tell us?
-
-<br>
 
 ### Create a custom dashboard
 

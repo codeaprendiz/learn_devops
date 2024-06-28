@@ -1,12 +1,8 @@
 # vmstat
 
-<br>
-
 ## NAME
 
 vmstat - Report virtual memory statistics
-
-<br>
 
 ## SYNOPSIS
 
@@ -23,8 +19,6 @@ vmstat - Report virtual memory statistics
 > vmstat [-f]
 
 > vmstat [-V]
-
-<br>
 
 ## DESCRIPTION
 

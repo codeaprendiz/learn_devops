@@ -451,8 +451,6 @@ Server: kong/2.5.0
 }              
 ```
 
-<br>
-
 #### Using KongIngress Resource
 
 - Creating customized KongIngress

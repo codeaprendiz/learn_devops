@@ -1,19 +1,13 @@
 # head
 
 
-<br>
-
 ## NAME
 
 head -- display first lines of a file
 
-<br>
-
 ## SYNOPSIS
 
 > head [-n count | -c bytes] [file ...]
-
-<br>
 
 ## DESCRIPTION
 
@@ -23,8 +17,6 @@ If more than a single file is specified, each file is preceded by a header consi
 EXIT STATUS
 
 The head utility exits 0 on success, and >0 if an error occurs.
-
-<br>
 
 ## EXAMPLES
 

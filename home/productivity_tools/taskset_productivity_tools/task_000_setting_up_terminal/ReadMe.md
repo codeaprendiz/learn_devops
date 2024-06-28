@@ -51,8 +51,6 @@ $ cat ~/.zshrc | grep "plugins="
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 ```
 
-<br>
-
 ## NPM packages
 
 ```bash

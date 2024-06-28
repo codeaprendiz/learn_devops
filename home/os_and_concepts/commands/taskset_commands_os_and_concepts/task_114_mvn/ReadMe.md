@@ -2,8 +2,6 @@
 
 [digitalocean.com » docs](https://www.digitalocean.com/community/tutorials/maven-commands-options-cheat-sheet)
 
-<br>
-
 ## Examples
 
 [Create a project](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html#creating-a-project)

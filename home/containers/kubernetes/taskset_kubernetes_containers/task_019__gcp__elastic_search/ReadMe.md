@@ -1,6 +1,4 @@
 
-<br>
-
 ## Deploy ECK in your kubernetes cluster
 [k8s-deploy-eck](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-quickstart.html#k8s-deploy-eck)
 
@@ -20,8 +18,6 @@ validatingwebhookconfiguration.admissionregistration.k8s.io/elastic-webhook.k8s.
 service/elastic-webhook-server created
 secret/elastic-webhook-server-cert created
 ```
-
-<br>
 
 ## Deploy an Elastic Search Cluster
 [k8s-deploy-elasticsearch](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-quickstart.html#k8s-deploy-elasticsearch)

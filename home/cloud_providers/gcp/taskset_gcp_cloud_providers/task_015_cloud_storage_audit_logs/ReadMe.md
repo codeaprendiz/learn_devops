@@ -18,8 +18,6 @@
 - cloud-storage
 
 
-<br>
-
 ### Enable data access logs on Cloud Storage
 
 
@@ -27,8 +25,6 @@
 - Scroll or use Filter to locate `Google Cloud Storage`, then check the box next to it. This should display the Info Panel with options on LOG TYPE.
 - Select Admin Read, Data Read and Data Write, and then click SAVE.
 
-
-<br>
 
 ### Generate some admin and data access activity
 
@@ -54,8 +50,6 @@ gcloud compute instances create default-us-vm \
 # Delete the storage bucket:
 gsutil rm -r gs://$DEVSHELL_PROJECT_ID
 ```
-
-<br>
 
 ### Viewing audit logs
 

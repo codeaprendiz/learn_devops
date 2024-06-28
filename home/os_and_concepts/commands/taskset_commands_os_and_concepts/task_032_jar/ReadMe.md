@@ -1,12 +1,8 @@
 # jar
 
-<br>
-
 ## NAME
 
 jar - Java archive tool
-
-<br>
 
 ## OPTIONS
 
@@ -27,15 +23,11 @@ jar - Java archive tool
 - x
   - Extracts  files and  directories from jarfile (if f is specified) or standard input (if f and jarfile are omitted). If inputfiles is specified, only those specified files and directories are extracted. Otherwise, all files and directories are extracted.
 
-<br>
-
 ## DESCRIPTION
 
 The  jar tool  combines multiple files into a single JAR archive file.  
 
 jar is a general-purpose archiving and compression tool, based on ZIP and the ZLIB compression format.
-
-<br>
 
 ## EXAMPLES
 

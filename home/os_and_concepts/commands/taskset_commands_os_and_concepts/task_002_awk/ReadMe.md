@@ -2,19 +2,13 @@
 
 [awk](https://man7.org/linux/man-pages/man1/awk.1p.html)
 
-<br>
-
 ## NAME
 
 awk - pattern-directed scanning and processing language
 
-<br>
-
 ## SYNOPSIS
 
 > awk [ -F fs ] [ -v var=value ] [ 'prog' | -f progfile ] [ file ...  ]
-
-<br>
 
 ## EXAMPLES
 

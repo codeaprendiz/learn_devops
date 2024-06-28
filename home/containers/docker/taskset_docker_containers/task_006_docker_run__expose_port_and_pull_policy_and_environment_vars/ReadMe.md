@@ -8,8 +8,6 @@ Version Stack
 | Docker | 20.10.14 |
 
 
-<br>
-
 ### Expose Port
 
 [publish-or-expose-port--p---expose](https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p---expose)
@@ -34,8 +32,6 @@ You can visit the same in browser
 
 ![nginx.png](.images/nginx.png)
 
-<br>
-
 ## Pull Policy
 
 [set-the-pull-policy---pull](https://docs.docker.com/engine/reference/commandline/run/#-set-the-pull-policy---pull)
@@ -56,8 +52,6 @@ docker: Error response from daemon: No such image: ubuntu:latest.
        0
 ```
 
-
-<br>
 
 ## Environment 
 

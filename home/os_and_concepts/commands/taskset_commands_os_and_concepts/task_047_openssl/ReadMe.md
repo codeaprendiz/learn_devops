@@ -17,13 +17,9 @@
       - [req](#req)
         - [EXAMPLES for req](#examples-for-req)
 
-<br>
-
 ## NAME
 
 openssl - OpenSSL command line tool
-
-<br>
 
 ### DESCRIPTION
 
@@ -38,11 +34,7 @@ The openssl program is a command line tool for using the various cryptography fu
 - SSL/TLS Client and Server Tests
 - Handling of S/MIME signed or encrypted mail
 
-<br>
-
 ### COMMANDS
-
-<br>
 
 #### enc
 
@@ -54,8 +46,6 @@ DESCRIPTION
 
 The symmetric cipher commands allow data to be encrypted or decrypted using various block and stream ciphers using keys based on passwords or explicitly provided. Base64 encoding or decoding can also be performed either by itself or in addition to the encryption or decryption.
   
-<br>
-
 ##### EXAMPLES for enc
 
 Just base64 encode a binary file:
@@ -75,8 +65,6 @@ $ openssl base64 -d -in file.b64 -out file.bin
 .
 ```
 
-<br>
-
 #### pkcs12
 
 NAME
@@ -87,8 +75,6 @@ DESCRIPTION
 
 The pkcs12 command allows PKCS#12 files (sometimes referred to as PFX files) to be created and parsed. PKCS#12 files are used by several programs including Netscape, MSIE and MS Outlook.
 
-<br>
-
 ##### Examples for pkcs12
 
 ```bash
@@ -97,8 +83,6 @@ The pkcs12 command allows PKCS#12 files (sometimes referred to as PFX files) to 
 $ openssl pkcs12 -in asda-gr-int.company.com.pfx -out asda-gr-text.int.company.com.pem
 .
 ```
-
-<br>
 
 #### rsa
 
@@ -110,8 +94,6 @@ DESCRIPTION
 
 The rsa command processes RSA keys. They can be converted between various forms and their components printed out. Note this command uses the traditional SSLeay compatible format for private key encryption: newer applications should use the more secure PKCS#8 format using the pkcs8 utility.
   
-<br>
-
 ##### EXAMPLES for rsa
 
 Consider a certificate “certificate.pem” containing encrypted private key. You can decrypt it using the following command
@@ -123,8 +105,6 @@ $ openssl rsa -in certificate.pem -out decryptedKeyFile.crt
 .
 ```
 
-<br>
-
 #### s_client
 
 NAME
@@ -134,8 +114,6 @@ s_client - SSL/TLS client program
 DESCRIPTION
 
 The s_client command implements a generic SSL/TLS client which connects to a remote host using SSL/TLS. It is a very useful diagnostic tool for SSL servers.
-
-<br>
 
 ##### EXAMPLES for s_client
 
@@ -223,8 +201,6 @@ $ echo | openssl s_client -connect qa.iam.platform.prod.company.com:443 2>&1 | s
 .
 ```
 
-<br>
-
 #### x509
 
 NAME
@@ -235,8 +211,6 @@ DESCRIPTION
 
 The x509 command is a multi purpose certificate utility. It can be used to display certificate information, convert certificates to various forms, sign certificate requests like a "mini CA" or edit certificate trust settings.
   
-<br>
-
 ##### EXAMPLES for x509
 
 To get the certificate expiry dates
@@ -259,13 +233,9 @@ To get detailed information.
 openssl x509 -in georgebackend.oms.prod.company.com.pem -text -noout                                                                                     . 
 ```
 
-<br>
-
 #### req
 
 RSA Key Management
-
-<br>
 
 ##### EXAMPLES for req
 

@@ -149,7 +149,5 @@ $ curl testingress.com/403
 </body>
 </html>
 
-<br>
-
 ## which is expected as the ingress does not know about this path.
 ```

@@ -2,8 +2,6 @@
 
 - [prometheus-operator/kube-prometheus](https://github.com/prometheus-operator/kube-prometheus)
 
-<br>
-
 ## GKE Kubernetes Version
 
 ```bash
@@ -15,8 +13,6 @@ Server Version: v1.27.2-gke.1200
 ```
 
 
-<br>
-
 ## Clone the repo
 
 
@@ -27,8 +23,6 @@ $ ls
 kube-prometheus manifests
 $ rm -rf kube-prometheus 
 ```
-
-<br>
 
 ## Deploy kube-prometheus
 

@@ -30,13 +30,9 @@
 
 
 
-<br>
-
 ## Deployment architecture
 
 
-
-<br>
 
 ## Intro
 
@@ -50,8 +46,6 @@ Router for each IPsec tunnel.
 
 
 
-<br>
-
 ## Preparing your Google Cloud working environment
 
 - Clone the tutorial code
@@ -64,8 +58,6 @@ cd autonetdeploy-multicloudvpn
 ```
 
 - Verify the Google Cloud region and zone
-
-<br>
 
 ## Preparing for AWS use
 

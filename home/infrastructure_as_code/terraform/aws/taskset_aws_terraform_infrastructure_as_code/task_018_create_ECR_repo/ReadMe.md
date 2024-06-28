@@ -1,7 +1,5 @@
 
 
-<br>
-
 ## Configuring AWS CLI
 
 ```bash
@@ -13,8 +11,6 @@ Default output format [None]:
 ```
 
 
-
-<br>
 
 ## Login to ECR, create Repo and Push image
 
@@ -45,8 +41,6 @@ docker build -t *****************.dkr.ecr.us-east-1.amazonaws.com/node-applicati
 docker push ****************.dkr.ecr.us-east-1.amazonaws.com/node-application:latest
 ```
 
-
-<br>
 
 ## Implementing the changes using terraform
 

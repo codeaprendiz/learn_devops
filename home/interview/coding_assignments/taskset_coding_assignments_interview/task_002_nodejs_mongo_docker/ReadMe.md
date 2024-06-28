@@ -1,6 +1,4 @@
 
-<br>
-
 ### To create a nodejs app which can connect to docker-mongo locally
 
 [docs](https://www.digitalocean.com/community/tutorials/how-to-integrate-mongodb-with-your-node-application)

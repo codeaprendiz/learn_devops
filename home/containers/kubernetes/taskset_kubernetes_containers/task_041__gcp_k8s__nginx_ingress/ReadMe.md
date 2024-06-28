@@ -1,20 +1,14 @@
 # Nginx Ingress Setup
 
-<br>
-
 ## High Level Objectives
 
 - Create a GKE cluster using console
 - Set up nginx ingress controller
 - Use kustomize to deploy nginx ingress controller
 
-<br>
-
 ## Links
 
 - [Custom Logging](https://stackoverflow.com/questions/55799584/how-do-i-add-the-x-forwarded-for-field-to-my-access-logs-for-the-nginx-ingress-c)
-
-<br>
 
 ## GKE Kubernetes Version
 
@@ -24,8 +18,6 @@ Client Version: v1.27.3
 Kustomize Version: v5.0.1
 Server Version: v1.27.2-gke.1200
 ```
-
-<br>
 
 ## Set up GKE access on local machine
 
@@ -45,8 +37,6 @@ $ kubectl get nodes
 NAME                                 STATUS   ROLES    AGE   VERSION
 gke-dev-default-pool-deac09b6-n853   Ready    <none>   20m   v1.27.2-gke.120
 ```
-
-<br>
 
 ## Ingress Nginx Deployment
 

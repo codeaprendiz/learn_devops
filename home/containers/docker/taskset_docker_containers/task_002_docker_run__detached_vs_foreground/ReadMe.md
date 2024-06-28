@@ -14,8 +14,6 @@ By design, containers started in detached mode exit when the root process used t
 
 
 
-<br>
-
 ### Detached Mode
 
 ```bash
@@ -54,8 +52,6 @@ a979bd34e5c4   ubuntu    "sleep 100"   3 seconds ago       Up 3 seconds         
 63e90449bddb   ubuntu    "/bin/bash"   30 seconds ago      Exited (0) 29 seconds ago                distracted_pasteur
 ```
 
-
-<br>
 
 ### Foreground Mode
 

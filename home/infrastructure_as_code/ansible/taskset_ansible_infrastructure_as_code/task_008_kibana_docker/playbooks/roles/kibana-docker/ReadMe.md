@@ -4,8 +4,6 @@
 
 [elastic-search](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 
-<br>
-
 ## To install docker-kibana using docker-compose on ubuntu 16.04 LTS
 
 - Ensure that elastic-search-cluster is installed already and accessible. You can use the [elastic-search-cluster](../elastic-search-cluster-docker)

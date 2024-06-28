@@ -6,8 +6,6 @@ This task shows you how to access external services in three different ways:
 - Configure service entries to provide controlled access to external services.
 - Completely bypass the Envoy proxy for a specific range of IPs.
 
-<br>
-
 ## [Before you begin](https://istio.io/latest/docs/tasks/traffic-management/egress/egress-control/#before-you-begin)
 
 Deploy the sleep sample app to use as a test source for sending requests. If you have automatic sidecar injection enabled, run the following command to deploy the sample app:
@@ -22,8 +20,6 @@ Set the SOURCE_POD environment variable to the name of your source pod:
 export SOURCE_POD=$(kubectl get pod -l app=sleep -o jsonpath='{.items..metadata.name}')
 
 ```
-
-<br>
 
 ## [Envoy passthrough to external services](https://istio.io/latest/docs/tasks/traffic-management/egress/egress-control/#envoy-passthrough-to-external-services)
 
@@ -42,8 +38,6 @@ kubectl exec "$SOURCE_POD" -c sleep -- curl -sSI https://www.google.com | grep  
 # HTTP/2 200 
 # HTTP/2 200
 ```
-
-<br>
 
 ## [Controlled access to external services](https://istio.io/latest/docs/tasks/traffic-management/egress/egress-control/#controlled-access-to-external-services)
 
@@ -150,12 +144,8 @@ HTTP/2 200
 Check the log of the sidecar proxy of SOURCE_POD:
 
 ```bash
-<br>
-
 ## First one is Blocked request
 [2024-02-14T11:07:41.017Z] "- - -" 0 UH - - "-" 0 0 0 - "-" "-" "-" "-" "-" BlackHoleCluster - 209.85.200.99:443 10.8.1.35:54818 - -
-<br>
-
 ## This is after making the change
 [2024-02-14T11:07:59.286Z] "- - -" 0 - - - "-" 844 5214 95 - "-" "-" "-" "-" "209.85.200.147:443" outbound|443||www.google.com 10.8.1.35:38416 209.85.200.147:443 10.8.1.35:38412 www.google.com -
 ```
@@ -293,15 +283,11 @@ kubectl exec "$SOURCE_POD" -c sleep -- curl -sS http://httpbin.org/headers
 
 Unlike accessing external services through HTTP or HTTPS, you don’t see any headers related to the Istio sidecar and the requests sent to external services do not appear in the log of the sidecar. Bypassing the Istio sidecars means you can no longer monitor the access to external services.
 
-<br>
-
 ## Cleanup the direct access to external services
 
 ```bash
 istioctl install --set profile=demo -y 
 ```
-
-<br>
 
 ## Cleanup
 

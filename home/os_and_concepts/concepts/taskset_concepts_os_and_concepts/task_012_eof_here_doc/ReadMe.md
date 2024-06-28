@@ -1,8 +1,6 @@
 
 # eof-here-doc
 
-<br>
-
 ## eof-here-document
 
 A here document is used to redirect input into an interactive shell script or program.

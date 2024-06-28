@@ -4,8 +4,6 @@
 
 ---
 
-<br>
-
 ## Start the database locally
 
 ```bash
@@ -16,8 +14,6 @@ docker run --rm -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<your_password>" \
 ```
 
 ---
-
-<br>
 
 ## Take Backup
 

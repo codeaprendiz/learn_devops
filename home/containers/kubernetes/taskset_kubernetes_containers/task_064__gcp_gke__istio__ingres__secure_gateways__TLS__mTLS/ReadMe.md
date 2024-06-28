@@ -2,8 +2,6 @@
 
 This task shows how to expose a secure HTTPS service using either simple or mutual TLS.
 
-<br>
-
 ## [Before you begin](https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/#before-you-begin)
 
 ```bash
@@ -16,8 +14,6 @@ For macOS users, verify that you use curl compiled with the LibreSSL library:
 $ curl --version | grep LibreSSL
 curl 7.54.0 (x86_64-apple-darwin17.0) libcurl/7.54.0 LibreSSL/2.0.20 zlib/1.2.11 nghttp2/1.24.0
 ```
-
-<br>
 
 ## [Generate client and server certificates and keys](https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/#generate-client-and-server-certificates-and-keys)
 
@@ -142,8 +138,6 @@ openssl req -out example_certs1/client.example.com.csr -newkey rsa:2048 -nodes -
 # This command signs the CSR for client.example.com with the root certificate, creating a client certificate valid for 365 days. The -set_serial 1 assigns a unique serial number to the certificate, ensuring its distinct identity within the CA's issued certificates.
 openssl x509 -req -sha256 -days 365 -CA example_certs1/example.com.crt -CAkey example_certs1/example.com.key -set_serial 1 -in example_certs1/client.example.com.csr -out example_certs1/client.example.com.crt
 ```
-
-<br>
 
 ## [Configure a TLS ingress gateway for a single host](https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/#configure-a-tls-ingress-gateway-for-a-single-host)
 
@@ -445,8 +439,6 @@ establish a secure connection to it. To learn more about this situation and
 how to fix it, please visit the web page mentioned above.
 ```
 
-<br>
-
 ## [Configure a TLS ingress gateway for multiple hosts](https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/#configure-a-tls-ingress-gateway-for-multiple-hosts)
 
 You can configure an ingress gateway for multiple hosts, httpbin.example.com and helloworld.example.com, for example. The ingress gateway is configured with unique credentials corresponding to each host.
@@ -568,8 +560,6 @@ curl -v -HHost:httpbin.example.com --resolve "httpbin.example.com:$SECURE_INGRES
 #         `"""`
 ```
 
-<br>
-
 ## [Configure a mutual TLS ingress gateway](https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/#configure-a-mutual-tls-ingress-gateway)
 
 You can extend your gateway’s definition to support mutual TLS.
@@ -648,8 +638,6 @@ curl -v -HHost:httpbin.example.com --resolve "httpbin.example.com:$SECURE_INGRES
 #       \_     _/
 #         `"""`
 ```
-
-<br>
 
 ## Cleanup
 

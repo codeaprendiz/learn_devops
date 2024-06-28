@@ -6,8 +6,6 @@
 - [console.redhat.com » Console URL](https://console.redhat.com/openshift)
 - [developers.redhat.com » Learn Kubernetes using the Developer Sandbox for Red Hat OpenShift](https://developers.redhat.com/developer-sandbox/activities/learn-kubernetes-using-red-hat-developer-sandbox-openshift)
 
-<br>
-
 ## Useful documentation
 
 - [docs.openshift.com »  OpenShift Container Platform 4.13 » Managing security context constraints
@@ -15,8 +13,6 @@
 - [cloud.redhat.com » blog » a-guide-to-openshift-and-uids](https://cloud.redhat.com/blog/a-guide-to-openshift-and-uids)
 - [developers.redhat.com » blog » adapting-docker-and-kubernetes-containers-to-run-on-red-hat-openshift-container-platform](https://developers.redhat.com/blog/2020/10/26/adapting-docker-and-kubernetes-containers-to-run-on-red-hat-openshift-container-platform)
 - [docs.openshift.com » images-create-guide-openshift_create-images](https://docs.openshift.com/container-platform/4.5/openshift_images/create-images.html#images-create-guide-openshift_create-images)
-
-<br>
 
 ## What is Openshift
 

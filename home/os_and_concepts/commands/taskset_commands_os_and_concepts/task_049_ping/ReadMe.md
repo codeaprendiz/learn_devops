@@ -1,20 +1,14 @@
 # ping
 
-<br>
-
 ## NAME
 
 ping -- send ICMP ECHO_REQUEST packets to network hosts
-
-<br>
 
 ## SYNOPSIS
 
 > ping [-AaCDdfnoQqRrv] [-b boundif] [-c count] [-G sweepmaxsize] [-g sweepminsize] [-h sweepincrsize] [-i wait] [-k trafficclass] [-K netservicetype] [-l preload] [-M mask | time] [-m ttl] [-P policy] [-p pattern] [-S src_addr][-s packetsize] [-t timeout] [-W waittime] [-z tos] [--apple-connect] [--apple-print] host
 
 > ping [-AaDdfLnoQqRrv] [-b boundif] [-c count] [-I iface] [-i wait] [-k trafficclass] [-K netservicetype] [-l preload] [-M mask | time] [-m ttl] [-P policy] [-p pattern] [-S src_addr] [-s packetsize] [-T ttl] [-t timeout] [-W waittime] [-z tos] [--apple-connect] [--apple-print] mcast-group
-
-<br>
 
 ## DESCRIPTION
 
@@ -27,8 +21,6 @@ ping is a computer network administration software utility used to test the reac
 Ping stands for "Packet INternet Groper." An Internet utility used to determine whether a particular IP address is reachable online by sending out a packet and waiting for a response. Ping is used to test and debug a network as well as see if a user or server is online.
 
 Ping sends ICMP ECHO_REQUEST packets to any network addressable host (i.e. a server, a gateway router, etc.). The piece of equipment must be IP (Internet Protocol) addressable in order for ping to work
-
-<br>
 
 ### OPTIONS
 

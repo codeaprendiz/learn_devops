@@ -10,8 +10,6 @@
     - [**Difference between \< and \<\< in shell command**](#difference-between--and--in-shell-command)
     - [**Difference between single and double quotes in Bash ( "" and '')**](#difference-between-single-and-double-quotes-in-bash---and-)
 
-<br>
-
 ## **output-redirection**
 
 The output from a command normally intended for standard output can be easily diverted to a file instead. This capability is known as output redirection.
@@ -35,8 +33,6 @@ If a command has its output redirected to a file and the file already contains s
 
 You can use >> operator to append the output in an existing file
 
-<br>
-
 ## **input-redirection**
 
 The commands that normally take their input from the standard input can have their input redirected from a file in this manner. For example, to count the number of lines in the file users generated above, you can execute the command as follows −
@@ -57,11 +53,7 @@ $
 
 In the first case, wc knows that it is reading its input from the file users. In the second case, it only knows that it is reading its input from standard input so it does not display file name.
 
-<br>
-
 ## **dev-null-and-others-usually-used-in-redirection**
-
-<br>
 
 ### **>/dev/null 2>&1 meaning**
 
@@ -77,8 +69,6 @@ x * * * * /path/to/my/script > /dev/null 2>&1
 - 1 is the file descriptor for Standard Out
 - Therefore >/dev/null 2>&1 is redirect the output of your program to /dev/null. Include both the Standard Error and Standard Out.
 
-<br>
-
 ### **>, 1>, 2> meaning**
 
 The > operator redirects the output usually to a file but it can be to a device. You can also use >> to append.
@@ -91,8 +81,6 @@ If you don't specify a number then the standard output stream is assumed but you
 - &> file redirects stdout and stderr to file
 
 /dev/null is the null device it takes any input you want and throws it away. It can be used to suppress any output.
-
-<br>
 
 ### **3>&1 1>&2 2>&3 meaning**
 
@@ -118,8 +106,6 @@ So basically you switched STDOUT and STDERR, these are the steps:
 
 Now if the program prints something to the file descriptor 1, it will be printed to the file descriptor 2 and vice versa.
 
-<br>
-
 ### **Difference between < and << in shell command**
 
 \> is used to write to a file and >> is used to append to a file.
@@ -127,8 +113,6 @@ Now if the program prints something to the file descriptor 1, it will be printed
 Thus, when you use ps aux > file, the output of ps aux will be written to file and if a file named file was already present, its contents will be overwritten.
 
 And if you use ps aux >> file, the output of ps aux will be written to file and if the file named file was already present, the file will now contain its previous contents and also the contents of ps aux, written after its older contents of file.
-
-<br>
 
 ### **Difference between single and double quotes in Bash ( "" and '')**
 

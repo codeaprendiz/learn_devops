@@ -1,6 +1,4 @@
 
-<br>
-
 ### Configure Default CPU Requests and Limits for a Namespace
 
 [administer-cluster/manage-resources/cpu-default-namespace/](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/)

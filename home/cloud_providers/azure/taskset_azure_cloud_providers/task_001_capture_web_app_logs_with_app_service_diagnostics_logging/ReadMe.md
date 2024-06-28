@@ -2,19 +2,13 @@
 
 [learn.microsoft.com » Capture Web Application Logs with App Service Diagnostics Logging](https://learn.microsoft.com/en-us/training/modules/capture-application-logs-app-service/)
 
-<br>
-
 ## Learning objectives
 
 - Enable app logging on an Azure Web App.
 - View live app logging activity with the log streaming service.
 - Retrieve app log files from an app with Kudu or the Azure CLI.
 
-<br>
-
 ### [Exercise - Enable and configure App Service application logging using the Azure portal](https://learn.microsoft.com/en-us/training/modules/capture-application-logs-app-service/3-enable-and-configure-app-service-application-logging-using-the-azure-portal)
-
-<br>
 
 #### Use Azure CLI to deploy the webapp
 
@@ -42,8 +36,6 @@ Create Storage Account
 az storage account create -n $storageAccount -g $resourceGroup -l $appLocation --sku Standard_LRS
 ```
 
-<br>
-
 #### View live application logging with the log streaming service
 
 To open the log stream, run the following command.
@@ -64,8 +56,6 @@ After you have created a set of credentials, run the following command to open t
 # curl -u {username} https://{sitename}.scm.azurewebsites.net/api/logstream
 ```
 
-<br>
-
 ### [View live application logging with the log streaming service using Azure CLI](https://learn.microsoft.com/en-us/training/modules/capture-application-logs-app-service/5-view-live-application-logging-activity-with-the-log-streaming-service-using-azure-cli)
 
 Use Azure CLI to view the live log stream
@@ -80,8 +70,6 @@ az webapp log tail  --resource-group learn-73039af5-5f45-4665-837f-e4523655e6cd 
 # expetect logs
 ```
 
-<br>
-
 ### Retrieve application log files
 
 - To download file system log files using the Azure CLI,
@@ -89,8 +77,6 @@ az webapp log tail  --resource-group learn-73039af5-5f45-4665-837f-e4523655e6cd 
 ```bash
 az webapp log download --log-file \<_filename_\>.zip  --resource-group \<_resource group name_\> --name \<_app name_\>
 ```
-
-<br>
 
 ### [Exercise - Retrieve Application Log Files using Azure CLI and Kudu](https://learn.microsoft.com/en-us/training/modules/capture-application-logs-app-service/7-retrieve-application-log-files-from-an-application-using-azure-cli-and-kudu)
 

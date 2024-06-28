@@ -3,25 +3,17 @@
 
 [diff](https://man7.org/linux/man-pages/man1/diff.1.html)
 
-<br>
-
 ## NAME
 
 diff - compare files line by line
-
-<br>
 
 ## SYNOPSIS
 
 > diff [OPTION]... FILES
 
-<br>
-
 ## DESCRIPTION
 
 Compare FILES line by line.
-
-<br>
 
 ## EXAMPLES
 

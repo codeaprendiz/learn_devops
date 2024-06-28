@@ -3,8 +3,6 @@
 
 [linkerd.io » Automatically Rotating Control Plane TLS Credentials](https://linkerd.io/2.14/tasks/automatically-rotating-control-plane-tls-credentials)
 
-<br>
-
 ## Pre-Requisite
 
 In Linkerd's architecture:
@@ -15,8 +13,6 @@ In Linkerd's architecture:
 
 - **Per-Proxy TLS Certificates**: Individual certificates for each proxy, essential for secure, authenticated mTLS communication between services within the mesh. They enable each service to verify the identity of others.
 
-<br>
-
 ## Create cluster using kind
 
 - Create cluster using kind
@@ -25,23 +21,17 @@ In Linkerd's architecture:
 kind create cluster
 ```
 
-<br>
-
 ## [Install cert-manager](https://cert-manager.io/docs/installation/)
 
 ```bash
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.13.3/cert-manager.yaml
 ```
 
-<br>
-
 ## Create namespace for linkerd
 
 ```bash
 kubectl create namespace linkerd
 ```
-
-<br>
 
 ## [Save the signing key pair as a Secret](https://linkerd.io/2.14/tasks/automatically-rotating-control-plane-tls-credentials/#save-the-signing-key-pair-as-a-secret)
 
@@ -66,15 +56,11 @@ NAME                   TYPE                DATA   AGE
 linkerd-trust-anchor   kubernetes.io/tls   2      41s
 ```
 
-<br>
-
 ## [Create an Issuer referencing the secret](https://linkerd.io/2.14/tasks/automatically-rotating-control-plane-tls-credentials/#create-an-issuer-referencing-the-secret)
 
 ```bash
 kubectl apply -f issuer.yaml 
 ```
-
-<br>
 
 ## [Create a Certificate resource referencing the Issuer](https://linkerd.io/2.14/tasks/automatically-rotating-control-plane-tls-credentials/#create-a-certificate-resource-referencing-the-issuer)
 
@@ -87,8 +73,6 @@ Validate the secret created
 ```bash
 kubectl get secret linkerd-identity-issuer -o yaml -n linkerd
 ```
-
-<br>
 
 ## [Using these credentials with a Helm installation](https://linkerd.io/2.14/tasks/automatically-rotating-control-plane-tls-credentials/#using-these-credentials-with-a-helm-installation)
 
@@ -106,8 +90,6 @@ helm install linkerd-control-plane -n linkerd \
   --set identity.issuer.scheme=kubernetes.io/tls \
   linkerd/linkerd-control-plane
 ```
-
-<br>
 
 ## [Observing the update process](https://linkerd.io/2.14/tasks/automatically-rotating-control-plane-tls-credentials/#observing-the-update-process)
 
@@ -209,8 +191,6 @@ Events:
   Normal  Requested  9m15s                  cert-manager-certificates-request-manager  Created new CertificateRequest resource "linkerd-identity-issuer-4"
 ```
 
-<br>
-
 ## Validate installation
 
 ```bash
@@ -221,8 +201,6 @@ Status check results are √
 $ linkerd check | grep "‼"         
 ‼ issuer cert is valid for at least 60 days
 ```
-
-<br>
 
 ## Install Demo App
 
@@ -283,8 +261,6 @@ $ linkerd -n emojivoto check --proxy
 
 Status check results are ×
 ```
-
-<br>
 
 ## Troubleshooting the error
 

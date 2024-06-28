@@ -8,15 +8,11 @@
     - [Start the MySQL database in persistent mode](#start-the-mysql-database-in-persistent-mode)
     - [Connect to the MySQL database](#connect-to-the-mysql-database)
 
-<br>
-
 ## Mac
 
 [hub.docker.com » starting mysql locally](https://hub.docker.com/_/mysql)
 
 Start the MySQL database locally with the following command:
-
-<br>
 
 ### Start the MySQL database in ephemeral mode
 
@@ -27,8 +23,6 @@ docker run --rm -it --name mysql_lts -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret 
 docker exec -it mysql_lts bash
 ```
 
-<br>
-
 ### Start the MySQL database in persistent mode
 
 ```bash
@@ -38,8 +32,6 @@ docker run --name mysql_lts -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -v $(pwd)
 # Execute a bash shell in the container
 docker exec -it mysql_lts bash
 ```
-
-<br>
 
 ### Connect to the MySQL database
 

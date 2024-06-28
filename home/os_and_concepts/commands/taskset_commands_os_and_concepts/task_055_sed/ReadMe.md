@@ -5,13 +5,9 @@
   - [EXAMPLE on Linux](#example-on-linux)
   - [EXAMPLE on macOS](#example-on-macos)
 
-<br>
-
 ## NAME
 
 sed - stream editor for filtering and transforming text
-
-<br>
 
 ## EXAMPLE on Linux
 
@@ -31,8 +27,6 @@ http://dxbmiap19pv:81/svn/xxxxxx/branches/DEV/YY-5.4.0.0
 -bash-3.2$ xargs svn info <$HOME/.BUILD_SCRIPTS_AREA/modules.full |grep "^URL"|awk '{print $NF}'|sed 's/branches/  /g'
 http://dxbmiap19pv:81/svn/xxxxxx/  /DEV/YY-5.4.0.0
 ```
-
-<br>
 
 ## EXAMPLE on macOS
 

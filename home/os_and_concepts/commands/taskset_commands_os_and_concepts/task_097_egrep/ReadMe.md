@@ -2,13 +2,9 @@
 
 - [egrep](https://man.freebsd.org/cgi/man.cgi)
 
-<br>
-
 ## NAME
 
 file pattern searcher
-
-<br>
 
 ## Examples
 

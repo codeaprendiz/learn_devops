@@ -12,8 +12,6 @@
 10) If there is no data on the ebs_volume you just mount it as an empty one. If there is data ont the ebs volume, you just mount it without formatting.
 
 
-<br>
-
 ## Lets Begin
 
 

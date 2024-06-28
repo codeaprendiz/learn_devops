@@ -1,7 +1,5 @@
 # Ansible
 
-<br>
-
 ## list inventory
 Reference Docs
 https://docs.ansible.com/ansible/latest/user_guide/intro_patterns.html
@@ -13,8 +11,6 @@ ansible-inventory -i inventory.ini -y --list > inventory.yaml
 
 Default output without setting ansible.cfg
 ```bash
-<br>
-
 ## will give output of /etc/ansible/hosts
 $ ansible --list-hosts all
 [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
@@ -139,14 +135,10 @@ $ ansible --list-host "\!prod"
     127.0.0.1
 ```
 
-<br>
-
 ## Modules
 
 Reference Docs
 https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
-
-<br>
 
 ### ping
 
@@ -161,8 +153,6 @@ $ ansible -m ping localhost
     "ping": "pong"
 }
 ```
-
-<br>
 
 ### command (the default module)
 ```bash

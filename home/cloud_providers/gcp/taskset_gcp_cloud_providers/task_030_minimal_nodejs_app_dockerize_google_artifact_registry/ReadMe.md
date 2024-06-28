@@ -22,8 +22,6 @@
 - artifact registry
 
 
-<br>
-
 ## Build
 
 ```bash
@@ -75,8 +73,6 @@ docker build -t node-app:0.1 .
 ```bash
 docker images
 ```
-
-<br>
 
 ## Run
 
@@ -146,13 +142,9 @@ docker ps
 ```bash
 curl http://localhost:8080
 
-<br>
-
 ## And now test the first container you made:
 curl http://localhost:4000
 ```
-
-<br>
 
 ## Debug
 
@@ -167,8 +159,6 @@ docker logs -f [container_id]
 
 ```bash
 docker exec -it [container_id] bash
-
-<br>
 
 ## look at dir
 ls
@@ -185,8 +175,6 @@ docker inspect [container_id]
 ```bash
 docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [container_id]
 ```
-
-<br>
 
 ## Publish
 

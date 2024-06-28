@@ -1,7 +1,5 @@
 ### To test custom TLS certs with docker-caddy
 
-<br>
-
 #### Directory structure
 
 ```bash

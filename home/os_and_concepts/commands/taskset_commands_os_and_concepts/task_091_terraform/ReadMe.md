@@ -16,8 +16,6 @@
 
   
 
-<br>
-
 ## apply
 [apply](https://www.terraform.io/docs/commands/apply.html)
 
@@ -38,8 +36,6 @@ $ terraform apply -var-file=../../terraform.tfvars
 $ terraform apply out.terraform
 ```
 
-<br>
-
 ## console
 [console](https://www.terraform.io/docs/commands/console.html)
 
@@ -49,8 +45,6 @@ $ terraform apply out.terraform
 $ terraform console
 ```
 
-<br>
-
 ## destroy
 [destroy](https://www.terraform.io/docs/commands/destroy.html)
 
@@ -58,8 +52,6 @@ $ terraform console
 ```bash
 $ terraform destroy
 ```
-
-<br>
 
 ## fmt
 [fmt](https://www.terraform.io/docs/commands/fmt.html)
@@ -71,8 +63,6 @@ $ terraform fmt 25-instance.tf
 25-instance.tf
 ```
 
-
-<br>
 
 ## graph
 [graph](https://www.terraform.io/docs/commands/graph.html)
@@ -96,8 +86,6 @@ digraph {
 
 ```
 
-<br>
-
 ## import
 [import](https://www.terraform.io/docs/commands/import.html)
 
@@ -110,8 +98,6 @@ You want to import that into the existing state.
 terraform import aws_instance.example i-1246434554345
 ```
 
-<br>
-
 ## init
 [init](https://www.terraform.io/docs/commands/init.html)
 
@@ -120,8 +106,6 @@ terraform import aws_instance.example i-1246434554345
 $ terraform init
 ```
 
-<br>
-
 ## plan
 [plan](https://www.terraform.io/docs/commands/plan.html)
 
@@ -129,15 +113,11 @@ $ terraform init
 ```bash
 $ terraform plan
 ```
-<br>
-
 ### -out
 - The path to save the generated execution plan
 ```bash
 terraform plan -out out.terraform
 ```
-
-<br>
 
 ## refresh
 [refresh](https://www.terraform.io/docs/commands/refresh.html)
@@ -155,8 +135,6 @@ aws_security_group.sg_22: Refreshing state... [id=sg-0f148e80e2263d39d]
 aws_instance.web: 
 ```
 
-
-<br>
 
 ## show
 [show](https://www.terraform.io/docs/commands/show.html)
@@ -177,8 +155,6 @@ resource "aws_default_subnet" "default_az1" {
     }
 }
 ```
-
-<br>
 
 ## taint
 [taint](https://www.terraform.io/docs/commands/taint.html)

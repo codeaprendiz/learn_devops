@@ -1,7 +1,5 @@
 # Get Connection Information
 
-<br>
-
 ## 1. The `SELECT` Statement
 
 ```sql
@@ -21,8 +19,6 @@ WHERE dbid = DB_ID('SQLTestDB');
 - `blocked`: If this process is being blocked by another process, this column will show the `spid` of the blocking process. If it's not blocked, it will show `0`.
 - `db_name(dbid) as database_name`: This translates the database ID (`dbid`) into the actual database name. In this case, it will always show `SQLTestDB` because of the `WHERE` clause.
 
-<br>
-
 ## 2. The `KILL` Statements
 
 ```sql
@@ -32,13 +28,9 @@ KILL 69;
 
 **Purpose**: These commands terminate the processes with the specified `spid` values. In this case, it's terminating the processes with `spid` values of `58` and `69`.
 
-<br>
-
 ### Explanation
 
 The script is used to first identify all the processes connected to the `SQLTestDB` database. Once you have that list, you can decide which processes to terminate. The `KILL` commands are then used to forcefully terminate specific processes. This can be useful in scenarios where you need to perform maintenance on a database and want to ensure no active connections are using it, or if there are problematic or long-running queries that you need to stop.
-
-<br>
 
 ### Sample Table Output
 

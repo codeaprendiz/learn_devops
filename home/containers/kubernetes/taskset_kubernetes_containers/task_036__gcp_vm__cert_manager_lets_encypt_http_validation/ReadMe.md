@@ -1,7 +1,5 @@
 # Let's Encrypt And Cert-Manager
 
-<br>
-
 ## Create Cluster
 
 ```bash
@@ -10,8 +8,6 @@
 NAME                 STATUS   ROLES           AGE    VERSION
 kind-control-plane   Ready    control-plane   117s   v1.25.3
 ```
-
-<br>
 
 ## Cert-Manager Releases
 
@@ -58,8 +54,6 @@ replicaset.apps/cert-manager-webhook-75f77865c8     1         1         1       
 # Okay it did
 ```
 
-<br>
-
 ## Let's deploy ingress-controller
 
 You can download the ingress controller from [ingress-nginx/releases/tag/controller-v1.4.0](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.4.0)
@@ -75,8 +69,6 @@ ReadMe.md                           cert-manager.yaml                   ingress-
 # The same file is also available as raw content https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.4.0/deploy/static/provider/cloud/deploy.yaml
 ╰─ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.4.0/deploy/static/provider/cloud/deploy.yaml                 
 
-
-<br>
 
 ## See if its working
 ╰─ kubectl get all -n ingress-nginx
@@ -128,8 +120,6 @@ HTTP/1.1 404 Not Found
 HTTP/1.1 404 Not Found
 
 ```
-
-<br>
 
 ## Let's add a cluster-isser.yaml
 
@@ -216,8 +206,6 @@ curl: (60) SSL certificate problem: unable to get local issuer certificate
 
 ```
 
-<br>
-
 ## Let's create a certificate.yaml
 
 [cert-manager.io/docs/concepts/certificate](https://cert-manager.io/docs/concepts/certificate/)
@@ -227,8 +215,6 @@ curl: (60) SSL certificate problem: unable to get local issuer certificate
 ```bash
 $ kubectl apply -f certificate.yaml 
 ```
-
-<br>
 
 ## Seeing what actually happens
 
@@ -321,8 +307,6 @@ root@cert-manager-k8s:/home/testgcply01# kubectl logs -f ingress-nginx-controlle
 127.0.0.1 - - [06/Nov/2022:09:30:05 +0000] "GET /test HTTP/2.0" 200 1045 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" 460 0.002 [default-whoami-80] [] 10.244.0.11:80 1045 0.000 200 79d26974d442bb5c89db7ef4c19aab4b
 ```
 
-
-<br>
 
 ## Let's test the certificate
 

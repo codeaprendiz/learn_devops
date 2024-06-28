@@ -15,21 +15,15 @@
 - Modify Cluster
 
 
-<br>
-
 ### Deploy GKE clusters
 
 - cluster name to standard-cluster-1
 - zone to us-central1-a.
 
 
-<br>
-
 ### Modify GKE clusters
 
 - Change the number of nodes from 3 to 4 and click RESIZE
-
-<br>
 
 ### View details about workloads in the Google Cloud Console
 

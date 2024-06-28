@@ -1,12 +1,8 @@
 # chmod
 
-<br>
-
 ## NAME
 
 chmod -- change file modes or Access Control Lists
-
-<br>
 
 ## EXAMPLES
 
@@ -14,8 +10,6 @@ chmod -- change file modes or Access Control Lists
 chmod 644 /home/looker/.ssh/id_rsa.pub
 .
 ```
-
-<br>
 
 ### To recursively sets the group permissions of everything inside the `/test` directory (and the directory itself) to match the owner's permissions
 
@@ -36,8 +30,6 @@ $ chmod -R g=u /test
 In a practical example, if there's a file inside `/test` with permissions `rwxr-----` (read, write, execute for the owner, and no permissions for the group and others), after executing the command, the file's permissions would change to `rwxrwx---` (giving read, write, execute permissions for both the owner and the group).
 
 This operation is useful when you want to ensure that a group (often a special or system group) has the same access permissions as the owner of a file or directory.
-
-<br>
 
 ### To add read, write, and conditional execute permissions for the group on the `/some/directory`` and all its contents
 

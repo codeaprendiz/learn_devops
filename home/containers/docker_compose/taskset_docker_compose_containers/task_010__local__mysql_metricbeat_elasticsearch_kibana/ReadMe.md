@@ -2,8 +2,6 @@
 
 To get MySQL DB Dashboard on Kibana using MySQL, Elasticsearch, Kibana, Metricbeat (custom image) in docker-compose
 
-<br>
-
 #### Directory Structure
 
 ```bash
@@ -188,8 +186,6 @@ wait_all_hosts
 #echo "Cluster is YELLOW. Fine ! (But you could maybe try to have it GREEN ;))"
 #echo ""
 
-
-<br>
 
 ## to wait to http://kibana:5601/api/status to be up
 sleep 60

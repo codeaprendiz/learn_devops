@@ -24,8 +24,6 @@
 
 > Task : Searching through the available products and services
 
-<br>
-
 ## Project
 
 
@@ -33,8 +31,6 @@
 - Your project has a name, number, and ID
 
 > Task : How do we see all the projects
-
-<br>
 
 ## Roles and permissions
 
@@ -46,8 +42,6 @@
 
 > Task : How do we navigate to CloudIAM console
 
-
-<br>
 
 ## APIs And Services
 

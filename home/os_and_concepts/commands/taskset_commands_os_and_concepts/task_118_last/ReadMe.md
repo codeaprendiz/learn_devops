@@ -1,10 +1,6 @@
 # last
 
-<br>
-
 ## Examples
-
-<br>
 
 ### To get record of all logged in users and the date and time of last reboot
 

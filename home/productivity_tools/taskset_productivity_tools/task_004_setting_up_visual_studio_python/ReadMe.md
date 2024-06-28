@@ -24,8 +24,6 @@
 $ mkdir -p ~/workspace/proj
 $ cd ~/workspace
 
-<br>
-
 ### Create a virtual env
 $ python3 -m venv venv
 $ ls

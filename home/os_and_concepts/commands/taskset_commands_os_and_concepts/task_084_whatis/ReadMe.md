@@ -1,18 +1,12 @@
 # whatis
 
-<br>
-
 ## NAME
 
 whatis - search the whatis database for complete words.
 
-<br>
-
 ## SYNOPSIS
 
 > whatis keyword ...
-
-<br>
 
 ## DESCRIPTION
 

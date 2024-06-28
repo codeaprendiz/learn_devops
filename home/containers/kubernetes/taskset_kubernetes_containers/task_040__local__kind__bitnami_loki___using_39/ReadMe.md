@@ -6,8 +6,6 @@
 - Ensure that you have completed the [task_039__local__kind__prometheus_operator__kube_prometheus_grafana_alertmanager](../task_039__local__kind__prometheus_operator__kube_prometheus_grafana_alertmanager) and we will continue from there
 
 ```bash
-<br>
-
 ## Grafana should be up
 kubectl --namespace monitoring port-forward svc/grafana 3000
 Forwarding from 127.0.0.1:3000 -> 3000
@@ -38,17 +36,9 @@ version: 2.5.6
 
 $ kubectl create ns loki 
 
-<br>
-
 ## --create-namespace will create a namespace if it does not exist
-<br>
-
 ## --namespace <namespace-name> to install resources in that specific namespace
-<br>
-
 ## --include-crds : By default, when you install a chart that contains CRDs, Helm only installs the resources defined in the chart's templates directory, and does not install the CRDs themselves. The --include-crds option allows you to explicitly include the CRDs in the chart installation
-<br>
-
 ## --version : The --version option in Helm is used to specify the version of a chart to install
 $ helm template loki \
 --namespace loki \

@@ -1,7 +1,5 @@
 # traceroute
 
-<br>
-
 ## NAME
 
 traceroute -- print the route packets take to network host
@@ -9,8 +7,6 @@ traceroute -- print the route packets take to network host
 SYNOPSIS
 
 > traceroute [-adeFISdNnrvx] [-A as_server] [-f first_ttl] [-g gateway] [-i iface] [-M first_ttl] [-m max_ttl] [-P proto] [-p port] [-q nqueries] [-s src_addr] [-t tos][-w waittime] [-z pausemsecs] host [packetsize]
-
-<br>
 
 ## DESCRIPTION
 

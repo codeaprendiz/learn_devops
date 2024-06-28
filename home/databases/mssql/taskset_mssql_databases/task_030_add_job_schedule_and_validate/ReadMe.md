@@ -3,16 +3,12 @@
 - [learn.microsoft.com » sp_add_schedule](https://learn.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-add-schedule-transact-sql?view=sql-server-ver16)
 - [learn.microsoft.com » msdb.dbo.sysschedules](https://learn.microsoft.com/en-us/sql/relational-databases/system-tables/dbo-sysschedules-transact-sql?view=sql-server-ver16)
 
-<br>
-
 ## Background
 
 | Object Name             | Type             | Description                                                                                                                                                   |
 |-------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `sp_add_schedule`       | Stored Procedure | A system stored procedure that allows users to create a new schedule for executing SQL Server Agent Jobs at specific times or in response to specific events. |
 | `msdb.dbo.sysschedules` | System Table     | A table in the MSDB database that stores details about schedules in SQL Server Agent, including their names, types, and when they are supposed to run.        |
-
-<br>
 
 ## Create a Job Schedule
 
@@ -29,8 +25,6 @@ EXEC dbo.sp_add_schedule
     @active_start_time = 170800,  -- Set the active start time to 5:08:00 PM (time is in HHMMSS format).
     @active_end_time = 235959;  -- Set the active end time to 11:59:59 PM (time is in HHMMSS format).
 ```
-
-<br>
 
 ## Validate the created job schedule
 

@@ -31,8 +31,6 @@ how the pieces fit together with one another
 ![img.png](.images/moving-parts.png)
 
 
-<br>
-
 ## Create Nodejs application
 
 ```bash
@@ -46,8 +44,6 @@ node server.js    # run the server
 # in another terminal session 
 curl localhost:8080
 ```
-
-<br>
 
 ## Create Dockerfile
 
@@ -95,17 +91,11 @@ gcloud auth configure-docker
 docker push gcr.io/$PROJECT_ID/hello-node:v1
 ```
 
-<br>
-
 ## Create your cluster
 
 ```bash
-<br>
-
 ## Replace PROJECT_ID
 gcloud config set project $PROJECT_ID
-
-<br>
 
 ## Create a cluster with two n1-standard-1 nodes (this will take a few minutes to complete):
 gcloud container clusters create hello-world \
@@ -116,14 +106,10 @@ gcloud container clusters create hello-world \
 # Check the cluster in the Cloud Console
 ```
 
-<br>
-
 ## Create your pod
 
 ```bash
 # Create a pod with the kubectl run command
-<br>
-
 ## Replace project ID
 kubectl create deployment hello-node \
     --image=gcr.io/$PROJECT_ID/hello-node:v1
@@ -135,8 +121,6 @@ kubectl get deployments
 kubectl get pods
 
 ```
-
-<br>
 
 ## Allow external traffic
 
@@ -153,8 +137,6 @@ kubectl get services
 curl http://<EXTERNAL-IP>:8080
 ```
 
-
-<br>
 
 ## Scale up your service
 
@@ -175,8 +157,6 @@ State of our cluster
 
 ![img.png](.images/state-of-cluster.png)
 
-
-<br>
 
 ## Roll out an upgrade to your service
 

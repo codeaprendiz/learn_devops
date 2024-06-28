@@ -1,24 +1,16 @@
 # zip
 
-<br>
-
 ## NAME
 
 zip - package and compress (archive) files
-
-<br>
 
 ## SYNOPSIS
 
 > zip [-aABcdDeEfFghjklLmoqrRSTuvVwXyz!@$] [--longoption ...]  [-b path] [-n suffixes] [-t date] [-tt date] [zipfile [file ...]]  [-xi list]
 
-<br>
-
 ## DESCRIPTION
 
 zip is a compression and file packaging utility for Unix, VMS, MSDOS, OS/2, Windows 9x/NT/XP, Minix, Atari, Macintosh, Amiga, and Acorn RISC OS.  It is analogous to a combination of the Unix commands tar(1) and compress(1) and is compatible with PKZIP (Phil Katz's ZIP for MSDOS systems).
-
-<br>
 
 ## EXAMPLES
 

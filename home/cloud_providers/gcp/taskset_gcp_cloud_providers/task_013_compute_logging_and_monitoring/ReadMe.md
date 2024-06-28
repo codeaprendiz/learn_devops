@@ -18,8 +18,6 @@
 - logs and metrics
 
 
-<br>
-
 ### Set up a VM and a GKE cluster
 
 Create VM
@@ -79,8 +77,6 @@ Create GKE Cluster
 
 - Name : `gke-cluster`
 
-<br>
-
 ### Use the logging and monitoring agents for Compute Engine
 
 - Monitoring > Metrics Explorer
@@ -88,8 +84,6 @@ Create GKE Cluster
   - Filter instance_name = web-server-vm       : Apply
 
 - Resource & Metric : VM Instance > nginx > Requests : Apply
-
-<br>
 
 ### Add a service to the GKE cluster and examine its logs and metrics
 

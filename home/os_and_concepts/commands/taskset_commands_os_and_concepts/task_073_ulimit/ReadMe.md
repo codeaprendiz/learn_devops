@@ -1,18 +1,12 @@
 # ulimit
 
-<br>
-
 ## SYNOPSIS
 
 > ulimit [-HSTabcdefilmnpqrstuvx [limit]]
 
-<br>
-
 ## DESCRIPTION
 
 Provides control over the resources available to the shell and to processes started by it, on systems that allow such control.  
-
-<br>
 
 ## OPTIONS
 
@@ -69,8 +63,6 @@ virtual memory          (kbytes, -v) unlimited
 file locks                      (-x) unlimited
 [username@hostname ~]$
 ```
-
-<br>
 
 ### /proc/sys/fs/file-max vs ulimit
 

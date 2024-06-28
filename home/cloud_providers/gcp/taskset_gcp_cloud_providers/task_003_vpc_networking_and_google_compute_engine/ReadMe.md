@@ -22,8 +22,6 @@
 
 
 
-<br>
-
 ## Explore the default network
 
 
@@ -38,8 +36,6 @@
      - default-allow-internal
      - Note: These firewall rules allow ICMP, RDP, and SSH ingress traffic from anywhere (0.0.0.0/0) and all TCP, UDP, and ICMP traffic within the network (10.128.0.0/9). The Targets, Filters, Protocols/ports, and Action columns explain these rules.
 
-<br>
-
 ## Delete the Firewall Rules and Default Network (only for testing, don't do it in production :) )
 
 - Delete the Firewall rules
@@ -47,8 +43,6 @@
 - Try to create a VM instance
   - Notice the error
 
-
-<br>
 
 ## Create a VPC network and VM instances
 
@@ -72,8 +66,6 @@
 | Zone     | europe-central2-a |
 
 - The Internal IP should be 10.186.0.2 because 10.186.0.1 is reserved for the gateway and you have not configured any other instances in that subnet.
-
-<br>
 
 ## Explore the connectivity for VM instances
 

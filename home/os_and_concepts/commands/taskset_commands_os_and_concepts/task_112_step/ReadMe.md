@@ -4,8 +4,6 @@
 
 [github.com » smallstep/cli](https://github.com/smallstep/cli)
 
-<br>
-
 ## Examples
 
 Generating a [trust anchor certificate](https://linkerd.io/2.14/tasks/generate-certificates/#trust-anchor-certificate) in linkerd

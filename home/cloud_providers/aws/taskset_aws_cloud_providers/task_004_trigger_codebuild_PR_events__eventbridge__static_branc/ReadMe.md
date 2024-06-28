@@ -10,19 +10,13 @@
   - [Create EventBridge Rule](#create-eventbridge-rule)
   - [Create a PR and check if build gets triggered](#create-a-pr-and-check-if-build-gets-triggered)
 
-<br>
-
 ## Docs Referred
 
 [Automated Code Review on Pull Requests using AWS CodeCommit and AWS CodeBuild](https://aws.amazon.com/blogs/devops/automated-code-review-on-pull-requests-using-aws-codecommit-and-aws-codebuild/)
 
-<br>
-
 ## Existing Issue
 
 The codebuild always runs against the same branch which is hardcoded in the codebuild project. We want to trigger the codebuild on PR events with the source branch as the PR branch.
-
-<br>
 
 ## Create a repository in AWS CodeCommit
 
@@ -39,31 +33,21 @@ Host git-codecommit.*.amazonaws.com
   IdentityFile ~/.ssh/id_rsa
 ```
 
-<br>
-
 ## Create a CodeBuild project - codebuild-app
 
 Role Created automatically - `codebuild-app-codebuild-service-Role`
-
-<br>
 
 ## Create Pipeline in CodePipeline
 
 New Role created `AWSCodePipelineServiceRole-xx-region-y-app-pipeline`
 
-<br>
-
 ## Commit to the repository and check if build get's triggered
-
-<br>
 
 ## Create EventBridge Rule
 
 Role created `Amazon_EventBridge_Invoke_CodeBuild_5492177`
 
 Create a rule in default event bus
-
-<br>
 
 ## Create a PR and check if build gets triggered
 

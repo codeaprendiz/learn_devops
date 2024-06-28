@@ -5,8 +5,6 @@
 - [learn.microsoft.com » dbo.sysjobschedules](https://learn.microsoft.com/en-us/sql/relational-databases/system-tables/dbo-sysjobschedules-transact-sql?view=sql-server-ver16)
 - [learn.microsoft.com » dbo.sysschedules](https://learn.microsoft.com/en-us/sql/relational-databases/system-tables/dbo-sysschedules-transact-sql?view=sql-server-ver16)
 
-<br>
-
 ## Background
 
 | Object Name              | Type             | Description                                                                                                                                           |
@@ -15,8 +13,6 @@
 | msdb.dbo.sysjobschedules | Table            | Contains information for each time a job is scheduled to run. Links jobs in `sysjobs` to their respective schedules in `sysschedules`.                |
 | msdb.dbo.sysschedules    | Table            | Contains information about the schedules for jobs, alerts, and operators, such as the schedule's type, frequency, active range, etc.                  |
 | sp_attach_schedule       | Stored Procedure | A system stored procedure that attaches an existing schedule to a job. It takes the job name and schedule name as parameters and links them together. |
-
-<br>
 
 ## Attach schedule to a job
 
@@ -31,8 +27,6 @@ EXEC sp_attach_schedule  -- Execute the stored procedure to attach a schedule to
    @schedule_name = N'EveryMinuteBackupSchedule';  -- Specify the name of the schedule to be attached to the job.
 GO  -- Batch terminator.
 ```
-
-<br>
 
 ## Validate
 

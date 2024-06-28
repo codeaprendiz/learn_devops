@@ -1,7 +1,5 @@
 # [Request Routing](https://istio.io/latest/docs/tasks/traffic-management/request-routing/)
 
-<br>
-
 ## [Prequisite](https://istio.io/latest/docs/tasks/traffic-management/request-routing/#before-you-begin)
 
 [Deploying Bookinfo Application](https://istio.io/latest/docs/examples/bookinfo)
@@ -80,8 +78,6 @@ Next, you will change the route configuration so that all traffic from a specifi
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.20/samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml
 ```
-
-<br>
 
 ## Cleanup
 

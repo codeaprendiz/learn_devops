@@ -1,12 +1,8 @@
 # tar
 
-<br>
-
 ## NAME
 
 tar -- manipulate tape archives
-
-<br>
 
 ## SYNOPSIS
 
@@ -17,8 +13,6 @@ tar -- manipulate tape archives
 > tar {-r | -u} -f archive-file [options] [files | directories]
 
 > tar {-t | -x} [options] [patterns]
-
-<br>
 
 ### DESCRIPTION
 
@@ -43,8 +37,6 @@ In -c, -r, or -u mode, each specified file or directory is added to the archive 
 
 In extract or list mode, the entire command line is read and parsed before the archive is opened.  The pathnames or patterns on the command line indicate which items in the archive should be processed.
 
-<br>
-
 ## OPTIONS
 
 * -v
@@ -53,8 +45,6 @@ In extract or list mode, the entire command line is read and parsed before the a
   * Read the archive from or write the archive to the specified file.  The filename can be - for standard input or standard output.
 * -x
   * Extract to disk from the archive.  If a file with the same name appears more than once in the archive, each copy will be extracted, with later copies overwriting (replacing) earlier copies.
-
-<br>
 
 ## EXAMPLES
 

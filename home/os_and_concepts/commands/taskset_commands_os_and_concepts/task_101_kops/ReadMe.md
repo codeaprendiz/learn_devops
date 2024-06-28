@@ -2,8 +2,6 @@
 
 - [kops](https://kops.sigs.k8s.io/getting_started/commands)
 
-<br>
-
 ## EXAMPLES
 
 ```bash

@@ -4,8 +4,6 @@
 
 A **Stored Procedure** in SQL is a precompiled collection of one or more SQL statements that can be executed as a single unit of work. Stored procedures are stored in the database data dictionary and can be invoked by applications or users to encapsulate logic, perform an action, and optionally return a value.
 
-<br>
-
 ## Key Characteristics of Stored Procedures
 
 1. **Precompiled**: Once created, stored procedures are compiled and stored in the database, which can reduce the overhead of compiling the SQL code every time it is executed.
@@ -20,8 +18,6 @@ A **Stored Procedure** in SQL is a precompiled collection of one or more SQL sta
 
 6. **Transactional**: Stored procedures can utilize transactions, ensuring data consistency by committing or rolling back changes in the event of errors.
 
-<br>
-
 ## Basic Syntax
 
 Here's a basic syntax example of a stored procedure in SQL Server:
@@ -35,8 +31,6 @@ BEGIN
     -- SQL statements to be executed
 END;
 ```
-
-<br>
 
 ### Example:
 
@@ -57,8 +51,6 @@ To call this stored procedure and retrieve data for a specific employee, you wou
 EXEC dbo.GetEmployeeDetails @EmployeeID = 123;
 ```
 
-<br>
-
 ### Use Cases
 
 - **Data Validation**: Ensure data consistency and accuracy by using stored procedures to validate and process data before it is inserted or updated in the database.
@@ -73,13 +65,9 @@ Stored procedures can be a powerful tool in database management, helping to stre
 
 ---
 
-<br>
-
 ## Example with Employees Table
 
 Let's create an example following best practices:
-
-<br>
 
 ### Step 1: Create a Database
 
@@ -99,8 +87,6 @@ CREATE DATABASE CompanyDB;
 GO  -- Execute the previous batch.
 ```
 
-<br>
-
 ### Step 2: Use the Created Database
 
 We switch to using the `CompanyDB` database for subsequent SQL statements.
@@ -110,8 +96,6 @@ We switch to using the `CompanyDB` database for subsequent SQL statements.
 USE CompanyDB;
 GO  -- Execute the previous batch.
 ```
-
-<br>
 
 ### Step 3: Create the `Employees` Table
 
@@ -128,8 +112,6 @@ CREATE TABLE dbo.Employees (
 );
 ```
 
-<br>
-
 ### Step 4: Insert Sample Data into the `Employees` Table
 
 We insert some sample data into the `Employees` table to work with.
@@ -142,8 +124,6 @@ VALUES
     (2, N'Jane', N'Doe', '1992-02-02', N'Analyst'),
     (3, N'Jim', N'Beam', '1985-03-03', N'Manager');
 ```
-
-<br>
 
 ### Step 5: Create the Stored Procedure
 
@@ -160,8 +140,6 @@ BEGIN
 END;
 ```
 
-<br>
-
 ### Usage Example
 
 To use the stored procedure to retrieve details for a specific employee, you would execute the stored procedure with the desired parameter:
@@ -174,8 +152,6 @@ GO  -- Execute the previous batch.
 -- Execute the stored procedure with 'EmployeeID' set to 1
 EXEC dbo.GetEmployeeDetails @EmployeeID = 1;
 ```
-
-<br>
 
 ### Note
 

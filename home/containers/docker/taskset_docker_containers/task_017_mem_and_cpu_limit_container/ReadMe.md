@@ -1,6 +1,4 @@
 
-<br>
-
 ### To set the upper limit on memory to 512 megabytes used by nginx container
 ```bash
 $ docker run -m 512m nginx
@@ -13,8 +11,6 @@ $ docker stats intelligent_bartik
 CONTAINER ID   NAME                 CPU %     MEM USAGE / LIMIT   MEM %     NET I/O       BLOCK I/O         PIDS
 6959c8b602ba   intelligent_bartik   0.00%     4.316MiB / 512MiB   0.84%     1.17kB / 0B   7.42MB / 8.19kB   2
 ```
-
-<br>
 
 ### To set the upper limit on the number of CPUs used by nginx container
 

@@ -1,12 +1,8 @@
 # ftp
 
-<br>
-
 ## NAME
 
 ftp -- Internet file transfer program
-
-<br>
 
 ## DESCRIPTION
 
@@ -15,8 +11,6 @@ ftp is the user interface to the Internet standard File Transfer Protocol.
 The program allows a user to transfer files to and from a remote network site.
 
 The last five arguments will fetch a file using the FTP or HTTP protocols, or by direct copying, into the current directory.  This is ideal for scripts. 
-
-<br>
 
 ## OPTIONS
 
@@ -38,8 +32,6 @@ The last five arguments will fetch a file using the FTP or HTTP protocols, or by
   * Store a local file on the remote machine.  If remote-file is left unspecified, the local file name is used after processing according to any ntrans or nmap settings  in naming the remote file. File transfer uses the current settings for type, format, mode, and structure.
 * bye
   * Terminate the FTP session with the remote server and exit ftp.  An end of file will also terminate the session and exit.
-
-<br>
 
 ## EXAMPLES
 
