@@ -364,6 +364,12 @@ git diff
 git log
 ```
 
+- To check history of a particual file say `file1.txt`
+
+```bash
+git log -p -- file1.txt
+```
+
 - , fetch the latest history from the server and point your local master branch at it, do this:
 
 ### fetch -- To fetch the latest changes from the remote repository

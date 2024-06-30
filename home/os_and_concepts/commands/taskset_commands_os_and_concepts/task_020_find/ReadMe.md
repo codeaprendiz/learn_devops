@@ -19,6 +19,8 @@ find -- walk a file hierarchy
     - [To print all \*.xml files containing keyword "insert into gen\_mst\_rpt" except the ones with "insert into gen\_mst\_rpt\_param" || egrep](#to-print-all-xml-files-containing-keyword-insert-into-gen_mst_rpt-except-the-ones-with-insert-into-gen_mst_rpt_param--egrep)
     - [-mtime | -type f | -name | -o || for | do](#-mtime---type-f---name---o--for--do)
     - [Replace currentstring with newstring in all regular files in the current directory](#replace-currentstring-with-newstring-in-all-regular-files-in-the-current-directory)
+    - [To find all `*.png` files in the current directory and its subdirectories](#to-find-all-png-files-in-the-current-directory-and-its-subdirectories)
+    - [To find all files `*using_dashboard*` in their path in the current directory and its subdirectories](#to-find-all-files-using_dashboard-in-their-path-in-the-current-directory-and-its-subdirectories)
 
 ## EXAMPLES
 
@@ -77,6 +79,12 @@ Output
 374M    ./apache-tomcat-7.0.34/logs/catalina.out 
 113M    ./sonar/sonarqube-5.5.zip 
 107M    ./tmp-02082016/.jenkins/plugins.zip 
+```
+
+To find all files which are greater than 50KB size in the current directory and print their sizes
+
+```bash
+find . -xdev -type f -size +50k -exec du -sh {} +
 ```
 
 ### find files older than 1 month | -mtime | -print | -maxdepth
@@ -161,4 +169,16 @@ for j in $( find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -mtime +3 -
 
 ```bash
 find . -type f -exec sed -i '' 's/currentstring/newstring/g' {} +
+```
+
+### To find all `*.png` files in the current directory and its subdirectories
+
+```bash
+find . -name "*.png"
+```
+
+### To find all files `*using_dashboard*` in their path in the current directory and its subdirectories
+
+```bash
+find . -path "*using_dashboard*"
 ```
