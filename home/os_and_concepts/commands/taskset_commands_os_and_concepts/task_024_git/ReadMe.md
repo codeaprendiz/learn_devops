@@ -197,6 +197,12 @@ git remote add origin <server>
 git remote -v
 ```
 
+- To delete all stale branches from local that have been deleted from remote [stackoverflow.com » Git remote branch deleted, but still it appears in 'branch -a'](https://stackoverflow.com/questions/5094293/git-remote-branch-deleted-but-still-it-appears-in-branch-a)
+
+```bash
+git remote prune origin
+```
+
 ### add -- To add a file to the staging area
 
 - Add one or more files to staging (index):
