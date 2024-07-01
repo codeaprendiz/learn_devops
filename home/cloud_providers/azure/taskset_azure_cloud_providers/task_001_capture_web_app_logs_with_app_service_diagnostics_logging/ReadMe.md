@@ -1,5 +1,14 @@
 # Capture Web Application Logs with App Service Diagnostics Logging
 
+- [Capture Web Application Logs with App Service Diagnostics Logging](#capture-web-application-logs-with-app-service-diagnostics-logging)
+  - [Learning objectives](#learning-objectives)
+    - [Exercise - Enable and configure App Service application logging using the Azure portal](#exercise---enable-and-configure-app-service-application-logging-using-the-azure-portal)
+      - [Use Azure CLI to deploy the webapp](#use-azure-cli-to-deploy-the-webapp)
+      - [View live application logging with the log streaming service](#view-live-application-logging-with-the-log-streaming-service)
+    - [View live application logging with the log streaming service using Azure CLI](#view-live-application-logging-with-the-log-streaming-service-using-azure-cli)
+    - [Retrieve application log files](#retrieve-application-log-files)
+    - [Exercise - Retrieve Application Log Files using Azure CLI and Kudu](#exercise---retrieve-application-log-files-using-azure-cli-and-kudu)
+
 [learn.microsoft.com » Capture Web Application Logs with App Service Diagnostics Logging](https://learn.microsoft.com/en-us/training/modules/capture-application-logs-app-service/)
 
 ## Learning objectives
