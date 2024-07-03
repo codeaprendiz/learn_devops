@@ -4,12 +4,8 @@
 
 ## Configure the VM settings
 
-![img](https://learn.microsoft.com/en-us/training/modules/create-windows-virtual-machine-in-azure/media/3-azure-portal-create-vm.png#lightbox)
-
 ## Configure basic VM settings
 
 ## Configure disks for VM
-
-![img](https://learn.microsoft.com/en-us/training/modules/create-windows-virtual-machine-in-azure/media/3-configure-disks.png#lightbox)
 
 ## Configure the network
