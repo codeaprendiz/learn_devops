@@ -2,7 +2,9 @@
 
 - [az | azure cli](#az--azure-cli)
   - [Install](#install)
+  - [deallocate | Deallocate a VM](#deallocate--deallocate-a-vm)
   - [group list | List resouce group names](#group-list--list-resouce-group-names)
+  - [image create | To create an image from a generalised VM](#image-create--to-create-an-image-from-a-generalised-vm)
   - [resources list | To list all resources in `<resource_group_name>` resourcegroup](#resources-list--to-list-all-resources-in-resource_group_name-resourcegroup)
   - [network | List vnet | List subnets](#network--list-vnet--list-subnets)
   - [vm list | To list virtual machines in a resource group](#vm-list--to-list-virtual-machines-in-a-resource-group)
@@ -16,10 +18,32 @@
 
 [learn.microsoft.com » Install Azure CLI on macOS](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos)
 
+## deallocate | Deallocate a VM
+
+[what's the difference between deallocated and stopped ?](https://learn.microsoft.com/en-us/answers/questions/574969/whats-the-difference-between-deallocated-and-stopp)
+
+```bash
+az vm deallocate \
+    --resource-group <resource group> \
+    --name <virtual machine name>
+```
+
 ## group list | List resouce group names
 
 ```bash
 az group list -o table
+```
+
+## image create | To create an image from a generalised VM
+
+To create an image from a generalised VM
+
+```bash
+az vm create \
+    --resource-group <resource group> \
+    --name <new virtual machine name> \
+    --image <image name> \
+    --location <location of image>
 ```
 
 ## resources list | To list all resources in `<resource_group_name>` resourcegroup

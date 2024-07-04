@@ -1,6 +1,6 @@
 # Home
 
-> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 444
+> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 446
 
 - [cloud certifications](#cloud_certifications)
 - [cloud providers](#cloud_providers)
@@ -24,7 +24,7 @@
 
 | aws                                  | azure                                  | gcp                                   | oci                                  |
 |--------------------------------------|----------------------------------------|---------------------------------------|--------------------------------------|
-| [Tasks: 9](home/cloud_providers/aws) | [Tasks: 4](home/cloud_providers/azure) | [Tasks: 42](home/cloud_providers/gcp) | [Tasks: 3](home/cloud_providers/oci) |
+| [Tasks: 9](home/cloud_providers/aws) | [Tasks: 6](home/cloud_providers/azure) | [Tasks: 42](home/cloud_providers/gcp) | [Tasks: 3](home/cloud_providers/oci) |
 
 ## containers
 
