@@ -1,5 +1,7 @@
 # [Create a new Virtual Machine from a managed image](https://learn.microsoft.com/en-us/training/modules/customize-windows-server-iaas-virtual-machine-images/3-create-new-virtual-machine-managed-image)
 
+[Video Reference - Create a Virtual Machine from a managed image](https://learn.microsoft.com/en-us/training/modules/customize-windows-server-iaas-virtual-machine-images/5-demonstration-create-virtual-machine-managed-image)
+
 After you have generalized the VM, you can create a managed image. You can then create new VMs from this managed image.
 
 > [!CAUTION]
@@ -30,3 +32,5 @@ az vm create \
     --image <image name> \
     --location <location of image>
 ```
+
+If you review your list of VMs in the Azure portal, after creating your new VM from your managed image you'll notice that the new VM displays the source as Image.

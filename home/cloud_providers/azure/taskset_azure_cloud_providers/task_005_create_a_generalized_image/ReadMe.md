@@ -1,6 +1,8 @@
-# [Create a generalized image](https://learn.microsoft.com/en-us/training/modules/customize-windows-server-iaas-virtual-machine-images/2-create-generalized-image) 
+# [Create a generalized image](https://learn.microsoft.com/en-us/training/modules/customize-windows-server-iaas-virtual-machine-images/2-create-generalized-image)
 
 [Training Module » Customize Windows Server IaaS Virtual Machine images](https://learn.microsoft.com/en-us/training/modules/customize-windows-server-iaas-virtual-machine-images/)
+
+[Video Reference : Create a managed image of a generalized virtual machine in Azure](https://learn.microsoft.com/en-us/training/modules/customize-windows-server-iaas-virtual-machine-images/4-create-managed-image-generalized-virtual-machine-azure)
 
 [what's the difference between deallocated and stopped ?](https://learn.microsoft.com/en-us/answers/questions/574969/whats-the-difference-between-deallocated-and-stopp)
 
@@ -25,6 +27,8 @@ These items must be reset to their default settings before you capture an image.
 ## Generalize a VM
 
 - Use the Sysprep.exe tool to generalize a Windows VM
+
+![img](https://learn.microsoft.com/en-us/training/wwl-azure/customize-windows-server-iaas-virtual-machine-images/media/m6-system-preparation.png)
 
 - After the VM has been shut down, you should deallocate it while it's in this clean state.
 
