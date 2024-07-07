@@ -61,9 +61,9 @@
 
 ## os_and_concepts
 
-| commands                                    | concepts                                   |
-|---------------------------------------------|--------------------------------------------|
-| [Tasks: 119](home/os_and_concepts/commands) | [Tasks: 14](home/os_and_concepts/concepts) |
+| commands_linux                                    | concepts_linux                                   |
+|---------------------------------------------------|--------------------------------------------------|
+| [Tasks: 119](home/os_and_concepts/commands_linux) | [Tasks: 14](home/os_and_concepts/concepts_linux) |
 
 ## productivity_tools
 
