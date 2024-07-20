@@ -103,6 +103,16 @@ git push origin v1.0.0
 
 ### config -- Configuring Git Examples -- GIT_PAGER
 
+- To list the current `git config`, like the `user.name` and `user.email` with `--no-pager`
+
+```bash
+git --no-pager config --list
+```
+
+```bash
+GIT_PAGER= git config --list
+```
+
 - Tell Git who you are
 
 ```bash
@@ -121,13 +131,6 @@ git config user.name
 
 ```bash
 git config user.email
-```
-
-- To list the current `git config`, like the `user.name` and `user.email`
-
-```bash
-# For --no-pager output
-GIT_PAGER= git config --list
 ```
 
 - Signing commits with gpg key
@@ -169,6 +172,12 @@ git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "http
 
 ```bash
 git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "ssh://git@github.com/"
+```
+
+- Switch between Secure Channel and OpenSSL for Git's HTTPS transport by setting the http.sslBackend config variable to "openssl" or "schannel". [How do I configure Git to trust certificates from the Windows Certificate Store?](https://stackoverflow.com/questions/16668508/how-do-i-configure-git-to-trust-certificates-from-the-windows-certificate-store)
+
+```bash
+git config --global http.sslBackend schannel
 ```
 
 ### remote -- origin

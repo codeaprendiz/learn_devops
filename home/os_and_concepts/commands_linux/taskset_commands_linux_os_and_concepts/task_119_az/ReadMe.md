@@ -1,12 +1,15 @@
 # az | azure cli
 
+[learn.microsoft.com/ » az](https://learn.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest)
+
 - [az | azure cli](#az--azure-cli)
   - [Install](#install)
   - [deallocate | Deallocate a VM](#deallocate--deallocate-a-vm)
   - [group list | List resouce group names](#group-list--list-resouce-group-names)
-  - [image create | To create an image from a generalised VM](#image-create--to-create-an-image-from-a-generalised-vm)
+  - [vm create | To create an image | To create a VM](#vm-create--to-create-an-image--to-create-a-vm)
+  - [vm extension | To configure nginx on VM](#vm-extension--to-configure-nginx-on-vm)
   - [resources list | To list all resources in `<resource_group_name>` resourcegroup](#resources-list--to-list-all-resources-in-resource_group_name-resourcegroup)
-  - [network | List vnet | List subnets](#network--list-vnet--list-subnets)
+  - [network | List vnet | List subnets | List rules | create rules](#network--list-vnet--list-subnets--list-rules--create-rules)
   - [vm list | To list virtual machines in a resource group](#vm-list--to-list-virtual-machines-in-a-resource-group)
   - [ad | To list AD users | servicePrincipals](#ad--to-list-ad-users--serviceprincipals)
   - [login](#login)
@@ -34,7 +37,7 @@ az vm deallocate \
 az group list -o table
 ```
 
-## image create | To create an image from a generalised VM
+## vm create | To create an image | To create a VM
 
 To create an image from a generalised VM
 
@@ -46,13 +49,27 @@ az vm create \
     --location <location of image>
 ```
 
+- run the following az vm create command to create a Linux VM:
+
+```bash
+az vm create --resource-group "<resource_group>" --name my-vm --public-ip-sku Standard --image Ubuntu2204 --admin-username azureuser --generate-ssh-keys
+```
+
+## vm extension | To configure nginx on VM
+
+Run the following az vm extension set command to configure Nginx on your VM:
+
+```bash
+az vm extension set --resource-group "<resource_group>" --vm-name my-vm --name customScript --publisher Microsoft.Azure.Extensions --version 2.1 --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
+```
+
 ## resources list | To list all resources in `<resource_group_name>` resourcegroup
 
 ```bash
 az resource list --resource-group <resource_group_name> -o table
 ```
 
-## network | List vnet | List subnets
+## network | List vnet | List subnets | List rules | create rules
 
 ```bash
 az network vnet list -o table
@@ -91,6 +108,24 @@ To list public IP addresses in a resource group:
 ```bash
 # az network public-ip list --resource-group <RESOURCE_GROUP_NAME> -o table
 az network public-ip list --resource-group test-dev-rg -o table
+```
+
+Run the following az network nsg rule list command to list the rules associated with the NSG named my-vmNSG:
+
+```bash
+az network nsg rule list --resource-group "<resource_group>" --nsg-name my-vmNSG
+```
+
+To only query required values for `my-vmNSG`
+
+```bash
+az network nsg rule list --resource-group "<resource_group>" --nsg-name my-vmNSG --query '[].{Name:name, Priority:priority, Port:destinationPortRange, Access:access}' --output table
+```
+
+Run the following az network nsg rule create command to create a rule called allow-http that allows inbound access on port 80:
+
+```bash
+az network nsg rule create --resource-group "<resource_group>" --nsg-name my-vmNSG --name allow-http --protocol tcp --priority 100 --destination-port-range 80 --access Allow
 ```
 
 ## vm list | To list virtual machines in a resource group
