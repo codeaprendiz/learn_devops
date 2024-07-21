@@ -2,6 +2,7 @@
 
 - [ReadMe\_static.md](#readme_staticmd)
   - [Installing Nodejs](#installing-nodejs)
+  - [Installing WSL](#installing-wsl)
 
 ## Installing Nodejs
 
@@ -36,4 +37,12 @@ node -v
 
 ```batch
 npm -v
+```
+
+## Installing WSL
+
+[How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+```batch
+wsl --install
 ```
