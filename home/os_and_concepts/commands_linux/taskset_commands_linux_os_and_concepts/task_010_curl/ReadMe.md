@@ -10,6 +10,7 @@
     - [--resolve | force resolve to IP | -H | --cacert | Root CA | --cert | --key](#--resolve--force-resolve-to-ip---h----cacert--root-ca----cert----key)
     - [To get only the status code using curl | -s | silent | -o | output | -w | write out | http\_code](#to-get-only-the-status-code-using-curl---s--silent---o--output---w--write-out--http_code)
     - [-L | --location | follow redirect | -I | --head | Fetch headers only](#-l----location--follow-redirect---i----head--fetch-headers-only)
+    - [-o | output | download](#-o--output--download)
 
 ## NAME
 
@@ -109,4 +110,10 @@ HTTP/1.1 301 Moved Permanently
 ..
 ..
 HTTP/1.1 200 OK
+```
+
+### -o | output | download
+
+```bash
+curl -Lo /usr/local/bin/kubectl https://dl.k8s.io/release/v1.25.0/bin/linux/amd64/kubectl
 ```
