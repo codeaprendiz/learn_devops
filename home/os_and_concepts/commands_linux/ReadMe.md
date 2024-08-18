@@ -1,6 +1,6 @@
 # taskset_commands_linux_os_and_concepts
 
-> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 121
+> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 123
 
 | Task     | Description                                                                           |
 |----------|---------------------------------------------------------------------------------------|
@@ -125,3 +125,5 @@
 | task_119 | [task_119_az](taskset_commands_linux_os_and_concepts/task_119_az)                     |
 | task_120 | [task_120_dpkg](taskset_commands_linux_os_and_concepts/task_120_dpkg)                 |
 | task_121 | [task_121_cat](taskset_commands_linux_os_and_concepts/task_121_cat)                   |
+| task_122 | [task_122_tar](taskset_commands_linux_os_and_concepts/task_122_tar)                   |
+| task_123 | [task_123_code](taskset_commands_linux_os_and_concepts/task_123_code)                 |
