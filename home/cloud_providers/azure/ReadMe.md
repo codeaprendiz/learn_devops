@@ -1,6 +1,6 @@
 # taskset_azure_cloud_providers
 
-> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 7
+> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 10
 
 | Task     | Description                                                                                                                                                                      |
 |----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -11,3 +11,6 @@
 | task_005 | [task_005_create_a_generalized_image](taskset_azure_cloud_providers/task_005_create_a_generalized_image)                                                                         |
 | task_006 | [task_006_create_a_new_virtual_machine_from_a_managed_image](taskset_azure_cloud_providers/task_006_create_a_new_virtual_machine_from_a_managed_image)                           |
 | task_007 | [task_007_create_an_image_of_azure_vm_from_az_cli_and_provision_a_new_vm](taskset_azure_cloud_providers/task_007_create_an_image_of_azure_vm_from_az_cli_and_provision_a_new_vm) |
+| task_008 | [task_008_create_an_azure_virtual_machine](taskset_azure_cloud_providers/task_008_create_an_azure_virtual_machine)                                                               |
+| task_009 | [task_009_configure_network_access](taskset_azure_cloud_providers/task_009_configure_network_access)                                                                             |
+| task_010 | [task_010_create_a_storage_blob](taskset_azure_cloud_providers/task_010_create_a_storage_blob)                                                                                   |

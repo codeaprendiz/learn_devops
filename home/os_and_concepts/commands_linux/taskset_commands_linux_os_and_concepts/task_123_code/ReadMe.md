@@ -30,6 +30,12 @@ Default Profile
 code --list-extensions --show-versions
 ```
 
+### Open project with specific profile
+
+```bash
+code ~/workspace/codeaprendiz/learn_devops --profile Default
+```
+
 ### Uninstall Extensions
 
 ```bash
