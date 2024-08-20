@@ -9,6 +9,7 @@
     - [pull - To pull the latest changes from `master`](#pull---to-pull-the-latest-changes-from-master)
     - [push -- To push all the changes to the `master` branch](#push----to-push-all-the-changes-to-the-master-branch)
     - [config -- Configuring Git Examples -- GIT\_PAGER](#config----configuring-git-examples----git_pager)
+    - [rebase -- To rebase the changes](#rebase----to-rebase-the-changes)
     - [remote -- origin](#remote----origin)
     - [add -- To add a file to the staging area](#add----to-add-a-file-to-the-staging-area)
     - [commit -- To commit the changes to the repository](#commit----to-commit-the-changes-to-the-repository)
@@ -113,7 +114,19 @@ git --no-pager config --list
 GIT_PAGER= git config --list
 ```
 
-- Tell Git who you are
+- To check currently set global config
+
+```bash
+git --no-pager config --global --list
+```
+
+- To check currently set local config
+
+```bash
+git --no-pager config --local --list
+```
+
+- Tell Git who you are, use `--global` if you want to set it globally, use `--local` if you want to set it for a specific repository
 
 ```bash
 git config --global user.name "Sam Smith"
@@ -136,19 +149,22 @@ git config user.email
 - Signing commits with gpg key
   - [docs](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
 
-```bash
-# To set the gpg format
-git config --global gpg.format openpgp
-```
+- To set the gpg format, use `--global` if you want to set it globally, use `--local` if you want to set it for a specific repository
 
 ```bash
-# To set the gpg key
-git config --global user.signingkey <your_gpg_key>
+git config --local gpg.format openpgp
 ```
 
+- To set the gpg key, use `--global` if you want to set it globally, use `--local` if you want to set it for a specific repository
+
 ```bash
-# To ensure commits are signed by default
-git config --global commit.gpgsign true
+git config --local user.signingkey <your_gpg_key>
+```
+
+- To sign all commits by default, use `--global` if you want to set it globally, use `--local` if you want to set it for a specific repository
+
+```bash
+git config --local commit.gpgsign true
 ```
 
 - If you mac crashes, you might get errors like `gpg: Note: database_open xxxx waiting for lock (held by xxxx) ...`, [superuser.com » GPG stops doing anything on Mac](https://superuser.com/questions/1811518/gpg-stops-doing-anything-on-mac)
@@ -178,6 +194,45 @@ git config --global url."https://$PAT:x-oauth-basic@github.com/".insteadOf "ssh:
 
 ```bash
 git config --global http.sslBackend schannel
+```
+
+- To unset a config
+
+```bash
+git config --global --unset user.name
+```
+
+### rebase -- To rebase the changes
+
+- How to change author of all commits from a particular commit [stackoverflow.com](https://stackoverflow.com/questions/3042437/how-can-i-change-the-commit-author-for-a-single-commit)
+  - For example, if your commit history is A-B-C-D-E-F with F as HEAD, and you want to change the author of C and D, then you would...
+
+```bash
+EDITOR=vim git rebase -i B
+```
+
+- Change the lines for both C and D from pick to edit
+- Exit the editor (for vim, this would be pressing Esc and then typing :wq).
+- Once the rebase started, it would first pause at C
+- You would then run the following commands
+
+```bash
+# To know your current author, you can go to recent commits URL and add .patch at the end. You should be signed in to see the details. Also you can run git log.
+EDITOR=vim git commit --amend --author="Author Name <email@address.com> --no-edit
+```
+
+- Then you would run
+
+```bash
+git rebase --continue
+```
+
+- It would pause again at D
+- Continue with the same steps as above until you reach HEAD i.e., F
+- Once you are done, you can run
+
+```bash
+git push -f
 ```
 
 ### remote -- origin
@@ -228,6 +283,16 @@ git add .
 
 ```bash
 git commit -m "Commit message"
+```
+
+- To amend the author of the most recent commit 
+
+```bash
+git commit --amend --author="Author Name <email@address.com>" --no-edit
+```
+
+```bash
+git push -f
 ```
 
 ### push -- To push the changes to the remote repository
