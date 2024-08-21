@@ -11,6 +11,7 @@
     - [To get only the status code using curl | -s | silent | -o | output | -w | write out | http\_code](#to-get-only-the-status-code-using-curl---s--silent---o--output---w--write-out--http_code)
     - [-L | --location | follow redirect | -I | --head | Fetch headers only](#-l----location--follow-redirect---i----head--fetch-headers-only)
     - [-o | output | download](#-o--output--download)
+    - [-f | fail silently](#-f--fail-silently)
 
 ## NAME
 
@@ -116,4 +117,16 @@ HTTP/1.1 200 OK
 
 ```bash
 curl -Lo /usr/local/bin/kubectl https://dl.k8s.io/release/v1.25.0/bin/linux/amd64/kubectl
+```
+
+### -f | fail silently
+
+```bash
+curl -f https://example.com/nonexistent-page
+```
+
+Output
+
+```bash
+curl: (22) The requested URL returned error: 404
 ```
