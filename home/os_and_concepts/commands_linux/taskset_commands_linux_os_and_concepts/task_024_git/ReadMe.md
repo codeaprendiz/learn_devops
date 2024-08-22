@@ -5,7 +5,7 @@
   - [DESCRIPTION](#description)
   - [Useful aliases](#useful-aliases)
   - [EXAMPLES](#examples)
-  - [clone](#clone)
+    - [clone](#clone)
     - [init](#init)
     - [pull - To pull the latest changes from `master`](#pull---to-pull-the-latest-changes-from-master)
     - [push -- To push all the changes to the `master` branch](#push----to-push-all-the-changes-to-the-master-branch)
@@ -52,7 +52,7 @@ alias dlocal="git --no-pager branch --merged  | egrep -v master | xargs git bran
 
 ## EXAMPLES
 
-## clone
+### clone
 
 When you clone a repository, Git automatically sets up a default remote named `origin`. This is the standard remote where your repository’s changes are pushed and fetched from.
 
