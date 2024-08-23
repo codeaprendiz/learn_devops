@@ -30,3 +30,21 @@ EOF
 3
 $
 ```
+
+## multi-line-here-document
+
+[Multiline syntax for piping a heredoc](https://stackoverflow.com/questions/7046381/multiline-syntax-for-piping-a-heredoc-is-this-portable)
+
+```bash
+cat << EOF | grep "apple"
+banana
+apple
+orange
+EOF
+```
+
+Output
+
+```bash
+apple
+```

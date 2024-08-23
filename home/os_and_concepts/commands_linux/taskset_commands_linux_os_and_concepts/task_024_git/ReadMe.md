@@ -356,6 +356,18 @@ git push origin <branchname>
 git status
 ```
 
+- To check the status of a particular file say `file1.txt` using `--porcelain` option. This option is useful when you want to use the output in a script or another program.
+
+```bash
+git status --porcelain file1.txt
+```
+
+Output will be like
+
+```bash
+ M file1.txt
+```
+
 ### checkout -- To checkout a branch
 
 - Create a new branch and switch to it:
