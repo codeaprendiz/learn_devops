@@ -1,6 +1,6 @@
 # Home
 
-> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 468
+> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 470
 
 - [cloud certifications](#cloud_certifications)
 - [cloud providers](#cloud_providers)
@@ -12,6 +12,7 @@
 - [observability](#observability)
 - [os and concepts](#os_and_concepts)
 - [productivity tools](#productivity_tools)
+- [security](#security)
 - [web servers](#web_servers)
 
 ## cloud_certifications
@@ -63,13 +64,19 @@
 
 | commands_linux                                    | commands_windows                                  | concepts_linux                                   |
 |---------------------------------------------------|---------------------------------------------------|--------------------------------------------------|
-| [Tasks: 129](home/os_and_concepts/commands_linux) | [Tasks: 7](home/os_and_concepts/commands_windows) | [Tasks: 14](home/os_and_concepts/concepts_linux) |
+| [Tasks: 130](home/os_and_concepts/commands_linux) | [Tasks: 7](home/os_and_concepts/commands_windows) | [Tasks: 14](home/os_and_concepts/concepts_linux) |
 
 ## productivity_tools
 
 |                                     |
 |-------------------------------------|
 | [Tasks: 7](home/productivity_tools) |
+
+## security
+
+| trivy                           |
+|---------------------------------|
+| [Tasks: 1](home/security/trivy) |
 
 ## web_servers
 
