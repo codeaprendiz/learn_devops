@@ -1,6 +1,6 @@
 # taskset_docker_containers
 
-> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 30
+> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 33
 
 | Task     | Description                                                                                                                                                                                                |
 |----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,3 +34,6 @@
 | task_025 | [task_025_sonarqube__keycloak__saml](taskset_docker_containers/task_025_sonarqube__keycloak__saml)                                                                                                         |
 | task_026 | [task_026_mssql](taskset_docker_containers/task_026_mssql)                                                                                                                                                 |
 | task_027 | [task_027_docker_openvpn](taskset_docker_containers/task_027_docker_openvpn)                                                                                                                               |
+| task_028 | [task_028_docker_engine__networking__overview](taskset_docker_containers/task_028_docker_engine__networking__overview)                                                                                     |
+| task_029 | [task_029_docker_engine__networking__bridge_network_tutorial](taskset_docker_containers/task_029_docker_engine__networking__bridge_network_tutorial)                                                       |
+| task_030 | [task_030_docker_engine__networking__host_networking_tutorial](taskset_docker_containers/task_030_docker_engine__networking__host_networking_tutorial)                                                     |

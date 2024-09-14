@@ -1,6 +1,6 @@
 # Home
 
-> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 470
+> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 473
 
 - [cloud certifications](#cloud_certifications)
 - [cloud providers](#cloud_providers)
@@ -31,7 +31,7 @@
 
 | docker                              | docker_compose                              | kubernetes                              |
 |-------------------------------------|---------------------------------------------|-----------------------------------------|
-| [Tasks: 30](home/containers/docker) | [Tasks: 16](home/containers/docker_compose) | [Tasks: 67](home/containers/kubernetes) |
+| [Tasks: 33](home/containers/docker) | [Tasks: 16](home/containers/docker_compose) | [Tasks: 67](home/containers/kubernetes) |
 
 ## databases
 
