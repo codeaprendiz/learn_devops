@@ -239,6 +239,8 @@ RSA Key Management
 
 ##### EXAMPLES for req
 
+To create RootCA, server certificate and client certificate
+
 - To create RootCA
 
 ```bash
@@ -255,7 +257,7 @@ openssl \
 ```
 
 | Option  | Value                                    | Description                                                            |
-|---------|------------------------------------------|------------------------------------------------------------------------|
+| ------- | ---------------------------------------- | ---------------------------------------------------------------------- |
 | req     |                                          | X.509 Certificate Signing Request (CSR) management command.            |
 | -new    |                                          | Specifies that a new CSR is being requested.                           |
 | -newkey | rsa:4096                                 | Creates a new RSA private key of 4096 bits.                            |
@@ -285,7 +287,7 @@ openssl \
 ```
 
 | Option  | Value                                                                                             | Description                                                              |
-|---------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| ------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | req     |                                                                                                   | X.509 Certificate Signing Request (CSR) management command.              |
 | -new    |                                                                                                   | Specifies that a new CSR is being requested.                             |
 | -newkey | rsa:2048                                                                                          | Creates a new RSA private key of 2048 bits.                              |
@@ -318,7 +320,7 @@ openssl \
 ```
 
 | Option  | Value                                                                                         | Description                                                              |
-|---------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| ------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | req     |                                                                                               | X.509 Certificate Signing Request (CSR) management command.              |
 | -new    |                                                                                               | Specifies that a new CSR is being requested.                             |
 | -newkey | rsa:2048                                                                                      | Creates a new RSA private key of 2048 bits.                              |
@@ -331,3 +333,26 @@ openssl \
 | -CAkey  | confs/rootCA.key                                                                              | Specifies the private key of the CA used for signing.                    |
 | -keyout | confs/server.key                                                                              | The file to write the newly created private key to.                      |
 | -out    | confs/server.crt                                                                              | The file to write the newly created certificate to.                      |
+
+To create self-signed certificates for nginx
+
+```bash
+openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -extensions v3_ca \
+    -subj '/C=AE/ST=India/L=India/O=NA/OU=IT/CN=nginx/emailAddress=it@sre.net' \
+    -addext 'subjectAltName=DNS:nginx,DNS:nexus,DNS:repo.maven.apache.org,DNS:repo1.maven.org,DNS:plugins.gradle.org,DNS:registry.npmjs.org,DNS:docker.io,DNS:registry-1.docker.io,DNS:gcr.io,DNS:ghcr.io,DNS:quay.io,DNS:registry.k8s.io' \
+    -keyout /etc/ssl/certs/nginx.key -out /etc/ssl/certs/nginx.crt
+```
+
+| **Command/Option**                                                           | **Description**                                                                                                                                                                                                                          |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `openssl req`                                                                | Starts the process of generating a new self-signed certificate using `openssl`.                                                                                                                                                          |
+| `-new`                                                                       | Generates a **new certificate**. When used with the `-x509` option, it creates a self-signed certificate rather than generating a CSR.                                                                                                   |
+| `-newkey rsa:4096`                                                           | Generates a **new private key** and a **new certificate** at the same time, using RSA with a key size of 4096 bits.                                                                                                                      |
+| `-days 3650`                                                                 | Sets the certificate's validity to 3650 days (10 years).                                                                                                                                                                                 |
+| `-nodes`                                                                     | Indicates that the private key should not be encrypted, allowing it to be used without needing a password.                                                                                                                               |
+| `-x509`                                                                      | Specifies that this is a **self-signed certificate** instead of generating a certificate signing request (CSR).                                                                                                                          |
+| `-extensions v3_ca`                                                          | Adds the `v3_ca` extension, enabling the certificate to function as a certificate authority (CA).                                                                                                                                        |
+| `-subj '/C=AE/ST=India/L=India/O=NA/OU=IT/CN=nginx/emailAddress=it@sre.net'` | Defines the subject (certificate details) with fields like country (`C=AE`), state (`ST=India`), locality (`L=India`), organization (`O=NA`), organizational unit (`OU=IT`), common name (`CN=nginx`), and email address (`it@sre.net`). |
+| `-addext 'subjectAltName=DNS:nginx,...'`                                     | Adds the Subject Alternative Name (SAN) extension, allowing the certificate to be valid for multiple domain names like `nginx`, `nexus`, `repo.maven.apache.org`, `docker.io`, etc.                                                      |
+| `-keyout /etc/ssl/certs/nginx.key`                                           | Specifies the location where the private key will be saved (`/etc/ssl/certs/nginx.key`).                                                                                                                                                 |
+| `-out /etc/ssl/certs/nginx.crt`                                              | Specifies the location where the self-signed certificate will be saved (`/etc/ssl/certs/nginx.crt`).                                                                                                                                     |

@@ -1,6 +1,6 @@
 # Home
 
-> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 473
+> [Auto](https://github.com/codeaprendiz/learn_fullstack/blob/main/home/php/intermediate/taskset_intermediate_php/task_004_createGlobalMarkdownTable/generate-readme.php) generated ReadMe. Number of tasks: 472
 
 - [cloud certifications](#cloud_certifications)
 - [cloud providers](#cloud_providers)
@@ -70,7 +70,7 @@
 
 |                                     |
 |-------------------------------------|
-| [Tasks: 7](home/productivity_tools) |
+| [Tasks: 6](home/productivity_tools) |
 
 ## security
 
