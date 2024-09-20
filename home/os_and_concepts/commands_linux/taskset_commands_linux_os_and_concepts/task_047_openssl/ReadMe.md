@@ -117,88 +117,50 @@ The s_client command implements a generic SSL/TLS client which connects to a rem
 
 ##### EXAMPLES for s_client
 
-```bash
-# -connect host:port » This specifies the host and optional port to connect to. If not specified then an attempt is made to connect to the local host on port 4433.
-$ openssl s_client -connect www.company.com:443
-CONNECTED(00000003)
-depth=3 /C=SE/O=AddTrust AB/OU=AddTrust External TTP Network/CN=AddTrust External CA Root
-verify error:num=19:self signed certificate in certificate chain
-verify return:0
----
-Certificate chain
- 0 s:/OU=Domain Control Validated/OU=PositiveSSL/CN=www.company.com
-   i:/C=GB/ST=Greater Manchester/L=Salford/O=COMODO CA Limited/CN=COMODO RSA Domain Validation Secure Server CA
- 1 s:/C=GB/ST=Greater Manchester/L=Salford/O=COMODO CA Limited/CN=COMODO RSA Domain Validation Secure Server CA
-   i:/C=GB/ST=Greater Manchester/L=Salford/O=COMODO CA Limited/CN=COMODO RSA Certification Authority
- 2 s:/C=GB/ST=Greater Manchester/L=Salford/O=COMODO CA Limited/CN=COMODO RSA Certification Authority
-   i:/C=SE/O=AddTrust AB/OU=AddTrust External TTP Network/CN=AddTrust External CA Root
- 3 s:/C=SE/O=AddTrust AB/OU=AddTrust External TTP Network/CN=AddTrust External CA Root
-   i:/C=SE/O=AddTrust AB/OU=AddTrust External TTP Network/CN=AddTrust External CA Root
----
-Server certificate
------BEGIN CERTIFICATE-----
------END CERTIFICATE-----
-subject=/OU=Domain Control Validated/OU=PositiveSSL/CN=www.company.com
-issuer=/C=GB/ST=Greater Manchester/L=Salford/O=COMODO CA Limited/CN=COMODO RSA Domain Validation Secure Server CA
----
-No client certificate CA names sent
----
-SSL handshake has read 6361 bytes and written 456 bytes
----
-New, TLSv1/SSLv3, Cipher is DHE-RSA-AES128-SHA
-Server public key is 2048 bit
-Secure Renegotiation IS supported
-Compression: NONE
-Expansion: NONE
-SSL-Session:
-    Protocol  : TLSv1
-    Cipher    : DHE-RSA-AES128-SHA
-    Session-ID: E9C40EAFA4BB7A521E940355E619401BA22DBB7AD915C4A23717335AC41974C4
-    Session-ID-ctx: 
-    Master-Key: 72044D05FF62C4E075A47DB35FA6C7F3AF77022368A73C82964ACF2BFCA8A857259F134453F4B4FD45D6421B35465796
-    Key-Arg   : None
-    Start Time: 1521986055
-    Timeout   : 300 (sec)
-    Verify return code: 0 (ok)
----
-HEAD / HTTP/1.0
-Host: www.company.com
-HTTP/1.1 400 Bad Request
-Date: Sun, 25 Mar 2018 13:57:33 GMT
-Server: Apache
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-Content-Length: 226
-Connection: close
-Content-Type: text/html; charset=iso-8859-1
-
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>400 Bad Request</title>
-</head><body>
-<h1>Bad Request</h1>
-<p>Your browser sent a request that this server could not understand.<br />
-</p>
-</body></html>
-read:errno=0
-```
-
-- Once you type the command, you’re going to see a lot of diagnostic output (more about that in a moment) followed by an opportunity to type whatever you want. Because we’re talking to an HTTP server, the most sensible thing to do is to submit an HTTP request. In the following example, I use a HEAD request because it instructs the server not to send the response body:
-- Now we know that the TLS communication layer is working: we got through to the HTTP server, submitted a request, and received a response back. Let’s go back to the diagnostic output. The first couple of lines will show the information about the server certificate:
-- On my system (and possibly on yours), s_client doesn’t pick up the default trusted certificates; it complains that there is a self-signed certificate in the certificate chain. In most cases, you won’t care about certificate validation;
-- The next section in the output lists all the certificates presented by the server in the order in which they were delivered:
-- For each certificate, the first line shows the subject and the second line shows the issuer information.
-- This part is very useful when you need to see exactly what certificates are sent; browser certificate viewers typically display reconstructed certificate chains that can be almost completely different from the presented ones. To determine if the chain is nominally correct, you might wish to verify that the subjects and issuers match. You start with the leaf (web server) certificate at the top, and then you go down the list, matching the issuer of the current certificate to the subject of the next. The last issuer you see can point to some root certificate that is not in the chain, or—if the self-signed root is included—it can point to itself.
-- The next item in the output is the server certificate;
-- The next is a lot of information about the TLS connection, most of which is self-explanatory:
-- The most important information here is the protocol version (TLS 1.1) and cipher suite used (DHE-RSA-AES128-SHA). You can also determine that the server has issued to you a session ID and a TLS session ticket (a way of resuming sessions without having the server maintain state) and that secure renegotiation is supported. Once you understand what all of this output contains, you will rarely look at it.
-
-USEFUL IMPLEMENTATION
-
 To download the certificate directly we use the following command
 
 ```bash
 $ echo | openssl s_client -connect qa.iam.platform.prod.company.com:443 2>&1 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > /tmp/iam_cert.pem;
 .
+```
+
+To download the self-signed certificate of nginx server with server name configured as  `repo.maven.apache.org`
+
+- 10.0.1.4 is your nginx IP
+
+```nginx
+...
+  listen 443 ssl;
+
+  server_name 
+    repo.maven.apache.org
+...
+```
+
+```bash
+# You run this from a client, say 10.0.1.5 which is ubuntu machine and has openssl installed. You want to do this so your https connection from client (ubuntu) using curl to nginx via curl does not complain that it does not trust the nginx's servers self signed certs.
+openssl s_client -showcerts -connect 10.0.1.4:443 < /dev/null | sed -ne "/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p" > /usr/local/share/ca-certificates/server.crt
+```
+
+This might be followed by following
+
+```bash
+# Install ca-certificates if not installed: Make sure ca-certificates is installed on ubuntu
+apt-get update && apt-get install -y ca-certificates
+
+# Update the CA Certificates: Update the certificate authority (CA) store to include your new self-signed certificate:
+update-ca-certificates
+# look for following line inoutput
+# 1 added, 0 removed; done.
+
+# Now you can run the following from your client to test the https connection
+curl -v -H "Host: repo.maven.apache.org" --resolve "repo.maven.apache.org:443:10.0.1.4" https://repo.maven.apache.org:443
+# Look for in output
+# *  SSL certificate verify ok.
+
+# Alternatively, if you don't want to udpate the OS CA certificates, you can also specify the file as an arguemnt to the client curl using the --cacert option
+# When you don't want to run          $ update-ca-certificates
+curl -v -H "Host: repo.maven.apache.org" --cacert /usr/local/share/ca-certificates/server.crt --resolve "repo.maven.apache.org:443:10.0.1.4" https://repo.maven.apache.org:443
 ```
 
 #### x509
@@ -229,8 +191,27 @@ To get detailed information.
 > Note: This will also validate if the certificate is tampered with or not.
 
 ```bash
-# -text : prints out the certificate in text form. Full details are output including the public key, signature algorithms, issuer and subject names, serial number any extensions present and any trust settings.
+# -text : prints out the certificate in text form. Full details are output including the public key, signature algorithms, issuer and subject names, serial number any extensions present and any trust settings. 
 openssl x509 -in georgebackend.oms.prod.company.com.pem -text -noout                                                                                     . 
+```
+
+Useful output
+
+- To check if the certificate is CA cert `CA: TRUE`
+- To check for domains for which the certificate is valid
+- To check Issuer and Validity
+
+```bash
+...
+        Issuer: C = AE, ST = India, L = India, O = NA, OU = IT, CN = nginx, emailAddress = it@sre.net
+        Validity
+            Not Before: Sep 18 07:44:56 2022 GMT
+            Not After : Sep 16 07:44:56 2032 GMT
+...
+...
+                CA:TRUE
+            X509v3 Subject Alternative Name: 
+                DNS:nginx, DNS:nexus, DNS:repo.maven.apache.org, DNS:repo1.maven.org, DNS:plugins.gradle.org
 ```
 
 #### req
