@@ -1,6 +1,10 @@
 # find
 
+<br>
+
 ## NAME
+
+<br>
 
 find -- walk a file hierarchy
 
@@ -21,10 +25,21 @@ find -- walk a file hierarchy
     - [Replace currentstring with newstring in all regular files in the current directory](#replace-currentstring-with-newstring-in-all-regular-files-in-the-current-directory)
     - [To find all `*.png` files in the current directory and its subdirectories](#to-find-all-png-files-in-the-current-directory-and-its-subdirectories)
     - [To find all files `*using_dashboard*` in their path in the current directory and its subdirectories](#to-find-all-files-using_dashboard-in-their-path-in-the-current-directory-and-its-subdirectories)
+    - [To find the absolute paths all folders that start with `task_*`](#to-find-the-absolute-paths-all-folders-that-start-with-task_)
+
+<br>
 
 ## EXAMPLES
 
+<br>
+
+Following are some examples
+
+<br>
+
 ### All files in a directory that have not been updated since last 300 days | -mtime || tail
+
+<br>
 
 `-mtime` in the `find` command is used to search for files based on the number of days since they were last modified; `-mtime +300` finds files modified more than 300 days ago.
 
@@ -39,7 +54,11 @@ ReadMe.md
 home/os_and_concepts/commands/taskset_commands_os_and_concepts/task_016_dos2unix/ReadMe.md
 ```
 
+<br>
+
 ### files that were last modified in last 180 mins | -mmin | names match the pattern | -name || grep | wc
+
+<br>
 
 For mmin
 
@@ -47,7 +66,11 @@ For mmin
 find $HOME/.BUILD_SCRIPTS_AREA/  -mmin -180 -name "*-bld.lock" | grep "$BLD_LOCK" | wc -l
 ```
 
+<br>
+
 ### files greater than 100M size | -size
+
+<br>
 
 To find all the files which are greater than 100M size in $HOME path
 
@@ -61,7 +84,11 @@ Output
 /username/domains/test.prd.webDomain/servers/test/logs/test.out00006 
 ```
 
+<br>
+
 ### find all files greater than 100MB and print their sizes | -size | -exec | -type f | -xdev || du
+
+<br>
 
 To find the size of all files present in current directory which are greater than 100MB
 
@@ -87,7 +114,11 @@ To find all files which are greater than 50KB size in the current directory and 
 find . -xdev -type f -size +50k -exec du -sh {} +
 ```
 
+<br>
+
 ### find files older than 1 month | -mtime | -print | -maxdepth
+
+<br>
 
 Find all the files in current directory which are older than 1 month
 
@@ -100,7 +131,11 @@ Find all the files in current directory which are older than 1 month
 find ./ -maxdepth 1 -type f -mtime +30 -print 
 ```
 
+<br>
+
 ### Move the files older than 30 days to a particular directory | -t | -exec | -maxdepth | -type f || mv
+
+<br>
 
 Move the files older than 30 days to a particular directory
 
@@ -115,7 +150,11 @@ $ rm -rf tmp
 .
 ```
 
+<br>
+
 ### To find specific pom files and zip them into a file | -o -name | logicl OR || xargs | zip
+
+<br>
 
 - `-name Build-2019-03-09-23-38-pom-090319.xls -o -name Build-2019-03-12-23-05-pom-120319.xls -o -name Build-2019-03-13-07-46-pom-130319.xls`: Searches for files matching any of these specified names, with `-o` (logical OR) separating each name.
 - `| xargs zip -r 123.zip`: Uses `xargs` to pass the found files as arguments to the `zip` command, which recursively (-r) adds these files to a ZIP archive named `123.zip`.
@@ -124,7 +163,11 @@ $ rm -rf tmp
 find . -name Build-2019-03-09-23-38-pom-090319.xls -o -name Build-2019-03-12-23-05-pom-120319.xls -o -name Build-2019-03-13-07-46-pom-130319.xls | xargs zip -r 123.zip
 ```
 
+<br>
+
 ### To find all files with specific extension greater than 100MB, not been modified since last 3 days from current path | -size | -mtime | -type f | -name | -o
+
+<br>
 
 - `-size +100M`: Searches for files larger than 100 megabytes.
 - `-mtime +3`: Searches for files that were last modified more than 3 days ago.
@@ -135,13 +178,21 @@ find . -name Build-2019-03-09-23-38-pom-090319.xls -o -name Build-2019-03-12-23-
 find . -size +100M -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \)
 ```
 
+<br>
+
 ### To print all *.pom.xml files containing the keyword | -exec | -print | -name | -exec || egrep
+
+<br>
 
 ```bash
 find . -name "*pom.xml" -exec egrep -n -A 2 "<artifactId>ns-exports-interfaces</artifactId>" '{}' \; -print
 ```
 
+<br>
+
 ### To print all *.xml files containing keyword "insert into gen_mst_rpt" except the ones with "insert into gen_mst_rpt_param" || egrep
+
+<br>
 
 - `-name "*xml"`: Searches for files whose names end with `xml`.
 - `-exec egrep -n -A 2 "*insert into gen_mst_rpt *" -v "*insert into gen_mst_rpt_param*" '{}' \;`: Executes the `egrep` command on each found file, searching for lines containing "insert into gen_mst_rpt" (displaying the line number and the two lines following it) but excluding lines containing "insert into gen_mst_rpt_param".
@@ -151,7 +202,11 @@ find . -name "*pom.xml" -exec egrep -n -A 2 "<artifactId>ns-exports-interfaces</
 find . -name "*xml" -exec egrep -n -A 2 "*insert into gen_mst_rpt *" -v "*insert into gen_mst_rpt_param*" '{}' \; -print 
 ```
 
+<br>
+
 ### -mtime | -type f | -name | -o || for | do
+
+<br>
 
 - `find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \)`: Finds files in the specified directory that are older than 3 days (`-mtime +3`), are regular files (`-type f`), and match any of the specified extensions (`*.log`, `*.txt`, `*.out`).
 - `for j in $( ... )`: Iterates over the list of files found by the `find` command.
@@ -165,20 +220,38 @@ This command prints the filenames and their details for each file found that mat
 for j in $( find /apps/ap_frm/servers/apache-tomcat-8.5.38_pfm/logs/ -mtime +3 -type f \( -name "*.log" -o -name "*.txt" -o -name "*.out" \) );do echo $j; ls -ltrh $j; done;
 ```
 
+<br>
+
 ### Replace currentstring with newstring in all regular files in the current directory
+
+<br>
 
 ```bash
 find . -type f -exec sed -i '' 's/currentstring/newstring/g' {} +
 ```
 
+<br>
+
 ### To find all `*.png` files in the current directory and its subdirectories
+
+<br>
 
 ```bash
 find . -name "*.png"
 ```
 
+<br>
+
 ### To find all files `*using_dashboard*` in their path in the current directory and its subdirectories
+
+<br>
 
 ```bash
 find . -path "*using_dashboard*"
+```
+
+### To find the absolute paths all folders that start with `task_*`
+
+```bash
+find . -name "task_*" -type d | xargs -I % readlink -f %
 ```
