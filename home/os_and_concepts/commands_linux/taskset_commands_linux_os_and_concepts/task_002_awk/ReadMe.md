@@ -2,6 +2,15 @@
 
 [awk](https://man7.org/linux/man-pages/man1/awk.1p.html)
 
+- [awk](#awk)
+  - [NAME](#name)
+  - [EXAMPLES](#examples)
+    - [Print specific `columns`](#print-specific-columns)
+    - [Using `pattern`](#using-pattern)
+    - [`hello world`](#hello-world)
+    - [Until `EOF`](#until-eof)
+    - [`-F` | input field separators](#-f--input-field-separators)
+
 <br>
 
 ## NAME
