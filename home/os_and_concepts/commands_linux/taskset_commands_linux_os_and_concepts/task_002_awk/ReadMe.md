@@ -2,17 +2,27 @@
 
 [awk](https://man7.org/linux/man-pages/man1/awk.1p.html)
 
+<br>
+
 ## NAME
+
+<br>
 
 awk - pattern-directed scanning and processing language
 
-## SYNOPSIS
-
-> awk [ -F fs ] [ -v var=value ] [ 'prog' | -f progfile ] [ file ...  ]
+<br>
 
 ## EXAMPLES
 
-- Print only columns one and three using stdin
+<br>
+
+<br>
+
+### Print specific `columns`
+
+<br>
+
+Print only columns one and three using stdin
 
 ```bash
 $ awk ' {print $1,$3} '
@@ -24,7 +34,19 @@ this one
 $ 
 ```
 
-- Print only elements from column 2 that match pattern using stdin
+Extract first and last column of a text file
+
+```bash
+awk '{print $1, $NF}' filename
+```
+
+<br>
+
+### Using `pattern`
+
+<br>
+
+Print only elements from column 2 that match pattern using stdin
 
 ```bash
 $ awk ' /'pattern'/ {print $2} '
@@ -38,7 +60,13 @@ at
 $
 ```
 
-- Classic "Hello, world" in awk
+<br>
+
+### `hello world`
+
+<br>
+
+Classic "Hello, world" in awk
 
 ```bash
 $ awk "BEGIN { print \"Hello, world\" }"
@@ -46,7 +74,13 @@ Hello, world
 $
 ```
 
-- Print what's entered on the command line until EOF
+<br>
+
+### Until `EOF`
+
+<br>
+
+Print what's entered on the command line until EOF
 
 ```bash
 $ awk '{ print }'
@@ -60,8 +94,25 @@ end now
 $
 ```
 
-- Extract first and last column of a text file
+<br>
+
+### `-F` | input field separators
+
+<br>
 
 ```bash
-awk '{print $1, $NF}' filename
+cat <<EOF | awk -F/ '{print $3}' | sort | uniq
+https://aws.amazon.com/ec2
+https://example.org/page
+http://example.org/login
+https://sub.example.org/home
+EOF
+```
+
+Output
+
+```bash
+aws.amazon.com
+example.org
+sub.example.org
 ```
