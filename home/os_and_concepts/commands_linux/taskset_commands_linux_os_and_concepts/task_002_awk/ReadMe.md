@@ -109,6 +109,8 @@ $
 
 <br>
 
+To get unique URLs from a list.
+
 ```bash
 cat <<EOF | awk -F/ '{print $3}' | sort | uniq
 https://aws.amazon.com/ec2
